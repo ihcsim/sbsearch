@@ -17,7 +17,7 @@ fn visit_dir(dir: &Path, cb: &dyn Fn(&DirEntry)) -> io::Result<()> {
         if path.is_dir() {
             visit_dir(&path, cb)?;
         } else {
-            search(&entry)
+            cb(&entry)
         }
     }
     Ok(())
