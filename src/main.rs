@@ -1,3 +1,4 @@
+use std::fmt;
 use std::fs::{self, File};
 use std::io::{self, BufRead};
 use std::path::Path;
@@ -36,10 +37,52 @@ fn search(path: &Path, s: &str) {
             if let Ok(content) = line
                 && content.contains(s)
             {
-                println!("{}: {}", path.display(), content);
+                let entry = Entry {
+                    component: Component {
+                        name: String::from(""),
+                        namespace: String::from(""),
+                    },
+                    content,
+                    level: String::from(""),
+                    path: String::from(path.to_string_lossy()),
+                    timestamp: String::from(""),
+                };
+                dbg!(&entry);
+                println!("{}", entry);
             }
         }
     } else {
         println!("could no open file: {}", path.display());
+    }
+}
+
+#[derive(Debug)]
+struct Entry {
+    component: Component,
+    content: String,
+    level: String,
+    path: String,
+    timestamp: String,
+}
+
+impl fmt::Display for Entry {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            "{} {} {} {} {}",
+            self.timestamp, self.path, self.component, self.level, self.content
+        )
+    }
+}
+
+#[derive(Debug)]
+struct Component {
+    name: String,
+    namespace: String,
+}
+
+impl fmt::Display for Component {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}/{}", self.namespace, self.name)
     }
 }
