@@ -1,4 +1,5 @@
 use chrono::{self, DateTime, Utc};
+use colored::*;
 use regex::Regex;
 use std::fmt;
 use std::fs::{self, File};
@@ -92,7 +93,14 @@ struct Entry {
 
 impl fmt::Display for Entry {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}", self.content)
+        let msg = match self.level.as_str() {
+            "error" => self.content.red(),
+            "warn" => self.content.yellow(),
+            "info" => self.content.green(),
+            "debug" => self.content.cyan(),
+            _ => self.content.blue(),
+        };
+        write!(f, "{}", msg)
     }
 }
 
