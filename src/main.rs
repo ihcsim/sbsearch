@@ -5,35 +5,37 @@ use std::fs::{self, File};
 use std::io::{self, BufRead};
 use std::path::Path;
 
-const ROOT_DIR: &str =
-    "./testdata/supportbundle_e4e6d62c-f3b9-4300-8426-1d8493b2b576_2025-10-27T18-38-27Z/logs";
+fn main() {
+    let root_dir =
+        "./testdata/supportbundle_e4e6d62c-f3b9-4300-8426-1d8493b2b576_2025-10-27T18-38-27Z/logs";
+    let key = String::from("pvc-00b250c3-3e44-4cc8-a9c8-532621b4b1ea");
 
-fn main() -> io::Result<()> {
-    let path = Path::new(ROOT_DIR);
+    let root_path = Path::new(root_dir);
     let mut entries: Vec<Entry> = Vec::new();
-    visit_dir(path, &mut entries, &search)?;
+    search_tree(root_path, &key, &mut entries, &search).unwrap();
+
     entries.sort_by(|a, b| a.timestamp.cmp(&b.timestamp));
     for entry in &entries {
         println!("{}", entry);
     }
-    Ok(())
 }
 
-fn visit_dir(
+fn search_tree(
     dir: &Path,
+    key: &str,
     v: &mut Vec<Entry>,
-    search: &dyn Fn(&Path, &mut Vec<Entry>, &str),
+    callback: &dyn Fn(&Path, &mut Vec<Entry>, &str),
 ) -> io::Result<()> {
     for entry in fs::read_dir(dir)? {
         let entry = entry?;
         let path = entry.path();
         if path.is_dir() {
-            visit_dir(&path, v, search)?;
+            search_tree(&path, key, v, callback)?;
             continue;
         }
 
         if path.is_file() {
-            search(&path, v, "pvc-00b250c3-3e44-4cc8-a9c8-532621b4b1ea");
+            callback(&path, v, key);
             continue;
         }
 
