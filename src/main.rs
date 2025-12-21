@@ -45,7 +45,6 @@ fn search_tree(
 }
 
 fn search(path: &Path, v: &mut Vec<Entry>, s: &str) {
-    let root = Path::new(ROOT_DIR);
     let regex_dt = Regex::new(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z").unwrap();
     let regex_lv = Regex::new(r"level=([^\s]+)").unwrap();
 
@@ -55,8 +54,7 @@ fn search(path: &Path, v: &mut Vec<Entry>, s: &str) {
             if let Ok(content) = line
                 && content.contains(s)
             {
-                let subpath = path.strip_prefix(root).unwrap();
-                let identifier: Vec<&str> = subpath.to_str().unwrap().split('/').collect();
+                let identifier: Vec<&str> = path.to_str().unwrap().split('/').collect();
                 let timestamp = regex_dt.find(content.as_str()).unwrap();
                 let timestamp_fixed_offset = DateTime::parse_from_rfc3339(timestamp.as_str()).unwrap();
                 let level = match regex_lv.find(content.as_str()) {
@@ -66,12 +64,12 @@ fn search(path: &Path, v: &mut Vec<Entry>, s: &str) {
 
                 let entry = Entry {
                     component: Component {
-                        name: String::from(identifier[1]),
-                        namespace: String::from(identifier[0]),
+                        name: String::from(identifier[5]),
+                        namespace: String::from(identifier[4]),
                     },
                     content: content.clone(),
                     level: String::from(level),
-                    path: String::from(subpath.to_str().unwrap()),
+                    path: String::from(path.to_str().unwrap()),
                     timestamp: timestamp_fixed_offset.with_timezone(&Utc),
                 };
 
