@@ -1,4 +1,5 @@
 use chrono::{self, DateTime, Utc};
+use clap::Parser;
 use colored::*;
 use regex::Regex;
 use std::fmt;
@@ -7,9 +8,9 @@ use std::io::{self, BufRead};
 use std::path::Path;
 
 fn main() {
-    let root_dir =
-        "./testdata/supportbundle_e4e6d62c-f3b9-4300-8426-1d8493b2b576_2025-10-27T18-38-27Z/logs";
-    let key = String::from("pvc-00b250c3-3e44-4cc8-a9c8-532621b4b1ea");
+    let args = Args::parse();
+    let root_dir = args.root_dir.as_str();
+    let key = args.key;
 
     let root_path = Path::new(root_dir);
     let mut entries: Vec<Entry> = Vec::new();
@@ -114,4 +115,14 @@ impl fmt::Display for Component {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{}/{}", self.namespace, self.name)
     }
+}
+
+#[derive(Parser, Debug)]
+#[command(version, about, long_about = None)]
+struct Args {
+    #[arg(short, long)]
+    root_dir: String,
+
+    #[arg(short, long)]
+    key: String,
 }
