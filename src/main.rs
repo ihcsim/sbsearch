@@ -1,6 +1,15 @@
 use chrono::{self, DateTime, Utc};
 use clap::Parser;
-use colored::*;
+use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind};
+use ratatui::{
+    buffer::Buffer,
+    layout::Rect,
+    style::Stylize,
+    symbols::border,
+    text::{Line, Text},
+    widgets::{Block, Paragraph, Widget},
+    DefaultTerminal, Frame,
+};
 use regex::Regex;
 use std::fmt;
 use std::fs::{self, File};
@@ -20,6 +29,14 @@ fn main() {
     for entry in &entries {
         println!("{}", entry);
     }
+
+    let mut terminal = ratatui::init();
+    let result = Tui::default().run(&mut terminal);
+    ratatui::restore();
+    match result {
+        Ok(_) => println!("done"),
+        Err(e) => panic!("{}", e),
+    };
 }
 
 fn search_tree(
@@ -94,12 +111,13 @@ struct Entry {
 
 impl fmt::Display for Entry {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        let out = self.content.clone();
         let msg = match self.level.as_str() {
-            "error" => self.content.red(),
-            "warn" => self.content.yellow(),
-            "info" => self.content.green(),
-            "debug" => self.content.cyan(),
-            _ => self.content.blue(),
+            "error" => out.red(),
+            "warn" => out.yellow(),
+            "info" => out.green(),
+            "debug" => out.cyan(),
+            _ => out.blue(),
         };
         write!(f, "{}", msg)
     }
@@ -125,4 +143,49 @@ struct Args {
 
     #[arg(short, long)]
     key: String,
+}
+
+#[derive(Debug, Default)]
+struct Tui {
+    entries: Vec<Entry>,
+    exit: bool,
+}
+
+impl Tui {
+    pub fn run(&mut self, terminal: &mut DefaultTerminal) -> io::Result<()> {
+        while !self.exit {
+            terminal.draw(|frame| self.draw(frame))?;
+            self.handle_events()?;
+        }
+        Ok(())
+    }
+
+    fn draw(&self, frame: &mut Frame) {
+        frame.render_widget(self, frame.area());
+    }
+
+    fn handle_events(&mut self) -> io::Result<()> {
+        Ok(())
+    }
+}
+
+impl Widget for &Tui {
+    fn render(self, area: Rect, buf: &mut Buffer) {
+        let title = Line::from(" Log Finder ".bold());
+        let instructions = Line::from(vec![
+            " Up".into(),
+            "<Up>".blue().bold(),
+            " Down".into(),
+            "<Down>".blue().bold(),
+            " Quit ".into(),
+            "<Q> ".blue().bold(),
+        ]);
+        let block = Block::bordered()
+            .title(title.centered())
+            .title_bottom(instructions.centered())
+            .border_set(border::THICK);
+
+        let counter_text = "hello";
+        Paragraph::new(counter_text).block(block).render(area, buf);
+    }
 }
