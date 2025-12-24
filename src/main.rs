@@ -2,12 +2,10 @@ use chrono::{self, DateTime, Utc};
 use clap::Parser;
 use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind};
 use ratatui::{
-    buffer::Buffer,
-    layout::Rect,
-    style::Stylize,
+    style::{Modifier, Style, Stylize},
     symbols::border,
-    text::{Line, Text},
-    widgets::{Block, Paragraph, Widget},
+    text::Line,
+    widgets::{Block, List, ListItem, ListState},
     DefaultTerminal, Frame,
 };
 use regex::Regex;
@@ -16,7 +14,7 @@ use std::fs::{self, File};
 use std::io::{self, BufRead};
 use std::path::Path;
 
-fn main() {
+fn main() -> io::Result<()> {
     let args = Args::parse();
     let root_dir = args.root_dir.as_str();
     let key = args.key;
@@ -24,19 +22,12 @@ fn main() {
     let root_path = Path::new(root_dir);
     let mut entries: Vec<Entry> = Vec::new();
     search_tree(root_path, &key, &mut entries, &search).unwrap();
-
     entries.sort_by(|a, b| a.timestamp.cmp(&b.timestamp));
-    for entry in &entries {
-        println!("{}", entry);
-    }
 
     let mut terminal = ratatui::init();
-    let result = Tui::default().run(&mut terminal);
+    let app_out = Tui::new(entries).run(&mut terminal);
     ratatui::restore();
-    match result {
-        Ok(_) => println!("done"),
-        Err(e) => panic!("{}", e),
-    };
+    app_out
 }
 
 fn search_tree(
@@ -148,6 +139,7 @@ struct Args {
 #[derive(Debug, Default)]
 struct Tui {
     entries: Vec<Entry>,
+    nav_state: ListState,
     exit: bool,
 }
 
@@ -160,8 +152,66 @@ impl Tui {
         Ok(())
     }
 
-    fn draw(&self, frame: &mut Frame) {
-        frame.render_widget(self, frame.area());
+    fn new(entries: Vec<Entry>) -> Self {
+        Tui {
+            entries,
+            exit: false,
+            nav_state: ListState::default().with_selected(Some(0)),
+        }
+    }
+    fn nav_next(&mut self) {
+        let i = match self.nav_state.selected() {
+            Some(i) => {
+                if i >= self.entries.len() - 1 {
+                    0 // Wrap around to the start
+                } else {
+                    i + 1
+                }
+            }
+            None => 0,
+        };
+        self.nav_state.select(Some(i));
+    }
+
+    fn nav_prev(&mut self) {
+        let i = match self.nav_state.selected() {
+            Some(i) => {
+                if i == 0 {
+                    self.entries.len() - 1 // Wrap around to the end
+                } else {
+                    i - 1
+                }
+            }
+            None => 0,
+        };
+        self.nav_state.select(Some(i));
+    }
+
+    fn draw(&mut self, frame: &mut Frame) {
+        let title = Line::from(" Support Bundle Log Finder ".bold());
+        let instructions = Line::from(vec![
+            " Up".into(),
+            "<Up>".blue().bold(),
+            " Down".into(),
+            "<Down>".blue().bold(),
+            " Quit ".into(),
+            "<Q> ".blue().bold(),
+        ]);
+        let block = Block::bordered()
+            .title(title.centered())
+            .title_bottom(instructions.centered())
+            .border_set(border::THICK);
+        let lines: Vec<ListItem> = self
+            .entries
+            .iter()
+            .map(|i| ListItem::new(format!("{}", i)))
+            .collect();
+        let list = List::new(lines)
+            .block(block)
+            .style(Style::default().white())
+            .highlight_style(Style::default().add_modifier(Modifier::ITALIC))
+            .highlight_symbol(">> ");
+        frame.render_stateful_widget(list, frame.area(), &mut self.nav_state);
     }
 
     fn handle_events(&mut self) -> io::Result<()> {
@@ -177,6 +227,8 @@ impl Tui {
     fn handle_key_event(&mut self, key_event: KeyEvent) {
         match key_event.code {
             KeyCode::Char('q') => self.exit(),
+            KeyCode::Up => self.nav_prev(),
+            KeyCode::Down => self.nav_next(),
             _ => {}
         }
     }
@@ -186,23 +238,13 @@ impl Tui {
     }
 }
 
-impl Widget for &Tui {
-    fn render(self, area: Rect, buf: &mut Buffer) {
-        let title = Line::from(" Log Finder ".bold());
-        let instructions = Line::from(vec![
-            " Up".into(),
-            "<Up>".blue().bold(),
-            " Down".into(),
-            "<Down>".blue().bold(),
-            " Quit ".into(),
-            "<Q> ".blue().bold(),
-        ]);
-        let block = Block::bordered()
-            .title(title.centered())
-            .title_bottom(instructions.centered())
-            .border_set(border::THICK);
+#[test]
+fn handle_key_event() -> io::Result<()> {
+    let entries: Vec<Entry> = Vec::new();
+    let mut tui = Tui::new(entries);
 
-        let counter_text = "hello";
-        Paragraph::new(counter_text).block(block).render(area, buf);
-    }
+    tui.handle_key_event(KeyCode::Char('q').into());
+    assert!(tui.exit);
+
+    Ok(())
 }
