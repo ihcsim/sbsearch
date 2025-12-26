@@ -64,7 +64,6 @@ fn search(path: &Path, v: &mut Vec<Entry>, s: &str) {
             if let Ok(content) = line
                 && content.contains(s)
             {
-                let identifier: Vec<&str> = path.to_str().unwrap().split('/').collect();
                 let timestamp = regex_dt.find(content.as_str()).unwrap();
                 let timestamp_fixed_offset = DateTime::parse_from_rfc3339(timestamp.as_str()).unwrap();
                 let level = match regex_lv.find(content.as_str()) {
@@ -73,10 +72,6 @@ fn search(path: &Path, v: &mut Vec<Entry>, s: &str) {
                 };
 
                 let entry = Entry {
-                    component: Component {
-                        name: String::from(identifier[5]),
-                        namespace: String::from(identifier[4]),
-                    },
                     content: content.clone(),
                     level: String::from(level),
                     path: String::from(path.to_str().unwrap()),
@@ -93,7 +88,6 @@ fn search(path: &Path, v: &mut Vec<Entry>, s: &str) {
 
 #[derive(Debug)]
 struct Entry {
-    component: Component,
     content: String,
     level: String,
     path: String,
@@ -111,18 +105,6 @@ impl fmt::Display for Entry {
             _ => out.blue(),
         };
         write!(f, "{}", msg)
-    }
-}
-
-#[derive(Debug)]
-struct Component {
-    name: String,
-    namespace: String,
-}
-
-impl fmt::Display for Component {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{}/{}", self.namespace, self.name)
     }
 }
 
