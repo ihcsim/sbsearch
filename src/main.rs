@@ -2,8 +2,6 @@ use chrono::{self, DateTime, Utc};
 use clap::Parser;
 use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind};
 use ratatui::{
-    buffer::Buffer,
-    layout::Rect,
     style::{Modifier, Style, Stylize},
     symbols::border,
     text::Line,
