@@ -2,6 +2,8 @@ use chrono::{self, DateTime, Utc};
 use clap::Parser;
 use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind};
 use ratatui::{
+    buffer::Buffer,
+    layout::Rect,
     style::{Modifier, Style, Stylize},
     symbols::border,
     text::Line,
@@ -196,6 +198,8 @@ impl Tui {
             "<Down>".blue().bold(),
             " Quit ".into(),
             "<Q> ".blue().bold(),
+            " Lines: ".into(),
+            format!("{}", self.entries.len()).blue().bold(),
         ]);
         let block = Block::bordered()
             .title(title.centered())
