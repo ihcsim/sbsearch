@@ -60,6 +60,15 @@ impl Tui {
         self.nav_state.select(Some(i));
     }
 
+    fn nav_start(&mut self) {
+        self.nav_state.select(Some(0));
+    }
+
+    fn nav_end(&mut self) {
+        let i = self.entries.len();
+        self.nav_state.select(Some(i));
+    }
+
     fn draw(&mut self, frame: &mut Frame) {
         let title = Line::from(" Support Bundle Log Finder ".bold());
         let instructions = Line::from(vec![
@@ -67,8 +76,12 @@ impl Tui {
             "<Up>".blue().bold(),
             " Down".into(),
             "<Down>".blue().bold(),
+            " Start".into(),
+            "<g> ".blue().bold(),
+            " End".into(),
+            "<G> ".blue().bold(),
             " Quit ".into(),
-            "<Q> ".blue().bold(),
+            "<q> ".blue().bold(),
             " Lines: ".into(),
             format!("{}", self.entries.len()).blue().bold(),
         ]);
@@ -102,6 +115,8 @@ impl Tui {
     fn handle_key_event(&mut self, key_event: KeyEvent) {
         match key_event.code {
             KeyCode::Char('q') => self.exit(),
+            KeyCode::Char('G') => self.nav_end(),
+            KeyCode::Char('g') => self.nav_start(),
             KeyCode::Up => self.nav_prev(),
             KeyCode::Down => self.nav_next(),
             _ => {}
@@ -117,6 +132,12 @@ impl Tui {
 fn handle_key_event() -> io::Result<()> {
     let entries: Vec<super::sbfind::Entry> = Vec::new();
     let mut tui = new(entries);
+
+    tui.handle_key_event(KeyCode::Char('g').into());
+    assert_eq!(tui.nav_state.selected(), Some(0));
+
+    tui.handle_key_event(KeyCode::Char('G').into());
+    assert_eq!(tui.nav_state.selected(), Some(0));
 
     tui.handle_key_event(KeyCode::Char('q').into());
     assert!(tui.exit);
