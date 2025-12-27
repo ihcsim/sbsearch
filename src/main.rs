@@ -1,23 +1,21 @@
 use clap::Parser;
-use sbfind::Entry;
-use std::io;
+use std::error::Error;
 use std::path::Path;
 
 mod sbfind;
 mod tui;
 
-fn main() -> io::Result<()> {
+fn main() -> Result<(), Box<dyn Error>> {
     let args = Args::parse();
     let key = args.key.as_str();
     let root_path = Path::new(args.root_dir.as_str());
 
-    let mut entries: Vec<Entry> = Vec::new();
-    sbfind::search(root_path, key, &mut entries).unwrap();
+    let entries = sbfind::search(root_path, key)?;
 
     let mut terminal = ratatui::init();
-    let app_out = tui::new(entries).run(&mut terminal);
+    tui::new(entries).run(&mut terminal)?;
     ratatui::restore();
-    app_out
+    Ok(())
 }
 
 #[derive(Parser, Debug)]

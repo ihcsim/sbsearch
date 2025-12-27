@@ -20,12 +20,19 @@ impl fmt::Display for Entry {
     }
 }
 
-pub fn search(dir: &Path, key: &str, v: &mut Vec<Entry>) -> io::Result<()> {
+pub fn search(dir: &Path, key: &str) -> Result<Vec<Entry>, io::Error> {
+    let mut entries: Vec<Entry> = Vec::new();
+    search_tree(dir, key, &mut entries)?;
+    entries.sort_by(|a, b| a.timestamp.cmp(&b.timestamp));
+    Ok(entries)
+}
+
+fn search_tree(dir: &Path, key: &str, v: &mut Vec<Entry>) -> io::Result<()> {
     for entry in fs::read_dir(dir)? {
         let entry = entry?;
         let path = entry.path();
         if path.is_dir() {
-            search(&path, key, v)?;
+            search_tree(&path, key, v)?;
             continue;
         }
 
@@ -36,7 +43,6 @@ pub fn search(dir: &Path, key: &str, v: &mut Vec<Entry>) -> io::Result<()> {
 
         println!("skipping {}", path.display())
     }
-    v.sort_by(|a, b| a.timestamp.cmp(&b.timestamp));
     Ok(())
 }
 
