@@ -7,6 +7,7 @@ use ratatui::{
     DefaultTerminal, Frame,
 };
 use std::io;
+use textwrap::Options;
 
 #[derive(Debug, Default)]
 pub struct Tui {
@@ -85,21 +86,27 @@ impl Tui {
             " Lines: ".into(),
             format!("{}", self.entries.len()).blue().bold(),
         ]);
+        let lines: Vec<ListItem> = self
+            .entries
+            .iter()
+            .map(|entry| {
+                let width = frame.area().as_size().width as usize;
+                let options = Options::new(width);
+                let text = format!("{}", entry);
+                let wrapped = textwrap::fill(text.as_str(), options);
 
+                match entry.level.as_str() {
+                    "level=error" => ListItem::new(wrapped).red(),
+                    "level=info" => ListItem::new(wrapped).green(),
+                    "level=warning" => ListItem::new(wrapped).yellow(),
+                    _ => ListItem::new(wrapped),
+                }
+            })
+            .collect();
         let block = Block::bordered()
             .title(title.centered())
             .title_bottom(instructions.centered())
             .border_set(border::THICK);
-        let lines: Vec<ListItem> = self
-            .entries
-            .iter()
-            .map(|entry| match entry.level.as_str() {
-                "level=error" => ListItem::new(format!("{}", entry)).red(),
-                "level=info" => ListItem::new(format!("{}", entry)).green(),
-                "level=warning" => ListItem::new(format!("{}", entry)).yellow(),
-                _ => ListItem::new(format!("{}", entry)),
-            })
-            .collect();
         let list = List::new(lines)
             .block(block)
             .style(Style::default().white())
