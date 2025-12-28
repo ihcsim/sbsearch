@@ -85,6 +85,7 @@ impl Tui {
             " Lines: ".into(),
             format!("{}", self.entries.len()).blue().bold(),
         ]);
+
         let block = Block::bordered()
             .title(title.centered())
             .title_bottom(instructions.centered())
@@ -92,7 +93,12 @@ impl Tui {
         let lines: Vec<ListItem> = self
             .entries
             .iter()
-            .map(|i| ListItem::new(format!("{}", i)))
+            .map(|entry| match entry.level.as_str() {
+                "level=error" => ListItem::new(format!("{}", entry)).red(),
+                "level=info" => ListItem::new(format!("{}", entry)).green(),
+                "level=warning" => ListItem::new(format!("{}", entry)).yellow(),
+                _ => ListItem::new(format!("{}", entry)),
+            })
             .collect();
         let list = List::new(lines)
             .block(block)

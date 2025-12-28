@@ -7,8 +7,8 @@ use std::path::Path;
 
 #[derive(Debug)]
 pub struct Entry {
+    pub level: String,
     content: String,
-    level: String,
     path: String,
     timestamp: DateTime<Utc>,
 }
@@ -69,7 +69,6 @@ fn search_file(path: &Path, v: &mut Vec<Entry>, s: &str) {
                     path: String::from(path.to_str().unwrap()),
                     timestamp: timestamp_fixed_offset.with_timezone(&Utc),
                 };
-
                 v.push(entry);
             }
         }
