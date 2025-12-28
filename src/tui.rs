@@ -11,13 +11,15 @@ use textwrap::Options;
 
 #[derive(Debug, Default)]
 pub struct Tui {
+    name: String,
     entries: Vec<super::sbfind::Entry>,
-    nav_state: ListState,
     exit: bool,
+    nav_state: ListState,
 }
 
-pub fn new(entries: Vec<super::sbfind::Entry>) -> Tui {
+pub fn new(support_bundle_name: String, entries: Vec<super::sbfind::Entry>) -> Tui {
     Tui {
+        name: support_bundle_name,
         entries,
         exit: false,
         nav_state: ListState::default().with_selected(Some(0)),
@@ -71,7 +73,7 @@ impl Tui {
     }
 
     fn draw(&mut self, frame: &mut Frame) {
-        let title = Line::from(" Support Bundle Log Finder ".bold());
+        let title = Line::from(self.name.as_str().bold());
         let instructions = Line::from(vec![
             " Up".into(),
             "<Up>".blue().bold(),
@@ -144,7 +146,7 @@ impl Tui {
 #[test]
 fn handle_key_event() -> io::Result<()> {
     let entries: Vec<super::sbfind::Entry> = Vec::new();
-    let mut tui = new(entries);
+    let mut tui = new(String::new(), entries);
 
     tui.handle_key_event(KeyCode::Char('g').into());
     assert_eq!(tui.nav_state.selected(), Some(0));
