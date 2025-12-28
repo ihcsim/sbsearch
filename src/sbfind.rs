@@ -1,5 +1,6 @@
 use chrono::{self, DateTime, Utc};
 use regex::Regex;
+use std::error::Error;
 use std::fmt;
 use std::fs::{self, File};
 use std::io::{self, BufRead};
@@ -20,14 +21,14 @@ impl fmt::Display for Entry {
     }
 }
 
-pub fn search(dir: &Path, key: &str) -> Result<Vec<Entry>, io::Error> {
+pub fn search(dir: &Path, key: &str) -> Result<Vec<Entry>, Box<dyn Error>> {
     let mut entries: Vec<Entry> = Vec::new();
     search_tree(dir, key, &mut entries)?;
     entries.sort_by(|a, b| a.timestamp.cmp(&b.timestamp));
     Ok(entries)
 }
 
-fn search_tree(dir: &Path, key: &str, v: &mut Vec<Entry>) -> io::Result<()> {
+fn search_tree(dir: &Path, key: &str, v: &mut Vec<Entry>) -> Result<(), Box<dyn Error>> {
     for entry in fs::read_dir(dir)? {
         let entry = entry?;
         let path = entry.path();
@@ -37,7 +38,7 @@ fn search_tree(dir: &Path, key: &str, v: &mut Vec<Entry>) -> io::Result<()> {
         }
 
         if path.is_file() {
-            search_file(&path, v, key);
+            search_file(&path, v, key)?;
             continue;
         }
 
@@ -46,9 +47,9 @@ fn search_tree(dir: &Path, key: &str, v: &mut Vec<Entry>) -> io::Result<()> {
     Ok(())
 }
 
-fn search_file(path: &Path, v: &mut Vec<Entry>, s: &str) {
-    let regex_dt = Regex::new(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z").unwrap();
-    let regex_lv = Regex::new(r"level=([^\s]+)").unwrap();
+fn search_file(path: &Path, v: &mut Vec<Entry>, s: &str) -> Result<(), Box<dyn Error>> {
+    let regex_dt = Regex::new(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z")?;
+    let regex_lv = Regex::new(r"level=([^\s]+)")?;
 
     if let Ok(file) = File::open(path) {
         let reader = io::BufReader::new(file);
@@ -72,7 +73,6 @@ fn search_file(path: &Path, v: &mut Vec<Entry>, s: &str) {
                 v.push(entry);
             }
         }
-    } else {
-        println!("could no open file: {}", path.display());
     }
+    Ok(())
 }
