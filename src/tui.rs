@@ -35,41 +35,8 @@ impl Tui {
         Ok(())
     }
 
-    fn nav_next(&mut self) {
-        let i = match self.nav_state.selected() {
-            Some(i) => {
-                if i >= self.entries.len() - 1 {
-                    0 // Wrap around to the start
-                } else {
-                    i + 1
-                }
-            }
-            None => 0,
-        };
-        self.nav_state.select(Some(i));
-    }
-
-    fn nav_prev(&mut self) {
-        let i = match self.nav_state.selected() {
-            Some(i) => {
-                if i == 0 {
-                    self.entries.len() - 1 // Wrap around to the end
-                } else {
-                    i - 1
-                }
-            }
-            None => 0,
-        };
-        self.nav_state.select(Some(i));
-    }
-
-    fn nav_start(&mut self) {
-        self.nav_state.select(Some(0));
-    }
-
-    fn nav_end(&mut self) {
-        let i = self.entries.len();
-        self.nav_state.select(Some(i));
+    fn exit(&mut self) {
+        self.exit = true
     }
 
     fn draw(&mut self, frame: &mut Frame) {
@@ -138,8 +105,41 @@ impl Tui {
         }
     }
 
-    fn exit(&mut self) {
-        self.exit = true
+    fn nav_next(&mut self) {
+        let i = match self.nav_state.selected() {
+            Some(i) => {
+                if i >= self.entries.len() - 1 {
+                    0 // Wrap around to the start
+                } else {
+                    i + 1
+                }
+            }
+            None => 0,
+        };
+        self.nav_state.select(Some(i));
+    }
+
+    fn nav_prev(&mut self) {
+        let i = match self.nav_state.selected() {
+            Some(i) => {
+                if i == 0 {
+                    self.entries.len() - 1 // Wrap around to the end
+                } else {
+                    i - 1
+                }
+            }
+            None => 0,
+        };
+        self.nav_state.select(Some(i));
+    }
+
+    fn nav_start(&mut self) {
+        self.nav_state.select(Some(0));
+    }
+
+    fn nav_end(&mut self) {
+        let i = self.entries.len();
+        self.nav_state.select(Some(i));
     }
 }
 
