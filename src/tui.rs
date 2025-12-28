@@ -132,8 +132,8 @@ impl Tui {
             KeyCode::Char('q') => self.exit(),
             KeyCode::Char('G') => self.nav_end(),
             KeyCode::Char('g') => self.nav_start(),
-            KeyCode::Up => self.nav_prev(),
-            KeyCode::Down => self.nav_next(),
+            KeyCode::Up | KeyCode::Char('k') => self.nav_prev(),
+            KeyCode::Down | KeyCode::Char('j') => self.nav_next(),
             _ => {}
         }
     }
