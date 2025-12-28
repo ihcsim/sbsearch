@@ -97,7 +97,7 @@ impl Tui {
 
                 match entry.level.as_str() {
                     "level=error" => ListItem::new(wrapped).red(),
-                    "level=info" => ListItem::new(wrapped).green(),
+                    "level=info" => ListItem::new(wrapped),
                     "level=warning" => ListItem::new(wrapped).yellow(),
                     _ => ListItem::new(wrapped),
                 }
