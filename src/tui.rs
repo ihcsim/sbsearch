@@ -64,6 +64,19 @@ impl Tui {
         .block(title_block);
         frame.render_widget(title, sections[0]);
 
+        let (path, pos) = match self.nav_state.selected() {
+            Some(pos) => {
+                let path_str = self.entries[pos].path.as_str();
+                let name_str = self.name.as_str();
+                if let Some(index) = path_str.find(name_str) {
+                    (&path_str[index + name_str.len()..path_str.len()], pos + 1)
+                } else {
+                    ("", 0)
+                }
+            }
+            None => ("", 0),
+        };
+
         let instructions = Line::from(vec![
             Span::styled(" Up", Style::default()),
             Span::styled("<Up>", Style::default().fg(Color::Blue).bold()),
@@ -76,11 +89,14 @@ impl Tui {
             Span::styled(" Quit", Style::default()),
             Span::styled("<q>", Style::default().fg(Color::Blue).bold()),
             Span::styled(" | ", Style::default().fg(Color::White)),
-            Span::styled(" Lines: ", Style::default()),
+            Span::styled(" Line: ", Style::default()),
             Span::styled(
-                format!("{}", self.entries.len()),
+                format!("{}/{}", pos, self.entries.len()),
                 Style::default().fg(Color::Blue).bold(),
             ),
+            Span::styled(" | ", Style::default().fg(Color::White)),
+            Span::styled(" Path: ", Style::default()),
+            Span::styled(path, Style::default()),
         ]);
         let instruction_block = Block::default().borders(Borders::NONE);
         let instruction = Paragraph::new(instructions)
@@ -91,11 +107,10 @@ impl Tui {
         let lines: Vec<ListItem> = self
             .entries
             .iter()
-            .enumerate()
-            .map(|(index, entry)| {
+            .map(|entry| {
                 let width = frame.area().as_size().width as usize;
                 let options = Options::new(width);
-                let text = format!("{}  {}", index, entry);
+                let text = format!("{}", entry);
                 let wrapped = textwrap::fill(text.as_str(), options);
 
                 match entry.level.as_str() {
@@ -169,8 +184,10 @@ impl Tui {
     }
 
     fn nav_end(&mut self) {
-        let i = self.entries.len();
-        self.nav_state.select(Some(i));
+        if !self.entries.is_empty() {
+            let i = self.entries.len() - 1;
+            self.nav_state.select(Some(i));
+        }
     }
 }
 

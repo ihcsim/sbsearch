@@ -9,8 +9,8 @@ use std::path::Path;
 #[derive(Debug)]
 pub struct Entry {
     pub level: String,
+    pub path: String,
     content: String,
-    path: String,
     timestamp: DateTime<Utc>,
 }
 
