@@ -58,7 +58,8 @@ fn search_file(path: &Path, v: &mut Vec<Entry>, s: &str) -> Result<(), Box<dyn E
                 && content.contains(s)
             {
                 let timestamp = regex_dt.find(content.as_str()).unwrap();
-                let timestamp_fixed_offset = DateTime::parse_from_rfc3339(timestamp.as_str()).unwrap();
+                let timestamp_fixed_offset =
+                    DateTime::parse_from_rfc3339(timestamp.as_str()).unwrap();
                 let level = match regex_lv.find(content.as_str()) {
                     None => "unknown",
                     Some(r) => r.as_str(),
