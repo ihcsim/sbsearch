@@ -91,10 +91,11 @@ impl Tui {
         let lines: Vec<ListItem> = self
             .entries
             .iter()
-            .map(|entry| {
+            .enumerate()
+            .map(|(index, entry)| {
                 let width = frame.area().as_size().width as usize;
                 let options = Options::new(width);
-                let text = format!("{}", entry);
+                let text = format!("{}  {}", index, entry);
                 let wrapped = textwrap::fill(text.as_str(), options);
 
                 match entry.level.as_str() {
