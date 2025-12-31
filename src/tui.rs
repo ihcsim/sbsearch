@@ -1,5 +1,6 @@
 use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind};
 use ratatui::{
+    DefaultTerminal, Frame,
     layout::{Alignment, Constraint, Direction, Layout, Rect, Spacing},
     style::{Color, Modifier, Style, Stylize},
     text::{Line, Span, Text},
@@ -7,7 +8,6 @@ use ratatui::{
         Block, Borders, List, ListItem, ListState, Paragraph, Scrollbar, ScrollbarOrientation,
         ScrollbarState,
     },
-    DefaultTerminal, Frame,
 };
 use std::io;
 use std::rc::Rc;
