@@ -15,20 +15,26 @@ use textwrap::Options;
 
 #[derive(Debug, Default)]
 pub struct Tui {
-    name: String,
     entries: Vec<super::sbfind::Entry>,
     exit: bool,
     nav_state: ListState,
+    resource_name: String,
+    support_bundle_path: String,
     vertical_scroll_state: ScrollbarState,
     vertical_scroll: usize,
 }
 
-pub fn new(support_bundle_name: String, entries: Vec<super::sbfind::Entry>) -> Tui {
+pub fn new(
+    support_bundle_path: &str,
+    resource_name: &str,
+    entries: Vec<super::sbfind::Entry>,
+) -> Tui {
     Tui {
-        name: support_bundle_name,
         entries,
         exit: false,
         nav_state: ListState::default().with_selected(Some(0)),
+        resource_name: String::from(resource_name),
+        support_bundle_path: String::from(support_bundle_path),
         vertical_scroll_state: ScrollbarState::default(),
         vertical_scroll: 0,
     }
@@ -65,7 +71,7 @@ impl Tui {
 
         let title_block = Block::default().borders(Borders::ALL);
         let title_para = Paragraph::new(Text::styled(
-            self.name.clone(),
+            self.support_bundle_path.clone(),
             Style::default().fg(Color::Green).bold(),
         ))
         .alignment(Alignment::Center)
@@ -75,7 +81,7 @@ impl Tui {
         let (path, pos) = match self.nav_state.selected() {
             Some(pos) => {
                 let path_str = self.entries[pos].path.as_str();
-                let name_str = self.name.as_str();
+                let name_str = self.support_bundle_path.as_str();
                 if let Some(index) = path_str.find(name_str) {
                     (&path_str[index + name_str.len()..path_str.len()], pos + 1)
                 } else {
@@ -106,18 +112,26 @@ impl Tui {
         let meta_block = Block::default().borders(Borders::ALL);
         let meta_lines = vec![
             Line::from(vec![
-                Span::styled("Filepath: ", Style::default().fg(Color::Green).bold()),
-                Span::styled(path, Style::default().fg(Color::Green).bold()),
-            ]),
-            Line::from(vec![
+                Span::styled("Resource name: ", Style::default().fg(Color::Green).bold()),
+                Span::styled(
+                    &self.resource_name,
+                    Style::default().fg(Color::Green).bold(),
+                ),
+                Span::styled(" | ", Style::default().fg(Color::White)),
                 Span::styled("Line: ", Style::default().fg(Color::Green).bold()),
                 Span::styled(
                     format!("{}/{}", pos, self.entries.len()),
                     Style::default().fg(Color::Green).bold(),
                 ),
             ]),
+            Line::from(vec![
+                Span::styled("Filepath: ", Style::default().fg(Color::Green).bold()),
+                Span::styled(path, Style::default().fg(Color::Green).bold()),
+            ]),
         ];
-        let meta_para = Paragraph::new(meta_lines).block(meta_block);
+        let meta_para = Paragraph::new(meta_lines)
+            .block(meta_block)
+            .alignment(Alignment::Center);
         frame.render_widget(meta_para, sections[2]);
 
         let lines: Vec<ListItem> = self
