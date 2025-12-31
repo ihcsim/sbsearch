@@ -41,6 +41,7 @@ fn draw_layout(frame: &mut Frame) -> Rc<[Rect]> {
         .constraints([
             Constraint::Length(3),
             Constraint::Length(2),
+            Constraint::Length(4),
             Constraint::Fill(1),
         ])
         .split(frame.area())
@@ -63,13 +64,13 @@ impl Tui {
         let sections = draw_layout(frame);
 
         let title_block = Block::default().borders(Borders::ALL);
-        let title = Paragraph::new(Text::styled(
+        let title_para = Paragraph::new(Text::styled(
             self.name.clone(),
             Style::default().fg(Color::Green).bold(),
         ))
         .alignment(Alignment::Center)
         .block(title_block);
-        frame.render_widget(title, sections[0]);
+        frame.render_widget(title_para, sections[0]);
 
         let (path, pos) = match self.nav_state.selected() {
             Some(pos) => {
@@ -84,7 +85,8 @@ impl Tui {
             None => ("", 0),
         };
 
-        let instructions = Line::from(vec![
+        let instruction_block = Block::default().borders(Borders::NONE);
+        let instruction_lines = Line::from(vec![
             Span::styled(" Up", Style::default()),
             Span::styled("<Up>", Style::default().fg(Color::Blue).bold()),
             Span::styled(" Down", Style::default()),
@@ -95,21 +97,28 @@ impl Tui {
             Span::styled("<G>", Style::default().fg(Color::Blue).bold()),
             Span::styled(" Quit", Style::default()),
             Span::styled("<q>", Style::default().fg(Color::Blue).bold()),
-            Span::styled(" | ", Style::default().fg(Color::White)),
-            Span::styled(" Line: ", Style::default()),
-            Span::styled(
-                format!("{}/{}", pos, self.entries.len()),
-                Style::default().fg(Color::Blue).bold(),
-            ),
-            Span::styled(" | ", Style::default().fg(Color::White)),
-            Span::styled(" Path: ", Style::default()),
-            Span::styled(path, Style::default()),
         ]);
-        let instruction_block = Block::default().borders(Borders::NONE);
-        let instruction = Paragraph::new(instructions)
+        let instruction_para = Paragraph::new(instruction_lines)
             .block(instruction_block)
             .alignment(Alignment::Center);
-        frame.render_widget(instruction, sections[1]);
+        frame.render_widget(instruction_para, sections[1]);
+
+        let meta_block = Block::default().borders(Borders::ALL);
+        let meta_lines = vec![
+            Line::from(vec![
+                Span::styled("Filepath: ", Style::default().fg(Color::Green).bold()),
+                Span::styled(path, Style::default().fg(Color::Green).bold()),
+            ]),
+            Line::from(vec![
+                Span::styled("Line: ", Style::default().fg(Color::Green).bold()),
+                Span::styled(
+                    format!("{}/{}", pos, self.entries.len()),
+                    Style::default().fg(Color::Green).bold(),
+                ),
+            ]),
+        ];
+        let meta_para = Paragraph::new(meta_lines).block(meta_block);
+        frame.render_widget(meta_para, sections[2]);
 
         let lines: Vec<ListItem> = self
             .entries
@@ -135,14 +144,14 @@ impl Tui {
             .style(Style::default().white())
             .highlight_style(Style::default().add_modifier(Modifier::ITALIC))
             .highlight_symbol(">> ");
-        frame.render_stateful_widget(list, sections[2], &mut self.nav_state);
+        frame.render_stateful_widget(list, sections[3], &mut self.nav_state);
 
         self.vertical_scroll_state = self.vertical_scroll_state.content_length(lines_count);
         frame.render_stateful_widget(
             Scrollbar::new(ScrollbarOrientation::VerticalRight)
                 .begin_symbol(Some("↑"))
                 .end_symbol(Some("↓")),
-            sections[2],
+            sections[3],
             &mut self.vertical_scroll_state,
         );
     }
