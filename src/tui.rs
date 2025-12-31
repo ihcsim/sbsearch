@@ -1,10 +1,13 @@
 use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind};
 use ratatui::{
-    DefaultTerminal, Frame,
     layout::{Alignment, Constraint, Direction, Layout, Rect, Spacing},
     style::{Color, Modifier, Style, Stylize},
     text::{Line, Span, Text},
-    widgets::{Block, Borders, List, ListItem, ListState, Paragraph},
+    widgets::{
+        Block, Borders, List, ListItem, ListState, Paragraph, Scrollbar, ScrollbarOrientation,
+        ScrollbarState,
+    },
+    DefaultTerminal, Frame,
 };
 use std::io;
 use std::rc::Rc;
@@ -16,6 +19,8 @@ pub struct Tui {
     entries: Vec<super::sbfind::Entry>,
     exit: bool,
     nav_state: ListState,
+    vertical_scroll_state: ScrollbarState,
+    vertical_scroll: usize,
 }
 
 pub fn new(support_bundle_name: String, entries: Vec<super::sbfind::Entry>) -> Tui {
@@ -24,6 +29,8 @@ pub fn new(support_bundle_name: String, entries: Vec<super::sbfind::Entry>) -> T
         entries,
         exit: false,
         nav_state: ListState::default().with_selected(Some(0)),
+        vertical_scroll_state: ScrollbarState::default(),
+        vertical_scroll: 0,
     }
 }
 
@@ -121,6 +128,7 @@ impl Tui {
                 }
             })
             .collect();
+        let lines_count = lines.len();
         let list_block = Block::default().borders(Borders::ALL);
         let list = List::new(lines)
             .block(list_block)
@@ -128,6 +136,15 @@ impl Tui {
             .highlight_style(Style::default().add_modifier(Modifier::ITALIC))
             .highlight_symbol(">> ");
         frame.render_stateful_widget(list, sections[2], &mut self.nav_state);
+
+        self.vertical_scroll_state = self.vertical_scroll_state.content_length(lines_count);
+        frame.render_stateful_widget(
+            Scrollbar::new(ScrollbarOrientation::VerticalRight)
+                .begin_symbol(Some("↑"))
+                .end_symbol(Some("↓")),
+            sections[2],
+            &mut self.vertical_scroll_state,
+        );
     }
 
     fn handle_events(&mut self) -> io::Result<()> {
@@ -152,6 +169,8 @@ impl Tui {
     }
 
     fn nav_next(&mut self) {
+        self.vertical_scroll = self.vertical_scroll.saturating_add(1);
+        self.vertical_scroll_state = self.vertical_scroll_state.position(self.vertical_scroll);
         let i = match self.nav_state.selected() {
             Some(i) => {
                 if i >= self.entries.len() - 1 {
@@ -166,6 +185,8 @@ impl Tui {
     }
 
     fn nav_prev(&mut self) {
+        self.vertical_scroll = self.vertical_scroll.saturating_sub(1);
+        self.vertical_scroll_state = self.vertical_scroll_state.position(self.vertical_scroll);
         let i = match self.nav_state.selected() {
             Some(i) => {
                 if i == 0 {
@@ -180,13 +201,15 @@ impl Tui {
     }
 
     fn nav_start(&mut self) {
+        self.vertical_scroll_state = self.vertical_scroll_state.position(0);
         self.nav_state.select(Some(0));
     }
 
     fn nav_end(&mut self) {
         if !self.entries.is_empty() {
-            let i = self.entries.len() - 1;
-            self.nav_state.select(Some(i));
+            let end = self.entries.len() - 1;
+            self.vertical_scroll_state = self.vertical_scroll_state.position(end);
+            self.nav_state.select(Some(end));
         }
     }
 }
