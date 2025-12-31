@@ -10,8 +10,8 @@ use std::path::Path;
 pub struct Entry {
     pub level: String,
     pub path: String,
-    content: String,
-    timestamp: DateTime<Utc>,
+    pub content: String,
+    pub timestamp: DateTime<Utc>,
 }
 
 impl fmt::Display for Entry {

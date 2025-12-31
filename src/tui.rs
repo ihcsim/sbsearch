@@ -239,13 +239,47 @@ impl Tui {
 
 #[test]
 fn handle_key_event() -> io::Result<()> {
-    let entries: Vec<super::sbfind::Entry> = Vec::new();
-    let mut tui = new(String::new(), entries);
+    let entries: Vec<super::sbfind::Entry> = vec![
+        super::sbfind::Entry {
+            level: String::from("level=info"),
+            path: String::from("/path/to/log1"),
+            content: String::from("This is an info log entry."),
+            timestamp: chrono::Utc::now(),
+        },
+        super::sbfind::Entry {
+            level: String::from("level=warning"),
+            path: String::from("/path/to/log2"),
+            content: String::from("This is an warning log entry."),
+            timestamp: chrono::Utc::now(),
+        },
+        super::sbfind::Entry {
+            level: String::from("level=error"),
+            path: String::from("/path/to/log3"),
+            content: String::from("This is an error log entry."),
+            timestamp: chrono::Utc::now(),
+        },
+    ];
+    let mut tui = new("sb_path", "pvc_name", entries);
 
-    tui.handle_key_event(KeyCode::Char('g').into());
+    assert_eq!(tui.support_bundle_path, "sb_path");
+    assert_eq!(tui.resource_name, "pvc_name");
+
+    tui.handle_key_event(KeyCode::Char('j').into());
+    assert_eq!(tui.nav_state.selected(), Some(1));
+
+    tui.handle_key_event(KeyCode::Down.into());
+    assert_eq!(tui.nav_state.selected(), Some(2));
+
+    tui.handle_key_event(KeyCode::Char('k').into());
+    assert_eq!(tui.nav_state.selected(), Some(1));
+
+    tui.handle_key_event(KeyCode::Up.into());
     assert_eq!(tui.nav_state.selected(), Some(0));
 
     tui.handle_key_event(KeyCode::Char('G').into());
+    assert_eq!(tui.nav_state.selected(), Some(2));
+
+    tui.handle_key_event(KeyCode::Char('g').into());
     assert_eq!(tui.nav_state.selected(), Some(0));
 
     tui.handle_key_event(KeyCode::Char('q').into());
