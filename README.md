@@ -3,7 +3,7 @@
 `sbfind` is a [Harvester support bundle][1] tool that display resource logs in
 chronological order.
 
-![screenshot of the sbfind tui displaying resource logs output](./img/tui.img)
+![screenshot of the sbfind tui displaying resource logs output](./img/tui.png)
 
 ## Usage
 
