@@ -15,6 +15,7 @@ use textwrap::Options;
 
 #[derive(Debug, Default)]
 pub struct Tui {
+    current_screen: Screen,
     entries: Vec<super::sbfind::Entry>,
     exit: bool,
     nav_state: ListState,
@@ -24,12 +25,20 @@ pub struct Tui {
     vertical_scroll: usize,
 }
 
+#[derive(Debug, Default, PartialEq)]
+enum Screen {
+    #[default]
+    Main,
+    ConfirmExit,
+}
+
 pub fn new(
     support_bundle_path: &str,
     resource_name: &str,
     entries: Vec<super::sbfind::Entry>,
 ) -> Tui {
     Tui {
+        current_screen: Screen::Main,
         entries,
         exit: false,
         nav_state: ListState::default().with_selected(Some(0)),
@@ -40,7 +49,7 @@ pub fn new(
     }
 }
 
-fn draw_layout(frame: &mut Frame) -> Rc<[Rect]> {
+fn split_main_layout(r: Rect) -> Rc<[Rect]> {
     Layout::default()
         .direction(Direction::Vertical)
         .spacing(Spacing::Overlap(1))
@@ -50,13 +59,41 @@ fn draw_layout(frame: &mut Frame) -> Rc<[Rect]> {
             Constraint::Length(4),
             Constraint::Fill(1),
         ])
-        .split(frame.area())
+        .split(r)
+}
+
+fn split_popup_layout(percent_x: u16, percent_y: u16, r: Rect) -> Rect {
+    let popup_area = Layout::default()
+        .direction(Direction::Vertical)
+        .constraints([
+            Constraint::Percentage((100 - percent_y) / 2),
+            Constraint::Percentage(percent_y),
+            Constraint::Percentage((100 - percent_y) / 2),
+        ])
+        .split(r);
+    Layout::default()
+        .direction(Direction::Horizontal)
+        .constraints([
+            Constraint::Percentage((100 - percent_x) / 2),
+            Constraint::Percentage(percent_x),
+            Constraint::Percentage((100 - percent_x) / 2),
+        ])
+        .split(popup_area[1])[1]
 }
 
 impl Tui {
     pub fn run(&mut self, terminal: &mut DefaultTerminal) -> io::Result<()> {
         while !self.exit {
-            terminal.draw(|frame| self.draw(frame))?;
+            terminal.draw(|frame| match self.current_screen {
+                Screen::ConfirmExit => self.draw_popup(
+                    "Confirm Exit",
+                    "are you sure you want to exit? (y/n)",
+                    30,
+                    15,
+                    frame,
+                ),
+                _ => self.draw_main(frame),
+            })?;
             self.handle_events()?;
         }
         Ok(())
@@ -66,8 +103,8 @@ impl Tui {
         self.exit = true
     }
 
-    fn draw(&mut self, frame: &mut Frame) {
-        let sections = draw_layout(frame);
+    fn draw_main(&mut self, frame: &mut Frame) {
+        let sections = split_main_layout(frame.area());
 
         let title_block = Block::default().borders(Borders::ALL);
         let title_para = Paragraph::new(Text::styled(
@@ -170,6 +207,25 @@ impl Tui {
         );
     }
 
+    fn draw_popup(
+        &mut self,
+        title: &str,
+        text: &str,
+        percent_x: u16,
+        percent_y: u16,
+        frame: &mut Frame,
+    ) {
+        let popup_area = split_popup_layout(percent_x, percent_y, frame.area());
+        let popup_block = Block::default()
+            .title(Line::from(title).centered())
+            .borders(Borders::ALL)
+            .style(Style::default());
+        let popup_para = Paragraph::new(text)
+            .block(popup_block)
+            .alignment(Alignment::Center);
+        frame.render_widget(popup_para, popup_area);
+    }
+
     fn handle_events(&mut self) -> io::Result<()> {
         match event::read()? {
             Event::Key(key_event) if key_event.kind == KeyEventKind::Press => {
@@ -181,13 +237,20 @@ impl Tui {
     }
 
     fn handle_key_event(&mut self, key_event: KeyEvent) {
-        match key_event.code {
-            KeyCode::Char('q') => self.exit(),
-            KeyCode::Char('G') => self.nav_end(),
-            KeyCode::Char('g') => self.nav_start(),
-            KeyCode::Up | KeyCode::Char('k') => self.nav_prev(),
-            KeyCode::Down | KeyCode::Char('j') => self.nav_next(),
-            _ => {}
+        match self.current_screen {
+            Screen::Main => match key_event.code {
+                KeyCode::Char('q') => self.current_screen = Screen::ConfirmExit,
+                KeyCode::Char('G') => self.nav_end(),
+                KeyCode::Char('g') => self.nav_start(),
+                KeyCode::Up | KeyCode::Char('k') => self.nav_prev(),
+                KeyCode::Down | KeyCode::Char('j') => self.nav_next(),
+                _ => {}
+            },
+            Screen::ConfirmExit => match key_event.code {
+                KeyCode::Char('y') => self.exit(),
+                KeyCode::Char('n') => self.current_screen = Screen::Main,
+                _ => {}
+            },
         }
     }
 
@@ -238,7 +301,7 @@ impl Tui {
 }
 
 #[test]
-fn handle_key_event() -> io::Result<()> {
+fn new_and_handle_key_event() -> io::Result<()> {
     let entries: Vec<super::sbfind::Entry> = vec![
         super::sbfind::Entry {
             level: String::from("level=info"),
@@ -263,6 +326,7 @@ fn handle_key_event() -> io::Result<()> {
 
     assert_eq!(tui.support_bundle_path, "sb_path");
     assert_eq!(tui.resource_name, "pvc_name");
+    assert_eq!(tui.current_screen, Screen::Main);
 
     tui.handle_key_event(KeyCode::Char('j').into());
     assert_eq!(tui.nav_state.selected(), Some(1));
@@ -283,7 +347,12 @@ fn handle_key_event() -> io::Result<()> {
     assert_eq!(tui.nav_state.selected(), Some(0));
 
     tui.handle_key_event(KeyCode::Char('q').into());
+    assert_eq!(tui.current_screen, Screen::ConfirmExit);
+
+    tui.current_screen = Screen::ConfirmExit;
+    tui.handle_key_event(KeyCode::Char('y').into());
     assert!(tui.exit);
+    tui.current_screen = Screen::Main;
 
     Ok(())
 }
