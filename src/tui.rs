@@ -19,7 +19,7 @@ pub struct Tui {
     entries: Vec<super::sbfind::Entry>,
     exit: bool,
     nav_state: ListState,
-    resource_name: String,
+    keyword: String,
     support_bundle_path: String,
     vertical_scroll_state: ScrollbarState,
     vertical_scroll: usize,
@@ -32,17 +32,13 @@ enum Screen {
     ConfirmExit,
 }
 
-pub fn new(
-    support_bundle_path: &str,
-    resource_name: &str,
-    entries: Vec<super::sbfind::Entry>,
-) -> Tui {
+pub fn new(support_bundle_path: &str, keyword: &str, entries: Vec<super::sbfind::Entry>) -> Tui {
     Tui {
         current_screen: Screen::Main,
         entries,
         exit: false,
         nav_state: ListState::default().with_selected(Some(0)),
-        resource_name: String::from(resource_name),
+        keyword: String::from(keyword),
         support_bundle_path: String::from(support_bundle_path),
         vertical_scroll_state: ScrollbarState::default(),
         vertical_scroll: 0,
@@ -149,11 +145,8 @@ impl Tui {
         let meta_block = Block::default().borders(Borders::ALL);
         let meta_lines = vec![
             Line::from(vec![
-                Span::styled("Resource name: ", Style::default().fg(Color::Green).bold()),
-                Span::styled(
-                    &self.resource_name,
-                    Style::default().fg(Color::Green).bold(),
-                ),
+                Span::styled("Keyword", Style::default().fg(Color::Green).bold()),
+                Span::styled(&self.keyword, Style::default().fg(Color::Green).bold()),
                 Span::styled(" | ", Style::default().fg(Color::White)),
                 Span::styled("Line: ", Style::default().fg(Color::Green).bold()),
                 Span::styled(
@@ -325,7 +318,7 @@ fn new_and_handle_key_event() -> io::Result<()> {
     let mut tui = new("sb_path", "pvc_name", entries);
 
     assert_eq!(tui.support_bundle_path, "sb_path");
-    assert_eq!(tui.resource_name, "pvc_name");
+    assert_eq!(tui.keyword, "pvc_name");
     assert_eq!(tui.current_screen, Screen::Main);
 
     tui.handle_key_event(KeyCode::Char('j').into());
