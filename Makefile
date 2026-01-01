@@ -17,3 +17,6 @@ release:
 
 test:
 	cargo test
+
+deps:
+	cargo machete --fix
