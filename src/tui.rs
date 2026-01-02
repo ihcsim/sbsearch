@@ -48,10 +48,8 @@ pub fn new(support_bundle_path: &str, keyword: &str, entries: Vec<super::sbfind:
 fn split_main_layout(r: Rect) -> Rc<[Rect]> {
     Layout::default()
         .direction(Direction::Vertical)
-        .spacing(Spacing::Overlap(1))
         .constraints([
             Constraint::Length(3),
-            Constraint::Length(2),
             Constraint::Length(4),
             Constraint::Fill(1),
         ])
@@ -102,7 +100,22 @@ impl Tui {
     fn draw_main(&mut self, frame: &mut Frame) {
         let sections = split_main_layout(frame.area());
 
-        let title_block = Block::default().borders(Borders::ALL);
+        let instructions = Line::from(vec![
+            Span::styled(" Up", Style::default()),
+            Span::styled("<Up>", Style::default().fg(Color::Blue).bold()),
+            Span::styled(" Down", Style::default()),
+            Span::styled("<Down>", Style::default().fg(Color::Blue).bold()),
+            Span::styled(" Start", Style::default()),
+            Span::styled("<g>", Style::default().fg(Color::Blue).bold()),
+            Span::styled(" End", Style::default()),
+            Span::styled("<G>", Style::default().fg(Color::Blue).bold()),
+            Span::styled(" Quit", Style::default()),
+            Span::styled("<q>", Style::default().fg(Color::Blue).bold()),
+        ]);
+        let title_block = Block::default()
+            .borders(Borders::ALL)
+            .title_bottom(instructions)
+            .title_alignment(Alignment::Center);
         let title_para = Paragraph::new(Text::styled(
             self.support_bundle_path.clone(),
             Style::default().fg(Color::Green).bold(),
@@ -124,24 +137,6 @@ impl Tui {
             None => ("", 0),
         };
 
-        let instruction_block = Block::default().borders(Borders::NONE);
-        let instruction_lines = Line::from(vec![
-            Span::styled(" Up", Style::default()),
-            Span::styled("<Up>", Style::default().fg(Color::Blue).bold()),
-            Span::styled(" Down", Style::default()),
-            Span::styled("<Down>", Style::default().fg(Color::Blue).bold()),
-            Span::styled(" Start", Style::default()),
-            Span::styled("<g>", Style::default().fg(Color::Blue).bold()),
-            Span::styled(" End", Style::default()),
-            Span::styled("<G>", Style::default().fg(Color::Blue).bold()),
-            Span::styled(" Quit", Style::default()),
-            Span::styled("<q>", Style::default().fg(Color::Blue).bold()),
-        ]);
-        let instruction_para = Paragraph::new(instruction_lines)
-            .block(instruction_block)
-            .alignment(Alignment::Center);
-        frame.render_widget(instruction_para, sections[1]);
-
         let meta_block = Block::default().borders(Borders::ALL);
         let meta_lines = vec![
             Line::from(vec![
@@ -162,7 +157,7 @@ impl Tui {
         let meta_para = Paragraph::new(meta_lines)
             .block(meta_block)
             .alignment(Alignment::Center);
-        frame.render_widget(meta_para, sections[2]);
+        frame.render_widget(meta_para, sections[1]);
 
         let lines: Vec<ListItem> = self
             .entries
@@ -188,14 +183,14 @@ impl Tui {
             .style(Style::default().white())
             .highlight_style(Style::default().add_modifier(Modifier::ITALIC))
             .highlight_symbol(">> ");
-        frame.render_stateful_widget(list, sections[3], &mut self.nav_state);
+        frame.render_stateful_widget(list, sections[2], &mut self.nav_state);
 
         self.vertical_scroll_state = self.vertical_scroll_state.content_length(lines_count);
         frame.render_stateful_widget(
             Scrollbar::new(ScrollbarOrientation::VerticalRight)
                 .begin_symbol(Some("↑"))
                 .end_symbol(Some("↓")),
-            sections[3],
+            sections[2],
             &mut self.vertical_scroll_state,
         );
     }
