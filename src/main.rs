@@ -2,7 +2,7 @@ use clap::Parser;
 use std::error::Error;
 use std::path::Path;
 
-mod sbfind;
+mod sbsearch;
 mod tui;
 
 fn main() -> Result<(), Box<dyn Error>> {
@@ -12,7 +12,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let root_dir = root_dir.as_str();
     let root_path = Path::new(root_dir);
 
-    let entries = sbfind::search(root_path, keyword)?;
+    let entries = sbsearch::search(root_path, keyword)?;
 
     let mut terminal = ratatui::init();
     tui::new(root_dir, keyword, entries).run(&mut terminal)?;

@@ -18,7 +18,7 @@ use tui_input::backend::crossterm::EventHandler;
 #[derive(Debug, Default)]
 pub struct Tui {
     current_screen: Screen,
-    entries: Vec<super::sbfind::Entry>,
+    entries: Vec<super::sbsearch::Entry>,
     exit: bool,
     nav_state: ListState,
     keyword: String,
@@ -44,7 +44,7 @@ enum SearchMode {
     Insert,
 }
 
-pub fn new(support_bundle_path: &str, keyword: &str, entries: Vec<super::sbfind::Entry>) -> Tui {
+pub fn new(support_bundle_path: &str, keyword: &str, entries: Vec<super::sbsearch::Entry>) -> Tui {
     Tui {
         current_screen: Screen::Main,
         entries,
@@ -375,20 +375,20 @@ impl Tui {
 fn new_and_handle_key_event() -> io::Result<()> {
     use crossterm::event::{KeyEvent, KeyModifiers};
 
-    let entries: Vec<super::sbfind::Entry> = vec![
-        super::sbfind::Entry {
+    let entries: Vec<super::sbsearch::Entry> = vec![
+        super::sbsearch::Entry {
             level: String::from("level=info"),
             path: String::from("/path/to/log1"),
             content: String::from("This is an info log entry."),
             timestamp: chrono::Utc::now(),
         },
-        super::sbfind::Entry {
+        super::sbsearch::Entry {
             level: String::from("level=warning"),
             path: String::from("/path/to/log2"),
             content: String::from("This is an warning log entry."),
             timestamp: chrono::Utc::now(),
         },
-        super::sbfind::Entry {
+        super::sbsearch::Entry {
             level: String::from("level=error"),
             path: String::from("/path/to/log3"),
             content: String::from("This is an error log entry."),
