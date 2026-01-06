@@ -115,7 +115,32 @@ impl Tui {
 
     fn draw_main(&mut self, frame: &mut Frame) {
         let sections = split_main_layout(frame.area());
+        self.render_title_section(sections[0], frame);
+        self.render_meta_section(sections[1], frame);
+        self.render_search_section(sections[2], frame);
+        self.render_logs_section(sections[3], frame);
+    }
 
+    fn draw_popup(
+        &mut self,
+        title: &str,
+        text: &str,
+        percent_x: u16,
+        percent_y: u16,
+        frame: &mut Frame,
+    ) {
+        let popup_area = split_popup_layout(percent_x, percent_y, frame.area());
+        let popup_block = Block::default()
+            .title(Line::from(title).centered())
+            .borders(Borders::ALL)
+            .style(Style::default());
+        let popup_para = Paragraph::new(text)
+            .block(popup_block)
+            .alignment(Alignment::Center);
+        frame.render_widget(popup_para, popup_area);
+    }
+
+    fn render_title_section(&mut self, area: Rect, frame: &mut Frame) {
         let instructions = Line::from(vec![
             Span::styled(" Up", Style::default()),
             Span::styled("<Up>", Style::default().fg(Color::Blue).bold()),
@@ -142,8 +167,10 @@ impl Tui {
         ))
         .alignment(Alignment::Center)
         .block(title_block);
-        frame.render_widget(title_para, sections[0]);
+        frame.render_widget(title_para, area);
+    }
 
+    fn render_meta_section(&mut self, area: Rect, frame: &mut Frame) {
         let (path, pos) = match self.nav_state.selected() {
             Some(pos) => {
                 let path_str = self.entries[pos].path.as_str();
@@ -177,10 +204,12 @@ impl Tui {
         let meta_para = Paragraph::new(meta_lines)
             .block(meta_block)
             .alignment(Alignment::Center);
-        frame.render_widget(meta_para, sections[1]);
+        frame.render_widget(meta_para, area);
+    }
 
+    fn render_search_section(&mut self, area: Rect, frame: &mut Frame) {
         let search_block = Block::default().borders(Borders::ALL);
-        let width = sections[2].width.max(3) - 3;
+        let width = area.width.max(3) - 3;
         let scroll = self.search_input.visual_scroll(width as usize);
         let search_lines = Line::from(vec![
             Span::styled("Search: ", Style::default().fg(Color::Green).bold()),
@@ -190,13 +219,16 @@ impl Tui {
             .style(Style::default())
             .scroll((0, scroll as u16))
             .block(search_block);
-        frame.render_widget(input, sections[2]);
+        frame.render_widget(input, area);
 
+        // show cursor only in insert mode
         if self.search_mode == SearchMode::Insert {
             let x = self.search_input.visual_cursor().max(scroll) - scroll + 8;
-            frame.set_cursor_position((sections[2].x + x as u16, sections[2].y + 1));
+            frame.set_cursor_position((area.x + x as u16, area.y + 1));
         }
+    }
 
+    fn render_logs_section(&mut self, area: Rect, frame: &mut Frame) {
         let lines: Vec<ListItem> = self
             .entries
             .iter()
@@ -229,35 +261,17 @@ impl Tui {
             .style(Style::default())
             .highlight_symbol(">> ")
             .highlight_style(Style::default().bg(Color::Magenta));
-        frame.render_stateful_widget(list, sections[3], &mut self.nav_state);
+        frame.render_stateful_widget(list, area, &mut self.nav_state);
 
+        // render scrollbar
         self.vertical_scroll_state = self.vertical_scroll_state.content_length(lines_count);
         frame.render_stateful_widget(
             Scrollbar::new(ScrollbarOrientation::VerticalRight)
                 .begin_symbol(Some("↑"))
                 .end_symbol(Some("↓")),
-            sections[3],
+            area,
             &mut self.vertical_scroll_state,
         );
-    }
-
-    fn draw_popup(
-        &mut self,
-        title: &str,
-        text: &str,
-        percent_x: u16,
-        percent_y: u16,
-        frame: &mut Frame,
-    ) {
-        let popup_area = split_popup_layout(percent_x, percent_y, frame.area());
-        let popup_block = Block::default()
-            .title(Line::from(title).centered())
-            .borders(Borders::ALL)
-            .style(Style::default());
-        let popup_para = Paragraph::new(text)
-            .block(popup_block)
-            .alignment(Alignment::Center);
-        frame.render_widget(popup_para, popup_area);
     }
 
     fn handle_events(&mut self) -> io::Result<()> {
