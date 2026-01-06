@@ -1,8 +1,8 @@
-use crossterm::event::{self, Event, KeyCode, KeyEvent, KeyEventKind};
+use crossterm::event::{self, Event, KeyCode, KeyEventKind};
 use ratatui::{
     DefaultTerminal, Frame,
-    layout::{Alignment, Constraint, Direction, Layout, Rect, Spacing},
-    style::{Color, Modifier, Style, Stylize},
+    layout::{Alignment, Constraint, Direction, Layout, Rect},
+    style::{Color, Style, Stylize},
     text::{Line, Span, Text},
     widgets::{
         Block, Borders, List, ListItem, ListState, Paragraph, Scrollbar, ScrollbarOrientation,
@@ -12,6 +12,8 @@ use ratatui::{
 use std::io;
 use std::rc::Rc;
 use textwrap::Options;
+use tui_input::Input;
+use tui_input::backend::crossterm::EventHandler;
 
 #[derive(Debug, Default)]
 pub struct Tui {
@@ -20,6 +22,9 @@ pub struct Tui {
     exit: bool,
     nav_state: ListState,
     keyword: String,
+    search: String,
+    search_input: Input,
+    search_mode: SearchMode,
     support_bundle_path: String,
     vertical_scroll_state: ScrollbarState,
     vertical_scroll: usize,
@@ -32,6 +37,13 @@ enum Screen {
     ConfirmExit,
 }
 
+#[derive(Debug, Default, PartialEq)]
+enum SearchMode {
+    #[default]
+    Normal,
+    Insert,
+}
+
 pub fn new(support_bundle_path: &str, keyword: &str, entries: Vec<super::sbfind::Entry>) -> Tui {
     Tui {
         current_screen: Screen::Main,
@@ -39,6 +51,9 @@ pub fn new(support_bundle_path: &str, keyword: &str, entries: Vec<super::sbfind:
         exit: false,
         nav_state: ListState::default().with_selected(Some(0)),
         keyword: String::from(keyword),
+        search: String::new(),
+        search_input: Input::default(),
+        search_mode: SearchMode::default(),
         support_bundle_path: String::from(support_bundle_path),
         vertical_scroll_state: ScrollbarState::default(),
         vertical_scroll: 0,
@@ -51,6 +66,7 @@ fn split_main_layout(r: Rect) -> Rc<[Rect]> {
         .constraints([
             Constraint::Length(3),
             Constraint::Length(4),
+            Constraint::Length(3),
             Constraint::Fill(1),
         ])
         .split(r)
@@ -109,6 +125,10 @@ impl Tui {
             Span::styled("<g>", Style::default().fg(Color::Blue).bold()),
             Span::styled(" End", Style::default()),
             Span::styled("<G>", Style::default().fg(Color::Blue).bold()),
+            Span::styled(" Search", Style::default()),
+            Span::styled("<s>", Style::default().fg(Color::Blue).bold()),
+            Span::styled(" Clear", Style::default()),
+            Span::styled("<c>", Style::default().fg(Color::Blue).bold()),
             Span::styled(" Quit", Style::default()),
             Span::styled("<q>", Style::default().fg(Color::Blue).bold()),
         ]);
@@ -140,7 +160,7 @@ impl Tui {
         let meta_block = Block::default().borders(Borders::ALL);
         let meta_lines = vec![
             Line::from(vec![
-                Span::styled("Keyword", Style::default().fg(Color::Green).bold()),
+                Span::styled("Keyword: ", Style::default().fg(Color::Green).bold()),
                 Span::styled(&self.keyword, Style::default().fg(Color::Green).bold()),
                 Span::styled(" | ", Style::default().fg(Color::White)),
                 Span::styled("Line: ", Style::default().fg(Color::Green).bold()),
@@ -159,6 +179,24 @@ impl Tui {
             .alignment(Alignment::Center);
         frame.render_widget(meta_para, sections[1]);
 
+        let search_block = Block::default().borders(Borders::ALL);
+        let width = sections[2].width.max(3) - 3;
+        let scroll = self.search_input.visual_scroll(width as usize);
+        let search_lines = Line::from(vec![
+            Span::styled("Search: ", Style::default().fg(Color::Green).bold()),
+            Span::styled(self.search_input.value(), Style::default()),
+        ]);
+        let input = Paragraph::new(search_lines)
+            .style(Style::default())
+            .scroll((0, scroll as u16))
+            .block(search_block);
+        frame.render_widget(input, sections[2]);
+
+        if self.search_mode == SearchMode::Insert {
+            let x = self.search_input.visual_cursor().max(scroll) - scroll + 8;
+            frame.set_cursor_position((sections[2].x + x as u16, sections[2].y + 1));
+        }
+
         let lines: Vec<ListItem> = self
             .entries
             .iter()
@@ -167,12 +205,20 @@ impl Tui {
                 let options = Options::new(width);
                 let text = format!("{}", entry);
                 let wrapped = textwrap::fill(text.as_str(), options);
-
-                match entry.level.as_str() {
+                let list_item = match entry.level.as_str() {
                     "level=error" => ListItem::new(wrapped).red(),
-                    "level=info" => ListItem::new(wrapped),
                     "level=warning" => ListItem::new(wrapped).yellow(),
                     _ => ListItem::new(wrapped),
+                };
+                if !self.search.is_empty()
+                    && text
+                        .clone()
+                        .to_lowercase()
+                        .contains(self.search.clone().to_lowercase().as_str())
+                {
+                    list_item.on_blue()
+                } else {
+                    list_item
                 }
             })
             .collect();
@@ -180,17 +226,17 @@ impl Tui {
         let list_block = Block::default().borders(Borders::ALL);
         let list = List::new(lines)
             .block(list_block)
-            .style(Style::default().white())
-            .highlight_style(Style::default().add_modifier(Modifier::ITALIC))
-            .highlight_symbol(">> ");
-        frame.render_stateful_widget(list, sections[2], &mut self.nav_state);
+            .style(Style::default())
+            .highlight_symbol(">> ")
+            .highlight_style(Style::default().bg(Color::Magenta));
+        frame.render_stateful_widget(list, sections[3], &mut self.nav_state);
 
         self.vertical_scroll_state = self.vertical_scroll_state.content_length(lines_count);
         frame.render_stateful_widget(
             Scrollbar::new(ScrollbarOrientation::VerticalRight)
                 .begin_symbol(Some("↑"))
                 .end_symbol(Some("↓")),
-            sections[2],
+            sections[3],
             &mut self.vertical_scroll_state,
         );
     }
@@ -215,30 +261,53 @@ impl Tui {
     }
 
     fn handle_events(&mut self) -> io::Result<()> {
-        match event::read()? {
-            Event::Key(key_event) if key_event.kind == KeyEventKind::Press => {
-                self.handle_key_event(key_event)
-            }
-            _ => {}
-        };
+        let event = event::read()?;
+        self.handle_key_event(event);
         Ok(())
     }
 
-    fn handle_key_event(&mut self, key_event: KeyEvent) {
-        match self.current_screen {
-            Screen::Main => match key_event.code {
-                KeyCode::Char('q') => self.current_screen = Screen::ConfirmExit,
-                KeyCode::Char('G') => self.nav_end(),
-                KeyCode::Char('g') => self.nav_start(),
-                KeyCode::Up | KeyCode::Char('k') => self.nav_prev(),
-                KeyCode::Down | KeyCode::Char('j') => self.nav_next(),
-                _ => {}
-            },
-            Screen::ConfirmExit => match key_event.code {
-                KeyCode::Char('y') => self.exit(),
-                KeyCode::Char('n') => self.current_screen = Screen::Main,
-                _ => {}
-            },
+    fn handle_key_event(&mut self, event: Event) {
+        if let Event::Key(key_event) = event {
+            if key_event.kind != KeyEventKind::Press {
+                return;
+            }
+
+            match self.search_mode {
+                SearchMode::Normal => match self.current_screen {
+                    Screen::Main => match key_event.code {
+                        KeyCode::Char('q') => self.current_screen = Screen::ConfirmExit,
+                        KeyCode::Char('G') => self.nav_end(),
+                        KeyCode::Char('g') => self.nav_start(),
+                        KeyCode::Char('s') => {
+                            self.search_mode = SearchMode::Insert;
+                            self.search_input.reset();
+                        }
+                        KeyCode::Char('c') => self.search = String::new(),
+                        KeyCode::Up | KeyCode::Char('k') => self.nav_prev(),
+                        KeyCode::Down | KeyCode::Char('j') => self.nav_next(),
+                        _ => {}
+                    },
+                    Screen::ConfirmExit => match key_event.code {
+                        KeyCode::Char('y') => self.exit(),
+                        KeyCode::Char('n') => self.current_screen = Screen::Main,
+                        _ => {}
+                    },
+                },
+                SearchMode::Insert => match key_event.code {
+                    KeyCode::Enter => {
+                        self.search = String::from(self.search_input.value());
+                        self.search_mode = SearchMode::Normal;
+                    }
+                    KeyCode::Esc => {
+                        self.search = String::new();
+                        self.search_input.reset();
+                        self.search_mode = SearchMode::Normal;
+                    }
+                    _ => {
+                        self.search_input.handle_event(&event);
+                    }
+                },
+            }
         }
     }
 
@@ -290,6 +359,8 @@ impl Tui {
 
 #[test]
 fn new_and_handle_key_event() -> io::Result<()> {
+    use crossterm::event::{KeyEvent, KeyModifiers};
+
     let entries: Vec<super::sbfind::Entry> = vec![
         super::sbfind::Entry {
             level: String::from("level=info"),
@@ -316,29 +387,67 @@ fn new_and_handle_key_event() -> io::Result<()> {
     assert_eq!(tui.keyword, "pvc_name");
     assert_eq!(tui.current_screen, Screen::Main);
 
-    tui.handle_key_event(KeyCode::Char('j').into());
+    // navigation keys
+    let key_event = KeyEvent::new(KeyCode::Char('j'), KeyModifiers::NONE);
+    let event = Event::Key(key_event);
+    tui.handle_key_event(event);
     assert_eq!(tui.nav_state.selected(), Some(1));
 
-    tui.handle_key_event(KeyCode::Down.into());
+    let key_event = KeyEvent::new(KeyCode::Down, KeyModifiers::NONE);
+    let event = Event::Key(key_event);
+    tui.handle_key_event(event);
     assert_eq!(tui.nav_state.selected(), Some(2));
 
-    tui.handle_key_event(KeyCode::Char('k').into());
+    let key_event = KeyEvent::new(KeyCode::Char('k'), KeyModifiers::NONE);
+    let event = Event::Key(key_event);
+    tui.handle_key_event(event);
     assert_eq!(tui.nav_state.selected(), Some(1));
 
-    tui.handle_key_event(KeyCode::Up.into());
+    let key_event = KeyEvent::new(KeyCode::Up, KeyModifiers::NONE);
+    let event = Event::Key(key_event);
+    tui.handle_key_event(event);
     assert_eq!(tui.nav_state.selected(), Some(0));
 
-    tui.handle_key_event(KeyCode::Char('G').into());
+    let key_event = KeyEvent::new(KeyCode::Char('G'), KeyModifiers::NONE);
+    let event = Event::Key(key_event);
+    tui.handle_key_event(event);
     assert_eq!(tui.nav_state.selected(), Some(2));
 
-    tui.handle_key_event(KeyCode::Char('g').into());
+    let key_event = KeyEvent::new(KeyCode::Char('g'), KeyModifiers::NONE);
+    let event = Event::Key(key_event);
+    tui.handle_key_event(event);
     assert_eq!(tui.nav_state.selected(), Some(0));
 
-    tui.handle_key_event(KeyCode::Char('q').into());
+    // search mode
+    let key_event = KeyEvent::new(KeyCode::Char('s'), KeyModifiers::NONE);
+    let event = Event::Key(key_event);
+    tui.handle_key_event(event);
+    assert_eq!(tui.search_mode, SearchMode::Insert);
+
+    tui.search_input = tui
+        .search_input
+        .with_value(String::from("test input value"));
+    let key_event = KeyEvent::new(KeyCode::Enter, KeyModifiers::NONE);
+    let event = Event::Key(key_event);
+    tui.handle_key_event(event);
+    assert_eq!(tui.search, String::from("test input value"));
+    assert_eq!(tui.search_mode, SearchMode::Normal);
+
+    // clear search
+    let key_event = KeyEvent::new(KeyCode::Char('c'), KeyModifiers::NONE);
+    let event = Event::Key(key_event);
+    tui.handle_key_event(event);
+    assert_eq!(tui.search, String::new());
+
+    // confirm exit popup
+    let key_event = KeyEvent::new(KeyCode::Char('q'), KeyModifiers::NONE);
+    let event = Event::Key(key_event);
+    tui.handle_key_event(event);
     assert_eq!(tui.current_screen, Screen::ConfirmExit);
 
-    tui.current_screen = Screen::ConfirmExit;
-    tui.handle_key_event(KeyCode::Char('y').into());
+    let key_event = KeyEvent::new(KeyCode::Char('y'), KeyModifiers::NONE);
+    let event = Event::Key(key_event);
+    tui.handle_key_event(event);
     assert!(tui.exit);
     tui.current_screen = Screen::Main;
 

@@ -712,6 +712,7 @@ dependencies = [
  "ratatui",
  "regex",
  "textwrap",
+ "tui-input",
 ]
 
 [[package]]
@@ -827,6 +828,16 @@ checksum = "c13547615a44dc9c452a8a534638acdf07120d4b6847c8178705da06306a3057"
 dependencies = [
  "smawk",
  "unicode-linebreak",
+ "unicode-width 0.2.0",
+]
+
+[[package]]
+name = "tui-input"
+version = "0.14.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "911e93158bf80bbc94bad533b2b16e3d711e1132d69a6a6980c3920a63422c19"
+dependencies = [
+ "crossterm 0.29.0",
  "unicode-width 0.2.0",
 ]
 
