@@ -44,22 +44,6 @@ enum SearchMode {
     Insert,
 }
 
-pub fn new(support_bundle_path: &str, keyword: &str, entries: Vec<super::sbsearch::Entry>) -> Tui {
-    Tui {
-        current_screen: Screen::Main,
-        entries,
-        exit: false,
-        nav_state: ListState::default().with_selected(Some(0)),
-        keyword: String::from(keyword),
-        search: String::new(),
-        search_input: Input::default(),
-        search_mode: SearchMode::default(),
-        support_bundle_path: String::from(support_bundle_path),
-        vertical_scroll_state: ScrollbarState::default(),
-        vertical_scroll: 0,
-    }
-}
-
 fn split_main_layout(r: Rect) -> Rc<[Rect]> {
     Layout::default()
         .direction(Direction::Vertical)
@@ -92,6 +76,26 @@ fn split_popup_layout(percent_x: u16, percent_y: u16, r: Rect) -> Rect {
 }
 
 impl Tui {
+    pub fn new(
+        support_bundle_path: &str,
+        keyword: &str,
+        entries: Vec<super::sbsearch::Entry>,
+    ) -> Self {
+        Self {
+            current_screen: Screen::Main,
+            entries,
+            exit: false,
+            nav_state: ListState::default().with_selected(Some(0)),
+            keyword: String::from(keyword),
+            search: String::new(),
+            search_input: Input::default(),
+            search_mode: SearchMode::default(),
+            support_bundle_path: String::from(support_bundle_path),
+            vertical_scroll_state: ScrollbarState::default(),
+            vertical_scroll: 0,
+        }
+    }
+
     pub fn run(&mut self, terminal: &mut DefaultTerminal) -> io::Result<()> {
         while !self.exit {
             terminal.draw(|frame| match self.current_screen {
@@ -395,7 +399,7 @@ fn new_and_handle_key_event() -> io::Result<()> {
             timestamp: chrono::Utc::now(),
         },
     ];
-    let mut tui = new("sb_path", "pvc_name", entries);
+    let mut tui = Tui::new("sb_path", "pvc_name", entries);
 
     assert_eq!(tui.support_bundle_path, "sb_path");
     assert_eq!(tui.keyword, "pvc_name");

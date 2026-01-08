@@ -15,7 +15,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let entries = sbsearch::search(root_path, keyword)?;
 
     let mut terminal = ratatui::init();
-    tui::new(root_dir, keyword, entries).run(&mut terminal)?;
+    tui::Tui::new(root_dir, keyword, entries).run(&mut terminal)?;
     ratatui::restore();
     Ok(())
 }
