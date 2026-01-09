@@ -9,25 +9,36 @@ use ratatui::{
         ScrollbarState,
     },
 };
+use std::error::Error;
 use std::io;
+use std::path::Path;
 use std::rc::Rc;
 use textwrap::Options;
 use tui_input::Input;
 use tui_input::backend::crossterm::EventHandler;
 
+use super::sbsearch;
+
+const DEFAULT_MAX_ENTRIES_PER_PAGE: u32 = 100;
+
 #[derive(Debug, Default)]
 pub struct Tui {
     current_screen: Screen,
-    entries: Vec<super::sbsearch::Entry>,
+    entries: Vec<sbsearch::Entry>,
     exit: bool,
     nav_state: ListState,
     keyword: String,
     search: String,
     search_input: Input,
     search_mode: SearchMode,
-    support_bundle_path: String,
+    sbpath: String,
     vertical_scroll_state: ScrollbarState,
     vertical_scroll: usize,
+
+    page_final: u32,
+    page_goto: u32,
+    page_max_entries: u32,
+    page_reload: bool,
 }
 
 #[derive(Debug, Default, PartialEq)]
@@ -76,28 +87,33 @@ fn split_popup_layout(percent_x: u16, percent_y: u16, r: Rect) -> Rect {
 }
 
 impl Tui {
-    pub fn new(
-        support_bundle_path: &str,
-        keyword: &str,
-        entries: Vec<super::sbsearch::Entry>,
-    ) -> Self {
+    pub fn new(support_bundle_path: &str, keyword: &str) -> Self {
         Self {
             current_screen: Screen::Main,
-            entries,
+            entries: Vec::new(),
             exit: false,
             nav_state: ListState::default().with_selected(Some(0)),
             keyword: String::from(keyword),
             search: String::new(),
             search_input: Input::default(),
             search_mode: SearchMode::default(),
-            support_bundle_path: String::from(support_bundle_path),
+            sbpath: String::from(support_bundle_path),
             vertical_scroll_state: ScrollbarState::default(),
             vertical_scroll: 0,
+
+            page_final: 1,
+            page_goto: 1,
+            page_max_entries: DEFAULT_MAX_ENTRIES_PER_PAGE,
+            page_reload: true,
         }
     }
 
-    pub fn run(&mut self, terminal: &mut DefaultTerminal) -> io::Result<()> {
+    pub fn run(&mut self, terminal: &mut DefaultTerminal) -> Result<(), Box<dyn Error>> {
         while !self.exit {
+            if self.page_reload {
+                self.read_entries_from_sb();
+            }
+
             terminal.draw(|frame| match self.current_screen {
                 Screen::ConfirmExit => self.draw_popup(
                     "Confirm Exit",
@@ -111,6 +127,21 @@ impl Tui {
             self.handle_events()?;
         }
         Ok(())
+    }
+
+    fn read_entries_from_sb(&mut self) {
+        let root_path = Path::new(self.sbpath.as_str());
+        let keyword = self.keyword.as_str();
+        let offset = (self.page_goto * self.page_max_entries - self.page_max_entries) as usize;
+        let limit = self.page_max_entries as usize;
+        let (entries, total) = match sbsearch::search(root_path, keyword, offset, limit) {
+            Ok(result) => (result.entries, result.total),
+            Err(_) => (Vec::new(), 0),
+        };
+        self.entries = entries;
+        self.page_final = total.div_ceil(self.page_max_entries);
+        self.page_reload = false;
+        self.nav_state = ListState::default().with_selected(Some(0));
     }
 
     fn exit(&mut self) {
@@ -146,6 +177,7 @@ impl Tui {
 
     fn render_title_section(&mut self, area: Rect, frame: &mut Frame) {
         let instructions = Line::from(vec![
+            Span::styled(" | (Line)", Style::default().fg(Color::White)),
             Span::styled(" Up", Style::default()),
             Span::styled("<Up>", Style::default().fg(Color::Blue).bold()),
             Span::styled(" Down", Style::default()),
@@ -154,19 +186,27 @@ impl Tui {
             Span::styled("<g>", Style::default().fg(Color::Blue).bold()),
             Span::styled(" End", Style::default()),
             Span::styled("<G>", Style::default().fg(Color::Blue).bold()),
-            Span::styled(" Search", Style::default()),
+            Span::styled(" | (Page)", Style::default().fg(Color::White)),
+            Span::styled(" Previous", Style::default()),
+            Span::styled("<Left>", Style::default().fg(Color::Blue).bold()),
+            Span::styled(" Next", Style::default()),
+            Span::styled("<Right>", Style::default().fg(Color::Blue).bold()),
+            Span::styled(" | (Search)", Style::default().fg(Color::White)),
+            Span::styled(" Edit", Style::default()),
             Span::styled("<s>", Style::default().fg(Color::Blue).bold()),
             Span::styled(" Clear", Style::default()),
             Span::styled("<c>", Style::default().fg(Color::Blue).bold()),
+            Span::styled(" | ", Style::default().fg(Color::White)),
             Span::styled(" Quit", Style::default()),
             Span::styled("<q>", Style::default().fg(Color::Blue).bold()),
+            Span::styled(" | ", Style::default().fg(Color::White)),
         ]);
         let title_block = Block::default()
             .borders(Borders::ALL)
             .title_bottom(instructions)
             .title_alignment(Alignment::Center);
         let title_para = Paragraph::new(Text::styled(
-            self.support_bundle_path.clone(),
+            self.sbpath.clone(),
             Style::default().fg(Color::Green).bold(),
         ))
         .alignment(Alignment::Center)
@@ -178,7 +218,7 @@ impl Tui {
         let (path, pos) = match self.nav_state.selected() {
             Some(pos) => {
                 let path_str = self.entries[pos].path.as_str();
-                let name_str = self.support_bundle_path.as_str();
+                let name_str = self.sbpath.as_str();
                 if let Some(index) = path_str.find(name_str) {
                     (&path_str[index + name_str.len()..path_str.len()], pos + 1)
                 } else {
@@ -197,6 +237,12 @@ impl Tui {
                 Span::styled("Line: ", Style::default().fg(Color::Green).bold()),
                 Span::styled(
                     format!("{}/{}", pos, self.entries.len()),
+                    Style::default().fg(Color::Green).bold(),
+                ),
+                Span::styled(" | ", Style::default().fg(Color::White)),
+                Span::styled("Page: ", Style::default().fg(Color::Green).bold()),
+                Span::styled(
+                    format!("{}/{}", self.page_goto, self.page_final),
                     Style::default().fg(Color::Green).bold(),
                 ),
             ]),
@@ -295,14 +341,16 @@ impl Tui {
                     Screen::Main => match key_event.code {
                         KeyCode::Char('q') => self.current_screen = Screen::ConfirmExit,
                         KeyCode::Char('G') => self.nav_end(),
-                        KeyCode::Char('g') => self.nav_start(),
+                        KeyCode::Char('g') => self.nav_first_line(),
                         KeyCode::Char('s') => {
                             self.search_mode = SearchMode::Insert;
                             self.search_input.reset();
                         }
                         KeyCode::Char('c') => self.search = String::new(),
-                        KeyCode::Up | KeyCode::Char('k') => self.nav_prev(),
-                        KeyCode::Down | KeyCode::Char('j') => self.nav_next(),
+                        KeyCode::Up | KeyCode::Char('k') => self.nav_prev_line(),
+                        KeyCode::Down | KeyCode::Char('j') => self.nav_next_line(),
+                        KeyCode::Left => self.nav_prev_page(),
+                        KeyCode::Right => self.nav_next_page(),
                         _ => {}
                     },
                     Screen::ConfirmExit => match key_event.code {
@@ -329,7 +377,7 @@ impl Tui {
         }
     }
 
-    fn nav_next(&mut self) {
+    fn nav_next_line(&mut self) {
         self.vertical_scroll = self.vertical_scroll.saturating_add(1);
         self.vertical_scroll_state = self.vertical_scroll_state.position(self.vertical_scroll);
         let i = match self.nav_state.selected() {
@@ -345,7 +393,7 @@ impl Tui {
         self.nav_state.select(Some(i));
     }
 
-    fn nav_prev(&mut self) {
+    fn nav_prev_line(&mut self) {
         self.vertical_scroll = self.vertical_scroll.saturating_sub(1);
         self.vertical_scroll_state = self.vertical_scroll_state.position(self.vertical_scroll);
         let i = match self.nav_state.selected() {
@@ -361,7 +409,7 @@ impl Tui {
         self.nav_state.select(Some(i));
     }
 
-    fn nav_start(&mut self) {
+    fn nav_first_line(&mut self) {
         self.vertical_scroll_state = self.vertical_scroll_state.position(0);
         self.nav_state.select(Some(0));
     }
@@ -373,13 +421,28 @@ impl Tui {
             self.nav_state.select(Some(end));
         }
     }
+
+    fn nav_next_page(&mut self) {
+        if self.page_goto < self.page_final {
+            self.page_goto = self.page_goto.saturating_add(1);
+            self.page_reload = true;
+        }
+    }
+
+    fn nav_prev_page(&mut self) {
+        if self.page_goto > 1 {
+            self.page_goto = self.page_goto.saturating_sub(1);
+            self.page_reload = true;
+        }
+    }
 }
 
 #[test]
 fn new_and_handle_key_event() -> io::Result<()> {
     use crossterm::event::{KeyEvent, KeyModifiers};
 
-    let entries: Vec<super::sbsearch::Entry> = vec![
+    let mut tui = Tui::new("sb_path", "pvc_name");
+    tui.entries = vec![
         super::sbsearch::Entry {
             level: String::from("level=info"),
             path: String::from("/path/to/log1"),
@@ -399,9 +462,8 @@ fn new_and_handle_key_event() -> io::Result<()> {
             timestamp: chrono::Utc::now(),
         },
     ];
-    let mut tui = Tui::new("sb_path", "pvc_name", entries);
 
-    assert_eq!(tui.support_bundle_path, "sb_path");
+    assert_eq!(tui.sbpath, "sb_path");
     assert_eq!(tui.keyword, "pvc_name");
     assert_eq!(tui.current_screen, Screen::Main);
 

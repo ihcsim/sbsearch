@@ -6,12 +6,17 @@ use std::fs::{self, File};
 use std::io::{self, BufRead};
 use std::path::Path;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Entry {
     pub level: String,
     pub path: String,
     pub content: String,
     pub timestamp: DateTime<Utc>,
+}
+
+pub struct SearchResult {
+    pub total: u32,
+    pub entries: Vec<Entry>,
 }
 
 impl fmt::Display for Entry {
@@ -21,11 +26,23 @@ impl fmt::Display for Entry {
     }
 }
 
-pub fn search(dir: &Path, key: &str) -> Result<Vec<Entry>, Box<dyn Error>> {
+pub fn search(
+    dir: &Path,
+    key: &str,
+    offset: usize,
+    limit: usize,
+) -> Result<SearchResult, Box<dyn Error>> {
     let mut entries: Vec<Entry> = Vec::new();
     search_tree(dir, key, &mut entries)?;
+
+    let limit = limit.min(entries.len().saturating_sub(offset));
     entries.sort_by(|a, b| a.timestamp.cmp(&b.timestamp));
-    Ok(entries)
+    let entries_trimmed = entries.iter().skip(offset).take(limit).cloned().collect();
+
+    Ok(SearchResult {
+        total: entries.len() as u32,
+        entries: entries_trimmed,
+    })
 }
 
 fn search_tree(dir: &Path, key: &str, v: &mut Vec<Entry>) -> Result<(), Box<dyn Error>> {

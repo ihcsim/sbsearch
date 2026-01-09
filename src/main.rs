@@ -1,6 +1,5 @@
 use clap::Parser;
 use std::error::Error;
-use std::path::Path;
 
 mod sbsearch;
 mod tui;
@@ -10,12 +9,8 @@ fn main() -> Result<(), Box<dyn Error>> {
     let keyword = args.keyword.as_str();
     let root_dir = format!("{}/{}", args.support_bundle_path, "logs");
     let root_dir = root_dir.as_str();
-    let root_path = Path::new(root_dir);
-
-    let entries = sbsearch::search(root_path, keyword)?;
-
     let mut terminal = ratatui::init();
-    tui::Tui::new(root_dir, keyword, entries).run(&mut terminal)?;
+    tui::Tui::new(root_dir, keyword).run(&mut terminal)?;
     ratatui::restore();
     Ok(())
 }
