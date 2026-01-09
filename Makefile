@@ -18,5 +18,8 @@ release:
 test:
 	cargo test
 
+fmt:
+	cargo fmt -- --check
+
 deps:
 	cargo machete --fix || 0
