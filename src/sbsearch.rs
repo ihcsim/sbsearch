@@ -1,9 +1,10 @@
 use chrono::{self, DateTime, Utc};
-use regex::Regex;
+use grep_matcher::Matcher;
+use grep_regex::RegexMatcher;
+use grep_searcher::{Searcher, sinks::UTF8};
 use std::error::Error;
 use std::fmt;
-use std::fs::{self, File};
-use std::io::{self, BufRead};
+use std::fs::{self};
 use std::path::Path;
 
 #[derive(Debug, Clone)]
@@ -64,33 +65,35 @@ fn search_tree(dir: &Path, key: &str, v: &mut Vec<Entry>) -> Result<(), Box<dyn 
     Ok(())
 }
 
-fn search_file(path: &Path, v: &mut Vec<Entry>, s: &str) -> Result<(), Box<dyn Error>> {
-    let regex_dt = Regex::new(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z")?;
-    let regex_lv = Regex::new(r"level=([^\s]+)")?;
-
-    if let Ok(file) = File::open(path) {
-        let reader = io::BufReader::new(file);
-        for line in reader.lines() {
-            if let Ok(content) = line
-                && content.contains(s)
-            {
-                let timestamp = regex_dt.find(content.as_str()).unwrap();
-                let timestamp_fixed_offset =
-                    DateTime::parse_from_rfc3339(timestamp.as_str()).unwrap();
-                let level = match regex_lv.find(content.as_str()) {
-                    None => "unknown",
-                    Some(r) => r.as_str(),
-                };
-
-                let entry = Entry {
-                    content: content.clone(),
-                    level: String::from(level),
-                    path: String::from(path.to_str().unwrap()),
-                    timestamp: timestamp_fixed_offset.with_timezone(&Utc),
-                };
-                v.push(entry);
-            }
-        }
-    }
+fn search_file(path: &Path, entries: &mut Vec<Entry>, keyword: &str) -> Result<(), Box<dyn Error>> {
+    let matcher = RegexMatcher::new(keyword)?;
+    let matcher_timestamp = RegexMatcher::new(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z")?;
+    let matcher_log_level = RegexMatcher::new(r"level=([^\s]+)")?;
+    Searcher::new().search_path(
+        &matcher,
+        path,
+        UTF8(|_lnum, line| {
+            let timestamp = matcher_timestamp.find(line.as_bytes())?.unwrap();
+            let timestamp_fixed_offset = DateTime::parse_from_rfc3339(&line[timestamp]).unwrap();
+            let level = match matcher_log_level.find(line.as_bytes()) {
+                Ok(opt) => {
+                    if let Some(m) = opt {
+                        line[m.start()..m.end()].split('=').nth(1).unwrap()
+                    } else {
+                        "UNKNOWN"
+                    }
+                }
+                Err(_) => "UNKNOWN",
+            };
+            let entry = Entry {
+                content: String::from(line),
+                level: String::from(level),
+                path: String::from(path.to_str().unwrap()),
+                timestamp: timestamp_fixed_offset.with_timezone(&Utc),
+            };
+            entries.push(entry);
+            Ok(true)
+        }),
+    )?;
     Ok(())
 }

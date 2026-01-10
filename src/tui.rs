@@ -19,7 +19,7 @@ use tui_input::backend::crossterm::EventHandler;
 
 use super::sbsearch;
 
-const DEFAULT_MAX_ENTRIES_PER_PAGE: u32 = 100;
+const DEFAULT_MAX_ENTRIES_PER_PAGE: u32 = 50;
 
 #[derive(Debug, Default)]
 pub struct Tui {
@@ -288,8 +288,8 @@ impl Tui {
                 let text = format!("{}", entry);
                 let wrapped = textwrap::fill(text.as_str(), options);
                 let list_item = match entry.level.as_str() {
-                    "level=error" => ListItem::new(wrapped).red(),
-                    "level=warning" => ListItem::new(wrapped).yellow(),
+                    "error" => ListItem::new(wrapped).red(),
+                    "warning" => ListItem::new(wrapped).yellow(),
                     _ => ListItem::new(wrapped),
                 };
                 if !self.search.is_empty()
