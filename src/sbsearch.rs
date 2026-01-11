@@ -16,8 +16,7 @@ pub struct Entry {
 }
 
 pub struct SearchResult {
-    pub total: u32,
-    pub entries: Vec<Entry>,
+    pub entries_offset: Vec<Entry>,
 }
 
 impl fmt::Display for Entry {
@@ -32,18 +31,17 @@ pub fn search(
     key: &str,
     offset: usize,
     limit: usize,
+    cache: &mut Vec<Entry>,
 ) -> Result<SearchResult, Box<dyn Error>> {
-    let mut entries: Vec<Entry> = Vec::new();
-    search_tree(dir, key, &mut entries)?;
+    if cache.is_empty() {
+        search_tree(dir, key, cache)?;
+        cache.sort_by(|a, b| a.timestamp.cmp(&b.timestamp));
+    }
 
-    let limit = limit.min(entries.len().saturating_sub(offset));
-    entries.sort_by(|a, b| a.timestamp.cmp(&b.timestamp));
-    let entries_trimmed = entries.iter().skip(offset).take(limit).cloned().collect();
+    let limit = limit.min(cache.len().saturating_sub(offset));
+    let entries_offset = cache.iter().skip(offset).take(limit).cloned().collect();
 
-    Ok(SearchResult {
-        total: entries.len() as u32,
-        entries: entries_trimmed,
-    })
+    Ok(SearchResult { entries_offset })
 }
 
 fn search_tree(dir: &Path, key: &str, v: &mut Vec<Entry>) -> Result<(), Box<dyn Error>> {

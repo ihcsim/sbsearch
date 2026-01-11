@@ -24,7 +24,8 @@ const DEFAULT_MAX_ENTRIES_PER_PAGE: u32 = 50;
 #[derive(Debug, Default)]
 pub struct Tui {
     current_screen: Screen,
-    entries: Vec<sbsearch::Entry>,
+    entries_cache: Vec<sbsearch::Entry>,
+    entries_offset: Vec<sbsearch::Entry>,
     exit: bool,
     nav_state: ListState,
     keyword: String,
@@ -90,7 +91,8 @@ impl Tui {
     pub fn new(support_bundle_path: &str, keyword: &str) -> Self {
         Self {
             current_screen: Screen::Main,
-            entries: Vec::new(),
+            entries_offset: Vec::new(),
+            entries_cache: Vec::new(),
             exit: false,
             nav_state: ListState::default().with_selected(Some(0)),
             keyword: String::from(keyword),
@@ -134,12 +136,13 @@ impl Tui {
         let keyword = self.keyword.as_str();
         let offset = (self.page_goto * self.page_max_entries - self.page_max_entries) as usize;
         let limit = self.page_max_entries as usize;
-        let (entries, total) = match sbsearch::search(root_path, keyword, offset, limit) {
-            Ok(result) => (result.entries, result.total),
-            Err(_) => (Vec::new(), 0),
+        let cache = &mut self.entries_cache;
+
+        self.entries_offset = match sbsearch::search(root_path, keyword, offset, limit, cache) {
+            Ok(result) => result.entries_offset,
+            Err(_) => Vec::new(),
         };
-        self.entries = entries;
-        self.page_final = total.div_ceil(self.page_max_entries);
+        self.page_final = (self.entries_cache.len() as u32).div_ceil(self.page_max_entries);
         self.page_reload = false;
         self.nav_state = ListState::default().with_selected(Some(0));
     }
@@ -217,7 +220,7 @@ impl Tui {
     fn render_meta_section(&mut self, area: Rect, frame: &mut Frame) {
         let (path, pos) = match self.nav_state.selected() {
             Some(pos) => {
-                let path_str = self.entries[pos].path.as_str();
+                let path_str = self.entries_offset[pos].path.as_str();
                 let name_str = self.sbpath.as_str();
                 if let Some(index) = path_str.find(name_str) {
                     (&path_str[index + name_str.len()..path_str.len()], pos + 1)
@@ -236,7 +239,7 @@ impl Tui {
                 Span::styled(" | ", Style::default().fg(Color::White)),
                 Span::styled("Line: ", Style::default().fg(Color::Green).bold()),
                 Span::styled(
-                    format!("{}/{}", pos, self.entries.len()),
+                    format!("{}/{}", pos, self.entries_offset.len()),
                     Style::default().fg(Color::Green).bold(),
                 ),
                 Span::styled(" | ", Style::default().fg(Color::White)),
@@ -280,7 +283,7 @@ impl Tui {
 
     fn render_logs_section(&mut self, area: Rect, frame: &mut Frame) {
         let lines: Vec<ListItem> = self
-            .entries
+            .entries_offset
             .iter()
             .map(|entry| {
                 let width = frame.area().as_size().width as usize;
@@ -382,7 +385,7 @@ impl Tui {
         self.vertical_scroll_state = self.vertical_scroll_state.position(self.vertical_scroll);
         let i = match self.nav_state.selected() {
             Some(i) => {
-                if i >= self.entries.len() - 1 {
+                if i >= self.entries_offset.len() - 1 {
                     0 // Wrap around to the start
                 } else {
                     i + 1
@@ -399,7 +402,7 @@ impl Tui {
         let i = match self.nav_state.selected() {
             Some(i) => {
                 if i == 0 {
-                    self.entries.len() - 1 // Wrap around to the end
+                    self.entries_offset.len() - 1 // Wrap around to the end
                 } else {
                     i - 1
                 }
@@ -415,8 +418,8 @@ impl Tui {
     }
 
     fn nav_end(&mut self) {
-        if !self.entries.is_empty() {
-            let end = self.entries.len() - 1;
+        if !self.entries_offset.is_empty() {
+            let end = self.entries_offset.len() - 1;
             self.vertical_scroll_state = self.vertical_scroll_state.position(end);
             self.nav_state.select(Some(end));
         }
@@ -442,7 +445,7 @@ fn new_and_handle_key_event() -> io::Result<()> {
     use crossterm::event::{KeyEvent, KeyModifiers};
 
     let mut tui = Tui::new("sb_path", "pvc_name");
-    tui.entries = vec![
+    tui.entries_offset = vec![
         super::sbsearch::Entry {
             level: String::from("level=info"),
             path: String::from("/path/to/log1"),

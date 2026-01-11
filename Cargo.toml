@@ -11,7 +11,6 @@ grep-matcher = "0.1.8"
 grep-regex = "0.1.14"
 grep-searcher = "0.1.16"
 ratatui = "0.29.0"
-regex = "1.12.2"
 textwrap = "0.16.2"
 tui-input = { version = "*", features = [
   "crossterm",
