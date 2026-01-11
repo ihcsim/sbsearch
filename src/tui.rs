@@ -19,7 +19,7 @@ use tui_input::backend::crossterm::EventHandler;
 
 use super::sbsearch;
 
-const DEFAULT_MAX_ENTRIES_PER_PAGE: u32 = 50;
+const DEFAULT_MAX_ENTRIES_PER_PAGE: u32 = 100;
 
 #[derive(Debug, Default)]
 pub struct Tui {

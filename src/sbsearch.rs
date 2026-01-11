@@ -1,7 +1,7 @@
 use chrono::{self, DateTime, Utc};
 use grep_matcher::Matcher;
 use grep_regex::RegexMatcher;
-use grep_searcher::{Searcher, sinks::UTF8};
+use grep_searcher::{Searcher, SearcherBuilder, sinks::UTF8};
 use std::error::Error;
 use std::fmt;
 use std::fs::{self};
@@ -45,6 +45,14 @@ pub fn search(
 }
 
 fn search_tree(dir: &Path, key: &str, v: &mut Vec<Entry>) -> Result<(), Box<dyn Error>> {
+    let mut searcher: Searcher;
+    unsafe {
+        let mmap_choice = grep_searcher::MmapChoice::auto();
+        searcher = SearcherBuilder::new()
+            .memory_map(mmap_choice)
+            .heap_limit(Some(268435456))
+            .build();
+    }
     for entry in fs::read_dir(dir)? {
         let entry = entry?;
         let path = entry.path();
@@ -54,7 +62,7 @@ fn search_tree(dir: &Path, key: &str, v: &mut Vec<Entry>) -> Result<(), Box<dyn 
         }
 
         if path.is_file() {
-            search_file(&path, v, key)?;
+            search_file(&path, v, key, &mut searcher)?;
             continue;
         }
 
@@ -63,11 +71,16 @@ fn search_tree(dir: &Path, key: &str, v: &mut Vec<Entry>) -> Result<(), Box<dyn 
     Ok(())
 }
 
-fn search_file(path: &Path, entries: &mut Vec<Entry>, keyword: &str) -> Result<(), Box<dyn Error>> {
+fn search_file(
+    path: &Path,
+    entries: &mut Vec<Entry>,
+    keyword: &str,
+    searcher: &mut Searcher,
+) -> Result<(), Box<dyn Error>> {
     let matcher = RegexMatcher::new(keyword)?;
     let matcher_timestamp = RegexMatcher::new(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z")?;
     let matcher_log_level = RegexMatcher::new(r"level=([^\s]+)")?;
-    Searcher::new().search_path(
+    searcher.search_path(
         &matcher,
         path,
         UTF8(|_lnum, line| {
