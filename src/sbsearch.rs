@@ -77,7 +77,8 @@ fn search_file(
     keyword: &str,
     searcher: &mut Searcher,
 ) -> Result<(), Box<dyn Error>> {
-    let matcher = RegexMatcher::new(keyword)?;
+    let pattern = String::from(".*") + keyword + ".*";
+    let matcher = RegexMatcher::new(pattern.as_str())?;
     let matcher_timestamp = RegexMatcher::new(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z")?;
     let matcher_log_level = RegexMatcher::new(r"level=([^\s]+)")?;
     searcher.search_path(
