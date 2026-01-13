@@ -2,8 +2,13 @@
 
 `sbsearch` is a [Harvester support bundle][1] tool that search for keywords in the
 resource logs and displayed them in chronological order. It uses the
-[`grep` crate](https://crates.io/crates/grep) for fast searching and the
-[`ratatui` crate](https://docs.rs/ratatui/latest/ratatui/) for terminal user interface.
+[`grep` crate]() for fast searching and the
+[`ratatui` crate](https://ratatui.rs/) for terminal user interface.
+
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ihcsim/sbsearch/main.yaml)
+![GitHub License](https://img.shields.io/github/license/ihcsim/sbsearch)
+![GitHub Created At](https://img.shields.io/github/created-at/ihcsim/sbsearch)
+![GitHub Tag](https://img.shields.io/github/v/tag/ihcsim/sbsearch)
 
 ![screenshot of the sbsearch tui displaying resource logs output](./img/tui.png)
 
