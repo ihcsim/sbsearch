@@ -351,9 +351,9 @@ impl Tui {
                 return;
             }
 
-            match self.search_mode {
-                SearchMode::Normal => match self.current_screen {
-                    Screen::Main => match key_event.code {
+            match self.current_screen {
+                Screen::Main => match self.search_mode {
+                    SearchMode::Normal => match key_event.code {
                         KeyCode::Char('q') => self.current_screen = Screen::ConfirmExit,
                         KeyCode::Char('G') => self.nav_end(),
                         KeyCode::Char('g') => self.nav_first_line(),
@@ -368,25 +368,25 @@ impl Tui {
                         KeyCode::Right => self.nav_next_page(),
                         _ => {}
                     },
-                    Screen::ConfirmExit => match key_event.code {
-                        KeyCode::Char('y') => self.exit(),
-                        KeyCode::Char('n') => self.current_screen = Screen::Main,
-                        _ => {}
+                    SearchMode::Insert => match key_event.code {
+                        KeyCode::Enter => {
+                            self.search = String::from(self.search_input.value());
+                            self.search_mode = SearchMode::Normal;
+                        }
+                        KeyCode::Esc => {
+                            self.search = String::new();
+                            self.search_input.reset();
+                            self.search_mode = SearchMode::Normal;
+                        }
+                        _ => {
+                            self.search_input.handle_event(&event);
+                        }
                     },
                 },
-                SearchMode::Insert => match key_event.code {
-                    KeyCode::Enter => {
-                        self.search = String::from(self.search_input.value());
-                        self.search_mode = SearchMode::Normal;
-                    }
-                    KeyCode::Esc => {
-                        self.search = String::new();
-                        self.search_input.reset();
-                        self.search_mode = SearchMode::Normal;
-                    }
-                    _ => {
-                        self.search_input.handle_event(&event);
-                    }
+                Screen::ConfirmExit => match key_event.code {
+                    KeyCode::Char('y') => self.exit(),
+                    KeyCode::Char('n') => self.current_screen = Screen::Main,
+                    _ => {}
                 },
             }
         }
