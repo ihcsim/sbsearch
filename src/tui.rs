@@ -10,7 +10,7 @@ use ratatui::{
     },
 };
 use std::error::Error;
-use std::io;
+use std::io::{self, BufWriter, Write};
 use std::path::Path;
 use std::rc::Rc;
 use textwrap::Options;
@@ -40,6 +40,8 @@ pub struct Tui {
     page_goto: u32,
     page_max_entries: u32,
     page_reload: bool,
+
+    last_saved_filename: String,
 }
 
 #[derive(Debug, Default, PartialEq)]
@@ -47,6 +49,7 @@ enum Screen {
     #[default]
     Main,
     ConfirmExit,
+    ConfirmSave,
 }
 
 #[derive(Debug, Default, PartialEq)]
@@ -107,6 +110,8 @@ impl Tui {
             page_goto: 1,
             page_max_entries: DEFAULT_MAX_ENTRIES_PER_PAGE,
             page_reload: true,
+
+            last_saved_filename: String::new(),
         }
     }
 
@@ -124,6 +129,13 @@ impl Tui {
                     15,
                     frame,
                 ),
+                Screen::ConfirmSave => {
+                    let filename =
+                        format!("sbsearch_{}.log", chrono::Utc::now().format("%Y%m%d%H%M%S"));
+                    let text = format!("save search result to ./{}? (y/n)", filename);
+                    self.last_saved_filename = filename;
+                    self.draw_popup("Confirm Save", text.as_str(), 40, 15, frame);
+                }
                 _ => self.draw_main(frame),
             })?;
             self.handle_events()?;
@@ -145,6 +157,17 @@ impl Tui {
         self.page_final = (self.entries_cache.len() as u32).div_ceil(self.page_max_entries);
         self.page_reload = false;
         self.nav_state = ListState::default().with_selected(Some(0));
+    }
+
+    fn save_to_file(&mut self) -> io::Result<()> {
+        if let Ok(file) = std::fs::File::create(&self.last_saved_filename) {
+            let mut writer = BufWriter::new(&file);
+            for entry in &self.entries_cache {
+                write!(writer, "{}", entry)?;
+            }
+        }
+        self.current_screen = Screen::Main;
+        Ok(())
     }
 
     fn exit(&mut self) {
@@ -196,10 +219,12 @@ impl Tui {
             Span::styled("<Right>", Style::default().fg(Color::Blue).bold()),
             Span::styled(" | (Search)", Style::default().fg(Color::White)),
             Span::styled(" Edit", Style::default()),
-            Span::styled("<s>", Style::default().fg(Color::Blue).bold()),
+            Span::styled("</>", Style::default().fg(Color::Blue).bold()),
             Span::styled(" Clear", Style::default()),
             Span::styled("<c>", Style::default().fg(Color::Blue).bold()),
             Span::styled(" | ", Style::default().fg(Color::White)),
+            Span::styled(" Save", Style::default()),
+            Span::styled("<s>", Style::default().fg(Color::Blue).bold()),
             Span::styled(" Quit", Style::default()),
             Span::styled("<q>", Style::default().fg(Color::Blue).bold()),
             Span::styled(" | ", Style::default().fg(Color::White)),
@@ -357,11 +382,14 @@ impl Tui {
                         KeyCode::Char('q') => self.current_screen = Screen::ConfirmExit,
                         KeyCode::Char('G') => self.nav_end(),
                         KeyCode::Char('g') => self.nav_first_line(),
-                        KeyCode::Char('s') => {
+                        KeyCode::Char('/') => {
                             self.search_mode = SearchMode::Insert;
                             self.search_input.reset();
                         }
                         KeyCode::Char('c') => self.search = String::new(),
+                        KeyCode::Char('s') => {
+                            self.current_screen = Screen::ConfirmSave;
+                        }
                         KeyCode::Up | KeyCode::Char('k') => self.nav_prev_line(),
                         KeyCode::Down | KeyCode::Char('j') => self.nav_next_line(),
                         KeyCode::Left => self.nav_prev_page(),
@@ -385,6 +413,15 @@ impl Tui {
                 },
                 Screen::ConfirmExit => match key_event.code {
                     KeyCode::Char('y') => self.exit(),
+                    KeyCode::Char('n') => self.current_screen = Screen::Main,
+                    _ => {}
+                },
+                Screen::ConfirmSave => match key_event.code {
+                    KeyCode::Char('y') => {
+                        if let Err(e) = self.save_to_file() {
+                            println!("Error saving to file: {}", e);
+                        }
+                    }
                     KeyCode::Char('n') => self.current_screen = Screen::Main,
                     _ => {}
                 },
@@ -514,7 +551,7 @@ fn new_and_handle_key_event() -> io::Result<()> {
     assert_eq!(tui.nav_state.selected(), Some(0));
 
     // search mode
-    let key_event = KeyEvent::new(KeyCode::Char('s'), KeyModifiers::NONE);
+    let key_event = KeyEvent::new(KeyCode::Char('/'), KeyModifiers::NONE);
     let event = Event::Key(key_event);
     tui.handle_key_event(event);
     assert_eq!(tui.search_mode, SearchMode::Insert);
@@ -533,6 +570,18 @@ fn new_and_handle_key_event() -> io::Result<()> {
     let event = Event::Key(key_event);
     tui.handle_key_event(event);
     assert_eq!(tui.search, String::new());
+
+    // save mode
+    let key_event = KeyEvent::new(KeyCode::Char('s'), KeyModifiers::NONE);
+    let event = Event::Key(key_event);
+    tui.handle_key_event(event);
+    assert_eq!(tui.current_screen, Screen::ConfirmSave);
+
+    // exit save popup
+    let key_event = KeyEvent::new(KeyCode::Char('n'), KeyModifiers::NONE);
+    let event = Event::Key(key_event);
+    tui.handle_key_event(event);
+    assert_eq!(tui.current_screen, Screen::Main);
 
     // confirm exit popup
     let key_event = KeyEvent::new(KeyCode::Char('q'), KeyModifiers::NONE);
