@@ -221,15 +221,19 @@ impl Tui {
         let offset = (self.page_goto * self.page_max_entries - self.page_max_entries) as usize;
         let (path, pos) = match self.nav_state.selected() {
             Some(pos) => {
-                let path_str = self.entries_offset[pos].path.as_str();
-                let name_str = self.sbpath.as_str();
-                if let Some(index) = path_str.find(name_str) {
-                    (
-                        &path_str[index + name_str.len()..path_str.len()],
-                        offset + pos + 1,
-                    )
-                } else {
+                if self.entries_offset.is_empty() {
                     ("", 0)
+                } else {
+                    let path_str = self.entries_offset[pos].path.as_str();
+                    let name_str = self.sbpath.as_str();
+                    if let Some(index) = path_str.find(name_str) {
+                        (
+                            &path_str[index + name_str.len()..path_str.len()],
+                            offset + pos + 1,
+                        )
+                    } else {
+                        ("", 0)
+                    }
                 }
             }
             None => ("", 0),
@@ -286,7 +290,7 @@ impl Tui {
     }
 
     fn render_logs_section(&mut self, area: Rect, frame: &mut Frame) {
-        let lines: Vec<ListItem> = self
+        let mut lines: Vec<ListItem> = self
             .entries_offset
             .iter()
             .map(|entry| {
@@ -311,6 +315,10 @@ impl Tui {
                 }
             })
             .collect();
+        if lines.is_empty() {
+            lines = vec![ListItem::new("No log entries found.".to_string())];
+        }
+
         let lines_count = lines.len();
         let list_block = Block::default().borders(Borders::ALL);
         let list = List::new(lines)
