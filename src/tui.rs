@@ -389,10 +389,10 @@ impl Tui {
         self.vertical_scroll_state = self.vertical_scroll_state.position(self.vertical_scroll);
         let i = match self.nav_state.selected() {
             Some(i) => {
-                if i >= self.entries_offset.len() - 1 {
-                    0 // Wrap around to the start
-                } else {
+                if i < self.entries_offset.len() - 1 {
                     i + 1
+                } else {
+                    i
                 }
             }
             None => 0,
@@ -405,10 +405,10 @@ impl Tui {
         self.vertical_scroll_state = self.vertical_scroll_state.position(self.vertical_scroll);
         let i = match self.nav_state.selected() {
             Some(i) => {
-                if i == 0 {
-                    self.entries_offset.len() - 1 // Wrap around to the end
-                } else {
+                if i > 0 {
                     i - 1
+                } else {
+                    i
                 }
             }
             None => 0,
