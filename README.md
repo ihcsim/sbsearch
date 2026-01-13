@@ -1,7 +1,9 @@
 # sbsearch
 
 `sbsearch` is a [Harvester support bundle][1] tool that search for keywords in the
-resource logs and displayed them in chronological order.
+resource logs and displayed them in chronological order. It uses the
+[`grep` crate](https://crates.io/crates/grep) for fast searching and the
+[`ratatui` crate](https://docs.rs/ratatui/latest/ratatui/) for terminal user interface.
 
 ![screenshot of the sbsearch tui displaying resource logs output](./img/tui.png)
 
