@@ -218,12 +218,16 @@ impl Tui {
     }
 
     fn render_meta_section(&mut self, area: Rect, frame: &mut Frame) {
+        let offset = (self.page_goto * self.page_max_entries - self.page_max_entries) as usize;
         let (path, pos) = match self.nav_state.selected() {
             Some(pos) => {
                 let path_str = self.entries_offset[pos].path.as_str();
                 let name_str = self.sbpath.as_str();
                 if let Some(index) = path_str.find(name_str) {
-                    (&path_str[index + name_str.len()..path_str.len()], pos + 1)
+                    (
+                        &path_str[index + name_str.len()..path_str.len()],
+                        offset + pos + 1,
+                    )
                 } else {
                     ("", 0)
                 }
@@ -239,7 +243,7 @@ impl Tui {
                 Span::styled(" | ", Style::default().fg(Color::White)),
                 Span::styled("Line: ", Style::default().fg(Color::Green).bold()),
                 Span::styled(
-                    format!("{}/{}", pos, self.entries_offset.len()),
+                    format!("{}/{}", pos, self.entries_cache.len()),
                     Style::default().fg(Color::Green).bold(),
                 ),
                 Span::styled(" | ", Style::default().fg(Color::White)),
