@@ -386,7 +386,10 @@ impl Tui {
                             self.search_mode = SearchMode::Insert;
                             self.search_input.reset();
                         }
-                        KeyCode::Char('c') => self.search = String::new(),
+                        KeyCode::Char('c') => {
+                            self.search = String::new();
+                            self.search_input.reset();
+                        }
                         KeyCode::Char('s') => {
                             self.current_screen = Screen::ConfirmSave;
                         }
