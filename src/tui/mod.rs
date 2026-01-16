@@ -325,7 +325,7 @@ impl Tui {
                 let wrapped = textwrap::fill(text.as_str(), options);
                 let list_item = match entry.level.as_str() {
                     "error" => ListItem::new(wrapped).red(),
-                    "warning" => ListItem::new(wrapped).yellow(),
+                    "warn" | "warning" => ListItem::new(wrapped).yellow(),
                     _ => ListItem::new(wrapped),
                 };
                 if !self.search.is_empty()
