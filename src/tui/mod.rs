@@ -489,111 +489,125 @@ impl Tui {
     }
 }
 
-#[test]
-fn new_and_handle_key_event() -> io::Result<()> {
+#[cfg(test)]
+mod tests {
+    use super::*;
     use crossterm::event::{KeyEvent, KeyModifiers};
 
-    let mut tui = Tui::new("sb_path", "pvc_name");
-    tui.entries_offset = vec![
-        super::sbsearch::Entry {
-            level: String::from("level=info"),
-            path: String::from("/path/to/log1"),
-            content: String::from("This is an info log entry."),
-            timestamp: chrono::Utc::now(),
-        },
-        super::sbsearch::Entry {
-            level: String::from("level=warning"),
-            path: String::from("/path/to/log2"),
-            content: String::from("This is an warning log entry."),
-            timestamp: chrono::Utc::now(),
-        },
-        super::sbsearch::Entry {
-            level: String::from("level=error"),
-            path: String::from("/path/to/log3"),
-            content: String::from("This is an error log entry."),
-            timestamp: chrono::Utc::now(),
-        },
-    ];
+    #[test]
+    fn handle_key_events_on_main_screen() {
+        let mut tui = Tui::new("sb_path", "pvc_name");
+        tui.entries_offset = vec![
+            super::sbsearch::Entry {
+                level: String::from("level=info"),
+                path: String::from("/path/to/log1"),
+                content: String::from("This is an info log entry."),
+                timestamp: chrono::Utc::now(),
+            },
+            super::sbsearch::Entry {
+                level: String::from("level=warning"),
+                path: String::from("/path/to/log2"),
+                content: String::from("This is an warning log entry."),
+                timestamp: chrono::Utc::now(),
+            },
+            super::sbsearch::Entry {
+                level: String::from("level=error"),
+                path: String::from("/path/to/log3"),
+                content: String::from("This is an error log entry."),
+                timestamp: chrono::Utc::now(),
+            },
+        ];
 
-    assert_eq!(tui.sbpath, "sb_path");
-    assert_eq!(tui.keyword, "pvc_name");
-    assert_eq!(tui.current_screen, Screen::Main);
+        assert_eq!(tui.sbpath, "sb_path");
+        assert_eq!(tui.keyword, "pvc_name");
+        assert_eq!(tui.current_screen, Screen::Main);
 
-    // navigation keys
-    let key_event = KeyEvent::new(KeyCode::Char('j'), KeyModifiers::NONE);
-    let event = Event::Key(key_event);
-    tui.handle_key_event(event);
-    assert_eq!(tui.nav_state.selected(), Some(1));
+        // navigation keys
+        let key_event = KeyEvent::new(KeyCode::Char('j'), KeyModifiers::NONE);
+        let event = Event::Key(key_event);
+        tui.handle_key_event(event);
+        assert_eq!(tui.nav_state.selected(), Some(1));
 
-    let key_event = KeyEvent::new(KeyCode::Down, KeyModifiers::NONE);
-    let event = Event::Key(key_event);
-    tui.handle_key_event(event);
-    assert_eq!(tui.nav_state.selected(), Some(2));
+        let key_event = KeyEvent::new(KeyCode::Down, KeyModifiers::NONE);
+        let event = Event::Key(key_event);
+        tui.handle_key_event(event);
+        assert_eq!(tui.nav_state.selected(), Some(2));
 
-    let key_event = KeyEvent::new(KeyCode::Char('k'), KeyModifiers::NONE);
-    let event = Event::Key(key_event);
-    tui.handle_key_event(event);
-    assert_eq!(tui.nav_state.selected(), Some(1));
+        let key_event = KeyEvent::new(KeyCode::Char('k'), KeyModifiers::NONE);
+        let event = Event::Key(key_event);
+        tui.handle_key_event(event);
+        assert_eq!(tui.nav_state.selected(), Some(1));
 
-    let key_event = KeyEvent::new(KeyCode::Up, KeyModifiers::NONE);
-    let event = Event::Key(key_event);
-    tui.handle_key_event(event);
-    assert_eq!(tui.nav_state.selected(), Some(0));
+        let key_event = KeyEvent::new(KeyCode::Up, KeyModifiers::NONE);
+        let event = Event::Key(key_event);
+        tui.handle_key_event(event);
+        assert_eq!(tui.nav_state.selected(), Some(0));
 
-    let key_event = KeyEvent::new(KeyCode::Char('G'), KeyModifiers::NONE);
-    let event = Event::Key(key_event);
-    tui.handle_key_event(event);
-    assert_eq!(tui.nav_state.selected(), Some(2));
+        let key_event = KeyEvent::new(KeyCode::Char('G'), KeyModifiers::NONE);
+        let event = Event::Key(key_event);
+        tui.handle_key_event(event);
+        assert_eq!(tui.nav_state.selected(), Some(2));
 
-    let key_event = KeyEvent::new(KeyCode::Char('g'), KeyModifiers::NONE);
-    let event = Event::Key(key_event);
-    tui.handle_key_event(event);
-    assert_eq!(tui.nav_state.selected(), Some(0));
+        let key_event = KeyEvent::new(KeyCode::Char('g'), KeyModifiers::NONE);
+        let event = Event::Key(key_event);
+        tui.handle_key_event(event);
+        assert_eq!(tui.nav_state.selected(), Some(0));
 
-    // search mode
-    let key_event = KeyEvent::new(KeyCode::Char('/'), KeyModifiers::NONE);
-    let event = Event::Key(key_event);
-    tui.handle_key_event(event);
-    assert_eq!(tui.search_mode, SearchMode::Insert);
+        // confirm exit
+        let key_event = KeyEvent::new(KeyCode::Char('q'), KeyModifiers::NONE);
+        let event = Event::Key(key_event);
+        tui.handle_key_event(event);
+        assert_eq!(tui.current_screen, Screen::ConfirmExit);
 
-    tui.search_input = tui
-        .search_input
-        .with_value(String::from("test input value"));
-    let key_event = KeyEvent::new(KeyCode::Enter, KeyModifiers::NONE);
-    let event = Event::Key(key_event);
-    tui.handle_key_event(event);
-    assert_eq!(tui.search, String::from("test input value"));
-    assert_eq!(tui.search_mode, SearchMode::Normal);
+        let key_event = KeyEvent::new(KeyCode::Char('y'), KeyModifiers::NONE);
+        let event = Event::Key(key_event);
+        tui.handle_key_event(event);
+        assert!(tui.exit);
+    }
 
-    // clear search
-    let key_event = KeyEvent::new(KeyCode::Char('c'), KeyModifiers::NONE);
-    let event = Event::Key(key_event);
-    tui.handle_key_event(event);
-    assert_eq!(tui.search, String::new());
+    #[test]
+    fn handle_key_events_on_search() {
+        let mut tui = Tui::new("sb_path", "pvc_name");
+        assert_eq!(tui.search_mode, SearchMode::Normal);
 
-    // save mode
-    let key_event = KeyEvent::new(KeyCode::Char('s'), KeyModifiers::NONE);
-    let event = Event::Key(key_event);
-    tui.handle_key_event(event);
-    assert_eq!(tui.current_screen, Screen::ConfirmSave);
+        // enable search mode
+        let key_event = KeyEvent::new(KeyCode::Char('/'), KeyModifiers::NONE);
+        let event = Event::Key(key_event);
+        tui.handle_key_event(event);
+        assert_eq!(tui.search_mode, SearchMode::Insert);
 
-    // exit save popup
-    let key_event = KeyEvent::new(KeyCode::Char('n'), KeyModifiers::NONE);
-    let event = Event::Key(key_event);
-    tui.handle_key_event(event);
-    assert_eq!(tui.current_screen, Screen::Main);
+        tui.search_input = tui
+            .search_input
+            .with_value(String::from("test input value"));
+        let key_event = KeyEvent::new(KeyCode::Enter, KeyModifiers::NONE);
+        let event = Event::Key(key_event);
+        tui.handle_key_event(event);
+        assert_eq!(tui.search, String::from("test input value"));
+        assert_eq!(tui.search_mode, SearchMode::Normal);
 
-    // confirm exit popup
-    let key_event = KeyEvent::new(KeyCode::Char('q'), KeyModifiers::NONE);
-    let event = Event::Key(key_event);
-    tui.handle_key_event(event);
-    assert_eq!(tui.current_screen, Screen::ConfirmExit);
+        // clear search
+        let key_event = KeyEvent::new(KeyCode::Char('c'), KeyModifiers::NONE);
+        let event = Event::Key(key_event);
+        tui.handle_key_event(event);
+        assert_eq!(tui.search, String::new());
+    }
 
-    let key_event = KeyEvent::new(KeyCode::Char('y'), KeyModifiers::NONE);
-    let event = Event::Key(key_event);
-    tui.handle_key_event(event);
-    assert!(tui.exit);
-    tui.current_screen = Screen::Main;
+    #[test]
+    fn handle_key_events_on_save() {
+        let mut tui = Tui::new("sb_path", "pvc_name");
+        tui.current_screen = Screen::Main;
+        tui.last_saved_filename = String::new();
 
-    Ok(())
+        // show confirm save search results
+        let key_event = KeyEvent::new(KeyCode::Char('s'), KeyModifiers::NONE);
+        let event = Event::Key(key_event);
+        tui.handle_key_event(event);
+        assert_eq!(tui.current_screen, Screen::ConfirmSave);
+
+        // exit save popup
+        let key_event = KeyEvent::new(KeyCode::Char('n'), KeyModifiers::NONE);
+        let event = Event::Key(key_event);
+        tui.handle_key_event(event);
+        assert_eq!(tui.current_screen, Screen::Main);
+    }
 }
