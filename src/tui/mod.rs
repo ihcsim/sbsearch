@@ -1,4 +1,3 @@
-use crossterm::event::{self, Event, KeyCode, KeyEventKind};
 use ratatui::{
     DefaultTerminal, Frame,
     layout::{Alignment, Constraint, Direction, Layout, Rect},
@@ -15,9 +14,10 @@ use std::path::Path;
 use std::rc::Rc;
 use textwrap::Options;
 use tui_input::Input;
-use tui_input::backend::crossterm::EventHandler;
 
 use super::sbsearch;
+
+mod event;
 
 const DEFAULT_MAX_ENTRIES_PER_PAGE: u32 = 100;
 
@@ -365,71 +365,7 @@ impl Tui {
     }
 
     fn handle_events(&mut self) -> io::Result<()> {
-        let event = event::read()?;
-        self.handle_key_event(event);
-        Ok(())
-    }
-
-    fn handle_key_event(&mut self, event: Event) {
-        if let Event::Key(key_event) = event {
-            if key_event.kind != KeyEventKind::Press {
-                return;
-            }
-
-            match self.current_screen {
-                Screen::Main => match self.search_mode {
-                    SearchMode::Normal => match key_event.code {
-                        KeyCode::Char('q') => self.current_screen = Screen::ConfirmExit,
-                        KeyCode::Char('G') => self.nav_end(),
-                        KeyCode::Char('g') => self.nav_first_line(),
-                        KeyCode::Char('/') => {
-                            self.search_mode = SearchMode::Insert;
-                            self.search_input.reset();
-                        }
-                        KeyCode::Char('c') => {
-                            self.search = String::new();
-                            self.search_input.reset();
-                        }
-                        KeyCode::Char('s') => {
-                            self.current_screen = Screen::ConfirmSave;
-                        }
-                        KeyCode::Up | KeyCode::Char('k') => self.nav_prev_line(),
-                        KeyCode::Down | KeyCode::Char('j') => self.nav_next_line(),
-                        KeyCode::Left => self.nav_prev_page(),
-                        KeyCode::Right => self.nav_next_page(),
-                        _ => {}
-                    },
-                    SearchMode::Insert => match key_event.code {
-                        KeyCode::Enter => {
-                            self.search = String::from(self.search_input.value());
-                            self.search_mode = SearchMode::Normal;
-                        }
-                        KeyCode::Esc => {
-                            self.search = String::new();
-                            self.search_input.reset();
-                            self.search_mode = SearchMode::Normal;
-                        }
-                        _ => {
-                            self.search_input.handle_event(&event);
-                        }
-                    },
-                },
-                Screen::ConfirmExit => match key_event.code {
-                    KeyCode::Char('y') => self.exit(),
-                    KeyCode::Char('n') => self.current_screen = Screen::Main,
-                    _ => {}
-                },
-                Screen::ConfirmSave => match key_event.code {
-                    KeyCode::Char('y') => {
-                        if let Err(e) = self.save_to_file() {
-                            println!("Error saving to file: {}", e);
-                        }
-                    }
-                    KeyCode::Char('n') => self.current_screen = Screen::Main,
-                    _ => {}
-                },
-            }
-        }
+        event::handle(self)
     }
 
     fn nav_next_line(&mut self) {
@@ -489,128 +425,5 @@ impl Tui {
             self.page_goto = self.page_goto.saturating_sub(1);
             self.page_reload = true;
         }
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use crossterm::event::{KeyEvent, KeyModifiers};
-
-    #[test]
-    fn handle_key_events_on_main_screen() {
-        let mut tui = Tui::new("sb_path", "pvc_name");
-        tui.entries_offset = vec![
-            super::sbsearch::Entry {
-                level: String::from("level=info"),
-                path: String::from("/path/to/log1"),
-                content: String::from("This is an info log entry."),
-                timestamp: chrono::Utc::now(),
-            },
-            super::sbsearch::Entry {
-                level: String::from("level=warning"),
-                path: String::from("/path/to/log2"),
-                content: String::from("This is an warning log entry."),
-                timestamp: chrono::Utc::now(),
-            },
-            super::sbsearch::Entry {
-                level: String::from("level=error"),
-                path: String::from("/path/to/log3"),
-                content: String::from("This is an error log entry."),
-                timestamp: chrono::Utc::now(),
-            },
-        ];
-
-        assert_eq!(tui.sbpath, "sb_path");
-        assert_eq!(tui.keyword, "pvc_name");
-        assert_eq!(tui.current_screen, Screen::Main);
-
-        // navigation keys
-        let key_event = KeyEvent::new(KeyCode::Char('j'), KeyModifiers::NONE);
-        let event = Event::Key(key_event);
-        tui.handle_key_event(event);
-        assert_eq!(tui.nav_state.selected(), Some(1));
-
-        let key_event = KeyEvent::new(KeyCode::Down, KeyModifiers::NONE);
-        let event = Event::Key(key_event);
-        tui.handle_key_event(event);
-        assert_eq!(tui.nav_state.selected(), Some(2));
-
-        let key_event = KeyEvent::new(KeyCode::Char('k'), KeyModifiers::NONE);
-        let event = Event::Key(key_event);
-        tui.handle_key_event(event);
-        assert_eq!(tui.nav_state.selected(), Some(1));
-
-        let key_event = KeyEvent::new(KeyCode::Up, KeyModifiers::NONE);
-        let event = Event::Key(key_event);
-        tui.handle_key_event(event);
-        assert_eq!(tui.nav_state.selected(), Some(0));
-
-        let key_event = KeyEvent::new(KeyCode::Char('G'), KeyModifiers::NONE);
-        let event = Event::Key(key_event);
-        tui.handle_key_event(event);
-        assert_eq!(tui.nav_state.selected(), Some(2));
-
-        let key_event = KeyEvent::new(KeyCode::Char('g'), KeyModifiers::NONE);
-        let event = Event::Key(key_event);
-        tui.handle_key_event(event);
-        assert_eq!(tui.nav_state.selected(), Some(0));
-
-        // confirm exit
-        let key_event = KeyEvent::new(KeyCode::Char('q'), KeyModifiers::NONE);
-        let event = Event::Key(key_event);
-        tui.handle_key_event(event);
-        assert_eq!(tui.current_screen, Screen::ConfirmExit);
-
-        let key_event = KeyEvent::new(KeyCode::Char('y'), KeyModifiers::NONE);
-        let event = Event::Key(key_event);
-        tui.handle_key_event(event);
-        assert!(tui.exit);
-    }
-
-    #[test]
-    fn handle_key_events_on_search() {
-        let mut tui = Tui::new("sb_path", "pvc_name");
-        assert_eq!(tui.search_mode, SearchMode::Normal);
-
-        // enable search mode
-        let key_event = KeyEvent::new(KeyCode::Char('/'), KeyModifiers::NONE);
-        let event = Event::Key(key_event);
-        tui.handle_key_event(event);
-        assert_eq!(tui.search_mode, SearchMode::Insert);
-
-        tui.search_input = tui
-            .search_input
-            .with_value(String::from("test input value"));
-        let key_event = KeyEvent::new(KeyCode::Enter, KeyModifiers::NONE);
-        let event = Event::Key(key_event);
-        tui.handle_key_event(event);
-        assert_eq!(tui.search, String::from("test input value"));
-        assert_eq!(tui.search_mode, SearchMode::Normal);
-
-        // clear search
-        let key_event = KeyEvent::new(KeyCode::Char('c'), KeyModifiers::NONE);
-        let event = Event::Key(key_event);
-        tui.handle_key_event(event);
-        assert_eq!(tui.search, String::new());
-    }
-
-    #[test]
-    fn handle_key_events_on_save() {
-        let mut tui = Tui::new("sb_path", "pvc_name");
-        tui.current_screen = Screen::Main;
-        tui.last_saved_filename = String::new();
-
-        // show confirm save search results
-        let key_event = KeyEvent::new(KeyCode::Char('s'), KeyModifiers::NONE);
-        let event = Event::Key(key_event);
-        tui.handle_key_event(event);
-        assert_eq!(tui.current_screen, Screen::ConfirmSave);
-
-        // exit save popup
-        let key_event = KeyEvent::new(KeyCode::Char('n'), KeyModifiers::NONE);
-        let event = Event::Key(key_event);
-        tui.handle_key_event(event);
-        assert_eq!(tui.current_screen, Screen::Main);
     }
 }
