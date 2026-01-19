@@ -206,7 +206,7 @@ impl<'a> Renderer<'a> {
             .block(list_block)
             .style(Style::default())
             .highlight_symbol(">> ")
-            .highlight_style(Style::default().bg(Color::Magenta));
+            .highlight_style(Style::default().bg(Color::LightMagenta));
         frame.render_stateful_widget(list, area, self.nav_state);
 
         // render scrollbar
