@@ -43,6 +43,7 @@ pub struct Renderer<'a> {
 }
 
 impl<'a> Renderer<'a> {
+    #[allow(clippy::too_many_arguments)]
     pub fn new(
         filepath: String,
         keyword: String,
@@ -206,7 +207,7 @@ impl<'a> Renderer<'a> {
             .style(Style::default())
             .highlight_symbol(">> ")
             .highlight_style(Style::default().bg(Color::Magenta));
-        frame.render_stateful_widget(list, area, &mut self.nav_state);
+        frame.render_stateful_widget(list, area, self.nav_state);
 
         // render scrollbar
         self.vertical_scroll_state = self.vertical_scroll_state.content_length(lines_count);
