@@ -1,5 +1,6 @@
 check:
 	cargo check
+	cargo clippy -- -D warnings
 
 run:
 	if [ -z "$(SUPPORT_BUNDLE_PATH)" ]; then \
