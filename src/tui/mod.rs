@@ -94,9 +94,14 @@ impl Tui {
                 Screen::ConfirmSave => {
                     let filename =
                         format!("sbsearch_{}.log", chrono::Utc::now().format("%Y%m%d%H%M%S"));
-                    let text = format!("save search result to ./{}? (y/n)", filename);
+                    self.draw_popup(
+                        "Confirm Save",
+                        format!("save search result to ./{}? (y/n)", filename).as_str(),
+                        40,
+                        15,
+                        frame,
+                    );
                     self.last_saved_filename = filename;
-                    self.draw_popup("Confirm Save", text.as_str(), 40, 15, frame);
                 }
                 _ => self.draw_main(frame),
             })?;
