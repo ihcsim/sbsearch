@@ -232,7 +232,7 @@ impl Tui {
         self.nav_state.select(Some(0));
     }
 
-    fn nav_end(&mut self) {
+    fn nav_last_line(&mut self) {
         if !self.entries_offset.is_empty() {
             let end = self.entries_offset.len() - 1;
             self.vertical_scroll_state = self.vertical_scroll_state.position(end);
@@ -252,6 +252,14 @@ impl Tui {
             self.page_goto = self.page_goto.saturating_sub(1);
             self.page_reload = true;
         }
+    }
+
+    fn nav_first_page(&mut self) {
+        self.page_goto = 1;
+    }
+
+    fn nav_last_page(&mut self) {
+        self.page_goto = self.page_final;
     }
 }
 

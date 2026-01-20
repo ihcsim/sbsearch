@@ -19,8 +19,6 @@ fn handle_key_event(tui: &mut super::Tui, event: Event) {
             Screen::Main => match tui.search_mode {
                 SearchMode::Normal => match key_event.code {
                     KeyCode::Char('q') => tui.current_screen = Screen::ConfirmExit,
-                    KeyCode::Char('G') => tui.nav_end(),
-                    KeyCode::Char('g') => tui.nav_first_line(),
                     KeyCode::Char('/') => {
                         tui.search_mode = SearchMode::Insert;
                         tui.search_input.reset();
@@ -32,10 +30,14 @@ fn handle_key_event(tui: &mut super::Tui, event: Event) {
                     KeyCode::Char('s') => {
                         tui.current_screen = Screen::ConfirmSave;
                     }
+                    KeyCode::Char('G') => tui.nav_last_line(),
+                    KeyCode::Char('g') => tui.nav_first_line(),
                     KeyCode::Up | KeyCode::Char('k') => tui.nav_prev_line(),
                     KeyCode::Down | KeyCode::Char('j') => tui.nav_next_line(),
                     KeyCode::Left => tui.nav_prev_page(),
                     KeyCode::Right => tui.nav_next_page(),
+                    KeyCode::Char('0') => tui.nav_first_page(),
+                    KeyCode::Char('9') => tui.nav_last_page(),
                     _ => {}
                 },
                 SearchMode::Insert => match key_event.code {
@@ -135,6 +137,16 @@ mod tests {
         let event = Event::Key(key_event);
         handle_key_event(tui, event);
         assert_eq!(tui.nav_state.selected(), Some(0));
+
+        let key_event = KeyEvent::new(KeyCode::Char('0'), KeyModifiers::NONE);
+        let event = Event::Key(key_event);
+        handle_key_event(tui, event);
+        assert_eq!(tui.page_goto, 1);
+
+        let key_event = KeyEvent::new(KeyCode::Char('9'), KeyModifiers::NONE);
+        let event = Event::Key(key_event);
+        handle_key_event(tui, event);
+        assert_eq!(tui.page_goto, tui.page_final);
 
         // confirm exit
         let key_event = KeyEvent::new(KeyCode::Char('q'), KeyModifiers::NONE);
