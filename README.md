@@ -21,11 +21,11 @@ sbsearch -h
 ```
 
 ```sh
-Usage: sbsearch --support-bundle-path <SUPPORT_BUNDLE_PATH> --resource-name <RESOURCE_NAME>
+Usage: sbsearch --support-bundle-path <SUPPORT_BUNDLE_PATH> --keyword <KEYWORD>
 
 Options:
   -s, --support-bundle-path <SUPPORT_BUNDLE_PATH>
-  -r, --resource-name <RESOURCE_NAME>
+  -k, --keyword <KEYWORD>
   -h, --help                                       Print help
   -V, --version                                    Print version
 ```
@@ -41,6 +41,37 @@ sbsearch \
 ```
 
 Unarchive the support bundle before passing its path to `sbsearch`.
+
+## Keymaps
+
+### Line Navigation
+
+Keys               | Actions
+-------------------| -------
+Up/Down arrow keys | Move up/down by one line
+`g`                  | Go to the beginning of the log
+`G`                  | Go to the end of the log
+
+### Page Navigation
+
+Keys                 | Actions
+---------------------| -------
+Left/Right arrow keys| Move left/right by one page
+
+### Search
+
+Keys | Actions
+-----| -------
+`/`    | Enter search mode
+Enter| Execute search
+`c`    | Clear search
+
+### Others
+
+Keys | Actions
+-----| -------
+`s`    | Save the current filtered logs to a file
+`q`    | Quit the program
 
 ## Development
 
