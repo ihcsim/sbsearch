@@ -57,6 +57,8 @@ Up/Down arrow keys | Move up/down by one line
 Keys                 | Actions
 ---------------------| -------
 Left/Right arrow keys| Move left/right by one page
+`0`                    | Go to the first page
+`9`                    | Go to the last page
 
 ### Search
 
@@ -72,6 +74,15 @@ Keys | Actions
 -----| -------
 `s`    | Save the current filtered logs to a file
 `q`    | Quit the program
+
+## Color Scheme
+
+`sbsearch` uses the following color scheme to highlight different line context:
+
+* warning in yellow
+* error in red
+* currently selected line in light magenta
+* search matches in blue
 
 ## Development
 
