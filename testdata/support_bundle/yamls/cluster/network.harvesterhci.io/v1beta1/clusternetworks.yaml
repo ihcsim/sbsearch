@@ -1,0 +1,35 @@
+apiVersion: v1
+items:
+- apiVersion: network.harvesterhci.io/v1beta1
+  kind: ClusterNetwork
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    finalizers:
+    - wrangler.cattle.io/harvester-network-manager-cn-controller
+    generation: 1
+    managedFields:
+    - apiVersion: network.harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/harvester-network-manager-cn-controller"null: {}
+        f:status:
+          .: {}
+          f:conditions: {}
+      manager: harvester-network-controller
+      operation: Update
+      time: "2025-12-30T21:49:40Z"
+    name: mgmt
+    resourceVersion: "4666"
+    uid: a1cb15c6-8616-4b4f-9a10-a501a1537722
+  status:
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:49:39Z"
+      status: "True"
+      type: ready
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14456"

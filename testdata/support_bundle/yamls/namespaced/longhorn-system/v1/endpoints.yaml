@@ -1,0 +1,228 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-12-30T21:49:40Z"
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      app: longhorn-admission-webhook
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: longhorn
+      app.kubernetes.io/version: v1.10.1
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+      helm.sh/chart: longhorn-1.10.1
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+            f:helm.sh/chart: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:49:41Z"
+    name: longhorn-admission-webhook
+    namespace: longhorn-system
+    resourceVersion: "4703"
+    uid: f5106879-6e3a-4399-8079-633ccfbd7654
+  subsets:
+  - addresses:
+    - ip: 10.52.0.36
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: longhorn-manager-jmvf2
+        namespace: longhorn-system
+        uid: 55d4d2df-4917-493f-aad4-b8fe78e6f989
+    ports:
+    - name: admission-webhook
+      port: 9502
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-12-30T21:49:40Z"
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      app: longhorn-manager
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: longhorn
+      app.kubernetes.io/version: v1.10.1
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+      helm.sh/chart: longhorn-1.10.1
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+            f:helm.sh/chart: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:49:40Z"
+    name: longhorn-backend
+    namespace: longhorn-system
+    resourceVersion: "4678"
+    uid: b7d0bb75-58e9-49df-b6fd-c0541b82fe18
+  subsets:
+  - addresses:
+    - ip: 10.52.0.36
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: longhorn-manager-jmvf2
+        namespace: longhorn-system
+        uid: 55d4d2df-4917-493f-aad4-b8fe78e6f989
+    ports:
+    - name: manager
+      port: 9500
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-12-30T21:49:38Z"
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      app: longhorn-ui
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: longhorn
+      app.kubernetes.io/version: v1.10.1
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+      helm.sh/chart: longhorn-1.10.1
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+            f:helm.sh/chart: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:49:38Z"
+    name: longhorn-frontend
+    namespace: longhorn-system
+    resourceVersion: "4433"
+    uid: 61adf5b6-1a97-4380-b8d2-54e0536a73db
+  subsets:
+  - addresses:
+    - ip: 10.52.0.49
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: longhorn-ui-677666b49d-xvn4v
+        namespace: longhorn-system
+        uid: deada36d-f4c0-4d0b-ae97-0832e8e84981
+    - ip: 10.52.0.50
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: longhorn-ui-677666b49d-b288n
+        namespace: longhorn-system
+        uid: a0564417-ae99-48b8-9bcf-412a7cc02e99
+    ports:
+    - name: http
+      port: 8000
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-12-30T21:49:40Z"
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      app: longhorn-recovery-backend
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: longhorn
+      app.kubernetes.io/version: v1.10.1
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+      helm.sh/chart: longhorn-1.10.1
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+            f:helm.sh/chart: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:49:43Z"
+    name: longhorn-recovery-backend
+    namespace: longhorn-system
+    resourceVersion: "4786"
+    uid: 824ba218-1a43-4b83-b99c-f285b48faf26
+  subsets:
+  - addresses:
+    - ip: 10.52.0.36
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: longhorn-manager-jmvf2
+        namespace: longhorn-system
+        uid: 55d4d2df-4917-493f-aad4-b8fe78e6f989
+    ports:
+    - name: recovery-backend
+      port: 9503
+      protocol: TCP
+kind: List
+metadata:
+  resourceVersion: "14494"

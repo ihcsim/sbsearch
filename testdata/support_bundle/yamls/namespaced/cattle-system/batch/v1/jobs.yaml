@@ -1,0 +1,761 @@
+apiVersion: v1
+items:
+- apiVersion: batch/v1
+  kind: Job
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/+xXa2/iOBf+K8ifkxDohYbq/cBbmC2aKaDSmdWogyrHPiFeHDtrO7So4r+v7CTcCp2btJ9WVavYPj4+l+c85/QVZWAwxQaj7ivCQkiDDZNC26U9ClLgWaDTpgIOWIMvcAaoi1KslqANKOSdltM5JnvCvl5pAxnykIz/AmI0mEAxGRBsDIeAySajqItKKb/I5wpT8IkURknO3WOnLspnAcqfLxeoi6qLO6fLltf4yAT934Rj8V0tlY96JYiPKWU2Ipj7BP/Qzdrr8mzr8lurjOG+BiIF1T5ObHwSJphOwQYhCkO09hDHMXCXDpznwaKIQQkwoO39DAs8B+rHK9RFt8DfC2yKdYq6qA2XrXYYdQDIVScKw6hz2W53KG3Tq3bnokPCqzNCSBwiD+Uci+Ct0Uei0kVt0u7g5DzpQOssoh3Sujg7vwRKQkzjdhgCxRTCDkDSiS4haZPzFiRR+yw+GpadfL+PhbdX4YXwQrOljX+CuYajUkJSK8A0y3wKy6My1vtTGDiCL1CaSXth2QpagctchSKc53zlv9XjS+HXFvjPzKT+QRD9MEkoRaWiU6BysLuHBBQIAhp1Hy1Q2JeNPcdqAXko5pIsxvZyHzgYJ+sC5qHd8BtVgIcWTFhEVrXzXnUUrn6Ts/MkujqP/YvOVeifQ3jlxwmOfHxBzzrRWdy6ighaz9Ye0jkQh21i2BL6gClnAqZlTaBuFIYeijFZyCT5xDJmUDeKrIVZXhqtUbfloRwrzDlwprNyLek95BwTyECYieSM2Ap5AJUxgQ0T87H6gBkHG10DWc6xgZrx/nUy/IUi/680f6c0d3GXWMY1K/ttn+7trBX8XTAFtF8oJuZTkgItOBPz4VzIzfbgBUhRlk+pYQociJHKgq0sxwwbkg5ecgVal2h6fEULsOncz3QqtXGI8pDMQWEjbZSHtuaWmBeuureRma3tz9qhvScM+x3TH19LCNbGO8CfNvtESt4z+0iyZo4BjMwll/PVx/cCUjpqAYaZAFXRnJo71UBS2fiGPucUG2hs32gQ3AiC4Bu6bpC80SS4ufd+kEPWcE80wZBmvmBNowptmliQVCp93SCpktKUMo3Cqbe8TUAZljCCDejrRvV6Xwr4hq7RzLFThi1hPqJmzERTp8hDPrFHIJbO9Io3pl+nD4O7p8+TP+57/cHTaGz/9O4GdeQ+KJnZVCQMOL2HZPM9wcY2c4viwIJu5IK0XnunVE/G/Z/SXBNhIH5E8+dh/6cV207xrt5PvdGeyccr/jsKPvUeBtOHp9ve9HZHzy9T4o+99mVwPx2ORzsP1swz8xDL8NxuKZgzbdQq0IWGgMisGRNmf/0Ya+i2LoIOqqQnBeebJjZMRtJMFGgQZtuMq4pEHlKgZaHcKPBqiQ5IoZhZ3Uhh4MXYdBCc45hxZhiULYc6rN70Jk/Tr9On/4/HD8hWZq7YknGY22nUzgFrDy0lLzK4k4UwFbfZzyq1rk62JtmVbwvIRW1PUBWiud88mrmk26u5pD4TiXTuYDoWfFWbcKDJcX49kABRYPxtfz3sDQe6ZjYdVOhNaG94Ye99YEqbP5lJb6U2I7AuWV+Gk5t6HkrLg2epFrtbk2G/XirQBqvt6DGCpWuLGtSSEegRYr0Y1ZPU6T5qJLeUuiFgSBIgxmqUFa3bpJe0bJngYHgohC6lcMwP+srghWmjXXJ2lJZN4YTorEZAaYvz2SXiFeVVQqzJq9x61WfK9ZLVziy8jwkqn8UzVrQ3GVoVFBJccHPnJoDzdughZqDqobt0sjfeumH2KMFUM5UFcnmy2fgldbvj4Fbn3u5s/RbBO4zxXXyWAtYmmZf7m5m8PBodjJuHXFi2SWN4NUD3Egfn+l/KKAwtIxhsCscO638CAAD//yTHFGf+DwAA
+      objectset.rio.cattle.io/id: system-upgrade-controller
+      objectset.rio.cattle.io/owner-gvk: upgrade.cattle.io/v1, Kind=Plan
+      objectset.rio.cattle.io/owner-name: sync-additional-ca
+      objectset.rio.cattle.io/owner-namespace: cattle-system
+      upgrade.cattle.io/ttl-seconds-after-finished: "900"
+    creationTimestamp: "2025-12-30T21:49:41Z"
+    finalizers:
+    - wrangler.cattle.io/promote-node-controller
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: 2e612097eec87900976227dd2d82757c083cccb0
+      plan.upgrade.cattle.io/sync-additional-ca: 2c27af4f7e139d7c15346edc0adb200edade07eef796ef2c41ef923b
+      upgrade.cattle.io/controller: system-upgrade-controller
+      upgrade.cattle.io/exclusive: "false"
+      upgrade.cattle.io/node: isim-dev
+      upgrade.cattle.io/plan: sync-additional-ca
+      upgrade.cattle.io/version: v1.1.0
+    managedFields:
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+            f:upgrade.cattle.io/ttl-seconds-after-finished: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+            f:plan.upgrade.cattle.io/sync-additional-ca: {}
+            f:upgrade.cattle.io/controller: {}
+            f:upgrade.cattle.io/exclusive: {}
+            f:upgrade.cattle.io/node: {}
+            f:upgrade.cattle.io/plan: {}
+            f:upgrade.cattle.io/version: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"f34f984b-5780-4e08-bfa9-a5d3793b189c"}: {}
+        f:spec:
+          f:activeDeadlineSeconds: {}
+          f:backoffLimit: {}
+          f:completionMode: {}
+          f:completions: {}
+          f:manualSelector: {}
+          f:parallelism: {}
+          f:podReplacementPolicy: {}
+          f:suspend: {}
+          f:template:
+            f:metadata:
+              f:annotations:
+                .: {}
+                f:meta.helm.sh/release-name: {}
+                f:meta.helm.sh/release-namespace: {}
+              f:labels:
+                .: {}
+                f:app.kubernetes.io/managed-by: {}
+                f:plan.upgrade.cattle.io/sync-additional-ca: {}
+                f:upgrade.cattle.io/controller: {}
+                f:upgrade.cattle.io/exclusive: {}
+                f:upgrade.cattle.io/node: {}
+                f:upgrade.cattle.io/plan: {}
+                f:upgrade.cattle.io/version: {}
+            f:spec:
+              f:affinity:
+                .: {}
+                f:nodeAffinity:
+                  .: {}
+                  f:requiredDuringSchedulingIgnoredDuringExecution: {}
+                f:podAntiAffinity:
+                  .: {}
+                  f:requiredDuringSchedulingIgnoredDuringExecution: {}
+              f:containers:
+                k:{"name":"upgrade"}:
+                  .: {}
+                  f:args: {}
+                  f:command: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"SYSTEM_UPGRADE_NODE_NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef: {}
+                    k:{"name":"SYSTEM_UPGRADE_PLAN_LATEST_HASH"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SYSTEM_UPGRADE_PLAN_LATEST_VERSION"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SYSTEM_UPGRADE_PLAN_NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SYSTEM_UPGRADE_POD_NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef: {}
+                    k:{"name":"SYSTEM_UPGRADE_POD_UID"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources: {}
+                  f:securityContext:
+                    .: {}
+                    f:capabilities:
+                      .: {}
+                      f:add: {}
+                    f:privileged: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/ca"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/host"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/run/system-upgrade/pod"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+              f:dnsPolicy: {}
+              f:hostIPC: {}
+              f:hostNetwork: {}
+              f:hostPID: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:serviceAccount: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:tolerations: {}
+              f:volumes:
+                .: {}
+                k:{"name":"host-root"}:
+                  .: {}
+                  f:hostPath:
+                    .: {}
+                    f:path: {}
+                    f:type: {}
+                  f:name: {}
+                k:{"name":"pod-info"}:
+                  .: {}
+                  f:downwardAPI:
+                    .: {}
+                    f:defaultMode: {}
+                    f:items: {}
+                  f:name: {}
+                k:{"name":"secret-harvester-additional-ca"}:
+                  .: {}
+                  f:name: {}
+                  f:secret:
+                    .: {}
+                    f:defaultMode: {}
+                    f:optional: {}
+                    f:secretName: {}
+          f:ttlSecondsAfterFinished: {}
+      manager: system-upgrade-controller
+      operation: Update
+      time: "2025-12-30T21:49:41Z"
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:completionTime: {}
+          f:conditions: {}
+          f:ready: {}
+          f:startTime: {}
+          f:succeeded: {}
+          f:terminating: {}
+          f:uncountedTerminatedPods: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:49:46Z"
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/promote-node-controller"null: {}
+      manager: harvester
+      operation: Update
+      time: "2025-12-30T21:50:35Z"
+    name: apply-sync-additional-ca-on-isim-dev-with-2c27af4f7e139d7-0ffdd
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: upgrade.cattle.io/v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Plan
+      name: sync-additional-ca
+      uid: f34f984b-5780-4e08-bfa9-a5d3793b189c
+    resourceVersion: "6241"
+    uid: ff19e5a3-e94d-4920-ba86-c7aa63c5f345
+  spec:
+    activeDeadlineSeconds: 900
+    backoffLimit: 99
+    completionMode: NonIndexed
+    completions: 1
+    manualSelector: false
+    parallelism: 1
+    podReplacementPolicy: TerminatingOrFailed
+    selector:
+      matchLabels:
+        batch.kubernetes.io/controller-uid: ff19e5a3-e94d-4920-ba86-c7aa63c5f345
+    suspend: false
+    template:
+      metadata:
+        annotations:
+          meta.helm.sh/release-name: harvester
+          meta.helm.sh/release-namespace: harvester-system
+        labels:
+          app.kubernetes.io/managed-by: Helm
+          batch.kubernetes.io/controller-uid: ff19e5a3-e94d-4920-ba86-c7aa63c5f345
+          batch.kubernetes.io/job-name: apply-sync-additional-ca-on-isim-dev-with-2c27af4f7e139d7-0ffdd
+          controller-uid: ff19e5a3-e94d-4920-ba86-c7aa63c5f345
+          job-name: apply-sync-additional-ca-on-isim-dev-with-2c27af4f7e139d7-0ffdd
+          plan.upgrade.cattle.io/sync-additional-ca: 2c27af4f7e139d7c15346edc0adb200edade07eef796ef2c41ef923b
+          upgrade.cattle.io/controller: system-upgrade-controller
+          upgrade.cattle.io/exclusive: "false"
+          upgrade.cattle.io/node: isim-dev
+          upgrade.cattle.io/plan: sync-additional-ca
+          upgrade.cattle.io/version: v1.1.0
+      spec:
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: kubernetes.io/hostname
+                  operator: In
+                  values:
+                  - isim-dev
+          podAntiAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                - key: upgrade.cattle.io/plan
+                  operator: In
+                  values:
+                  - sync-additional-ca
+              topologyKey: kubernetes.io/hostname
+        containers:
+        - args:
+          - echo "Update additional ca ..."; cp /ca/additional-ca.pem /host/etc/pki/trust/anchors;
+            chroot /host update-ca-certificates; echo "Done";
+          command:
+          - /bin/sh
+          - -c
+          env:
+          - name: SYSTEM_UPGRADE_NODE_NAME
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: spec.nodeName
+          - name: SYSTEM_UPGRADE_POD_NAME
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.name
+          - name: SYSTEM_UPGRADE_POD_UID
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.uid
+          - name: SYSTEM_UPGRADE_PLAN_NAME
+            value: sync-additional-ca
+          - name: SYSTEM_UPGRADE_PLAN_LATEST_HASH
+            value: 2c27af4f7e139d7c15346edc0adb200edade07eef796ef2c41ef923b
+          - name: SYSTEM_UPGRADE_PLAN_LATEST_VERSION
+            value: v1.1.0
+          image: registry.suse.com/bci/bci-base:15.7
+          imagePullPolicy: IfNotPresent
+          name: upgrade
+          resources: {}
+          securityContext:
+            capabilities:
+              add:
+              - CAP_SYS_BOOT
+            privileged: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /host
+            name: host-root
+          - mountPath: /run/system-upgrade/pod
+            name: pod-info
+            readOnly: true
+          - mountPath: /ca
+            name: secret-harvester-additional-ca
+            readOnly: true
+        dnsPolicy: ClusterFirstWithHostNet
+        hostIPC: true
+        hostNetwork: true
+        hostPID: true
+        restartPolicy: Never
+        schedulerName: default-scheduler
+        securityContext: {}
+        serviceAccount: system-upgrade-controller
+        serviceAccountName: system-upgrade-controller
+        terminationGracePeriodSeconds: 30
+        tolerations:
+        - effect: NoSchedule
+          key: node.kubernetes.io/unschedulable
+          operator: Exists
+        - effect: NoExecute
+          operator: Exists
+        volumes:
+        - hostPath:
+            path: /
+            type: Directory
+          name: host-root
+        - downwardAPI:
+            defaultMode: 420
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.labels
+              path: labels
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.annotations
+              path: annotations
+          name: pod-info
+        - name: secret-harvester-additional-ca
+          secret:
+            defaultMode: 420
+            optional: false
+            secretName: harvester-additional-ca
+    ttlSecondsAfterFinished: 900
+  status:
+    completionTime: "2025-12-30T21:49:46Z"
+    conditions:
+    - lastProbeTime: "2025-12-30T21:49:46Z"
+      lastTransitionTime: "2025-12-30T21:49:46Z"
+      message: Reached expected number of succeeded pods
+      reason: CompletionsReached
+      status: "True"
+      type: SuccessCriteriaMet
+    - lastProbeTime: "2025-12-30T21:49:46Z"
+      lastTransitionTime: "2025-12-30T21:49:46Z"
+      message: Reached expected number of succeeded pods
+      reason: CompletionsReached
+      status: "True"
+      type: Complete
+    ready: 0
+    startTime: "2025-12-30T21:49:41Z"
+    succeeded: 1
+    terminating: 0
+    uncountedTerminatedPods: {}
+- apiVersion: batch/v1
+  kind: Job
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/+xX32/iuhL+V678nNCU3yDdB26hd9G2gIDd1apCyLEn4FNj59gOLar434/GCRC2tN3dcx6PKpXEHo8/z3zzefJCNuAop46S7guhSmlHndDK4quO/wDmLLiKEbrCqHMSKkJfCU66xO6sg02YpStDOYRMK2e0lGBI8OZC/aTAhKvtI+mSYmFpdnsd/OezUPy/E0nVh14U3cAJBl2BcgcwH0PAxTalDD3kc2HuiAQXgDknQwtMK25DmjgwYSKUsGvAOHSiiOwDImkM8t2oraldky5pNFrtaqdKod5kzU6rQxParkLcatXa7U6jE0ecx51am5KApJKqyms4l4/cJc0Oj6NavckbMYtbLR7XmnBdq9frtVqtTlvNVtJp1mncgjatsUZSbzU61w1erV88cymf7+f69VJ4ZjKzYovBTai0cNFKaY4GwopNyGF70QYD8E6OL1AIjBUa12yjSq1yXQ9txjA9BVtomspdeNFfqFV4ABM+CbcOy/EMa4w1myR39BZzPLemkIABxcCS7sMLoan4egR1ifMkILHU7HGMi/sgwXlbH7iAlNPgTAYBeRQKaVfUyAdVkPlSTZKkGVcb7TBusDisX0c0pDThYYQnq0b16Lodk/1iHxCbAvNCwJzYQh8ol0LBLOc+6XaiKCAxZY86Se7ERjjS7XQQ5CbNcVvSvQ5ISg2VEqSwm/xd8ymkkjLYgHITLQXbkS6Zg9kIRZ1Qq7G5pUICJwFxsEkldYAwytp0KrB/y+IfKotywhOUNLfDZ4TQK70b+DMTBng/M0KtZmwNPJNCrYYrpY/Dg2dgWU7d3MMMJDCnDWY5L4UNdWw9eE4NWJtz5eGFPAJS4TGLwShwYL1Saus8sQOiUzDUaYz2EPm+pTLzlXWK0GKPf3tPs55y4u9Afyh4dgDvSfg27DdS8x7sy0lb+OpzOtVSr3af34tJflbkGhUKTA4H1Nb/FnIw+z6bD+6XXyb/n/b6g+VojP9694MDklujN3i0RIDkU0iOzxPq8I5CVlQwiSO/434fvOV6Mu7/kudDRVfUz3j+Muz/smOUvHO/8+nwZr78OpgOb78f3B1rsGR405vP7wbL6fhusPw2nn4eTEvWKL7kHbR3vdFZIN6szw983PXmg9l8+ak3+1Ry9dsa9nO7fR1MZ8PxqLThmU4sAiRYnoGHF2KBGXBFDg4XkNuGdLUysPLtYyg1ozLk1TgBaEcRb2NSFgERG7pCe0MVW4M5E+1uedPCdJJJebwwhslIu4kBC8qd7r4isiQgBqzOjL95X1DbgGVGuN2NVg6eHaJlNKWxkMIJb0Qo51iUN73JcvZ9tvzfeDwnWImpEVshYYUdHmZ+H5CtltkG7nWmXCFn+Fiwz5fnCRK+hUZr5+N/ZmgydXV+b1ylmp+WppqHQiXaH4fysZK7A4SPPeWZsVc/ZKPUJ3iD8PX8D3stMFdc2WPob2RmHZhbYaz7Jtz6k7ZuBHhkPOtwcnNoT9b5xJM2j+WhybB/eDVgHTWnNmAEW39tWTBbwaDHGJ5y9H5j47REhT3qMSQJMIfedKHySIhcpVHIKudqmimbW9FY/nDNDJ6FddYn7sLo4kCEfFt/NJ+PF5IWeUF0uxTB94Xxt8iu1IGeU4PrJ/VEDe9NhuiCQ0Iz6e59D1CvRgERDorbsyx8Z02lbyEvSmHRMiGf85njwG+5K38dnnyejS72r4lckqA36ZdP+K+nFIeoPHbA+dToosygpuBt6JwsetRe4ll6+DrrRBEKgaMu86Kw/ysAAP//G/UyXPAOAAA
+      objectset.rio.cattle.io/id: system-upgrade-controller
+      objectset.rio.cattle.io/owner-gvk: upgrade.cattle.io/v1, Kind=Plan
+      objectset.rio.cattle.io/owner-name: system-agent-upgrader
+      objectset.rio.cattle.io/owner-namespace: cattle-system
+      upgrade.cattle.io/ttl-seconds-after-finished: "900"
+    creationTimestamp: "2025-12-30T21:51:40Z"
+    finalizers:
+    - wrangler.cattle.io/promote-node-controller
+    generation: 1
+    labels:
+      objectset.rio.cattle.io/hash: 5578292ae46c6979afa82eb77388959b0ddb938a
+      plan.upgrade.cattle.io/system-agent-upgrader: 69db0346d5bcb77db36e134443334a767f964ab7e8a3c5f475915d24
+      upgrade.cattle.io/controller: system-upgrade-controller
+      upgrade.cattle.io/exclusive: "false"
+      upgrade.cattle.io/node: isim-dev
+      upgrade.cattle.io/plan: system-agent-upgrader
+      upgrade.cattle.io/version: v0.3.14-suc
+    managedFields:
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/promote-node-controller"null: {}
+      manager: harvester
+      operation: Update
+      time: "2025-12-30T21:51:40Z"
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+            f:upgrade.cattle.io/ttl-seconds-after-finished: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+            f:plan.upgrade.cattle.io/system-agent-upgrader: {}
+            f:upgrade.cattle.io/controller: {}
+            f:upgrade.cattle.io/exclusive: {}
+            f:upgrade.cattle.io/node: {}
+            f:upgrade.cattle.io/plan: {}
+            f:upgrade.cattle.io/version: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"fff6b258-b5cb-410a-aafd-0d5bc204018b"}: {}
+        f:spec:
+          f:activeDeadlineSeconds: {}
+          f:backoffLimit: {}
+          f:completionMode: {}
+          f:completions: {}
+          f:manualSelector: {}
+          f:parallelism: {}
+          f:podReplacementPolicy: {}
+          f:suspend: {}
+          f:template:
+            f:metadata:
+              f:labels:
+                .: {}
+                f:plan.upgrade.cattle.io/system-agent-upgrader: {}
+                f:upgrade.cattle.io/controller: {}
+                f:upgrade.cattle.io/exclusive: {}
+                f:upgrade.cattle.io/node: {}
+                f:upgrade.cattle.io/plan: {}
+                f:upgrade.cattle.io/version: {}
+            f:spec:
+              f:affinity:
+                .: {}
+                f:nodeAffinity:
+                  .: {}
+                  f:requiredDuringSchedulingIgnoredDuringExecution: {}
+                f:podAntiAffinity:
+                  .: {}
+                  f:requiredDuringSchedulingIgnoredDuringExecution: {}
+              f:containers:
+                k:{"name":"upgrade"}:
+                  .: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"CATTLE_ROLE_WORKER"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"STRICT_VERIFY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SYSTEM_UPGRADE_NODE_NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef: {}
+                    k:{"name":"SYSTEM_UPGRADE_PLAN_LATEST_HASH"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SYSTEM_UPGRADE_PLAN_LATEST_VERSION"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SYSTEM_UPGRADE_PLAN_NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SYSTEM_UPGRADE_POD_NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef: {}
+                    k:{"name":"SYSTEM_UPGRADE_POD_UID"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef: {}
+                  f:envFrom: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources: {}
+                  f:securityContext:
+                    .: {}
+                    f:capabilities:
+                      .: {}
+                      f:add: {}
+                    f:privileged: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/host"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/run/system-upgrade/pod"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+                    k:{"mountPath":"/run/system-upgrade/secrets/stv-aggregation"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                      f:readOnly: {}
+              f:dnsPolicy: {}
+              f:hostIPC: {}
+              f:hostNetwork: {}
+              f:hostPID: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext: {}
+              f:serviceAccount: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:tolerations: {}
+              f:volumes:
+                .: {}
+                k:{"name":"host-root"}:
+                  .: {}
+                  f:hostPath:
+                    .: {}
+                    f:path: {}
+                    f:type: {}
+                  f:name: {}
+                k:{"name":"pod-info"}:
+                  .: {}
+                  f:downwardAPI:
+                    .: {}
+                    f:defaultMode: {}
+                    f:items: {}
+                  f:name: {}
+                k:{"name":"secret-stv-aggregation"}:
+                  .: {}
+                  f:name: {}
+                  f:secret:
+                    .: {}
+                    f:defaultMode: {}
+                    f:optional: {}
+                    f:secretName: {}
+          f:ttlSecondsAfterFinished: {}
+      manager: system-upgrade-controller
+      operation: Update
+      time: "2025-12-30T21:51:40Z"
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:completionTime: {}
+          f:conditions: {}
+          f:ready: {}
+          f:startTime: {}
+          f:succeeded: {}
+          f:terminating: {}
+          f:uncountedTerminatedPods: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:51:47Z"
+    name: apply-system-agent-upgrader-on-isim-dev-with-69db0346d5bc-3cc66
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: upgrade.cattle.io/v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Plan
+      name: system-agent-upgrader
+      uid: fff6b258-b5cb-410a-aafd-0d5bc204018b
+    resourceVersion: "7905"
+    uid: 8fc5252c-817c-417a-b9ac-aa14dbec7868
+  spec:
+    activeDeadlineSeconds: 900
+    backoffLimit: 99
+    completionMode: NonIndexed
+    completions: 1
+    manualSelector: false
+    parallelism: 1
+    podReplacementPolicy: TerminatingOrFailed
+    selector:
+      matchLabels:
+        batch.kubernetes.io/controller-uid: 8fc5252c-817c-417a-b9ac-aa14dbec7868
+    suspend: false
+    template:
+      metadata:
+        labels:
+          batch.kubernetes.io/controller-uid: 8fc5252c-817c-417a-b9ac-aa14dbec7868
+          batch.kubernetes.io/job-name: apply-system-agent-upgrader-on-isim-dev-with-69db0346d5bc-3cc66
+          controller-uid: 8fc5252c-817c-417a-b9ac-aa14dbec7868
+          job-name: apply-system-agent-upgrader-on-isim-dev-with-69db0346d5bc-3cc66
+          plan.upgrade.cattle.io/system-agent-upgrader: 69db0346d5bcb77db36e134443334a767f964ab7e8a3c5f475915d24
+          upgrade.cattle.io/controller: system-upgrade-controller
+          upgrade.cattle.io/exclusive: "false"
+          upgrade.cattle.io/node: isim-dev
+          upgrade.cattle.io/plan: system-agent-upgrader
+          upgrade.cattle.io/version: v0.3.14-suc
+      spec:
+        affinity:
+          nodeAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+              nodeSelectorTerms:
+              - matchExpressions:
+                - key: kubernetes.io/hostname
+                  operator: In
+                  values:
+                  - isim-dev
+          podAntiAffinity:
+            requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                - key: upgrade.cattle.io/plan
+                  operator: In
+                  values:
+                  - system-agent-upgrader
+              topologyKey: kubernetes.io/hostname
+        containers:
+        - env:
+          - name: SYSTEM_UPGRADE_NODE_NAME
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: spec.nodeName
+          - name: SYSTEM_UPGRADE_POD_NAME
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.name
+          - name: SYSTEM_UPGRADE_POD_UID
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.uid
+          - name: STRICT_VERIFY
+            value: "false"
+          - name: CATTLE_ROLE_WORKER
+            value: "true"
+          - name: SYSTEM_UPGRADE_PLAN_NAME
+            value: system-agent-upgrader
+          - name: SYSTEM_UPGRADE_PLAN_LATEST_HASH
+            value: 69db0346d5bcb77db36e134443334a767f964ab7e8a3c5f475915d24
+          - name: SYSTEM_UPGRADE_PLAN_LATEST_VERSION
+            value: v0.3.14-suc
+          envFrom:
+          - secretRef:
+              name: stv-aggregation-local-d2bfee800d8d
+          image: rancher/system-agent:v0.3.14-suc
+          imagePullPolicy: IfNotPresent
+          name: upgrade
+          resources: {}
+          securityContext:
+            capabilities:
+              add:
+              - CAP_SYS_BOOT
+            privileged: true
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          volumeMounts:
+          - mountPath: /host
+            name: host-root
+          - mountPath: /run/system-upgrade/pod
+            name: pod-info
+            readOnly: true
+          - mountPath: /run/system-upgrade/secrets/stv-aggregation
+            name: secret-stv-aggregation
+            readOnly: true
+        dnsPolicy: ClusterFirstWithHostNet
+        hostIPC: true
+        hostNetwork: true
+        hostPID: true
+        restartPolicy: Never
+        schedulerName: default-scheduler
+        securityContext: {}
+        serviceAccount: system-agent-upgrader
+        serviceAccountName: system-agent-upgrader
+        terminationGracePeriodSeconds: 30
+        tolerations:
+        - effect: NoSchedule
+          key: node.kubernetes.io/unschedulable
+          operator: Exists
+        - operator: Exists
+        volumes:
+        - hostPath:
+            path: /
+            type: Directory
+          name: host-root
+        - downwardAPI:
+            defaultMode: 420
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.labels
+              path: labels
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.annotations
+              path: annotations
+          name: pod-info
+        - name: secret-stv-aggregation
+          secret:
+            defaultMode: 420
+            optional: false
+            secretName: stv-aggregation
+    ttlSecondsAfterFinished: 900
+  status:
+    completionTime: "2025-12-30T21:51:47Z"
+    conditions:
+    - lastProbeTime: "2025-12-30T21:51:47Z"
+      lastTransitionTime: "2025-12-30T21:51:47Z"
+      message: Reached expected number of succeeded pods
+      reason: CompletionsReached
+      status: "True"
+      type: SuccessCriteriaMet
+    - lastProbeTime: "2025-12-30T21:51:47Z"
+      lastTransitionTime: "2025-12-30T21:51:47Z"
+      message: Reached expected number of succeeded pods
+      reason: CompletionsReached
+      status: "True"
+      type: Complete
+    ready: 0
+    startTime: "2025-12-30T21:51:41Z"
+    succeeded: 1
+    terminating: 0
+    uncountedTerminatedPods: {}
+kind: List
+metadata:
+  resourceVersion: "14473"

@@ -1,0 +1,12 @@
+2025-12-30T21:48:03.641371620Z helm upgrade --history-max=5 --install=true --labels=catalog.cattle.io/cluster-repo-name=rancher-charts --namespace=cattle-fleet-system --reset-values=true --take-ownership=true --timeout=5m0s --version=108.0.0+up0.14.0 --wait=true fleet-crd /home/shell/helm/fleet-crd-108.0.0-up0.14.0.tgz
+2025-12-30T21:48:03.667629990Z Release "fleet-crd" does not exist. Installing it now.
+2025-12-30T21:48:04.309586018Z NAME: fleet-crd
+2025-12-30T21:48:04.309622290Z LAST DEPLOYED: Tue Dec 30 21:48:03 2025
+2025-12-30T21:48:04.309624774Z NAMESPACE: cattle-fleet-system
+2025-12-30T21:48:04.309626368Z STATUS: deployed
+2025-12-30T21:48:04.309627850Z REVISION: 1
+2025-12-30T21:48:04.309629394Z TEST SUITE: None
+2025-12-30T21:48:04.315626377Z 
+2025-12-30T21:48:04.315656565Z ---------------------------------------------------------------------
+2025-12-30T21:48:04.318120483Z SUCCESS: helm upgrade --history-max=5 --install=true --labels=catalog.cattle.io/cluster-repo-name=rancher-charts --namespace=cattle-fleet-system --reset-values=true --take-ownership=true --timeout=5m0s --version=108.0.0+up0.14.0 --wait=true fleet-crd /home/shell/helm/fleet-crd-108.0.0-up0.14.0.tgz
+2025-12-30T21:48:04.318378010Z ---------------------------------------------------------------------

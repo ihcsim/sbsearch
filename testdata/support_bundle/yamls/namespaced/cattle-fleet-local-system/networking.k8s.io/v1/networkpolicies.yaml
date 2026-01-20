@@ -1,0 +1,62 @@
+apiVersion: v1
+items:
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: fleet-agent-local
+      meta.helm.sh/release-namespace: cattle-fleet-local-system
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/3yOvW7rMAyF34Vz5JurxH/aO3RutyIDLdGJClo0LBaFYfjdC8FdumQRdPh9ODgbTKQYUBHcBpiSKGqUlEuU4ZO8ZtJqiVJ5VGWqovyLARyMTKQG75TUDCKadcHZHJI5IItHNnnNShPsJ2AciJ82PzA/wMGlsWd7GdvaUjv+77s+dENTWzrbfgjWN3WH1PrrtZQmnAgcBBrxi9Ugs3yXFw6UZ/SFPx2WZ/JlFt0Xyhncx7bfThDTnzhLeCMmr7KA2/Zy4OjX93Wm4sDrr36Cl+Nz2/efAAAA//9HYnBDXwEAAA
+      objectset.rio.cattle.io/id: fleet-agent-bootstrap-cattle-fleet-local-system
+    creationTimestamp: "2025-12-30T21:48:14Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: 362023f752e7f1989d8b652e029bd2c658ae7c44
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:egress: {}
+          f:ingress: {}
+          f:policyTypes: {}
+      manager: fleetcontroller
+      operation: Update
+      time: "2025-12-30T21:48:14Z"
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            f:app.kubernetes.io/managed-by: {}
+      manager: fleetagent
+      operation: Update
+      time: "2025-12-30T21:48:20Z"
+    name: default-allow-all
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2295"
+    uid: 409358c6-ffcd-4408-b8de-5ba4b380e81d
+  spec:
+    egress:
+    - {}
+    ingress:
+    - {}
+    podSelector: {}
+    policyTypes:
+    - Ingress
+    - Egress
+kind: List
+metadata:
+  resourceVersion: "14474"

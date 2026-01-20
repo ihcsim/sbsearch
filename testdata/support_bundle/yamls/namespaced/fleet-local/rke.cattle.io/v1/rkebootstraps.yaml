@@ -1,0 +1,96 @@
+apiVersion: v1
+items:
+- apiVersion: rke.cattle.io/v1
+  kind: RKEBootstrap
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4yRUW7cIBCGr1LxbDaAWRtW6gkq9aUnGA/jrLsYVjBOKkW+e+U0rZy2u+2jzf8x8/O9iJkYAjCI04uAlDIDTznV7TMPXwm5Eh/KlA8IzJEOU36YgjiJJc2Q4JGCnAHPUyLR3ATyc6IiH58u4iQennTz4dOUwscvhIX4n1iCmcRJ4FI5z9JZ6DRobxyY/0LrFXDjY0aIYm1EhIHiaz+MS2Uqh2/y4upGvf34OfIH0vwllxOXHOU1QtqCXJZ79c9Qz1uDDqklb5XW2vWjGkeL1BvvnPVh0MbgoFrVBdGIcqEdf2Ot30L7nWTJcbfY+yQxhruBN6Hy1TMere009l6TI6WhH+yg+852RKYd9Wh65YJ3yh3bdvSd9wb1oI7G9M624P64/DmXC5V389dG3JW81zhGIpa/ZNYr4U7l5/0LbccMvGyu1/V7AAAA//86IMnL6gIAAA
+      objectset.rio.cattle.io/id: unmanaged-machine
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: custom-84a61a1928a2
+      objectset.rio.cattle.io/owner-namespace: local
+    creationTimestamp: "2025-12-30T21:51:42Z"
+    finalizers:
+    - wrangler.cattle.io/rke-bootstrap-etcd-removal
+    generation: 1
+    labels:
+      cluster.x-k8s.io/cluster-name: local
+      cluster.x-k8s.io/control-plane: "true"
+      objectset.rio.cattle.io/hash: c6ce3e94011187f0ff4ce7298849db122cb0306d
+      rke.cattle.io/cluster-name: local
+      rke.cattle.io/control-plane-role: "true"
+      rke.cattle.io/etcd-role: "true"
+      rke.cattle.io/machine-id: c54461c791e8e01a7b4b17646ee23f1f2708d9808533f96992c1b05227843a8
+      rke.cattle.io/worker-role: "true"
+    managedFields:
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"a0370775-19f2-41af-bb7d-9918396887a7"}: {}
+      manager: manager
+      operation: Update
+      time: "2025-12-30T21:51:42Z"
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/rke-bootstrap-etcd-removal"null: {}
+          f:labels:
+            .: {}
+            f:cluster.x-k8s.io/cluster-name: {}
+            f:cluster.x-k8s.io/control-plane: {}
+            f:objectset.rio.cattle.io/hash: {}
+            f:rke.cattle.io/cluster-name: {}
+            f:rke.cattle.io/control-plane-role: {}
+            f:rke.cattle.io/etcd-role: {}
+            f:rke.cattle.io/machine-id: {}
+            f:rke.cattle.io/worker-role: {}
+        f:spec:
+          .: {}
+          f:clusterName: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:51:42Z"
+    - apiVersion: rke.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:dataSecretName: {}
+          f:ready: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:51:42Z"
+    name: custom-84a61a1928a2
+    namespace: fleet-local
+    ownerReferences:
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Machine
+      name: custom-84a61a1928a2
+      uid: a0370775-19f2-41af-bb7d-9918396887a7
+    resourceVersion: "7782"
+    uid: 3a24c675-405b-45eb-bb61-3d6ec3201013
+  spec:
+    clusterName: local
+  status:
+    dataSecretName: custom-84a61a1928a2-machine-bootstrap
+    ready: true
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14492"

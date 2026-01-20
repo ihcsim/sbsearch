@@ -1,0 +1,43 @@
+apiVersion: v1
+items:
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/5SQQUszMRCG/8uc98tnWxvXXD14L97EwySZsmOzyZJMKlr2v0t2oaCI4HF4h2feZy4wkqBHQTAXwBiToHCKpY3JvpKTQqIyJ+VQJJDi9J89GBgwn6kI5X9YZaAo7FDIw9yBy7RAnnikIjhOYGINoYOAlsKv6AHLAAZ8T9ud22i68ff7LZGlnda693rvjrjtNxtt3f7ultq1iCN96TNVG9jBmpQJ3Y/x3EFOgQ50XMwnfsypTmAgW3SqOaXMH4uHOvVFcYIOThyb+0OoDXVIgeBa4Mz01qilrm5gnv/KXVevxPJehEbz7b8v82cAAAD//44g1Bm1AQAA
+      objectset.rio.cattle.io/id: harvester-authenticated
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    labels:
+      objectset.rio.cattle.io/hash: d8e23c16e0d952eebe36668d65cfa28116bc574e
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: harvester
+      operation: Update
+      time: "2025-12-30T21:49:39Z"
+    name: harvester-public
+    namespace: harvester-public
+    resourceVersion: "4531"
+    uid: 34b26762-39a2-4817-b97a-47a712ec5e7c
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: view
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: system:authenticated
+kind: List
+metadata:
+  resourceVersion: "14523"

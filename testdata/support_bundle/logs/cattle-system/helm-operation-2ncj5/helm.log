@@ -1,0 +1,12 @@
+2025-12-30T21:51:45.406389053Z helm upgrade --history-max=5 --install=true --labels=catalog.cattle.io/cluster-repo-name=rancher-charts --namespace=cattle-fleet-system --reset-values=true --take-ownership=true --timeout=5m0s --values=/home/shell/helm/values-fleet-108.0.0-up0.14.0.yaml --version=108.0.0+up0.14.0 --wait=true fleet /home/shell/helm/fleet-108.0.0-up0.14.0.tgz
+2025-12-30T21:52:01.186981293Z Release "fleet" has been upgraded. Happy Helming!
+2025-12-30T21:52:01.187018575Z NAME: fleet
+2025-12-30T21:52:01.187024055Z LAST DEPLOYED: Tue Dec 30 21:51:45 2025
+2025-12-30T21:52:01.187028443Z NAMESPACE: cattle-fleet-system
+2025-12-30T21:52:01.187032381Z STATUS: deployed
+2025-12-30T21:52:01.187036118Z REVISION: 2
+2025-12-30T21:52:01.187039885Z TEST SUITE: None
+2025-12-30T21:52:01.195069815Z 
+2025-12-30T21:52:01.195708698Z ---------------------------------------------------------------------
+2025-12-30T21:52:01.199599492Z SUCCESS: helm upgrade --history-max=5 --install=true --labels=catalog.cattle.io/cluster-repo-name=rancher-charts --namespace=cattle-fleet-system --reset-values=true --take-ownership=true --timeout=5m0s --values=/home/shell/helm/values-fleet-108.0.0-up0.14.0.yaml --version=108.0.0+up0.14.0 --wait=true fleet /home/shell/helm/fleet-108.0.0-up0.14.0.tgz
+2025-12-30T21:52:01.199988520Z ---------------------------------------------------------------------

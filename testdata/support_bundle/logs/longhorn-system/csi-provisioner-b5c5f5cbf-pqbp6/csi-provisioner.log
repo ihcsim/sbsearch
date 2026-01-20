@@ -1,0 +1,17 @@
+2025-12-30T21:50:20.656567965Z I1230 21:50:20.653449       1 feature_gate.go:385] feature gates: {map[]}
+2025-12-30T21:50:20.656597257Z I1230 21:50:20.653569       1 csi-provisioner.go:168] "Version" version="v"
+2025-12-30T21:50:20.656599572Z I1230 21:50:20.653574       1 csi-provisioner.go:191] Building kube configs for running in cluster...
+2025-12-30T21:50:20.656601574Z I1230 21:50:20.653742       1 envvar.go:172] "Feature gate default state" feature="InformerResourceVersion" enabled=false
+2025-12-30T21:50:20.656602777Z I1230 21:50:20.653751       1 envvar.go:172] "Feature gate default state" feature="InOrderInformers" enabled=true
+2025-12-30T21:50:20.656603959Z I1230 21:50:20.653754       1 envvar.go:172] "Feature gate default state" feature="WatchListClient" enabled=false
+2025-12-30T21:50:20.656605201Z I1230 21:50:20.653757       1 envvar.go:172] "Feature gate default state" feature="ClientsAllowCBOR" enabled=false
+2025-12-30T21:50:20.656606363Z I1230 21:50:20.653759       1 envvar.go:172] "Feature gate default state" feature="ClientsPreferCBOR" enabled=false
+2025-12-30T21:50:21.656605071Z I1230 21:50:21.656180       1 common.go:143] "Probing CSI driver for readiness"
+2025-12-30T21:50:21.660572937Z I1230 21:50:21.658809       1 csi-provisioner.go:246] Detected CSI driver driver.longhorn.io
+2025-12-30T21:50:21.660587263Z I1230 21:50:21.659351       1 csi-provisioner.go:315] CSI driver supports PUBLISH_UNPUBLISH_VOLUME, watching VolumeAttachments
+2025-12-30T21:50:21.684597137Z I1230 21:50:21.683798       1 csi-provisioner.go:480] using apps/v1/Deployment csi-provisioner as owner of CSIStorageCapacity objects
+2025-12-30T21:50:21.689754160Z I1230 21:50:21.688562       1 nodes.go:205] Started node topology worker
+2025-12-30T21:50:21.690194718Z I1230 21:50:21.690115       1 csi-provisioner.go:545] using the CSIStorageCapacity v1 API
+2025-12-30T21:50:21.690663946Z I1230 21:50:21.690624       1 controller.go:758] "Using saving PVs to API server in background"
+2025-12-30T21:50:21.692297508Z I1230 21:50:21.691911       1 csi-provisioner.go:608] ServeMux listening at ":8000"
+2025-12-30T21:50:21.693885006Z I1230 21:50:21.693781       1 leaderelection.go:257] attempting to acquire leader lease longhorn-system/driver-longhorn-io...

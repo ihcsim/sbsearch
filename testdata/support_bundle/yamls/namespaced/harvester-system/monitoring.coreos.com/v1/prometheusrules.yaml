@@ -1,0 +1,628 @@
+apiVersion: v1
+items:
+- apiVersion: monitoring.coreos.com/v1
+  kind: PrometheusRule
+  metadata:
+    annotations:
+      operator.cdi.kubevirt.io/lastAppliedConfiguration: '{"metadata":{"name":"prometheus-cdi-rules","namespace":"harvester-system","creationTimestamp":"null","labels":{"cdi.kubevirt.io":"","prometheus.cdi.kubevirt.io":"true"}},"spec":{"groups":[{"name":"recordingRules.rules","rules":[{"record":"kubevirt_cdi_clone_pods_high_restart","expr":"count(kube_pod_container_status_restarts_total{pod=~''.*-source-pod'',
+        container=''cdi-clone-source''} \u003e 3) or on() vector(0)"},{"record":"kubevirt_cdi_import_pods_high_restart","expr":"count(kube_pod_container_status_restarts_total{pod=~''importer-.*'',
+        container=''importer''} \u003e 3) or on() vector(0)"},{"record":"kubevirt_cdi_operator_up","expr":"sum(up{namespace=''harvester-system'',
+        pod=~''cdi-operator-.*''} or vector(0))"},{"record":"kubevirt_cdi_upload_pods_high_restart","expr":"count(kube_pod_container_status_restarts_total{pod=~''cdi-upload-.*'',
+        container=''cdi-upload-server''} \u003e 3) or on() vector(0)"}]},{"name":"alerts.rules","rules":[{"alert":"CDIDataImportCronOutdated","expr":"sum
+        by(ns,cron_name) (kubevirt_cdi_dataimportcron_outdated{pending=\"false\"})
+        \u003e 0","for":"15m","labels":{"kubernetes_operator_component":"containerized-data-importer","kubernetes_operator_part_of":"kubevirt","operator_health_impact":"warning","severity":"info"},"annotations":{"runbook_url":"https://kubevirt.io/monitoring/runbooks/CDIDataImportCronOutdated","summary":"DataImportCron
+        (recurring polling of VM templates disk image sources, also known as golden
+        images) PVCs are not being updated on the defined schedule"}},{"alert":"CDIDataVolumeUnusualRestartCount","expr":"kubevirt_cdi_import_pods_high_restart
+        \u003e 0 or kubevirt_cdi_upload_pods_high_restart \u003e 0 or kubevirt_cdi_clone_pods_high_restart
+        \u003e 0","for":"5m","labels":{"kubernetes_operator_component":"containerized-data-importer","kubernetes_operator_part_of":"kubevirt","operator_health_impact":"none","severity":"warning"},"annotations":{"runbook_url":"https://kubevirt.io/monitoring/runbooks/CDIDataVolumeUnusualRestartCount","summary":"Some
+        CDI population workloads have an unusual restart count, meaning they are probably
+        failing and need to be investigated"}},{"alert":"CDIDefaultStorageClassDegraded","expr":"sum(kubevirt_cdi_storageprofile_info{default=\"true\",degraded=\"false\"}
+        or on() vector(0)) +\n\t\t\t\t\t\t\t\t sum(kubevirt_cdi_storageprofile_info{virtdefault=\"true\",degraded=\"false\"}
+        or on() vector(0)) +\n\t\t\t\t\t\t\t\t on () (0*(sum(kubevirt_cdi_storageprofile_info{default=\"true\"})
+        or sum(kubevirt_cdi_storageprofile_info{virtdefault=\"true\"}))) == 0","for":"5m","labels":{"kubernetes_operator_component":"containerized-data-importer","kubernetes_operator_part_of":"kubevirt","operator_health_impact":"none","severity":"warning"},"annotations":{"runbook_url":"https://kubevirt.io/monitoring/runbooks/CDIDefaultStorageClassDegraded","summary":"Default
+        storage class has no smart clone or ReadWriteMany"}},{"alert":"CDIMultipleDefaultVirtStorageClasses","expr":"sum(kubevirt_cdi_storageprofile_info{virtdefault=\"true\"}
+        or on() vector(0)) \u003e 1","for":"5m","labels":{"kubernetes_operator_component":"containerized-data-importer","kubernetes_operator_part_of":"kubevirt","operator_health_impact":"none","severity":"warning"},"annotations":{"runbook_url":"https://kubevirt.io/monitoring/runbooks/CDIMultipleDefaultVirtStorageClasses","summary":"More
+        than one default virtualization StorageClass detected"}},{"alert":"CDINoDefaultStorageClass","expr":"sum(kubevirt_cdi_storageprofile_info{default=\"true\"}
+        or on() vector(0)) +\n\t\t\t\t\t\t\t\t sum(kubevirt_cdi_storageprofile_info{virtdefault=\"true\"}
+        or on() vector(0)) +\n\t\t\t\t\t\t\t\t (count(kubevirt_cdi_datavolume_pending
+        == 0) or on() vector(0)) == 0","for":"5m","labels":{"kubernetes_operator_component":"containerized-data-importer","kubernetes_operator_part_of":"kubevirt","operator_health_impact":"none","severity":"warning"},"annotations":{"runbook_url":"https://kubevirt.io/monitoring/runbooks/CDINoDefaultStorageClass","summary":"No
+        default StorageClass or virtualization StorageClass, and a DataVolume is pending
+        for one"}},{"alert":"CDINotReady","expr":"kubevirt_cdi_cr_ready == 0","for":"5m","labels":{"kubernetes_operator_component":"containerized-data-importer","kubernetes_operator_part_of":"kubevirt","operator_health_impact":"critical","severity":"warning"},"annotations":{"runbook_url":"https://kubevirt.io/monitoring/runbooks/CDINotReady","summary":"CDI
+        is not available to use"}},{"alert":"CDIOperatorDown","expr":"kubevirt_cdi_operator_up
+        == 0","for":"5m","labels":{"kubernetes_operator_component":"containerized-data-importer","kubernetes_operator_part_of":"kubevirt","operator_health_impact":"critical","severity":"warning"},"annotations":{"runbook_url":"https://kubevirt.io/monitoring/runbooks/CDIOperatorDown","summary":"CDI
+        operator is down"}},{"alert":"CDIStorageProfilesIncomplete","expr":"sum by(storageclass,provisioner)
+        ((kubevirt_cdi_storageprofile_info{complete=\"false\"}\u003e0))","for":"5m","labels":{"kubernetes_operator_component":"containerized-data-importer","kubernetes_operator_part_of":"kubevirt","operator_health_impact":"none","severity":"info"},"annotations":{"runbook_url":"https://kubevirt.io/monitoring/runbooks/CDIStorageProfilesIncomplete","summary":"Incomplete
+        StorageProfile {{ $labels.storageclass }}, accessMode/volumeMode cannot be
+        inferred by CDI for PVC population request"}}]}]}}'
+    creationTimestamp: "2025-12-30T21:49:40Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-operator
+      cdi.kubevirt.io: "null"
+      prometheus.cdi.kubevirt.io: "true"
+    managedFields:
+    - apiVersion: monitoring.coreos.com/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:operator.cdi.kubevirt.io/lastAppliedConfiguration: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cdi.kubevirt.io: {}
+            f:prometheus.cdi.kubevirt.io: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"2704747f-4820-4fba-9438-e16029345ede"}: {}
+        f:spec:
+          .: {}
+          f:groups:
+            .: {}
+            k:{"name":"alerts.rules"}:
+              .: {}
+              f:name: {}
+              f:rules: {}
+            k:{"name":"recordingRules.rules"}:
+              .: {}
+              f:name: {}
+              f:rules: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:49:40Z"
+    name: prometheus-cdi-rules
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: cdi-deployment
+      uid: 2704747f-4820-4fba-9438-e16029345ede
+    resourceVersion: "4659"
+    uid: 7392cceb-e60f-4307-8e48-1aa4b6576fe2
+  spec:
+    groups:
+    - name: recordingRules.rules
+      rules:
+      - expr: count(kube_pod_container_status_restarts_total{pod=~'.*-source-pod',
+          container='cdi-clone-source'} > 3) or on() vector(0)
+        record: kubevirt_cdi_clone_pods_high_restart
+      - expr: count(kube_pod_container_status_restarts_total{pod=~'importer-.*', container='importer'}
+          > 3) or on() vector(0)
+        record: kubevirt_cdi_import_pods_high_restart
+      - expr: sum(up{namespace='harvester-system', pod=~'cdi-operator-.*'} or vector(0))
+        record: kubevirt_cdi_operator_up
+      - expr: count(kube_pod_container_status_restarts_total{pod=~'cdi-upload-.*',
+          container='cdi-upload-server'} > 3) or on() vector(0)
+        record: kubevirt_cdi_upload_pods_high_restart
+    - name: alerts.rules
+      rules:
+      - alert: CDIDataImportCronOutdated
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/CDIDataImportCronOutdated
+          summary: DataImportCron (recurring polling of VM templates disk image sources,
+            also known as golden images) PVCs are not being updated on the defined
+            schedule
+        expr: sum by(ns,cron_name) (kubevirt_cdi_dataimportcron_outdated{pending="false"})
+          > 0
+        for: 15m
+        labels:
+          kubernetes_operator_component: containerized-data-importer
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: warning
+          severity: info
+      - alert: CDIDataVolumeUnusualRestartCount
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/CDIDataVolumeUnusualRestartCount
+          summary: Some CDI population workloads have an unusual restart count, meaning
+            they are probably failing and need to be investigated
+        expr: kubevirt_cdi_import_pods_high_restart > 0 or kubevirt_cdi_upload_pods_high_restart
+          > 0 or kubevirt_cdi_clone_pods_high_restart > 0
+        for: 5m
+        labels:
+          kubernetes_operator_component: containerized-data-importer
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: none
+          severity: warning
+      - alert: CDIDefaultStorageClassDegraded
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/CDIDefaultStorageClassDegraded
+          summary: Default storage class has no smart clone or ReadWriteMany
+        expr: "sum(kubevirt_cdi_storageprofile_info{default=\"true\",degraded=\"false\"}
+          or on() vector(0)) +\n\t\t\t\t\t\t\t\t sum(kubevirt_cdi_storageprofile_info{virtdefault=\"true\",degraded=\"false\"}
+          or on() vector(0)) +\n\t\t\t\t\t\t\t\t on () (0*(sum(kubevirt_cdi_storageprofile_info{default=\"true\"})
+          or sum(kubevirt_cdi_storageprofile_info{virtdefault=\"true\"}))) == 0"
+        for: 5m
+        labels:
+          kubernetes_operator_component: containerized-data-importer
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: none
+          severity: warning
+      - alert: CDIMultipleDefaultVirtStorageClasses
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/CDIMultipleDefaultVirtStorageClasses
+          summary: More than one default virtualization StorageClass detected
+        expr: sum(kubevirt_cdi_storageprofile_info{virtdefault="true"} or on() vector(0))
+          > 1
+        for: 5m
+        labels:
+          kubernetes_operator_component: containerized-data-importer
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: none
+          severity: warning
+      - alert: CDINoDefaultStorageClass
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/CDINoDefaultStorageClass
+          summary: No default StorageClass or virtualization StorageClass, and a DataVolume
+            is pending for one
+        expr: "sum(kubevirt_cdi_storageprofile_info{default=\"true\"} or on() vector(0))
+          +\n\t\t\t\t\t\t\t\t sum(kubevirt_cdi_storageprofile_info{virtdefault=\"true\"}
+          or on() vector(0)) +\n\t\t\t\t\t\t\t\t (count(kubevirt_cdi_datavolume_pending
+          == 0) or on() vector(0)) == 0"
+        for: 5m
+        labels:
+          kubernetes_operator_component: containerized-data-importer
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: none
+          severity: warning
+      - alert: CDINotReady
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/CDINotReady
+          summary: CDI is not available to use
+        expr: kubevirt_cdi_cr_ready == 0
+        for: 5m
+        labels:
+          kubernetes_operator_component: containerized-data-importer
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: critical
+          severity: warning
+      - alert: CDIOperatorDown
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/CDIOperatorDown
+          summary: CDI operator is down
+        expr: kubevirt_cdi_operator_up == 0
+        for: 5m
+        labels:
+          kubernetes_operator_component: containerized-data-importer
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: critical
+          severity: warning
+      - alert: CDIStorageProfilesIncomplete
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/CDIStorageProfilesIncomplete
+          summary: Incomplete StorageProfile {{ $labels.storageclass }}, accessMode/volumeMode
+            cannot be inferred by CDI for PVC population request
+        expr: sum by(storageclass,provisioner) ((kubevirt_cdi_storageprofile_info{complete="false"}>0))
+        for: 5m
+        labels:
+          kubernetes_operator_component: containerized-data-importer
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: none
+          severity: info
+- apiVersion: monitoring.coreos.com/v1
+  kind: PrometheusRule
+  metadata:
+    annotations:
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:50:00Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      k8s-app: kubevirt
+      prometheus.kubevirt.io: "true"
+    managedFields:
+    - apiVersion: monitoring.coreos.com/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:k8s-app: {}
+            f:prometheus.kubevirt.io: {}
+        f:spec:
+          .: {}
+          f:groups:
+            .: {}
+            k:{"name":"alerts.rules"}:
+              .: {}
+              f:name: {}
+              f:rules: {}
+            k:{"name":"recordingRules.rules"}:
+              .: {}
+              f:name: {}
+              f:rules: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:50:41Z"
+    name: prometheus-kubevirt-rules
+    namespace: harvester-system
+    resourceVersion: "6579"
+    uid: 9cc4bf7d-4d34-4af7-8839-b1995ef25315
+  spec:
+    groups:
+    - name: recordingRules.rules
+      rules:
+      - expr: count(count (kube_node_status_allocatable) by (node))
+        record: kubevirt_allocatable_nodes
+      - expr: group by (group,version,resource,subresource) (apiserver_requested_deprecated_apis{group="kubevirt.io"})
+          * on (group,version,resource,subresource) group_right() sum by (group,version,resource,subresource,verb)
+          (apiserver_request_total)
+        record: kubevirt_api_request_deprecated_total
+      - expr: topk by(container)(1,max by(container, namespace, node)(container_memory_rss{container=~"virt-controller|virt-api|virt-handler|virt-operator"}  -
+          on(pod) group_left(node) (kube_pod_container_resource_requests{ container=~"virt-controller|virt-api|virt-handler|virt-operator",resource="memory"})))
+        labels:
+          reason: memory_rss_delta_from_request
+        record: kubevirt_memory_delta_from_requested_bytes
+      - expr: topk by(container)(1,max by(container, namespace, node)(container_memory_working_set_bytes{container=~"virt-controller|virt-api|virt-handler|virt-operator"}  -
+          on(pod) group_left(node) (kube_pod_container_resource_requests{ container=~"virt-controller|virt-api|virt-handler|virt-operator",resource="memory"})))
+        labels:
+          reason: memory_working_set_delta_from_request
+        record: kubevirt_memory_delta_from_requested_bytes
+      - expr: count(kube_node_status_allocatable{resource="devices_kubevirt_io_kvm"}
+          != 0) or vector(0)
+        record: kubevirt_nodes_with_kvm
+      - expr: sum by (namespace) (count by (name,namespace) (kubevirt_vm_error_status_last_transition_timestamp_seconds
+          + kubevirt_vm_migrating_status_last_transition_timestamp_seconds + kubevirt_vm_non_running_status_last_transition_timestamp_seconds
+          + kubevirt_vm_running_status_last_transition_timestamp_seconds + kubevirt_vm_starting_status_last_transition_timestamp_seconds))
+        record: kubevirt_number_of_vms
+      - expr: sum(up{namespace='harvester-system', pod=~'virt-api-.*'}) or vector(0)
+        record: kubevirt_virt_api_up
+      - expr: sum(kubevirt_virt_controller_ready_status{namespace='harvester-system'})
+          or vector(0)
+        record: kubevirt_virt_controller_ready
+      - expr: sum(up{pod=~'virt-controller-.*', namespace='harvester-system'}) or
+          vector(0)
+        record: kubevirt_virt_controller_up
+      - expr: sum(up{pod=~'virt-handler-.*', namespace='harvester-system'}) or vector(0)
+        record: kubevirt_virt_handler_up
+      - expr: sum(kubevirt_virt_operator_leading_status{namespace='harvester-system'})
+        record: kubevirt_virt_operator_leading
+      - expr: sum(kube_pod_status_ready{pod=~'virt-operator-.*', condition='true',
+          namespace='harvester-system'} * on (pod) kubevirt_virt_operator_ready_status{namespace='harvester-system'})
+          or vector(0)
+        record: kubevirt_virt_operator_ready
+      - expr: sum(up{namespace='harvester-system', pod=~'virt-operator-.*'}) or vector(0)
+        record: kubevirt_virt_operator_up
+      - expr: sum by(pod, container, namespace) (kube_pod_container_resource_requests{pod=~'virt-launcher-.*',
+          container='compute', resource='memory'}- on(pod,container, namespace) container_memory_rss{pod=~'virt-launcher-.*',
+          container='compute'})
+        record: kubevirt_vm_container_free_memory_bytes_based_on_rss
+      - expr: sum by(pod, container, namespace) (kube_pod_container_resource_requests{pod=~'virt-launcher-.*',
+          container='compute', resource='memory'}- on(pod,container, namespace) max
+          by(pod, container, namespace) (container_memory_working_set_bytes{pod=~'virt-launcher-.*',
+          container='compute'}))
+        record: kubevirt_vm_container_free_memory_bytes_based_on_working_set_bytes
+      - expr: sum by (namespace) (kubevirt_vm_created_by_pod_total)
+        record: kubevirt_vm_created_total
+      - expr: kubevirt_vmi_memory_available_bytes-kubevirt_vmi_memory_usable_bytes
+        record: kubevirt_vmi_memory_used_bytes
+      - expr: sum by (node, phase, os, workload, flavor, instance_type, preference,
+          guest_os_kernel_release, guest_os_machine, guest_os_arch, guest_os_name,
+          guest_os_version_id, vmi_pod) (kubevirt_vmi_info)
+        record: kubevirt_vmi_phase_count
+      - expr: sum by(vm_name, vm_namespace) (kubevirt_vmsnapshot_persistentvolumeclaim_labels)
+        record: kubevirt_vmsnapshot_disks_restored_from_source
+      - expr: sum by(vm_name, vm_namespace) (kube_persistentvolumeclaim_resource_requests_storage_bytes
+          * on(persistentvolumeclaim, namespace) group_left(vm_name, vm_namespace)
+          kubevirt_vmsnapshot_persistentvolumeclaim_labels)
+        record: kubevirt_vmsnapshot_disks_restored_from_source_bytes
+      - expr: label_replace(label_replace(kube_persistentvolumeclaim_labels{label_restore_kubevirt_io_source_vm_name!='',
+          label_restore_kubevirt_io_source_vm_namespace!=''} == 1, 'vm_namespace',
+          '$1', 'label_restore_kubevirt_io_source_vm_namespace', '(.*)'), 'vm_name',
+          '$1', 'label_restore_kubevirt_io_source_vm_name', '(.*)')
+        record: kubevirt_vmsnapshot_persistentvolumeclaim_labels
+    - name: alerts.rules
+      rules:
+      - alert: KubeVirtDeprecatedAPIRequested
+        annotations:
+          description: Detected requests to the deprecated {{ $labels.resource }}.{{
+            $labels.group }}/{{ $labels.version }} API.
+          runbook_url: https://kubevirt.io/monitoring/runbooks/KubeVirtDeprecatedAPIRequested
+          summary: Detected {{ $value }} requests in the last 10 minutes.
+        expr: sum by (resource,group,version) ((round(increase(kubevirt_api_request_deprecated_total{verb!~"LIST|WATCH"}[10m]))
+          > 0 and kubevirt_api_request_deprecated_total{verb!~"LIST|WATCH"} offset
+          10m) or (kubevirt_api_request_deprecated_total{verb!~"LIST|WATCH"} != 0
+          unless kubevirt_api_request_deprecated_total{verb!~"LIST|WATCH"} offset
+          10m))
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: none
+          severity: info
+      - alert: KubeVirtNoAvailableNodesToRunVMs
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/KubeVirtNoAvailableNodesToRunVMs
+          summary: There are no available nodes in the cluster to run VMs.
+        expr: ((sum(kube_node_status_allocatable{resource='devices_kubevirt_io_kvm'})
+          or on() vector(0)) == 0 and (sum(kubevirt_configuration_emulation_enabled)
+          or on() vector(0)) == 0) or (sum(kube_node_labels{label_kubevirt_io_schedulable='true'})
+          or on() vector(0)) == 0
+        for: 5m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: critical
+          severity: warning
+      - alert: KubeVirtVMIExcessiveMigrations
+        annotations:
+          description: VirtualMachineInstance {{ $labels.vmi }} in namespace {{ $labels.namespace
+            }} has been migrated more than 12 times during the last 24 hours
+          runbook_url: https://kubevirt.io/monitoring/runbooks/KubeVirtVMIExcessiveMigrations
+          summary: An excessive amount of migrations have been detected on a VirtualMachineInstance
+            in the last 24 hours.
+        expr: sum by (vmi, namespace) (topk by (vmi, namespace, vmim) (1, max_over_time(kubevirt_vmi_migration_succeeded[1d])))
+          >= 12
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: none
+          severity: warning
+      - alert: LowKVMNodesCount
+        annotations:
+          description: Low number of nodes with KVM resource available.
+          runbook_url: https://kubevirt.io/monitoring/runbooks/LowKVMNodesCount
+          summary: At least two nodes with kvm resource required for VM live migration.
+        expr: (kubevirt_allocatable_nodes > 1) and (kubevirt_nodes_with_kvm < 2)
+        for: 5m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: warning
+          severity: warning
+      - alert: LowReadyVirtControllersCount
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/LowReadyVirtControllersCount
+          summary: Some virt controllers are running but not ready.
+        expr: kubevirt_virt_controller_ready <  kubevirt_virt_controller_up
+        for: 10m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: warning
+          severity: warning
+      - alert: LowReadyVirtOperatorsCount
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/LowReadyVirtOperatorsCount
+          summary: Some virt-operators are running but not ready.
+        expr: kubevirt_virt_operator_ready <  kubevirt_virt_operator_up
+        for: 10m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: warning
+          severity: warning
+      - alert: LowVirtAPICount
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/LowVirtAPICount
+          summary: More than one virt-api should be running if more than one worker
+            nodes exist.
+        expr: (kubevirt_allocatable_nodes > 1) and (kubevirt_virt_api_up < 2)
+        for: 60m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: warning
+          severity: warning
+      - alert: LowVirtControllersCount
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/LowVirtControllersCount
+          summary: More than one virt-controller should be ready if more than one
+            worker node.
+        expr: (kubevirt_allocatable_nodes > 1) and (kubevirt_virt_controller_ready
+          < 2)
+        for: 10m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: warning
+          severity: warning
+      - alert: LowVirtOperatorCount
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/LowVirtOperatorCount
+          summary: More than one virt-operator should be running if more than one
+            worker nodes exist.
+        expr: (kubevirt_allocatable_nodes > 1) and (kubevirt_virt_operator_up < 2)
+        for: 60m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: warning
+          severity: warning
+      - alert: NoLeadingVirtOperator
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/NoLeadingVirtOperator
+          summary: No leading virt-operator was detected for the last 10 min.
+        expr: kubevirt_virt_operator_leading == 0
+        for: 10m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: critical
+          severity: critical
+      - alert: NoReadyVirtController
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/NoReadyVirtController
+          summary: No ready virt-controller was detected for the last 10 min.
+        expr: kubevirt_virt_controller_ready == 0
+        for: 10m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: critical
+          severity: critical
+      - alert: NoReadyVirtOperator
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/NoReadyVirtOperator
+          summary: No ready virt-operator was detected for the last 10 min.
+        expr: kubevirt_virt_operator_ready == 0
+        for: 10m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: critical
+          severity: critical
+      - alert: OrphanedVirtualMachineInstances
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/OrphanedVirtualMachineInstances
+          summary: No ready virt-handler pod detected on node {{ $labels.node }} with
+            running vmis for more than 10 minutes
+        expr: (((max by (node) (kube_pod_status_ready{condition='true',pod=~'virt-handler.*'}
+          * on(pod) group_left(node) max by(pod,node)(kube_pod_info{pod=~'virt-handler.*',node!=''}))
+          ) == 1) or (count by (node)( kube_pod_info{pod=~'virt-launcher.*',node!=''})*0))
+          == 0
+        for: 10m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: none
+          severity: warning
+      - alert: OutdatedVirtualMachineInstanceWorkloads
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/OutdatedVirtualMachineInstanceWorkloads
+          summary: Some running VMIs are still active in outdated pods after KubeVirt
+            control plane update has completed.
+        expr: kubevirt_vmi_number_of_outdated != 0
+        for: 24h
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: none
+          severity: warning
+      - alert: VMCannotBeEvicted
+        annotations:
+          description: Eviction policy for VirtualMachine {{ $labels.name }} in namespace
+            {{ $labels.namespace }} (on node {{ $labels.node }}) is set to Live Migration
+            but the VM is not migratable
+          runbook_url: https://kubevirt.io/monitoring/runbooks/VMCannotBeEvicted
+          summary: The VM's eviction strategy is set to Live Migration but the VM
+            is not migratable
+        expr: kubevirt_vmi_non_evictable * on(name, namespace) group_left() kubevirt_vmi_info{phase='running'}
+          == 1
+        for: 1m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: none
+          severity: warning
+      - alert: VirtAPIDown
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/VirtAPIDown
+          summary: All virt-api servers are down.
+        expr: kubevirt_virt_api_up == 0
+        for: 10m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: critical
+          severity: critical
+      - alert: VirtApiRESTErrorsBurst
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/VirtApiRESTErrorsBurst
+          summary: More than 80% of the rest calls failed in virt-api for the last
+            5 minutes
+        expr: sum ( rate ( kubevirt_rest_client_requests_total{namespace="harvester-system",pod=~"virt-api-.*",code=~"(4|5)[0-9][0-9]"}
+          [5m] ) )  /  sum ( rate ( kubevirt_rest_client_requests_total{namespace="harvester-system",pod=~"virt-api-.*"}
+          [5m] ) ) >= 0.8
+        for: 5m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: critical
+          severity: critical
+      - alert: VirtControllerDown
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/VirtControllerDown
+          summary: No running virt-controller was detected for the last 10 min.
+        expr: kubevirt_virt_controller_up == 0
+        for: 10m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: critical
+          severity: critical
+      - alert: VirtControllerRESTErrorsBurst
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/VirtControllerRESTErrorsBurst
+          summary: More than 80% of the rest calls failed in virt-controller for the
+            last 5 minutes
+        expr: sum ( rate ( kubevirt_rest_client_requests_total{namespace="harvester-system",pod=~"virt-controller-.*",code=~"(4|5)[0-9][0-9]"}
+          [5m] ) )  /  sum ( rate ( kubevirt_rest_client_requests_total{namespace="harvester-system",pod=~"virt-controller-.*"}
+          [5m] ) ) >= 0.8
+        for: 5m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: critical
+          severity: critical
+      - alert: VirtHandlerDaemonSetRolloutFailing
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/VirtHandlerDaemonSetRolloutFailing
+          summary: Some virt-handlers failed to roll out
+        expr: (kube_daemonset_status_number_ready{namespace='harvester-system', daemonset='virt-handler'}
+          - kube_daemonset_status_desired_number_scheduled{namespace='harvester-system',
+          daemonset='virt-handler'}) != 0
+        for: 15m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: warning
+          severity: warning
+      - alert: VirtHandlerRESTErrorsBurst
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/VirtHandlerRESTErrorsBurst
+          summary: More than 80% of the rest calls failed in virt-handler for the
+            last 5 minutes
+        expr: sum ( rate ( kubevirt_rest_client_requests_total{namespace="harvester-system",pod=~"virt-handler-.*",code=~"(4|5)[0-9][0-9]"}
+          [5m] ) )  /  sum ( rate ( kubevirt_rest_client_requests_total{namespace="harvester-system",pod=~"virt-handler-.*"}
+          [5m] ) ) >= 0.8
+        for: 5m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: critical
+          severity: critical
+      - alert: VirtOperatorDown
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/VirtOperatorDown
+          summary: All virt-operator servers are down.
+        expr: kubevirt_virt_operator_up == 0
+        for: 10m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: critical
+          severity: critical
+      - alert: VirtOperatorRESTErrorsBurst
+        annotations:
+          runbook_url: https://kubevirt.io/monitoring/runbooks/VirtOperatorRESTErrorsBurst
+          summary: More than 80% of the rest calls failed in virt-operator for the
+            last 5 minutes
+        expr: sum ( rate ( kubevirt_rest_client_requests_total{namespace="harvester-system",pod=~"virt-operator-.*",code=~"(4|5)[0-9][0-9]"}
+          [5m] ) )  /  sum ( rate ( kubevirt_rest_client_requests_total{namespace="harvester-system",pod=~"virt-operator-.*"}
+          [5m] ) ) >= 0.8
+        for: 5m
+        labels:
+          kubernetes_operator_component: kubevirt
+          kubernetes_operator_part_of: kubevirt
+          operator_health_impact: critical
+          severity: critical
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14493"

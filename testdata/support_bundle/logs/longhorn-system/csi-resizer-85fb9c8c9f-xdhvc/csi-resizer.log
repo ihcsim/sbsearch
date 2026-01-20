@@ -1,0 +1,11 @@
+2025-12-30T21:50:20.504132755Z I1230 21:50:20.495208       1 main.go:116] "Version" version="v"
+2025-12-30T21:50:20.504151900Z I1230 21:50:20.495352       1 feature_gate.go:385] feature gates: {map[RecoverVolumeExpansionFailure:false]}
+2025-12-30T21:50:20.504261686Z I1230 21:50:20.495617       1 envvar.go:172] "Feature gate default state" feature="InformerResourceVersion" enabled=false
+2025-12-30T21:50:20.504263769Z I1230 21:50:20.495637       1 envvar.go:172] "Feature gate default state" feature="InOrderInformers" enabled=true
+2025-12-30T21:50:20.504265112Z I1230 21:50:20.495641       1 envvar.go:172] "Feature gate default state" feature="WatchListClient" enabled=false
+2025-12-30T21:50:20.504266214Z I1230 21:50:20.495645       1 envvar.go:172] "Feature gate default state" feature="ClientsAllowCBOR" enabled=false
+2025-12-30T21:50:20.504267306Z I1230 21:50:20.495648       1 envvar.go:172] "Feature gate default state" feature="ClientsPreferCBOR" enabled=false
+2025-12-30T21:50:21.499023358Z I1230 21:50:21.498949       1 common.go:143] "Probing CSI driver for readiness"
+2025-12-30T21:50:21.504104995Z I1230 21:50:21.503813       1 main.go:171] "CSI driver name" driverName="driver.longhorn.io"
+2025-12-30T21:50:21.505405421Z I1230 21:50:21.505335       1 main.go:216] "ServeMux listening" address=":8000"
+2025-12-30T21:50:21.505871424Z I1230 21:50:21.505739       1 leaderelection.go:257] attempting to acquire leader lease longhorn-system/external-resizer-driver-longhorn-io...

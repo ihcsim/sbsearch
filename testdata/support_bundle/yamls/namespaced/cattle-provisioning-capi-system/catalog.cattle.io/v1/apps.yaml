@@ -1,0 +1,197 @@
+apiVersion: v1
+items:
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/7xXTW/jNhD9KwKvFWlJtmNbwALdJkCxWLQN0qKHtjmMqJHFmiIFkrKbBvrvBaX4I7acJpv1XgxJHM57fPNFP5IKHeTggKSPBJTSDpzQyvpXnf2N3Fl0zAjNODgnkQk9EjlJSYmyolDXJDxrpzcKDV2uVyQlo3UcBp+Fyj/8ityg+99tCiokKbEl80jMoESwyNYxM6B4iYbWRq+FFVoJtaQcasHW8avc2hq4992vnfqh9sE6rEgbEgkZyk4MDg6kXh445LKxDg01WOst3S03XoJx9gU2JdiSpGQGyRyusMBiUiR5loxn89lVxBezpJhMJ1Eyn06y+WKReC5HECe0SW/y2tOFpFPkDgs0qDhakv75SKAWv6Px9iQlnZ6Z1Hz1ize9QYmuWylAWgwJ18oZLSUakjrTYEhWQvnk2MX4i6PYdEmWXCWL+TQa0xlfxHQS8YLOp1DQaDKbToqrpIjjjLT3bUhsjbwLkxfeP7yQ1wOhRONEITDf60vCAbtc2FrCwzbad71pcHtwhuD64+2n4HqnTPATKFie8VeKPEevtFdv0GLVZEjXu4j81UTRGD8EMRsnLKJR0H3g/n3q3wd9VB2D/CWYtyXO6X5tSUqkUM0/g8s1mko4S/dm4UaoXG/ssLmHztHS5dqQlEBdW5ZjLfVDhcqNugQ53bXNqFO1EhaPD9VKWDw5q9ZTjh5X9Gm5teFAtUBd77/ELI7YFQlJjpYbUffFQzox97VD+/iYgOuqBicyicFGuDIYSi8SklJ3xErnapuORkvhyiZjXFdbBUaHXEeZ1NmoAqFGfVMaefgRCYn/5kAoNH3pYwVCenqlEZatRPW9bSx6x/tCvvZrwWdRkfb+VR3J6sb0veW9hO9Dso9sHM1ZxKLvmjpiCxaRtg27ibTTfhwSoQrty/25+J+UdSBlJ7ZE58uhEMa6my6/uipJomRK44SOo9+SOJ3M0/H0D+JnwWuslHb+uOdFCUqwQYaoAtFTwZwF1yXyVSCcDawD19gg89p1jyQl+Rb1ElPA4D5GR/1fodtosxJqyVZz64ujy/GnJv9zv3qrpeAP+xTJsYBGOgpS6o3/fSOjNhyaQrvBYtaC40fOdaMOBsxZOWgNjpfUwrdg0Tmodv3+XXgmA86gcaU24t9udg3F4Lq/g9xpiUc0YLk0uASH+ZYRNd7qqwNdzPszrcwK6ZOGQl8WpgJeCnUpuFdk6vvhfhAq74fFuUhlTxYXwLrcCQeyTyLkaChK5H5Xn4XfpPTO6zzEKXtm+TW70BH4BrNS6xW1z1a/GNDfvZ4d+2Z3DzsCPr3QvBX7cMLH7X7++X+i/jiY/4gKDfSTPAqJbaoKzANJH9u2/S8AAP//DtLKnssOAAA
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.rancher-provisioning-capi.v1
+      objectset.rio.cattle.io/owner-namespace: cattle-provisioning-capi-system
+    creationTimestamp: "2025-12-30T21:48:35Z"
+    generation: 2
+    labels:
+      catalog.cattle.io/cluster-repo-name: rancher-charts
+      objectset.rio.cattle.io/hash: 7a28a6efef4f2db2378760c972f45402854b8992
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:catalog.cattle.io/cluster-repo-name: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"26298503-7c91-40cf-85af-04754f62f11b"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:catalog.cattle.io/certified: {}
+                f:catalog.cattle.io/display-name: {}
+                f:catalog.cattle.io/hidden: {}
+                f:catalog.cattle.io/kube-version: {}
+                f:catalog.cattle.io/managed: {}
+                f:catalog.cattle.io/namespace: {}
+                f:catalog.cattle.io/os: {}
+                f:catalog.cattle.io/permits-os: {}
+                f:catalog.cattle.io/provides-gvr: {}
+                f:catalog.cattle.io/rancher-version: {}
+                f:catalog.cattle.io/release-name: {}
+              f:apiVersion: {}
+              f:appVersion: {}
+              f:description: {}
+              f:home: {}
+              f:maintainers: {}
+              f:name: {}
+              f:sources: {}
+              f:version: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:notes: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:48:41Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:41Z"
+    name: rancher-provisioning-capi
+    namespace: cattle-provisioning-capi-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.rancher-provisioning-capi.v1
+      uid: 26298503-7c91-40cf-85af-04754f62f11b
+    resourceVersion: "2627"
+    uid: 5eb5a8ec-579b-4ffe-866f-5e2c7ae78fdd
+  spec:
+    chart:
+      metadata:
+        annotations:
+          catalog.cattle.io/certified: rancher
+          catalog.cattle.io/display-name: Rancher Provisioning CAPI Controller Manager
+          catalog.cattle.io/hidden: "true"
+          catalog.cattle.io/kube-version: '>= 1.32.0-0 < 1.35.0-0'
+          catalog.cattle.io/managed: "true"
+          catalog.cattle.io/namespace: cattle-provisioning-capi-system
+          catalog.cattle.io/os: linux
+          catalog.cattle.io/permits-os: linux,windows
+          catalog.cattle.io/provides-gvr: apps.deployment/v1
+          catalog.cattle.io/rancher-version: '>= 2.13.0-0 < 2.14.0-0'
+          catalog.cattle.io/release-name: rancher-provisioning-capi
+        apiVersion: v1
+        appVersion: 1.10.6
+        description: capi-controller-manager compatible with Rancher Provisioning
+        home: https://github.com/rancher/provisioning/blob/main/charts/capi/
+        maintainers:
+        - email: chris.kim@suse.com
+          name: Chris Kim
+        name: rancher-provisioning-capi
+        sources:
+        - https://github.com/rancher/provisioning/blob/main/charts/capi/
+        version: 108.0.0+up0.9.0
+    helmVersion: 3
+    info:
+      description: Install complete
+      firstDeployed: "2025-12-30T21:48:35Z"
+      lastDeployed: "2025-12-30T21:48:35Z"
+      notes: |-
+        rancher-provisioning-capi has been installed. Check its status by running:
+          kubectl --namespace cattle-provisioning-capi-system get pods"null
+      status: deployed
+    name: rancher-provisioning-capi
+    namespace: cattle-provisioning-capi-system
+    resources:
+    - apiVersion: networking.k8s.io/v1
+      kind: NetworkPolicy
+      name: default-allow-all
+      namespace: cattle-provisioning-capi-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: rancher-provisioning-capi-patch-sa
+      namespace: cattle-provisioning-capi-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: capi-manager
+      namespace: cattle-provisioning-capi-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: capi-aggregated-manager-role
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: capi-manager-role
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: provisioning-rke-cattle-io
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: provisioning-rke-machine-cattle-io
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: rancher-provisioning-capi-patch-sa
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: capi-manager-rolebinding
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: rancher-provisioning-capi-patch-sa
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: Role
+      name: capi-leader-election-role
+      namespace: cattle-provisioning-capi-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: RoleBinding
+      name: capi-leader-election-rolebinding
+      namespace: cattle-provisioning-capi-system
+    - apiVersion: v1
+      kind: Service
+      name: capi-webhook-service
+      namespace: cattle-provisioning-capi-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: capi-controller-manager
+      namespace: cattle-provisioning-capi-system
+    version: 1
+  status:
+    observedGeneration: 2
+    summary:
+      state: deployed
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14499"

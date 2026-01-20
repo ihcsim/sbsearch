@@ -1,0 +1,1161 @@
+apiVersion: v1
+items:
+- action: Binding
+  apiVersion: v1
+  eventTime: "2025-12-30T21:48:36.026859Z"
+  firstTimestamp: "null"
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: capi-controller-manager-55f48fd4d9-zhncq
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2535"
+    uid: 8cae249f-f865-466a-a1c6-7ca93eb4c34a
+  kind: Event
+  lastTimestamp: "null"
+  message: Successfully assigned cattle-provisioning-capi-system/capi-controller-manager-55f48fd4d9-zhncq
+    to isim-dev
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:36Z"
+    managedFields:
+    - apiVersion: events.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:action: {}
+        f:eventTime: {}
+        f:note: {}
+        f:reason: {}
+        f:regarding: {}
+        f:reportingController: {}
+        f:reportingInstance: {}
+        f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2025-12-30T21:48:36Z"
+    name: capi-controller-manager-55f48fd4d9-zhncq.18861c91bb3feb43
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2540"
+    uid: 859a85be-3d37-44c9-bb47-283f0271ed8c
+  reason: Scheduled
+  reportingComponent: default-scheduler
+  reportingInstance: default-scheduler-isim-dev
+  source: {}
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:36Z"
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: capi-controller-manager-55f48fd4d9-zhncq
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2542"
+    uid: 8cae249f-f865-466a-a1c6-7ca93eb4c34a
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:36Z"
+  message: Add eth0 [10.52.0.24/32] from k8s-pod-network
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:36Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: multus
+      operation: Update
+      time: "2025-12-30T21:48:36Z"
+    name: capi-controller-manager-55f48fd4d9-zhncq.18861c91d34429cc
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2554"
+    uid: e9e054d6-55eb-47f6-ad7b-2b2f79332837
+  reason: AddedInterface
+  reportingComponent: multus
+  reportingInstance: "null"
+  source:
+    component: multus
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:36Z"
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{manager}
+    kind: Pod
+    name: capi-controller-manager-55f48fd4d9-zhncq
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2537"
+    uid: 8cae249f-f865-466a-a1c6-7ca93eb4c34a
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:36Z"
+  message: Container image "rancher/mirrored-cluster-api-controller:v1.10.6" already
+    present on machine
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:36Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:36Z"
+    name: capi-controller-manager-55f48fd4d9-zhncq.18861c91d9b28bb8
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2556"
+    uid: e830cc23-9e90-40eb-8e42-4eeb0332a7be
+  reason: Pulled
+  reportingComponent: kubelet
+  reportingInstance: isim-dev
+  source:
+    component: kubelet
+    host: isim-dev
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:36Z"
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{manager}
+    kind: Pod
+    name: capi-controller-manager-55f48fd4d9-zhncq
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2537"
+    uid: 8cae249f-f865-466a-a1c6-7ca93eb4c34a
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:36Z"
+  message: 'Created container: manager'
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:36Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:36Z"
+    name: capi-controller-manager-55f48fd4d9-zhncq.18861c91f122431c
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2557"
+    uid: e54de649-24de-4d44-b0a7-890ea8627989
+  reason: Created
+  reportingComponent: kubelet
+  reportingInstance: isim-dev
+  source:
+    component: kubelet
+    host: isim-dev
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:37Z"
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{manager}
+    kind: Pod
+    name: capi-controller-manager-55f48fd4d9-zhncq
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2537"
+    uid: 8cae249f-f865-466a-a1c6-7ca93eb4c34a
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:37Z"
+  message: Started container manager
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:37Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:37Z"
+    name: capi-controller-manager-55f48fd4d9-zhncq.18861c91f61c5c46
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2558"
+    uid: ce6d47b5-01b8-47f5-a9f9-f1b5df2a663a
+  reason: Started
+  reportingComponent: kubelet
+  reportingInstance: isim-dev
+  source:
+    component: kubelet
+    host: isim-dev
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:50:39Z"
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{manager}
+    kind: Pod
+    name: capi-controller-manager-55f48fd4d9-zhncq
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2537"
+    uid: 8cae249f-f865-466a-a1c6-7ca93eb4c34a
+  kind: Event
+  lastTimestamp: "2025-12-30T21:50:39Z"
+  message: Stopping container manager
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:39Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:50:39Z"
+    name: capi-controller-manager-55f48fd4d9-zhncq.18861cae794aa1f3
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6519"
+    uid: 061e8178-693c-4a53-8e80-cd8aac44b87f
+  reason: Killing
+  reportingComponent: kubelet
+  reportingInstance: isim-dev
+  source:
+    component: kubelet
+    host: isim-dev
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:36Z"
+  involvedObject:
+    apiVersion: apps/v1
+    kind: ReplicaSet
+    name: capi-controller-manager-55f48fd4d9
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2532"
+    uid: ce5a15a5-83c4-4e21-9f0d-2337c73612df
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:36Z"
+  message: 'Created pod: capi-controller-manager-55f48fd4d9-zhncq'
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:36Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:48:36Z"
+    name: capi-controller-manager-55f48fd4d9.18861c91bae888de
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2536"
+    uid: 08d1b8dd-9635-451b-90c3-05a941979339
+  reason: SuccessfulCreate
+  reportingComponent: replicaset-controller
+  reportingInstance: "null"
+  source:
+    component: replicaset-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:50:39Z"
+  involvedObject:
+    apiVersion: apps/v1
+    kind: ReplicaSet
+    name: capi-controller-manager-55f48fd4d9
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6510"
+    uid: ce5a15a5-83c4-4e21-9f0d-2337c73612df
+  kind: Event
+  lastTimestamp: "2025-12-30T21:50:39Z"
+  message: 'Deleted pod: capi-controller-manager-55f48fd4d9-zhncq'
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:39Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:50:39Z"
+    name: capi-controller-manager-55f48fd4d9.18861cae78ecb822
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6516"
+    uid: 2e4e247b-3912-4b66-b9ee-6d7324e09e47
+  reason: SuccessfulDelete
+  reportingComponent: replicaset-controller
+  reportingInstance: "null"
+  source:
+    component: replicaset-controller
+  type: Normal
+- action: Binding
+  apiVersion: v1
+  eventTime: "2025-12-30T21:50:36.072199Z"
+  firstTimestamp: "null"
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: capi-controller-manager-847bfd47b4-8kxrd
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6321"
+    uid: c13a303e-b98d-4d45-9eb4-7db0fed7a229
+  kind: Event
+  lastTimestamp: "null"
+  message: Successfully assigned cattle-provisioning-capi-system/capi-controller-manager-847bfd47b4-8kxrd
+    to isim-dev
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:36Z"
+    managedFields:
+    - apiVersion: events.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:action: {}
+        f:eventTime: {}
+        f:note: {}
+        f:reason: {}
+        f:regarding: {}
+        f:reportingController: {}
+        f:reportingInstance: {}
+        f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2025-12-30T21:50:36Z"
+    name: capi-controller-manager-847bfd47b4-8kxrd.18861cadae828b3d
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6341"
+    uid: f5bcaab2-b6ba-431b-843b-f8192f84bd3c
+  reason: Scheduled
+  reportingComponent: default-scheduler
+  reportingInstance: default-scheduler-isim-dev
+  source: {}
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:50:36Z"
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: capi-controller-manager-847bfd47b4-8kxrd
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6357"
+    uid: c13a303e-b98d-4d45-9eb4-7db0fed7a229
+  kind: Event
+  lastTimestamp: "2025-12-30T21:50:36Z"
+  message: Add eth0 [10.52.0.77/32] from k8s-pod-network
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:36Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: multus
+      operation: Update
+      time: "2025-12-30T21:50:36Z"
+    name: capi-controller-manager-847bfd47b4-8kxrd.18861cadcf5bbf65
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6435"
+    uid: 72996309-67ca-4324-b928-e8e1f4363166
+  reason: AddedInterface
+  reportingComponent: multus
+  reportingInstance: "null"
+  source:
+    component: multus
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:50:38Z"
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{manager}
+    kind: Pod
+    name: capi-controller-manager-847bfd47b4-8kxrd
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6332"
+    uid: c13a303e-b98d-4d45-9eb4-7db0fed7a229
+  kind: Event
+  lastTimestamp: "2025-12-30T21:50:38Z"
+  message: Container image "rancher/mirrored-cluster-api-controller:v1.10.6" already
+    present on machine
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:50:38Z"
+    name: capi-controller-manager-847bfd47b4-8kxrd.18861cae3c772b64
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6470"
+    uid: 99da99a4-b142-4f3a-b4d1-528fa3c7b549
+  reason: Pulled
+  reportingComponent: kubelet
+  reportingInstance: isim-dev
+  source:
+    component: kubelet
+    host: isim-dev
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:50:38Z"
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{manager}
+    kind: Pod
+    name: capi-controller-manager-847bfd47b4-8kxrd
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6332"
+    uid: c13a303e-b98d-4d45-9eb4-7db0fed7a229
+  kind: Event
+  lastTimestamp: "2025-12-30T21:50:38Z"
+  message: 'Created container: manager'
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:50:38Z"
+    name: capi-controller-manager-847bfd47b4-8kxrd.18861cae3e331115
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6472"
+    uid: 74155843-d29f-4ab7-8b29-297d49a2c46d
+  reason: Created
+  reportingComponent: kubelet
+  reportingInstance: isim-dev
+  source:
+    component: kubelet
+    host: isim-dev
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:50:38Z"
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{manager}
+    kind: Pod
+    name: capi-controller-manager-847bfd47b4-8kxrd
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6332"
+    uid: c13a303e-b98d-4d45-9eb4-7db0fed7a229
+  kind: Event
+  lastTimestamp: "2025-12-30T21:50:38Z"
+  message: Started container manager
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:50:38Z"
+    name: capi-controller-manager-847bfd47b4-8kxrd.18861cae44c9d27d
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6476"
+    uid: 49989576-8e37-4bb2-9c7b-aa8117d23864
+  reason: Started
+  reportingComponent: kubelet
+  reportingInstance: isim-dev
+  source:
+    component: kubelet
+    host: isim-dev
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:50:36Z"
+  involvedObject:
+    apiVersion: apps/v1
+    kind: ReplicaSet
+    name: capi-controller-manager-847bfd47b4
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6291"
+    uid: 5fc3bb41-d10e-4da6-aa00-2753060b7c1c
+  kind: Event
+  lastTimestamp: "2025-12-30T21:50:36Z"
+  message: 'Created pod: capi-controller-manager-847bfd47b4-8kxrd'
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:36Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:50:36Z"
+    name: capi-controller-manager-847bfd47b4.18861cadaddeed5b
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6342"
+    uid: e7efb252-38a1-4075-81c9-d07d49ab413e
+  reason: SuccessfulCreate
+  reportingComponent: replicaset-controller
+  reportingInstance: "null"
+  source:
+    component: replicaset-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:36Z"
+  involvedObject:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: capi-controller-manager
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2531"
+    uid: 5e68c9e1-46c7-4589-b706-086484d15a6e
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:36Z"
+  message: Scaled up replica set capi-controller-manager-55f48fd4d9 from 0 to 1
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:36Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:48:36Z"
+    name: capi-controller-manager.18861c91ba766474
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2533"
+    uid: ad58c20c-42fd-439c-b996-592bd03b8cbe
+  reason: ScalingReplicaSet
+  reportingComponent: deployment-controller
+  reportingInstance: "null"
+  source:
+    component: deployment-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:50:35Z"
+  involvedObject:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: capi-controller-manager
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6272"
+    uid: 5e68c9e1-46c7-4589-b706-086484d15a6e
+  kind: Event
+  lastTimestamp: "2025-12-30T21:50:35Z"
+  message: Scaled up replica set capi-controller-manager-847bfd47b4 from 0 to 1
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:35Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:50:35Z"
+    name: capi-controller-manager.18861cada93990e7
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6300"
+    uid: 0a5da54d-cbeb-4300-953e-334ba483f77e
+  reason: ScalingReplicaSet
+  reportingComponent: deployment-controller
+  reportingInstance: "null"
+  source:
+    component: deployment-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:50:39Z"
+  involvedObject:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: capi-controller-manager
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6355"
+    uid: 5e68c9e1-46c7-4589-b706-086484d15a6e
+  kind: Event
+  lastTimestamp: "2025-12-30T21:50:39Z"
+  message: Scaled down replica set capi-controller-manager-55f48fd4d9 from 1 to 0
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:39Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:50:39Z"
+    name: capi-controller-manager.18861cae786f10c3
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6511"
+    uid: fc2ed2c0-2d60-4f2d-bb03-cc86e8a255e7
+  reason: ScalingReplicaSet
+  reportingComponent: deployment-controller
+  reportingInstance: "null"
+  source:
+    component: deployment-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:37Z"
+  involvedObject:
+    apiVersion: coordination.k8s.io/v1
+    kind: Lease
+    name: controller-leader-election-capi
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2559"
+    uid: 53ba3fae-a5de-4820-b83b-9ecf95e3eb1f
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:37Z"
+  message: capi-controller-manager-55f48fd4d9-zhncq_330e72f6-3262-413f-8b03-bba9d1c67799
+    became leader
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:37Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: manager
+      operation: Update
+      time: "2025-12-30T21:48:37Z"
+    name: controller-leader-election-capi.18861c91fdda8b6d
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2561"
+    uid: 6f0da9c0-51bc-46ce-a03f-1f82f7eb0f45
+  reason: LeaderElection
+  reportingComponent: capi-controller-manager-55f48fd4d9-zhncq_330e72f6-3262-413f-8b03-bba9d1c67799
+  reportingInstance: "null"
+  source:
+    component: capi-controller-manager-55f48fd4d9-zhncq_330e72f6-3262-413f-8b03-bba9d1c67799
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:50:53Z"
+  involvedObject:
+    apiVersion: coordination.k8s.io/v1
+    kind: Lease
+    name: controller-leader-election-capi
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6964"
+    uid: 53ba3fae-a5de-4820-b83b-9ecf95e3eb1f
+  kind: Event
+  lastTimestamp: "2025-12-30T21:50:53Z"
+  message: capi-controller-manager-847bfd47b4-8kxrd_60784a6f-8218-4ef4-90aa-122731f5c2cd
+    became leader
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:54Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: manager
+      operation: Update
+      time: "2025-12-30T21:50:54Z"
+    name: controller-leader-election-capi.18861cb1d55660d1
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "6966"
+    uid: dc1be672-49eb-42c8-a311-adc3d9471f35
+  reason: LeaderElection
+  reportingComponent: capi-controller-manager-847bfd47b4-8kxrd_60784a6f-8218-4ef4-90aa-122731f5c2cd
+  reportingInstance: "null"
+  source:
+    component: capi-controller-manager-847bfd47b4-8kxrd_60784a6f-8218-4ef4-90aa-122731f5c2cd
+  type: Normal
+- action: Binding
+  apiVersion: v1
+  eventTime: "2025-12-30T21:48:38.065318Z"
+  firstTimestamp: "null"
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: rancher-provisioning-capi-patch-sa-lr775
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2584"
+    uid: fd4a8be3-7e32-4673-b7a9-dd0b89435ea7
+  kind: Event
+  lastTimestamp: "null"
+  message: Successfully assigned cattle-provisioning-capi-system/rancher-provisioning-capi-patch-sa-lr775
+    to isim-dev
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:38Z"
+    managedFields:
+    - apiVersion: events.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:action: {}
+        f:eventTime: {}
+        f:note: {}
+        f:reason: {}
+        f:regarding: {}
+        f:reportingController: {}
+        f:reportingInstance: {}
+        f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2025-12-30T21:48:38Z"
+    name: rancher-provisioning-capi-patch-sa-lr775.18861c9234c06a5f
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2588"
+    uid: 9696d057-6a84-4280-8863-e92b46f7b217
+  reason: Scheduled
+  reportingComponent: default-scheduler
+  reportingInstance: default-scheduler-isim-dev
+  source: {}
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:38Z"
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: rancher-provisioning-capi-patch-sa-lr775
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2589"
+    uid: fd4a8be3-7e32-4673-b7a9-dd0b89435ea7
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:38Z"
+  message: Add eth0 [10.52.0.25/32] from k8s-pod-network
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: multus
+      operation: Update
+      time: "2025-12-30T21:48:38Z"
+    name: rancher-provisioning-capi-patch-sa-lr775.18861c924b6483f2
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2591"
+    uid: fb7a59fb-9171-46b5-b6e4-2a73aeafbcad
+  reason: AddedInterface
+  reportingComponent: multus
+  reportingInstance: "null"
+  source:
+    component: multus
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:38Z"
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{patch-sa-cattle-provisioning-capi-system}
+    kind: Pod
+    name: rancher-provisioning-capi-patch-sa-lr775
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2585"
+    uid: fd4a8be3-7e32-4673-b7a9-dd0b89435ea7
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:38Z"
+  message: Container image "rancher/kubectl:v1.34.1" already present on machine
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:38Z"
+    name: rancher-provisioning-capi-patch-sa-lr775.18861c9251439b40
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2593"
+    uid: f9ae0ed2-ce2f-476d-8c30-f805ab26367a
+  reason: Pulled
+  reportingComponent: kubelet
+  reportingInstance: isim-dev
+  source:
+    component: kubelet
+    host: isim-dev
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:38Z"
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{patch-sa-cattle-provisioning-capi-system}
+    kind: Pod
+    name: rancher-provisioning-capi-patch-sa-lr775
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2585"
+    uid: fd4a8be3-7e32-4673-b7a9-dd0b89435ea7
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:38Z"
+  message: 'Created container: patch-sa-cattle-provisioning-capi-system'
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:38Z"
+    name: rancher-provisioning-capi-patch-sa-lr775.18861c9258afddc2
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2594"
+    uid: bd18e4e1-e411-4b30-874b-353f9cab1bf0
+  reason: Created
+  reportingComponent: kubelet
+  reportingInstance: isim-dev
+  source:
+    component: kubelet
+    host: isim-dev
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:38Z"
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{patch-sa-cattle-provisioning-capi-system}
+    kind: Pod
+    name: rancher-provisioning-capi-patch-sa-lr775
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2585"
+    uid: fd4a8be3-7e32-4673-b7a9-dd0b89435ea7
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:38Z"
+  message: Started container patch-sa-cattle-provisioning-capi-system
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:38Z"
+    name: rancher-provisioning-capi-patch-sa-lr775.18861c925be9cc8e
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2595"
+    uid: ef0ca1ed-494f-4664-b443-6d51d8208d08
+  reason: Started
+  reportingComponent: kubelet
+  reportingInstance: isim-dev
+  source:
+    component: kubelet
+    host: isim-dev
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:38Z"
+  involvedObject:
+    apiVersion: batch/v1
+    kind: Job
+    name: rancher-provisioning-capi-patch-sa
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2583"
+    uid: 13693b5f-6a27-4507-92e6-fff1ad5d3b70
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:38Z"
+  message: 'Created pod: rancher-provisioning-capi-patch-sa-lr775'
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:48:38Z"
+    name: rancher-provisioning-capi-patch-sa.18861c92348e28ff
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2587"
+    uid: 571c9229-0f9d-4f7a-8147-dcd1ca470697
+  reason: SuccessfulCreate
+  reportingComponent: job-controller
+  reportingInstance: "null"
+  source:
+    component: job-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:41Z"
+  involvedObject:
+    apiVersion: batch/v1
+    kind: Job
+    name: rancher-provisioning-capi-patch-sa
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2618"
+    uid: 13693b5f-6a27-4507-92e6-fff1ad5d3b70
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:41Z"
+  message: Job completed
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:41Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:48:41Z"
+    name: rancher-provisioning-capi-patch-sa.18861c9313cf3775
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2621"
+    uid: deba72e7-799e-47fb-9f31-08544d688505
+  reason: Completed
+  reportingComponent: job-controller
+  reportingInstance: "null"
+  source:
+    component: job-controller
+  type: Normal
+kind: List
+metadata:
+  resourceVersion: "14499"

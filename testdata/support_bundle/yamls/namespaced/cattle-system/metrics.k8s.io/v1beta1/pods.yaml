@@ -1,0 +1,71 @@
+apiVersion: v1
+items:
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: httpd
+    usage:
+      cpu: 19086n
+      memory: 2248Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:34Z"
+    labels:
+      app: harvester-cluster-repo
+      pod-template-hash: 7487f5bc6f
+    name: harvester-cluster-repo-7487f5bc6f-fcmjl
+    namespace: cattle-system
+  timestamp: "2025-12-30T22:00:21Z"
+  window: 12.417s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: rancher
+    usage:
+      cpu: 14859356n
+      memory: 825016Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:34Z"
+    labels:
+      app: rancher
+      pod-template-hash: 75f954475f
+      release: rancher
+    name: rancher-75f954475f-tdk4p
+    namespace: cattle-system
+  timestamp: "2025-12-30T22:00:12Z"
+  window: 25.817s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: rancher-webhook
+    usage:
+      cpu: 361494n
+      memory: 115944Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:34Z"
+    labels:
+      app: rancher-webhook
+      pod-template-hash: 7bb7b55886
+    name: rancher-webhook-7bb7b55886-ppv7b
+    namespace: cattle-system
+  timestamp: "2025-12-30T22:00:27Z"
+  window: 24.952s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: system-upgrade-controller
+    usage:
+      cpu: 508342n
+      memory: 40680Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:34Z"
+    labels:
+      app.kubernetes.io/component: controller
+      app.kubernetes.io/name: system-upgrade-controller
+      pod-template-hash: 65d9b4b8b
+      upgrade.cattle.io/controller: system-upgrade-controller
+    name: system-upgrade-controller-65d9b4b8b-66vw7
+    namespace: cattle-system
+  timestamp: "2025-12-30T22:00:27Z"
+  window: 16.422s
+kind: List
+metadata: {}

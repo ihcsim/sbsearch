@@ -1,0 +1,133 @@
+apiVersion: v1
+items:
+- apiVersion: batch/v1
+  kind: CronJob
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: fleet
+      meta.helm.sh/release-namespace: cattle-fleet-system
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+    managedFields:
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+        f:spec:
+          f:concurrencyPolicy: {}
+          f:failedJobsHistoryLimit: {}
+          f:jobTemplate:
+            f:spec:
+              f:backoffLimit: {}
+              f:template:
+                f:metadata:
+                  f:labels:
+                    .: {}
+                    f:app: {}
+                f:spec:
+                  f:containers:
+                    k:{"name":"cleanup"}:
+                      .: {}
+                      f:args: {}
+                      f:command: {}
+                      f:image: {}
+                      f:imagePullPolicy: {}
+                      f:name: {}
+                      f:resources: {}
+                      f:securityContext:
+                        .: {}
+                        f:allowPrivilegeEscalation: {}
+                        f:capabilities:
+                          .: {}
+                          f:drop: {}
+                        f:privileged: {}
+                        f:readOnlyRootFilesystem: {}
+                      f:terminationMessagePath: {}
+                      f:terminationMessagePolicy: {}
+                  f:dnsPolicy: {}
+                  f:nodeSelector: {}
+                  f:restartPolicy: {}
+                  f:schedulerName: {}
+                  f:securityContext:
+                    .: {}
+                    f:runAsGroup: {}
+                    f:runAsNonRoot: {}
+                    f:runAsUser: {}
+                  f:serviceAccount: {}
+                  f:serviceAccountName: {}
+                  f:terminationGracePeriodSeconds: {}
+                  f:tolerations: {}
+          f:schedule: {}
+          f:successfulJobsHistoryLimit: {}
+          f:suspend: {}
+      manager: helm
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: fleet-cleanup-gitrepo-jobs
+    namespace: cattle-fleet-system
+    resourceVersion: "1774"
+    uid: c411812c-af9d-43a2-a898-27d0851ffe01
+  spec:
+    concurrencyPolicy: Forbid
+    failedJobsHistoryLimit: 1
+    jobTemplate:
+      metadata: {}
+      spec:
+        backoffLimit: 1
+        template:
+          metadata:
+            labels:
+              app: fleet-job
+          spec:
+            containers:
+            - args:
+              - cleanup
+              - gitjob
+              command:
+              - fleet
+              image: rancher/fleet:v0.14.0
+              imagePullPolicy: IfNotPresent
+              name: cleanup
+              resources: {}
+              securityContext:
+                allowPrivilegeEscalation: false
+                capabilities:
+                  drop:
+                  - ALL
+                privileged: false
+                readOnlyRootFilesystem: false
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+            dnsPolicy: ClusterFirst
+            nodeSelector:
+              kubernetes.io/os: linux
+            restartPolicy: Never
+            schedulerName: default-scheduler
+            securityContext:
+              runAsGroup: 1000
+              runAsNonRoot: true
+              runAsUser: 1000
+            serviceAccount: gitjob
+            serviceAccountName: gitjob
+            terminationGracePeriodSeconds: 30
+            tolerations:
+            - effect: NoSchedule
+              key: cattle.io/os
+              operator: Equal
+              value: linux
+    schedule: '@daily'
+    successfulJobsHistoryLimit: 0
+    suspend: false
+  status: {}
+kind: List
+metadata:
+  resourceVersion: "14479"

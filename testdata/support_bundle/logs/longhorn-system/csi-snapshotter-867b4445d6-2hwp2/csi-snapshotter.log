@@ -1,0 +1,13 @@
+2025-12-30T21:50:20.641676810Z I1230 21:50:20.641190       1 feature_gate.go:385] feature gates: {map[]}
+2025-12-30T21:50:20.641709960Z I1230 21:50:20.641325       1 main.go:136] "Version" version="v"
+2025-12-30T21:50:20.641717893Z I1230 21:50:20.641578       1 envvar.go:172] "Feature gate default state" feature="InOrderInformers" enabled=true
+2025-12-30T21:50:20.641720409Z I1230 21:50:20.641627       1 envvar.go:172] "Feature gate default state" feature="InformerResourceVersion" enabled=false
+2025-12-30T21:50:20.641722072Z I1230 21:50:20.641631       1 envvar.go:172] "Feature gate default state" feature="WatchListClient" enabled=false
+2025-12-30T21:50:20.641723755Z I1230 21:50:20.641634       1 envvar.go:172] "Feature gate default state" feature="ClientsAllowCBOR" enabled=false
+2025-12-30T21:50:20.641725348Z I1230 21:50:20.641638       1 envvar.go:172] "Feature gate default state" feature="ClientsPreferCBOR" enabled=false
+2025-12-30T21:50:20.644570466Z W1230 21:50:20.643906       1 logging.go:55] [core] [Channel #1 SubChannel #2]grpc: addrConn.createTransport failed to connect to {Addr: "/csi/csi.sock", ServerName: "localhost", Attributes: {"<%!p(networktype.keyType=grpc.internal.transport.networktype)>": "unix" }, BalancerAttributes: {"<%!p(pickfirstleaf.managedByPickfirstKeyType={})>": "<%!p(bool=true)>" }}. Err: connection error: desc = "transport: Error while dialing: dial unix /csi/csi.sock: connect: no such file or directory"
+2025-12-30T21:50:21.645908204Z I1230 21:50:21.645832       1 main.go:220] CSI driver name: "driver.longhorn.io"
+2025-12-30T21:50:21.645917901Z I1230 21:50:21.645885       1 common.go:143] "Probing CSI driver for readiness"
+2025-12-30T21:50:21.645940721Z I1230 21:50:21.645920       1 main.go:232] ServeMux listening at ":8000"
+2025-12-30T21:50:21.646921054Z I1230 21:50:21.646870       1 main.go:264] Start NewCSISnapshotSideCarController with snapshotter [driver.longhorn.io] kubeconfig [] csiTimeout [1m50s] csiAddress [/csi/csi.sock] resyncPeriod [15m0s] snapshotNamePrefix [snapshot] snapshotNameUUIDLength [824633787360]
+2025-12-30T21:50:21.647336677Z I1230 21:50:21.647294       1 leaderelection.go:257] attempting to acquire leader lease longhorn-system/external-snapshotter-leader-driver-longhorn-io...

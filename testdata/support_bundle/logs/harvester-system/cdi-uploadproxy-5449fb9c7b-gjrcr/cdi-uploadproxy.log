@@ -1,0 +1,6 @@
+2025-12-30T21:49:54.527161012Z I1230 21:49:54.526916       1 uploadproxy.go:66] Note: increase the -v level in the api deployment for more detailed logging, eg. -v=2 or -v=3
+2025-12-30T21:49:54.527205328Z W1230 21:49:54.527122       1 client_config.go:659] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+2025-12-30T21:49:54.528406735Z I1230 21:49:54.527757       1 envvar.go:172] "Feature gate default state" feature="WatchListClient" enabled=false
+2025-12-30T21:49:54.528415078Z I1230 21:49:54.527766       1 envvar.go:172] "Feature gate default state" feature="InformerResourceVersion" enabled=false
+2025-12-30T21:49:54.628766912Z I1230 21:49:54.628654       1 certwatcher.go:126] Updated current TLS certificate
+2025-12-30T21:49:54.629183444Z I1230 21:49:54.629126       1 certwatcher.go:82] Starting certificate watcher

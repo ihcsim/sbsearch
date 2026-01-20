@@ -1,0 +1,20 @@
+2025-12-30T21:52:25.274804618Z I1230 21:52:25.274597       1 server.go:175] "Starting Kubernetes Scheduler" version="v1.34.2+rke2r1"
+2025-12-30T21:52:25.274839874Z I1230 21:52:25.274704       1 server.go:177] "Golang settings" GOGC="" GOMAXPROCS="" GOTRACEBACK=""
+2025-12-30T21:52:25.276985206Z I1230 21:52:25.276906       1 configmap_cafile_content.go:205] "Starting controller" name="client-ca::kube-system::extension-apiserver-authentication::client-ca-file"
+2025-12-30T21:52:25.276993722Z I1230 21:52:25.276906       1 configmap_cafile_content.go:205] "Starting controller" name="client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"
+2025-12-30T21:52:25.277075396Z I1230 21:52:25.276910       1 requestheader_controller.go:180] Starting RequestHeaderAuthRequestController
+2025-12-30T21:52:25.277197979Z I1230 21:52:25.277120       1 dynamic_serving_content.go:135] "Starting controller" name="serving-cert::/var/lib/rancher/rke2/server/tls/kube-scheduler/kube-scheduler.crt::/var/lib/rancher/rke2/server/tls/kube-scheduler/kube-scheduler.key"
+2025-12-30T21:52:25.277201686Z I1230 21:52:25.277144       1 shared_informer.go:349] "Waiting for caches to sync" controller="client-ca::kube-system::extension-apiserver-authentication::client-ca-file"
+2025-12-30T21:52:25.277204451Z I1230 21:52:25.277150       1 shared_informer.go:349] "Waiting for caches to sync" controller="client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"
+2025-12-30T21:52:25.277206595Z I1230 21:52:25.277156       1 shared_informer.go:349] "Waiting for caches to sync" controller="RequestHeaderAuthRequestController"
+2025-12-30T21:52:25.277893499Z I1230 21:52:25.277342       1 secure_serving.go:211] Serving securely on 127.0.0.1:10259
+2025-12-30T21:52:25.277901534Z I1230 21:52:25.277521       1 tlsconfig.go:243] "Starting DynamicServingCertificateController"
+2025-12-30T21:52:25.378492854Z I1230 21:52:25.378193       1 shared_informer.go:356] "Caches are synced" controller="client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"
+2025-12-30T21:52:25.378520555Z I1230 21:52:25.378270       1 shared_informer.go:356] "Caches are synced" controller="RequestHeaderAuthRequestController"
+2025-12-30T21:52:25.378522890Z I1230 21:52:25.378426       1 shared_informer.go:356] "Caches are synced" controller="client-ca::kube-system::extension-apiserver-authentication::client-ca-file"
+2025-12-30T21:52:25.378558699Z I1230 21:52:25.378524       1 leaderelection.go:257] attempting to acquire leader lease kube-system/kube-scheduler...
+2025-12-30T21:52:25.387855440Z I1230 21:52:25.386531       1 leaderelection.go:271] successfully acquired lease kube-system/kube-scheduler
+2025-12-30T21:57:51.547599920Z E1230 21:57:51.547477       1 schedule_one.go:191] "Status after running PostFilter plugins for pod" logger="UnhandledError" pod="default/virt-launcher-vm-00-pb825" status="not found"
+2025-12-30T21:58:01.344176747Z E1230 21:58:01.343423       1 schedule_one.go:191] "Status after running PostFilter plugins for pod" logger="UnhandledError" pod="default/virt-launcher-vm-00-pb825" status="not found"
+2025-12-30T21:58:03.372373127Z E1230 21:58:03.372235       1 schedule_one.go:191] "Status after running PostFilter plugins for pod" logger="UnhandledError" pod="default/virt-launcher-vm-00-pb825" status="not found"
+2025-12-30T21:58:03.377728007Z E1230 21:58:03.377418       1 schedule_one.go:191] "Status after running PostFilter plugins for pod" logger="UnhandledError" pod="default/virt-launcher-vm-00-pb825" status="not found"

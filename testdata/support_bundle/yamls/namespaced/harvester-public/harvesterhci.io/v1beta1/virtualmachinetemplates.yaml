@@ -1,0 +1,155 @@
+apiVersion: v1
+items:
+- apiVersion: harvesterhci.io/v1beta1
+  kind: VirtualMachineTemplate
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    generation: 2
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:defaultVersionId: {}
+          f:description: {}
+      manager: harvester
+      operation: Update
+      time: "2025-12-30T21:50:36Z"
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:defaultVersion: {}
+          f:latestVersion: {}
+      manager: harvester
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:50:36Z"
+    name: iso-image-base-template
+    namespace: harvester-public
+    resourceVersion: "6348"
+    uid: 94c0d226-0c1e-4f13-9bc1-0c9c1bd2ad53
+  spec:
+    defaultVersionId: harvester-public/iso-image-base-version
+    description: Template for booting the virtual machine from an ISO image
+  status:
+    defaultVersion: 1
+    latestVersion: 1
+- apiVersion: harvesterhci.io/v1beta1
+  kind: VirtualMachineTemplate
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    generation: 2
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:defaultVersionId: {}
+          f:description: {}
+      manager: harvester
+      operation: Update
+      time: "2025-12-30T21:50:36Z"
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:defaultVersion: {}
+          f:latestVersion: {}
+      manager: harvester
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:50:36Z"
+    name: raw-image-base-template
+    namespace: harvester-public
+    resourceVersion: "6380"
+    uid: 9f2d8136-356c-4429-929f-1fb250162991
+  spec:
+    defaultVersionId: harvester-public/raw-image-base-version
+    description: Template for booting the virtual machine from a qcow2/raw image
+  status:
+    defaultVersion: 1
+    latestVersion: 1
+- apiVersion: harvesterhci.io/v1beta1
+  kind: VirtualMachineTemplate
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    generation: 2
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:defaultVersionId: {}
+          f:description: {}
+      manager: harvester
+      operation: Update
+      time: "2025-12-30T21:50:36Z"
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:defaultVersion: {}
+          f:latestVersion: {}
+      manager: harvester
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:50:36Z"
+    name: windows-iso-image-base-template
+    namespace: harvester-public
+    resourceVersion: "6400"
+    uid: 288b13d0-c1ac-4a15-8cc4-d7b58dc7f26d
+  spec:
+    defaultVersionId: harvester-public/windows-iso-image-base-version
+    description: Template for booting the Windows virtual machine from an ISO image
+  status:
+    defaultVersion: 1
+    latestVersion: 1
+- apiVersion: harvesterhci.io/v1beta1
+  kind: VirtualMachineTemplate
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    generation: 2
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:defaultVersionId: {}
+          f:description: {}
+      manager: harvester
+      operation: Update
+      time: "2025-12-30T21:50:36Z"
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:defaultVersion: {}
+          f:latestVersion: {}
+      manager: harvester
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:50:36Z"
+    name: windows-raw-image-base-template
+    namespace: harvester-public
+    resourceVersion: "6425"
+    uid: dce5f7df-3e31-4731-ba2c-dff39cafea7f
+  spec:
+    defaultVersionId: harvester-public/windows-raw-image-base-version
+    description: Template for booting the virtual machine from a windows qcow2/raw
+      image
+  status:
+    defaultVersion: 1
+    latestVersion: 1
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14523"

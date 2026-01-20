@@ -1,0 +1,1873 @@
+apiVersion: v1
+items:
+- apiVersion: admissionregistration.k8s.io/v1
+  kind: MutatingWebhookConfiguration
+  metadata:
+    annotations:
+      operator.cdi.kubevirt.io/lastAppliedConfiguration: '{"kind":"MutatingWebhookConfiguration","apiVersion":"admissionregistration.k8s.io/v1","metadata":{"name":"cdi-api-datavolume-mutate","creationTimestamp":"null","labels":{"cdi.kubevirt.io":"cdi-api"}},"webhooks":[{"name":"datavolume-mutate.cdi.kubevirt.io","clientConfig":{"service":{"namespace":"harvester-system","name":"cdi-api","path":"/datavolume-mutate","port":443},"caBundle":"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURXekNDQWtPZ0F3SUJBZ0lJQkF6NzFEMk5mdnd3RFFZSktvWklodmNOQVFFTEJRQXdPekU1TURjR0ExVUUKQXd3d2FHRnlkbVZ6ZEdWeUxYTjVjM1JsYlY5alpHa3RZWEJwYzJWeWRtVnlMWE5wWjI1bGNrQXhOelkzTVRNeApNemd3TUI0WERUSTFNVEl6TURJeE5Ea3pPVm9YRFRJMk1ERXdNVEl4TkRrME1Gb3dPekU1TURjR0ExVUVBd3d3CmFHRnlkbVZ6ZEdWeUxYTjVjM1JsYlY5alpHa3RZWEJwYzJWeWRtVnlMWE5wWjI1bGNrQXhOelkzTVRNeE16Z3cKTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFwZUY1dzlzTXJVeS9ZOUtMdHlEZQpnSXZNWkl2WTllZVlrYWdpY05iQ2R0RE1NUEpTeDl5SFJyMXFkVHRzK01XVGtNc2p1UGw2b2wzTFZNS1l4UkYzCnlwWkdSQTdHbjRGNWd2dVMxSUtSSXJ4czdhTW85TmwwS2lYamZhS1N2Z29kRHhMNXZuRWYwZ2hCVDV6WnZpcVAKQXBwQ3Ewc3huNUsxdm1LVXZXNnRiaG9aeUF6ay9WeDJnaHRETFZET0lYcGVTeEpiRGpVTUxYYkVMUXVHTFduegpwd05DMHU3UnRXTksyam1uL2VoTjNVZk4rWEk3cGFUSnFPdFI0UkFTOTUyUTdFZStGdmhtWEVLdS9YdkErSlV2CjhNQ0xNV2FoRFdBaFRGR29MT09BNDBYZXJhMjlhckVkMzRWQW4xUnl3UlY2R0wyM0FWUUxKTVhVdUhZL1VkWlgKRndJREFRQUJvMk13WVRBT0JnTlZIUThCQWY4RUJBTUNBcVF3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFkQmdOVgpIUTRFRmdRVW0wVTA4anBxdzQwWEZvQ0dSV1pIRWhGLzQ5SXdId1lEVlIwakJCZ3dGb0FVbTBVMDhqcHF3NDBYCkZvQ0dSV1pIRWhGLzQ5SXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBSTd3Q1BFSFBxbFI3NTVydk1NMXVsU0cKcmYzKzZPa3lkZEZSVDdndVRqRm15TCt2cFhFcmV3Mi9OL2JzZG1qdnVWZlUvclhMc0Jya0FaS2YwQytLaGl1VApQeEZwbU5kTERXUkN1NXlOQmFoWkIzVnRtYUxjSFkvQWxkSEtpbEFmekladURXYjAvUVpDNVpENDFBV09MYXBhCmFUL1Y3Y212cTU3NUp5bnBCakE1cDRUangwNG9pS3g3bWp4M3BZcElkMmN4QWxMRWxHRWZtNTU2NHZlNDNLUDAKQ0ZNbzhpUGNFVGtiNjNxREJCeWVWeHgzeDd4TjRvUHk0OWtDSWJ4dDd4WDZkQlBuc240Z0NwWHZoMlNOaG1KRwpISWxnaVhlRDFZN3BaMEZTVmFJcmxrcUdsUERYR3N1a25vUXB4eExPUDdJQmtFeHozcE9PWFlWaHcxam0rcFE9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K"},"rules":[{"operations":["CREATE","UPDATE"],"apiGroups":["cdi.kubevirt.io"],"apiVersions":["v1beta1"],"resources":["datavolumes"],"scope":"*"}],"failurePolicy":"Fail","matchPolicy":"Exact","namespaceSelector":{},"objectSelector":{},"sideEffects":"None","timeoutSeconds":30,"admissionReviewVersions":["v1","v1beta1"],"reinvocationPolicy":"Never"}]}'
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    generation: 2
+    labels:
+      cdi.kubevirt.io: cdi-api
+      operator.cdi.kubevirt.io/createVersion: 1.62.0-150700.9.3.1
+      operator.cdi.kubevirt.io/updateVersion: 1.62.0-150700.9.3.1
+    managedFields:
+    - apiVersion: admissionregistration.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:operator.cdi.kubevirt.io/lastAppliedConfiguration: {}
+          f:labels:
+            .: {}
+            f:cdi.kubevirt.io: {}
+            f:operator.cdi.kubevirt.io/createVersion: {}
+            f:operator.cdi.kubevirt.io/updateVersion: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"81182c2f-d27e-4d9f-a9db-6e45ca0714a5"}: {}
+        f:webhooks:
+          .: {}
+          k:{"name":"datavolume-mutate.cdi.kubevirt.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:49:40Z"
+    name: cdi-api-datavolume-mutate
+    ownerReferences:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: CDI
+      name: cdi
+      uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+    resourceVersion: "4686"
+    uid: 3b419134-85d4-4791-9058-e072ab17265a
+  webhooks:
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURXekNDQWtPZ0F3SUJBZ0lJQkF6NzFEMk5mdnd3RFFZSktvWklodmNOQVFFTEJRQXdPekU1TURjR0ExVUUKQXd3d2FHRnlkbVZ6ZEdWeUxYTjVjM1JsYlY5alpHa3RZWEJwYzJWeWRtVnlMWE5wWjI1bGNrQXhOelkzTVRNeApNemd3TUI0WERUSTFNVEl6TURJeE5Ea3pPVm9YRFRJMk1ERXdNVEl4TkRrME1Gb3dPekU1TURjR0ExVUVBd3d3CmFHRnlkbVZ6ZEdWeUxYTjVjM1JsYlY5alpHa3RZWEJwYzJWeWRtVnlMWE5wWjI1bGNrQXhOelkzTVRNeE16Z3cKTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFwZUY1dzlzTXJVeS9ZOUtMdHlEZQpnSXZNWkl2WTllZVlrYWdpY05iQ2R0RE1NUEpTeDl5SFJyMXFkVHRzK01XVGtNc2p1UGw2b2wzTFZNS1l4UkYzCnlwWkdSQTdHbjRGNWd2dVMxSUtSSXJ4czdhTW85TmwwS2lYamZhS1N2Z29kRHhMNXZuRWYwZ2hCVDV6WnZpcVAKQXBwQ3Ewc3huNUsxdm1LVXZXNnRiaG9aeUF6ay9WeDJnaHRETFZET0lYcGVTeEpiRGpVTUxYYkVMUXVHTFduegpwd05DMHU3UnRXTksyam1uL2VoTjNVZk4rWEk3cGFUSnFPdFI0UkFTOTUyUTdFZStGdmhtWEVLdS9YdkErSlV2CjhNQ0xNV2FoRFdBaFRGR29MT09BNDBYZXJhMjlhckVkMzRWQW4xUnl3UlY2R0wyM0FWUUxKTVhVdUhZL1VkWlgKRndJREFRQUJvMk13WVRBT0JnTlZIUThCQWY4RUJBTUNBcVF3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFkQmdOVgpIUTRFRmdRVW0wVTA4anBxdzQwWEZvQ0dSV1pIRWhGLzQ5SXdId1lEVlIwakJCZ3dGb0FVbTBVMDhqcHF3NDBYCkZvQ0dSV1pIRWhGLzQ5SXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBSTd3Q1BFSFBxbFI3NTVydk1NMXVsU0cKcmYzKzZPa3lkZEZSVDdndVRqRm15TCt2cFhFcmV3Mi9OL2JzZG1qdnVWZlUvclhMc0Jya0FaS2YwQytLaGl1VApQeEZwbU5kTERXUkN1NXlOQmFoWkIzVnRtYUxjSFkvQWxkSEtpbEFmekladURXYjAvUVpDNVpENDFBV09MYXBhCmFUL1Y3Y212cTU3NUp5bnBCakE1cDRUangwNG9pS3g3bWp4M3BZcElkMmN4QWxMRWxHRWZtNTU2NHZlNDNLUDAKQ0ZNbzhpUGNFVGtiNjNxREJCeWVWeHgzeDd4TjRvUHk0OWtDSWJ4dDd4WDZkQlBuc240Z0NwWHZoMlNOaG1KRwpISWxnaVhlRDFZN3BaMEZTVmFJcmxrcUdsUERYR3N1a25vUXB4eExPUDdJQmtFeHozcE9PWFlWaHcxam0rcFE9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+      service:
+        name: cdi-api
+        namespace: harvester-system
+        path: /datavolume-mutate
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Exact
+    name: datavolume-mutate.cdi.kubevirt.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - cdi.kubevirt.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - datavolumes
+      scope: '*'
+    sideEffects: None
+    timeoutSeconds: 30
+- apiVersion: admissionregistration.k8s.io/v1
+  kind: MutatingWebhookConfiguration
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/8RTy27bMBD8lWLPtCzFclwI6KFRnKJqECRW5EOCHChyZbGmSIGkZASG/r2gH2ldII1vvZHcx+zMcLfQoKOcOgrJFqhS2lEntLL+qsufyJxFFxihA0adkxgIPRYcEgDyblxvFJrRql9DAuM+Ip9+CMW/5MgMug/LFG0QEqip6dE6NCOpKR+VVFLF0Iw2WNZar0eMntXJtpSdtrOv1mEDAwFmcMf1UTRoHW1aSFQnJQFJS5T/VKCmtoYEys+TaRyV5eSChyyezcI4jC5xFkYX0xnH6DIOq9l0Wk082nm8fObhaCF53gLljbBWaLXAXuBmicbu7XmGPgICfVSioxG8EGBSoHKpVpVY+eEZveoUlx71Ng/dbR6li4Jnj+LqerHMirx4yh7Cm2Kxi4UuXUdZXmQXy/nd9cOS3z+FN5O8yK6eQpkCAYumF17L7blU9pzfdYBAS129/yLjQ8246fb/z0e1cZDE8WQYCFRUyM7gvZaCvUIC31dKG4Q3WXd12gR/owQfD2k6iQetW/HN6K7dqevTj9m/u9RMBEJ7tWkrTs1480G3aI5L9AzpYv71cQ4Eivtrf3ghYNDqzrAdKoi21Vpa/26Zbj2ZVHYeCwbyn2b6E+dksrujoRwG/yw4zqvKr4gPaoUwvAy/AgAA//93K3eOVAQAAA
+      objectset.rio.cattle.io/id: "null"
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: harvester-load-balancer-webhook-ca
+      objectset.rio.cattle.io/owner-namespace: harvester-system
+    creationTimestamp: "2025-12-30T21:50:38Z"
+    generation: 1
+    labels:
+      objectset.rio.cattle.io/hash: b83541bb32d0c47704016e701257de1640f755f3
+    managedFields:
+    - apiVersion: admissionregistration.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:webhooks:
+          .: {}
+          k:{"name":"mutator.harvester-system.harvester-load-balancer-webhook"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+      manager: harvester-load-balancer-webhook
+      operation: Update
+      time: "2025-12-30T21:50:38Z"
+    name: harvester-load-balancer-webhook
+    resourceVersion: "6459"
+    uid: cf55f86f-3277-45d8-a709-583bcd3d863c
+  webhooks:
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ2VENDQVdPZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQkdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKYkdsemRHVnVaWEl0YjNKbk1TWXdKQVlEVlFRRERCMWtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRkFNVGMyTnpFegpNVFF4T0RBZUZ3MHlOVEV5TXpBeU1UVXdNVGhhRncwek5URXlNamd5TVRVd01UaGFNRVl4SERBYUJnTlZCQW9UCkUyUjVibUZ0YVdOc2FYTjBaVzVsY2kxdmNtY3hKakFrQmdOVkJBTU1IV1I1Ym1GdGFXTnNhWE4wWlc1bGNpMWoKWVVBeE56WTNNVE14TkRFNE1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRVJ1bTE1b1FtRDFnUQpJVjdqazBDQmxRNGZkTTErSGdPVS9OSElMWS9YYU9PSW9qYnZiOGtwUEFiaUFGZDJVcnRHUHgvOGRpd3FOVkc2Cm1kUnZveXlkbEtOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdLa01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWUQKVlIwT0JCWUVGRWM2ZUNFdGNqbk9LUnNPeU9vTVZucTk4RHl4TUFvR0NDcUdTTTQ5QkFNQ0EwZ0FNRVVDSUQrQwpyY1REUzV4NDNWL2ZMQ20zZkllQzl3ZmhBVmJ5ZTlmKy8xeHM4dUFSQWlFQTl4b1c1VHdrUTJvd2tJc1g2VGFXCmtaOXlacitmNS9WdTA1TWlkb1dpclZrPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: harvester-load-balancer-webhook
+        namespace: harvester-system
+        path: /v1/webhook/mutation
+        port: 443
+    failurePolicy: Ignore
+    matchPolicy: Equivalent
+    name: mutator.harvester-system.harvester-load-balancer-webhook
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - loadbalancer.harvesterhci.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - ippools
+      scope: Cluster
+    - apiGroups:
+      - loadbalancer.harvesterhci.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - loadbalancers
+      scope: Namespaced
+    sideEffects: None
+    timeoutSeconds: 10
+- apiVersion: admissionregistration.k8s.io/v1
+  kind: MutatingWebhookConfiguration
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/8SVQU/bQBCF/0o1Z5PEMRVgqYcSQtUUIUhwDiAO491JvM1619odG6HI/73aEJCABiyVtsfsZOa9981IXkNJjBIZIV0DGmMZWVnjw0+b/yTBnrjnlO0JZNbUU7avJKQA0c66vTPk9pbNClLoN3H06Ycy8suMhCN+t81gSZBCga4hz+T27igvrF3tCezU6ysUzwf4e89UQhuBcLRJd6VK8oxlBamptY5AY076zcwF+gJSWMgDwiQf4JCGcTzMRZJjEh/RIR0Qfk5ocZRIGggMaq+SlDUjWxdq21Ae0ps1oCyV98qaKTWK7ubk/MMKbqCJIYImzokxhtsIhFZkeGTNQi2DXYHHtZE66JzNBnw2i0fTTE6u1PHJdD7JZtn15HJwmk03tQGPVvFklk2G8/H5yeVcXlwPTpNZNjm+HugRRODJNSrQW782v3UMD7l2Uo6gQi4eFt/f9vQ3wZU1oWodQ7q/n7RtBAtUunZ0YbUS95DC96WxjuAJ3RZY70mlEKqnLETgak1beJX65mxdbXAFRFipFwRvI7AVucfDvoHRdPz1ahzeHXlbO7GZBVVo80yGG6vrkoRGVfrwNy9sFQydP0aX0EYfq21lZ6WXOH4n/HQxndQb5bhGXaIolCGmstLI1DxO/G++6mrpUFJnB6s6p5Bll/pO4Qiyi5P3yfx9I2/rK+MZjeju489X0pGMKnH5L2297SZHsQpSHe14tg6X1Fsd+o+7nO1QodH752RGug7ZoQ1vStJ4sQjfnGDSGoL2tv0VAAD//zMkHzWXBwAA
+      objectset.rio.cattle.io/id: "null"
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: harvester-webhook-ca
+      objectset.rio.cattle.io/owner-namespace: harvester-system
+    creationTimestamp: "2025-12-30T21:50:34Z"
+    generation: 1
+    labels:
+      objectset.rio.cattle.io/hash: fd7ea3b0a2e2112bc3ba319e8e7ea53ef93de0ca
+    managedFields:
+    - apiVersion: admissionregistration.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:webhooks:
+          .: {}
+          k:{"name":"mutator.harvesterhci.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+      manager: harvester-webhook
+      operation: Update
+      time: "2025-12-30T21:50:34Z"
+    name: harvester-mutator
+    resourceVersion: "6132"
+    uid: 20817a0a-4fd2-4a91-85a1-b604f64c799a
+  webhooks:
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ2VENDQVdPZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQkdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKYkdsemRHVnVaWEl0YjNKbk1TWXdKQVlEVlFRRERCMWtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRkFNVGMyTnpFegpNVE0zTmpBZUZ3MHlOVEV5TXpBeU1UUTVNelphRncwek5URXlNamd5TVRRNU16WmFNRVl4SERBYUJnTlZCQW9UCkUyUjVibUZ0YVdOc2FYTjBaVzVsY2kxdmNtY3hKakFrQmdOVkJBTU1IV1I1Ym1GdGFXTnNhWE4wWlc1bGNpMWoKWVVBeE56WTNNVE14TXpjMk1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRXZva3RHR2cybkJoawpDUnh3RTdDZUJGWmM4ekVqZmJOcUdWV1lQYVZuKzdEcENaczVTMWIzc2dCTWt4RU9ncUdPNFdMWFN3Q0VlMXZqCmdzQ1JSbEh6RjZOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdLa01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWUQKVlIwT0JCWUVGS1BiQ2VIUVAwMmZFbXJOUGRpYWVDZzM5ajYvTUFvR0NDcUdTTTQ5QkFNQ0EwZ0FNRVVDSUFydwo0QW92WEFVY2hMYkRjY3JtZlFOYWNxNG8wcUV1QUw5eVBWcnk5bG80QWlFQSs0VWhXOUF0cDBkM3Q2dHJaam1GCmpJWjBHMFEyTEtseUpuMjJ6K0RyZHBvPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: harvester-webhook
+        namespace: harvester-system
+        path: /v1/webhook/mutation
+        port: 443
+    failurePolicy: Ignore
+    matchPolicy: Equivalent
+    name: mutator.harvesterhci.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - "null"
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      resources:
+      - persistentvolumeclaims
+      scope: Namespaced
+    - apiGroups:
+      - "null"
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      resources:
+      - pods
+      scope: Namespaced
+    - apiGroups:
+      - harvesterhci.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      resources:
+      - virtualmachinetemplateversions
+      scope: Namespaced
+    - apiGroups:
+      - harvesterhci.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      resources:
+      - upgrades
+      scope: Namespaced
+    - apiGroups:
+      - kubevirt.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - virtualmachines
+      scope: Namespaced
+    - apiGroups:
+      - kubevirt.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      resources:
+      - virtualmachineinstances
+      scope: Namespaced
+    - apiGroups:
+      - harvesterhci.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - virtualmachineimages
+      scope: Namespaced
+    - apiGroups:
+      - harvesterhci.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      resources:
+      - virtualmachinebackups
+      scope: Namespaced
+    - apiGroups:
+      - storage.k8s.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - storageclasses
+      scope: Cluster
+    sideEffects: None
+    timeoutSeconds: 10
+- apiVersion: admissionregistration.k8s.io/v1
+  kind: MutatingWebhookConfiguration
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/5RTTU/jPBD+K6/m7KZOC4VGeg9LKKvNIgQJ4QDqwXEmxFvHjmwnFary31dOCyuQoLs3x5OZ58PP7KBBx0rmGEQ7YEppx5zQyvpPXfxC7iy6wAgdcOacxEDoqSghAiCf1vVWoZk89xuIYNqH5L+fQpX/Z8gNuqNtijUIEdTM9Gidv0C31WYz2WJRa72ZcPZXM2zL+PtB9sU6bGAgwA2OKu9Fg9axpoVIdVISkKxA+aX2mtkaIjg9m52cny7OltXp2fKc8nkxo3Nc0nmxWCClSxrS2aIoC492TJH/53C0ED3tgJWNsFZolWIvcPuAxu6f5An6EAj0YYGOhbAmwKVA5WKtKvHsaXN20alSerzrjLrrLIzTvEzuxcVl+pDkWf6Y3NGrPB1r1MWbMMnyZJaubi7vHsrbR3o1z/Lk4pHKGAhYNL3wLu6Oi9jr/NR1Ai1z9T4Q00PPtOn2afNVbRxEJyfzYSBQMSE7g7daCv4CEfx4VtogvFk59mkTfEQJvqJnOokHf1vx3eiuHR3dnNuAKxFwxatAaG8qa8UHz9cEdIvmdTWeIE5X3+5XQCC/vfSHNQGDVneGjxjwCs+cY7xuULlJiZVQYj9hTcBy3XotN6+ulTCQD9wOU/7Iqrn4jONbJP6NaC+Z4mN83rGKZefxYPB3osRVVfl18Hy1QhjWw+8AAAD//xHfuIw6BAAA
+      objectset.rio.cattle.io/id: "null"
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: harvester-network-webhook-ca
+      objectset.rio.cattle.io/owner-namespace: harvester-system
+    creationTimestamp: "2025-12-30T21:50:33Z"
+    generation: 1
+    labels:
+      objectset.rio.cattle.io/hash: 572485679f57980c3b203e903b66e00901026bdb
+    managedFields:
+    - apiVersion: admissionregistration.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:webhooks:
+          .: {}
+          k:{"name":"mutator.harvester-system.harvester-network-webhook"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+      manager: harvester-network-webhook
+      operation: Update
+      time: "2025-12-30T21:50:33Z"
+    name: harvester-network-webhook
+    resourceVersion: "6118"
+    uid: a16511b5-ad48-4b54-be79-cb88a7a66f43
+  webhooks:
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ2RENDQVdPZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQkdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKYkdsemRHVnVaWEl0YjNKbk1TWXdKQVlEVlFRRERCMWtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRkFNVGMyTnpFegpNVFF4TmpBZUZ3MHlOVEV5TXpBeU1UVXdNVFphRncwek5URXlNamd5TVRVd01UWmFNRVl4SERBYUJnTlZCQW9UCkUyUjVibUZ0YVdOc2FYTjBaVzVsY2kxdmNtY3hKakFrQmdOVkJBTU1IV1I1Ym1GdGFXTnNhWE4wWlc1bGNpMWoKWVVBeE56WTNNVE14TkRFMk1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRXVpVXdNNlV3cTVINQp0Ymp0N0VmSVg1eEYvT1NyaDdQOENtS2xvaENmZ0FsU1BEWVQyeVhZeDZ3UEZVczB5QTZ6WWp4VVNRMWgxOGw1Cm5XbHNralVKcTZOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdLa01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWUQKVlIwT0JCWUVGSWJkMVJJUDREOTR6VTdjY293WGpSUnRnYzNoTUFvR0NDcUdTTTQ5QkFNQ0EwY0FNRVFDSUNyMAovZ0Z3S1VWTkhrMmE3aXRFdzNRYlFka2tpUjZCZCtUWUFxTFlwaGY5QWlCT1ZXWm5lMXRNdUFNNWt0S3BGUnFSCk0wd3dQaUZvK1hpU0NQRnNTZDIyYmc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: harvester-network-webhook
+        namespace: harvester-system
+        path: /v1/webhook/mutation
+        port: 443
+    failurePolicy: Ignore
+    matchPolicy: Equivalent
+    name: mutator.harvester-system.harvester-network-webhook
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - k8s.cni.cncf.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - network-attachment-definitions
+      scope: Namespaced
+    - apiGroups:
+      - network.harvesterhci.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - vlanconfigs
+      scope: Cluster
+    sideEffects: None
+    timeoutSeconds: 10
+- apiVersion: admissionregistration.k8s.io/v1
+  kind: MutatingWebhookConfiguration
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/5RTy27bMBD8lWKPhSxLUR6OgB4aJymqBkFiRT7YyGFFrizWFCmQlIzA0L8XtF0DKZDWvYkcze7OzHILDTnk6BDSLaBS2qETWll/1OVPYs6SC43QIUPnJIVCjwWHFCD4ENcbRWa06teQwriPg08/hOJfcmKG3D9pChuCFGo0PVnnLzSnERd2PWpQ4YrMaENlrfV6xPCkarZF9r6kfbOOGhgCYIZ2el9EQ9Zh00KqOikDkFiS/KsLNdoaUmBJcj25vOLJBV6eX1NSlTFnZxeEE2JlckE8xiqaTK58t9O1+b8PnxbS5RaQN8JaodWMekGbORm7j2kJfQwB9HFJDmN4DYBJQcpNtarEygtgeNMpLn3nhzxyD3k8nRU8exE3t7N5VuTFInuO7ovZDovcdB1neZGdze4eb5/n/GkR3Sd5kd0sIjmFACyZXng/t/8jZ6/9wyQCaNHV+3UZHzjjptvvoke1cZCenyfDEECFQnaGnrQU7A1S+L5S2hAc7d3xtAn/7BKeNqjpJB08b8U3o7t25/KRXDMRCu2Nxla8z+EYgW7J/H5HSyiebr++3Pl7Q1Z3hu3qQyk1W3PybloPWqZbP/9nGPxJcLqrKr96kMKjVgTD6/ArAAD//02OTqKwAwAA
+      objectset.rio.cattle.io/id: "null"
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: harvester-node-disk-manager-webhook-ca
+      objectset.rio.cattle.io/owner-namespace: harvester-system
+    creationTimestamp: "2025-12-30T21:49:52Z"
+    generation: 1
+    labels:
+      objectset.rio.cattle.io/hash: c339867d35a649e3fb1dc25ea8ecb35ed1af0887
+    managedFields:
+    - apiVersion: admissionregistration.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:webhooks:
+          .: {}
+          k:{"name":"mutator.harvester-system.harvester-node-disk-manager-webhook"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+      manager: node-disk-manager-webhook
+      operation: Update
+      time: "2025-12-30T21:49:52Z"
+    name: harvester-node-disk-manager-webhook
+    resourceVersion: "5171"
+    uid: 701d7a0d-5930-48b7-89a0-6bfd04db62ae
+  webhooks:
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ2RENDQVdPZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQkdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKYkdsemRHVnVaWEl0YjNKbk1TWXdKQVlEVlFRRERCMWtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRkFNVGMyTnpFegpNVE0zTmpBZUZ3MHlOVEV5TXpBeU1UUTVNelphRncwek5URXlNamd5TVRRNU16WmFNRVl4SERBYUJnTlZCQW9UCkUyUjVibUZ0YVdOc2FYTjBaVzVsY2kxdmNtY3hKakFrQmdOVkJBTU1IV1I1Ym1GdGFXTnNhWE4wWlc1bGNpMWoKWVVBeE56WTNNVE14TXpjMk1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRTRsT2pJQlRlbFFsKwp3aFZjL0c1eEVVa0pTZm5YYTVZMllJN0FHK0pZTmpZMWlFQWppUGJ1NEkxZDdMcTNRSCt0MEo2cURqQm1uTWFVCmJiRWpSY2ltdHFOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdLa01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWUQKVlIwT0JCWUVGSmJ3YzNPTkpJMHdIcDM0OHU5aUpxNEtFQUxHTUFvR0NDcUdTTTQ5QkFNQ0EwY0FNRVFDSUViVgplMExmSEdRNklFNDErd2ZoeEN2Q1pXOEt5WnBxclE1eVZvU1dtWmEyQWlBOFJmNEdIYXU5VU11Q210WEFncVVCCnBSblNDZFZEOTVjT3FLK2NXczRISVE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: harvester-node-disk-manager-webhook
+        namespace: harvester-system
+        path: /v1/webhook/mutation
+        port: 443
+    failurePolicy: Ignore
+    matchPolicy: Equivalent
+    name: mutator.harvester-system.harvester-node-disk-manager-webhook
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - harvesterhci.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - UPDATE
+      resources:
+      - blockdevices
+      scope: '*'
+    sideEffects: None
+    timeoutSeconds: 10
+- apiVersion: admissionregistration.k8s.io/v1
+  kind: MutatingWebhookConfiguration
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4yT0W/aMBDG/5XpnkNICgUaaQ8j0GlZVVFCeADxcDgH8XDsyHaCKpT/fTKwTp3UlTfH58+fv99dTlCSxRwtQnQClFJZtFxJ4z7V9hcxa8j6miufobWCfK66PIcIwPuwro6SdGffHCCCbhN6X35ymX9NiWmyn8oklgQRFKgbMtZtqJw6JUrck+4caVsodegwvOkiUyF7f5t5NZZKaD1gms5RF7wkY7GsIJK1EB4I3JL4L4ACTQERPOzuWDDK+4xG4YCCYZ893NMgIDYIcDjsjwa4ZTTq3Tu3m2K5g9elgWh9AsxLbgxXck4Np+OStLk0Zw1NCB404ZYshrDxgAlO0sZK7vjevZ3huJa5cKZPaWCf0jCeZ3my4OPJfJlkabZKXoLHbH6uBTY+hEmaJXd4eJ68LPPZKnjspVkyXgUiBg8M6YY7lKcbk1wSf8jfgwptcZmP7lXTLevL8Lmq0haifr/Xth7skIta00wJzl4hgh97qTTBG9SzTmn/Xxf/0zfqWtCVdMW/a1VXZ7bu9F9xwbjPlWOMFX/fgjf6qiL958dZQzyffltMwYNsNnGLjQeajKo1O7sBE6rOueTWuJJhqnIxYlE7O2jdHs9putu56YMInpUkaDft7wAAAP//vKkN0K4DAAA
+      objectset.rio.cattle.io/id: "null"
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: harvester-node-manager-webhook-ca
+      objectset.rio.cattle.io/owner-namespace: harvester-system
+    creationTimestamp: "2025-12-30T21:49:51Z"
+    generation: 1
+    labels:
+      objectset.rio.cattle.io/hash: 9f2c08d4ce816e074c95e60ec60a77486abce835
+    managedFields:
+    - apiVersion: admissionregistration.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:webhooks:
+          .: {}
+          k:{"name":"mutator.harvester-system.harvester-node-manager-webhook"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+      manager: harvester-node-manager-webhook
+      operation: Update
+      time: "2025-12-30T21:49:51Z"
+    name: harvester-node-manager-webhook
+    resourceVersion: "5151"
+    uid: 3663dcd2-a6a8-42aa-aca6-f0610e8a6c3c
+  webhooks:
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ2akNDQVdPZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQkdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKYkdsemRHVnVaWEl0YjNKbk1TWXdKQVlEVlFRRERCMWtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRkFNVGMyTnpFegpNVE0zTlRBZUZ3MHlOVEV5TXpBeU1UUTVNelZhRncwek5URXlNamd5TVRRNU16VmFNRVl4SERBYUJnTlZCQW9UCkUyUjVibUZ0YVdOc2FYTjBaVzVsY2kxdmNtY3hKakFrQmdOVkJBTU1IV1I1Ym1GdGFXTnNhWE4wWlc1bGNpMWoKWVVBeE56WTNNVE14TXpjMU1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRWJvWVRqUEhjSHhPSApPT2J0eUFmT3FMcDlvV2hQZysyS3JYa21NZGFWMW5TSzJiWWZzcEZSN1EyRDRBWDhMZ1dNUGI2a3JjbFp1cUdlClVIYlg0d3JHd3FOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdLa01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWUQKVlIwT0JCWUVGUGVJempvR3dPa05OVGo2a2RzWCtIanVUMCtHTUFvR0NDcUdTTTQ5QkFNQ0Ewa0FNRVlDSVFEUQpBVmpFSkwrbkN6c2RtWmh0SEgwL2MyMHNuMDBROXgxUkZqdlNtWHF5OHdJaEFJTXBYSmd0b3E2KzJhTjFsL21aCkdYb2VxZFBYdlM3Y2dwRTA1MUJac0tnLwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: harvester-node-manager-webhook
+        namespace: harvester-system
+        path: /v1/webhook/mutation
+        port: 443
+    failurePolicy: Ignore
+    matchPolicy: Equivalent
+    name: mutator.harvester-system.harvester-node-manager-webhook
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - node.harvesterhci.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - cloudinits
+      scope: Cluster
+    sideEffects: None
+    timeoutSeconds: 10
+- apiVersion: admissionregistration.k8s.io/v1
+  kind: MutatingWebhookConfiguration
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/8yX32/aMBDH/5Xpnl1IoGUl0h5WSiexqmqh4aEVDxfnSFwSO7IvdBXif5/Mj2rVxLanJW/gry/3uW/s02UDJTGmyAjRBlBrw8jKaOf/muSFJDvijlWmI5G5oI4yXZVCBCBO6uZVkz3L1iuIoLsOxafvSqdfZiQt8V/DNJYEERRGZ7mx+uyVktyY1ZnEfwp1FcoP8e7NMZWwFVBgQsUfC8vR5RDBAC9xuQz7/WEQ4jBMhpf9QUCXvcGg1/98HvQD6l2cD84H/qGncMuakY31Ww5LDqLnDWBaKueU0VNaK3qdk3V7u59hHcJCgCwUaR4ZvVSZZ5V4Veu08EluZwHfzsLRNE4nj+rqejqfxLP4afIQ3MTTnRbwaBVOZvGkNx/fXT/M0/un4KY/iydXT0ExAgGO7Fp5gza/kb+THWuAfXWnHBVQIef7V9w9hHR3ZSujvWosQzS8CHrbrYAlqqK2dG8KJd8gghtUBQgokWX+vjj+gZLh3dSDh51j5o4yIMDWBR28rNQ3a+pq596vmxbCax+9TYix5xVTkT2e8WcYTcdfH8cgIL6/9j8WAiw5U1u5SwIJypXPsBDgpKk81t3RlBS24v9RKJ2pEjNqE0uJGjOybULyvewoNUulTdo4w9oUddk4BelM6cYpLMnaWqWzF5M0zbJ3pBX32dgqR900hcvRtqmd1BWjzYjbwdKOa+w0Vi43jXtiqSqUxKYxXF35GSfZjWeNw+yGsnZMK/vTiswo85J04+dFaceoZbvaS5tGOkfMSmcnMfyySmm8XPrPJi8aTbBdbH8GAAD//1KZpAY/DgAA
+      objectset.rio.cattle.io/id: "null"
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: longhorn-webhook-ca
+      objectset.rio.cattle.io/owner-namespace: longhorn-system
+    creationTimestamp: "2025-12-30T21:49:40Z"
+    generation: 1
+    labels:
+      objectset.rio.cattle.io/hash: 6a8aff133901a91b98360e82662374030e254646
+    managedFields:
+    - apiVersion: admissionregistration.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:webhooks:
+          .: {}
+          k:{"name":"mutator.longhorn.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2025-12-30T21:49:40Z"
+    name: longhorn-webhook-mutator
+    resourceVersion: "4626"
+    uid: e2470b93-dec2-41d2-9f02-50291377b6ab
+  webhooks:
+  - admissionReviewVersions:
+    - v1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ2VENDQVdPZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQkdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKYkdsemRHVnVaWEl0YjNKbk1TWXdKQVlEVlFRRERCMWtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRkFNVGMyTnpFegpNVE0zT1RBZUZ3MHlOVEV5TXpBeU1EUTVNemxhRncwek5URXlNamd5TURRNU16bGFNRVl4SERBYUJnTlZCQW9UCkUyUjVibUZ0YVdOc2FYTjBaVzVsY2kxdmNtY3hKakFrQmdOVkJBTU1IV1I1Ym1GdGFXTnNhWE4wWlc1bGNpMWoKWVVBeE56WTNNVE14TXpjNU1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRStsRU9WeC9raG8rZQpKRVNKNnNEV2lyOFpFdWRSOWhKMzlmZnJhc2Q0amNnUDFaY0J6bFlWaGRZaE5Md0lGZks4c0VpMlZYYlFuc1BOCkRVWkp1SDEzV3FOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdLa01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWUQKVlIwT0JCWUVGRmNiWEpuUDg4aytLVDIvdFREc3FrdzlmVEF4TUFvR0NDcUdTTTQ5QkFNQ0EwZ0FNRVVDSVFERQp3RWpUSllmTDRJR2VFRWlENTRkWG5NeWtXMm9wdzNPWkxtUzdvUlVyUndJZ0NTVnhyNm5ETlJMd2JjbUxHd096CkJFTlgzRDZhdWYzSHF5MWtRUlJWbW9ZPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: longhorn-admission-webhook
+        namespace: longhorn-system
+        path: /v1/webhook/mutation
+        port: 9502
+    failurePolicy: Fail
+    matchPolicy: Exact
+    name: mutator.longhorn.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - backups
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - backingimages
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - backingimagemanagers
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - backingimagedatasources
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - nodes
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - volumes
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - engines
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - recurringjobs
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - engineimages
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - orphans
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - sharemanagers
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - backuptargets
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - backupvolumes
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - snapshots
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - replicas
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - supportbundles
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - systembackups
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - volumeattachments
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - instancemanagers
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - backupbackingimages
+      scope: Namespaced
+    - apiGroups:
+      - longhorn.io
+      apiVersions:
+      - v1beta2
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - settings
+      scope: Namespaced
+    sideEffects: None
+    timeoutSeconds: 10
+- apiVersion: admissionregistration.k8s.io/v1
+  kind: MutatingWebhookConfiguration
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/9yXQXPaMBCF/8ueZSduQiG+dVLaUzuZTNoeMhwWeYm3yJIrySSZjP97R7YxNG2SMuMDcEIg6e3b90lj/ARY8neyjo2GFDAr2IWxpTt23qJno+PlxMVsTlYJCFiyziCFL5VHz/ruB81zY5aXRi/4rmrXg4CCPGboEdInQK2NbyZc+GrmP0l6Rz62bGKJ3isK6hxkpc2i+1bSQS1AWmp23nBBzmNRQqorpQQonJN6VS9Hl0MK75Px2SiREkd4OhqfL+an87OLSSbPk2R0Op6MsvG75GKSTUI1jQVBCkXX29pJJP/orhbQW0xvnzaZXdOK6b4LM8xBk9gqmZPHBGYCpGLSvg0reHdkVywpDLvaEkvu666nW2euRNkuCS1GpTUrDpWC02abe3SeChBQog+tnzSNUCRV5TzZ6CFaTlzEJuocrSegrgUskFVl6coolo+QwidkFUCil3n/4/RXxStUpD30aWW0wEr5uBPrP5tqMRsQYCtFXVYlf7amKpt0/lo5E1unsQuwz86UZNen6BYur6cfbqYg4NvVxzCYCbDkTGUlbWs7mNUzAY4zmi4W4ZxACl+NJqjFEZCTCp0bFF+juF8MG0t04CQxy4x2bwLt+yc/KNYt3bi1sgPjlzYMj3rL5oHzfhF0gTLn0MUQdDuxPbmvnZsjJ5dRqcxjEXgMyXAju180N76OnGtOqHwuc5LLQcFu6e4X2S1jR452sKfpRm+/UB7+89JW2nPxT5SoyhyTiB486aDVvo0NA/SZaNzZ2P0/0nrjf8FuO9qd9jO3B478rVtbGqMGvbZBcL/ubXD0CsVZ/TsAAP//hmGnxp8RAAA
+      objectset.rio.cattle.io/id: crd-webhooks
+    creationTimestamp: "2025-12-30T21:47:28Z"
+    generation: 2
+    labels:
+      objectset.rio.cattle.io/hash: 617351cca5a0574fb0b398dc41150785d72198d8
+    managedFields:
+    - apiVersion: admissionregistration.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:webhooks:
+          .: {}
+          k:{"name":"default.cluster.cluster.x-k8s.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+          k:{"name":"default.clusterclass.cluster.x-k8s.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+          k:{"name":"default.clusterresourceset.addons.cluster.x-k8s.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+          k:{"name":"default.extensionconfig.runtime.addons.cluster.x-k8s.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+          k:{"name":"default.machine.cluster.x-k8s.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+          k:{"name":"default.machinedeployment.cluster.x-k8s.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+          k:{"name":"default.machinehealthcheck.cluster.x-k8s.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+          k:{"name":"default.machinepool.cluster.x-k8s.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+          k:{"name":"default.machineset.cluster.x-k8s.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:48:36Z"
+    name: mutating-webhook-configuration
+    resourceVersion: "2548"
+    uid: e61c8c3f-0610-47a2-9cc0-94a5afe7d649
+  webhooks:
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVmakNDQTJhZ0F3SUJBZ0lJSE1ldGdaeERCZjB3RFFZSktvWklodmNOQVFFTEJRQXdVakZRTUU0R0ExVUUKQXd4SFkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzFqWVhCcExYZGxZbWh2YjJzdApjMlZ5ZG1salpTMWpaWEowTFdOaFFERTNOamN4TXpFek1UWXdIaGNOTWpVeE1qTXdNakEwT0RNMldoY05Nall4Ck1qTXdNakEwT0RNMldqQlBNVTB3U3dZRFZRUURERVJqWVhSMGJHVXRjSEp2ZG1semFXOXVhVzVuTFdOaGNHa3QKYzNsemRHVnRMV05oY0drdGQyVmlhRzl2YXkxelpYSjJhV05sTFdObGNuUkFNVGMyTnpFek1UTXhOakNDQVNJdwpEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTDU4ajVPS3Y0WlMwdDNvcFpOc1NjY3pzQWx0Ck5uSllPaHFGZE9KdmV6emFNKzZRWXo1RG1TOFF2bzZMYnJXM2RKZm1XVm1IRXA0UnFHQ2gwcGJsNUhib2c0L0EKRWh2TngvN0tyOUJuQm85RjNqWHlyL0RFU3dMUlQ1Mml0VXZkZ2VKVVdsWnpMWTNNa0VpOE90dVpaVCtXRWFLQQoyakExUDBVd3d1Zm80OGFsNHMwRSszREZpQzdWaC9sWngvOWJSeUxQN3h1L1plT1Y3NzF0b2dYTWZqaGlETzkwCjVMZmQrZDZIMWZYZFJjUEZCUUlCbzNBbXREOXd3K1Y1ZUI1MkNsWnhER3FYL0prVHB1VnFNQUJ4OGkwVEhFTkEKQWI0NXBhcXFkNlVpc2Vwa1dZU3FmaytNV3JmWHJDeE0yNFZkeTFCaXpvWXYwZW1kTHBvUVI0bzJTNEVDQXdFQQpBYU9DQVZrd2dnRlZNQTRHQTFVZER3RUIvd1FFQXdJRm9EQVRCZ05WSFNVRUREQUtCZ2dyQmdFRkJRY0RBVEFNCkJnTlZIUk1CQWY4RUFqQUFNQjhHQTFVZEl3UVlNQmFBRkxnTDJlSFBXYjhLakx0bXFTVExXMEZzaVpkc01JSCsKQmdOVkhSRUVnZll3Z2ZPQ09XTmhkSFJzWlMxd2NtOTJhWE5wYjI1cGJtY3RZMkZ3YVMxemVYTjBaVzB0WTJGdwphUzEzWldKb2IyOXJMWE5sY25acFkyVXRZMlZ5ZElJMFkyRndhUzEzWldKb2IyOXJMWE5sY25acFkyVXVZMkYwCmRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJZSTRZMkZ3YVMxM1pXSm9iMjlyTFhObGNuWnAKWTJVdVkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzV6ZG1PQ1JtTmhjR2t0ZDJWaQphRzl2YXkxelpYSjJhV05sTG1OaGRIUnNaUzF3Y205MmFYTnBiMjVwYm1jdFkyRndhUzF6ZVhOMFpXMHVjM1pqCkxtTnNkWE4wWlhJdWJHOWpZV3d3RFFZSktvWklodmNOQVFFTEJRQURnZ0VCQU44aDNVcitBR0M0ZUd6aCtXNDUKVHEvY2FzTThORElPeGxHR011dUt5Vmh5UjlZb1BBcyttRG9mbW9DWmdOd0d0eDlzY295RHJwSnZkOElOOVhoUgp3M1ZTUmxwZWQ3MHQ0UjZ3YmkxQzRpRHphR0F2bWlrUTdEaTBacUZ4Q2lHYWhoRkgvbzYvaTlGVk5sUGd5QWRSCjE4SDh1YmhsdUtxQ21NQmhubFRpRk5XRng2OHJQdmQrZUJkMmNvb3V4ekZlZ2w0UWJjWUhHTGtxajI0QytDZy8KdG5NTVpIc1UySHZCTkRYK2RESFE1N21ZT0ZUSGRmZnM0dDYydWpNeDlOQlV0NmMzU0c1eGQyQjJBUGJGKzQwVApyWHRiZnlvU1gyQW5UVGhlcmg5ZSs0Q0hkdjJvaFB4aHdBVGFFQkwxZmVvcFU4SlNETUI2SDl3eW9tTEdLNk1kCkpSWT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tLS0KTUlJRGFEQ0NBbENnQXdJQkFnSUlCcy96YnBRVUs0OHdEUVlKS29aSWh2Y05BUUVMQlFBd1VqRlFNRTRHQTFVRQpBd3hIWTJGMGRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJTMWpZWEJwTFhkbFltaHZiMnN0CmMyVnlkbWxqWlMxalpYSjBMV05oUURFM05qY3hNekV6TVRZd0hoY05NalV4TWpNd01qQTBPRE0yV2hjTk1qWXgKTWpNd01qQTBPRE0yV2pCU01WQXdUZ1lEVlFRRERFZGpZWFIwYkdVdGNISnZkbWx6YVc5dWFXNW5MV05oY0drdApjM2x6ZEdWdExXTmhjR2t0ZDJWaWFHOXZheTF6WlhKMmFXTmxMV05sY25RdFkyRkFNVGMyTnpFek1UTXhOakNDCkFTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBUEJySEpRdHd6blRIaStjNlRGbDhOcHAKM2JpNDFTLzI0aW5jekFSck5RUnFLQ05kZWJ2NEVKa1lod1lDbWpQOEluYy9pVGY3ZmFEZmsvS09WbERrUFFMawo4bGdsb3JDRVBUcEpIOTF4VjlMSUxOTHpvajFGM3dQbFM1QWJXWENmQlJTTlc3NmZtODlHcXF6L0VBUW81L0ZYCmtFR3JmNWFCVVNwVWVSTGNZVGR2ajdXS3hCY2I4N0J0VFRoMExGZ3lLcDI2MUFKN1Z0dHdENjVhaFdEMVdLWWcKZG1lbm5yYnVsMWg2MjFYSkxYMklpWmdSa1BWY2R3TEhJRTAvbXU0TXdDT0h2VERXNzdpVXJNZExHMlFqTThZcApTZDBrN29waml6SnFoc2k0Y2dkbjJiRVZ0MWdqQnlTS0g4eDB5ZUY5ZWxZdUpNRU5yQ2JXWG5kNU5wZUVLY01DCkF3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME8KQkJZRUZMZ0wyZUhQV2I4S2pMdG1xU1RMVzBGc2laZHNNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUJOcSt4dQpFdmdPWU9za3pxcnJwV2laZms4dlJBZmRlbjlhTVJvRWxrVmJqOEhJZUhqYituZ3g2MEc4QkJKMlFkVCt4bGRBCkM5OXdiVWQ0eGxiV0R6VTVmcUpqTVVRNEliVXlncEZ4bVNDMmFZMkIrdGRxWGJyQTdjY3pDU1FoZ2d4bnZ5ejEKSGJxanVVeDI2d2p1OXFrRUd3Y3ZnUFdwd3h1L0FBL1hNWFViZGhxVGNRQ25WWHJ0cEdhYlArdmdHM1VWTTNSOQphRy9RcHRmY3F0SDdQZytqQXk0bGJ6a3ZoMVJUazJUUUlxeDlLZTRVSlkwRzhGYjdjWUFjZFJ3cTM0ek85WS9BCjJjYzM4czlucWpGVllEbDFoMkVtYThuVGdwekd1SFpHbEVJMkJSem13Nk56Yk1XVnpPNkJJZVljUFlaV081QVAKUGdwUDVobnZmQ2U4RG5YbQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: capi-webhook-service
+        namespace: cattle-provisioning-capi-system
+        path: /mutate-cluster-x-k8s-io-v1beta1-cluster
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Equivalent
+    name: default.cluster.cluster.x-k8s.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - cluster.x-k8s.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - clusters
+      scope: '*'
+    sideEffects: None
+    timeoutSeconds: 10
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVmakNDQTJhZ0F3SUJBZ0lJSE1ldGdaeERCZjB3RFFZSktvWklodmNOQVFFTEJRQXdVakZRTUU0R0ExVUUKQXd4SFkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzFqWVhCcExYZGxZbWh2YjJzdApjMlZ5ZG1salpTMWpaWEowTFdOaFFERTNOamN4TXpFek1UWXdIaGNOTWpVeE1qTXdNakEwT0RNMldoY05Nall4Ck1qTXdNakEwT0RNMldqQlBNVTB3U3dZRFZRUURERVJqWVhSMGJHVXRjSEp2ZG1semFXOXVhVzVuTFdOaGNHa3QKYzNsemRHVnRMV05oY0drdGQyVmlhRzl2YXkxelpYSjJhV05sTFdObGNuUkFNVGMyTnpFek1UTXhOakNDQVNJdwpEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTDU4ajVPS3Y0WlMwdDNvcFpOc1NjY3pzQWx0Ck5uSllPaHFGZE9KdmV6emFNKzZRWXo1RG1TOFF2bzZMYnJXM2RKZm1XVm1IRXA0UnFHQ2gwcGJsNUhib2c0L0EKRWh2TngvN0tyOUJuQm85RjNqWHlyL0RFU3dMUlQ1Mml0VXZkZ2VKVVdsWnpMWTNNa0VpOE90dVpaVCtXRWFLQQoyakExUDBVd3d1Zm80OGFsNHMwRSszREZpQzdWaC9sWngvOWJSeUxQN3h1L1plT1Y3NzF0b2dYTWZqaGlETzkwCjVMZmQrZDZIMWZYZFJjUEZCUUlCbzNBbXREOXd3K1Y1ZUI1MkNsWnhER3FYL0prVHB1VnFNQUJ4OGkwVEhFTkEKQWI0NXBhcXFkNlVpc2Vwa1dZU3FmaytNV3JmWHJDeE0yNFZkeTFCaXpvWXYwZW1kTHBvUVI0bzJTNEVDQXdFQQpBYU9DQVZrd2dnRlZNQTRHQTFVZER3RUIvd1FFQXdJRm9EQVRCZ05WSFNVRUREQUtCZ2dyQmdFRkJRY0RBVEFNCkJnTlZIUk1CQWY4RUFqQUFNQjhHQTFVZEl3UVlNQmFBRkxnTDJlSFBXYjhLakx0bXFTVExXMEZzaVpkc01JSCsKQmdOVkhSRUVnZll3Z2ZPQ09XTmhkSFJzWlMxd2NtOTJhWE5wYjI1cGJtY3RZMkZ3YVMxemVYTjBaVzB0WTJGdwphUzEzWldKb2IyOXJMWE5sY25acFkyVXRZMlZ5ZElJMFkyRndhUzEzWldKb2IyOXJMWE5sY25acFkyVXVZMkYwCmRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJZSTRZMkZ3YVMxM1pXSm9iMjlyTFhObGNuWnAKWTJVdVkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzV6ZG1PQ1JtTmhjR2t0ZDJWaQphRzl2YXkxelpYSjJhV05sTG1OaGRIUnNaUzF3Y205MmFYTnBiMjVwYm1jdFkyRndhUzF6ZVhOMFpXMHVjM1pqCkxtTnNkWE4wWlhJdWJHOWpZV3d3RFFZSktvWklodmNOQVFFTEJRQURnZ0VCQU44aDNVcitBR0M0ZUd6aCtXNDUKVHEvY2FzTThORElPeGxHR011dUt5Vmh5UjlZb1BBcyttRG9mbW9DWmdOd0d0eDlzY295RHJwSnZkOElOOVhoUgp3M1ZTUmxwZWQ3MHQ0UjZ3YmkxQzRpRHphR0F2bWlrUTdEaTBacUZ4Q2lHYWhoRkgvbzYvaTlGVk5sUGd5QWRSCjE4SDh1YmhsdUtxQ21NQmhubFRpRk5XRng2OHJQdmQrZUJkMmNvb3V4ekZlZ2w0UWJjWUhHTGtxajI0QytDZy8KdG5NTVpIc1UySHZCTkRYK2RESFE1N21ZT0ZUSGRmZnM0dDYydWpNeDlOQlV0NmMzU0c1eGQyQjJBUGJGKzQwVApyWHRiZnlvU1gyQW5UVGhlcmg5ZSs0Q0hkdjJvaFB4aHdBVGFFQkwxZmVvcFU4SlNETUI2SDl3eW9tTEdLNk1kCkpSWT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tLS0KTUlJRGFEQ0NBbENnQXdJQkFnSUlCcy96YnBRVUs0OHdEUVlKS29aSWh2Y05BUUVMQlFBd1VqRlFNRTRHQTFVRQpBd3hIWTJGMGRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJTMWpZWEJwTFhkbFltaHZiMnN0CmMyVnlkbWxqWlMxalpYSjBMV05oUURFM05qY3hNekV6TVRZd0hoY05NalV4TWpNd01qQTBPRE0yV2hjTk1qWXgKTWpNd01qQTBPRE0yV2pCU01WQXdUZ1lEVlFRRERFZGpZWFIwYkdVdGNISnZkbWx6YVc5dWFXNW5MV05oY0drdApjM2x6ZEdWdExXTmhjR2t0ZDJWaWFHOXZheTF6WlhKMmFXTmxMV05sY25RdFkyRkFNVGMyTnpFek1UTXhOakNDCkFTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBUEJySEpRdHd6blRIaStjNlRGbDhOcHAKM2JpNDFTLzI0aW5jekFSck5RUnFLQ05kZWJ2NEVKa1lod1lDbWpQOEluYy9pVGY3ZmFEZmsvS09WbERrUFFMawo4bGdsb3JDRVBUcEpIOTF4VjlMSUxOTHpvajFGM3dQbFM1QWJXWENmQlJTTlc3NmZtODlHcXF6L0VBUW81L0ZYCmtFR3JmNWFCVVNwVWVSTGNZVGR2ajdXS3hCY2I4N0J0VFRoMExGZ3lLcDI2MUFKN1Z0dHdENjVhaFdEMVdLWWcKZG1lbm5yYnVsMWg2MjFYSkxYMklpWmdSa1BWY2R3TEhJRTAvbXU0TXdDT0h2VERXNzdpVXJNZExHMlFqTThZcApTZDBrN29waml6SnFoc2k0Y2dkbjJiRVZ0MWdqQnlTS0g4eDB5ZUY5ZWxZdUpNRU5yQ2JXWG5kNU5wZUVLY01DCkF3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME8KQkJZRUZMZ0wyZUhQV2I4S2pMdG1xU1RMVzBGc2laZHNNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUJOcSt4dQpFdmdPWU9za3pxcnJwV2laZms4dlJBZmRlbjlhTVJvRWxrVmJqOEhJZUhqYituZ3g2MEc4QkJKMlFkVCt4bGRBCkM5OXdiVWQ0eGxiV0R6VTVmcUpqTVVRNEliVXlncEZ4bVNDMmFZMkIrdGRxWGJyQTdjY3pDU1FoZ2d4bnZ5ejEKSGJxanVVeDI2d2p1OXFrRUd3Y3ZnUFdwd3h1L0FBL1hNWFViZGhxVGNRQ25WWHJ0cEdhYlArdmdHM1VWTTNSOQphRy9RcHRmY3F0SDdQZytqQXk0bGJ6a3ZoMVJUazJUUUlxeDlLZTRVSlkwRzhGYjdjWUFjZFJ3cTM0ek85WS9BCjJjYzM4czlucWpGVllEbDFoMkVtYThuVGdwekd1SFpHbEVJMkJSem13Nk56Yk1XVnpPNkJJZVljUFlaV081QVAKUGdwUDVobnZmQ2U4RG5YbQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: capi-webhook-service
+        namespace: cattle-provisioning-capi-system
+        path: /mutate-cluster-x-k8s-io-v1beta1-clusterclass
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Equivalent
+    name: default.clusterclass.cluster.x-k8s.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - cluster.x-k8s.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - clusterclasses
+      scope: '*'
+    sideEffects: None
+    timeoutSeconds: 10
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVmakNDQTJhZ0F3SUJBZ0lJSE1ldGdaeERCZjB3RFFZSktvWklodmNOQVFFTEJRQXdVakZRTUU0R0ExVUUKQXd4SFkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzFqWVhCcExYZGxZbWh2YjJzdApjMlZ5ZG1salpTMWpaWEowTFdOaFFERTNOamN4TXpFek1UWXdIaGNOTWpVeE1qTXdNakEwT0RNMldoY05Nall4Ck1qTXdNakEwT0RNMldqQlBNVTB3U3dZRFZRUURERVJqWVhSMGJHVXRjSEp2ZG1semFXOXVhVzVuTFdOaGNHa3QKYzNsemRHVnRMV05oY0drdGQyVmlhRzl2YXkxelpYSjJhV05sTFdObGNuUkFNVGMyTnpFek1UTXhOakNDQVNJdwpEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTDU4ajVPS3Y0WlMwdDNvcFpOc1NjY3pzQWx0Ck5uSllPaHFGZE9KdmV6emFNKzZRWXo1RG1TOFF2bzZMYnJXM2RKZm1XVm1IRXA0UnFHQ2gwcGJsNUhib2c0L0EKRWh2TngvN0tyOUJuQm85RjNqWHlyL0RFU3dMUlQ1Mml0VXZkZ2VKVVdsWnpMWTNNa0VpOE90dVpaVCtXRWFLQQoyakExUDBVd3d1Zm80OGFsNHMwRSszREZpQzdWaC9sWngvOWJSeUxQN3h1L1plT1Y3NzF0b2dYTWZqaGlETzkwCjVMZmQrZDZIMWZYZFJjUEZCUUlCbzNBbXREOXd3K1Y1ZUI1MkNsWnhER3FYL0prVHB1VnFNQUJ4OGkwVEhFTkEKQWI0NXBhcXFkNlVpc2Vwa1dZU3FmaytNV3JmWHJDeE0yNFZkeTFCaXpvWXYwZW1kTHBvUVI0bzJTNEVDQXdFQQpBYU9DQVZrd2dnRlZNQTRHQTFVZER3RUIvd1FFQXdJRm9EQVRCZ05WSFNVRUREQUtCZ2dyQmdFRkJRY0RBVEFNCkJnTlZIUk1CQWY4RUFqQUFNQjhHQTFVZEl3UVlNQmFBRkxnTDJlSFBXYjhLakx0bXFTVExXMEZzaVpkc01JSCsKQmdOVkhSRUVnZll3Z2ZPQ09XTmhkSFJzWlMxd2NtOTJhWE5wYjI1cGJtY3RZMkZ3YVMxemVYTjBaVzB0WTJGdwphUzEzWldKb2IyOXJMWE5sY25acFkyVXRZMlZ5ZElJMFkyRndhUzEzWldKb2IyOXJMWE5sY25acFkyVXVZMkYwCmRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJZSTRZMkZ3YVMxM1pXSm9iMjlyTFhObGNuWnAKWTJVdVkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzV6ZG1PQ1JtTmhjR2t0ZDJWaQphRzl2YXkxelpYSjJhV05sTG1OaGRIUnNaUzF3Y205MmFYTnBiMjVwYm1jdFkyRndhUzF6ZVhOMFpXMHVjM1pqCkxtTnNkWE4wWlhJdWJHOWpZV3d3RFFZSktvWklodmNOQVFFTEJRQURnZ0VCQU44aDNVcitBR0M0ZUd6aCtXNDUKVHEvY2FzTThORElPeGxHR011dUt5Vmh5UjlZb1BBcyttRG9mbW9DWmdOd0d0eDlzY295RHJwSnZkOElOOVhoUgp3M1ZTUmxwZWQ3MHQ0UjZ3YmkxQzRpRHphR0F2bWlrUTdEaTBacUZ4Q2lHYWhoRkgvbzYvaTlGVk5sUGd5QWRSCjE4SDh1YmhsdUtxQ21NQmhubFRpRk5XRng2OHJQdmQrZUJkMmNvb3V4ekZlZ2w0UWJjWUhHTGtxajI0QytDZy8KdG5NTVpIc1UySHZCTkRYK2RESFE1N21ZT0ZUSGRmZnM0dDYydWpNeDlOQlV0NmMzU0c1eGQyQjJBUGJGKzQwVApyWHRiZnlvU1gyQW5UVGhlcmg5ZSs0Q0hkdjJvaFB4aHdBVGFFQkwxZmVvcFU4SlNETUI2SDl3eW9tTEdLNk1kCkpSWT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tLS0KTUlJRGFEQ0NBbENnQXdJQkFnSUlCcy96YnBRVUs0OHdEUVlKS29aSWh2Y05BUUVMQlFBd1VqRlFNRTRHQTFVRQpBd3hIWTJGMGRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJTMWpZWEJwTFhkbFltaHZiMnN0CmMyVnlkbWxqWlMxalpYSjBMV05oUURFM05qY3hNekV6TVRZd0hoY05NalV4TWpNd01qQTBPRE0yV2hjTk1qWXgKTWpNd01qQTBPRE0yV2pCU01WQXdUZ1lEVlFRRERFZGpZWFIwYkdVdGNISnZkbWx6YVc5dWFXNW5MV05oY0drdApjM2x6ZEdWdExXTmhjR2t0ZDJWaWFHOXZheTF6WlhKMmFXTmxMV05sY25RdFkyRkFNVGMyTnpFek1UTXhOakNDCkFTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBUEJySEpRdHd6blRIaStjNlRGbDhOcHAKM2JpNDFTLzI0aW5jekFSck5RUnFLQ05kZWJ2NEVKa1lod1lDbWpQOEluYy9pVGY3ZmFEZmsvS09WbERrUFFMawo4bGdsb3JDRVBUcEpIOTF4VjlMSUxOTHpvajFGM3dQbFM1QWJXWENmQlJTTlc3NmZtODlHcXF6L0VBUW81L0ZYCmtFR3JmNWFCVVNwVWVSTGNZVGR2ajdXS3hCY2I4N0J0VFRoMExGZ3lLcDI2MUFKN1Z0dHdENjVhaFdEMVdLWWcKZG1lbm5yYnVsMWg2MjFYSkxYMklpWmdSa1BWY2R3TEhJRTAvbXU0TXdDT0h2VERXNzdpVXJNZExHMlFqTThZcApTZDBrN29waml6SnFoc2k0Y2dkbjJiRVZ0MWdqQnlTS0g4eDB5ZUY5ZWxZdUpNRU5yQ2JXWG5kNU5wZUVLY01DCkF3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME8KQkJZRUZMZ0wyZUhQV2I4S2pMdG1xU1RMVzBGc2laZHNNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUJOcSt4dQpFdmdPWU9za3pxcnJwV2laZms4dlJBZmRlbjlhTVJvRWxrVmJqOEhJZUhqYituZ3g2MEc4QkJKMlFkVCt4bGRBCkM5OXdiVWQ0eGxiV0R6VTVmcUpqTVVRNEliVXlncEZ4bVNDMmFZMkIrdGRxWGJyQTdjY3pDU1FoZ2d4bnZ5ejEKSGJxanVVeDI2d2p1OXFrRUd3Y3ZnUFdwd3h1L0FBL1hNWFViZGhxVGNRQ25WWHJ0cEdhYlArdmdHM1VWTTNSOQphRy9RcHRmY3F0SDdQZytqQXk0bGJ6a3ZoMVJUazJUUUlxeDlLZTRVSlkwRzhGYjdjWUFjZFJ3cTM0ek85WS9BCjJjYzM4czlucWpGVllEbDFoMkVtYThuVGdwekd1SFpHbEVJMkJSem13Nk56Yk1XVnpPNkJJZVljUFlaV081QVAKUGdwUDVobnZmQ2U4RG5YbQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: capi-webhook-service
+        namespace: cattle-provisioning-capi-system
+        path: /mutate-addons-cluster-x-k8s-io-v1beta1-clusterresourceset
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Equivalent
+    name: default.clusterresourceset.addons.cluster.x-k8s.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - addons.cluster.x-k8s.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - clusterresourcesets
+      scope: '*'
+    sideEffects: None
+    timeoutSeconds: 10
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVmakNDQTJhZ0F3SUJBZ0lJSE1ldGdaeERCZjB3RFFZSktvWklodmNOQVFFTEJRQXdVakZRTUU0R0ExVUUKQXd4SFkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzFqWVhCcExYZGxZbWh2YjJzdApjMlZ5ZG1salpTMWpaWEowTFdOaFFERTNOamN4TXpFek1UWXdIaGNOTWpVeE1qTXdNakEwT0RNMldoY05Nall4Ck1qTXdNakEwT0RNMldqQlBNVTB3U3dZRFZRUURERVJqWVhSMGJHVXRjSEp2ZG1semFXOXVhVzVuTFdOaGNHa3QKYzNsemRHVnRMV05oY0drdGQyVmlhRzl2YXkxelpYSjJhV05sTFdObGNuUkFNVGMyTnpFek1UTXhOakNDQVNJdwpEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTDU4ajVPS3Y0WlMwdDNvcFpOc1NjY3pzQWx0Ck5uSllPaHFGZE9KdmV6emFNKzZRWXo1RG1TOFF2bzZMYnJXM2RKZm1XVm1IRXA0UnFHQ2gwcGJsNUhib2c0L0EKRWh2TngvN0tyOUJuQm85RjNqWHlyL0RFU3dMUlQ1Mml0VXZkZ2VKVVdsWnpMWTNNa0VpOE90dVpaVCtXRWFLQQoyakExUDBVd3d1Zm80OGFsNHMwRSszREZpQzdWaC9sWngvOWJSeUxQN3h1L1plT1Y3NzF0b2dYTWZqaGlETzkwCjVMZmQrZDZIMWZYZFJjUEZCUUlCbzNBbXREOXd3K1Y1ZUI1MkNsWnhER3FYL0prVHB1VnFNQUJ4OGkwVEhFTkEKQWI0NXBhcXFkNlVpc2Vwa1dZU3FmaytNV3JmWHJDeE0yNFZkeTFCaXpvWXYwZW1kTHBvUVI0bzJTNEVDQXdFQQpBYU9DQVZrd2dnRlZNQTRHQTFVZER3RUIvd1FFQXdJRm9EQVRCZ05WSFNVRUREQUtCZ2dyQmdFRkJRY0RBVEFNCkJnTlZIUk1CQWY4RUFqQUFNQjhHQTFVZEl3UVlNQmFBRkxnTDJlSFBXYjhLakx0bXFTVExXMEZzaVpkc01JSCsKQmdOVkhSRUVnZll3Z2ZPQ09XTmhkSFJzWlMxd2NtOTJhWE5wYjI1cGJtY3RZMkZ3YVMxemVYTjBaVzB0WTJGdwphUzEzWldKb2IyOXJMWE5sY25acFkyVXRZMlZ5ZElJMFkyRndhUzEzWldKb2IyOXJMWE5sY25acFkyVXVZMkYwCmRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJZSTRZMkZ3YVMxM1pXSm9iMjlyTFhObGNuWnAKWTJVdVkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzV6ZG1PQ1JtTmhjR2t0ZDJWaQphRzl2YXkxelpYSjJhV05sTG1OaGRIUnNaUzF3Y205MmFYTnBiMjVwYm1jdFkyRndhUzF6ZVhOMFpXMHVjM1pqCkxtTnNkWE4wWlhJdWJHOWpZV3d3RFFZSktvWklodmNOQVFFTEJRQURnZ0VCQU44aDNVcitBR0M0ZUd6aCtXNDUKVHEvY2FzTThORElPeGxHR011dUt5Vmh5UjlZb1BBcyttRG9mbW9DWmdOd0d0eDlzY295RHJwSnZkOElOOVhoUgp3M1ZTUmxwZWQ3MHQ0UjZ3YmkxQzRpRHphR0F2bWlrUTdEaTBacUZ4Q2lHYWhoRkgvbzYvaTlGVk5sUGd5QWRSCjE4SDh1YmhsdUtxQ21NQmhubFRpRk5XRng2OHJQdmQrZUJkMmNvb3V4ekZlZ2w0UWJjWUhHTGtxajI0QytDZy8KdG5NTVpIc1UySHZCTkRYK2RESFE1N21ZT0ZUSGRmZnM0dDYydWpNeDlOQlV0NmMzU0c1eGQyQjJBUGJGKzQwVApyWHRiZnlvU1gyQW5UVGhlcmg5ZSs0Q0hkdjJvaFB4aHdBVGFFQkwxZmVvcFU4SlNETUI2SDl3eW9tTEdLNk1kCkpSWT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tLS0KTUlJRGFEQ0NBbENnQXdJQkFnSUlCcy96YnBRVUs0OHdEUVlKS29aSWh2Y05BUUVMQlFBd1VqRlFNRTRHQTFVRQpBd3hIWTJGMGRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJTMWpZWEJwTFhkbFltaHZiMnN0CmMyVnlkbWxqWlMxalpYSjBMV05oUURFM05qY3hNekV6TVRZd0hoY05NalV4TWpNd01qQTBPRE0yV2hjTk1qWXgKTWpNd01qQTBPRE0yV2pCU01WQXdUZ1lEVlFRRERFZGpZWFIwYkdVdGNISnZkbWx6YVc5dWFXNW5MV05oY0drdApjM2x6ZEdWdExXTmhjR2t0ZDJWaWFHOXZheTF6WlhKMmFXTmxMV05sY25RdFkyRkFNVGMyTnpFek1UTXhOakNDCkFTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBUEJySEpRdHd6blRIaStjNlRGbDhOcHAKM2JpNDFTLzI0aW5jekFSck5RUnFLQ05kZWJ2NEVKa1lod1lDbWpQOEluYy9pVGY3ZmFEZmsvS09WbERrUFFMawo4bGdsb3JDRVBUcEpIOTF4VjlMSUxOTHpvajFGM3dQbFM1QWJXWENmQlJTTlc3NmZtODlHcXF6L0VBUW81L0ZYCmtFR3JmNWFCVVNwVWVSTGNZVGR2ajdXS3hCY2I4N0J0VFRoMExGZ3lLcDI2MUFKN1Z0dHdENjVhaFdEMVdLWWcKZG1lbm5yYnVsMWg2MjFYSkxYMklpWmdSa1BWY2R3TEhJRTAvbXU0TXdDT0h2VERXNzdpVXJNZExHMlFqTThZcApTZDBrN29waml6SnFoc2k0Y2dkbjJiRVZ0MWdqQnlTS0g4eDB5ZUY5ZWxZdUpNRU5yQ2JXWG5kNU5wZUVLY01DCkF3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME8KQkJZRUZMZ0wyZUhQV2I4S2pMdG1xU1RMVzBGc2laZHNNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUJOcSt4dQpFdmdPWU9za3pxcnJwV2laZms4dlJBZmRlbjlhTVJvRWxrVmJqOEhJZUhqYituZ3g2MEc4QkJKMlFkVCt4bGRBCkM5OXdiVWQ0eGxiV0R6VTVmcUpqTVVRNEliVXlncEZ4bVNDMmFZMkIrdGRxWGJyQTdjY3pDU1FoZ2d4bnZ5ejEKSGJxanVVeDI2d2p1OXFrRUd3Y3ZnUFdwd3h1L0FBL1hNWFViZGhxVGNRQ25WWHJ0cEdhYlArdmdHM1VWTTNSOQphRy9RcHRmY3F0SDdQZytqQXk0bGJ6a3ZoMVJUazJUUUlxeDlLZTRVSlkwRzhGYjdjWUFjZFJ3cTM0ek85WS9BCjJjYzM4czlucWpGVllEbDFoMkVtYThuVGdwekd1SFpHbEVJMkJSem13Nk56Yk1XVnpPNkJJZVljUFlaV081QVAKUGdwUDVobnZmQ2U4RG5YbQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: capi-webhook-service
+        namespace: cattle-provisioning-capi-system
+        path: /mutate-cluster-x-k8s-io-v1beta1-machine
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Equivalent
+    name: default.machine.cluster.x-k8s.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - cluster.x-k8s.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - machines
+      scope: '*'
+    sideEffects: None
+    timeoutSeconds: 10
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVmakNDQTJhZ0F3SUJBZ0lJSE1ldGdaeERCZjB3RFFZSktvWklodmNOQVFFTEJRQXdVakZRTUU0R0ExVUUKQXd4SFkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzFqWVhCcExYZGxZbWh2YjJzdApjMlZ5ZG1salpTMWpaWEowTFdOaFFERTNOamN4TXpFek1UWXdIaGNOTWpVeE1qTXdNakEwT0RNMldoY05Nall4Ck1qTXdNakEwT0RNMldqQlBNVTB3U3dZRFZRUURERVJqWVhSMGJHVXRjSEp2ZG1semFXOXVhVzVuTFdOaGNHa3QKYzNsemRHVnRMV05oY0drdGQyVmlhRzl2YXkxelpYSjJhV05sTFdObGNuUkFNVGMyTnpFek1UTXhOakNDQVNJdwpEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTDU4ajVPS3Y0WlMwdDNvcFpOc1NjY3pzQWx0Ck5uSllPaHFGZE9KdmV6emFNKzZRWXo1RG1TOFF2bzZMYnJXM2RKZm1XVm1IRXA0UnFHQ2gwcGJsNUhib2c0L0EKRWh2TngvN0tyOUJuQm85RjNqWHlyL0RFU3dMUlQ1Mml0VXZkZ2VKVVdsWnpMWTNNa0VpOE90dVpaVCtXRWFLQQoyakExUDBVd3d1Zm80OGFsNHMwRSszREZpQzdWaC9sWngvOWJSeUxQN3h1L1plT1Y3NzF0b2dYTWZqaGlETzkwCjVMZmQrZDZIMWZYZFJjUEZCUUlCbzNBbXREOXd3K1Y1ZUI1MkNsWnhER3FYL0prVHB1VnFNQUJ4OGkwVEhFTkEKQWI0NXBhcXFkNlVpc2Vwa1dZU3FmaytNV3JmWHJDeE0yNFZkeTFCaXpvWXYwZW1kTHBvUVI0bzJTNEVDQXdFQQpBYU9DQVZrd2dnRlZNQTRHQTFVZER3RUIvd1FFQXdJRm9EQVRCZ05WSFNVRUREQUtCZ2dyQmdFRkJRY0RBVEFNCkJnTlZIUk1CQWY4RUFqQUFNQjhHQTFVZEl3UVlNQmFBRkxnTDJlSFBXYjhLakx0bXFTVExXMEZzaVpkc01JSCsKQmdOVkhSRUVnZll3Z2ZPQ09XTmhkSFJzWlMxd2NtOTJhWE5wYjI1cGJtY3RZMkZ3YVMxemVYTjBaVzB0WTJGdwphUzEzWldKb2IyOXJMWE5sY25acFkyVXRZMlZ5ZElJMFkyRndhUzEzWldKb2IyOXJMWE5sY25acFkyVXVZMkYwCmRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJZSTRZMkZ3YVMxM1pXSm9iMjlyTFhObGNuWnAKWTJVdVkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzV6ZG1PQ1JtTmhjR2t0ZDJWaQphRzl2YXkxelpYSjJhV05sTG1OaGRIUnNaUzF3Y205MmFYTnBiMjVwYm1jdFkyRndhUzF6ZVhOMFpXMHVjM1pqCkxtTnNkWE4wWlhJdWJHOWpZV3d3RFFZSktvWklodmNOQVFFTEJRQURnZ0VCQU44aDNVcitBR0M0ZUd6aCtXNDUKVHEvY2FzTThORElPeGxHR011dUt5Vmh5UjlZb1BBcyttRG9mbW9DWmdOd0d0eDlzY295RHJwSnZkOElOOVhoUgp3M1ZTUmxwZWQ3MHQ0UjZ3YmkxQzRpRHphR0F2bWlrUTdEaTBacUZ4Q2lHYWhoRkgvbzYvaTlGVk5sUGd5QWRSCjE4SDh1YmhsdUtxQ21NQmhubFRpRk5XRng2OHJQdmQrZUJkMmNvb3V4ekZlZ2w0UWJjWUhHTGtxajI0QytDZy8KdG5NTVpIc1UySHZCTkRYK2RESFE1N21ZT0ZUSGRmZnM0dDYydWpNeDlOQlV0NmMzU0c1eGQyQjJBUGJGKzQwVApyWHRiZnlvU1gyQW5UVGhlcmg5ZSs0Q0hkdjJvaFB4aHdBVGFFQkwxZmVvcFU4SlNETUI2SDl3eW9tTEdLNk1kCkpSWT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tLS0KTUlJRGFEQ0NBbENnQXdJQkFnSUlCcy96YnBRVUs0OHdEUVlKS29aSWh2Y05BUUVMQlFBd1VqRlFNRTRHQTFVRQpBd3hIWTJGMGRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJTMWpZWEJwTFhkbFltaHZiMnN0CmMyVnlkbWxqWlMxalpYSjBMV05oUURFM05qY3hNekV6TVRZd0hoY05NalV4TWpNd01qQTBPRE0yV2hjTk1qWXgKTWpNd01qQTBPRE0yV2pCU01WQXdUZ1lEVlFRRERFZGpZWFIwYkdVdGNISnZkbWx6YVc5dWFXNW5MV05oY0drdApjM2x6ZEdWdExXTmhjR2t0ZDJWaWFHOXZheTF6WlhKMmFXTmxMV05sY25RdFkyRkFNVGMyTnpFek1UTXhOakNDCkFTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBUEJySEpRdHd6blRIaStjNlRGbDhOcHAKM2JpNDFTLzI0aW5jekFSck5RUnFLQ05kZWJ2NEVKa1lod1lDbWpQOEluYy9pVGY3ZmFEZmsvS09WbERrUFFMawo4bGdsb3JDRVBUcEpIOTF4VjlMSUxOTHpvajFGM3dQbFM1QWJXWENmQlJTTlc3NmZtODlHcXF6L0VBUW81L0ZYCmtFR3JmNWFCVVNwVWVSTGNZVGR2ajdXS3hCY2I4N0J0VFRoMExGZ3lLcDI2MUFKN1Z0dHdENjVhaFdEMVdLWWcKZG1lbm5yYnVsMWg2MjFYSkxYMklpWmdSa1BWY2R3TEhJRTAvbXU0TXdDT0h2VERXNzdpVXJNZExHMlFqTThZcApTZDBrN29waml6SnFoc2k0Y2dkbjJiRVZ0MWdqQnlTS0g4eDB5ZUY5ZWxZdUpNRU5yQ2JXWG5kNU5wZUVLY01DCkF3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME8KQkJZRUZMZ0wyZUhQV2I4S2pMdG1xU1RMVzBGc2laZHNNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUJOcSt4dQpFdmdPWU9za3pxcnJwV2laZms4dlJBZmRlbjlhTVJvRWxrVmJqOEhJZUhqYituZ3g2MEc4QkJKMlFkVCt4bGRBCkM5OXdiVWQ0eGxiV0R6VTVmcUpqTVVRNEliVXlncEZ4bVNDMmFZMkIrdGRxWGJyQTdjY3pDU1FoZ2d4bnZ5ejEKSGJxanVVeDI2d2p1OXFrRUd3Y3ZnUFdwd3h1L0FBL1hNWFViZGhxVGNRQ25WWHJ0cEdhYlArdmdHM1VWTTNSOQphRy9RcHRmY3F0SDdQZytqQXk0bGJ6a3ZoMVJUazJUUUlxeDlLZTRVSlkwRzhGYjdjWUFjZFJ3cTM0ek85WS9BCjJjYzM4czlucWpGVllEbDFoMkVtYThuVGdwekd1SFpHbEVJMkJSem13Nk56Yk1XVnpPNkJJZVljUFlaV081QVAKUGdwUDVobnZmQ2U4RG5YbQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: capi-webhook-service
+        namespace: cattle-provisioning-capi-system
+        path: /mutate-cluster-x-k8s-io-v1beta1-machinedeployment
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Equivalent
+    name: default.machinedeployment.cluster.x-k8s.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - cluster.x-k8s.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - machinedeployments
+      scope: '*'
+    sideEffects: None
+    timeoutSeconds: 10
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVmakNDQTJhZ0F3SUJBZ0lJSE1ldGdaeERCZjB3RFFZSktvWklodmNOQVFFTEJRQXdVakZRTUU0R0ExVUUKQXd4SFkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzFqWVhCcExYZGxZbWh2YjJzdApjMlZ5ZG1salpTMWpaWEowTFdOaFFERTNOamN4TXpFek1UWXdIaGNOTWpVeE1qTXdNakEwT0RNMldoY05Nall4Ck1qTXdNakEwT0RNMldqQlBNVTB3U3dZRFZRUURERVJqWVhSMGJHVXRjSEp2ZG1semFXOXVhVzVuTFdOaGNHa3QKYzNsemRHVnRMV05oY0drdGQyVmlhRzl2YXkxelpYSjJhV05sTFdObGNuUkFNVGMyTnpFek1UTXhOakNDQVNJdwpEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTDU4ajVPS3Y0WlMwdDNvcFpOc1NjY3pzQWx0Ck5uSllPaHFGZE9KdmV6emFNKzZRWXo1RG1TOFF2bzZMYnJXM2RKZm1XVm1IRXA0UnFHQ2gwcGJsNUhib2c0L0EKRWh2TngvN0tyOUJuQm85RjNqWHlyL0RFU3dMUlQ1Mml0VXZkZ2VKVVdsWnpMWTNNa0VpOE90dVpaVCtXRWFLQQoyakExUDBVd3d1Zm80OGFsNHMwRSszREZpQzdWaC9sWngvOWJSeUxQN3h1L1plT1Y3NzF0b2dYTWZqaGlETzkwCjVMZmQrZDZIMWZYZFJjUEZCUUlCbzNBbXREOXd3K1Y1ZUI1MkNsWnhER3FYL0prVHB1VnFNQUJ4OGkwVEhFTkEKQWI0NXBhcXFkNlVpc2Vwa1dZU3FmaytNV3JmWHJDeE0yNFZkeTFCaXpvWXYwZW1kTHBvUVI0bzJTNEVDQXdFQQpBYU9DQVZrd2dnRlZNQTRHQTFVZER3RUIvd1FFQXdJRm9EQVRCZ05WSFNVRUREQUtCZ2dyQmdFRkJRY0RBVEFNCkJnTlZIUk1CQWY4RUFqQUFNQjhHQTFVZEl3UVlNQmFBRkxnTDJlSFBXYjhLakx0bXFTVExXMEZzaVpkc01JSCsKQmdOVkhSRUVnZll3Z2ZPQ09XTmhkSFJzWlMxd2NtOTJhWE5wYjI1cGJtY3RZMkZ3YVMxemVYTjBaVzB0WTJGdwphUzEzWldKb2IyOXJMWE5sY25acFkyVXRZMlZ5ZElJMFkyRndhUzEzWldKb2IyOXJMWE5sY25acFkyVXVZMkYwCmRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJZSTRZMkZ3YVMxM1pXSm9iMjlyTFhObGNuWnAKWTJVdVkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzV6ZG1PQ1JtTmhjR2t0ZDJWaQphRzl2YXkxelpYSjJhV05sTG1OaGRIUnNaUzF3Y205MmFYTnBiMjVwYm1jdFkyRndhUzF6ZVhOMFpXMHVjM1pqCkxtTnNkWE4wWlhJdWJHOWpZV3d3RFFZSktvWklodmNOQVFFTEJRQURnZ0VCQU44aDNVcitBR0M0ZUd6aCtXNDUKVHEvY2FzTThORElPeGxHR011dUt5Vmh5UjlZb1BBcyttRG9mbW9DWmdOd0d0eDlzY295RHJwSnZkOElOOVhoUgp3M1ZTUmxwZWQ3MHQ0UjZ3YmkxQzRpRHphR0F2bWlrUTdEaTBacUZ4Q2lHYWhoRkgvbzYvaTlGVk5sUGd5QWRSCjE4SDh1YmhsdUtxQ21NQmhubFRpRk5XRng2OHJQdmQrZUJkMmNvb3V4ekZlZ2w0UWJjWUhHTGtxajI0QytDZy8KdG5NTVpIc1UySHZCTkRYK2RESFE1N21ZT0ZUSGRmZnM0dDYydWpNeDlOQlV0NmMzU0c1eGQyQjJBUGJGKzQwVApyWHRiZnlvU1gyQW5UVGhlcmg5ZSs0Q0hkdjJvaFB4aHdBVGFFQkwxZmVvcFU4SlNETUI2SDl3eW9tTEdLNk1kCkpSWT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tLS0KTUlJRGFEQ0NBbENnQXdJQkFnSUlCcy96YnBRVUs0OHdEUVlKS29aSWh2Y05BUUVMQlFBd1VqRlFNRTRHQTFVRQpBd3hIWTJGMGRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJTMWpZWEJwTFhkbFltaHZiMnN0CmMyVnlkbWxqWlMxalpYSjBMV05oUURFM05qY3hNekV6TVRZd0hoY05NalV4TWpNd01qQTBPRE0yV2hjTk1qWXgKTWpNd01qQTBPRE0yV2pCU01WQXdUZ1lEVlFRRERFZGpZWFIwYkdVdGNISnZkbWx6YVc5dWFXNW5MV05oY0drdApjM2x6ZEdWdExXTmhjR2t0ZDJWaWFHOXZheTF6WlhKMmFXTmxMV05sY25RdFkyRkFNVGMyTnpFek1UTXhOakNDCkFTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBUEJySEpRdHd6blRIaStjNlRGbDhOcHAKM2JpNDFTLzI0aW5jekFSck5RUnFLQ05kZWJ2NEVKa1lod1lDbWpQOEluYy9pVGY3ZmFEZmsvS09WbERrUFFMawo4bGdsb3JDRVBUcEpIOTF4VjlMSUxOTHpvajFGM3dQbFM1QWJXWENmQlJTTlc3NmZtODlHcXF6L0VBUW81L0ZYCmtFR3JmNWFCVVNwVWVSTGNZVGR2ajdXS3hCY2I4N0J0VFRoMExGZ3lLcDI2MUFKN1Z0dHdENjVhaFdEMVdLWWcKZG1lbm5yYnVsMWg2MjFYSkxYMklpWmdSa1BWY2R3TEhJRTAvbXU0TXdDT0h2VERXNzdpVXJNZExHMlFqTThZcApTZDBrN29waml6SnFoc2k0Y2dkbjJiRVZ0MWdqQnlTS0g4eDB5ZUY5ZWxZdUpNRU5yQ2JXWG5kNU5wZUVLY01DCkF3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME8KQkJZRUZMZ0wyZUhQV2I4S2pMdG1xU1RMVzBGc2laZHNNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUJOcSt4dQpFdmdPWU9za3pxcnJwV2laZms4dlJBZmRlbjlhTVJvRWxrVmJqOEhJZUhqYituZ3g2MEc4QkJKMlFkVCt4bGRBCkM5OXdiVWQ0eGxiV0R6VTVmcUpqTVVRNEliVXlncEZ4bVNDMmFZMkIrdGRxWGJyQTdjY3pDU1FoZ2d4bnZ5ejEKSGJxanVVeDI2d2p1OXFrRUd3Y3ZnUFdwd3h1L0FBL1hNWFViZGhxVGNRQ25WWHJ0cEdhYlArdmdHM1VWTTNSOQphRy9RcHRmY3F0SDdQZytqQXk0bGJ6a3ZoMVJUazJUUUlxeDlLZTRVSlkwRzhGYjdjWUFjZFJ3cTM0ek85WS9BCjJjYzM4czlucWpGVllEbDFoMkVtYThuVGdwekd1SFpHbEVJMkJSem13Nk56Yk1XVnpPNkJJZVljUFlaV081QVAKUGdwUDVobnZmQ2U4RG5YbQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: capi-webhook-service
+        namespace: cattle-provisioning-capi-system
+        path: /mutate-cluster-x-k8s-io-v1beta1-machinehealthcheck
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Equivalent
+    name: default.machinehealthcheck.cluster.x-k8s.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - cluster.x-k8s.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - machinehealthchecks
+      scope: '*'
+    sideEffects: None
+    timeoutSeconds: 10
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVmakNDQTJhZ0F3SUJBZ0lJSE1ldGdaeERCZjB3RFFZSktvWklodmNOQVFFTEJRQXdVakZRTUU0R0ExVUUKQXd4SFkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzFqWVhCcExYZGxZbWh2YjJzdApjMlZ5ZG1salpTMWpaWEowTFdOaFFERTNOamN4TXpFek1UWXdIaGNOTWpVeE1qTXdNakEwT0RNMldoY05Nall4Ck1qTXdNakEwT0RNMldqQlBNVTB3U3dZRFZRUURERVJqWVhSMGJHVXRjSEp2ZG1semFXOXVhVzVuTFdOaGNHa3QKYzNsemRHVnRMV05oY0drdGQyVmlhRzl2YXkxelpYSjJhV05sTFdObGNuUkFNVGMyTnpFek1UTXhOakNDQVNJdwpEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTDU4ajVPS3Y0WlMwdDNvcFpOc1NjY3pzQWx0Ck5uSllPaHFGZE9KdmV6emFNKzZRWXo1RG1TOFF2bzZMYnJXM2RKZm1XVm1IRXA0UnFHQ2gwcGJsNUhib2c0L0EKRWh2TngvN0tyOUJuQm85RjNqWHlyL0RFU3dMUlQ1Mml0VXZkZ2VKVVdsWnpMWTNNa0VpOE90dVpaVCtXRWFLQQoyakExUDBVd3d1Zm80OGFsNHMwRSszREZpQzdWaC9sWngvOWJSeUxQN3h1L1plT1Y3NzF0b2dYTWZqaGlETzkwCjVMZmQrZDZIMWZYZFJjUEZCUUlCbzNBbXREOXd3K1Y1ZUI1MkNsWnhER3FYL0prVHB1VnFNQUJ4OGkwVEhFTkEKQWI0NXBhcXFkNlVpc2Vwa1dZU3FmaytNV3JmWHJDeE0yNFZkeTFCaXpvWXYwZW1kTHBvUVI0bzJTNEVDQXdFQQpBYU9DQVZrd2dnRlZNQTRHQTFVZER3RUIvd1FFQXdJRm9EQVRCZ05WSFNVRUREQUtCZ2dyQmdFRkJRY0RBVEFNCkJnTlZIUk1CQWY4RUFqQUFNQjhHQTFVZEl3UVlNQmFBRkxnTDJlSFBXYjhLakx0bXFTVExXMEZzaVpkc01JSCsKQmdOVkhSRUVnZll3Z2ZPQ09XTmhkSFJzWlMxd2NtOTJhWE5wYjI1cGJtY3RZMkZ3YVMxemVYTjBaVzB0WTJGdwphUzEzWldKb2IyOXJMWE5sY25acFkyVXRZMlZ5ZElJMFkyRndhUzEzWldKb2IyOXJMWE5sY25acFkyVXVZMkYwCmRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJZSTRZMkZ3YVMxM1pXSm9iMjlyTFhObGNuWnAKWTJVdVkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzV6ZG1PQ1JtTmhjR2t0ZDJWaQphRzl2YXkxelpYSjJhV05sTG1OaGRIUnNaUzF3Y205MmFYTnBiMjVwYm1jdFkyRndhUzF6ZVhOMFpXMHVjM1pqCkxtTnNkWE4wWlhJdWJHOWpZV3d3RFFZSktvWklodmNOQVFFTEJRQURnZ0VCQU44aDNVcitBR0M0ZUd6aCtXNDUKVHEvY2FzTThORElPeGxHR011dUt5Vmh5UjlZb1BBcyttRG9mbW9DWmdOd0d0eDlzY295RHJwSnZkOElOOVhoUgp3M1ZTUmxwZWQ3MHQ0UjZ3YmkxQzRpRHphR0F2bWlrUTdEaTBacUZ4Q2lHYWhoRkgvbzYvaTlGVk5sUGd5QWRSCjE4SDh1YmhsdUtxQ21NQmhubFRpRk5XRng2OHJQdmQrZUJkMmNvb3V4ekZlZ2w0UWJjWUhHTGtxajI0QytDZy8KdG5NTVpIc1UySHZCTkRYK2RESFE1N21ZT0ZUSGRmZnM0dDYydWpNeDlOQlV0NmMzU0c1eGQyQjJBUGJGKzQwVApyWHRiZnlvU1gyQW5UVGhlcmg5ZSs0Q0hkdjJvaFB4aHdBVGFFQkwxZmVvcFU4SlNETUI2SDl3eW9tTEdLNk1kCkpSWT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tLS0KTUlJRGFEQ0NBbENnQXdJQkFnSUlCcy96YnBRVUs0OHdEUVlKS29aSWh2Y05BUUVMQlFBd1VqRlFNRTRHQTFVRQpBd3hIWTJGMGRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJTMWpZWEJwTFhkbFltaHZiMnN0CmMyVnlkbWxqWlMxalpYSjBMV05oUURFM05qY3hNekV6TVRZd0hoY05NalV4TWpNd01qQTBPRE0yV2hjTk1qWXgKTWpNd01qQTBPRE0yV2pCU01WQXdUZ1lEVlFRRERFZGpZWFIwYkdVdGNISnZkbWx6YVc5dWFXNW5MV05oY0drdApjM2x6ZEdWdExXTmhjR2t0ZDJWaWFHOXZheTF6WlhKMmFXTmxMV05sY25RdFkyRkFNVGMyTnpFek1UTXhOakNDCkFTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBUEJySEpRdHd6blRIaStjNlRGbDhOcHAKM2JpNDFTLzI0aW5jekFSck5RUnFLQ05kZWJ2NEVKa1lod1lDbWpQOEluYy9pVGY3ZmFEZmsvS09WbERrUFFMawo4bGdsb3JDRVBUcEpIOTF4VjlMSUxOTHpvajFGM3dQbFM1QWJXWENmQlJTTlc3NmZtODlHcXF6L0VBUW81L0ZYCmtFR3JmNWFCVVNwVWVSTGNZVGR2ajdXS3hCY2I4N0J0VFRoMExGZ3lLcDI2MUFKN1Z0dHdENjVhaFdEMVdLWWcKZG1lbm5yYnVsMWg2MjFYSkxYMklpWmdSa1BWY2R3TEhJRTAvbXU0TXdDT0h2VERXNzdpVXJNZExHMlFqTThZcApTZDBrN29waml6SnFoc2k0Y2dkbjJiRVZ0MWdqQnlTS0g4eDB5ZUY5ZWxZdUpNRU5yQ2JXWG5kNU5wZUVLY01DCkF3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME8KQkJZRUZMZ0wyZUhQV2I4S2pMdG1xU1RMVzBGc2laZHNNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUJOcSt4dQpFdmdPWU9za3pxcnJwV2laZms4dlJBZmRlbjlhTVJvRWxrVmJqOEhJZUhqYituZ3g2MEc4QkJKMlFkVCt4bGRBCkM5OXdiVWQ0eGxiV0R6VTVmcUpqTVVRNEliVXlncEZ4bVNDMmFZMkIrdGRxWGJyQTdjY3pDU1FoZ2d4bnZ5ejEKSGJxanVVeDI2d2p1OXFrRUd3Y3ZnUFdwd3h1L0FBL1hNWFViZGhxVGNRQ25WWHJ0cEdhYlArdmdHM1VWTTNSOQphRy9RcHRmY3F0SDdQZytqQXk0bGJ6a3ZoMVJUazJUUUlxeDlLZTRVSlkwRzhGYjdjWUFjZFJ3cTM0ek85WS9BCjJjYzM4czlucWpGVllEbDFoMkVtYThuVGdwekd1SFpHbEVJMkJSem13Nk56Yk1XVnpPNkJJZVljUFlaV081QVAKUGdwUDVobnZmQ2U4RG5YbQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: capi-webhook-service
+        namespace: cattle-provisioning-capi-system
+        path: /mutate-cluster-x-k8s-io-v1beta1-machineset
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Equivalent
+    name: default.machineset.cluster.x-k8s.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - cluster.x-k8s.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - machinesets
+      scope: '*'
+    sideEffects: None
+    timeoutSeconds: 10
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVmakNDQTJhZ0F3SUJBZ0lJSE1ldGdaeERCZjB3RFFZSktvWklodmNOQVFFTEJRQXdVakZRTUU0R0ExVUUKQXd4SFkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzFqWVhCcExYZGxZbWh2YjJzdApjMlZ5ZG1salpTMWpaWEowTFdOaFFERTNOamN4TXpFek1UWXdIaGNOTWpVeE1qTXdNakEwT0RNMldoY05Nall4Ck1qTXdNakEwT0RNMldqQlBNVTB3U3dZRFZRUURERVJqWVhSMGJHVXRjSEp2ZG1semFXOXVhVzVuTFdOaGNHa3QKYzNsemRHVnRMV05oY0drdGQyVmlhRzl2YXkxelpYSjJhV05sTFdObGNuUkFNVGMyTnpFek1UTXhOakNDQVNJdwpEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTDU4ajVPS3Y0WlMwdDNvcFpOc1NjY3pzQWx0Ck5uSllPaHFGZE9KdmV6emFNKzZRWXo1RG1TOFF2bzZMYnJXM2RKZm1XVm1IRXA0UnFHQ2gwcGJsNUhib2c0L0EKRWh2TngvN0tyOUJuQm85RjNqWHlyL0RFU3dMUlQ1Mml0VXZkZ2VKVVdsWnpMWTNNa0VpOE90dVpaVCtXRWFLQQoyakExUDBVd3d1Zm80OGFsNHMwRSszREZpQzdWaC9sWngvOWJSeUxQN3h1L1plT1Y3NzF0b2dYTWZqaGlETzkwCjVMZmQrZDZIMWZYZFJjUEZCUUlCbzNBbXREOXd3K1Y1ZUI1MkNsWnhER3FYL0prVHB1VnFNQUJ4OGkwVEhFTkEKQWI0NXBhcXFkNlVpc2Vwa1dZU3FmaytNV3JmWHJDeE0yNFZkeTFCaXpvWXYwZW1kTHBvUVI0bzJTNEVDQXdFQQpBYU9DQVZrd2dnRlZNQTRHQTFVZER3RUIvd1FFQXdJRm9EQVRCZ05WSFNVRUREQUtCZ2dyQmdFRkJRY0RBVEFNCkJnTlZIUk1CQWY4RUFqQUFNQjhHQTFVZEl3UVlNQmFBRkxnTDJlSFBXYjhLakx0bXFTVExXMEZzaVpkc01JSCsKQmdOVkhSRUVnZll3Z2ZPQ09XTmhkSFJzWlMxd2NtOTJhWE5wYjI1cGJtY3RZMkZ3YVMxemVYTjBaVzB0WTJGdwphUzEzWldKb2IyOXJMWE5sY25acFkyVXRZMlZ5ZElJMFkyRndhUzEzWldKb2IyOXJMWE5sY25acFkyVXVZMkYwCmRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJZSTRZMkZ3YVMxM1pXSm9iMjlyTFhObGNuWnAKWTJVdVkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzV6ZG1PQ1JtTmhjR2t0ZDJWaQphRzl2YXkxelpYSjJhV05sTG1OaGRIUnNaUzF3Y205MmFYTnBiMjVwYm1jdFkyRndhUzF6ZVhOMFpXMHVjM1pqCkxtTnNkWE4wWlhJdWJHOWpZV3d3RFFZSktvWklodmNOQVFFTEJRQURnZ0VCQU44aDNVcitBR0M0ZUd6aCtXNDUKVHEvY2FzTThORElPeGxHR011dUt5Vmh5UjlZb1BBcyttRG9mbW9DWmdOd0d0eDlzY295RHJwSnZkOElOOVhoUgp3M1ZTUmxwZWQ3MHQ0UjZ3YmkxQzRpRHphR0F2bWlrUTdEaTBacUZ4Q2lHYWhoRkgvbzYvaTlGVk5sUGd5QWRSCjE4SDh1YmhsdUtxQ21NQmhubFRpRk5XRng2OHJQdmQrZUJkMmNvb3V4ekZlZ2w0UWJjWUhHTGtxajI0QytDZy8KdG5NTVpIc1UySHZCTkRYK2RESFE1N21ZT0ZUSGRmZnM0dDYydWpNeDlOQlV0NmMzU0c1eGQyQjJBUGJGKzQwVApyWHRiZnlvU1gyQW5UVGhlcmg5ZSs0Q0hkdjJvaFB4aHdBVGFFQkwxZmVvcFU4SlNETUI2SDl3eW9tTEdLNk1kCkpSWT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tLS0KTUlJRGFEQ0NBbENnQXdJQkFnSUlCcy96YnBRVUs0OHdEUVlKS29aSWh2Y05BUUVMQlFBd1VqRlFNRTRHQTFVRQpBd3hIWTJGMGRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJTMWpZWEJwTFhkbFltaHZiMnN0CmMyVnlkbWxqWlMxalpYSjBMV05oUURFM05qY3hNekV6TVRZd0hoY05NalV4TWpNd01qQTBPRE0yV2hjTk1qWXgKTWpNd01qQTBPRE0yV2pCU01WQXdUZ1lEVlFRRERFZGpZWFIwYkdVdGNISnZkbWx6YVc5dWFXNW5MV05oY0drdApjM2x6ZEdWdExXTmhjR2t0ZDJWaWFHOXZheTF6WlhKMmFXTmxMV05sY25RdFkyRkFNVGMyTnpFek1UTXhOakNDCkFTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBUEJySEpRdHd6blRIaStjNlRGbDhOcHAKM2JpNDFTLzI0aW5jekFSck5RUnFLQ05kZWJ2NEVKa1lod1lDbWpQOEluYy9pVGY3ZmFEZmsvS09WbERrUFFMawo4bGdsb3JDRVBUcEpIOTF4VjlMSUxOTHpvajFGM3dQbFM1QWJXWENmQlJTTlc3NmZtODlHcXF6L0VBUW81L0ZYCmtFR3JmNWFCVVNwVWVSTGNZVGR2ajdXS3hCY2I4N0J0VFRoMExGZ3lLcDI2MUFKN1Z0dHdENjVhaFdEMVdLWWcKZG1lbm5yYnVsMWg2MjFYSkxYMklpWmdSa1BWY2R3TEhJRTAvbXU0TXdDT0h2VERXNzdpVXJNZExHMlFqTThZcApTZDBrN29waml6SnFoc2k0Y2dkbjJiRVZ0MWdqQnlTS0g4eDB5ZUY5ZWxZdUpNRU5yQ2JXWG5kNU5wZUVLY01DCkF3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME8KQkJZRUZMZ0wyZUhQV2I4S2pMdG1xU1RMVzBGc2laZHNNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUJOcSt4dQpFdmdPWU9za3pxcnJwV2laZms4dlJBZmRlbjlhTVJvRWxrVmJqOEhJZUhqYituZ3g2MEc4QkJKMlFkVCt4bGRBCkM5OXdiVWQ0eGxiV0R6VTVmcUpqTVVRNEliVXlncEZ4bVNDMmFZMkIrdGRxWGJyQTdjY3pDU1FoZ2d4bnZ5ejEKSGJxanVVeDI2d2p1OXFrRUd3Y3ZnUFdwd3h1L0FBL1hNWFViZGhxVGNRQ25WWHJ0cEdhYlArdmdHM1VWTTNSOQphRy9RcHRmY3F0SDdQZytqQXk0bGJ6a3ZoMVJUazJUUUlxeDlLZTRVSlkwRzhGYjdjWUFjZFJ3cTM0ek85WS9BCjJjYzM4czlucWpGVllEbDFoMkVtYThuVGdwekd1SFpHbEVJMkJSem13Nk56Yk1XVnpPNkJJZVljUFlaV081QVAKUGdwUDVobnZmQ2U4RG5YbQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: capi-webhook-service
+        namespace: cattle-provisioning-capi-system
+        path: /mutate-runtime-cluster-x-k8s-io-v1alpha1-extensionconfig
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Equivalent
+    name: default.extensionconfig.runtime.addons.cluster.x-k8s.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - runtime.cluster.x-k8s.io
+      apiVersions:
+      - v1alpha1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - extensionconfigs
+      scope: '*'
+    sideEffects: None
+    timeoutSeconds: 10
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVmakNDQTJhZ0F3SUJBZ0lJSE1ldGdaeERCZjB3RFFZSktvWklodmNOQVFFTEJRQXdVakZRTUU0R0ExVUUKQXd4SFkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzFqWVhCcExYZGxZbWh2YjJzdApjMlZ5ZG1salpTMWpaWEowTFdOaFFERTNOamN4TXpFek1UWXdIaGNOTWpVeE1qTXdNakEwT0RNMldoY05Nall4Ck1qTXdNakEwT0RNMldqQlBNVTB3U3dZRFZRUURERVJqWVhSMGJHVXRjSEp2ZG1semFXOXVhVzVuTFdOaGNHa3QKYzNsemRHVnRMV05oY0drdGQyVmlhRzl2YXkxelpYSjJhV05sTFdObGNuUkFNVGMyTnpFek1UTXhOakNDQVNJdwpEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTDU4ajVPS3Y0WlMwdDNvcFpOc1NjY3pzQWx0Ck5uSllPaHFGZE9KdmV6emFNKzZRWXo1RG1TOFF2bzZMYnJXM2RKZm1XVm1IRXA0UnFHQ2gwcGJsNUhib2c0L0EKRWh2TngvN0tyOUJuQm85RjNqWHlyL0RFU3dMUlQ1Mml0VXZkZ2VKVVdsWnpMWTNNa0VpOE90dVpaVCtXRWFLQQoyakExUDBVd3d1Zm80OGFsNHMwRSszREZpQzdWaC9sWngvOWJSeUxQN3h1L1plT1Y3NzF0b2dYTWZqaGlETzkwCjVMZmQrZDZIMWZYZFJjUEZCUUlCbzNBbXREOXd3K1Y1ZUI1MkNsWnhER3FYL0prVHB1VnFNQUJ4OGkwVEhFTkEKQWI0NXBhcXFkNlVpc2Vwa1dZU3FmaytNV3JmWHJDeE0yNFZkeTFCaXpvWXYwZW1kTHBvUVI0bzJTNEVDQXdFQQpBYU9DQVZrd2dnRlZNQTRHQTFVZER3RUIvd1FFQXdJRm9EQVRCZ05WSFNVRUREQUtCZ2dyQmdFRkJRY0RBVEFNCkJnTlZIUk1CQWY4RUFqQUFNQjhHQTFVZEl3UVlNQmFBRkxnTDJlSFBXYjhLakx0bXFTVExXMEZzaVpkc01JSCsKQmdOVkhSRUVnZll3Z2ZPQ09XTmhkSFJzWlMxd2NtOTJhWE5wYjI1cGJtY3RZMkZ3YVMxemVYTjBaVzB0WTJGdwphUzEzWldKb2IyOXJMWE5sY25acFkyVXRZMlZ5ZElJMFkyRndhUzEzWldKb2IyOXJMWE5sY25acFkyVXVZMkYwCmRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJZSTRZMkZ3YVMxM1pXSm9iMjlyTFhObGNuWnAKWTJVdVkyRjBkR3hsTFhCeWIzWnBjMmx2Ym1sdVp5MWpZWEJwTFhONWMzUmxiUzV6ZG1PQ1JtTmhjR2t0ZDJWaQphRzl2YXkxelpYSjJhV05sTG1OaGRIUnNaUzF3Y205MmFYTnBiMjVwYm1jdFkyRndhUzF6ZVhOMFpXMHVjM1pqCkxtTnNkWE4wWlhJdWJHOWpZV3d3RFFZSktvWklodmNOQVFFTEJRQURnZ0VCQU44aDNVcitBR0M0ZUd6aCtXNDUKVHEvY2FzTThORElPeGxHR011dUt5Vmh5UjlZb1BBcyttRG9mbW9DWmdOd0d0eDlzY295RHJwSnZkOElOOVhoUgp3M1ZTUmxwZWQ3MHQ0UjZ3YmkxQzRpRHphR0F2bWlrUTdEaTBacUZ4Q2lHYWhoRkgvbzYvaTlGVk5sUGd5QWRSCjE4SDh1YmhsdUtxQ21NQmhubFRpRk5XRng2OHJQdmQrZUJkMmNvb3V4ekZlZ2w0UWJjWUhHTGtxajI0QytDZy8KdG5NTVpIc1UySHZCTkRYK2RESFE1N21ZT0ZUSGRmZnM0dDYydWpNeDlOQlV0NmMzU0c1eGQyQjJBUGJGKzQwVApyWHRiZnlvU1gyQW5UVGhlcmg5ZSs0Q0hkdjJvaFB4aHdBVGFFQkwxZmVvcFU4SlNETUI2SDl3eW9tTEdLNk1kCkpSWT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQotLS0tLUJFR0lOIENFUlRJRklDQVRFLS0tLS0KTUlJRGFEQ0NBbENnQXdJQkFnSUlCcy96YnBRVUs0OHdEUVlKS29aSWh2Y05BUUVMQlFBd1VqRlFNRTRHQTFVRQpBd3hIWTJGMGRHeGxMWEJ5YjNacGMybHZibWx1WnkxallYQnBMWE41YzNSbGJTMWpZWEJwTFhkbFltaHZiMnN0CmMyVnlkbWxqWlMxalpYSjBMV05oUURFM05qY3hNekV6TVRZd0hoY05NalV4TWpNd01qQTBPRE0yV2hjTk1qWXgKTWpNd01qQTBPRE0yV2pCU01WQXdUZ1lEVlFRRERFZGpZWFIwYkdVdGNISnZkbWx6YVc5dWFXNW5MV05oY0drdApjM2x6ZEdWdExXTmhjR2t0ZDJWaWFHOXZheTF6WlhKMmFXTmxMV05sY25RdFkyRkFNVGMyTnpFek1UTXhOakNDCkFTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBUEJySEpRdHd6blRIaStjNlRGbDhOcHAKM2JpNDFTLzI0aW5jekFSck5RUnFLQ05kZWJ2NEVKa1lod1lDbWpQOEluYy9pVGY3ZmFEZmsvS09WbERrUFFMawo4bGdsb3JDRVBUcEpIOTF4VjlMSUxOTHpvajFGM3dQbFM1QWJXWENmQlJTTlc3NmZtODlHcXF6L0VBUW81L0ZYCmtFR3JmNWFCVVNwVWVSTGNZVGR2ajdXS3hCY2I4N0J0VFRoMExGZ3lLcDI2MUFKN1Z0dHdENjVhaFdEMVdLWWcKZG1lbm5yYnVsMWg2MjFYSkxYMklpWmdSa1BWY2R3TEhJRTAvbXU0TXdDT0h2VERXNzdpVXJNZExHMlFqTThZcApTZDBrN29waml6SnFoc2k0Y2dkbjJiRVZ0MWdqQnlTS0g4eDB5ZUY5ZWxZdUpNRU5yQ2JXWG5kNU5wZUVLY01DCkF3RUFBYU5DTUVBd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCL3dRRk1BTUJBZjh3SFFZRFZSME8KQkJZRUZMZ0wyZUhQV2I4S2pMdG1xU1RMVzBGc2laZHNNQTBHQ1NxR1NJYjNEUUVCQ3dVQUE0SUJBUUJOcSt4dQpFdmdPWU9za3pxcnJwV2laZms4dlJBZmRlbjlhTVJvRWxrVmJqOEhJZUhqYituZ3g2MEc4QkJKMlFkVCt4bGRBCkM5OXdiVWQ0eGxiV0R6VTVmcUpqTVVRNEliVXlncEZ4bVNDMmFZMkIrdGRxWGJyQTdjY3pDU1FoZ2d4bnZ5ejEKSGJxanVVeDI2d2p1OXFrRUd3Y3ZnUFdwd3h1L0FBL1hNWFViZGhxVGNRQ25WWHJ0cEdhYlArdmdHM1VWTTNSOQphRy9RcHRmY3F0SDdQZytqQXk0bGJ6a3ZoMVJUazJUUUlxeDlLZTRVSlkwRzhGYjdjWUFjZFJ3cTM0ek85WS9BCjJjYzM4czlucWpGVllEbDFoMkVtYThuVGdwekd1SFpHbEVJMkJSem13Nk56Yk1XVnpPNkJJZVljUFlaV081QVAKUGdwUDVobnZmQ2U4RG5YbQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: capi-webhook-service
+        namespace: cattle-provisioning-capi-system
+        path: /mutate-cluster-x-k8s-io-v1beta1-machinepool
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Equivalent
+    name: default.machinepool.cluster.x-k8s.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - cluster.x-k8s.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - machinepools
+      scope: '*'
+    sideEffects: None
+    timeoutSeconds: 10
+- apiVersion: admissionregistration.k8s.io/v1
+  kind: MutatingWebhookConfiguration
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: rancher-webhook
+      meta.helm.sh/release-namespace: cattle-system
+    creationTimestamp: "2025-12-30T21:48:08Z"
+    generation: 2
+    labels:
+      app.kubernetes.io/managed-by: Helm
+    managedFields:
+    - apiVersion: admissionregistration.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+      manager: helm
+      operation: Update
+      time: "2025-12-30T21:48:08Z"
+    - apiVersion: admissionregistration.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:webhooks:
+          .: {}
+          k:{"name":"rancher.cattle.io.clusters.management.cattle.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+          k:{"name":"rancher.cattle.io.clusters.provisioning.cattle.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+          k:{"name":"rancher.cattle.io.fleetworkspaces.management.cattle.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+          k:{"name":"rancher.cattle.io.rke-machine-config.cattle.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+      manager: webhook
+      operation: Update
+      time: "2025-12-30T21:48:24Z"
+    name: rancher.cattle.io
+    resourceVersion: "2327"
+    uid: 3afd9abc-e836-4265-a4fa-8b341a2efe0a
+  webhooks:
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ2VENDQVdPZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQkdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKYkdsemRHVnVaWEl0YjNKbk1TWXdKQVlEVlFRRERCMWtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRkFNVGMyTnpFegpNVEk0T1RBZUZ3MHlOVEV5TXpBeU1EUTRNRGxhRncwek5URXlNamd5TURRNE1EbGFNRVl4SERBYUJnTlZCQW9UCkUyUjVibUZ0YVdOc2FYTjBaVzVsY2kxdmNtY3hKakFrQmdOVkJBTU1IV1I1Ym1GdGFXTnNhWE4wWlc1bGNpMWoKWVVBeE56WTNNVE14TWpnNU1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRUZVQUJlUG1ic2ZtQwp3dDg2SUJ0MTR0ZGdjcEw0TTZBUmxHV1h5aWU4OVIzQUNSemJhUTBxQlpzSUo4MFdOMCtnQVJ0SEt6ZzRGVDJBCkdBUFYxUllhUzZOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdLa01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWUQKVlIwT0JCWUVGREFVMW5DdjcvWklXaGg5czU0M3hTMGZMR1h2TUFvR0NDcUdTTTQ5QkFNQ0EwZ0FNRVVDSUJRTgp4bzdxUW4vaGJ4NVhWSUZTVmhTQTVMWmNoYzhFZ1NSUTlIVDRRc093QWlFQTFYRXhDS2hDc1BUUzVxeUZVN09sClJiUTBTQklHRUpWVWovTmJCRjVwdHFjPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: rancher-webhook
+        namespace: cattle-system
+        path: /v1/webhook/mutation/clusters.provisioning.cattle.io
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Equivalent
+    name: rancher.cattle.io.clusters.provisioning.cattle.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - provisioning.cattle.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      - DELETE
+      resources:
+      - clusters
+      scope: Namespaced
+    sideEffects: NoneOnDryRun
+    timeoutSeconds: 10
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ2VENDQVdPZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQkdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKYkdsemRHVnVaWEl0YjNKbk1TWXdKQVlEVlFRRERCMWtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRkFNVGMyTnpFegpNVEk0T1RBZUZ3MHlOVEV5TXpBeU1EUTRNRGxhRncwek5URXlNamd5TURRNE1EbGFNRVl4SERBYUJnTlZCQW9UCkUyUjVibUZ0YVdOc2FYTjBaVzVsY2kxdmNtY3hKakFrQmdOVkJBTU1IV1I1Ym1GdGFXTnNhWE4wWlc1bGNpMWoKWVVBeE56WTNNVE14TWpnNU1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRUZVQUJlUG1ic2ZtQwp3dDg2SUJ0MTR0ZGdjcEw0TTZBUmxHV1h5aWU4OVIzQUNSemJhUTBxQlpzSUo4MFdOMCtnQVJ0SEt6ZzRGVDJBCkdBUFYxUllhUzZOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdLa01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWUQKVlIwT0JCWUVGREFVMW5DdjcvWklXaGg5czU0M3hTMGZMR1h2TUFvR0NDcUdTTTQ5QkFNQ0EwZ0FNRVVDSUJRTgp4bzdxUW4vaGJ4NVhWSUZTVmhTQTVMWmNoYzhFZ1NSUTlIVDRRc093QWlFQTFYRXhDS2hDc1BUUzVxeUZVN09sClJiUTBTQklHRUpWVWovTmJCRjVwdHFjPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: rancher-webhook
+        namespace: cattle-system
+        path: /v1/webhook/mutation/clusters.management.cattle.io
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Equivalent
+    name: rancher.cattle.io.clusters.management.cattle.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - management.cattle.io
+      apiVersions:
+      - v3
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - clusters
+      scope: Cluster
+    sideEffects: NoneOnDryRun
+    timeoutSeconds: 10
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ2VENDQVdPZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQkdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKYkdsemRHVnVaWEl0YjNKbk1TWXdKQVlEVlFRRERCMWtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRkFNVGMyTnpFegpNVEk0T1RBZUZ3MHlOVEV5TXpBeU1EUTRNRGxhRncwek5URXlNamd5TURRNE1EbGFNRVl4SERBYUJnTlZCQW9UCkUyUjVibUZ0YVdOc2FYTjBaVzVsY2kxdmNtY3hKakFrQmdOVkJBTU1IV1I1Ym1GdGFXTnNhWE4wWlc1bGNpMWoKWVVBeE56WTNNVE14TWpnNU1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRUZVQUJlUG1ic2ZtQwp3dDg2SUJ0MTR0ZGdjcEw0TTZBUmxHV1h5aWU4OVIzQUNSemJhUTBxQlpzSUo4MFdOMCtnQVJ0SEt6ZzRGVDJBCkdBUFYxUllhUzZOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdLa01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWUQKVlIwT0JCWUVGREFVMW5DdjcvWklXaGg5czU0M3hTMGZMR1h2TUFvR0NDcUdTTTQ5QkFNQ0EwZ0FNRVVDSUJRTgp4bzdxUW4vaGJ4NVhWSUZTVmhTQTVMWmNoYzhFZ1NSUTlIVDRRc093QWlFQTFYRXhDS2hDc1BUUzVxeUZVN09sClJiUTBTQklHRUpWVWovTmJCRjVwdHFjPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: rancher-webhook
+        namespace: cattle-system
+        path: /v1/webhook/mutation/fleetworkspaces.management.cattle.io
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Equivalent
+    name: rancher.cattle.io.fleetworkspaces.management.cattle.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - management.cattle.io
+      apiVersions:
+      - v3
+      operations:
+      - CREATE
+      resources:
+      - fleetworkspaces
+      scope: Cluster
+    sideEffects: NoneOnDryRun
+    timeoutSeconds: 10
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJ2VENDQVdPZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQkdNUnd3R2dZRFZRUUtFeE5rZVc1aGJXbGoKYkdsemRHVnVaWEl0YjNKbk1TWXdKQVlEVlFRRERCMWtlVzVoYldsamJHbHpkR1Z1WlhJdFkyRkFNVGMyTnpFegpNVEk0T1RBZUZ3MHlOVEV5TXpBeU1EUTRNRGxhRncwek5URXlNamd5TURRNE1EbGFNRVl4SERBYUJnTlZCQW9UCkUyUjVibUZ0YVdOc2FYTjBaVzVsY2kxdmNtY3hKakFrQmdOVkJBTU1IV1I1Ym1GdGFXTnNhWE4wWlc1bGNpMWoKWVVBeE56WTNNVE14TWpnNU1Ga3dFd1lIS29aSXpqMENBUVlJS29aSXpqMERBUWNEUWdBRUZVQUJlUG1ic2ZtQwp3dDg2SUJ0MTR0ZGdjcEw0TTZBUmxHV1h5aWU4OVIzQUNSemJhUTBxQlpzSUo4MFdOMCtnQVJ0SEt6ZzRGVDJBCkdBUFYxUllhUzZOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdLa01BOEdBMVVkRXdFQi93UUZNQU1CQWY4d0hRWUQKVlIwT0JCWUVGREFVMW5DdjcvWklXaGg5czU0M3hTMGZMR1h2TUFvR0NDcUdTTTQ5QkFNQ0EwZ0FNRVVDSUJRTgp4bzdxUW4vaGJ4NVhWSUZTVmhTQTVMWmNoYzhFZ1NSUTlIVDRRc093QWlFQTFYRXhDS2hDc1BUUzVxeUZVN09sClJiUTBTQklHRUpWVWovTmJCRjVwdHFjPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+      service:
+        name: rancher-webhook
+        namespace: cattle-system
+        path: /v1/webhook/mutation/rke-machine-config.cattle.io
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Equivalent
+    name: rancher.cattle.io.rke-machine-config.cattle.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - rke-machine-config.cattle.io
+      apiVersions:
+      - v1
+      operations:
+      - CREATE
+      resources:
+      - '*'
+      scope: Namespaced
+    sideEffects: NoneOnDryRun
+    timeoutSeconds: 10
+- apiVersion: admissionregistration.k8s.io/v1
+  kind: MutatingWebhookConfiguration
+  metadata:
+    annotations:
+      certificates.kubevirt.io/secret: kubevirt-virt-api-certs
+      kubevirt.io/customizer-identifier: ed6c75fc7ef60740d09f9802c39ceb8c790d407e
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:50:04Z"
+    generation: 2
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      kubevirt.io: virt-api-mutator
+    managedFields:
+    - apiVersion: admissionregistration.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:certificates.kubevirt.io/secret: {}
+            f:kubevirt.io/customizer-identifier: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:kubevirt.io: {}
+        f:webhooks:
+          .: {}
+          k:{"name":"migrations-mutator.kubevirt.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+          k:{"name":"virtualmachineclones-mutator.kubevirt.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+          k:{"name":"virtualmachineinstances-mutator.kubevirt.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+          k:{"name":"virtualmachines-mutator.kubevirt.io"}:
+            .: {}
+            f:admissionReviewVersions: {}
+            f:clientConfig:
+              .: {}
+              f:caBundle: {}
+              f:service:
+                .: {}
+                f:name: {}
+                f:namespace: {}
+                f:path: {}
+                f:port: {}
+            f:failurePolicy: {}
+            f:matchPolicy: {}
+            f:name: {}
+            f:namespaceSelector: {}
+            f:objectSelector: {}
+            f:reinvocationPolicy: {}
+            f:rules: {}
+            f:sideEffects: {}
+            f:timeoutSeconds: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:50:49Z"
+    name: virt-api-mutator
+    resourceVersion: "6851"
+    uid: f54cec81-064e-4b75-b856-dfac8b9fb3bd
+  webhooks:
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJlakNDQVNDZ0F3SUJBZ0lJTy9KOCs4WUI0Q2d3Q2dZSUtvWkl6ajBFQXdJd0lURWZNQjBHQTFVRUF3d1cKYTNWaVpYWnBjblF1YVc5QU1UYzJOekV6TVRRME9EQWVGdzB5TlRFeU16QXlNVFV3TkRoYUZ3MHlOakF4TURZeQpNVFV3TkRoYU1DRXhIekFkQmdOVkJBTU1GbXQxWW1WMmFYSjBMbWx2UURFM05qY3hNekUwTkRnd1dUQVRCZ2NxCmhrak9QUUlCQmdncWhrak9QUU1CQndOQ0FBU1lGVDdTTGhYc2UyOWtTT01pTkhWMWErUU81djI1cytaV3QxSkMKVjlWdERTNWRUQ2s3Z2ZMZGZaNkc1VnkvNnFzTStpcnlMTmk3eElCVEhZbmlaQTNwbzBJd1FEQU9CZ05WSFE4QgpBZjhFQkFNQ0FxUXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QWRCZ05WSFE0RUZnUVUzeE84dGk2bXExU0lwTDFyCjV5dW1VUnVPQXhvd0NnWUlLb1pJemowRUF3SURTQUF3UlFJaEFJcEgyOXN0OWVEY1drZmVVamY3aVEyY2pJTjcKTVlxWXN6ZUxsWUVUY0JrUUFpQU5RU0t2eEtEUThoUzduek8xbWpIZENGZ29vR3lSU0Q4azBSc2diMVdmenc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCi0tLS0tQkVHSU4gQ0VSVElGSUNBVEUtLS0tLQpNSUlCZWpDQ0FTQ2dBd0lCQWdJSVJHUTNOZDJJZjZVd0NnWUlLb1pJemowRUF3SXdJVEVmTUIwR0ExVUVBd3dXCmEzVmlaWFpwY25RdWFXOUFNVGMyTnpFek1UUXdOREFlRncweU5URXlNekF5TVRVd01EUmFGdzB5TmpBeE1EWXkKTVRVd01EUmFNQ0V4SHpBZEJnTlZCQU1NRm10MVltVjJhWEowTG1sdlFERTNOamN4TXpFME1EUXdXVEFUQmdjcQpoa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVM3MlphTGNneEpHTGhucG5JcDNxdHIvS3ZVQVhScGUycXdLMFpqCkZPcVBEeEZTSEdsd201MVRBa0RsRURrUHVvNkdyMm9xbENyU3BBMzUxajR2TTZEd28wSXdRREFPQmdOVkhROEIKQWY4RUJBTUNBcVF3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFkQmdOVkhRNEVGZ1FVWHN2eEhZZ3pncldJcWhPQgpuamM0SVd3aVVMUXdDZ1lJS29aSXpqMEVBd0lEU0FBd1JRSWdCWjVBTlVxb1RuaVVFckR5dHVyeGo0ZGwzVzdHCllPZDEzcXhLQVVQaVVIb0NJUUQwTUhOYnVjN0xSZHEzMmZlMWtlN2ExU2gycFlmaC8zbWRqczhpMUU3UFZnPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+      service:
+        name: virt-api
+        namespace: harvester-system
+        path: /virtualmachines-mutate
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Equivalent
+    name: virtualmachines-mutator.kubevirt.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - kubevirt.io
+      apiVersions:
+      - v1alpha3
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - virtualmachines
+      scope: '*'
+    sideEffects: None
+    timeoutSeconds: 10
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJlakNDQVNDZ0F3SUJBZ0lJTy9KOCs4WUI0Q2d3Q2dZSUtvWkl6ajBFQXdJd0lURWZNQjBHQTFVRUF3d1cKYTNWaVpYWnBjblF1YVc5QU1UYzJOekV6TVRRME9EQWVGdzB5TlRFeU16QXlNVFV3TkRoYUZ3MHlOakF4TURZeQpNVFV3TkRoYU1DRXhIekFkQmdOVkJBTU1GbXQxWW1WMmFYSjBMbWx2UURFM05qY3hNekUwTkRnd1dUQVRCZ2NxCmhrak9QUUlCQmdncWhrak9QUU1CQndOQ0FBU1lGVDdTTGhYc2UyOWtTT01pTkhWMWErUU81djI1cytaV3QxSkMKVjlWdERTNWRUQ2s3Z2ZMZGZaNkc1VnkvNnFzTStpcnlMTmk3eElCVEhZbmlaQTNwbzBJd1FEQU9CZ05WSFE4QgpBZjhFQkFNQ0FxUXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QWRCZ05WSFE0RUZnUVUzeE84dGk2bXExU0lwTDFyCjV5dW1VUnVPQXhvd0NnWUlLb1pJemowRUF3SURTQUF3UlFJaEFJcEgyOXN0OWVEY1drZmVVamY3aVEyY2pJTjcKTVlxWXN6ZUxsWUVUY0JrUUFpQU5RU0t2eEtEUThoUzduek8xbWpIZENGZ29vR3lSU0Q4azBSc2diMVdmenc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCi0tLS0tQkVHSU4gQ0VSVElGSUNBVEUtLS0tLQpNSUlCZWpDQ0FTQ2dBd0lCQWdJSVJHUTNOZDJJZjZVd0NnWUlLb1pJemowRUF3SXdJVEVmTUIwR0ExVUVBd3dXCmEzVmlaWFpwY25RdWFXOUFNVGMyTnpFek1UUXdOREFlRncweU5URXlNekF5TVRVd01EUmFGdzB5TmpBeE1EWXkKTVRVd01EUmFNQ0V4SHpBZEJnTlZCQU1NRm10MVltVjJhWEowTG1sdlFERTNOamN4TXpFME1EUXdXVEFUQmdjcQpoa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVM3MlphTGNneEpHTGhucG5JcDNxdHIvS3ZVQVhScGUycXdLMFpqCkZPcVBEeEZTSEdsd201MVRBa0RsRURrUHVvNkdyMm9xbENyU3BBMzUxajR2TTZEd28wSXdRREFPQmdOVkhROEIKQWY4RUJBTUNBcVF3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFkQmdOVkhRNEVGZ1FVWHN2eEhZZ3pncldJcWhPQgpuamM0SVd3aVVMUXdDZ1lJS29aSXpqMEVBd0lEU0FBd1JRSWdCWjVBTlVxb1RuaVVFckR5dHVyeGo0ZGwzVzdHCllPZDEzcXhLQVVQaVVIb0NJUUQwTUhOYnVjN0xSZHEzMmZlMWtlN2ExU2gycFlmaC8zbWRqczhpMUU3UFZnPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+      service:
+        name: virt-api
+        namespace: harvester-system
+        path: /virtualmachineinstances-mutate
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Equivalent
+    name: virtualmachineinstances-mutator.kubevirt.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - kubevirt.io
+      apiVersions:
+      - v1alpha3
+      - v1
+      operations:
+      - CREATE
+      - UPDATE
+      resources:
+      - virtualmachineinstances
+      scope: '*'
+    sideEffects: None
+    timeoutSeconds: 10
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJlakNDQVNDZ0F3SUJBZ0lJTy9KOCs4WUI0Q2d3Q2dZSUtvWkl6ajBFQXdJd0lURWZNQjBHQTFVRUF3d1cKYTNWaVpYWnBjblF1YVc5QU1UYzJOekV6TVRRME9EQWVGdzB5TlRFeU16QXlNVFV3TkRoYUZ3MHlOakF4TURZeQpNVFV3TkRoYU1DRXhIekFkQmdOVkJBTU1GbXQxWW1WMmFYSjBMbWx2UURFM05qY3hNekUwTkRnd1dUQVRCZ2NxCmhrak9QUUlCQmdncWhrak9QUU1CQndOQ0FBU1lGVDdTTGhYc2UyOWtTT01pTkhWMWErUU81djI1cytaV3QxSkMKVjlWdERTNWRUQ2s3Z2ZMZGZaNkc1VnkvNnFzTStpcnlMTmk3eElCVEhZbmlaQTNwbzBJd1FEQU9CZ05WSFE4QgpBZjhFQkFNQ0FxUXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QWRCZ05WSFE0RUZnUVUzeE84dGk2bXExU0lwTDFyCjV5dW1VUnVPQXhvd0NnWUlLb1pJemowRUF3SURTQUF3UlFJaEFJcEgyOXN0OWVEY1drZmVVamY3aVEyY2pJTjcKTVlxWXN6ZUxsWUVUY0JrUUFpQU5RU0t2eEtEUThoUzduek8xbWpIZENGZ29vR3lSU0Q4azBSc2diMVdmenc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCi0tLS0tQkVHSU4gQ0VSVElGSUNBVEUtLS0tLQpNSUlCZWpDQ0FTQ2dBd0lCQWdJSVJHUTNOZDJJZjZVd0NnWUlLb1pJemowRUF3SXdJVEVmTUIwR0ExVUVBd3dXCmEzVmlaWFpwY25RdWFXOUFNVGMyTnpFek1UUXdOREFlRncweU5URXlNekF5TVRVd01EUmFGdzB5TmpBeE1EWXkKTVRVd01EUmFNQ0V4SHpBZEJnTlZCQU1NRm10MVltVjJhWEowTG1sdlFERTNOamN4TXpFME1EUXdXVEFUQmdjcQpoa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVM3MlphTGNneEpHTGhucG5JcDNxdHIvS3ZVQVhScGUycXdLMFpqCkZPcVBEeEZTSEdsd201MVRBa0RsRURrUHVvNkdyMm9xbENyU3BBMzUxajR2TTZEd28wSXdRREFPQmdOVkhROEIKQWY4RUJBTUNBcVF3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFkQmdOVkhRNEVGZ1FVWHN2eEhZZ3pncldJcWhPQgpuamM0SVd3aVVMUXdDZ1lJS29aSXpqMEVBd0lEU0FBd1JRSWdCWjVBTlVxb1RuaVVFckR5dHVyeGo0ZGwzVzdHCllPZDEzcXhLQVVQaVVIb0NJUUQwTUhOYnVjN0xSZHEzMmZlMWtlN2ExU2gycFlmaC8zbWRqczhpMUU3UFZnPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+      service:
+        name: virt-api
+        namespace: harvester-system
+        path: /migration-mutate-create
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Equivalent
+    name: migrations-mutator.kubevirt.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - kubevirt.io
+      apiVersions:
+      - v1alpha3
+      - v1
+      operations:
+      - CREATE
+      resources:
+      - virtualmachineinstancemigrations
+      scope: '*'
+    sideEffects: None
+    timeoutSeconds: 10
+  - admissionReviewVersions:
+    - v1
+    - v1beta1
+    clientConfig:
+      caBundle: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJlakNDQVNDZ0F3SUJBZ0lJTy9KOCs4WUI0Q2d3Q2dZSUtvWkl6ajBFQXdJd0lURWZNQjBHQTFVRUF3d1cKYTNWaVpYWnBjblF1YVc5QU1UYzJOekV6TVRRME9EQWVGdzB5TlRFeU16QXlNVFV3TkRoYUZ3MHlOakF4TURZeQpNVFV3TkRoYU1DRXhIekFkQmdOVkJBTU1GbXQxWW1WMmFYSjBMbWx2UURFM05qY3hNekUwTkRnd1dUQVRCZ2NxCmhrak9QUUlCQmdncWhrak9QUU1CQndOQ0FBU1lGVDdTTGhYc2UyOWtTT01pTkhWMWErUU81djI1cytaV3QxSkMKVjlWdERTNWRUQ2s3Z2ZMZGZaNkc1VnkvNnFzTStpcnlMTmk3eElCVEhZbmlaQTNwbzBJd1FEQU9CZ05WSFE4QgpBZjhFQkFNQ0FxUXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QWRCZ05WSFE0RUZnUVUzeE84dGk2bXExU0lwTDFyCjV5dW1VUnVPQXhvd0NnWUlLb1pJemowRUF3SURTQUF3UlFJaEFJcEgyOXN0OWVEY1drZmVVamY3aVEyY2pJTjcKTVlxWXN6ZUxsWUVUY0JrUUFpQU5RU0t2eEtEUThoUzduek8xbWpIZENGZ29vR3lSU0Q4azBSc2diMVdmenc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCi0tLS0tQkVHSU4gQ0VSVElGSUNBVEUtLS0tLQpNSUlCZWpDQ0FTQ2dBd0lCQWdJSVJHUTNOZDJJZjZVd0NnWUlLb1pJemowRUF3SXdJVEVmTUIwR0ExVUVBd3dXCmEzVmlaWFpwY25RdWFXOUFNVGMyTnpFek1UUXdOREFlRncweU5URXlNekF5TVRVd01EUmFGdzB5TmpBeE1EWXkKTVRVd01EUmFNQ0V4SHpBZEJnTlZCQU1NRm10MVltVjJhWEowTG1sdlFERTNOamN4TXpFME1EUXdXVEFUQmdjcQpoa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVM3MlphTGNneEpHTGhucG5JcDNxdHIvS3ZVQVhScGUycXdLMFpqCkZPcVBEeEZTSEdsd201MVRBa0RsRURrUHVvNkdyMm9xbENyU3BBMzUxajR2TTZEd28wSXdRREFPQmdOVkhROEIKQWY4RUJBTUNBcVF3RHdZRFZSMFRBUUgvQkFVd0F3RUIvekFkQmdOVkhRNEVGZ1FVWHN2eEhZZ3pncldJcWhPQgpuamM0SVd3aVVMUXdDZ1lJS29aSXpqMEVBd0lEU0FBd1JRSWdCWjVBTlVxb1RuaVVFckR5dHVyeGo0ZGwzVzdHCllPZDEzcXhLQVVQaVVIb0NJUUQwTUhOYnVjN0xSZHEzMmZlMWtlN2ExU2gycFlmaC8zbWRqczhpMUU3UFZnPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+      service:
+        name: virt-api
+        namespace: harvester-system
+        path: /vm-clone-mutate-create
+        port: 443
+    failurePolicy: Fail
+    matchPolicy: Equivalent
+    name: virtualmachineclones-mutator.kubevirt.io
+    namespaceSelector: {}
+    objectSelector: {}
+    reinvocationPolicy: Never
+    rules:
+    - apiGroups:
+      - clone.kubevirt.io
+      apiVersions:
+      - v1beta1
+      operations:
+      - CREATE
+      resources:
+      - virtualmachineclones
+      scope: '*'
+    sideEffects: None
+    timeoutSeconds: 10
+kind: List
+metadata:
+  resourceVersion: "14450"

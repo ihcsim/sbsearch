@@ -1,0 +1,102 @@
+apiVersion: v1
+items:
+- apiVersion: cdi.kubevirt.io/v1beta1
+  kind: CDIConfig
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:44Z"
+    generation: 7
+    labels:
+      app: containerized-data-importer
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-controller
+      cdi.kubevirt.io: "null"
+    managedFields:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cdi.kubevirt.io: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"81182c2f-d27e-4d9f-a9db-6e45ca0714a5"}: {}
+        f:spec:
+          .: {}
+          f:featureGates: {}
+        f:status:
+          .: {}
+          f:defaultPodResourceRequirements:
+            .: {}
+            f:limits:
+              .: {}
+              f:cpu: {}
+              f:memory: {}
+            f:requests:
+              .: {}
+              f:cpu: {}
+              f:memory: {}
+          f:filesystemOverhead:
+            .: {}
+            f:global: {}
+            f:storageClass:
+              .: {}
+              f:harvester-longhorn: {}
+              f:harvester-longhorn-single: {}
+              f:longhorn: {}
+              f:longhorn-image-zs97p: {}
+              f:longhorn-static: {}
+              f:vmstate-persistence: {}
+          f:importProxy:
+            .: {}
+            f:HTTPProxy: {}
+            f:HTTPSProxy: {}
+            f:noProxy: {}
+            f:trustedCAProxy: {}
+          f:scratchSpaceStorageClass: {}
+      manager: virt-cdi-controller
+      operation: Update
+      time: "2025-12-30T21:55:42Z"
+    name: config
+    ownerReferences:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: CDI
+      name: cdi
+      uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+    resourceVersion: "10908"
+    uid: 107c9f06-e457-4761-b4cf-d92c0725b22d
+  spec:
+    featureGates:
+    - HonorWaitForFirstConsumer
+  status:
+    defaultPodResourceRequirements:
+      limits:
+        cpu: 750m
+        memory: 600M
+      requests:
+        cpu: 100m
+        memory: 60M
+    filesystemOverhead:
+      global: "0.055"
+      storageClass:
+        harvester-longhorn: "0.055"
+        harvester-longhorn-single: "0.055"
+        longhorn: "0.055"
+        longhorn-image-zs97p: "0.055"
+        longhorn-static: "0.055"
+        vmstate-persistence: "0.055"
+    importProxy:
+      HTTPProxy: "null"
+      HTTPSProxy: "null"
+      noProxy: "null"
+      trustedCAProxy: "null"
+    scratchSpaceStorageClass: harvester-longhorn-single
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14455"

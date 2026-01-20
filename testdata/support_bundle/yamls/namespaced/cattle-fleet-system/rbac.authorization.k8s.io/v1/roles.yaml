@@ -1,0 +1,221 @@
+apiVersion: v1
+items:
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: fleet
+      meta.helm.sh/release-namespace: cattle-fleet-system
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+        f:rules: {}
+      manager: helm
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: fleet-controller
+    namespace: cattle-fleet-system
+    resourceVersion: "1752"
+    uid: 8530015b-240c-403d-b1a9-0cb3f4e1fa60
+  rules:
+  - apiGroups:
+    - "null"
+    resources:
+    - configmaps
+    verbs:
+    - '*'
+  - apiGroups:
+    - coordination.k8s.io
+    resources:
+    - leases
+    verbs:
+    - '*'
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: fleet
+      meta.helm.sh/release-namespace: cattle-fleet-system
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+        f:rules: {}
+      manager: helm
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: gitjob
+    namespace: cattle-fleet-system
+    resourceVersion: "1753"
+    uid: d2abb8af-83f4-4b6a-bdad-7d4950a9506a
+  rules:
+  - apiGroups:
+    - coordination.k8s.io
+    resources:
+    - leases
+    verbs:
+    - '*'
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    creationTimestamp: "2025-12-30T21:51:41Z"
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"e2bd79de-c4d4-460c-95a4-69dc52335211"}: {}
+        f:rules: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:51:41Z"
+    name: helm-operation-2ncj5-helm-installer-role
+    namespace: cattle-fleet-system
+    ownerReferences:
+    - apiVersion: catalog.cattle.io/v1
+      kind: Operation
+      name: helm-operation-2ncj5
+      uid: e2bd79de-c4d4-460c-95a4-69dc52335211
+    resourceVersion: "7705"
+    uid: aed13a84-6e16-4552-adc7-a240ab300ac1
+  rules:
+  - apiGroups:
+    - catalog.cattle.io
+    resourceNames:
+    - helm-operation-2ncj5
+    resources:
+    - operations
+    verbs:
+    - get
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:45Z"
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"6103ac20-6cf3-4a4f-8fc5-00b2f9096f4c"}: {}
+        f:rules: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:47:45Z"
+    name: helm-operation-4db4g-helm-installer-role
+    namespace: cattle-fleet-system
+    ownerReferences:
+    - apiVersion: catalog.cattle.io/v1
+      kind: Operation
+      name: helm-operation-4db4g
+      uid: 6103ac20-6cf3-4a4f-8fc5-00b2f9096f4c
+    resourceVersion: "1699"
+    uid: 65174c65-daed-4613-b35e-13805764732b
+  rules:
+  - apiGroups:
+    - catalog.cattle.io
+    resourceNames:
+    - helm-operation-4db4g
+    resources:
+    - operations
+    verbs:
+    - get
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:01Z"
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"2932a636-0292-4c91-b0b8-7fa2cbd43fab"}: {}
+        f:rules: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:48:01Z"
+    name: helm-operation-fgm6s-helm-installer-role
+    namespace: cattle-fleet-system
+    ownerReferences:
+    - apiVersion: catalog.cattle.io/v1
+      kind: Operation
+      name: helm-operation-fgm6s
+      uid: 2932a636-0292-4c91-b0b8-7fa2cbd43fab
+    resourceVersion: "1952"
+    uid: 3ef9e40a-9557-4039-91aa-5fc34a69f3f3
+  rules:
+  - apiGroups:
+    - catalog.cattle.io
+    resourceNames:
+    - helm-operation-fgm6s
+    resources:
+    - operations
+    verbs:
+    - get
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: fleet
+      meta.helm.sh/release-namespace: cattle-fleet-system
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+        f:rules: {}
+      manager: helm
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: helmops
+    namespace: cattle-fleet-system
+    resourceVersion: "1754"
+    uid: 64f3534a-9e6f-4c71-a8d2-2fefe1e4461d
+  rules:
+  - apiGroups:
+    - coordination.k8s.io
+    resources:
+    - leases
+    verbs:
+    - '*'
+kind: List
+metadata:
+  resourceVersion: "14479"

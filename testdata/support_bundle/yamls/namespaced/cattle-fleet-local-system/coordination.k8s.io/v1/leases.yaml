@@ -1,0 +1,32 @@
+apiVersion: v1
+items:
+- apiVersion: coordination.k8s.io/v1
+  kind: Lease
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:15Z"
+    managedFields:
+    - apiVersion: coordination.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:acquireTime: {}
+          f:holderIdentity: {}
+          f:leaseDurationSeconds: {}
+          f:leaseTransitions: {}
+          f:renewTime: {}
+      manager: fleetagent
+      operation: Update
+      time: "2025-12-30T22:00:26Z"
+    name: fleet-agent
+    namespace: cattle-fleet-local-system
+    resourceVersion: "14355"
+    uid: 7eefb3f7-bad1-4937-ad67-845e05e96e8a
+  spec:
+    acquireTime: "2025-12-30T21:48:15.485031Z"
+    holderIdentity: fleet-agent-f78f57f66-5ps4k-1
+    leaseDurationSeconds: 30
+    leaseTransitions: 0
+    renewTime: "2025-12-30T22:00:26.316079Z"
+kind: List
+metadata:
+  resourceVersion: "14474"

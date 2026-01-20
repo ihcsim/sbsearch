@@ -1,0 +1,135 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-12-30T21:47:53Z"
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:47:53Z"
+    name: gitjob
+    namespace: cattle-fleet-system
+    resourceVersion: "1878"
+    uid: e623eb72-6f29-4fcd-99f1-8d33b7297cb8
+  subsets:
+  - addresses:
+    - ip: 10.52.0.15
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: gitjob-6c68674ccf-fkfbd
+        namespace: cattle-fleet-system
+        uid: 10645dc8-d43a-4112-b079-b4f3add59937
+    ports:
+    - name: http-80
+      port: 8080
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-12-30T21:48:30Z"
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    labels:
+      app: fleet-controller
+      app.kubernetes.io/managed-by: Helm
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:48:30Z"
+    name: monitoring-fleet-controller
+    namespace: cattle-fleet-system
+    resourceVersion: "2434"
+    uid: 2d0b03cf-c15a-4eab-94cd-c6a4c12e0468
+  subsets:
+  - addresses:
+    - ip: 10.52.0.21
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: fleet-controller-6c5d89f545-bxkt2
+        namespace: cattle-fleet-system
+        uid: a2d7bc39-1e68-41d0-9b96-acaa56eff4eb
+    ports:
+    - name: metrics
+      port: 8080
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-12-30T21:47:53Z"
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    labels:
+      app: gitjob
+      app.kubernetes.io/managed-by: Helm
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:47:53Z"
+    name: monitoring-gitjob
+    namespace: cattle-fleet-system
+    resourceVersion: "1879"
+    uid: 9d6b75be-51c3-4ba3-a201-7d28b82dbc73
+  subsets:
+  - addresses:
+    - ip: 10.52.0.15
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: gitjob-6c68674ccf-fkfbd
+        namespace: cattle-fleet-system
+        uid: 10645dc8-d43a-4112-b079-b4f3add59937
+    ports:
+    - name: metrics
+      port: 8081
+      protocol: TCP
+kind: List
+metadata:
+  resourceVersion: "14479"

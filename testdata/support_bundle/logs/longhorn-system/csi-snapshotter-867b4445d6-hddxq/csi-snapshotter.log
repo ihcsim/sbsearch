@@ -1,0 +1,18 @@
+2025-12-30T21:50:20.629472483Z I1230 21:50:20.627374       1 feature_gate.go:385] feature gates: {map[]}
+2025-12-30T21:50:20.629495154Z I1230 21:50:20.627499       1 main.go:136] "Version" version="v"
+2025-12-30T21:50:20.629497188Z I1230 21:50:20.627697       1 envvar.go:172] "Feature gate default state" feature="ClientsAllowCBOR" enabled=false
+2025-12-30T21:50:20.629499702Z I1230 21:50:20.627713       1 envvar.go:172] "Feature gate default state" feature="ClientsPreferCBOR" enabled=false
+2025-12-30T21:50:20.629501295Z I1230 21:50:20.627716       1 envvar.go:172] "Feature gate default state" feature="InOrderInformers" enabled=true
+2025-12-30T21:50:20.629502847Z I1230 21:50:20.627719       1 envvar.go:172] "Feature gate default state" feature="InformerResourceVersion" enabled=false
+2025-12-30T21:50:20.629504590Z I1230 21:50:20.627721       1 envvar.go:172] "Feature gate default state" feature="WatchListClient" enabled=false
+2025-12-30T21:50:20.631972327Z W1230 21:50:20.628899       1 logging.go:55] [core] [Channel #1 SubChannel #2]grpc: addrConn.createTransport failed to connect to {Addr: "/csi/csi.sock", ServerName: "localhost", Attributes: {"<%!p(networktype.keyType=grpc.internal.transport.networktype)>": "unix" }, BalancerAttributes: {"<%!p(pickfirstleaf.managedByPickfirstKeyType={})>": "<%!p(bool=true)>" }}. Err: connection error: desc = "transport: Error while dialing: dial unix /csi/csi.sock: connect: no such file or directory"
+2025-12-30T21:50:21.631124046Z I1230 21:50:21.630959       1 main.go:220] CSI driver name: "driver.longhorn.io"
+2025-12-30T21:50:21.631135596Z I1230 21:50:21.631062       1 common.go:143] "Probing CSI driver for readiness"
+2025-12-30T21:50:21.631141827Z I1230 21:50:21.631112       1 main.go:232] ServeMux listening at ":8000"
+2025-12-30T21:50:21.631859080Z I1230 21:50:21.631761       1 main.go:264] Start NewCSISnapshotSideCarController with snapshotter [driver.longhorn.io] kubeconfig [] csiTimeout [1m50s] csiAddress [/csi/csi.sock] resyncPeriod [15m0s] snapshotNamePrefix [snapshot] snapshotNameUUIDLength [824635449720]
+2025-12-30T21:50:21.632181706Z I1230 21:50:21.632145       1 leaderelection.go:257] attempting to acquire leader lease longhorn-system/external-snapshotter-leader-driver-longhorn-io...
+2025-12-30T21:50:21.637870830Z I1230 21:50:21.637534       1 leaderelection.go:271] successfully acquired lease longhorn-system/external-snapshotter-leader-driver-longhorn-io
+2025-12-30T21:50:21.637885036Z I1230 21:50:21.637704       1 leader_election.go:194] "became leader, starting"
+2025-12-30T21:50:21.638350978Z I1230 21:50:21.638281       1 snapshot_controller_base.go:176] Starting CSI snapshotter
+2025-12-30T21:50:21.641092922Z I1230 21:50:21.640741       1 reflector.go:436] "Caches populated" type="*v1.VolumeSnapshotContent" reflector="github.com/kubernetes-csi/external-snapshotter/client/v8/informers/externalversions/factory.go:142"
+2025-12-30T21:50:21.641512232Z I1230 21:50:21.640935       1 reflector.go:436] "Caches populated" type="*v1.VolumeSnapshotClass" reflector="github.com/kubernetes-csi/external-snapshotter/client/v8/informers/externalversions/factory.go:142"

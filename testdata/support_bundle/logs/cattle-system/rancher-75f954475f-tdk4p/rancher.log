@@ -1,0 +1,547 @@
+2025-12-30T21:50:41.040259533Z Restoring git repositories: 
+2025-12-30T21:50:41.040298503Z - /var/lib/rancher-data/local-catalogs/v2/rancher-charts/4b40cac650031b74776e87c1a726b0484d0877c3ec137da0872547ff9b73a721/.git
+2025-12-30T21:50:44.094968367Z Your branch is up to date with 'origin/release-v2.13'.
+2025-12-30T21:50:44.100700757Z /var/lib/rancher
+2025-12-30T21:50:44.100734816Z - /var/lib/rancher-data/local-catalogs/v2/rancher-rke2-charts/675f1b63a0a83905972dcab2794479ed599a6f41b86cd6193d69472d0fa889c9/.git
+2025-12-30T21:50:46.006746456Z Your branch is up to date with 'origin/main'.
+2025-12-30T21:50:46.012721091Z /var/lib/rancher
+2025-12-30T21:50:46.012736955Z - /var/lib/rancher-data/local-catalogs/v2/rancher-partner-charts/8f17acdce9bffd6e05a58a3798840e408c4ea71783381ecd2e9af30baad65974/.git
+2025-12-30T21:50:47.036500155Z Your branch is up to date with 'origin/main'.
+2025-12-30T21:50:47.044354723Z /var/lib/rancher
+2025-12-30T21:50:47.553058512Z 2025/12/30 21:50:47 [INFO] Rancher version v2.13.0 (f94ac947f75e312f1ab9217d21b2770b48b734c8) is starting
+2025-12-30T21:50:47.553103530Z 2025/12/30 21:50:47 [INFO] Rancher arguments {ACMEDomains:[] AddLocal:true Embedded:false BindHost: HTTPListenPort:80 HTTPSListenPort:443 K8sMode:auto Debug:false Trace:false NoCACerts:true AuditLogPath:/var/log/auditlog/rancher-api-audit.log AuditLogMaxage:10 AuditLogMaxsize:100 AuditLogMaxbackup:10 AuditLogLevel:0 AuditLogEnabled:false Features:multi-cluster-management=false,multi-cluster-management-agent=false,managed-system-upgrade-controller=false,turtles=false,embedded-cluster-api=true ClusterRegistry: AggregationRegistrationTimeout:5m0s}
+2025-12-30T21:50:47.553446339Z 2025/12/30 21:50:47 [INFO] Listening on /tmp/log.sock
+2025-12-30T21:50:47.739808736Z 2025/12/30 21:50:47 [INFO] Running in clustered mode with ID 10.52.0.79, monitoring endpoint cattle-system/rancher
+2025-12-30T21:50:47.739824710Z 2025/12/30 21:50:47 [INFO] Scanning NodeTemplates in namespace: cattle-global-nt, group: nodetemplates.management.cattle.io
+2025-12-30T21:50:47.739827633Z 2025/12/30 21:50:47 [INFO] Scanning ClusterTemplates in namespace: cattle-global-data, group: clustertemplates.management.cattle.io
+2025-12-30T21:50:47.739829937Z 2025/12/30 21:50:47 [INFO] [deferred-capi - WaitForClient] waiting for CAPI CRDs to be established...
+2025-12-30T21:50:47.739832161Z 2025/12/30 21:50:47 [INFO] [deferred-ext] WaitForClient starting waiter for EXT api-service availability
+2025-12-30T21:50:48.389782656Z 2025/12/30 21:50:48 [INFO] Applying CRD features.management.cattle.io
+2025-12-30T21:50:48.784520736Z 2025/12/30 21:50:48 [INFO] Updating embedded CRD auditpolicies.auditlog.cattle.io
+2025-12-30T21:50:48.789957310Z 2025/12/30 21:50:48 [INFO] Updating embedded CRD clusterrepos.catalog.cattle.io
+2025-12-30T21:50:48.800904609Z 2025/12/30 21:50:48 [INFO] Updating embedded CRD clusters.provisioning.cattle.io
+2025-12-30T21:50:48.843043884Z 2025/12/30 21:50:48 [INFO] Updating embedded CRD custommachines.rke.cattle.io
+2025-12-30T21:50:48.846873158Z 2025/12/30 21:50:48 [INFO] Updating embedded CRD etcdsnapshots.rke.cattle.io
+2025-12-30T21:50:48.860820090Z 2025/12/30 21:50:48 [INFO] Updating embedded CRD rkebootstraps.rke.cattle.io
+2025-12-30T21:50:48.863571486Z 2025/12/30 21:50:48 [INFO] Updating embedded CRD rkebootstraptemplates.rke.cattle.io
+2025-12-30T21:50:48.867883421Z 2025/12/30 21:50:48 [INFO] Updating embedded CRD rkeclusters.rke.cattle.io
+2025-12-30T21:50:48.871516160Z 2025/12/30 21:50:48 [INFO] Updating embedded CRD rkecontrolplanes.rke.cattle.io
+2025-12-30T21:50:48.893894438Z 2025/12/30 21:50:48 [INFO] Updating embedded CRD users.management.cattle.io
+2025-12-30T21:50:48.898244621Z 2025/12/30 21:50:48 [INFO] Updating embedded CRD clusterproxyconfigs.management.cattle.io
+2025-12-30T21:50:48.900649564Z 2025/12/30 21:50:48 [INFO] Updating embedded CRD uiplugins.catalog.cattle.io
+2025-12-30T21:50:48.904082922Z 2025/12/30 21:50:48 [INFO] Updating embedded CRD secretrequests.telemetry.cattle.io
+2025-12-30T21:50:49.570561502Z 2025/12/30 21:50:49 [INFO] Applying CRD plans.upgrade.cattle.io
+2025-12-30T21:50:49.658955307Z 2025/12/30 21:50:49 [INFO] Applying CRD navlinks.ui.cattle.io
+2025-12-30T21:50:49.672895578Z 2025/12/30 21:50:49 [INFO] Applying CRD podsecurityadmissionconfigurationtemplates.management.cattle.io
+2025-12-30T21:50:49.679453330Z 2025/12/30 21:50:49 [INFO] Applying CRD clusters.management.cattle.io
+2025-12-30T21:50:49.685205256Z 2025/12/30 21:50:49 [INFO] Applying CRD apiservices.management.cattle.io
+2025-12-30T21:50:49.697524580Z 2025/12/30 21:50:49 [INFO] Applying CRD clusterregistrationtokens.management.cattle.io
+2025-12-30T21:50:49.705069727Z 2025/12/30 21:50:49 [INFO] Applying CRD settings.management.cattle.io
+2025-12-30T21:50:49.714456801Z 2025/12/30 21:50:49 [INFO] Applying CRD preferences.management.cattle.io
+2025-12-30T21:50:49.721804817Z 2025/12/30 21:50:49 [INFO] Applying CRD features.management.cattle.io
+2025-12-30T21:50:49.730234030Z 2025/12/30 21:50:49 [INFO] Applying CRD operations.catalog.cattle.io
+2025-12-30T21:50:49.748363609Z 2025/12/30 21:50:49 [INFO] Applying CRD apps.catalog.cattle.io
+2025-12-30T21:50:49.758115233Z 2025/12/30 21:50:49 [INFO] Applying CRD fleetworkspaces.management.cattle.io
+2025-12-30T21:50:49.765789439Z 2025/12/30 21:50:49 [INFO] Applying CRD managedcharts.management.cattle.io
+2025-12-30T21:50:49.791835746Z 2025/12/30 21:50:49 [INFO] Applying CRD clusters.cluster.x-k8s.io
+2025-12-30T21:50:49.815908383Z 2025/12/30 21:50:49 [INFO] Applying CRD machinedeployments.cluster.x-k8s.io
+2025-12-30T21:50:49.867627023Z 2025/12/30 21:50:49 [INFO] Applying CRD machinedrainrules.cluster.x-k8s.io
+2025-12-30T21:50:49.880977918Z 2025/12/30 21:50:49 [INFO] Applying CRD machinehealthchecks.cluster.x-k8s.io
+2025-12-30T21:50:49.892063318Z 2025/12/30 21:50:49 [INFO] Applying CRD machines.cluster.x-k8s.io
+2025-12-30T21:50:49.905654624Z 2025/12/30 21:50:49 [INFO] Applying CRD machinesets.cluster.x-k8s.io
+2025-12-30T21:50:50.591271187Z 2025/12/30 21:50:50 [INFO] Configuring auth server API body limit to 1048576 bytes
+2025-12-30T21:50:50.591473632Z 2025/12/30 21:50:50 [INFO] creating imperative extension apiserver resources
+2025-12-30T21:50:50.591767220Z 2025/12/30 21:50:50 [INFO] starting imperative api cert rotator
+2025-12-30T21:50:50.596468778Z 2025/12/30 21:50:50 [INFO] imperative api APIService cert updated
+2025-12-30T21:50:51.003234923Z 2025/12/30 21:50:51 [INFO] Successfully installed useractivity store
+2025-12-30T21:50:51.003254955Z 2025/12/30 21:50:51 [INFO] Successfully installed token store
+2025-12-30T21:50:51.003259712Z 2025/12/30 21:50:51 [INFO] Successfully installed kubeconfig store
+2025-12-30T21:50:51.003263498Z 2025/12/30 21:50:51 [INFO] Successfully installed passwordchangerequest store
+2025-12-30T21:50:51.004375462Z 2025/12/30 21:50:51 [INFO] Successfully installed groupmembershiprefreshrequest store
+2025-12-30T21:50:51.004384316Z 2025/12/30 21:50:51 [INFO] Successfully installed selfuser store
+2025-12-30T21:50:51.112755860Z I1230 21:50:51.112568      43 handler.go:285] Adding GroupVersion ext.cattle.io v1 to ResourceManager
+2025-12-30T21:50:51.912039340Z I1230 21:50:51.911921      43 requestheader_controller.go:180] Starting RequestHeaderAuthRequestController
+2025-12-30T21:50:51.912071801Z I1230 21:50:51.911939      43 configmap_cafile_content.go:205] "Starting controller" name="client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"
+2025-12-30T21:50:51.912078412Z I1230 21:50:51.912022      43 shared_informer.go:349] "Waiting for caches to sync" controller="client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"
+2025-12-30T21:50:51.912093385Z I1230 21:50:51.912023      43 shared_informer.go:349] "Waiting for caches to sync" controller="RequestHeaderAuthRequestController"
+2025-12-30T21:50:51.912212854Z I1230 21:50:51.912175      43 secure_serving.go:211] Serving securely on [::]:6666
+2025-12-30T21:50:51.912285548Z I1230 21:50:51.912252      43 tlsconfig.go:243] "Starting DynamicServingCertificateController"
+2025-12-30T21:50:52.012207787Z I1230 21:50:52.012105      43 shared_informer.go:356] "Caches are synced" controller="client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"
+2025-12-30T21:50:52.012230904Z I1230 21:50:52.012105      43 shared_informer.go:356] "Caches are synced" controller="RequestHeaderAuthRequestController"
+2025-12-30T21:50:52.108180713Z 2025/12/30 21:50:52 [INFO] Starting API controllers
+2025-12-30T21:50:52.214026264Z 2025/12/30 21:50:52 [INFO] Starting management.cattle.io/v3, Kind=User controller
+2025-12-30T21:50:52.214053738Z 2025/12/30 21:50:52 [INFO] Starting management.cattle.io/v3, Kind=UserAttribute controller
+2025-12-30T21:50:52.214087782Z 2025/12/30 21:50:52 [INFO] Starting management.cattle.io/v3, Kind=GroupMember controller
+2025-12-30T21:50:52.214099101Z 2025/12/30 21:50:52 [INFO] Starting management.cattle.io/v3, Kind=Group controller
+2025-12-30T21:50:52.214100632Z 2025/12/30 21:50:52 [INFO] Starting management.cattle.io/v3, Kind=Token controller
+2025-12-30T21:50:52.243980498Z I1230 21:50:52.243847      43 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+2025-12-30T21:50:52.246141417Z I1230 21:50:52.246041      43 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+2025-12-30T21:50:52.619796324Z 2025/12/30 21:50:52 [INFO] Starting provisioning.cattle.io/v1, Kind=Cluster controller
+2025-12-30T21:50:52.619810807Z 2025/12/30 21:50:52 [INFO] Starting management.cattle.io/v3, Kind=ClusterRegistrationToken controller
+2025-12-30T21:50:52.620260315Z 2025/12/30 21:50:52 [INFO] Starting rbac.authorization.k8s.io/v1, Kind=RoleBinding controller
+2025-12-30T21:50:52.620264402Z 2025/12/30 21:50:52 [INFO] Starting management.cattle.io/v3, Kind=Token controller
+2025-12-30T21:50:52.623851140Z 2025/12/30 21:50:52 [INFO] Starting management.cattle.io/v3, Kind=Preference controller
+2025-12-30T21:50:52.623865944Z 2025/12/30 21:50:52 [INFO] Starting apiextensions.k8s.io/v1, Kind=CustomResourceDefinition controller
+2025-12-30T21:50:52.623867506Z 2025/12/30 21:50:52 [INFO] Starting rke.cattle.io/v1, Kind=ETCDSnapshot controller
+2025-12-30T21:50:52.623868918Z 2025/12/30 21:50:52 [INFO] Starting management.cattle.io/v3, Kind=Setting controller
+2025-12-30T21:50:52.623869989Z 2025/12/30 21:50:52 [INFO] Starting management.cattle.io/v3, Kind=Feature controller
+2025-12-30T21:50:52.623871722Z 2025/12/30 21:50:52 [INFO] Starting /v1, Kind=Secret controller
+2025-12-30T21:50:52.623873105Z 2025/12/30 21:50:52 [INFO] Starting management.cattle.io/v3, Kind=Cluster controller
+2025-12-30T21:50:52.623874426Z 2025/12/30 21:50:52 [INFO] Starting management.cattle.io/v3, Kind=APIService controller
+2025-12-30T21:50:52.623875809Z 2025/12/30 21:50:52 [INFO] Starting apiregistration.k8s.io/v1, Kind=APIService controller
+2025-12-30T21:50:52.623877622Z 2025/12/30 21:50:52 [INFO] Starting /v1, Kind=ConfigMap controller
+2025-12-30T21:50:52.623878954Z 2025/12/30 21:50:52 [INFO] Starting management.cattle.io/v3, Kind=AuthConfig controller
+2025-12-30T21:50:52.623880326Z 2025/12/30 21:50:52 [INFO] Starting /v1, Kind=ServiceAccount controller
+2025-12-30T21:50:52.623881538Z 2025/12/30 21:50:52 [INFO] Starting rbac.authorization.k8s.io/v1, Kind=ClusterRoleBinding controller
+2025-12-30T21:50:52.623968006Z 2025/12/30 21:50:52 [INFO] Starting catalog.cattle.io/v1, Kind=ClusterRepo controller
+2025-12-30T21:50:52.624763005Z 2025/12/30 21:50:52 [INFO] Starting /v1, Kind=Endpoints controller
+2025-12-30T21:50:52.632873107Z 2025/12/30 21:50:52 [INFO] Starting rbac.authorization.k8s.io/v1, Kind=ClusterRole controller
+2025-12-30T21:50:52.632908743Z 2025/12/30 21:50:52 [INFO] Starting rke.cattle.io/v1, Kind=RKEBootstrap controller
+2025-12-30T21:50:52.637846157Z 2025/12/30 21:50:52 [INFO] Starting /v1, Kind=Namespace controller
+2025-12-30T21:50:52.637865789Z 2025/12/30 21:50:52 [INFO] Starting management.cattle.io/v3, Kind=User controller
+2025-12-30T21:50:52.637868774Z 2025/12/30 21:50:52 [INFO] Starting rbac.authorization.k8s.io/v1, Kind=Role controller
+2025-12-30T21:50:52.642673186Z 2025/12/30 21:50:52 [INFO] [deferred-capi - WaitForClient] CRDs found, initializing CAPI factory
+2025-12-30T21:50:52.642692877Z 2025/12/30 21:50:52 [INFO] Starting management.cattle.io/v3, Kind=UserAttribute controller
+2025-12-30T21:50:52.642967145Z I1230 21:50:52.642872      43 leaderelection.go:257] attempting to acquire leader lease kube-system/cattle-controllers...
+2025-12-30T21:50:52.648430850Z 2025/12/30 21:50:52 [INFO] Listening on :443
+2025-12-30T21:50:52.648450051Z 2025/12/30 21:50:52 [INFO] Active TLS secret cattle-system/serving-cert (ver=1528) (count 4): map[listener.cattle.io/cn-10.52.0.8:10.52.0.8 listener.cattle.io/cn-127.0.0.1:127.0.0.1 listener.cattle.io/cn-localhost:localhost listener.cattle.io/cn-rancher.cattle-system:rancher.cattle-system listener.cattle.io/fingerprint:SHA1=889A406C5D9438B11E3FD8027B98EA839FDE3866]
+2025-12-30T21:50:52.648452334Z 2025/12/30 21:50:52 [INFO] Listening on :80
+2025-12-30T21:50:52.648617348Z 2025/12/30 21:50:52 [INFO] certificate CN=dynamic,O=dynamic signed by CN=dynamiclistener-ca@1767131252,O=dynamiclistener-org: notBefore=2025-12-30 20:50:52 +0000 UTC notAfter=2026-12-30 20:50:52 +0000 UTC
+2025-12-30T21:50:52.654925270Z 2025/12/30 21:50:52 [INFO] certificate CN=dynamic,O=dynamic signed by CN=dynamiclistener-ca@1767131252,O=dynamiclistener-org: notBefore=2025-12-30 20:50:52 +0000 UTC notAfter=2026-12-30 20:50:52 +0000 UTC
+2025-12-30T21:50:52.654945033Z 2025/12/30 21:50:52 [INFO] Updating TLS secret for cattle-system/serving-cert (count: 5): map[listener.cattle.io/cn-10.52.0.79:10.52.0.79 listener.cattle.io/cn-10.52.0.8:10.52.0.8 listener.cattle.io/cn-127.0.0.1:127.0.0.1 listener.cattle.io/cn-localhost:localhost listener.cattle.io/cn-rancher.cattle-system:rancher.cattle-system listener.cattle.io/fingerprint:SHA1=B00B33EA49F2A8757CE6716E9F1AAC298D81DF90]
+2025-12-30T21:50:52.657127547Z 2025/12/30 21:50:52 [INFO] Active TLS secret cattle-system/tls-rancher-internal (ver=6353) (count 3): map[listener.cattle.io/cn-10.52.0.8:10.52.0.8 listener.cattle.io/cn-10.53.120.170:10.53.120.170 listener.cattle.io/cn-192.168.122.39:192.168.122.39 listener.cattle.io/fingerprint:SHA1=B23A7AFBF56D9E64B15E671CE7F803E97541DC86]
+2025-12-30T21:50:52.657676575Z 2025/12/30 21:50:52 [INFO] Listening on :444
+2025-12-30T21:50:52.668419470Z 2025/12/30 21:50:52 [INFO] Active TLS secret cattle-system/serving-cert (ver=6938) (count 5): map[listener.cattle.io/cn-10.52.0.79:10.52.0.79 listener.cattle.io/cn-10.52.0.8:10.52.0.8 listener.cattle.io/cn-127.0.0.1:127.0.0.1 listener.cattle.io/cn-localhost:localhost listener.cattle.io/cn-rancher.cattle-system:rancher.cattle-system listener.cattle.io/fingerprint:SHA1=B00B33EA49F2A8757CE6716E9F1AAC298D81DF90]
+2025-12-30T21:50:53.159940811Z W1230 21:50:53.158822      43 gvks.go:80] Failed to read API for groups: map[ext.cattle.io/v1:stale GroupVersion discovery: ext.cattle.io/v1]
+2025-12-30T21:50:53.159940811Z 2025/12/30 21:50:53 [ERROR] Failed to read API for groups map[ext.cattle.io/v1:stale GroupVersion discovery: ext.cattle.io/v1]
+2025-12-30T21:50:53.816509493Z I1230 21:50:53.816401      43 warnings.go:110] "Warning: v1 ComponentStatus is deprecated in v1.19+"
+2025-12-30T21:50:53.836799264Z I1230 21:50:53.836682      43 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+2025-12-30T21:50:53.842864399Z I1230 21:50:53.842740      43 warnings.go:110] "Warning: kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2."
+2025-12-30T21:50:53.845236401Z 2025/12/30 21:50:53 [INFO] Watching metadata for kubevirt.io/v1, Kind=VirtualMachineInstance
+2025-12-30T21:50:53.845246026Z 2025/12/30 21:50:53 [INFO] Watching metadata for node.harvesterhci.io/v1beta1, Kind=Ksmtuned
+2025-12-30T21:50:53.845252026Z 2025/12/30 21:50:53 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=Output
+2025-12-30T21:50:53.845271077Z 2025/12/30 21:50:53 [INFO] Watching metadata for kubevirt.io/v1, Kind=VirtualMachine
+2025-12-30T21:50:53.845309258Z 2025/12/30 21:50:53 [INFO] Watching metadata for catalog.cattle.io/v1, Kind=UIPlugin
+2025-12-30T21:50:53.845348552Z 2025/12/30 21:50:53 [INFO] Watching metadata for monitoring.coreos.com/v1, Kind=Prometheus
+2025-12-30T21:50:53.845374634Z 2025/12/30 21:50:53 [INFO] Watching metadata for logging-extensions.banzaicloud.io/v1alpha1, Kind=HostTailer
+2025-12-30T21:50:53.845398122Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=GlobalNetworkPolicy
+2025-12-30T21:50:53.845455094Z 2025/12/30 21:50:53 [INFO] Watching metadata for networking.k8s.io/v1, Kind=NetworkPolicy
+2025-12-30T21:50:53.845475347Z 2025/12/30 21:50:53 [INFO] Watching metadata for node.k8s.io/v1, Kind=RuntimeClass
+2025-12-30T21:50:53.845513167Z 2025/12/30 21:50:53 [INFO] Watching metadata for cdi.kubevirt.io/v1beta1, Kind=CDIConfig
+2025-12-30T21:50:53.845540332Z 2025/12/30 21:50:53 [INFO] Watching metadata for cdi.kubevirt.io/v1beta1, Kind=DataVolume
+2025-12-30T21:50:53.845581969Z 2025/12/30 21:50:53 [INFO] Watching metadata for flowcontrol.apiserver.k8s.io/v1, Kind=PriorityLevelConfiguration
+2025-12-30T21:50:53.845615162Z 2025/12/30 21:50:53 [INFO] Watching metadata for networking.k8s.io/v1, Kind=Ingress
+2025-12-30T21:50:53.845638971Z 2025/12/30 21:50:53 [INFO] Watching metadata for kubevirt.io/v1, Kind=VirtualMachineInstancePreset
+2025-12-30T21:50:53.845665774Z 2025/12/30 21:50:53 [INFO] Watching metadata for /v1, Kind=ReplicationController
+2025-12-30T21:50:53.845716316Z 2025/12/30 21:50:53 [INFO] Watching metadata for /v1, Kind=ConfigMap
+2025-12-30T21:50:53.845732051Z 2025/12/30 21:50:53 [INFO] Watching metadata for events.k8s.io/v1, Kind=Event
+2025-12-30T21:50:53.845771926Z 2025/12/30 21:50:53 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=ClusterFlow
+2025-12-30T21:50:53.845797247Z 2025/12/30 21:50:53 [INFO] Watching metadata for discovery.k8s.io/v1, Kind=EndpointSlice
+2025-12-30T21:50:53.845838443Z 2025/12/30 21:50:53 [INFO] Watching metadata for logging-extensions.banzaicloud.io/v1alpha1, Kind=EventTailer
+2025-12-30T21:50:53.845853147Z 2025/12/30 21:50:53 [INFO] Watching metadata for admissionregistration.k8s.io/v1, Kind=MutatingWebhookConfiguration
+2025-12-30T21:50:53.845893692Z 2025/12/30 21:50:53 [INFO] Watching metadata for ui.cattle.io/v1, Kind=NavLink
+2025-12-30T21:50:53.845927417Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=Engine
+2025-12-30T21:50:53.845968163Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=CalicoNodeStatus
+2025-12-30T21:50:53.845997430Z 2025/12/30 21:50:53 [INFO] Watching metadata for admissionregistration.k8s.io/v1, Kind=ValidatingAdmissionPolicy
+2025-12-30T21:50:53.846022641Z 2025/12/30 21:50:53 [INFO] Watching metadata for apiextensions.k8s.io/v1, Kind=CustomResourceDefinition
+2025-12-30T21:50:53.846043695Z 2025/12/30 21:50:53 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=LoggingRoute
+2025-12-30T21:50:53.846086554Z 2025/12/30 21:50:53 [INFO] Watching metadata for cdi.kubevirt.io/v1beta1, Kind=VolumeCloneSource
+2025-12-30T21:50:53.846108570Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=ResourceQuota
+2025-12-30T21:50:53.846121620Z 2025/12/30 21:50:53 [INFO] Watching metadata for provisioning.cattle.io/v1, Kind=Cluster
+2025-12-30T21:50:53.846166533Z 2025/12/30 21:50:53 [INFO] Watching metadata for scheduling.k8s.io/v1, Kind=PriorityClass
+2025-12-30T21:50:53.846178012Z 2025/12/30 21:50:53 [INFO] Watching metadata for monitoring.coreos.com/v1, Kind=ServiceMonitor
+2025-12-30T21:50:53.846206938Z 2025/12/30 21:50:53 [INFO] Watching metadata for snapshot.storage.k8s.io/v1, Kind=VolumeSnapshotClass
+2025-12-30T21:50:53.846242326Z 2025/12/30 21:50:53 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=Schedule
+2025-12-30T21:50:53.846257420Z 2025/12/30 21:50:53 [INFO] Watching metadata for cdi.kubevirt.io/v1beta1, Kind=DataImportCron
+2025-12-30T21:50:53.846279095Z 2025/12/30 21:50:53 [INFO] Watching metadata for kubevirt.io/v1, Kind=VirtualMachineInstanceReplicaSet
+2025-12-30T21:50:53.846314953Z 2025/12/30 21:50:53 [INFO] Watching metadata for management.cattle.io/v3, Kind=PodSecurityAdmissionConfigurationTemplate
+2025-12-30T21:50:53.846389824Z 2025/12/30 21:50:53 [INFO] Watching metadata for management.cattle.io/v3, Kind=UserAttribute
+2025-12-30T21:50:53.846429257Z 2025/12/30 21:50:53 [INFO] Watching metadata for policy.networking.k8s.io/v1alpha1, Kind=AdminNetworkPolicy
+2025-12-30T21:50:53.846445203Z 2025/12/30 21:50:53 [INFO] Watching metadata for /v1, Kind=Namespace
+2025-12-30T21:50:53.846467730Z 2025/12/30 21:50:53 [INFO] Watching metadata for k8s.cni.cncf.io/v1, Kind=NetworkAttachmentDefinition
+2025-12-30T21:50:53.846506332Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=Setting
+2025-12-30T21:50:53.846525693Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=Version
+2025-12-30T21:50:53.846543262Z 2025/12/30 21:50:53 [INFO] Watching metadata for management.cattle.io/v3, Kind=ClusterRegistrationToken
+2025-12-30T21:50:53.846569464Z 2025/12/30 21:50:53 [INFO] Watching metadata for snapshot.storage.k8s.io/v1, Kind=VolumeSnapshot
+2025-12-30T21:50:53.846594905Z 2025/12/30 21:50:53 [INFO] Watching metadata for k3s.cattle.io/v1, Kind=ETCDSnapshotFile
+2025-12-30T21:50:53.846609669Z 2025/12/30 21:50:53 [INFO] Watching metadata for /v1, Kind=ServiceAccount
+2025-12-30T21:50:53.846660010Z 2025/12/30 21:50:53 [INFO] Watching metadata for helm.cattle.io/v1, Kind=HelmChartConfig
+2025-12-30T21:50:53.846693754Z 2025/12/30 21:50:53 [INFO] Watching metadata for management.cattle.io/v3, Kind=Setting
+2025-12-30T21:50:53.846696139Z 2025/12/30 21:50:53 [INFO] Watching metadata for catalog.cattle.io/v1, Kind=ClusterRepo
+2025-12-30T21:50:53.846717012Z 2025/12/30 21:50:53 [INFO] Watching metadata for network.harvesterhci.io/v1beta1, Kind=LinkMonitor
+2025-12-30T21:50:53.846732748Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=VirtualMachineTemplate
+2025-12-30T21:50:53.846757437Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=StagedNetworkPolicy
+2025-12-30T21:50:53.846780755Z 2025/12/30 21:50:53 [INFO] Watching metadata for instancetype.kubevirt.io/v1beta1, Kind=VirtualMachinePreference
+2025-12-30T21:50:53.846784521Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=FelixConfiguration
+2025-12-30T21:50:53.846811194Z 2025/12/30 21:50:53 [INFO] Watching metadata for admissionregistration.k8s.io/v1, Kind=ValidatingAdmissionPolicyBinding
+2025-12-30T21:50:53.846858330Z 2025/12/30 21:50:53 [INFO] Watching metadata for networking.k8s.io/v1, Kind=IPAddress
+2025-12-30T21:50:53.846872343Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=Node
+2025-12-30T21:50:53.846876149Z 2025/12/30 21:50:53 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=Logging
+2025-12-30T21:50:53.846912908Z 2025/12/30 21:50:53 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=FluentdConfig
+2025-12-30T21:50:53.846924276Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=Backup
+2025-12-30T21:50:53.846941625Z 2025/12/30 21:50:53 [INFO] Watching metadata for instancetype.kubevirt.io/v1beta1, Kind=VirtualMachineClusterPreference
+2025-12-30T21:50:53.846943257Z 2025/12/30 21:50:53 [INFO] Watching metadata for coordination.k8s.io/v1, Kind=Lease
+2025-12-30T21:50:53.846998747Z 2025/12/30 21:50:53 [INFO] Watching metadata for management.cattle.io/v3, Kind=NodeDriver
+2025-12-30T21:50:53.847001201Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=VirtualMachineRestore
+2025-12-30T21:50:53.847028144Z 2025/12/30 21:50:53 [INFO] Watching metadata for management.cattle.io/v3, Kind=ClusterProxyConfig
+2025-12-30T21:50:53.847030158Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=BGPFilter
+2025-12-30T21:50:53.847068009Z 2025/12/30 21:50:53 [INFO] Watching metadata for resource.k8s.io/v1, Kind=ResourceClaim
+2025-12-30T21:50:53.847074219Z 2025/12/30 21:50:53 [INFO] Watching metadata for cdi.kubevirt.io/v1beta1, Kind=VolumeUploadSource
+2025-12-30T21:50:53.847108084Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=Replica
+2025-12-30T21:50:53.847139335Z 2025/12/30 21:50:53 [INFO] Watching metadata for storage.k8s.io/v1, Kind=CSIStorageCapacity
+2025-12-30T21:50:53.847158034Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=Preference
+2025-12-30T21:50:53.847176455Z 2025/12/30 21:50:53 [INFO] Watching metadata for rke.cattle.io/v1, Kind=RKEControlPlane
+2025-12-30T21:50:53.847193302Z 2025/12/30 21:50:53 [INFO] Watching metadata for network.harvesterhci.io/v1beta1, Kind=VlanStatus
+2025-12-30T21:50:53.847227467Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=SystemBackup
+2025-12-30T21:50:53.847249332Z 2025/12/30 21:50:53 [INFO] Watching metadata for monitoring.coreos.com/v1, Kind=Alertmanager
+2025-12-30T21:50:53.847251996Z 2025/12/30 21:50:53 [INFO] Watching metadata for batch/v1, Kind=Job
+2025-12-30T21:50:53.847281985Z 2025/12/30 21:50:53 [INFO] Watching metadata for apiregistration.k8s.io/v1, Kind=APIService
+2025-12-30T21:50:53.847285751Z 2025/12/30 21:50:53 [INFO] Watching metadata for rbac.authorization.k8s.io/v1, Kind=ClusterRoleBinding
+2025-12-30T21:50:53.847319044Z 2025/12/30 21:50:53 [INFO] Watching metadata for apps/v1, Kind=Deployment
+2025-12-30T21:50:53.847320878Z 2025/12/30 21:50:53 [INFO] Watching metadata for cdi.kubevirt.io/v1beta1, Kind=VolumeImportSource
+2025-12-30T21:50:53.847339077Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=BlockDevice
+2025-12-30T21:50:53.847375135Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=Setting
+2025-12-30T21:50:53.847383378Z 2025/12/30 21:50:53 [INFO] Watching metadata for management.cattle.io/v3, Kind=Feature
+2025-12-30T21:50:53.847400966Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=NetworkFilesystem
+2025-12-30T21:50:53.847404733Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=NetworkSet
+2025-12-30T21:50:53.847448634Z 2025/12/30 21:50:53 [INFO] Watching metadata for networking.k8s.io/v1, Kind=IngressClass
+2025-12-30T21:50:53.847450727Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=Addon
+2025-12-30T21:50:53.847484492Z 2025/12/30 21:50:53 [INFO] Watching metadata for k3s.cattle.io/v1, Kind=Addon
+2025-12-30T21:50:53.847513789Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=IPAMBlock
+2025-12-30T21:50:53.847542595Z 2025/12/30 21:50:53 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=Bundle
+2025-12-30T21:50:53.847560214Z 2025/12/30 21:50:53 [INFO] Watching metadata for /v1, Kind=ResourceQuota
+2025-12-30T21:50:53.847575148Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=VirtualMachineBackup
+2025-12-30T21:50:53.847589721Z 2025/12/30 21:50:53 [INFO] Watching metadata for network.harvesterhci.io/v1beta1, Kind=VlanConfig
+2025-12-30T21:50:53.847625690Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=LHNode
+2025-12-30T21:50:53.847642336Z 2025/12/30 21:50:53 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=SyslogNGFlow
+2025-12-30T21:50:53.847656530Z 2025/12/30 21:50:53 [INFO] Watching metadata for telemetry.cattle.io/v1, Kind=SecretRequest
+2025-12-30T21:50:53.847674800Z 2025/12/30 21:50:53 [INFO] Watching metadata for cdi.kubevirt.io/v1beta1, Kind=CDI
+2025-12-30T21:50:53.847717438Z 2025/12/30 21:50:53 [INFO] Watching metadata for cdi.kubevirt.io/v1beta1, Kind=DataSource
+2025-12-30T21:50:53.847749440Z 2025/12/30 21:50:53 [INFO] Watching metadata for whereabouts.cni.cncf.io/v1alpha1, Kind=NodeSlicePool
+2025-12-30T21:50:53.847774540Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=GlobalNetworkSet
+2025-12-30T21:50:53.847798439Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=BackupTarget
+2025-12-30T21:50:53.847800402Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=ShareManager
+2025-12-30T21:50:53.847840396Z 2025/12/30 21:50:53 [INFO] Watching metadata for monitoring.coreos.com/v1, Kind=ThanosRuler
+2025-12-30T21:50:53.847874342Z 2025/12/30 21:50:53 [INFO] Watching metadata for management.cattle.io/v3, Kind=ManagedChart
+2025-12-30T21:50:53.847894914Z 2025/12/30 21:50:53 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=Flow
+2025-12-30T21:50:53.847911812Z 2025/12/30 21:50:53 [INFO] Watching metadata for rbac.authorization.k8s.io/v1, Kind=Role
+2025-12-30T21:50:53.847958056Z 2025/12/30 21:50:53 [INFO] Watching metadata for cluster.x-k8s.io/v1beta1, Kind=MachineDeployment
+2025-12-30T21:50:53.847960260Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=SystemRestore
+2025-12-30T21:50:53.847986472Z 2025/12/30 21:50:53 [INFO] Watching metadata for cdi.kubevirt.io/v1beta1, Kind=StorageProfile
+2025-12-30T21:50:53.848002439Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=SupportBundle
+2025-12-30T21:50:53.848062815Z 2025/12/30 21:50:53 [INFO] Watching metadata for apps/v1, Kind=StatefulSet
+2025-12-30T21:50:53.848071690Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=BackingImageDataSource
+2025-12-30T21:50:53.848099865Z 2025/12/30 21:50:53 [INFO] Watching metadata for /v1, Kind=PersistentVolume
+2025-12-30T21:50:53.848115511Z 2025/12/30 21:50:53 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=HelmOp
+2025-12-30T21:50:53.848131807Z 2025/12/30 21:50:53 [INFO] Watching metadata for /v1, Kind=Node
+2025-12-30T21:50:53.848147713Z 2025/12/30 21:50:53 [INFO] Watching metadata for management.cattle.io/v3, Kind=Group
+2025-12-30T21:50:53.848186976Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=BackingImage
+2025-12-30T21:50:53.848189310Z 2025/12/30 21:50:53 [INFO] Watching metadata for /v1, Kind=PersistentVolumeClaim
+2025-12-30T21:50:53.849007721Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=InstanceManager
+2025-12-30T21:50:53.849030478Z 2025/12/30 21:50:53 [INFO] Watching metadata for pool.kubevirt.io/v1alpha1, Kind=VirtualMachinePool
+2025-12-30T21:50:53.849057332Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=KubeControllersConfiguration
+2025-12-30T21:50:53.849078816Z 2025/12/30 21:50:53 [INFO] Watching metadata for monitoring.coreos.com/v1alpha1, Kind=AlertmanagerConfig
+2025-12-30T21:50:53.849127575Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=StagedKubernetesNetworkPolicy
+2025-12-30T21:50:53.849149461Z 2025/12/30 21:50:53 [INFO] Watching metadata for storage.k8s.io/v1, Kind=StorageClass
+2025-12-30T21:50:53.849187071Z 2025/12/30 21:50:53 [INFO] Watching metadata for autoscaling/v2, Kind=HorizontalPodAutoscaler
+2025-12-30T21:50:53.849216519Z 2025/12/30 21:50:53 [INFO] Watching metadata for instancetype.kubevirt.io/v1beta1, Kind=VirtualMachineInstancetype
+2025-12-30T21:50:53.849266039Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=Orphan
+2025-12-30T21:50:53.849295847Z 2025/12/30 21:50:53 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=BundleNamespaceMapping
+2025-12-30T21:50:53.849314096Z 2025/12/30 21:50:53 [INFO] Watching metadata for clone.kubevirt.io/v1beta1, Kind=VirtualMachineClone
+2025-12-30T21:50:53.849331454Z 2025/12/30 21:50:53 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=SyslogNGClusterFlow
+2025-12-30T21:50:53.849380223Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=IPAMConfig
+2025-12-30T21:50:53.849382618Z 2025/12/30 21:50:53 [INFO] Watching metadata for monitoring.coreos.com/v1alpha1, Kind=ScrapeConfig
+2025-12-30T21:50:53.849408329Z 2025/12/30 21:50:53 [INFO] Watching metadata for apps/v1, Kind=ControllerRevision
+2025-12-30T21:50:53.849421420Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=SupportBundle
+2025-12-30T21:50:53.849448333Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=Snapshot
+2025-12-30T21:50:53.849465451Z 2025/12/30 21:50:53 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=Content
+2025-12-30T21:50:53.849481507Z 2025/12/30 21:50:53 [INFO] Watching metadata for management.cattle.io/v3, Kind=FleetWorkspace
+2025-12-30T21:50:53.849505065Z 2025/12/30 21:50:53 [INFO] Watching metadata for storage.k8s.io/v1, Kind=VolumeAttachment
+2025-12-30T21:50:53.849542105Z 2025/12/30 21:50:53 [INFO] Watching metadata for forklift.cdi.kubevirt.io/v1beta1, Kind=OvirtVolumePopulator
+2025-12-30T21:50:53.849561806Z 2025/12/30 21:50:53 [INFO] Watching metadata for cluster.x-k8s.io/v1beta1, Kind=Machine
+2025-12-30T21:50:53.849578414Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=VolumeAttachment
+2025-12-30T21:50:53.849611447Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=IPAMHandle
+2025-12-30T21:50:53.849649458Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=ScheduleVMBackup
+2025-12-30T21:50:53.849651221Z 2025/12/30 21:50:53 [INFO] Watching metadata for node.harvesterhci.io/v1beta1, Kind=Hugepage
+2025-12-30T21:50:53.849654286Z 2025/12/30 21:50:53 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=ClusterOutput
+2025-12-30T21:50:53.849684875Z 2025/12/30 21:50:53 [INFO] Watching metadata for monitoring.coreos.com/v1, Kind=PrometheusRule
+2025-12-30T21:50:53.849716276Z 2025/12/30 21:50:53 [INFO] Watching metadata for apps/v1, Kind=DaemonSet
+2025-12-30T21:50:53.849730379Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=IPPool
+2025-12-30T21:50:53.849732263Z 2025/12/30 21:50:53 [INFO] Watching metadata for whereabouts.cni.cncf.io/v1alpha1, Kind=OverlappingRangeIPReservation
+2025-12-30T21:50:53.849767589Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=VirtualMachineImageDownloader
+2025-12-30T21:50:53.849788453Z 2025/12/30 21:50:53 [INFO] Watching metadata for management.cattle.io/v3, Kind=AuthConfig
+2025-12-30T21:50:53.849806162Z 2025/12/30 21:50:53 [INFO] Watching metadata for export.kubevirt.io/v1beta1, Kind=VirtualMachineExport
+2025-12-30T21:50:53.855265319Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=RecurringJob
+2025-12-30T21:50:53.855292112Z 2025/12/30 21:50:53 [INFO] Watching metadata for snapshot.storage.k8s.io/v1, Kind=VolumeSnapshotContent
+2025-12-30T21:50:53.855294375Z 2025/12/30 21:50:53 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=Cluster
+2025-12-30T21:50:53.855296389Z 2025/12/30 21:50:53 [INFO] Watching metadata for network.harvesterhci.io/v1beta1, Kind=ClusterNetwork
+2025-12-30T21:50:53.855298853Z 2025/12/30 21:50:53 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=ClusterRegistration
+2025-12-30T21:50:53.855300856Z 2025/12/30 21:50:53 [INFO] Watching metadata for rbac.authorization.k8s.io/v1, Kind=RoleBinding
+2025-12-30T21:50:53.855302800Z 2025/12/30 21:50:53 [INFO] Watching metadata for cluster.x-k8s.io/v1beta1, Kind=MachineSet
+2025-12-30T21:50:53.855304832Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=EngineImage
+2025-12-30T21:50:53.855306626Z 2025/12/30 21:50:53 [INFO] Watching metadata for storage.k8s.io/v1, Kind=VolumeAttributesClass
+2025-12-30T21:50:53.855308438Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=LVMVolumeGroup
+2025-12-30T21:50:53.855310181Z 2025/12/30 21:50:53 [INFO] Watching metadata for management.cattle.io/v3, Kind=APIService
+2025-12-30T21:50:53.855311903Z 2025/12/30 21:50:53 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=GitRepoRestriction
+2025-12-30T21:50:53.855313837Z 2025/12/30 21:50:53 [INFO] Watching metadata for rke.cattle.io/v1, Kind=ETCDSnapshot
+2025-12-30T21:50:53.855316210Z 2025/12/30 21:50:53 [INFO] Watching metadata for upgrade.cattle.io/v1, Kind=Plan
+2025-12-30T21:50:53.855318325Z 2025/12/30 21:50:53 [INFO] Watching metadata for loadbalancer.harvesterhci.io/v1beta1, Kind=LoadBalancer
+2025-12-30T21:50:53.855320297Z 2025/12/30 21:50:53 [INFO] Watching metadata for snapshot.kubevirt.io/v1beta1, Kind=VirtualMachineRestore
+2025-12-30T21:50:53.855322151Z 2025/12/30 21:50:53 [INFO] Watching metadata for catalog.cattle.io/v1, Kind=App
+2025-12-30T21:50:53.855324434Z 2025/12/30 21:50:53 [INFO] Watching metadata for admissionregistration.k8s.io/v1, Kind=ValidatingWebhookConfiguration
+2025-12-30T21:50:53.855326318Z 2025/12/30 21:50:53 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=GitRepo
+2025-12-30T21:50:53.855328581Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=Volume
+2025-12-30T21:50:53.855330314Z 2025/12/30 21:50:53 [INFO] Watching metadata for instancetype.kubevirt.io/v1beta1, Kind=VirtualMachineClusterInstancetype
+2025-12-30T21:50:53.855332277Z 2025/12/30 21:50:53 [INFO] Watching metadata for certificates.k8s.io/v1, Kind=CertificateSigningRequest
+2025-12-30T21:50:53.855346370Z 2025/12/30 21:50:53 [INFO] Watching metadata for management.cattle.io/v3, Kind=Cluster
+2025-12-30T21:50:53.855351468Z 2025/12/30 21:50:53 [INFO] Watching metadata for storage.k8s.io/v1, Kind=CSIDriver
+2025-12-30T21:50:53.855353250Z 2025/12/30 21:50:53 [INFO] Watching metadata for forklift.cdi.kubevirt.io/v1beta1, Kind=OpenstackVolumePopulator
+2025-12-30T21:50:53.855358149Z 2025/12/30 21:50:53 [INFO] Watching metadata for cluster.x-k8s.io/v1beta1, Kind=MachineHealthCheck
+2025-12-30T21:50:53.855361203Z 2025/12/30 21:50:53 [INFO] Watching metadata for rke.cattle.io/v1, Kind=CustomMachine
+2025-12-30T21:50:53.858393551Z 2025/12/30 21:50:53 [INFO] Watching metadata for whereabouts.cni.cncf.io/v1alpha1, Kind=IPPool
+2025-12-30T21:50:53.858418541Z 2025/12/30 21:50:53 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=ClusterRegistrationToken
+2025-12-30T21:50:53.858420034Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=Tier
+2025-12-30T21:50:53.858421837Z 2025/12/30 21:50:53 [INFO] Watching metadata for policy.networking.k8s.io/v1alpha1, Kind=BaselineAdminNetworkPolicy
+2025-12-30T21:50:53.858423700Z 2025/12/30 21:50:53 [INFO] Watching metadata for /v1, Kind=Service
+2025-12-30T21:50:53.858425022Z 2025/12/30 21:50:53 [INFO] Watching metadata for policy/v1, Kind=PodDisruptionBudget
+2025-12-30T21:50:53.858426333Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=VirtualMachineImage
+2025-12-30T21:50:53.858427516Z 2025/12/30 21:50:53 [INFO] Watching metadata for apps/v1, Kind=ReplicaSet
+2025-12-30T21:50:53.858428728Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=BackingImageManager
+2025-12-30T21:50:53.858429930Z 2025/12/30 21:50:53 [INFO] Watching metadata for /v1, Kind=LimitRange
+2025-12-30T21:50:53.858431162Z 2025/12/30 21:50:53 [INFO] Watching metadata for monitoring.coreos.com/v1alpha1, Kind=PrometheusAgent
+2025-12-30T21:50:53.858432374Z 2025/12/30 21:50:53 [INFO] Watching metadata for cluster.x-k8s.io/v1beta1, Kind=Cluster
+2025-12-30T21:50:53.858433846Z 2025/12/30 21:50:53 [INFO] Watching metadata for storage.k8s.io/v1, Kind=CSINode
+2025-12-30T21:50:53.858434988Z 2025/12/30 21:50:53 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=SyslogNGConfig
+2025-12-30T21:50:53.858436501Z 2025/12/30 21:50:53 [INFO] Watching metadata for /v1, Kind=Pod
+2025-12-30T21:50:53.858437732Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=ClusterInformation
+2025-12-30T21:50:53.858438954Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=UpgradeLog
+2025-12-30T21:50:53.858440207Z 2025/12/30 21:50:53 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=FluentbitAgent
+2025-12-30T21:50:53.858441448Z 2025/12/30 21:50:53 [INFO] Watching metadata for catalog.cattle.io/v1, Kind=Operation
+2025-12-30T21:50:53.858442651Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=BlockAffinity
+2025-12-30T21:50:53.858443853Z 2025/12/30 21:50:53 [INFO] Watching metadata for kubevirt.io/v1, Kind=VirtualMachineInstanceMigration
+2025-12-30T21:50:53.858448040Z 2025/12/30 21:50:53 [INFO] Watching metadata for kubevirt.io/v1, Kind=KubeVirt
+2025-12-30T21:50:53.858449341Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=Upgrade
+2025-12-30T21:50:53.858450573Z 2025/12/30 21:50:53 [INFO] Watching metadata for /v1, Kind=Secret
+2025-12-30T21:50:53.858451766Z 2025/12/30 21:50:53 [INFO] Watching metadata for management.cattle.io/v3, Kind=GroupMember
+2025-12-30T21:50:53.858453157Z 2025/12/30 21:50:53 [INFO] Watching metadata for cluster.x-k8s.io/v1beta1, Kind=MachineDrainRule
+2025-12-30T21:50:53.858454379Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=NetworkPolicy
+2025-12-30T21:50:53.858455932Z 2025/12/30 21:50:53 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=SyslogNGClusterOutput
+2025-12-30T21:50:53.858458286Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=HostEndpoint
+2025-12-30T21:50:53.858459587Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=BGPPeer
+2025-12-30T21:50:53.858460820Z 2025/12/30 21:50:53 [INFO] Watching metadata for snapshot.kubevirt.io/v1beta1, Kind=VirtualMachineSnapshotContent
+2025-12-30T21:50:53.858462072Z 2025/12/30 21:50:53 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=NodeAgent
+2025-12-30T21:50:53.858466259Z 2025/12/30 21:50:53 [INFO] Watching metadata for kubeovn.io/v1, Kind=Configuration
+2025-12-30T21:50:53.858467570Z 2025/12/30 21:50:53 [INFO] Watching metadata for logging.banzaicloud.io/v1beta1, Kind=SyslogNGOutput
+2025-12-30T21:50:53.858468853Z 2025/12/30 21:50:53 [INFO] Watching metadata for auditlog.cattle.io/v1, Kind=AuditPolicy
+2025-12-30T21:50:53.858470045Z 2025/12/30 21:50:53 [INFO] Watching metadata for management.cattle.io/v3, Kind=Token
+2025-12-30T21:50:53.858471226Z 2025/12/30 21:50:53 [INFO] Watching metadata for monitoring.coreos.com/v1, Kind=PodMonitor
+2025-12-30T21:50:53.858472468Z 2025/12/30 21:50:53 [INFO] Watching metadata for snapshot.kubevirt.io/v1beta1, Kind=VirtualMachineSnapshot
+2025-12-30T21:50:53.858473661Z 2025/12/30 21:50:53 [INFO] Watching metadata for loadbalancer.harvesterhci.io/v1beta1, Kind=IPPool
+2025-12-30T21:50:53.858474852Z 2025/12/30 21:50:53 [INFO] Watching metadata for management.cattle.io/v3, Kind=Preference
+2025-12-30T21:50:53.858476064Z 2025/12/30 21:50:53 [INFO] Watching metadata for helm.cattle.io/v1, Kind=HelmChart
+2025-12-30T21:50:53.858477256Z 2025/12/30 21:50:53 [INFO] Watching metadata for networking.k8s.io/v1, Kind=ServiceCIDR
+2025-12-30T21:50:53.858478448Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=BackupVolume
+2025-12-30T21:50:53.858479660Z 2025/12/30 21:50:53 [INFO] Watching metadata for migrations.kubevirt.io/v1alpha1, Kind=MigrationPolicy
+2025-12-30T21:50:53.858483537Z 2025/12/30 21:50:53 [INFO] Watching metadata for cdi.kubevirt.io/v1beta1, Kind=ObjectTransfer
+2025-12-30T21:50:53.858484879Z 2025/12/30 21:50:53 [INFO] Watching metadata for /v1, Kind=PodTemplate
+2025-12-30T21:50:53.858486000Z 2025/12/30 21:50:53 [INFO] Watching metadata for rbac.authorization.k8s.io/v1, Kind=ClusterRole
+2025-12-30T21:50:53.858487142Z 2025/12/30 21:50:53 [INFO] Watching metadata for longhorn.io/v1beta2, Kind=BackupBackingImage
+2025-12-30T21:50:53.858488394Z 2025/12/30 21:50:53 [INFO] Watching metadata for /v1, Kind=Endpoints
+2025-12-30T21:50:53.858489606Z 2025/12/30 21:50:53 [INFO] Watching metadata for rke.cattle.io/v1, Kind=RKECluster
+2025-12-30T21:50:53.858490688Z 2025/12/30 21:50:53 [INFO] Watching metadata for rke.cattle.io/v1, Kind=RKEBootstrap
+2025-12-30T21:50:53.858492010Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=StagedGlobalNetworkPolicy
+2025-12-30T21:50:53.858493262Z 2025/12/30 21:50:53 [INFO] Watching metadata for resource.k8s.io/v1, Kind=DeviceClass
+2025-12-30T21:50:53.858494454Z 2025/12/30 21:50:53 [INFO] Watching metadata for batch/v1, Kind=CronJob
+2025-12-30T21:50:53.858495646Z 2025/12/30 21:50:53 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=BundleDeployment
+2025-12-30T21:50:53.858496867Z 2025/12/30 21:50:53 [INFO] Watching metadata for /v1, Kind=Event
+2025-12-30T21:50:53.858498070Z 2025/12/30 21:50:53 [INFO] Watching metadata for monitoring.coreos.com/v1, Kind=Probe
+2025-12-30T21:50:53.858499302Z 2025/12/30 21:50:53 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=ImageScan
+2025-12-30T21:50:53.858500644Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=IPReservation
+2025-12-30T21:50:53.858501866Z 2025/12/30 21:50:53 [INFO] Watching metadata for flowcontrol.apiserver.k8s.io/v1, Kind=FlowSchema
+2025-12-30T21:50:53.858503088Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=KeyPair
+2025-12-30T21:50:53.858504159Z 2025/12/30 21:50:53 [INFO] Watching metadata for fleet.cattle.io/v1alpha1, Kind=ClusterGroup
+2025-12-30T21:50:53.858505381Z 2025/12/30 21:50:53 [INFO] Watching metadata for crd.projectcalico.org/v1, Kind=BGPConfiguration
+2025-12-30T21:50:53.858506594Z 2025/12/30 21:50:53 [INFO] Watching metadata for harvesterhci.io/v1beta1, Kind=VirtualMachineTemplateVersion
+2025-12-30T21:50:53.858511552Z 2025/12/30 21:50:53 [INFO] Watching metadata for node.harvesterhci.io/v1beta1, Kind=CloudInit
+2025-12-30T21:50:53.858512844Z 2025/12/30 21:50:53 [INFO] Watching metadata for resource.k8s.io/v1, Kind=ResourceSlice
+2025-12-30T21:50:53.858513956Z 2025/12/30 21:50:53 [INFO] Watching metadata for resource.k8s.io/v1, Kind=ResourceClaimTemplate
+2025-12-30T21:50:53.858515158Z 2025/12/30 21:50:53 [INFO] Watching metadata for management.cattle.io/v3, Kind=User
+2025-12-30T21:50:53.858516279Z 2025/12/30 21:50:53 [INFO] Watching metadata for rke.cattle.io/v1, Kind=RKEBootstrapTemplate
+2025-12-30T21:50:53.858517521Z 2025/12/30 21:50:53 [INFO] Watching metadata for node.harvesterhci.io/v1beta1, Kind=NodeConfig
+2025-12-30T21:50:53.883198925Z I1230 21:50:53.883087      43 warnings.go:110] "Warning: kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2."
+2025-12-30T21:50:53.887352113Z I1230 21:50:53.887232      43 warnings.go:110] "Warning: kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2."
+2025-12-30T21:50:53.908895779Z I1230 21:50:53.908775      43 warnings.go:110] "Warning: cdi.kubevirt.io/v1beta1 is now deprecated and will be removed in v1."
+2025-12-30T21:50:54.003029978Z I1230 21:50:54.001855      43 warnings.go:110] "Warning: cdi.kubevirt.io/v1beta1 is now deprecated and will be removed in v1."
+2025-12-30T21:50:54.100343861Z I1230 21:50:54.100215      43 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+2025-12-30T21:50:54.151037936Z I1230 21:50:54.150905      43 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+2025-12-30T21:50:54.526786691Z 2025/12/30 21:50:54 [INFO] CacheFor STARTS creating informer for /v1, Kind=Namespace
+2025-12-30T21:50:54.545653176Z 2025/12/30 21:50:54 [INFO] Started SQL cache garbage collection for _v1_Namespace (interval=15m0s, keep=1000)
+2025-12-30T21:50:54.646520376Z 2025/12/30 21:50:54 [INFO] CacheFor IS DONE creating informer for /v1, Kind=Namespace (took 119.756232ms)
+2025-12-30T21:51:00.183547112Z I1230 21:51:00.183433      43 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+2025-12-30T21:51:00.198881966Z I1230 21:51:00.198774      43 warnings.go:110] "Warning: kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2."
+2025-12-30T21:51:00.206112264Z I1230 21:51:00.206020      43 warnings.go:110] "Warning: v1 ComponentStatus is deprecated in v1.19+"
+2025-12-30T21:51:00.207162825Z 2025/12/30 21:51:00 [INFO] Watching metadata for ext.cattle.io/v1, Kind=Token
+2025-12-30T21:51:00.207252869Z 2025/12/30 21:51:00 [INFO] Watching metadata for ext.cattle.io/v1, Kind=Kubeconfig
+2025-12-30T21:51:01.430913775Z 2025/12/30 21:51:01 [INFO] certificate CN=dynamic,O=dynamic signed by CN=dynamiclistener-ca@1767131252,O=dynamiclistener-org: notBefore=2025-12-30 20:51:01 +0000 UTC notAfter=2026-12-30 20:51:01 +0000 UTC
+2025-12-30T21:51:01.432507535Z 2025/12/30 21:51:01 [INFO] Handling backend connection request [stv-20ad5102-df3e-48a4-8e1c-6b6a7140953b]
+2025-12-30T21:51:01.432996168Z 2025/12/30 21:51:01 [INFO] Updating TLS secret for cattle-system/tls-rancher-internal (count: 4): map[listener.cattle.io/cn-10.52.0.79:10.52.0.79 listener.cattle.io/cn-10.52.0.8:10.52.0.8 listener.cattle.io/cn-10.53.120.170:10.53.120.170 listener.cattle.io/cn-192.168.122.39:192.168.122.39 listener.cattle.io/fingerprint:SHA1=265030AE9131D2F3A36F57510AB531F73369D2D2]
+2025-12-30T21:51:01.440960171Z 2025/12/30 21:51:01 [INFO] Active TLS secret cattle-system/tls-rancher-internal (ver=7060) (count 4): map[listener.cattle.io/cn-10.52.0.79:10.52.0.79 listener.cattle.io/cn-10.52.0.8:10.52.0.8 listener.cattle.io/cn-10.53.120.170:10.53.120.170 listener.cattle.io/cn-192.168.122.39:192.168.122.39 listener.cattle.io/fingerprint:SHA1=265030AE9131D2F3A36F57510AB531F73369D2D2]
+2025-12-30T21:51:38.944655633Z I1230 21:51:38.944158      43 leaderelection.go:271] successfully acquired lease kube-system/cattle-controllers
+2025-12-30T21:51:38.944934537Z 2025/12/30 21:51:38 [INFO] wrangler-newContext leader func executed successfully
+2025-12-30T21:51:38.945373570Z 2025/12/30 21:51:38 [INFO] rancher-start::DefferedCAPIRegistration leader func executed successfully
+2025-12-30T21:51:38.946493177Z 2025/12/30 21:51:38 [INFO] Starting ServiceAccountSecretCleaner with 0 secrets
+2025-12-30T21:51:38.946520178Z 2025/12/30 21:51:38 [INFO] rancher-new leader func executed successfully
+2025-12-30T21:51:39.093009589Z 2025/12/30 21:51:39 [INFO] Steve auth startup complete
+2025-12-30T21:51:39.093035216Z 2025/12/30 21:51:39 [INFO] rancher-start::authServer leader func executed successfully
+2025-12-30T21:51:39.108474985Z 2025/12/30 21:51:39 [INFO] Skipping handler for clusterrepo rancher-partner-charts. NumberOfRetries is 0, MaxRetry is 3, ClusterRepo Generation is 1, ObservedGeneration is 1, LastUpdated plus interval is 2025-12-30 22:47:34 +0000 UTC, now is 2025-12-30 21:51:39.105919403 +0000 UTC
+2025-12-30T21:51:39.117257952Z 2025/12/30 21:51:39 [INFO] Skipping handler for clusterrepo rancher-stable. NumberOfRetries is 0, MaxRetry is 3, ClusterRepo Generation is 1, ObservedGeneration is 1, LastUpdated plus interval is 2025-12-30 22:48:44 +0000 UTC, now is 2025-12-30 21:51:39.10645103 +0000 UTC
+2025-12-30T21:51:39.117828752Z 2025/12/30 21:51:39 [INFO] Skipping handler for clusterrepo rancher-charts. NumberOfRetries is 0, MaxRetry is 3, ClusterRepo Generation is 1, ObservedGeneration is 1, LastUpdated plus interval is 2025-12-30 22:47:42 +0000 UTC, now is 2025-12-30 21:51:39.107020658 +0000 UTC
+2025-12-30T21:51:39.118306388Z 2025/12/30 21:51:39 [INFO] Skipping handler for clusterrepo rancher-rke2-charts. NumberOfRetries is 0, MaxRetry is 3, ClusterRepo Generation is 1, ObservedGeneration is 1, LastUpdated plus interval is 2025-12-30 22:47:40 +0000 UTC, now is 2025-12-30 21:51:39.107436307 +0000 UTC
+2025-12-30T21:51:39.118701479Z 2025/12/30 21:51:39 [INFO] Skipping handler for clusterrepo harvester-charts. NumberOfRetries is 0, MaxRetry is 3, ClusterRepo Generation is 1, ObservedGeneration is 1, LastUpdated plus interval is 2025-12-30 22:48:43 +0000 UTC, now is 2025-12-30 21:51:39.107847578 +0000 UTC
+2025-12-30T21:51:39.124266232Z 2025/12/30 21:51:39 [INFO] Skipping handler for clusterrepo rancher-partner-charts. NumberOfRetries is 0, MaxRetry is 3, ClusterRepo Generation is 1, ObservedGeneration is 1, LastUpdated plus interval is 2025-12-30 22:47:34 +0000 UTC, now is 2025-12-30 21:51:39.116807637 +0000 UTC
+2025-12-30T21:51:39.128422053Z 2025/12/30 21:51:39 [INFO] Skipping handler for clusterrepo rancher-stable. NumberOfRetries is 0, MaxRetry is 3, ClusterRepo Generation is 1, ObservedGeneration is 1, LastUpdated plus interval is 2025-12-30 22:48:44 +0000 UTC, now is 2025-12-30 21:51:39.122208594 +0000 UTC
+2025-12-30T21:51:39.145689998Z 2025/12/30 21:51:39 [INFO] Skipping handler for clusterrepo harvester-charts. NumberOfRetries is 0, MaxRetry is 3, ClusterRepo Generation is 1, ObservedGeneration is 1, LastUpdated plus interval is 2025-12-30 22:48:43 +0000 UTC, now is 2025-12-30 21:51:39.128864283 +0000 UTC
+2025-12-30T21:51:39.145765721Z 2025/12/30 21:51:39 [INFO] Skipping handler for clusterrepo rancher-rke2-charts. NumberOfRetries is 0, MaxRetry is 3, ClusterRepo Generation is 1, ObservedGeneration is 1, LastUpdated plus interval is 2025-12-30 22:47:40 +0000 UTC, now is 2025-12-30 21:51:39.129020235 +0000 UTC
+2025-12-30T21:51:39.180211994Z 2025/12/30 21:51:39 [INFO] Skipping handler for clusterrepo rancher-charts. NumberOfRetries is 0, MaxRetry is 3, ClusterRepo Generation is 1, ObservedGeneration is 1, LastUpdated plus interval is 2025-12-30 22:47:42 +0000 UTC, now is 2025-12-30 21:51:39.165180622 +0000 UTC
+2025-12-30T21:51:39.185315794Z 2025/12/30 21:51:39 [INFO] Starting admissionregistration.k8s.io/v1, Kind=MutatingWebhookConfiguration controller
+2025-12-30T21:51:39.186642031Z 2025/12/30 21:51:39 [INFO] Starting catalog.cattle.io/v1, Kind=App controller
+2025-12-30T21:51:39.188529790Z 2025/12/30 21:51:39 [INFO] Starting /v1, Kind=Node controller
+2025-12-30T21:51:39.188834922Z 2025/12/30 21:51:39 [INFO] Starting rke.cattle.io/v1, Kind=RKEControlPlane controller
+2025-12-30T21:51:39.190556649Z 2025/12/30 21:51:39 [INFO] Starting cluster.x-k8s.io/v1beta1, Kind=Cluster controller
+2025-12-30T21:51:39.190607274Z 2025/12/30 21:51:39 [INFO] Starting apps/v1, Kind=Deployment controller
+2025-12-30T21:51:39.190665533Z 2025/12/30 21:51:39 [INFO] Starting fleet.cattle.io/v1alpha1, Kind=Cluster controller
+2025-12-30T21:51:39.190881068Z 2025/12/30 21:51:39 [INFO] Starting apps/v1, Kind=DaemonSet controller
+2025-12-30T21:51:39.190931192Z 2025/12/30 21:51:39 [INFO] Starting rke.cattle.io/v1, Kind=RKEBootstrapTemplate controller
+2025-12-30T21:51:39.190936261Z 2025/12/30 21:51:39 [INFO] Starting cluster.x-k8s.io/v1beta1, Kind=Machine controller
+2025-12-30T21:51:39.190997396Z 2025/12/30 21:51:39 [INFO] Starting cluster.x-k8s.io/v1beta1, Kind=MachineDeployment controller
+2025-12-30T21:51:39.191030067Z 2025/12/30 21:51:39 [INFO] Starting management.cattle.io/v3, Kind=ManagedChart controller
+2025-12-30T21:51:39.245291252Z 2025/12/30 21:51:39 [INFO] Starting upgrade.cattle.io/v1, Kind=Plan controller
+2025-12-30T21:51:39.245623424Z 2025/12/30 21:51:39 [INFO] Starting /v1, Kind=Pod controller
+2025-12-30T21:51:39.246100649Z 2025/12/30 21:51:39 [INFO] Starting batch/v1, Kind=Job controller
+2025-12-30T21:51:39.264854760Z 2025/12/30 21:51:39 [INFO] Starting admissionregistration.k8s.io/v1, Kind=ValidatingWebhookConfiguration controller
+2025-12-30T21:51:39.272692375Z 2025/12/30 21:51:39 [INFO] Starting management.cattle.io/v3, Kind=FleetWorkspace controller
+2025-12-30T21:51:39.272825685Z 2025/12/30 21:51:39 [INFO] Starting rke.cattle.io/v1, Kind=CustomMachine controller
+2025-12-30T21:51:39.273370417Z 2025/12/30 21:51:39 [INFO] Starting ext.cattle.io/v1, Kind=Token controller
+2025-12-30T21:51:39.274055482Z 2025/12/30 21:51:39 [INFO] Starting catalog.cattle.io/v1, Kind=Operation controller
+2025-12-30T21:51:39.275206540Z 2025/12/30 21:51:39 [INFO] Starting rke.cattle.io/v1, Kind=RKECluster controller
+2025-12-30T21:51:39.288949616Z 2025/12/30 21:51:39 [INFO] Skipping handler for clusterrepo rancher-charts. NumberOfRetries is 0, MaxRetry is 3, ClusterRepo Generation is 1, ObservedGeneration is 1, LastUpdated plus interval is 2025-12-30 22:47:42 +0000 UTC, now is 2025-12-30 21:51:39.280319887 +0000 UTC
+2025-12-30T21:51:39.294785348Z 2025/12/30 21:51:39 [INFO] Starting fleet.cattle.io/v1alpha1, Kind=ClusterGroup controller
+2025-12-30T21:51:39.294869275Z 2025/12/30 21:51:39 [INFO] Starting cluster.x-k8s.io/v1beta1, Kind=MachineHealthCheck controller
+2025-12-30T21:51:39.294909701Z 2025/12/30 21:51:39 [INFO] Starting fleet.cattle.io/v1alpha1, Kind=Bundle controller
+2025-12-30T21:51:39.295204724Z 2025/12/30 21:51:39 [INFO] Starting /v1, Kind=Service controller
+2025-12-30T21:51:39.390249924Z 2025/12/30 21:51:39 [INFO] rancher-start::dashboarddata leader func executed successfully
+2025-12-30T21:51:40.474647605Z I1230 21:51:40.474514      43 warnings.go:110] "Warning: kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2."
+2025-12-30T21:51:40.474669466Z I1230 21:51:40.474561      43 warnings.go:110] "Warning: v1 ComponentStatus is deprecated in v1.19+"
+2025-12-30T21:51:40.477633335Z I1230 21:51:40.477164      43 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+2025-12-30T21:51:40.540290676Z 2025/12/30 21:51:40 [INFO] [planner] rkecluster fleet-local/local: waiting for at least one control plane, etcd, and worker node to be registered
+2025-12-30T21:51:40.554961325Z 2025/12/30 21:51:40 [INFO] [planner] rkecluster fleet-local/local: waiting for at least one control plane, etcd, and worker node to be registered
+2025-12-30T21:51:40.563092627Z 2025/12/30 21:51:40 [INFO] [planner] rkecluster fleet-local/local: waiting for at least one control plane, etcd, and worker node to be registered
+2025-12-30T21:51:40.568261844Z 2025/12/30 21:51:40 [INFO] [planner] rkecluster fleet-local/local: waiting for at least one control plane, etcd, and worker node to be registered
+2025-12-30T21:51:40.599332435Z 2025/12/30 21:51:40 [INFO] [managesystemagent] cluster fleet-local/local: applying system-agent-upgrader templates
+2025-12-30T21:51:40.702110865Z 2025/12/30 21:51:40 [INFO] [planner] rkecluster fleet-local/local: waiting for at least one control plane, etcd, and worker node to be registered
+2025-12-30T21:51:42.465819986Z 2025/12/30 21:51:42 [ERROR] http: TLS handshake error from 192.168.122.168:51376: local error: tls: bad record MAC
+2025-12-30T21:51:42.585443030Z 2025/12/30 21:51:42 [ERROR] [rkebootstrap] fleet-local/custom-84a61a1928a2: error getting machine by owner reference no matching controller owner ref
+2025-12-30T21:51:42.585472638Z 2025/12/30 21:51:42 [ERROR] error syncing 'fleet-local/custom-84a61a1928a2': handler rke-bootstrap: no matching controller owner ref, requeuing
+2025-12-30T21:51:42.585475042Z 2025/12/30 21:51:42 [ERROR] [rkebootstrap] fleet-local/custom-84a61a1928a2: error getting machine by owner reference no matching controller owner ref
+2025-12-30T21:51:42.585477176Z 2025/12/30 21:51:42 [ERROR] error syncing 'fleet-local/custom-84a61a1928a2': handler rke-bootstrap: no matching controller owner ref, requeuing
+2025-12-30T21:51:42.591415159Z 2025/12/30 21:51:42 [ERROR] [rkebootstrap] fleet-local/custom-84a61a1928a2: error getting machine by owner reference no matching controller owner ref
+2025-12-30T21:51:42.591439375Z 2025/12/30 21:51:42 [ERROR] error syncing 'fleet-local/custom-84a61a1928a2': handler rke-bootstrap: no matching controller owner ref, requeuing
+2025-12-30T21:51:42.612194989Z 2025/12/30 21:51:42 [ERROR] [rkebootstrap] fleet-local/custom-84a61a1928a2: error getting machine by owner reference no matching controller owner ref
+2025-12-30T21:51:42.612233512Z 2025/12/30 21:51:42 [ERROR] error syncing 'fleet-local/custom-84a61a1928a2': handler rke-bootstrap: no matching controller owner ref, requeuing
+2025-12-30T21:51:42.613746666Z 2025/12/30 21:51:42 [INFO] [planner] rkecluster fleet-local/local: waiting for at least one control plane, etcd, and worker node to be registered
+2025-12-30T21:51:42.628606417Z 2025/12/30 21:51:42 [INFO] [planner] rkecluster fleet-local/local: waiting for at least one control plane, etcd, and worker node to be registered
+2025-12-30T21:51:42.639344312Z 2025/12/30 21:51:42 [INFO] [planner] rkecluster fleet-local/local: waiting for at least one control plane, etcd, and worker node to be registered
+2025-12-30T21:51:42.692471694Z 2025/12/30 21:51:42 [ERROR] [rkebootstrap] fleet-local/custom-84a61a1928a2: error getting machine by owner reference no matching controller owner ref
+2025-12-30T21:51:42.692504046Z 2025/12/30 21:51:42 [ERROR] error syncing 'fleet-local/custom-84a61a1928a2': handler rke-bootstrap: no matching controller owner ref, requeuing
+2025-12-30T21:51:42.764578279Z 2025/12/30 21:51:42 [INFO] [planner] rkecluster fleet-local/local: waiting for at least one control plane, etcd, and worker node to be registered
+2025-12-30T21:51:42.784356851Z 2025/12/30 21:51:42 [INFO] EnsureSecretForServiceAccount: waiting for secret [fleet-local:custom-84a61a1928a2-machine-plan-token-m6q6w] for service account [fleet-local:custom-84a61a1928a2-machine-plan] to be populated with token
+2025-12-30T21:51:42.785975047Z 2025/12/30 21:51:42 [INFO] EnsureSecretForServiceAccount: got the service account token for service account [fleet-local:custom-84a61a1928a2-machine-plan] in 1.595292ms
+2025-12-30T21:51:42.786002649Z 2025/12/30 21:51:42 [INFO] [rke2configserver] fleet-local/custom-84a61a1928a2 machineID: c54461c791e8e01a7b4b17646ee23f1f2708d9808533f96992c1b05227843a8 delivering planSecret custom-84a61a1928a2-machine-plan with token secret fleet-local/custom-84a61a1928a2-machine-plan-token-m6q6w to system-agent from plan service account watch
+2025-12-30T21:51:42.787767066Z 2025/12/30 21:51:42 [INFO] [planner] rkecluster fleet-local/local: waiting for viable init node
+2025-12-30T21:51:42.800775043Z 2025/12/30 21:51:42 [INFO] [planner] rkecluster fleet-local/local: waiting for viable init node
+2025-12-30T21:51:42.905283163Z 2025/12/30 21:51:42 [INFO] EnsureSecretForServiceAccount: waiting for secret [fleet-local:custom-84a61a1928a2-machine-bootstrap-token-rckf5] for service account [fleet-local:custom-84a61a1928a2-machine-bootstrap] to be populated with token
+2025-12-30T21:51:42.906047885Z 2025/12/30 21:51:42 [INFO] EnsureSecretForServiceAccount: got the service account token for service account [fleet-local:custom-84a61a1928a2-machine-bootstrap] in 2.224292ms
+2025-12-30T21:51:42.942407372Z 2025/12/30 21:51:42 [ERROR] [planner] rkecluster fleet-local/local: error during plan processing: Operation cannot be fulfilled on machines.cluster.x-k8s.io "custom-84a61a1928a2": the object has been modified; please apply your changes to the latest version and try again
+2025-12-30T21:51:42.947083948Z 2025/12/30 21:51:42 [INFO] Starting rke.cattle.io/v1, Kind=CustomMachine controller
+2025-12-30T21:51:42.971944174Z 2025/12/30 21:51:42 [ERROR] [planner] rkecluster fleet-local/local: error during plan processing: Operation cannot be fulfilled on machines.cluster.x-k8s.io "custom-84a61a1928a2": the object has been modified; please apply your changes to the latest version and try again
+2025-12-30T21:51:42.986478277Z 2025/12/30 21:51:42 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for agent to check in and apply initial plan
+2025-12-30T21:51:42.998140031Z 2025/12/30 21:51:42 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for agent to check in and apply initial plan
+2025-12-30T21:51:43.053997978Z 2025/12/30 21:51:43 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for agent to check in and apply initial plan
+2025-12-30T21:51:43.091291176Z 2025/12/30 21:51:43 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for agent to check in and apply initial plan
+2025-12-30T21:51:43.131062090Z 2025/12/30 21:51:43 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for agent to check in and apply initial plan
+2025-12-30T21:51:43.149157243Z 2025/12/30 21:51:43 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for agent to check in and apply initial plan
+2025-12-30T21:51:43.161270463Z 2025/12/30 21:51:43 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for agent to check in and apply initial plan
+2025-12-30T21:51:43.172194365Z 2025/12/30 21:51:43 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for agent to check in and apply initial plan
+2025-12-30T21:51:43.182411669Z 2025/12/30 21:51:43 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for agent to check in and apply initial plan
+2025-12-30T21:51:43.947641914Z 2025/12/30 21:51:43 [INFO] ServiceAccountSecretCleaner has no secrets remaining - terminating at 5.000981452s
+2025-12-30T21:51:53.376428715Z I1230 21:51:47.610434      43 reflector.go:568] "Warning: watch ended with error" reflector="/root/.cache/go/modcache/k8s.io/client-go@v0.34.1/tools/cache/reflector.go:290" type="*v1.Token" err="an error on the server (\"unable to decode an event from the watch stream: stream error: stream ID 77; INTERNAL_ERROR; received from peer\") has prevented the request from succeeding"
+2025-12-30T21:51:53.376444997Z I1230 21:51:47.610563      43 reflector.go:568] "Warning: watch ended with error" reflector="/root/.cache/go/modcache/k8s.io/client-go@v0.34.1/tools/cache/reflector.go:290" type="*summary.SummarizedObject" err="an error on the server (\"unable to decode an event from the watch stream: stream error: stream ID 1103; INTERNAL_ERROR; received from peer\") has prevented the request from succeeding"
+2025-12-30T21:51:53.376448584Z I1230 21:51:47.610581      43 reflector.go:568] "Warning: watch ended with error" reflector="/root/.cache/go/modcache/k8s.io/client-go@v0.34.1/tools/cache/reflector.go:290" type="*summary.SummarizedObject" err="an error on the server (\"unable to decode an event from the watch stream: stream error: stream ID 1105; INTERNAL_ERROR; received from peer\") has prevented the request from succeeding"
+2025-12-30T21:51:53.376451659Z E1230 21:51:48.885196      43 reflector.go:205] "Failed to watch" err="failed to list *summary.SummarizedObject: the server is currently unable to handle the request" logger="UnhandledError" reflector="/root/.cache/go/modcache/k8s.io/client-go@v0.34.1/tools/cache/reflector.go:290" type="*summary.SummarizedObject"
+2025-12-30T21:51:53.376454295Z E1230 21:51:49.004047      43 reflector.go:205] "Failed to watch" err="failed to list *v1.Token: the server is currently unable to handle the request (get tokens.meta.k8s.io)" logger="UnhandledError" reflector="/root/.cache/go/modcache/k8s.io/client-go@v0.34.1/tools/cache/reflector.go:290" type="*v1.Token"
+2025-12-30T21:51:53.376457521Z E1230 21:51:49.164045      43 reflector.go:205] "Failed to watch" err="failed to list *summary.SummarizedObject: the server is currently unable to handle the request" logger="UnhandledError" reflector="/root/.cache/go/modcache/k8s.io/client-go@v0.34.1/tools/cache/reflector.go:290" type="*summary.SummarizedObject"
+2025-12-30T21:51:53.376460596Z E1230 21:51:51.114858      43 reflector.go:205] "Failed to watch" err="failed to list *summary.SummarizedObject: the server is currently unable to handle the request" logger="UnhandledError" reflector="/root/.cache/go/modcache/k8s.io/client-go@v0.34.1/tools/cache/reflector.go:290" type="*summary.SummarizedObject"
+2025-12-30T21:51:53.376463522Z E1230 21:51:51.262899      43 reflector.go:205] "Failed to watch" err="failed to list *summary.SummarizedObject: the server is currently unable to handle the request" logger="UnhandledError" reflector="/root/.cache/go/modcache/k8s.io/client-go@v0.34.1/tools/cache/reflector.go:290" type="*summary.SummarizedObject"
+2025-12-30T21:51:53.376483630Z 2025/12/30 21:51:48 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for probes: kubelet
+2025-12-30T21:51:53.376496815Z 2025/12/30 21:51:48 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for probes: kubelet
+2025-12-30T21:51:53.376500612Z 2025/12/30 21:51:48 [ERROR] error syncing 'fleet-local/local': handler rke-cluster: Internal error occurred: failed calling webhook "rancher.cattle.io.clusters.management.cattle.io": failed to call webhook: Post "https://rancher-webhook.cattle-system.svc:443/v1/webhook/mutation/clusters.management.cattle.io?timeout=10s": dial tcp 127.0.0.1:9345: connect: connection refused, requeuing
+2025-12-30T21:51:53.376503928Z 2025/12/30 21:51:48 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for probes: kubelet
+2025-12-30T21:51:53.376557630Z 2025/12/30 21:51:48 [ERROR] error syncing 'fleet-local/local': handler rke-cluster: Internal error occurred: failed calling webhook "rancher.cattle.io.clusters.management.cattle.io": failed to call webhook: Post "https://rancher-webhook.cattle-system.svc:443/v1/webhook/mutation/clusters.management.cattle.io?timeout=10s": dial tcp 127.0.0.1:9345: connect: connection refused, requeuing
+2025-12-30T21:51:53.376559283Z 2025/12/30 21:51:48 [ERROR] error syncing 'fleet-local/local': handler rke-cluster: Internal error occurred: failed calling webhook "rancher.cattle.io.clusters.management.cattle.io": failed to call webhook: Post "https://rancher-webhook.cattle-system.svc:443/v1/webhook/mutation/clusters.management.cattle.io?timeout=10s": dial tcp 127.0.0.1:9345: connect: connection refused, requeuing
+2025-12-30T21:51:53.376560716Z 2025/12/30 21:51:48 [ERROR] error syncing 'fleet-local/local': handler rke-cluster: Internal error occurred: failed calling webhook "rancher.cattle.io.clusters.management.cattle.io": failed to call webhook: Post "https://rancher-webhook.cattle-system.svc:443/v1/webhook/mutation/clusters.management.cattle.io?timeout=10s": dial tcp 127.0.0.1:9345: connect: connection refused, requeuing
+2025-12-30T21:51:53.376562019Z 2025/12/30 21:51:49 [ERROR] error syncing 'fleet-local/local': handler rke-cluster: Internal error occurred: failed calling webhook "rancher.cattle.io.clusters.management.cattle.io": failed to call webhook: Post "https://rancher-webhook.cattle-system.svc:443/v1/webhook/mutation/clusters.management.cattle.io?timeout=10s": dial tcp 127.0.0.1:9345: connect: connection refused, requeuing
+2025-12-30T21:51:53.376563121Z 2025/12/30 21:51:49 [ERROR] error syncing 'fleet-local/local': handler rke-cluster: Internal error occurred: failed calling webhook "rancher.cattle.io.clusters.management.cattle.io": failed to call webhook: Post "https://rancher-webhook.cattle-system.svc:443/v1/webhook/mutation/clusters.management.cattle.io?timeout=10s": dial tcp 127.0.0.1:9345: connect: connection refused, requeuing
+2025-12-30T21:51:53.376564343Z 2025/12/30 21:51:51 [ERROR] error syncing 'fleet-local/local': handler rke-cluster: Internal error occurred: failed calling webhook "rancher.cattle.io.clusters.management.cattle.io": failed to call webhook: Post "https://rancher-webhook.cattle-system.svc:443/v1/webhook/mutation/clusters.management.cattle.io?timeout=10s": dial tcp 127.0.0.1:9345: connect: connection refused, requeuing
+2025-12-30T21:51:53.717423357Z 2025/12/30 21:51:53 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for probes: kubelet
+2025-12-30T21:51:58.658579002Z 2025/12/30 21:51:58 [INFO] [planner] rkecluster fleet-local/local: custom-84a61a1928a2
+2025-12-30T21:51:58.669379100Z 2025/12/30 21:51:58 [INFO] [planner] rkecluster fleet-local/local: non-ready bootstrap machine(s) custom-84a61a1928a2 and join url to be available on bootstrap node
+2025-12-30T21:51:58.681052195Z 2025/12/30 21:51:58 [INFO] [planner] rkecluster fleet-local/local: non-ready bootstrap machine(s) custom-84a61a1928a2 and join url to be available on bootstrap node
+2025-12-30T21:51:58.683822393Z 2025/12/30 21:51:58 [INFO] [planner] rkecluster fleet-local/local: non-ready bootstrap machine(s) custom-84a61a1928a2 and join url to be available on bootstrap node
+2025-12-30T21:51:58.844993660Z 2025/12/30 21:51:58 [INFO] [planner] rkecluster fleet-local/local: non-ready bootstrap machine(s) custom-84a61a1928a2 and join url to be available on bootstrap node
+2025-12-30T21:51:59.131433454Z W1230 21:51:59.131318      43 gvks.go:80] Failed to read API for groups: map[ext.cattle.io/v1:stale GroupVersion discovery: ext.cattle.io/v1]
+2025-12-30T21:51:59.136254864Z 2025/12/30 21:51:59 [ERROR] Failed to read API for groups map[ext.cattle.io/v1:stale GroupVersion discovery: ext.cattle.io/v1]
+2025-12-30T21:51:59.947093790Z I1230 21:51:59.946818      43 warnings.go:110] "Warning: kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2."
+2025-12-30T21:51:59.969467294Z I1230 21:51:59.968825      43 warnings.go:110] "Warning: v1 ComponentStatus is deprecated in v1.19+"
+2025-12-30T21:51:59.973157057Z I1230 21:51:59.972483      43 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+2025-12-30T21:51:59.989681237Z 2025/12/30 21:51:59 [INFO] Stopping metadata watch on ext.cattle.io/v1, Kind=Token
+2025-12-30T21:51:59.989696126Z 2025/12/30 21:51:59 [INFO] Stopping metadata watch on ext.cattle.io/v1, Kind=Kubeconfig
+2025-12-30T21:52:10.660456235Z I1230 21:52:10.659466      43 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+2025-12-30T21:52:10.664030117Z I1230 21:52:10.662868      43 warnings.go:110] "Warning: v1 ComponentStatus is deprecated in v1.19+"
+2025-12-30T21:52:10.667415492Z I1230 21:52:10.667256      43 warnings.go:110] "Warning: kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2."
+2025-12-30T21:52:10.741803565Z 2025/12/30 21:52:10 [INFO] Watching metadata for ext.cattle.io/v1, Kind=Token
+2025-12-30T21:52:10.741826800Z 2025/12/30 21:52:10 [INFO] Watching metadata for ext.cattle.io/v1, Kind=Kubeconfig
+2025-12-30T21:52:13.664660260Z 2025/12/30 21:52:13 [INFO] [planner] rkecluster fleet-local/local: non-ready bootstrap machine(s) custom-84a61a1928a2 and join url to be available on bootstrap node
+2025-12-30T21:52:13.685929433Z 2025/12/30 21:52:13 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for probes: kube-controller-manager, kube-scheduler
+2025-12-30T21:52:13.699568106Z 2025/12/30 21:52:13 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for probes: kube-controller-manager, kube-scheduler
+2025-12-30T21:52:13.703454482Z 2025/12/30 21:52:13 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for probes: kube-controller-manager, kube-scheduler
+2025-12-30T21:52:13.788593305Z 2025/12/30 21:52:13 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for probes: kube-controller-manager, kube-scheduler
+2025-12-30T21:52:13.806549893Z 2025/12/30 21:52:13 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for probes: kube-controller-manager, kube-scheduler
+2025-12-30T21:52:13.843827006Z 2025/12/30 21:52:13 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for probes: kube-controller-manager, kube-scheduler
+2025-12-30T21:52:13.878387935Z 2025/12/30 21:52:13 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for probes: kube-controller-manager, kube-scheduler
+2025-12-30T21:52:13.887950221Z 2025/12/30 21:52:13 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for probes: kube-controller-manager, kube-scheduler
+2025-12-30T21:52:13.901309445Z 2025/12/30 21:52:13 [INFO] [planner] rkecluster fleet-local/local: configuring bootstrap node(s) custom-84a61a1928a2: waiting for probes: kube-controller-manager, kube-scheduler
+2025-12-30T21:52:28.688216243Z 2025/12/30 21:52:28 [INFO] [planner] rkecluster fleet-local/local: custom-84a61a1928a2
+2025-12-30T21:52:28.718641199Z 2025/12/30 21:52:28 [INFO] [planner] rkecluster fleet-local/local: marking control plane as initialized and ready
+2025-12-30T21:52:28.734450600Z 2025/12/30 21:52:28 [INFO] [planner] rkecluster fleet-local/local: marking control plane as initialized and ready
+2025-12-30T21:52:28.793661270Z 2025/12/30 21:52:28 [INFO] certificate CN=dynamic,O=dynamic signed by CN=dynamiclistener-ca@1767131252,O=dynamiclistener-org: notBefore=2025-12-30 20:52:28 +0000 UTC notAfter=2026-12-30 20:52:28 +0000 UTC
+2025-12-30T21:52:28.796273758Z 2025/12/30 21:52:28 [INFO] Updating TLS secret for cattle-system/serving-cert (count: 6): map[listener.cattle.io/cn-10.52.0.79:10.52.0.79 listener.cattle.io/cn-10.52.0.8:10.52.0.8 listener.cattle.io/cn-127.0.0.1:127.0.0.1 listener.cattle.io/cn-192.168.122.39:192.168.122.39 listener.cattle.io/cn-localhost:localhost listener.cattle.io/cn-rancher.cattle-system:rancher.cattle-system listener.cattle.io/fingerprint:SHA1=F83EBE9888104A85B016A18313EF0493305B2782]
+2025-12-30T21:52:28.809074970Z 2025/12/30 21:52:28 [INFO] Active TLS secret cattle-system/serving-cert (ver=8687) (count 6): map[listener.cattle.io/cn-10.52.0.79:10.52.0.79 listener.cattle.io/cn-10.52.0.8:10.52.0.8 listener.cattle.io/cn-127.0.0.1:127.0.0.1 listener.cattle.io/cn-192.168.122.39:192.168.122.39 listener.cattle.io/cn-localhost:localhost listener.cattle.io/cn-rancher.cattle-system:rancher.cattle-system listener.cattle.io/fingerprint:SHA1=F83EBE9888104A85B016A18313EF0493305B2782]
+2025-12-30T21:52:42.152238230Z 2025/12/30 21:52:42 [INFO] CacheFor STARTS creating informer for management.cattle.io/v3, Kind=Setting
+2025-12-30T21:52:42.153682118Z 2025/12/30 21:52:42 [INFO] Started SQL cache garbage collection for management.cattle.io_v3_Setting (interval=15m0s, keep=1000)
+2025-12-30T21:52:42.254038347Z 2025/12/30 21:52:42 [INFO] CacheFor IS DONE creating informer for management.cattle.io/v3, Kind=Setting (took 101.578558ms)
+2025-12-30T21:52:54.642822969Z 2025/12/30 21:52:54 [INFO] CacheFor STARTS creating informer for management.cattle.io/v3, Kind=Feature
+2025-12-30T21:52:54.643878051Z 2025/12/30 21:52:54 [INFO] CacheFor STARTS creating informer for management.cattle.io/v3, Kind=FleetWorkspace
+2025-12-30T21:52:54.646667864Z 2025/12/30 21:52:54 [INFO] Started SQL cache garbage collection for management.cattle.io_v3_Feature (interval=15m0s, keep=1000)
+2025-12-30T21:52:54.651349026Z 2025/12/30 21:52:54 [INFO] Started SQL cache garbage collection for management.cattle.io_v3_FleetWorkspace (interval=15m0s, keep=1000)
+2025-12-30T21:52:54.747018873Z 2025/12/30 21:52:54 [INFO] CacheFor IS DONE creating informer for management.cattle.io/v3, Kind=Feature (took 104.172991ms)
+2025-12-30T21:52:54.752223288Z 2025/12/30 21:52:54 [INFO] CacheFor IS DONE creating informer for management.cattle.io/v3, Kind=FleetWorkspace (took 108.29419ms)
+2025-12-30T21:52:56.751648481Z 2025/12/30 21:52:56 [INFO] CacheFor STARTS creating informer for management.cattle.io/v3, Kind=Cluster
+2025-12-30T21:52:56.753510264Z 2025/12/30 21:52:56 [INFO] Started SQL cache garbage collection for management.cattle.io_v3_Cluster (interval=15m0s, keep=1000)
+2025-12-30T21:52:56.854675887Z 2025/12/30 21:52:56 [INFO] CacheFor IS DONE creating informer for management.cattle.io/v3, Kind=Cluster (took 102.981007ms)
+2025-12-30T21:52:56.894261025Z 2025/12/30 21:52:56 [INFO] CacheFor STARTS creating informer for catalog.cattle.io/v1, Kind=App
+2025-12-30T21:52:56.895761402Z 2025/12/30 21:52:56 [INFO] Started SQL cache garbage collection for catalog.cattle.io_v1_App (interval=15m0s, keep=1000)
+2025-12-30T21:52:56.995823911Z 2025/12/30 21:52:56 [INFO] CacheFor IS DONE creating informer for catalog.cattle.io/v1, Kind=App (took 101.610266ms)
+2025-12-30T21:57:50.888061821Z I1230 21:57:50.887906      43 warnings.go:110] "Warning: kubevirt.io/v1 VirtualMachineInstancePresets is now deprecated and will be removed in v2."
+2025-12-30T21:59:14.247777458Z I1230 21:59:14.247618      43 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+2025-12-30T21:59:28.145808105Z I1230 21:59:28.145654      43 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+2025-12-30T21:59:52.978647248Z I1230 21:59:52.978473      43 warnings.go:110] "Warning: cdi.kubevirt.io/v1beta1 is now deprecated and will be removed in v1."

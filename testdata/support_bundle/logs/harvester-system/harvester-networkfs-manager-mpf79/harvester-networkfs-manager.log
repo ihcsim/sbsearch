@@ -1,0 +1,10 @@
+2025-12-30T21:49:35.403339438Z time="2025-12-30T21:49:35Z" level=info msg="NetworkFS manager v0.0.0-dev (HEAD) is starting"
+2025-12-30T21:49:35.409672005Z I1230 21:49:35.409456       1 leaderelection.go:257] attempting to acquire leader lease harvester-system/harvester-networkfs-manager...
+2025-12-30T21:49:35.481608061Z I1230 21:49:35.480942       1 leaderelection.go:271] successfully acquired lease harvester-system/harvester-networkfs-manager
+2025-12-30T21:49:35.571198414Z I1230 21:49:35.559018       1 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+2025-12-30T21:49:35.571218275Z I1230 21:49:35.568927       1 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"
+2025-12-30T21:49:35.603176549Z time="2025-12-30T21:49:35Z" level=info msg="Starting harvesterhci.io/v1beta1, Kind=NetworkFilesystem controller"
+2025-12-30T21:49:35.614281351Z time="2025-12-30T21:49:35Z" level=info msg="Starting /v1, Kind=Service controller"
+2025-12-30T21:49:35.615247203Z time="2025-12-30T21:49:35Z" level=info msg="Starting /v1, Kind=Endpoints controller"
+2025-12-30T21:49:35.639642072Z time="2025-12-30T21:49:35Z" level=info msg="Starting longhorn.io/v1beta2, Kind=ShareManager controller"
+2025-12-30T21:59:21.565996426Z I1230 21:59:21.565690       1 warnings.go:110] "Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice"

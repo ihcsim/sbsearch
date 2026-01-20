@@ -1,0 +1,179 @@
+2025-12-30T21:49:37.588430114Z I1230 21:49:37.581731       1 feature_gate.go:385] feature gates: {map[]}
+2025-12-30T21:49:37.588459324Z I1230 21:49:37.581900       1 main.go:181] "Version" version="v8.3.0"
+2025-12-30T21:49:37.588461508Z I1230 21:49:37.582206       1 envvar.go:172] "Feature gate default state" feature="ClientsAllowCBOR" enabled=false
+2025-12-30T21:49:37.596248727Z I1230 21:49:37.589487       1 envvar.go:172] "Feature gate default state" feature="ClientsPreferCBOR" enabled=false
+2025-12-30T21:49:37.596261863Z I1230 21:49:37.589510       1 envvar.go:172] "Feature gate default state" feature="InformerResourceVersion" enabled=false
+2025-12-30T21:49:37.596263857Z I1230 21:49:37.589513       1 envvar.go:172] "Feature gate default state" feature="InOrderInformers" enabled=true
+2025-12-30T21:49:37.596265371Z I1230 21:49:37.589516       1 envvar.go:172] "Feature gate default state" feature="WatchListClient" enabled=false
+2025-12-30T21:49:37.596266713Z I1230 21:49:37.590587       1 main.go:232] Start NewCSISnapshotController with kubeconfig [] resyncPeriod [15m0s]
+2025-12-30T21:49:37.910767054Z I1230 21:49:37.910192       1 leaderelection.go:257] attempting to acquire leader lease kube-system/snapshot-controller-leader...
+2025-12-30T21:49:38.089005564Z I1230 21:49:38.088900       1 leaderelection.go:271] successfully acquired lease kube-system/snapshot-controller-leader
+2025-12-30T21:49:38.089171740Z I1230 21:49:38.089140       1 leader_election.go:202] "New leader detected" leader="snapshot-controller-8b5bf4d55-hmjk2"
+2025-12-30T21:49:38.102731567Z I1230 21:49:38.091702       1 leader_election.go:194] "became leader, starting"
+2025-12-30T21:49:38.106872628Z I1230 21:49:38.098531       1 reflector.go:357] "Starting reflector" type="*v1.PersistentVolume" resyncPeriod="15m0s" reflector="k8s.io/client-go/informers/factory.go:160"
+2025-12-30T21:49:38.106889782Z I1230 21:49:38.098556       1 reflector.go:403] "Listing and watching" type="*v1.PersistentVolume" reflector="k8s.io/client-go/informers/factory.go:160"
+2025-12-30T21:49:38.106893440Z I1230 21:49:38.098782       1 reflector.go:357] "Starting reflector" type="*v1.VolumeSnapshotContent" resyncPeriod="15m0s" reflector="github.com/kubernetes-csi/external-snapshotter/client/v8/informers/externalversions/factory.go:142"
+2025-12-30T21:49:38.106899471Z I1230 21:49:38.098797       1 reflector.go:403] "Listing and watching" type="*v1.VolumeSnapshotContent" reflector="github.com/kubernetes-csi/external-snapshotter/client/v8/informers/externalversions/factory.go:142"
+2025-12-30T21:49:38.106902628Z I1230 21:49:38.098932       1 reflector.go:357] "Starting reflector" type="*v1.VolumeSnapshotClass" resyncPeriod="15m0s" reflector="github.com/kubernetes-csi/external-snapshotter/client/v8/informers/externalversions/factory.go:142"
+2025-12-30T21:49:38.106905163Z I1230 21:49:38.098953       1 reflector.go:403] "Listing and watching" type="*v1.VolumeSnapshotClass" reflector="github.com/kubernetes-csi/external-snapshotter/client/v8/informers/externalversions/factory.go:142"
+2025-12-30T21:49:38.106907639Z I1230 21:49:38.098978       1 reflector.go:357] "Starting reflector" type="*v1.VolumeSnapshot" resyncPeriod="15m0s" reflector="github.com/kubernetes-csi/external-snapshotter/client/v8/informers/externalversions/factory.go:142"
+2025-12-30T21:49:38.106910714Z I1230 21:49:38.098986       1 reflector.go:403] "Listing and watching" type="*v1.VolumeSnapshot" reflector="github.com/kubernetes-csi/external-snapshotter/client/v8/informers/externalversions/factory.go:142"
+2025-12-30T21:49:38.106913640Z I1230 21:49:38.099036       1 snapshot_controller_base.go:255] Starting snapshot controller
+2025-12-30T21:49:38.106916095Z I1230 21:49:38.099083       1 reflector.go:357] "Starting reflector" type="*v1.PersistentVolumeClaim" resyncPeriod="15m0s" reflector="k8s.io/client-go/informers/factory.go:160"
+2025-12-30T21:49:38.106918520Z I1230 21:49:38.099089       1 reflector.go:403] "Listing and watching" type="*v1.PersistentVolumeClaim" reflector="k8s.io/client-go/informers/factory.go:160"
+2025-12-30T21:49:38.106934172Z I1230 21:49:38.100613       1 reflector.go:430] "Caches populated" type="*v1.PersistentVolume" reflector="k8s.io/client-go/informers/factory.go:160"
+2025-12-30T21:49:38.106936907Z I1230 21:49:38.100990       1 reflector.go:430] "Caches populated" type="*v1.VolumeSnapshotClass" reflector="github.com/kubernetes-csi/external-snapshotter/client/v8/informers/externalversions/factory.go:142"
+2025-12-30T21:49:38.106939332Z I1230 21:49:38.101096       1 reflector.go:430] "Caches populated" type="*v1.PersistentVolumeClaim" reflector="k8s.io/client-go/informers/factory.go:160"
+2025-12-30T21:49:38.106941787Z I1230 21:49:38.101168       1 reflector.go:430] "Caches populated" type="*v1.VolumeSnapshotContent" reflector="github.com/kubernetes-csi/external-snapshotter/client/v8/informers/externalversions/factory.go:142"
+2025-12-30T21:49:38.106944293Z I1230 21:49:38.101240       1 reflector.go:430] "Caches populated" type="*v1.VolumeSnapshot" reflector="github.com/kubernetes-csi/external-snapshotter/client/v8/informers/externalversions/factory.go:142"
+2025-12-30T21:49:38.132732885Z I1230 21:49:38.130644       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:49:38.202839592Z I1230 21:49:38.199822       1 snapshot_controller_base.go:652] controller initialized
+2025-12-30T21:49:43.142268891Z I1230 21:49:43.142077       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:49:48.147172953Z I1230 21:49:48.147091       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:49:53.151565343Z I1230 21:49:53.151466       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:49:58.156469946Z I1230 21:49:58.156065       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:03.160927485Z I1230 21:50:03.160778       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:08.164006136Z I1230 21:50:08.163897       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:13.168646030Z I1230 21:50:13.168537       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:18.187730014Z I1230 21:50:18.187598       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:23.195009577Z I1230 21:50:23.194863       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:28.199832180Z I1230 21:50:28.199729       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:33.203746997Z I1230 21:50:33.203595       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:38.208936650Z I1230 21:50:38.208830       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:43.213994939Z I1230 21:50:43.213886       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:48.222462919Z I1230 21:50:48.222385       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:53.227776905Z I1230 21:50:53.227663       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:58.234919261Z I1230 21:50:58.234745       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:03.240502225Z I1230 21:51:03.240325       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:08.245724385Z I1230 21:51:08.245597       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:13.249343395Z I1230 21:51:13.249242       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:18.253507617Z I1230 21:51:18.253372       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:23.260076135Z I1230 21:51:23.259870       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:28.265543999Z I1230 21:51:28.265433       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:33.278789454Z I1230 21:51:33.278669       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:38.284260990Z I1230 21:51:38.284145       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:43.289456255Z I1230 21:51:43.289353       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:53.326663735Z I1230 21:51:48.295796       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:53.327612616Z I1230 21:51:53.299604       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:58.304724782Z I1230 21:51:58.304369       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:03.310297290Z I1230 21:52:03.310101       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:08.315094504Z I1230 21:52:08.314631       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:13.322571703Z I1230 21:52:13.322469       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:18.335588797Z I1230 21:52:18.335468       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:23.339215994Z I1230 21:52:23.339139       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:28.343918138Z I1230 21:52:28.343808       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:33.347950579Z I1230 21:52:33.347854       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:38.352608818Z I1230 21:52:38.352349       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:43.358882865Z I1230 21:52:43.358693       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:48.364718382Z I1230 21:52:48.364568       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:53.368540115Z I1230 21:52:53.368404       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:58.372306751Z I1230 21:52:58.372228       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:03.377551914Z I1230 21:53:03.377430       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:08.382651260Z I1230 21:53:08.382547       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:13.386499589Z I1230 21:53:13.386395       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:18.393410022Z I1230 21:53:18.393214       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:23.406317951Z I1230 21:53:23.406076       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:28.411809950Z I1230 21:53:28.411696       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:33.424796980Z I1230 21:53:33.424635       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:38.431505441Z I1230 21:53:38.431371       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:43.436715644Z I1230 21:53:43.436616       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:48.440137532Z I1230 21:53:48.440023       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:53.452052279Z I1230 21:53:53.451953       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:58.455887539Z I1230 21:53:58.455596       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:03.469475721Z I1230 21:54:03.469379       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:08.474871957Z I1230 21:54:08.474750       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:13.486654189Z I1230 21:54:13.486536       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:18.491539812Z I1230 21:54:18.491428       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:23.495440324Z I1230 21:54:23.495061       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:28.502280032Z I1230 21:54:28.502141       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:33.514744593Z I1230 21:54:33.514632       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:38.518499687Z I1230 21:54:38.518396       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:43.530022818Z I1230 21:54:43.529903       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:48.542173387Z I1230 21:54:48.542070       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:53.554362387Z I1230 21:54:53.554163       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:58.566503076Z I1230 21:54:58.566358       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:03.570463402Z I1230 21:55:03.570373       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:08.583982940Z I1230 21:55:08.583873       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:13.596304330Z I1230 21:55:13.595853       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:18.602032974Z I1230 21:55:18.601912       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:23.615443072Z I1230 21:55:23.614708       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:28.620555484Z I1230 21:55:28.620423       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:33.625147661Z I1230 21:55:33.624824       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:38.629747655Z I1230 21:55:38.629647       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:43.642426301Z I1230 21:55:43.639394       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:48.647200022Z I1230 21:55:48.647058       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:53.651831882Z I1230 21:55:53.651735       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:58.665708409Z I1230 21:55:58.665608       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:03.670311130Z I1230 21:56:03.670099       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:08.683115042Z I1230 21:56:08.682974       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:12.104386046Z I1230 21:56:12.104188       1 reflector.go:946] "Watch close" reflector="k8s.io/client-go/informers/factory.go:160" type="*v1.PersistentVolume" totalItems=7
+2025-12-30T21:56:13.686555132Z I1230 21:56:13.686463       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:18.700247154Z I1230 21:56:18.700112       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:23.703540824Z I1230 21:56:23.703440       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:28.708656726Z I1230 21:56:28.708494       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:33.713685560Z I1230 21:56:33.713594       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:38.719538174Z I1230 21:56:38.719431       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:43.724262559Z I1230 21:56:43.724063       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:48.728260167Z I1230 21:56:48.728165       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:53.732816498Z I1230 21:56:53.732707       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:58.737547694Z I1230 21:56:58.736770       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:03.749162355Z I1230 21:57:03.749022       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:08.762773576Z I1230 21:57:08.762700       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:13.777297555Z I1230 21:57:13.777181       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:18.789752681Z I1230 21:57:18.789640       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:23.802276475Z I1230 21:57:23.802064       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:28.815024606Z I1230 21:57:28.814848       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:33.827525739Z I1230 21:57:33.827421       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:38.840305585Z I1230 21:57:38.840170       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:43.852300777Z I1230 21:57:43.852168       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:48.861776769Z I1230 21:57:48.861670       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:53.867667161Z I1230 21:57:53.867539       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:57.103346374Z I1230 21:57:57.103173       1 reflector.go:946] "Watch close" reflector="github.com/kubernetes-csi/external-snapshotter/client/v8/informers/externalversions/factory.go:142" type="*v1.VolumeSnapshot" totalItems=10
+2025-12-30T21:57:58.871628423Z I1230 21:57:58.871516       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:03.876242262Z I1230 21:58:03.876148       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:08.881427873Z I1230 21:58:08.881324       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:13.103563673Z I1230 21:58:13.103390       1 reflector.go:946] "Watch close" reflector="github.com/kubernetes-csi/external-snapshotter/client/v8/informers/externalversions/factory.go:142" type="*v1.VolumeSnapshotContent" totalItems=10
+2025-12-30T21:58:13.884944303Z I1230 21:58:13.884842       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:18.891967141Z I1230 21:58:18.891660       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:23.915056195Z I1230 21:58:23.914516       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:28.103426200Z I1230 21:58:28.103278       1 reflector.go:946] "Watch close" reflector="github.com/kubernetes-csi/external-snapshotter/client/v8/informers/externalversions/factory.go:142" type="*v1.VolumeSnapshotClass" totalItems=9
+2025-12-30T21:58:28.921290724Z I1230 21:58:28.921191       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:33.934984388Z I1230 21:58:33.934767       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:38.941830829Z I1230 21:58:38.941708       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:43.103821595Z I1230 21:58:43.103633       1 reflector.go:946] "Watch close" reflector="k8s.io/client-go/informers/factory.go:160" type="*v1.PersistentVolumeClaim" totalItems=14
+2025-12-30T21:58:43.954252905Z I1230 21:58:43.954172       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:48.959454103Z I1230 21:58:48.959338       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:53.965423467Z I1230 21:58:53.965324       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:58.970554160Z I1230 21:58:58.970449       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:03.983775710Z I1230 21:59:03.983666       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:08.989359004Z I1230 21:59:08.989200       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:14.001692489Z I1230 21:59:14.001529       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:19.006100672Z I1230 21:59:19.005951       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:24.030522631Z I1230 21:59:24.030404       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:29.034681822Z I1230 21:59:29.034578       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:34.038514832Z I1230 21:59:34.038260       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:39.050506860Z I1230 21:59:39.050353       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:44.054173002Z I1230 21:59:44.053926       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:49.066411945Z I1230 21:59:49.066178       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:54.070110599Z I1230 21:59:54.069996       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:59.084514872Z I1230 21:59:59.084350       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:04.089257987Z I1230 22:00:04.089142       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:09.102776607Z I1230 22:00:09.102636       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:14.108918561Z I1230 22:00:14.108767       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:19.121880152Z I1230 22:00:19.121780       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:24.126383150Z I1230 22:00:24.126221       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:29.134002218Z I1230 22:00:29.133913       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:34.139694312Z I1230 22:00:34.139524       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:39.143300072Z I1230 22:00:39.142868       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:44.148318195Z I1230 22:00:44.148176       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:49.161712602Z I1230 22:00:49.161070       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:54.175764153Z I1230 22:00:54.175660       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:59.180225993Z I1230 22:00:59.180118       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:01:04.192833110Z I1230 22:01:04.192728       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:01:09.199802467Z I1230 22:01:09.199578       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:01:14.212220230Z I1230 22:01:14.212108       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:01:19.217464386Z I1230 22:01:19.217342       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:01:24.230067759Z I1230 22:01:24.229897       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:01:29.234816004Z I1230 22:01:29.234687       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader
+2025-12-30T22:01:33.105782984Z I1230 22:01:33.105604       1 reflector.go:946] "Watch close" reflector="k8s.io/client-go/informers/factory.go:160" type="*v1.PersistentVolume" totalItems=10
+2025-12-30T22:01:34.251541120Z I1230 22:01:34.251429       1 leaderelection.go:293] successfully renewed lease kube-system/snapshot-controller-leader

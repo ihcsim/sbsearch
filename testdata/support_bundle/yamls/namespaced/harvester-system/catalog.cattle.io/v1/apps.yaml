@@ -1,0 +1,979 @@
+apiVersion: v1
+items:
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: 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
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.harvester.v1
+      objectset.rio.cattle.io/owner-namespace: harvester-system
+    creationTimestamp: "2025-12-30T21:49:26Z"
+    generation: 2
+    labels:
+      objectset.rio.cattle.io/hash: c783b0f12d991fbc8c3bc487221fc10100ef7f85
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"12fac8d0-5d52-45a8-a0b0-d2846dd21805"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:fleet.cattle.io/agent-namespace: {}
+                f:fleet.cattle.io/bundle-id: {}
+                f:fleet.cattle.io/keep-resources: {}
+                f:fleet.cattle.io/service-account: {}
+              f:apiVersion: {}
+              f:appVersion: {}
+              f:description: {}
+              f:home: {}
+              f:icon: {}
+              f:keywords: {}
+              f:name: {}
+              f:sources: {}
+              f:type: {}
+              f:version: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:notes: {}
+            f:readme: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:49:51Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:49:51Z"
+    name: harvester
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.harvester.v1
+      uid: 12fac8d0-5d52-45a8-a0b0-d2846dd21805
+    resourceVersion: "5155"
+    uid: 505a45e5-ee7f-4444-a60c-5f8089fefdd4
+  spec:
+    chart:
+      metadata:
+        annotations:
+          fleet.cattle.io/agent-namespace: cattle-fleet-local-system
+          fleet.cattle.io/bundle-id: mcc-harvester
+          fleet.cattle.io/keep-resources: "false"
+          fleet.cattle.io/service-account: "null"
+        apiVersion: v2
+        appVersion: v1.7.0
+        description: Harvester is an open source Hyper-Converged Infrastructure(HCI)
+          solution based on Kubernetes.
+        home: https://github.com/harvester/harvester
+        icon: https://harvester.github.io/images/logo_horizontal.svg
+        keywords:
+        - virtualization
+        - HCI
+        name: harvester
+        sources:
+        - https://github.com/harvester/harvester
+        type: application
+        version: 1.7.0
+    helmVersion: 3
+    info:
+      description: Install complete
+      firstDeployed: "2025-12-30T21:49:24Z"
+      lastDeployed: "2025-12-30T21:49:24Z"
+      notes: |
+        The Harvester has been installed into "harvester-system" namespace with "harvester" as release name.
+
+        - [x] KubeVirt Operator
+        - [x] KubeVirt Resource named "kubevirt"
+        - [x] Longhorn
+        - [x] Harvester Network Controller
+
+        Please make sure there is a default StorageClass in the Kubernetes cluster.
+
+        To learn more about the release, try:
+
+          $ helm status harvester -n harvester-system
+          $ helm get all harvester -n harvester-system
+      readme: "# Harvester Helm Chart\n\n## Chart Details\n\nThis chart will do the
+        following:\n\n- Deploy a KubeVirt Operator if needed, defaults to deploy.\n-
+        Deploy the Harvester resources.\n- Deploy [Longhorn](https://longhorn.io)
+        as the built-in storage management.\n- Deploy Containerized Data Importer
+        (CDI) to support third-party storage management.\n- Deploy csi-snapshotter\n-
+        Deploy Snapshot Validation Webhook\n- Deploy whereabouts\n\n## Introduction\n\nHarvester
+        uses a `ManagedChart` resource to deploy its core components. This is configured
+        via the [harvester-installer](https://github.com/harvester/harvester-installer/blob/master/pkg/config/templates/rancherd-10-harvester.yaml).
+        Be aware that `deploy/harvester` and `deploy/harvester-crd` are two separate
+        `ManagedChart` resources.\n\nOnce a `ManagedChart` is created, Fleet generates
+        a `Bundle` resource to trigger Helm and install the chart. You can learn more
+        about this process in the [Fleet documentation](https://fleet.rancher.io/concepts).\n\nDuring
+        upgrades, Harvester runs a script to patch the release version in the `ManagedChart`.
+        This happens in the [`upgrade_manifests.sh`](https://github.com/harvester/harvester/blob/50da36ac3b751c1a1dbfc8d25e5499a4c6216450/package/upgrade/upgrade_manifests.sh#L885-L935)
+        script.\n\n\n## For Developers\n\n### How to bump dependency charts\n\n1.
+        Make sure the correct dependency version is specified in `go.mod`.\n2. Run
+        `go mod vendor`.\n3. Update the `Chart.yaml` and `values.yaml` files with
+        the correct version numbers.\n4. In the `deploy/charts/harvester` directory,
+        run `helm dependency update .`\n   \nIf the dependency doesn’t involve a change
+        in go.mod, you can start from step 3.\n\nHere are example PRs for reference:\n\n-
+        https://github.com/harvester/harvester/pull/8233\n- https://github.com/harvester/harvester/pull/8210\n\n###
+        Use case\n\nTo use Longhorn release candidates for testing purposes, download
+        the Longhorn charts and place them in `deploy/charts/harvester/dependency_charts/longhorn`.\n\nSince
+        we're using a non-official version, we need to modify the Chart.yaml to point
+        to the local folder instead of the remote repository:\n\n```diff\n-  repository:
+        https://charts.longhorn.io\n-  version: 1.7.1\n+  repository: file://dependency_charts/longhorn\n+
+        \ version: 1.7.2-rc2\n```\n\n## License\nCopyright (c) 2025 [SUSE, LLC.](https://www.suse.com/)\n\nLicensed
+        under the Apache License, Version 2.0 (the \"License\");\nyou may not use
+        this file except in compliance with the License.\nYou may obtain a copy of
+        the License at\n\n[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)\n\nUnless
+        required by applicable law or agreed to in writing, software\ndistributed
+        under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES
+        OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for
+        the specific language governing permissions and\nlimitations under the License.\n"
+      status: deployed
+    name: harvester
+    namespace: harvester-system
+    resources:
+    - apiVersion: scheduling.k8s.io/v1
+      kind: PriorityClass
+      name: kubevirt-cluster-critical
+    - apiVersion: scheduling.k8s.io/v1
+      kind: PriorityClass
+      name: longhorn-critical
+    - apiVersion: v1
+      kind: Namespace
+      name: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      kind: NetworkPolicy
+      name: backing-image-data-source
+      namespace: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      kind: NetworkPolicy
+      name: backing-image-manager
+      namespace: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      kind: NetworkPolicy
+      name: instance-manager
+      namespace: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      kind: NetworkPolicy
+      name: longhorn-manager
+      namespace: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      kind: NetworkPolicy
+      name: longhorn-recovery-backend
+      namespace: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      kind: NetworkPolicy
+      name: longhorn-conversion-webhook
+      namespace: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      kind: NetworkPolicy
+      name: longhorn-admission-webhook
+      namespace: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      kind: NetworkPolicy
+      name: cattle-monitoring-prometheus
+      namespace: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      kind: NetworkPolicy
+      name: harvester
+      namespace: longhorn-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: cdi-operator
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: snapshot-controller
+      namespace: kube-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: harvester-load-balancer
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: harvester-load-balancer-webhook
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: harvester-network-controller
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: harvester-network-helper
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: harvester-network-webhook
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: harvester-networkfs-manager
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: harvester-node-disk-manager
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: harvester-node-disk-manager-webhook
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: harvester-node-manager
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: harvester-node-manager-webhook
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: kube-vip
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: kubevirt-operator
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: longhorn-service-account
+      namespace: longhorn-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: longhorn-ui-service-account
+      namespace: longhorn-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: longhorn-support-bundle
+      namespace: longhorn-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: harvester-whereabouts
+      namespace: kube-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: harvester
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: ConfigMap
+      name: longhorn-default-resource
+      namespace: longhorn-system
+    - apiVersion: v1
+      kind: ConfigMap
+      name: longhorn-default-setting
+      namespace: longhorn-system
+    - apiVersion: v1
+      kind: ConfigMap
+      name: longhorn-storageclass
+      namespace: longhorn-system
+    - apiVersion: v1
+      kind: ConfigMap
+      name: whereabouts-config
+      namespace: kube-system
+    - apiVersion: v1
+      kind: ConfigMap
+      name: vip
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: ConfigMap
+      name: harvester-helpers
+      namespace: harvester-system
+    - apiVersion: storage.k8s.io/v1
+      kind: StorageClass
+      name: harvester-longhorn
+    - apiVersion: storage.k8s.io/v1
+      kind: StorageClass
+      name: vmstate-persistence
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: ippools.loadbalancer.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: loadbalancers.loadbalancer.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: clusternetworks.network.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: linkmonitors.network.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: vlanconfigs.network.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: vlanstatuses.network.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: networkfilesystems.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: blockdevices.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: lvmvolumegroups.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: cloudinits.node.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: hugepages.node.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: ksmtuneds.node.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: nodeconfigs.node.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: backingimagedatasources.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: backingimagemanagers.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: backingimages.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: backupbackingimages.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: backups.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: backuptargets.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: backupvolumes.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: engineimages.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: engines.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: instancemanagers.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: nodes.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: orphans.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: recurringjobs.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: replicas.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: settings.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: sharemanagers.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: snapshots.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: supportbundles.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: systembackups.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: systemrestores.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: volumeattachments.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: volumes.longhorn.io
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: cdi-operator-cluster
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: snapshot-controller-runner
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: harvester-load-balancer
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: harvester-load-balancer-webhook
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: harvester-network-controller
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: harvester-network-helper
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: harvester-network-webhook
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: harvester-networkfs-manager
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: harvester-node-disk-manager
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: harvester-node-disk-manager-webhook
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: harvester-node-manager
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: harvester-node-manager-webhook
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: kube-vip
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: kubevirt.io:operator
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: kubevirt-operator
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: longhorn-role
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: harvester-whereabouts
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: harvesterhci.io:edit
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: harvesterhci.io:view
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: harvesterhci.io:cloudprovider
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: harvesterhci.io:csi-driver
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: cdi-operator
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: snapshot-controller-role
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: harvester-load-balancer
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: harvester-load-balancer-webhook
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: harvester-network-controller
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: harvester-network-helper
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: harvester-network-webhook
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: harvester-networkfs-manager
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: harvester-node-disk-manager
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: harvester-node-disk-manager-webhook
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: harvester-node-manager
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: harvester-node-manager-webhook
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: kube-vip
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: kubevirt-operator
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: longhorn-bind
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: longhorn-support-bundle
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: harvester-whereabouts
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: harvester
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: Role
+      name: cdi-operator
+      namespace: harvester-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: Role
+      name: snapshot-controller-leaderelection
+      namespace: kube-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: Role
+      name: kubevirt-operator
+      namespace: harvester-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: Role
+      name: longhorn
+      namespace: longhorn-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: RoleBinding
+      name: cdi-operator
+      namespace: harvester-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: RoleBinding
+      name: snapshot-controller-leaderelection
+      namespace: kube-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: RoleBinding
+      name: kubevirt-operator-rolebinding
+      namespace: harvester-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: RoleBinding
+      name: longhorn
+      namespace: longhorn-system
+    - apiVersion: v1
+      kind: Service
+      name: harvester-load-balancer-webhook
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: Service
+      name: harvester-network-webhook
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: Service
+      name: harvester-node-disk-manager-webhook
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: Service
+      name: harvester-node-manager-webhook
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: Service
+      name: longhorn-backend
+      namespace: longhorn-system
+    - apiVersion: v1
+      kind: Service
+      name: longhorn-frontend
+      namespace: longhorn-system
+    - apiVersion: v1
+      kind: Service
+      name: longhorn-admission-webhook
+      namespace: longhorn-system
+    - apiVersion: v1
+      kind: Service
+      name: longhorn-recovery-backend
+      namespace: longhorn-system
+    - apiVersion: v1
+      kind: Service
+      name: harvester
+      namespace: harvester-system
+    - apiVersion: v1
+      kind: Service
+      name: harvester-webhook
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      kind: DaemonSet
+      name: harvester-network-controller
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      kind: DaemonSet
+      name: harvester-networkfs-manager
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      kind: DaemonSet
+      name: harvester-node-disk-manager
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      kind: DaemonSet
+      name: harvester-node-manager
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      kind: DaemonSet
+      name: kube-vip
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      kind: DaemonSet
+      name: longhorn-manager
+      namespace: longhorn-system
+    - apiVersion: apps/v1
+      kind: DaemonSet
+      name: harvester-whereabouts
+      namespace: kube-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: cdi-operator
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: snapshot-controller
+      namespace: kube-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: harvester-load-balancer
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: harvester-load-balancer-webhook
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: harvester-network-controller-manager
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: harvester-network-webhook
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: harvester-node-disk-manager-webhook
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: harvester-node-manager-webhook
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: virt-operator
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: longhorn-driver-deployer
+      namespace: longhorn-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: longhorn-ui
+      namespace: longhorn-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: whereabouts-controller
+      namespace: kube-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: harvester
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: harvester-webhook
+      namespace: harvester-system
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      kind: CDI
+      name: cdi
+    - apiVersion: kubevirt.io/v1
+      kind: KubeVirt
+      name: kubevirt
+      namespace: harvester-system
+    - apiVersion: upgrade.cattle.io/v1
+      kind: Plan
+      name: sync-additional-ca
+      namespace: cattle-system
+    - apiVersion: monitoring.coreos.com/v1
+      kind: PrometheusRule
+      name: prometheus-longhorn-rules
+      namespace: longhorn-system
+    - apiVersion: monitoring.coreos.com/v1
+      kind: ServiceMonitor
+      name: longhorn-prometheus-servicemonitor
+      namespace: longhorn-system
+    - apiVersion: admissionregistration.k8s.io/v1
+      kind: ValidatingAdmissionPolicy
+      name: harvester-immutable-promote-cidr
+    - apiVersion: admissionregistration.k8s.io/v1
+      kind: ValidatingAdmissionPolicyBinding
+      name: harvester-immutable-promote-cidr
+    - apiVersion: snapshot.storage.k8s.io/v1
+      kind: VolumeSnapshotClass
+      name: longhorn
+    - apiVersion: snapshot.storage.k8s.io/v1
+      kind: VolumeSnapshotClass
+      name: longhorn-snapshot
+      namespace: longhorn-system
+    version: 1
+  status:
+    observedGeneration: 2
+    summary:
+      state: deployed
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/8RXTW/jNhD9K8bsVaIt2c6HgJ4SoLvooUC66KG7QTEmxxJrimTJkdJs4P9eUP5IHGy2adFVbpQ0w/fmvdFIfICWGBUyQvUAaK1jZO1sTJdu9QdJjsQiaCckMhsS2k21ggoaMm2O3kP2Ypy7sxTyut9ABdO+yCY/aat++IVkIP7HNIstQQWxEQlJBDKEkURfiAZDT5Ep5DIo0Rev2ip6lGm/x+R4H5la2GZgcEXmmxU3GBuooChmuMCzRTm/JDzDxeWZWqvL5Wx+sVzO5issZ4uLi7KQadM9/xOysLv9IpcMBsI3tKZAVlKE6tMDoNe/UojaWahgKHdlnNz8nEKvyRAPT9ZoImUgneXgjKEAFYeOMthom/w6yv6vhO0Gr8/m6/Pz8mKW43JW5ovFTOVI5TKfF8VygVLNiRawvd1mED3JJKRsMHBafKO91oaIn4iMNVk+MWv3LB8Cc+MkmkelnmevOqsM5QPfVsr8ufDP4zdEPg8UXRcGoWEQ8CuBkUKvJeUopessQwXJ3lNTSkh3/FObxLmYQQaKogza7zyC92TayaDNZO3CRJE37l7bevL+wHZydXMdBWTQuF3/MPtYTae15qZbCena6bGyxxVkoOWAcIg/PhL7zPTetlhTnBpXu98bF/QXZxmNiH0NGWzo/s4FlVoOeh24Q6O/DGZBBu+vPsDtiz191PDTa+neZtAftdpJtd1mw0w5ajjPQNu1S51yKuIHGxmNmUjXekM8eKZD5OtBTUoNUM7KZV6U+Xz2sSyqxWVVnP8G6UV/TVQgVEOd705tmQzuXSX3PtvP9t273XpyTYzaxHTvY6Pj3l9tpelUIhcZuUsdpg7Q/3k8POnX54MBvaa/mGy6jGJzEZPjwzu8HwBXXWTX3ux3uKa1tnpv757MpltRsj6Kw0poB9vs/0dCpVLuscJG6u8FtaF7jzqMA+bDcXSPgnfohz87xzgOZJQNqc5Q365Qbjo/Eioxa1uPBNZ57wLvvijjQHa+DqjIuJFK3OONA7Yf9SOB7b5dLcpGWxqzR0+Rh4+tcnfWOFQ00vz5CoW3AA4U2YU3gWZqvUF+U+xx+92ZrqVo0cfGsTQYI0VxuBbJCKxpv/cYDJxlsvyWFMbF1t47Z6K4aygQrlzHUUirhbRy/b0wrVMUjZY0PrTrKRj0Xts6oK1J+0DpiLQ7171M5ekvf7F9/CtOh+6UT+pHshR2J45qlkHs2hbDPVQP2+327wAAAP//6cVd8agQAAA
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.harvester-crd.v1
+      objectset.rio.cattle.io/owner-namespace: harvester-system
+    creationTimestamp: "2025-12-30T21:49:18Z"
+    generation: 2
+    labels:
+      objectset.rio.cattle.io/hash: 110a4a64239ea6a496dfd950385503ba2048821c
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"63f77280-a502-440d-ae25-31154acd3ee4"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:fleet.cattle.io/agent-namespace: {}
+                f:fleet.cattle.io/bundle-id: {}
+                f:fleet.cattle.io/keep-resources: {}
+                f:fleet.cattle.io/service-account: {}
+              f:apiVersion: {}
+              f:appVersion: {}
+              f:description: {}
+              f:home: {}
+              f:icon: {}
+              f:keywords: {}
+              f:name: {}
+              f:sources: {}
+              f:version: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:readme: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:49:21Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:49:21Z"
+    name: harvester-crd
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.harvester-crd.v1
+      uid: 63f77280-a502-440d-ae25-31154acd3ee4
+    resourceVersion: "3450"
+    uid: 8daf2d0d-59b8-41ee-a088-684c8c9be959
+  spec:
+    chart:
+      metadata:
+        annotations:
+          fleet.cattle.io/agent-namespace: cattle-fleet-local-system
+          fleet.cattle.io/bundle-id: mcc-harvester-crd
+          fleet.cattle.io/keep-resources: "false"
+          fleet.cattle.io/service-account: "null"
+        apiVersion: v2
+        appVersion: v1.7.0
+        description: Helm chart for deploying Harvester CRDs.
+        home: https://github.com/harvester/harvester
+        icon: https://harvester.github.io/images/logo_horizontal.svg
+        keywords:
+        - virtualization
+        - HCI
+        name: harvester-crd
+        sources:
+        - https://github.com/harvester/harvester
+        version: 1.7.0
+    helmVersion: 3
+    info:
+      description: Install complete
+      firstDeployed: "2025-12-30T21:49:17Z"
+      lastDeployed: "2025-12-30T21:49:17Z"
+      readme: "# Harvester CRD Helm Chart\n\n## Chart Details\n\nThis chart includes
+        following CRDs:\n\n- Harvester (Automatically generated by [this script](https://github.com/harvester/harvester/blob/master/scripts/generate-manifest))\n-
+        KubeVirt\n- csi-snapshotter\n- whereabouts\n\n## Introduction\n\nHarvester
+        uses a `ManagedChart` resource to deploy the [Harvester CRDs](https://github.com/harvester/harvester/tree/master/deploy/charts/harvester-crd).
+        This is configured via the [harvester-installer](https://github.com/harvester/harvester-installer/blob/master/pkg/config/templates/rancherd-10-harvester.yaml).
+        Be aware that `deploy/harvester` and `deploy/harvester-crd` are two separate
+        `ManagedChart` resources.\n\nHarvester depends on several upstream projects
+        to provide the CRDs and APIs it needs. To simplify the management of these
+        resources, Harvester organized them in a separate chart, as recommended by
+        the [Helm's documentation](https://helm.sh/docs/chart_best_practices/custom_resource_definitions/#method-2-separate-charts).\n\nHarvester
+        simplifies the upgrade of the CRDs by orchestrating their manifests in the
+        [`upgrade_manifests.sh`](https://github.com/harvester/harvester/blob/50da36ac3b751c1a1dbfc8d25e5499a4c6216450/package/upgrade/upgrade_manifests.sh#L1358)
+        script. This ensures that users are not burdened by the different CRD schema
+        upgrade strategies of the dependency projects.\n\t\n> [!Note]\n> Longhorn
+        CRDs are not managed here because Longhorn handles its own CRD creation process.\n\n##
+        For Developers\n\n### How to bump CRDs\n\nBumping a CRD is quite straightforward.
+        Developers just need to download the CRD from the correct source and place
+        it in the `harvester-crds` folder.\n\nFor example, to bump the KubeVirt CRD
+        to version v1.5.1, download it from:\n\n`https://github.com/kubevirt/kubevirt/releases/download/v1.5.1/kubevirt-operator.yaml`\n\nSearch
+        for `CustomResourceDefinition` in the file, copy the relevant CRD, and save
+        it with a versioned filename like `crd-kubevirt-1.5.1.yaml`. Be sure to delete
+        the old version.\n\n> If you're interested in this change, please check [this
+        issue](https://github.com/harvester/harvester/issues/8163) for more details.\n\n###
+        Special Case\n\nHowever, not every CRDs can be managed under `harvester-crds`
+        folder.\n\nFor example, the `cdi` CRDs are managed differently to accommodate
+        the [built-in schema removal mechanism](https://github.com/kubevirt/containerized-data-importer/blob/e136558c999acce03291849aacc8154026e58445/pkg/operator/controller/callbacks.go#L61-L62)
+        of the `cdi-operator`. For more information, see the discussion at [#7912
+        (comment)](https://github.com/harvester/harvester/issues/7912#issuecomment-2743944344).\n\nIf
+        the CRD is similar to `cdi`, copy it to the `package/upgrade/extra_manifests`
+        folder, and update the [`upgrade_manifests.sh`](https://github.com/harvester/harvester/blob/50da36ac3b751c1a1dbfc8d25e5499a4c6216450/package/upgrade/upgrade_manifests.sh#L1358)
+        script like this:\n\n```sh\nfor manifest in /usr/local/share/extra_manifests/{your_new_crds}/*.yaml;
+        do\n    echo \"Applying $manifest\"\n    kubectl apply -f \"$manifest\"\ndone\n```\n\nIn
+        this case, there's no need to put it under the `harvester-crd` folder.\n\n##
+        License\nCopyright (c) 2025 [SUSE, LLC.](https://www.suse.com/)\n\nLicensed
+        under the Apache License, Version 2.0 (the \"License\");\nyou may not use
+        this file except in compliance with the License.\nYou may obtain a copy of
+        the License at\n\n[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)\n\nUnless
+        required by applicable law or agreed to in writing, software\ndistributed
+        under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES
+        OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for
+        the specific language governing permissions and\nlimitations under the License.\n"
+      status: deployed
+    name: harvester-crd
+    namespace: harvester-system
+    resources:
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: kubevirts.kubevirt.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: addons.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: keypairs.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: preferences.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: resourcequotas.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: schedulevmbackups.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: settings.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: supportbundles.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: upgradelogs.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: upgrades.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: versions.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: virtualmachinebackups.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: virtualmachineimagedownloaders.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: virtualmachineimages.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: virtualmachinerestores.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: virtualmachinetemplates.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: virtualmachinetemplateversions.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: volumesnapshotclasses.snapshot.storage.k8s.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: volumesnapshotcontents.snapshot.storage.k8s.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: volumesnapshots.snapshot.storage.k8s.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: ippools.whereabouts.cni.cncf.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: nodeslicepools.whereabouts.cni.cncf.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: overlappingrangeipreservations.whereabouts.cni.cncf.io
+    version: 1
+  status:
+    observedGeneration: 2
+    summary:
+      state: deployed
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14492"

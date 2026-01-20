@@ -1,0 +1,284 @@
+apiVersion: v1
+items:
+- apiVersion: harvesterhci.io/v1beta1
+  kind: Addon
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"harvesterhci.io/v1beta1","kind":"Addon","metadata":{"annotations":{},"labels":{"addon.harvesterhci.io/displayName":"virtual-machine-auto-balance","addon.harvesterhci.io/experimental":"true"},"name":"descheduler","namespace":"kube-system"},"spec":{"chart":"descheduler","enabled":false,"repo":"http://harvester-cluster-repo.cattle-system.svc/charts","valuesContent":"kind: Deployment\nimage:\n  repository: registry.k8s.io/descheduler/descheduler\n  pullPolicy: IfNotPresent\ndeschedulingInterval: 5m\nreplicas: 1\ncmdOptions:\n  v: 3\n  feature-gates: EvictionsInBackground=true\ndeschedulerPolicy:\n  maxNoOfPodsToEvictPerNode: 5\n  profiles:\n  - name: default\n    pluginConfig:\n    - name: DefaultEvictor\n      args:\n        nodeFit: true\n        ignorePvcPods: false\n        evictLocalStoragePods: true\n        labelSelector:\n          matchExpressions:\n            - key: \"kubevirt.io\"\n              operator: \"In\"\n              values:\n                - \"virt-launcher\"\n    - name: LowNodeUtilization\n      args:\n        evictableNamespaces:\n          exclude:\n          - cattle-dashboards\n          - cattle-fleet-clusters-system\n          - cattle-fleet-local-system\n          - cattle-fleet-system\n          - cattle-logging-system\n          - cattle-monitoring-system\n          - cattle-provisioning-capi-system\n          - cattle-system\n          - fleet-local\n          - harvester-system\n          - kube-system\n          - local\n          - longhorn-system\n        thresholds:\n          cpu: 30\n          memory: 30\n        targetThresholds:\n          cpu: 50\n          memory: 50\n    plugins:\n      balance:\n        enabled:\n        - LowNodeUtilization\n","version":"0.33.0"}}
+    creationTimestamp: "2025-12-30T21:49:32Z"
+    generation: 1
+    labels:
+      addon.harvesterhci.io/displayName: virtual-machine-auto-balance
+      addon.harvesterhci.io/experimental: "true"
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:addon.harvesterhci.io/displayName: {}
+            f:addon.harvesterhci.io/experimental: {}
+        f:spec:
+          .: {}
+          f:chart: {}
+          f:enabled: {}
+          f:repo: {}
+          f:valuesContent: {}
+          f:version: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2025-12-30T21:49:32Z"
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:status: {}
+      manager: harvester
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:50:36Z"
+    name: descheduler
+    namespace: kube-system
+    resourceVersion: "6315"
+    uid: b65a59a1-82d7-4c4d-9fda-170432f75d83
+  spec:
+    chart: descheduler
+    enabled: false
+    repo: http://harvester-cluster-repo.cattle-system.svc/charts
+    valuesContent: |
+      kind: Deployment
+      image:
+        repository: registry.k8s.io/descheduler/descheduler
+        pullPolicy: IfNotPresent
+      deschedulingInterval: 5m
+      replicas: 1
+      cmdOptions:
+        v: 3
+        feature-gates: EvictionsInBackground=true
+      deschedulerPolicy:
+        maxNoOfPodsToEvictPerNode: 5
+        profiles:
+        - name: default
+          pluginConfig:
+          - name: DefaultEvictor
+            args:
+              nodeFit: true
+              ignorePvcPods: false
+              evictLocalStoragePods: true
+              labelSelector:
+                matchExpressions:
+                  - key: "kubevirt.io"
+                    operator: "In"
+                    values:
+                      - "virt-launcher"
+          - name: LowNodeUtilization
+            args:
+              evictableNamespaces:
+                exclude:
+                - cattle-dashboards
+                - cattle-fleet-clusters-system
+                - cattle-fleet-local-system
+                - cattle-fleet-system
+                - cattle-logging-system
+                - cattle-monitoring-system
+                - cattle-provisioning-capi-system
+                - cattle-system
+                - fleet-local
+                - harvester-system
+                - kube-system
+                - local
+                - longhorn-system
+              thresholds:
+                cpu: 30
+                memory: 30
+              targetThresholds:
+                cpu: 50
+                memory: 50
+          plugins:
+            balance:
+              enabled:
+              - LowNodeUtilization
+    version: 0.33.0
+  status:
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:50:36Z"
+      status: "True"
+      type: Completed
+    - lastUpdateTime: "2025-12-30T21:50:36Z"
+      status: "False"
+      type: InProgress
+    - lastUpdateTime: "2025-12-30T21:50:36Z"
+      status: "False"
+      type: OperationFailed
+    status: AddonDisabled
+- apiVersion: harvesterhci.io/v1beta1
+  kind: Addon
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"harvesterhci.io/v1beta1","kind":"Addon","metadata":{"annotations":{},"labels":{"addon.harvesterhci.io/experimental":"true"},"name":"kubeovn-operator","namespace":"kube-system"},"spec":{"chart":"kubeovn-operator","enabled":false,"repo":"http://harvester-cluster-repo.cattle-system.svc/charts","valuesContent":"fullnameOverride: harvester-kubeovn-operator\nenableConfiguration: true\nconfigurationSpec:\n  components:\n    OVSDBConTimeout: 3\n    OVSDBInactivityTimeout: 10\n    checkGateway: true\n    enableANP: false\n    enableBindLocalIP: true\n    enableExternalVPC: true\n    enableIC: false\n    enableKeepVMIP: true\n    enableLB: true\n    enableLBSVC: false\n    enableLiveMigrationOptimize: true\n    enableNATGateway: true\n    enableNP: true\n    enableOVNIPSec: false\n    enableTProxy: false\n    hardwareOffload: false\n    logicalGateway: false\n    lsCtSkipOstLportIPS: true\n    lsDnatModDlDst: true\n    secureServing: false\n    setVLANTxOff: false\n    u2oInterconnection: false\n  ipv4:\n    joinCIDR: 100.64.0.0/16\n    pingerExternalAddress: 1.1.1.1\n    pingerExternalDomain: google.com.\n    podCIDR: 10.54.0.0/16\n    podGateway: 10.54.0.1\n    serviceCIDR: 10.55.0.0/16\n  kubeOvnCNI:\n    requests:\n      cpu: \"100m\"\n      memory: \"100Mi\"\n    limits:\n      cpu: \"1\"\n      memory: \"1Gi\"\n  kubeOvnController:\n    requests:\n      cpu: \"200m\"\n      memory: \"200Mi\"\n    limits:\n      cpu: \"1\"\n      memory: \"1Gi\"\n  kubeOvnMonitor:\n    requests:\n      cpu: \"200m\"\n      memory: \"200Mi\"\n    limits:\n      cpu: \"200m\"\n      memory: \"200Mi\"\n  kubeOvnPinger:\n    requests:\n      cpu: \"100m\"\n      memory: \"100Mi\"\n    limits:\n      cpu: \"200m\"\n      memory: \"400Mi\"\n  networking:\n    defaultSubnet: ovn-default\n    defaultVPC: ovn-cluster\n    enableECMP: false\n    enableEIPSNAT: true\n    enableMetrics: true\n    enableSSL: false\n    networkType: geneve\n    nodeSubnet: join\n    ovnLeaderProbeInterval: 5\n    ovnNorthdNThreads: 1\n    ovnNorthdProbeInterval: 5000\n    ovnRemoteOpenflowInterval: 10\n    ovnRemoteProbeInterval: 10000\n    probeInterval: 180000\n    nodeLocalDNSIPS: \"\"\n  ovnCentral:\n    requests:\n      cpu: \"300m\"\n      memory: \"200Mi\"\n    limits:\n      cpu: \"3\"\n      memory: \"4Gi\"\n  ovnDir: /etc/origin/ovn\n  ovsOVN:\n    limits:\n      cpu: \"2\"\n      memory: \"1000Mi\"\n    requests:\n      cpu: \"200m\"\n      memory: \"200Mi\"\n  performance:\n    gcInterval: 360\n    inspectInterval: 20\n    ovsVSCtlConcurrency: 100\n","version":"1.14.10-dev.1"}}
+    creationTimestamp: "2025-12-30T21:49:32Z"
+    generation: 1
+    labels:
+      addon.harvesterhci.io/experimental: "true"
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:addon.harvesterhci.io/experimental: {}
+        f:spec:
+          .: {}
+          f:chart: {}
+          f:enabled: {}
+          f:repo: {}
+          f:valuesContent: {}
+          f:version: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2025-12-30T21:49:32Z"
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:status: {}
+      manager: harvester
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:50:35Z"
+    name: kubeovn-operator
+    namespace: kube-system
+    resourceVersion: "6302"
+    uid: 2f586f8a-2a09-4ce5-a017-3148dfbdaeae
+  spec:
+    chart: kubeovn-operator
+    enabled: false
+    repo: http://harvester-cluster-repo.cattle-system.svc/charts
+    valuesContent: |
+      fullnameOverride: harvester-kubeovn-operator
+      enableConfiguration: true
+      configurationSpec:
+        components:
+          OVSDBConTimeout: 3
+          OVSDBInactivityTimeout: 10
+          checkGateway: true
+          enableANP: false
+          enableBindLocalIP: true
+          enableExternalVPC: true
+          enableIC: false
+          enableKeepVMIP: true
+          enableLB: true
+          enableLBSVC: false
+          enableLiveMigrationOptimize: true
+          enableNATGateway: true
+          enableNP: true
+          enableOVNIPSec: false
+          enableTProxy: false
+          hardwareOffload: false
+          logicalGateway: false
+          lsCtSkipOstLportIPS: true
+          lsDnatModDlDst: true
+          secureServing: false
+          setVLANTxOff: false
+          u2oInterconnection: false
+        ipv4:
+          joinCIDR: 100.64.0.0/16
+          pingerExternalAddress: 1.1.1.1
+          pingerExternalDomain: google.com.
+          podCIDR: 10.54.0.0/16
+          podGateway: 10.54.0.1
+          serviceCIDR: 10.55.0.0/16
+        kubeOvnCNI:
+          requests:
+            cpu: "100m"
+            memory: "100Mi"
+          limits:
+            cpu: "1"
+            memory: "1Gi"
+        kubeOvnController:
+          requests:
+            cpu: "200m"
+            memory: "200Mi"
+          limits:
+            cpu: "1"
+            memory: "1Gi"
+        kubeOvnMonitor:
+          requests:
+            cpu: "200m"
+            memory: "200Mi"
+          limits:
+            cpu: "200m"
+            memory: "200Mi"
+        kubeOvnPinger:
+          requests:
+            cpu: "100m"
+            memory: "100Mi"
+          limits:
+            cpu: "200m"
+            memory: "400Mi"
+        networking:
+          defaultSubnet: ovn-default
+          defaultVPC: ovn-cluster
+          enableECMP: false
+          enableEIPSNAT: true
+          enableMetrics: true
+          enableSSL: false
+          networkType: geneve
+          nodeSubnet: join
+          ovnLeaderProbeInterval: 5
+          ovnNorthdNThreads: 1
+          ovnNorthdProbeInterval: 5000
+          ovnRemoteOpenflowInterval: 10
+          ovnRemoteProbeInterval: 10000
+          probeInterval: 180000
+          nodeLocalDNSIPS: ""
+        ovnCentral:
+          requests:
+            cpu: "300m"
+            memory: "200Mi"
+          limits:
+            cpu: "3"
+            memory: "4Gi"
+        ovnDir: /etc/origin/ovn
+        ovsOVN:
+          limits:
+            cpu: "2"
+            memory: "1000Mi"
+          requests:
+            cpu: "200m"
+            memory: "200Mi"
+        performance:
+          gcInterval: 360
+          inspectInterval: 20
+          ovsVSCtlConcurrency: 100
+    version: 1.14.10-dev.1
+  status:
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:50:35Z"
+      status: "True"
+      type: Completed
+    - lastUpdateTime: "2025-12-30T21:50:35Z"
+      status: "False"
+      type: InProgress
+    - lastUpdateTime: "2025-12-30T21:50:35Z"
+      status: "False"
+      type: OperationFailed
+    status: AddonDisabled
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14473"

@@ -1,0 +1,144 @@
+apiVersion: v1
+items:
+- apiVersion: batch/v1
+  kind: CronJob
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4xT3W7bPAx9lYKXH5zEP7Hj+i4Igm9Af1a06W6GoqApOlZrS4YkBysKv/ug2MOyblgGA7ZE8pCHh/Q7tOxQoEMo3gGV0g6d1Mr6qy5fmJxlNzdSzwmda3gu9UIKKMC8cjxrkWqpeEZaVXI/o4ZR9R0MATRYcvPXLDXaGgoQ4lKUVIkVJXmepyIJeZUjlVmKac7pZRZnyzAPY59UYcsfSv9aeUZGqxddwhhrOyQPqBpmNxNcYd84n8h2TJ7biy533HYNOvbXEy1OgkqkV11V17KVDoooDMCdxZBWDqViY6H4+g5o9v4Ai5qbjs1ioju3NTwFQLptUYljQCnVYrSyOhyxU9Ob9W53vX1+2N5/2d7DEHx0bNbPm0/bzdXD4w0EcMCm986y5GwZlRVXWRURhhhXIosikSZ5lJUrgQmuolhUqygM4zgJkStkzssqI1wyhX8otPt8tb09KZGEUZatxjcMTwHIFvfHMaGims1i+s5wz8oVh3geJfMQ/mWanRYQgGGre0NsJ4mZeiPd20Yrx9+cV9v0am3/N7rvoMjSNFkGo+nRspksQwAH3fQt3+heuXEqrT/eofNrOE3mJ62JygiC4cl3Ztg6NO5ON5LeoIBbPhwhls1BEq+JfMbbs31ZhB90Riaj/wY73815XSwZ2bmTP+I3ssPglaKaRd/4gPQivPjPP8ftd+j6o5rD9wAAAP//bar8ZAAEAAA
+      objectset.rio.cattle.io/id: rke2-machine-config-cleanup
+    creationTimestamp: "2025-12-30T21:49:55Z"
+    generation: 2
+    labels:
+      objectset.rio.cattle.io/hash: dd9dbcfd7c38885d30e78acb65a58e5962640802
+    managedFields:
+    - apiVersion: batch/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:concurrencyPolicy: {}
+          f:failedJobsHistoryLimit: {}
+          f:jobTemplate:
+            f:spec:
+              f:backoffLimit: {}
+              f:template:
+                f:spec:
+                  f:containers:
+                    k:{"name":"rke2-machineconfig-cleanup-pod"}:
+                      .: {}
+                      f:args: {}
+                      f:command: {}
+                      f:env:
+                        .: {}
+                        k:{"name":"CATTLE_CA_CHECKSUM"}:
+                          .: {}
+                          f:name: {}
+                          f:value: {}
+                        k:{"name":"CATTLE_SERVER"}:
+                          .: {}
+                          f:name: {}
+                        k:{"name":"CATTLE_TOKEN"}:
+                          .: {}
+                          f:name: {}
+                          f:value: {}
+                      f:image: {}
+                      f:imagePullPolicy: {}
+                      f:name: {}
+                      f:resources: {}
+                      f:securityContext:
+                        .: {}
+                        f:runAsGroup: {}
+                        f:runAsUser: {}
+                      f:terminationMessagePath: {}
+                      f:terminationMessagePolicy: {}
+                      f:volumeMounts:
+                        .: {}
+                        k:{"mountPath":"/helper"}:
+                          .: {}
+                          f:mountPath: {}
+                          f:name: {}
+                  f:dnsPolicy: {}
+                  f:restartPolicy: {}
+                  f:schedulerName: {}
+                  f:securityContext: {}
+                  f:serviceAccount: {}
+                  f:serviceAccountName: {}
+                  f:terminationGracePeriodSeconds: {}
+                  f:volumes:
+                    .: {}
+                    k:{"name":"config-volume"}:
+                      .: {}
+                      f:configMap:
+                        .: {}
+                        f:defaultMode: {}
+                        f:name: {}
+                      f:name: {}
+          f:schedule: {}
+          f:successfulJobsHistoryLimit: {}
+          f:suspend: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:51:39Z"
+    name: rke2-machineconfig-cleanup-cronjob
+    namespace: fleet-default
+    resourceVersion: "7611"
+    uid: 1c6e9b48-378b-4946-a96e-ca6d96c4b5eb
+  spec:
+    concurrencyPolicy: Allow
+    failedJobsHistoryLimit: 1
+    jobTemplate:
+      metadata: {}
+      spec:
+        backoffLimit: 10
+        template:
+          metadata: {}
+          spec:
+            containers:
+            - args:
+              - /helper/cleanup.sh
+              command:
+              - /bin/sh
+              env:
+              - name: CATTLE_SERVER
+              - name: CATTLE_CA_CHECKSUM
+                value: bbe641bfef6f1ca0a2fd611d53816b7da3a712df71002230aefaee8bf6ca4ec0
+              - name: CATTLE_TOKEN
+                value: "301667301667"
+              image: rancher/rancher-agent:v2.13.0
+              imagePullPolicy: IfNotPresent
+              name: rke2-machineconfig-cleanup-pod
+              resources: {}
+              securityContext:
+                runAsGroup: 65534
+                runAsUser: 65534
+              terminationMessagePath: /dev/termination-log
+              terminationMessagePolicy: File
+              volumeMounts:
+              - mountPath: /helper
+                name: config-volume
+            dnsPolicy: ClusterFirst
+            restartPolicy: Never
+            schedulerName: default-scheduler
+            securityContext: {}
+            serviceAccount: rke2-machineconfig-cleanup-sa
+            serviceAccountName: rke2-machineconfig-cleanup-sa
+            terminationGracePeriodSeconds: 30
+            volumes:
+            - configMap:
+                defaultMode: 420
+                name: rke2-machineconfig-cleanup-script
+              name: config-volume
+    schedule: 5 0 * * *
+    successfulJobsHistoryLimit: 3
+    suspend: false
+  status: {}
+kind: List
+metadata:
+  resourceVersion: "14509"

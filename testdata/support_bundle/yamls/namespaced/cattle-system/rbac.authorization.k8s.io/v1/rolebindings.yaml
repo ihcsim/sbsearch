@@ -1,0 +1,107 @@
+apiVersion: v1
+items:
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:44Z"
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"107b5dbf-bb90-4f55-85e0-e5bb750fdbf2"}: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:48:44Z"
+    name: helm-operation-gmkh5-helm-installer-rolebinding
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: catalog.cattle.io/v1
+      kind: Operation
+      name: helm-operation-gmkh5
+      uid: 107b5dbf-bb90-4f55-85e0-e5bb750fdbf2
+    resourceVersion: "2749"
+    uid: 4797cf30-1446-4d06-a8bd-369634edaf88
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: helm-operation-gmkh5-helm-installer-role
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: helm-installer
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:51Z"
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"0b7345fa-d3dc-45b0-8433-0520963e0267"}: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:48:51Z"
+    name: helm-operation-lvb7v-helm-installer-rolebinding
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: catalog.cattle.io/v1
+      kind: Operation
+      name: helm-operation-lvb7v
+      uid: 0b7345fa-d3dc-45b0-8433-0520963e0267
+    resourceVersion: "2979"
+    uid: 46989819-b884-45a1-b929-dcd8f8f05faa
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: helm-operation-lvb7v-helm-installer-role
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: helm-installer
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:06Z"
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"1b86cda4-d0f5-457e-ab68-39811541b740"}: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:48:06Z"
+    name: helm-operation-pjtxs-helm-installer-rolebinding
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: catalog.cattle.io/v1
+      kind: Operation
+      name: helm-operation-pjtxs
+      uid: 1b86cda4-d0f5-457e-ab68-39811541b740
+    resourceVersion: "2052"
+    uid: ed4adda8-7662-4123-ac33-1dd12ffe0c04
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: helm-operation-pjtxs-helm-installer-role
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: helm-installer
+kind: List
+metadata:
+  resourceVersion: "14473"

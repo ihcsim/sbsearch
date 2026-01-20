@@ -1,0 +1,962 @@
+apiVersion: v1
+items:
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:46:38Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:46:38Z"
+    name: 10.53.0.1
+    resourceVersion: "198"
+    uid: f8d04f41-2979-4726-9325-4ebece63993d
+  spec:
+    parentRef:
+      name: kubernetes
+      namespace: default
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:46:54Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:46:54Z"
+    name: 10.53.0.10
+    resourceVersion: "605"
+    uid: a0d9e2bb-a881-44e7-8647-2d5608354546
+  spec:
+    parentRef:
+      name: rke2-coredns-rke2-coredns
+      namespace: kube-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:08Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:48:08Z"
+    name: 10.53.114.145
+    resourceVersion: "2086"
+    uid: da8290ff-8b52-456b-8f00-8e894b3aca63
+  spec:
+    parentRef:
+      name: rancher-webhook
+      namespace: cattle-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:49:31Z"
+    name: 10.53.118.37
+    resourceVersion: "3816"
+    uid: a2f4ca99-2c9f-4a79-bc7a-b0a85ee462d5
+  spec:
+    parentRef:
+      name: harvester
+      namespace: harvester-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:46:48Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:46:48Z"
+    name: 10.53.120.170
+    resourceVersion: "315"
+    uid: 8daf7766-d8de-4d19-b880-7c13e61c8cfd
+  spec:
+    parentRef:
+      name: rancher
+      namespace: cattle-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:04Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:50:04Z"
+    name: 10.53.130.57
+    resourceVersion: "5463"
+    uid: d67d1024-34a3-435b-a1d0-43e7d92f2e9a
+  spec:
+    parentRef:
+      name: kubevirt-operator-webhook
+      namespace: harvester-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:49:31Z"
+    name: 10.53.137.80
+    resourceVersion: "3799"
+    uid: 9c61d019-7c3a-40ec-9786-6f0af5be0529
+  spec:
+    parentRef:
+      name: harvester-webhook
+      namespace: harvester-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:04Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:50:04Z"
+    name: 10.53.145.114
+    resourceVersion: "5459"
+    uid: fa0e902f-a971-43f1-a1e4-a78887ffba15
+  spec:
+    parentRef:
+      name: virt-api
+      namespace: harvester-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:49:39Z"
+    name: 10.53.176.199
+    resourceVersion: "4536"
+    uid: 53945e1a-e848-4d89-b722-3a602a637a0a
+  spec:
+    parentRef:
+      name: cdi-prometheus-metrics
+      namespace: harvester-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:49:31Z"
+    name: 10.53.185.159
+    resourceVersion: "3774"
+    uid: ebfa975f-7594-46a3-88a7-ece311c4940f
+  spec:
+    parentRef:
+      name: longhorn-backend
+      namespace: longhorn-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:14Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:47:14Z"
+    name: 10.53.19.193
+    resourceVersion: "1025"
+    uid: 6ea061b4-29c4-4bd7-b9ce-92dd44e420e2
+  spec:
+    parentRef:
+      name: rke2-ingress-nginx-controller-admission
+      namespace: kube-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:49:31Z"
+    name: 10.53.191.112
+    resourceVersion: "3779"
+    uid: 74730141-8875-4196-9232-ecd76ab838ef
+  spec:
+    parentRef:
+      name: harvester-network-webhook
+      namespace: harvester-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: 10.53.193.230
+    resourceVersion: "1764"
+    uid: 378396ef-11df-4d83-a3c9-93535c0e244d
+  spec:
+    parentRef:
+      name: gitjob
+      namespace: cattle-fleet-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:49:39Z"
+    name: 10.53.193.94
+    resourceVersion: "4553"
+    uid: 8cae62db-4f3d-4f27-988d-e3e84c056298
+  spec:
+    parentRef:
+      name: cdi-uploadproxy
+      namespace: harvester-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: 10.53.202.124
+    resourceVersion: "1758"
+    uid: 5f263148-15c7-4ff5-8c8a-e2a933d22e50
+  spec:
+    parentRef:
+      name: monitoring-fleet-controller
+      namespace: cattle-fleet-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:04Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:50:04Z"
+    name: 10.53.222.213
+    resourceVersion: "5467"
+    uid: 97c52485-6fc7-474d-8ce2-8c0508dae181
+  spec:
+    parentRef:
+      name: virt-exportproxy
+      namespace: harvester-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:49:31Z"
+    name: 10.53.236.205
+    resourceVersion: "3805"
+    uid: 9a13002f-4dce-468e-a370-832e375c9100
+  spec:
+    parentRef:
+      name: longhorn-recovery-backend
+      namespace: longhorn-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: 10.53.239.69
+    resourceVersion: "1760"
+    uid: aaa94704-9374-4af6-ba53-fc8cebee0ad2
+  spec:
+    parentRef:
+      name: monitoring-gitjob
+      namespace: cattle-fleet-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:49:31Z"
+    name: 10.53.242.85
+    resourceVersion: "3786"
+    uid: 6150df5b-fdb7-44e1-90b2-bd74ed342c9a
+  spec:
+    parentRef:
+      name: longhorn-frontend
+      namespace: longhorn-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:35Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:50:35Z"
+    name: 10.53.29.180
+    resourceVersion: "6182"
+    uid: 6fcfc590-e732-470b-ad44-09f7ebda0280
+  spec:
+    parentRef:
+      name: ingress-expose
+      namespace: kube-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:49:39Z"
+    name: 10.53.3.181
+    resourceVersion: "4507"
+    uid: 92d86ced-41ed-407a-90c7-683fe29bd166
+  spec:
+    parentRef:
+      name: cdi-api
+      namespace: harvester-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:11Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:47:11Z"
+    name: 10.53.38.129
+    resourceVersion: "924"
+    uid: e23ccc9e-3486-4b9a-afbf-2c77299eb1f5
+  spec:
+    parentRef:
+      name: rke2-metrics-server
+      namespace: kube-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:49:31Z"
+    name: 10.53.46.103
+    resourceVersion: "3791"
+    uid: d42084fd-117f-4ee3-9bb9-0ec9b47cda7b
+  spec:
+    parentRef:
+      name: longhorn-admission-webhook
+      namespace: longhorn-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:49:31Z"
+    name: 10.53.59.117
+    resourceVersion: "3771"
+    uid: 40d22f21-89a2-4684-9a97-b14b02e82b0e
+  spec:
+    parentRef:
+      name: harvester-node-disk-manager-webhook
+      namespace: harvester-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:49:31Z"
+    name: 10.53.59.221
+    resourceVersion: "3810"
+    uid: 31ea3dc1-c3a9-4ba4-9e6e-4a7534d32e4e
+  spec:
+    parentRef:
+      name: harvester-node-manager-webhook
+      namespace: harvester-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:31Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:47:31Z"
+    name: 10.53.74.90
+    resourceVersion: "1339"
+    uid: 9568ae58-5a3c-476e-bfae-766c7deeceb4
+  spec:
+    parentRef:
+      name: imperative-api-extension
+      namespace: cattle-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:35Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:48:35Z"
+    name: 10.53.8.201
+    resourceVersion: "2527"
+    uid: 4b6364ab-e990-4910-aa60-0854227e298f
+  spec:
+    parentRef:
+      name: capi-webhook-service
+      namespace: cattle-provisioning-capi-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:49:31Z"
+    name: 10.53.96.125
+    resourceVersion: "3767"
+    uid: 318ebb7d-b83d-4d8e-9d11-706edd01c63a
+  spec:
+    parentRef:
+      name: harvester-load-balancer-webhook
+      namespace: harvester-system
+      resource: services
+- apiVersion: networking.k8s.io/v1
+  kind: IPAddress
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:29Z"
+    labels:
+      ipaddress.kubernetes.io/ip-family: IPv4
+      ipaddress.kubernetes.io/managed-by: ipallocator.k8s.io
+    managedFields:
+    - apiVersion: networking.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:ipaddress.kubernetes.io/ip-family: {}
+            f:ipaddress.kubernetes.io/managed-by: {}
+        f:spec:
+          f:parentRef:
+            .: {}
+            f:name: {}
+            f:namespace: {}
+            f:resource: {}
+      manager: kube-apiserver
+      operation: Update
+      time: "2025-12-30T21:48:29Z"
+    name: 10.53.98.112
+    resourceVersion: "2396"
+    uid: b792656f-5da9-49f4-9087-4af9e8904eb1
+  spec:
+    parentRef:
+      name: harvester-cluster-repo
+      namespace: cattle-system
+      resource: services
+kind: List
+metadata:
+  resourceVersion: "14450"

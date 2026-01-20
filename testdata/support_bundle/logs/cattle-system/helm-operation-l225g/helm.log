@@ -1,0 +1,15 @@
+2025-12-30T21:48:35.733697766Z helm upgrade --history-max=5 --install=true --labels=catalog.cattle.io/cluster-repo-name=rancher-charts --namespace=cattle-provisioning-capi-system --reset-values=true --take-ownership=true --timeout=5m0s --values=/home/shell/helm/values-rancher-provisioning-capi-108.0.0-up0.9.0.yaml --version=108.0.0+up0.9.0 --wait=true rancher-provisioning-capi /home/shell/helm/rancher-provisioning-capi-108.0.0-up0.9.0.tgz
+2025-12-30T21:48:35.760253700Z Release "rancher-provisioning-capi" does not exist. Installing it now.
+2025-12-30T21:48:41.825920991Z NAME: rancher-provisioning-capi
+2025-12-30T21:48:41.825951873Z LAST DEPLOYED: Tue Dec 30 21:48:35 2025
+2025-12-30T21:48:41.825954157Z NAMESPACE: cattle-provisioning-capi-system
+2025-12-30T21:48:41.825955891Z STATUS: deployed
+2025-12-30T21:48:41.825958577Z REVISION: 1
+2025-12-30T21:48:41.825960470Z TEST SUITE: None
+2025-12-30T21:48:41.825962163Z NOTES:
+2025-12-30T21:48:41.825964709Z rancher-provisioning-capi has been installed. Check its status by running:
+2025-12-30T21:48:41.825966773Z   kubectl --namespace cattle-provisioning-capi-system get pods"
+2025-12-30T21:48:41.828672525Z 
+2025-12-30T21:48:41.828692966Z ---------------------------------------------------------------------
+2025-12-30T21:48:41.830916710Z SUCCESS: helm upgrade --history-max=5 --install=true --labels=catalog.cattle.io/cluster-repo-name=rancher-charts --namespace=cattle-provisioning-capi-system --reset-values=true --take-ownership=true --timeout=5m0s --values=/home/shell/helm/values-rancher-provisioning-capi-108.0.0-up0.9.0.yaml --version=108.0.0+up0.9.0 --wait=true rancher-provisioning-capi /home/shell/helm/rancher-provisioning-capi-108.0.0-up0.9.0.tgz
+2025-12-30T21:48:41.831111211Z ---------------------------------------------------------------------

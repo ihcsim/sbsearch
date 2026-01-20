@@ -1,0 +1,4 @@
+2025-12-30T21:46:58.634704830Z kubeconfig is created in /host/etc/cni/net.d/multus.d/multus.kubeconfig
+2025-12-30T21:46:58.634722381Z kubeconfig file is created.
+2025-12-30T21:46:58.634773974Z master capabilities is get from conflist
+2025-12-30T21:46:58.636861805Z multus config file is created.

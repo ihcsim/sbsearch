@@ -1,0 +1,51 @@
+apiVersion: v1
+items:
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/5yRTc8TIRDHv4qZc1mXdkt3N/FgPHjw9ng0HgYYWlwKKww12jzf3WxrTWOsUS8khPzffpzhSIwWGWE8A8aYGNmnWJZr0p/IcCFusk+NQeZAjU8vvYURTKiFKYtMe184X1SweqhJXyJlsT9NMIILRHz3dpIY5gPK1Yt3PtpXb67OT/9iHPFIMEKmz5UKi2HaTfavRGVGQ7dOIiSDAZ5XEFBTuED4tewRI+5pIcC50h8yDlgOMILSzmC/3aid3HZWD2vs5XonW+eMHpSSUjpp0eKS+mDFfc8b9ru+P06JG6t2tsV+GBaznAI9kbv86+zf5lTnxVujabDyIWX/7cK2mfrS+AQrmHxcdt34p0Dws9M1T9doAwlLc0hfjxR5CSr1SgDGD+ebx3vKJ2/otTGpRobfTxOoulYZ24ph46zoOnKiX69bsZVEG6O77aD6/9z/8fl7AAAA//8bSLm32wIAAA
+      objectset.rio.cattle.io/id: cluster-registration
+      objectset.rio.cattle.io/owner-gvk: fleet.cattle.io/v1alpha1, Kind=ClusterRegistration
+      objectset.rio.cattle.io/owner-name: request-9k7kd
+      objectset.rio.cattle.io/owner-namespace: fleet-local
+    creationTimestamp: "2025-12-30T21:48:17Z"
+    labels:
+      fleet.cattle.io/managed: "true"
+      objectset.rio.cattle.io/hash: 6bfca85367154db92a812710ffcb966111f1dada
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:fleet.cattle.io/managed: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: fleetcontroller
+      operation: Update
+      time: "2025-12-30T21:48:17Z"
+    name: request-9k7kd
+    namespace: cluster-fleet-local-local-1a3d67d0a899
+    resourceVersion: "2271"
+    uid: 0ac1de25-bf2c-464e-aa67-18bc7118f5ba
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: fleet-bundle-deployment
+  subjects:
+  - kind: ServiceAccount
+    name: request-9k7kd-a6406cd0-93fd-44ef-8220-51ee3cb45968
+    namespace: cluster-fleet-local-local-1a3d67d0a899
+kind: List
+metadata:
+  resourceVersion: "14506"

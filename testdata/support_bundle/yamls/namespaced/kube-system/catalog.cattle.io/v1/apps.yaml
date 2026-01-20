@@ -1,0 +1,2321 @@
+apiVersion: v1
+items:
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/6SUS2/bOBDHv4oxZ1GRZMcPAXtYbIDdRQ8F0qKHFjmMqWHMmiIJcqTWMPTdC8qOExt5ob2Znof/8//NeA8tMTbICPUe0FrHyNrZmJ5u/Z0kR+I8aJdLZDaUa3elG6hhQ6YV6D1kL+a5H5aCuO+3UMNVX2aTD9o2f30iGYjfLLPYEtQQN3n6pTyQIYyU92W+7dbkeiucp4DsgpChyfvyXR2jR5naph4i7iJTC0MGBtdkXp15g3EDNRRKoiqmK3W9UMUaiwXO1RoXi1lJVTEtEefFrFTLeWp6nOA5uXCIPqcmg1HtLSkKZCVFqL/tAb3+QiFqZ6GGcda1cXL7MaXekCEeIwpNpAyksxycMRSg5tBRBlttE7OT9b9jbjdib1bL6fWyKcV8uSjErJiuBKrVQsyqYqnmVbnA5RSGuyGD6EkmR+UGA6cPr2yaMkT8xG28J8tnwA4xMSYK4ySaR8Muq9edbQyJUW8rpXiBwGXZlsiLQNF1YbQdRjufSYwUei1JoJSusww1JNzniCpI3/in0PJylpeFaKjPk58NRRm0P5CDvyf/kWkno1kT5cLkUvREhiZCBi1qy6gthcNmHFFuMPQUmQIMd2+tHu98iqL3RssRAmTQn5SeCx2GbLz10yTTDLRVLmE7H+F/GxmNmUjXekM8OqdD5Bvyxu0o0aiK6lqUlZgWn6uynq3qcv4V0vm9Jysycpe4NA+pf3BkTzhfnhd6TT+ZbHrGfLuMifl4Ascz+qeL7NrbY4cbUtrqo4tHOdJZpe+7cNjwh6PKtRvpnKwuh8ep0l9PWixq/iVLh0qoiwxi17YYdlDvh2H4FQAA///iQHQrsAUAAA
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.kubeovn-operator-crd.v1
+      objectset.rio.cattle.io/owner-namespace: kube-system
+    creationTimestamp: "2025-12-30T21:49:16Z"
+    generation: 2
+    labels:
+      objectset.rio.cattle.io/hash: 0fcaf039f57f0ba07a6fba7741e2031aa6041f86
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"d98358d1-6870-4039-af97-4208f6217a83"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:fleet.cattle.io/agent-namespace: {}
+                f:fleet.cattle.io/bundle-id: {}
+                f:fleet.cattle.io/keep-resources: {}
+                f:fleet.cattle.io/service-account: {}
+              f:apiVersion: {}
+              f:appVersion: {}
+              f:description: {}
+              f:maintainers: {}
+              f:name: {}
+              f:type: {}
+              f:version: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:49:16Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:49:16Z"
+    name: kubeovn-operator-crd
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.kubeovn-operator-crd.v1
+      uid: d98358d1-6870-4039-af97-4208f6217a83
+    resourceVersion: "3261"
+    uid: 9553c41a-59eb-4c0f-b2bf-b31556434ed6
+  spec:
+    chart:
+      metadata:
+        annotations:
+          fleet.cattle.io/agent-namespace: cattle-fleet-local-system
+          fleet.cattle.io/bundle-id: mcc-kubeovn-operator-crd
+          fleet.cattle.io/keep-resources: "false"
+          fleet.cattle.io/service-account: "null"
+        apiVersion: v2
+        appVersion: v1.14.10-dev.1
+        description: A Helm chart for kubeovn-operator crds
+        maintainers:
+        - name: harvester
+        name: kubeovn-operator-crd
+        type: application
+        version: 1.14.10-dev.1
+    helmVersion: 3
+    info:
+      description: Install complete
+      firstDeployed: "2025-12-30T21:49:16Z"
+      lastDeployed: "2025-12-30T21:49:16Z"
+      status: deployed
+    name: kubeovn-operator-crd
+    namespace: kube-system
+    resources:
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: configurations.kubeovn.io
+    version: 1
+  status:
+    observedGeneration: 2
+    summary:
+      state: deployed
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/8RYUW/bNhD+K8I9S7JkWXEqoMC2ZhiKbe2QFnvYkocTdbI4UyRBUna9QP99oOTFTuqlKdbIbxYlfd939/FOR99BSw4rdAjFHaCUyqHjSlp/qcq/iDlLLjZcxQydExRzNeMVFNCQaCPUGsL/fE5tJZlotVlDAbNNGgY/c1m9/kDMkPviaxJbggJsE3um2JAgtBRv0tisaR4xlCjiTfosHKuRebB1V1Jkd9ZRC30IAksST0baoG2gAFwus1dsSXiZMlzi8mK5IMzzZEkXeZmnVZVnS7xYZB50r/sgEsa1UxpCGDReU02GJCMLxZ93gJr/TsZyJaGAIcJSKLZ+7x+9IkFuuFOjsBQCU9IZJQQZKJzpKIQ1l96f+zQ/P5HdYGyZX1YZu8yjarmkaJFgFWGapdGrnOqLy7xM0sUC+ts+BKuJ+eyxBo3zP57YS7UgckeZLTtZCYoGRq/Dp+7zwFHro5UszpI4gxAqssxwPSYC3krrUIjgjY8keEduq8w6+E10Ky5jCKFRQwIa57QtZrPtdhtro7zhDAVnKlZmNYMQ1rTbKlN5E2B07jYc7DpIuOmSJKPXwSaNs0U8hxBa5NIhl2RG86hFLqAYc2K/MyhZQyZmqj1YcT0uBr9gaaG/Pb1nrOrMuCPula+4a7rSY832uLPxlYHLq908TlZUdlxU82Sep0maJwn0fTiU7n1MWQhc1sp7dDqtTLVakCMIoebGuivSQu3IG+dxo3QeZcnHeVosLoo8+wN8XT3nKamcDw9G2+TeNj3YFjRog5JIBnxUQVV8I2/ku/cffyyCty5ocRc4XFNQ0zbw2XLoOo9W/cv71aVo6JDyU0V4X1dmwxl9z5jq5FF9fYmgD58AfaNkzVe/ooYTqiM23P0abNScPjmS/tLG60vrS+4BYWedaq/3IV9RzSUffL/nL1d65O3MWMUxM9XnhfNS3DUXjszEpJompvR9HevxBk3JPMJLVdFYOdOSi846Mr7tmHbyzVWT4J/OtrVXQpUo9t1OK8HZtMY/4LfkpuRulHUkK624nJSXa2yHUpuadNxlU7M26EeraVm1UmJaRkOWzGby+vWf3cPMbc/WR87XQc7TO6zDFVXn7p6jCr8HjCRH9txKzsfv+LSjElYtl4/DHX7s4v0yl6s99ssMa2hJcEn/U4kpkcXYuUYZ/vfQNk7KGUekayXo8dAW+antm+LWAqUk8Q0wf+Cy4nL16FQUvTjBmJlTtmv7AOoKqVXyw/EfI886HvbHh+u0Pxw470CV/kNE1U8kafwOQJGEYLu2RbOD4q7v+38CAAD//93eULRnEwAA
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.rke2-canal.v1
+      objectset.rio.cattle.io/owner-namespace: kube-system
+    creationTimestamp: "2025-12-30T21:47:33Z"
+    generation: 1
+    labels:
+      objectset.rio.cattle.io/hash: a7739c7ea81ca7a7674ea5507e65b51dd537a643
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"b58d3c85-d77e-40ad-a131-95ef685b0144"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:fleet.cattle.io/bundle-id: {}
+              f:apiVersion: {}
+              f:appVersion: {}
+              f:description: {}
+              f:home: {}
+              f:keywords: {}
+              f:kubeVersion: {}
+              f:maintainers: {}
+              f:name: {}
+              f:sources: {}
+              f:version: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:notes: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:47:33Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:47:33Z"
+    name: rke2-canal
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.rke2-canal.v1
+      uid: b58d3c85-d77e-40ad-a131-95ef685b0144
+    resourceVersion: "1583"
+    uid: 93a60ae6-52a4-40eb-8c56-6d1b28369397
+  spec:
+    chart:
+      metadata:
+        annotations:
+          fleet.cattle.io/bundle-id: rke2
+        apiVersion: v1
+        appVersion: v3.30.3
+        description: Install Canal Network Plugin.
+        home: https://www.projectcalico.org/
+        keywords:
+        - canal
+        kubeVersion: '>= v1.34.2'
+        maintainers:
+        - email: charts@rancher.com
+          name: Rancher Labs
+        name: rke2-canal
+        sources:
+        - https://github.com/rancher/rke2-charts
+        version: v3.30.3-build2025101500
+    helmVersion: 3
+    info:
+      description: Install complete
+      firstDeployed: "2025-12-30T21:46:53Z"
+      lastDeployed: "2025-12-30T21:46:53Z"
+      notes: |
+        Canal network plugin has been installed.
+
+        NOTE: It may take few minutes until Canal image install CNI files and node become in ready state.
+      status: deployed
+    name: rke2-canal
+    namespace: kube-system
+    resources:
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: canal
+      namespace: kube-system
+    - apiVersion: v1
+      kind: ConfigMap
+      name: rke2-canal-config
+      namespace: kube-system
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: bgpconfigurations.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: bgpfilters.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: bgppeers.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: blockaffinities.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: caliconodestatuses.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: clusterinformations.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: felixconfigurations.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: globalnetworkpolicies.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: globalnetworksets.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: hostendpoints.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: ipamblocks.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: ipamconfigs.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: ipamhandles.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: ippools.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: ipreservations.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: kubecontrollersconfigurations.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: networkpolicies.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: networksets.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: stagedglobalnetworkpolicies.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: stagedkubernetesnetworkpolicies.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: stagednetworkpolicies.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: tiers.crd.projectcalico.org
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: adminnetworkpolicies.policy.networking.k8s.io
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: baselineadminnetworkpolicies.policy.networking.k8s.io
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: calico-node
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: flannel
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: canal-flannel
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: canal-calico
+    - apiVersion: apps/v1
+      kind: DaemonSet
+      name: rke2-canal
+      namespace: kube-system
+    version: 1
+  status:
+    observedGeneration: 1
+    summary:
+      state: deployed
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/7xW3W7jNhN9FWK+m6+AJOvH8UYC9qJNgHaxaAvstr3oJliMqJHEmiIF/jhwA717QdlJbDTJxu02NxY5kubMmTk88i0M5LBBh1DdAiqlHTqhlQ1bXf9B3FlyiRE64eicpETohWiggp7kEOM4QvTkc/pGkYm7zRoqWGyyiL0Xqnn7kbgh98XXFA4EFdg+CUiJIUloKdlkiVlTHnNtqFE22WQvymRH5CHd2tcU2611NMAUgcSa5LNce7Q9VJDVZYlvsFzlVK6oKM8aXi7r87Zenaf58s3yrFhRSedtSLqv/LBM2EUfqyKCucoP1JIhxclC9ekWcBS/kbFCK6hg5lhLzdc/h0cvSZKb77QoLUXAtXJGS0kGKmc8RbAWKszovtWnNNPP461XWZqXvI7TtsV4SWUZl1nDY2yXecqLVdaeFTBdTxHYkXjoIO/RuLB4RlFonGiRu97Xobm8R9UFxhCzUHLFdpHmSjHWkOVGjOHdiv1qiblRstYrHiKs1YZh2wol3JZtUEIErSRyB6OrvWokxTOdQDPM5rivOYTI+BDJkixPCojgABwquNCGLn/6yIRlyMLCktmQYa5HF0oWyrJR+i5cUTVsNHojGrLsva/JKIIIej1PoHdutNVicddxoSECwWeUv99biAE7sos9/ucLLbU3n3/QRvyplUOZjKqDCNa0vdGmCdKBB8XtfoPWwup6t3zgeuXTtKC3bJMlxTIJrRhQKIdCkdmJcK+awXjqYIruAz1ic7zvUNRoSB5Gbe/rHoeYD9s1TNdPnQurvdmp/r4BnZgFwvVw14u7a2DhtmNIg+MoBZ+lBRFsDka4XCZFmsI0RbNJ3TMuIhCq1UGHx+N9p6xDKRnXwyjJhXG1wlh3SaPUWwr6ydP8LM7yuEh/ybNquarOit8h+MdLnlLazSK/UgdCUvqGGa+UUB0TirmeGJfeOjIMg8z2mzhITXBKrtSVehfOsiFs5kb+j+3ThVuf9uvr/z8io2+eUG5ov0PnQ3HNHY1/4GCGHqb4mHfd29FM5VvOtVcHtnSIEx9t0DttOQZnexo/aO5kzC/TejbthVat6H7E8XVYnAJ3CoapkSfoXR8cZT5Lyfp8lswR+k6KH7SkE+m+CuBXQPlOqEbMVvq67F6O+yKVf2V14Djao8p3VjfQf3l4/x3oc0jXB5+JbHqwvvDnb7bF5ntSZHaflCqNwPphQLOF6naapr8CAAD//2Of1eYqCwAA
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.rke2-coredns.v1
+      objectset.rio.cattle.io/owner-namespace: kube-system
+    creationTimestamp: "2025-12-30T21:47:33Z"
+    generation: 1
+    labels:
+      objectset.rio.cattle.io/hash: 1b99a7a962e96e395dc94b8fb6802474536e9e8f
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"b61029cb-0ffa-4e99-91dc-af420c361f53"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:artifacthub.io/changes: {}
+                f:fleet.cattle.io/bundle-id: {}
+              f:apiVersion: {}
+              f:appVersion: {}
+              f:description: {}
+              f:home: {}
+              f:icon: {}
+              f:keywords: {}
+              f:kubeVersion: {}
+              f:maintainers: {}
+              f:name: {}
+              f:sources: {}
+              f:type: {}
+              f:version: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:notes: {}
+            f:readme: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:47:33Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:47:33Z"
+    name: rke2-coredns
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.rke2-coredns.v1
+      uid: b61029cb-0ffa-4e99-91dc-af420c361f53
+    resourceVersion: "1582"
+    uid: 0b4ef7d4-0d9d-41ba-9d36-d7dbc51f74d6
+  spec:
+    chart:
+      metadata:
+        annotations:
+          artifacthub.io/changes: |
+            - kind: changed
+              description: Use tpl function for affinity values
+            - kind: added
+              description: Add kubernetes plugin multicluster required RBAC
+          fleet.cattle.io/bundle-id: rke2
+        apiVersion: v2
+        appVersion: 1.12.3
+        description: CoreDNS is a DNS server that chains plugins and provides Kubernetes
+          DNS Services
+        home: https://coredns.io
+        icon: https://coredns.io/images/CoreDNS_Colour_Horizontal.png
+        keywords:
+        - coredns
+        - dns
+        - kubedns
+        kubeVersion: '>= v1.34.2'
+        maintainers:
+        - name: mrueg
+        - name: haad
+        - name: hagaibarel
+        - name: shubham-cmyk
+        name: rke2-coredns
+        sources:
+        - https://github.com/coredns/coredns
+        type: application
+        version: 1.44.300
+    helmVersion: 3
+    info:
+      description: Install complete
+      firstDeployed: "2025-12-30T21:46:53Z"
+      lastDeployed: "2025-12-30T21:46:53Z"
+      notes: |2
+
+        CoreDNS is now running in the cluster as a cluster-service.
+
+        It can be tested with the following:
+
+        1. Launch a Pod with DNS tools:
+
+        kubectl run -it --rm --restart=Never --image=infoblox/dnstools:latest dnstools
+
+        2. Query the DNS server:
+
+        / # host kubernetes
+      readme: |
+        # CoreDNS
+
+        [CoreDNS](https://coredns.io/) is a DNS server that chains plugins and provides DNS Services
+
+        # TL;DR;
+
+        ```console
+        $ helm repo add coredns https://coredns.github.io/helm
+        $ helm --namespace=kube-system install coredns coredns/coredns
+        ```
+
+        ## Introduction
+
+        This chart bootstraps a [CoreDNS](https://github.com/coredns/coredns) deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager. This chart will provide DNS Services and can be deployed in multiple configuration to support various scenarios listed below:
+
+        - CoreDNS as a cluster dns service and a drop-in replacement for Kube/SkyDNS. This is the default mode and CoreDNS is deployed as cluster-service in kube-system namespace. This mode is chosen by setting `isClusterService` to true.
+        - CoreDNS as an external dns service. In this mode CoreDNS is deployed as any kubernetes app in user specified namespace. The CoreDNS service can be exposed outside the cluster by using using either the NodePort or LoadBalancer type of service. This mode is chosen by setting `isClusterService` to false.
+        - CoreDNS as an external dns provider for kubernetes federation. This is a sub case of 'external dns service' which uses etcd plugin for CoreDNS backend. This deployment mode as a dependency on `etcd-operator` chart, which needs to be pre-installed.
+
+        ## Prerequisites
+
+        - Kubernetes 1.10 or later
+
+        ## Installing the Chart
+
+        The chart can be installed as follows:
+
+        ```console
+        $ helm repo add coredns https://coredns.github.io/helm
+        $ helm --namespace=kube-system install coredns coredns/coredns
+        ```
+
+        The command deploys CoreDNS on the Kubernetes cluster in the default configuration. The [configuration](#configuration) section lists various ways to override default configuration during deployment.
+
+        > **Tip**: List all releases using `helm list --all-namespaces`
+
+        ## OCI installing
+
+        The chart can also be installed using the following:
+
+        ```console
+        $ helm --namespace=kube-system install coredns oci://ghcr.io/coredns/charts/coredns --version 1.38.0
+        ```
+
+        The command deploys the `1.38.0` version of CoreDNS on the Kubernetes cluster in the default configuration.
+
+        ## Helm Unit Testing & Debugging Guide
+
+        This document explains how to write, run, and debug Helm unit tests for this chart using [helm-unittest](https://github.com/helm-unittest/helm-unittest).
+
+        ---
+
+        ### Prerequisites
+
+        Install the Helm unittest plugin:
+
+        ```bash
+        helm plugin install https://github.com/helm-unittest/helm-unittest
+        ```
+
+        ###  Running Unit Tests
+
+        Run all unit tests in the chart folder (e.g., `./coredns`):
+
+        ```bash
+        helm unittest ./coredns
+        ```
+
+        To output results in **JUnit XML** format:
+
+        ```bash
+        mkdir -p test-results
+        helm unittest --strict \
+          --output-type JUnit \
+          --output-file test-results/helm-unittest-report.xml \
+          ./coredns
+        ```
+
+        ---
+
+        ### Debugging Helm Charts
+
+        Render the chart templates with real values to debug:
+
+        ```bash
+        helm template ./coredns  --debug
+        ```
+        ## YAML Intellisense in VS Code
+
+        Add this line at the top of your unit test YAML files for schema validation and autocompletion in VS Code:
+
+        ```yaml
+        # yaml-language-server: $schema=https://raw.githubusercontent.com/helm-unittest/helm-unittest/main/schema/helm-testsuite.json
+        ```
+
+        This improves YAML editing and error highlighting for test definitions.
+
+        ## Uninstalling the Chart
+
+        To uninstall/delete the `coredns` deployment:
+
+        ```console
+        $ helm uninstall coredns
+        ```
+
+        The command removes all the Kubernetes components associated with the chart and deletes the release.
+
+        ## Configuration
+
+        | Parameter                                      | Description                                                                                                                               | Default                                                      |
+        | :--------------------------------------------- |:------------------------------------------------------------------------------------------------------------------------------------------| :----------------------------------------------------------- |
+        | `image.repository`                             | The image repository to pull from                                                                                                         | coredns/coredns                                              |
+        | `image.tag`                                    | The image tag to pull from (derived from Chart.yaml)                                                                                      | ``                                                      |
+        | `image.pullPolicy`                             | Image pull policy                                                                                                                         | IfNotPresent                                                 |
+        | `image.pullSecrets`                            | Specify container image pull secrets                                                                                                      | `[]`                                                         |
+        | `replicaCount`                                 | Number of replicas                                                                                                                        | 1                                                            |
+        | `resources.limits.cpu`                         | Container maximum CPU                                                                                                                     | `100m`                                                       |
+        | `resources.limits.memory`                      | Container maximum memory                                                                                                                  | `128Mi`                                                      |
+        | `resources.requests.cpu`                       | Container requested CPU                                                                                                                   | `100m`                                                       |
+        | `resources.requests.memory`                    | Container requested memory                                                                                                                | `128Mi`                                                      |
+        | `serviceType`                                  | Kubernetes Service type                                                                                                                   | `ClusterIP`                                                  |
+        | `prometheus.service.enabled`                   | Set this to `true` to create Service for Prometheus metrics                                                                               | `false`                                                      |
+        | `prometheus.service.annotations`               | Annotations to add to the metrics Service                                                                                                 | `{prometheus.io/scrape: "true", prometheus.io/port: "9153"}` |
+        | `prometheus.service.selector`                  | Pod selector                                                                                                                              | `{}`                                                         |
+        | `prometheus.monitor.enabled`                   | Set this to `true` to create ServiceMonitor for Prometheus operator                                                                       | `false`                                                      |
+        | `prometheus.monitor.additionalLabels`          | Additional labels that can be used so ServiceMonitor will be discovered by Prometheus                                                     | {}                                                           |
+        | `prometheus.monitor.namespace`                 | Selector to select which namespaces the Endpoints objects are discovered from.                                                            | `""`                                                         |
+        | `prometheus.monitor.interval`                  | Scrape interval for polling the metrics endpoint. (E.g. "30s")                                                                            | `""`                                                         |
+        | `prometheus.monitor.selector`                  | Service selector                                                                                                                          | `{}`                                                         |
+        | `service.clusterIP`                            | IP address to assign to service                                                                                                           | `""`                                                         |
+        | `service.clusterIPs`                           | IP addresses to assign to service                                                                                                         | `[]`                                                         |
+        | `service.loadBalancerIP`                       | IP address to assign to load balancer (if supported)                                                                                      | `""`                                                         |
+        | `service.externalIPs`                          | External IP addresses                                                                                                                     | []                                                           |
+        | `service.externalTrafficPolicy`                | Enable client source IP preservation                                                                                                      | []                                                           |
+        | `service.ipFamilyPolicy`                       | Service dual-stack policy                                                                                                                 | `""`                                                         |
+        | `service.annotations`                          | Annotations to add to service                                                                                                             | {}                                                           |
+        | `service.selector`                             | Pod selector                                                                                                                              | `{}`                                                         |
+        | `service.trafficDistribution`                  | Service traffic routing strategy                                                                                                          |                                                              |
+        | `serviceAccount.create`                        | If true, create & use serviceAccount                                                                                                      | false                                                        |
+        | `serviceAccount.name`                          | If not set & create is true, use template fullname                                                                                        |                                                              |
+        | `rbac.create`                                  | If true, create & use RBAC resources                                                                                                      | true                                                         |
+        | `rbac.pspEnable`                               | Specifies whether a PodSecurityPolicy should be created.                                                                                  | `false`                                                      |
+        | `rbac.multiclusterEnable`                      | Specifies whether the kubernetes plugin multicluster RBAC should be created.                                                              | `false`                                                      |
+        | `isClusterService`                             | Specifies whether chart should be deployed as cluster-service or normal k8s app.                                                          | true                                                         |
+        | `priorityClassName`                            | Name of Priority Class to assign pods                                                                                                     | `""`                                                         |
+        | `securityContext`                              | securityContext definition for pods                                                                                                       | capabilities.add.NET_BIND_SERVICE                            |
+        | `servers`                                      | Configuration for CoreDNS and plugins                                                                                                     | See values.yml                                               |
+        | `livenessProbe.enabled`                        | Enable/disable the Liveness probe                                                                                                         | `true`                                                       |
+        | `livenessProbe.initialDelaySeconds`            | Delay before liveness probe is initiated                                                                                                  | `60`                                                         |
+        | `livenessProbe.periodSeconds`                  | How often to perform the probe                                                                                                            | `10`                                                         |
+        | `livenessProbe.timeoutSeconds`                 | When the probe times out                                                                                                                  | `5`                                                          |
+        | `livenessProbe.failureThreshold`               | Minimum consecutive failures for the probe to be considered failed after having succeeded.                                                | `5`                                                          |
+        | `livenessProbe.successThreshold`               | Minimum consecutive successes for the probe to be considered successful after having failed.                                              | `1`                                                          |
+        | `readinessProbe.enabled`                       | Enable/disable the Readiness probe                                                                                                        | `true`                                                       |
+        | `readinessProbe.initialDelaySeconds`           | Delay before readiness probe is initiated                                                                                                 | `30`                                                         |
+        | `readinessProbe.periodSeconds`                 | How often to perform the probe                                                                                                            | `10`                                                         |
+        | `readinessProbe.timeoutSeconds`                | When the probe times out                                                                                                                  | `5`                                                          |
+        | `readinessProbe.failureThreshold`              | Minimum consecutive failures for the probe to be considered failed after having succeeded.                                                | `5`                                                          |
+        | `readinessProbe.successThreshold`              | Minimum consecutive successes for the probe to be considered successful after having failed.                                              | `1`                                                          |
+        | `affinity`                                     | Affinity settings for pod assignment                                                                                                      | {}                                                           |
+        | `nodeSelector`                                 | Node labels for pod assignment                                                                                                            | {}                                                           |
+        | `tolerations`                                  | Tolerations for pod assignment                                                                                                            | []                                                           |
+        | `zoneFiles`                                    | Configure custom Zone files                                                                                                               | []                                                           |
+        | `extraContainers`                              | Optional array of sidecar containers                                                                                                      | []                                                           |
+        | `extraVolumes`                                 | Optional array of volumes to create                                                                                                       | []                                                           |
+        | `extraVolumeMounts`                            | Optional array of volumes to mount inside the CoreDNS container                                                                           | []                                                           |
+        | `extraSecrets`                                 | Optional array of secrets to mount inside the CoreDNS container                                                                           | []                                                           |
+        | `env`                                          | Optional array of environment variables for CoreDNS container                                                                             | []                                                           |
+        | `customLabels`                                 | Optional labels for Deployment(s), Pod, Service, ServiceMonitor objects                                                                   | {}                                                           |
+        | `customAnnotations`                            | Optional annotations for Deployment(s), Pod, Service, ServiceMonitor objects                                                              |
+        | `rollingUpdate.maxUnavailable`                 | Maximum number of unavailable replicas during rolling update                                                                              | `1`                                                          |
+        | `rollingUpdate.maxSurge`                       | Maximum number of pods created above desired number of pods                                                                               | `25%`                                                        |
+        | `podDisruptionBudget`                          | Optional PodDisruptionBudget                                                                                                              | {}                                                           |
+        | `podAnnotations`                               | Optional Pod only Annotations                                                                                                             | {}                                                           |
+        | `terminationGracePeriodSeconds`                | Optional duration in seconds the pod needs to terminate gracefully.                                                                       | 30                                                           |
+        | `hpa.enabled`                                  | Enable Hpa autoscaler instead of proportional one                                                                                         | `false`                                                      |
+        | `hpa.minReplicas`                              | Hpa minimum number of CoreDNS replicas                                                                                                    | `1`                                                          |
+        | `hpa.maxReplicas`                              | Hpa maximum number of CoreDNS replicas                                                                                                    | `2`                                                          |
+        | `hpa.metrics`                                  | Metrics definitions used by Hpa to scale up and down                                                                                      | {}                                                           |
+        | `autoscaler.enabled`                           | Optionally enabled a cluster-proportional-autoscaler for CoreDNS                                                                          | `false`                                                      |
+        | `autoscaler.coresPerReplica`                   | Number of cores in the cluster per CoreDNS replica                                                                                        | `256`                                                        |
+        | `autoscaler.nodesPerReplica`                   | Number of nodes in the cluster per CoreDNS replica                                                                                        | `16`                                                         |
+        | `autoscaler.min`                               | Min size of replicaCount                                                                                                                  | 0                                                            |
+        | `autoscaler.max`                               | Max size of replicaCount                                                                                                                  | 0 (aka no max)                                               |
+        | `autoscaler.includeUnschedulableNodes`         | Should the replicas scale based on the total number or only schedulable nodes                                                             | `false`                                                      |
+        | `autoscaler.preventSinglePointFailure`         | If true does not allow single points of failure to form                                                                                   | `true`                                                       |
+        | `autoscaler.customFlags`                       | A list of custom flags to pass into cluster-proportional-autoscaler                                                                       | (no args)                                                    |
+        | `autoscaler.image.repository`                  | The image repository to pull autoscaler from                                                                                              | registry.k8s.io/cpa/cluster-proportional-autoscaler          |
+        | `autoscaler.image.tag`                         | The image tag to pull autoscaler from                                                                                                     | `1.8.5`                                                      |
+        | `autoscaler.image.pullPolicy`                  | Image pull policy for the autoscaler                                                                                                      | IfNotPresent                                                 |
+        | `autoscaler.image.pullSecrets`                 | Specify container image pull secrets                                                                                                      | `[]`                                                         |
+        | `autoscaler.priorityClassName`                 | Optional priority class for the autoscaler pod. `priorityClassName` used if not set.                                                      | `""`                                                         |
+        | `autoscaler.affinity`                          | Affinity settings for pod assignment for autoscaler                                                                                       | {}                                                           |
+        | `autoscaler.nodeSelector`                      | Node labels for pod assignment for autoscaler                                                                                             | {}                                                           |
+        | `autoscaler.tolerations`                       | Tolerations for pod assignment for autoscaler                                                                                             | []                                                           |
+        | `autoscaler.resources.limits.cpu`              | Container maximum CPU for cluster-proportional-autoscaler                                                                                 | `20m`                                                        |
+        | `autoscaler.resources.limits.memory`           | Container maximum memory for cluster-proportional-autoscaler                                                                              | `10Mi`                                                       |
+        | `autoscaler.resources.requests.cpu`            | Container requested CPU for cluster-proportional-autoscaler                                                                               | `20m`                                                        |
+        | `autoscaler.resources.requests.memory`         | Container requested memory for cluster-proportional-autoscaler                                                                            | `10Mi`                                                       |
+        | `autoscaler.configmap.annotations`             | Annotations to add to autoscaler config map. For example to stop CI renaming them                                                         | {}                                                           |
+        | `autoscaler.livenessProbe.enabled`             | Enable/disable the Liveness probe                                                                                                         | `true`                                                       |
+        | `autoscaler.livenessProbe.initialDelaySeconds` | Delay before liveness probe is initiated                                                                                                  | `10`                                                         |
+        | `autoscaler.livenessProbe.periodSeconds`       | How often to perform the probe                                                                                                            | `5`                                                          |
+        | `autoscaler.livenessProbe.timeoutSeconds`      | When the probe times out                                                                                                                  | `5`                                                          |
+        | `autoscaler.livenessProbe.failureThreshold`    | Minimum consecutive failures for the probe to be considered failed after having succeeded.                                                | `3`                                                          |
+        | `autoscaler.livenessProbe.successThreshold`    | Minimum consecutive successes for the probe to be considered successful after having failed.                                              | `1`                                                          |
+        | `autoscaler.extraContainers`                   | Optional array of sidecar containers                                                                                                      | []                                                           |
+        | `deployment.enabled`                           | Optionally disable the main deployment and its respective resources.                                                                      | `true`                                                       |
+        | `deployment.name`                              | Name of the deployment if `deployment.enabled` is true. Otherwise the name of an existing deployment for the autoscaler or HPA to target. | `""`                                                         |
+        | `deployment.annotations`                       | Annotations to add to the main deployment                                                                                                 | `{}`                                                         |
+        | `deployment.selector`                          | Pod selector                                                                                                                              | `{}`                                                         |
+        | `clusterRole.nameOverride`                     | ClusterRole name override                                                                                                                 |                                                              |
+
+        See `values.yaml` for configuration notes. Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
+
+        ```console
+        $ helm install coredns \
+          coredns/coredns \
+          --set rbac.create=false
+        ```
+
+        The above command disables automatic creation of RBAC rules.
+
+        Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
+
+        ```console
+        $ helm install coredns coredns/coredns -f values.yaml
+        ```
+
+        > **Tip**: You can use the default [values.yaml](/charts/coredns/values.yaml)
+
+        ## Caveats
+
+        The chart will automatically determine which protocols to listen on based on
+        the protocols you define in your zones. This means that you could potentially
+        use both "TCP" and "UDP" on a single port.
+        Some cloud environments like "GCE" or "Azure container service" cannot
+        create external loadbalancers with both "TCP" and "UDP" protocols. So
+        When deploying CoreDNS with `serviceType="LoadBalancer"` on such cloud
+        environments, make sure you do not attempt to use both protocols at the same
+        time.
+
+        ## Autoscaling
+
+        By setting `autoscaler.enabled = true` a
+        [cluster-proportional-autoscaler](https://github.com/kubernetes-incubator/cluster-proportional-autoscaler)
+        will be deployed. This will default to a coredns replica for every 256 cores, or
+        16 nodes in the cluster. These can be changed with `autoscaler.coresPerReplica`
+        and `autoscaler.nodesPerReplica`. When cluster is using large nodes (with more
+        cores), `coresPerReplica` should dominate. If using small nodes,
+        `nodesPerReplica` should dominate.
+
+        This also creates a ServiceAccount, ClusterRole, and ClusterRoleBinding for
+        the autoscaler deployment.
+
+        `replicaCount` is ignored if this is enabled.
+
+        By setting `hpa.enabled = true` a [Horizontal Pod Autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
+        is enabled for Coredns deployment. This can scale number of replicas based on meitrics
+        like CpuUtilization, MemoryUtilization or Custom ones.
+
+        ## Adopting existing CoreDNS resources
+
+        If you do not want to delete the existing CoreDNS resources in your cluster, you can adopt the resources into a release as of Helm 3.2.0.
+
+        You will also need to annotate and label your existing resources to allow Helm to assume control of them. See: https://github.com/helm/helm/pull/7649
+
+        ```
+        annotations:
+          meta.helm.sh/release-name: your-release-name
+          meta.helm.sh/release-namespace: your-release-namespace
+        labels:
+          app.kubernetes.io/managed-by: Helm
+        ```
+
+        Once you have annotated and labeled all the resources this chart specifies, you may need to locally template the chart and compare against existing manifest to ensure there are no changes/diffs.s If
+        you have been careful this should not diff and leave all the resources unmodified and now under management of helm.
+
+        Some values to investigate to help adopt your existing manifests to the Helm release are:
+
+        - k8sAppLabelOverride
+        - service.name
+        - customLabels
+
+        In some cases, you will need to orphan delete your existing deployment since selector labels are immutable.
+
+        ```
+        kubectl delete deployment coredns --cascade=orphan
+        ```
+
+        This will delete the deployment and leave the replicaset to ensure no downtime in the cluster. You will need to manually delete the replicaset AFTER Helm has released a new deployment.
+
+        Here is an example script to modify the annotations and labels of existing resources:
+
+        WARNING: Substitute YOUR_HELM_RELEASE_NAME_HERE with the name of your helm release.
+
+        ```
+        #!/usr/bin/env bash
+
+        set -euo pipefail
+
+        for kind in config service serviceAccount; do
+            echo "setting annotations and labels on $kind/coredns"
+            kubectl -n kube-system annotate --overwrite $kind coredns meta.helm.sh/release-name=YOUR_HELM_RELEASE_NAME_HERE
+            kubectl -n kube-system annotate --overwrite $kind coredns meta.helm.sh/release-namespace=kube-system
+            kubectl -n kube-system label --overwrite $kind coredns app.kubernetes.io/managed-by=Helm
+        done
+        ```
+
+        NOTE: Sometimes, previous deployments of kube-dns that have been migrated to CoreDNS still use kube-dns for the service name as well.
+
+        ```
+        echo "setting annotations and labels on service/kube-dns"
+        kubectl -n kube-system annotate --overwrite service kube-dns meta.helm.sh/release-name=YOUR_HELM_RELEASE_NAME_HERE
+        kubectl -n kube-system annotate --overwrite service kube-dns meta.helm.sh/release-namespace=kube-system
+        kubectl -n kube-system label --overwrite service kube-dns app.kubernetes.io/managed-by=Helm
+        ```
+      status: deployed
+    name: rke2-coredns
+    namespace: kube-system
+    resources:
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: rke2-coredns-rke2-coredns-autoscaler
+      namespace: kube-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: coredns
+      namespace: kube-system
+    - apiVersion: v1
+      kind: ConfigMap
+      name: rke2-coredns-rke2-coredns-autoscaler
+      namespace: kube-system
+    - apiVersion: v1
+      kind: ConfigMap
+      name: rke2-coredns-rke2-coredns
+      namespace: kube-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: rke2-coredns-rke2-coredns-autoscaler
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: rke2-coredns-rke2-coredns
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: rke2-coredns-rke2-coredns-autoscaler
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: rke2-coredns-rke2-coredns
+    - apiVersion: v1
+      kind: Service
+      name: rke2-coredns-rke2-coredns
+      namespace: kube-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: rke2-coredns-rke2-coredns-autoscaler
+      namespace: kube-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: rke2-coredns-rke2-coredns
+      namespace: kube-system
+    version: 1
+  status:
+    observedGeneration: 1
+    summary:
+      state: deployed
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/7RW227cNhD9FWH60gfdtV6vBeShjQHDCOoCubVobBQjciQxkkiBpNbZGPr3gtrNXlJ7fWnztqLImXPOHB7tHXRkkaNFyO8ApVQWrVDSuEdVfCZmDdlQCxUytLalUKhIcMihprYLsO/Bf3CfupWkg2rZQA7RMvG9N0LyV++IabKPHpPYEeRg6tB1CjW1hIbCZRLqhtJAyEqTMYGshPwSLrMn1TM9Mle0GQoKzMpY6mD0ocWC2qOMazQ15BBjuuBJkrIspjMes0V5Op9TXMzKM1wwXvJkzpLyNHZFN/j/DRbW7+7D4sOE9S2VpEkyMpB/ugPsxUfSRigJOSwT8KFoFWt+d1vPqSU7vSmxNeQDU9Jq1bakIbd6IB8aId28trI/X9hhGniZLbJ0kWYBnvE0mC04C3CxmAeUJjMs0tOSz0oYb0YfTE/Mqclq1Nb9OOIx1FaUyGw9FE5oVqOsHG8IvA89R0ve5QbQlQPkLddKeDuewTIJkyycXUvwvy/Xa9rwcwScQuBD2RLZveEWg+QtBRNJJ4Gb3qHmqavc97uVdUfwgZNhWvTrEcAG6h44r1TaezMUpCVZMt5ghKy8q4vLqz89NB56mhwj8nqtvqzAh1pN06mt7U0eRZWYqDDVRc22SvS9nwSb2n87NPStQh7eikZ0xAWGSleRe+rdU8RU1ylpIlsPXRGxiJ1Ek7Z/gw8NrW6V5s54sOniLDP1ufEns+5UuB7iOKNX3jIJs1noROpQSItCkl5bd+M11qNEq2D0t0sXyJqDBWO1ktXnr/trFlWSZrOT+XyeZRmMN8evlVGDXl+aZ+l348Nyy2k2TTaOYRz9KeO2dDMfhCyVM+3h1D/0lUZOHlNd35KdLCa0sefUt2pFzlZpnJ4ESRpk8fs0yWeneRL/BS54juw6ifNs4XZJZacb8b4m7wD5vs9qNF5BJD0hjcW2JR5ey0vrdbjyLDbkoVeCD5qQTwL+dFjqWl7LTwcrNz8/oqET3KIdHDT+jcSLg0/Tbnr3Rd42xfRSMPqFMTXIvTR7VjfnsAc7vFayFNVv2B8rHuzF7DP66AJZiIOtlRZfpwwMm4VxGXSAoB2MJf1WtXSU4H8v/6uQXMjqR3R5FP3/LttTCb3QFxvnPdEVAfJOmKnMM/ph35sDTudInZLv6KjTX2hGSfZW6UbI6j41N5+y1y2uvwDr5g9YYktWUyWM1Q/O6CO2gqMVsvqDilqpZn3bhvWJoyR3go77gZ2Nuxhy/98M6SXxC5K0qZnHPpih61CvIL8bx/GfAAAA///Rgs6J8woAAA
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.rke2-ingress-nginx.v3
+      objectset.rio.cattle.io/owner-namespace: kube-system
+    creationTimestamp: "2025-12-30T21:47:33Z"
+    generation: 4
+    labels:
+      objectset.rio.cattle.io/hash: 0a28d112c30e9d0c8f766e0b4f9a8cdfd16c1f70
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"f3832823-a9d2-48dc-a886-e214ab27fd4f"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:artifacthub.io/changes: {}
+                f:artifacthub.io/prerelease: {}
+                f:fleet.cattle.io/bundle-id: {}
+              f:apiVersion: {}
+              f:appVersion: {}
+              f:description: {}
+              f:home: {}
+              f:icon: {}
+              f:keywords: {}
+              f:kubeVersion: {}
+              f:maintainers: {}
+              f:name: {}
+              f:sources: {}
+              f:version: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:notes: {}
+            f:readme: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:51:39Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:51:39Z"
+    name: rke2-ingress-nginx
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.rke2-ingress-nginx.v3
+      uid: f3832823-a9d2-48dc-a886-e214ab27fd4f
+    resourceVersion: "7610"
+    uid: bbc50bdc-25ce-465d-86c5-0f33c4f02dfe
+  spec:
+    chart:
+      metadata:
+        annotations:
+          artifacthub.io/changes: |
+            - Update Ingress-Nginx version controller-v1.13.4
+          artifacthub.io/prerelease: "false"
+          fleet.cattle.io/bundle-id: rke2
+        apiVersion: v2
+        appVersion: 1.13.4
+        description: Ingress controller for Kubernetes using NGINX as a reverse proxy
+          and load balancer
+        home: https://github.com/kubernetes/ingress-nginx
+        icon: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nginx_logo.svg/500px-Nginx_logo.svg.png
+        keywords:
+        - ingress
+        - nginx
+        kubeVersion: '>= v1.34.2'
+        maintainers:
+        - name: cpanato
+        - name: Gacko
+        - name: strongjz
+        - name: tao12345666333
+        name: rke2-ingress-nginx
+        sources:
+        - https://github.com/kubernetes/ingress-nginx
+        version: 4.13.400
+    helmVersion: 3
+    info:
+      description: Upgrade complete
+      firstDeployed: "2025-12-30T21:47:10Z"
+      lastDeployed: "2025-12-30T21:50:38Z"
+      notes: |
+        The ingress-nginx controller has been installed.
+        It may take a few minutes for the load balancer IP to be available.
+        You can watch the status by running 'kubectl get service --namespace kube-system rke2-ingress-nginx-controller --output wide --watch'
+
+        An example Ingress that makes use of the controller:
+          apiVersion: networking.k8s.io/v1
+          kind: Ingress
+          metadata:
+            name: example
+            namespace: foo
+          spec:
+            ingressClassName: nginx
+            rules:
+              - host: www.example.com
+                http:
+                  paths:
+                    - pathType: Prefix
+                      backend:
+                        service:
+                          name: exampleService
+                          port:
+                            number: 80
+                      path: /
+            # This section is only required if TLS is to be enabled for the Ingress
+            tls:
+              - hosts:
+                - www.example.com
+                secretName: example-tls
+
+        If TLS is enabled for the Ingress, a Secret containing the certificate and key must also be provided:
+
+          apiVersion: v1
+          kind: Secret
+          metadata:
+            name: example-tls
+            namespace: foo
+          data:
+            tls.crt: <base64 encoded cert>
+            tls.key: <base64 encoded key>
+          type: kubernetes.io/tls
+      readme: |
+        # ingress-nginx
+
+        [ingress-nginx](https://github.com/kubernetes/ingress-nginx) Ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer
+
+        ![Version: 4.13.4](https://img.shields.io/badge/Version-4.13.4-informational?style=flat-square) ![AppVersion: 1.13.4](https://img.shields.io/badge/AppVersion-1.13.4-informational?style=flat-square)
+
+        To use, add `ingressClassName: nginx` spec field or the `kubernetes.io/ingress.class: nginx` annotation to your Ingress resources.
+
+        This chart bootstraps an ingress-nginx deployment on a [Kubernetes](http://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
+
+        ## Requirements
+
+        Kubernetes: `>=1.21.0-0`
+
+        ## Get Repo Info
+
+        ```console
+        helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+        helm repo update
+        ```
+
+        ## Install Chart
+
+        **Important:** only helm3 is supported
+
+        ```console
+        helm install [RELEASE_NAME] ingress-nginx/ingress-nginx
+        ```
+
+        The command deploys ingress-nginx on the Kubernetes cluster in the default configuration.
+
+        _See [configuration](#configuration) below._
+
+        _See [helm install](https://helm.sh/docs/helm/helm_install/) for command documentation._
+
+        ## Uninstall Chart
+
+        ```console
+        helm uninstall [RELEASE_NAME]
+        ```
+
+        This removes all the Kubernetes components associated with the chart and deletes the release.
+
+        _See [helm uninstall](https://helm.sh/docs/helm/helm_uninstall/) for command documentation._
+
+        ## Upgrading Chart
+
+        ```console
+        helm upgrade [RELEASE_NAME] [CHART] --install
+        ```
+
+        _See [helm upgrade](https://helm.sh/docs/helm/helm_upgrade/) for command documentation._
+
+        ### Migrating from stable/nginx-ingress
+
+        There are two main ways to migrate a release from `stable/nginx-ingress` to `ingress-nginx/ingress-nginx` chart:
+
+        1. For Nginx Ingress controllers used for non-critical services, the easiest method is to [uninstall](#uninstall-chart) the old release and [install](#install-chart) the new one
+        1. For critical services in production that require zero-downtime, you will want to:
+            1. [Install](#install-chart) a second Ingress controller
+            1. Redirect your DNS traffic from the old controller to the new controller
+            1. Log traffic from both controllers during this changeover
+            1. [Uninstall](#uninstall-chart) the old controller once traffic has fully drained from it
+
+        Note that there are some different and upgraded configurations between the two charts, described by Rimas Mocevicius from JFrog in the "Upgrading to ingress-nginx Helm chart" section of [Migrating from Helm chart nginx-ingress to ingress-nginx](https://rimusz.net/migrating-to-ingress-nginx). As the `ingress-nginx/ingress-nginx` chart continues to update, you will want to check current differences by running [helm configuration](#configuration) commands on both charts.
+
+        ## Configuration
+
+        See [Customizing the Chart Before Installing](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing). To see all configurable options with detailed comments, visit the chart's [values.yaml](./values.yaml), or run these configuration commands:
+
+        ```console
+        helm show values ingress-nginx/ingress-nginx
+        ```
+
+        ### PodDisruptionBudget
+
+        Note that the PodDisruptionBudget resource will only be defined if the replicaCount is greater than one,
+        else it would make it impossible to evacuate a node. See [gh issue #7127](https://github.com/helm/charts/issues/7127) for more info.
+
+        ### Prometheus Metrics
+
+        The Ingress-Nginx Controller can export Prometheus metrics, by setting `controller.metrics.enabled` to `true`.
+
+        You can add Prometheus annotations to the metrics service using `controller.metrics.service.annotations`.
+        Alternatively, if you use the Prometheus Operator, you can enable ServiceMonitor creation using `controller.metrics.serviceMonitor.enabled`. And set `controller.metrics.serviceMonitor.additionalLabels.release="prometheus"`. "release=prometheus" should match the label configured in the prometheus servicemonitor ( see `kubectl get servicemonitor prometheus-kube-prom-prometheus -oyaml -n prometheus`)
+
+        ### ingress-nginx nginx\_status page/stats server
+
+        Previous versions of this chart had a `controller.stats.*` configuration block, which is now obsolete due to the following changes in Ingress-Nginx Controller:
+
+        - In [0.16.1](https://github.com/kubernetes/ingress-nginx/blob/main/Changelog.md#0161), the vts (virtual host traffic status) dashboard was removed
+        - In [0.23.0](https://github.com/kubernetes/ingress-nginx/blob/main/Changelog.md#0230), the status page at port 18080 is now a unix socket webserver only available at localhost.
+          You can use `curl --unix-socket /tmp/nginx-status-server.sock http://localhost/nginx_status` inside the controller container to access it locally, or use the snippet from [nginx-ingress changelog](https://github.com/kubernetes/ingress-nginx/blob/main/Changelog.md#0230) to re-enable the http server
+
+        ### ExternalDNS Service Configuration
+
+        Add an [ExternalDNS](https://github.com/kubernetes-sigs/external-dns) annotation to the LoadBalancer service:
+
+        ```yaml
+        controller:
+          service:
+            annotations:
+              external-dns.alpha.kubernetes.io/hostname: kubernetes-example.com.
+        ```
+
+        ### AWS L7 ELB with SSL Termination
+
+        Annotate the controller as shown in the [nginx-ingress l7 patch](https://github.com/kubernetes/ingress-nginx/blob/ab3a789caae65eec4ad6e3b46b19750b481b6bce/deploy/aws/l7/service-l7.yaml):
+
+        ```yaml
+        controller:
+          service:
+            targetPorts:
+              http: http
+              https: http
+            annotations:
+              service.beta.kubernetes.io/aws-load-balancer-ssl-cert: arn:aws:acm:XX-XXXX-X:XXXXXXXXX:certificate/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX
+              service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "http"
+              service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "https"
+              service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: '3600'
+        ```
+
+        ### Additional Internal Load Balancer
+
+        This setup is useful when you need both external and internal load balancers but don't want to have multiple ingress controllers and multiple ingress objects per application.
+
+        By default, the ingress object will point to the external load balancer address, but if correctly configured, you can make use of the internal one if the URL you are looking up resolves to the internal load balancer's URL.
+
+        You'll need to set both the following values:
+
+        `controller.service.internal.enabled`
+        `controller.service.internal.annotations`
+
+        If one of them is missing the internal load balancer will not be deployed. Example you may have `controller.service.internal.enabled=true` but no annotations set, in this case no action will be taken.
+
+        `controller.service.internal.annotations` varies with the cloud service you're using.
+
+        Example for AWS:
+
+        ```yaml
+        controller:
+          service:
+            internal:
+              enabled: true
+              annotations:
+                # Create internal NLB
+                service.beta.kubernetes.io/aws-load-balancer-scheme: "internal"
+                # Create internal ELB(Deprecated)
+                # service.beta.kubernetes.io/aws-load-balancer-internal: "true"
+                # Any other annotation can be declared here.
+        ```
+
+        Example for GCE:
+
+        ```yaml
+        controller:
+          service:
+            internal:
+              enabled: true
+              annotations:
+                # Create internal LB. More information: https://cloud.google.com/kubernetes-engine/docs/how-to/internal-load-balancing
+                # For GKE versions 1.17 and later
+                networking.gke.io/load-balancer-type: "Internal"
+                # For earlier versions
+                # cloud.google.com/load-balancer-type: "Internal"
+
+                # Any other annotation can be declared here.
+        ```
+
+        Example for Azure:
+
+        ```yaml
+        controller:
+          service:
+              annotations:
+                # Create internal LB
+                service.beta.kubernetes.io/azure-load-balancer-internal: "true"
+                # Any other annotation can be declared here.
+        ```
+
+        Example for Oracle Cloud Infrastructure:
+
+        ```yaml
+        controller:
+          service:
+              annotations:
+                # Create internal LB
+                service.beta.kubernetes.io/oci-load-balancer-internal: "true"
+                # Any other annotation can be declared here.
+        ```
+
+        The load balancer annotations of more cloud service providers can be found: [Internal load balancer](https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer).
+
+        An use case for this scenario is having a split-view DNS setup where the public zone CNAME records point to the external balancer URL while the private zone CNAME records point to the internal balancer URL. This way, you only need one ingress kubernetes object.
+
+        Optionally you can set `controller.service.loadBalancerIP` if you need a static IP for the resulting `LoadBalancer`.
+
+        ### Ingress Admission Webhooks
+
+        With nginx-ingress-controller version 0.25+, the Ingress-Nginx Controller pod exposes an endpoint that will integrate with the `validatingwebhookconfiguration` Kubernetes feature to prevent bad ingress from being added to the cluster.
+        **This feature is enabled by default since 0.31.0.**
+
+        With nginx-ingress-controller in 0.25.* work only with kubernetes 1.14+, 0.26 fix [this issue](https://github.com/kubernetes/ingress-nginx/pull/4521)
+
+        #### How the Chart Configures the Hooks
+        A validating and configuration requires the endpoint to which the request is sent to use TLS. It is possible to set up custom certificates to do this, but in most cases, a self-signed certificate is enough. The setup of this component requires some more complex orchestration when using helm. The steps are created to be idempotent and to allow turning the feature on and off without running into helm quirks.
+
+        1. A pre-install hook provisions a certificate into the same namespace using a format compatible with provisioning using end user certificates. If the certificate already exists, the hook exits.
+        2. The Ingress-Nginx Controller pod is configured to use a TLS proxy container, which will load that certificate.
+        3. Validating and Mutating webhook configurations are created in the cluster.
+        4. A post-install hook reads the CA from the secret created by step 1 and patches the Validating and Mutating webhook configurations. This process will allow a custom CA provisioned by some other process to also be patched into the webhook configurations. The chosen failure policy is also patched into the webhook configurations
+
+        #### Alternatives
+        It should be possible to use [cert-manager/cert-manager](https://github.com/cert-manager/cert-manager) if a more complete solution is required.
+
+        You can enable automatic self-signed TLS certificate provisioning via cert-manager by setting the `controller.admissionWebhooks.certManager.enabled` value to true.
+
+        Please ensure that cert-manager is correctly installed and configured.
+
+        ### Helm Error When Upgrading: spec.clusterIP: Invalid value: ""
+
+        If you are upgrading this chart from a version between 0.31.0 and 1.2.2 then you may get an error like this:
+
+        ```console
+        Error: UPGRADE FAILED: Service "?????-controller" is invalid: spec.clusterIP: Invalid value: "": field is immutable
+        ```
+
+        Detail of how and why are in [this issue](https://github.com/helm/charts/pull/13646) but to resolve this you can set `xxxx.service.omitClusterIP` to `true` where `xxxx` is the service referenced in the error.
+
+        As of version `1.26.0` of this chart, by simply not providing any clusterIP value, `invalid: spec.clusterIP: Invalid value: "": field is immutable` will no longer occur since `clusterIP: ""` will not be rendered.
+
+        ### Pod Security Admission
+
+        You can use Pod Security Admission by applying labels to the `ingress-nginx` namespace as instructed by the [documentation](https://kubernetes.io/docs/tasks/configure-pod-container/enforce-standards-namespace-labels).
+
+        Example:
+
+        ```yaml
+        apiVersion: v1
+        kind: Namespace
+        metadata:
+          name: ingress-nginx
+          labels:
+            kubernetes.io/metadata.name: ingress-nginx
+            name: ingress-nginx
+            pod-security.kubernetes.io/enforce: restricted
+            pod-security.kubernetes.io/enforce-version: v1.31
+        ```
+
+        ## Values
+
+        | Key | Type | Default | Description |
+        |-----|------|---------|-------------|
+        | commonLabels | object | `{}` |  |
+        | controller.addHeaders | object | `{}` | Will add custom headers before sending response traffic to the client according to: https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#add-headers |
+        | controller.admissionWebhooks.annotations | object | `{}` |  |
+        | controller.admissionWebhooks.certManager.admissionCert.duration | string | `""` |  |
+        | controller.admissionWebhooks.certManager.admissionCert.revisionHistoryLimit | int | `0` | Revision history limit of the webhook certificate. Ref.: https://cert-manager.io/docs/reference/api-docs/#cert-manager.io/v1.CertificateSpec |
+        | controller.admissionWebhooks.certManager.enabled | bool | `false` |  |
+        | controller.admissionWebhooks.certManager.rootCert.duration | string | `""` |  |
+        | controller.admissionWebhooks.certManager.rootCert.revisionHistoryLimit | int | `0` | Revision history limit of the root certificate. Ref.: https://cert-manager.io/docs/reference/api-docs/#cert-manager.io/v1.CertificateSpec |
+        | controller.admissionWebhooks.certificate | string | `"/usr/local/certificates/cert"` |  |
+        | controller.admissionWebhooks.createSecretJob.activeDeadlineSeconds | int | `0` | Deadline in seconds for the job to complete. Must be greater than 0 to enforce. If unset or 0, no deadline is enforced. |
+        | controller.admissionWebhooks.createSecretJob.name | string | `"create"` |  |
+        | controller.admissionWebhooks.createSecretJob.resources | object | `{}` |  |
+        | controller.admissionWebhooks.createSecretJob.securityContext | object | `{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"readOnlyRootFilesystem":true,"runAsGroup":65532,"runAsNonRoot":true,"runAsUser":65532,"seccompProfile":{"type":"RuntimeDefault"}}` | Security context for secret creation containers |
+        | controller.admissionWebhooks.enabled | bool | `true` |  |
+        | controller.admissionWebhooks.extraEnvs | list | `[]` | Additional environment variables to set |
+        | controller.admissionWebhooks.failurePolicy | string | `"Fail"` | Admission Webhook failure policy to use |
+        | controller.admissionWebhooks.key | string | `"/usr/local/certificates/key"` |  |
+        | controller.admissionWebhooks.labels | object | `{}` | Labels to be added to admission webhooks |
+        | controller.admissionWebhooks.name | string | `"admission"` |  |
+        | controller.admissionWebhooks.namespaceSelector | object | `{}` |  |
+        | controller.admissionWebhooks.objectSelector | object | `{}` |  |
+        | controller.admissionWebhooks.patch.enabled | bool | `true` |  |
+        | controller.admissionWebhooks.patch.image.digest | string | `"sha256:bcfc926ed57831edf102d62c5c0e259572591df4796ef1420b87f9cf6092497f"` |  |
+        | controller.admissionWebhooks.patch.image.image | string | `"ingress-nginx/kube-webhook-certgen"` |  |
+        | controller.admissionWebhooks.patch.image.pullPolicy | string | `"IfNotPresent"` |  |
+        | controller.admissionWebhooks.patch.image.tag | string | `"v1.6.4"` |  |
+        | controller.admissionWebhooks.patch.labels | object | `{}` | Labels to be added to patch job resources |
+        | controller.admissionWebhooks.patch.networkPolicy.enabled | bool | `false` | Enable 'networkPolicy' or not |
+        | controller.admissionWebhooks.patch.nodeSelector."kubernetes.io/os" | string | `"linux"` |  |
+        | controller.admissionWebhooks.patch.podAnnotations | object | `{}` |  |
+        | controller.admissionWebhooks.patch.priorityClassName | string | `""` | Provide a priority class name to the webhook patching job # |
+        | controller.admissionWebhooks.patch.rbac | object | `{"create":true}` | Admission webhook patch job RBAC |
+        | controller.admissionWebhooks.patch.rbac.create | bool | `true` | Create RBAC or not |
+        | controller.admissionWebhooks.patch.runtimeClassName | string | `""` | Instruct the kubelet to use the named RuntimeClass to run the pod |
+        | controller.admissionWebhooks.patch.securityContext | object | `{}` | Security context for secret creation & webhook patch pods |
+        | controller.admissionWebhooks.patch.serviceAccount | object | `{"automountServiceAccountToken":true,"create":true,"name":""}` | Admission webhook patch job service account |
+        | controller.admissionWebhooks.patch.serviceAccount.automountServiceAccountToken | bool | `true` | Auto-mount service account token or not |
+        | controller.admissionWebhooks.patch.serviceAccount.create | bool | `true` | Create a service account or not |
+        | controller.admissionWebhooks.patch.serviceAccount.name | string | `""` | Custom service account name |
+        | controller.admissionWebhooks.patch.tolerations | list | `[]` |  |
+        | controller.admissionWebhooks.patchWebhookJob.activeDeadlineSeconds | int | `0` | Deadline in seconds for the job to complete. Must be greater than 0 to enforce. If unset or 0, no deadline is enforced. |
+        | controller.admissionWebhooks.patchWebhookJob.name | string | `"patch"` |  |
+        | controller.admissionWebhooks.patchWebhookJob.resources | object | `{}` |  |
+        | controller.admissionWebhooks.patchWebhookJob.securityContext | object | `{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"readOnlyRootFilesystem":true,"runAsGroup":65532,"runAsNonRoot":true,"runAsUser":65532,"seccompProfile":{"type":"RuntimeDefault"}}` | Security context for webhook patch containers |
+        | controller.admissionWebhooks.port | int | `8443` |  |
+        | controller.admissionWebhooks.service.annotations | object | `{}` |  |
+        | controller.admissionWebhooks.service.externalIPs | list | `[]` |  |
+        | controller.admissionWebhooks.service.loadBalancerSourceRanges | list | `[]` |  |
+        | controller.admissionWebhooks.service.servicePort | int | `443` |  |
+        | controller.admissionWebhooks.service.type | string | `"ClusterIP"` |  |
+        | controller.affinity | object | `{}` | Affinity and anti-affinity rules for server scheduling to nodes # Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity # |
+        | controller.allowSnippetAnnotations | bool | `false` | This configuration defines if Ingress Controller should allow users to set their own *-snippet annotations, otherwise this is forbidden / dropped when users add those annotations. Global snippets in ConfigMap are still respected |
+        | controller.annotations | object | `{}` | Annotations to be added to the controller Deployment or DaemonSet # |
+        | controller.autoscaling.annotations | object | `{}` |  |
+        | controller.autoscaling.behavior | object | `{}` |  |
+        | controller.autoscaling.enabled | bool | `false` |  |
+        | controller.autoscaling.maxReplicas | int | `11` |  |
+        | controller.autoscaling.minReplicas | int | `1` |  |
+        | controller.autoscaling.targetCPUUtilizationPercentage | int | `50` |  |
+        | controller.autoscaling.targetMemoryUtilizationPercentage | int | `50` |  |
+        | controller.autoscalingTemplate | list | `[]` |  |
+        | controller.config | object | `{}` | Global configuration passed to the ConfigMap consumed by the controller. Values may contain Helm templates. Ref.: https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/ |
+        | controller.configAnnotations | object | `{}` | Annotations to be added to the controller config configuration configmap. |
+        | controller.configMapNamespace | string | `""` | Allows customization of the configmap / nginx-configmap namespace; defaults to $(POD_NAMESPACE) |
+        | controller.containerName | string | `"controller"` | Configures the controller container name |
+        | controller.containerPort | object | `{"http":80,"https":443}` | Configures the ports that the nginx-controller listens on |
+        | controller.containerSecurityContext | object | `{}` | Security context for controller containers |
+        | controller.customTemplate.configMapKey | string | `""` |  |
+        | controller.customTemplate.configMapName | string | `""` |  |
+        | controller.disableLeaderElection | bool | `false` | This configuration disable Nginx Controller Leader Election |
+        | controller.dnsConfig | object | `{}` | Optionally customize the pod dnsConfig. |
+        | controller.dnsPolicy | string | `"ClusterFirst"` | Optionally change this to ClusterFirstWithHostNet in case you have 'hostNetwork: true'. By default, while using host network, name resolution uses the host's DNS. If you wish nginx-controller to keep resolving names inside the k8s network, use ClusterFirstWithHostNet. |
+        | controller.electionID | string | `""` | Election ID to use for status update, by default it uses the controller name combined with a suffix of 'leader' |
+        | controller.electionTTL | string | `""` | Duration a leader election is valid before it's getting re-elected, e.g. `15s`, `10m` or `1h`. (Default: 30s) |
+        | controller.enableAnnotationValidations | bool | `true` |  |
+        | controller.enableMimalloc | bool | `true` | Enable mimalloc as a drop-in replacement for malloc. # ref: https://github.com/microsoft/mimalloc # |
+        | controller.enableTopologyAwareRouting | bool | `false` | This configuration enables Topology Aware Routing feature, used together with service annotation service.kubernetes.io/topology-mode="auto" Defaults to false |
+        | controller.extraArgs | object | `{}` | Additional command line arguments to pass to Ingress-Nginx Controller E.g. to specify the default SSL certificate you can use |
+        | controller.extraContainers | list | `[]` | Additional containers to be added to the controller pod. See https://github.com/lemonldap-ng-controller/lemonldap-ng-controller as example. |
+        | controller.extraEnvs | list | `[]` | Additional environment variables to set |
+        | controller.extraInitContainers | list | `[]` | Containers, which are run before the app containers are started. |
+        | controller.extraModules | list | `[]` | Modules, which are mounted into the core nginx image. |
+        | controller.extraVolumeMounts | list | `[]` | Additional volumeMounts to the controller main container. |
+        | controller.extraVolumes | list | `[]` | Additional volumes to the controller pod. |
+        | controller.healthCheckHost | string | `""` | Address to bind the health check endpoint. It is better to set this option to the internal node address if the Ingress-Nginx Controller is running in the `hostNetwork: true` mode. |
+        | controller.healthCheckPath | string | `"/healthz"` | Path of the health check endpoint. All requests received on the port defined by the healthz-port parameter are forwarded internally to this path. |
+        | controller.hostAliases | list | `[]` | Optionally customize the pod hostAliases. |
+        | controller.hostNetwork | bool | `false` | Required for use with CNI based kubernetes installations (such as ones set up by kubeadm), since CNI and hostport don't mix yet. Can be deprecated once https://github.com/kubernetes/kubernetes/issues/23920 is merged |
+        | controller.hostPort.enabled | bool | `false` | Enable 'hostPort' or not |
+        | controller.hostPort.ports.http | int | `80` | 'hostPort' http port |
+        | controller.hostPort.ports.https | int | `443` | 'hostPort' https port |
+        | controller.hostname | object | `{}` | Optionally customize the pod hostname. |
+        | controller.image.allowPrivilegeEscalation | bool | `false` |  |
+        | controller.image.chroot | bool | `false` |  |
+        | controller.image.digest | string | `"sha256:4042ae3c512c5d7bcf9682b0fdff96cd7b46a23dcbe15a762349094cd8087be7"` |  |
+        | controller.image.digestChroot | string | `"sha256:49fc51d0767efb4d5c871bcd9bd70684fdcbdd34f9e4164bdf9c9d890db19791"` |  |
+        | controller.image.image | string | `"ingress-nginx/controller"` |  |
+        | controller.image.pullPolicy | string | `"IfNotPresent"` |  |
+        | controller.image.readOnlyRootFilesystem | bool | `false` |  |
+        | controller.image.runAsGroup | int | `82` | This value must not be changed using the official image. uid=101(www-data) gid=82(www-data) groups=82(www-data) |
+        | controller.image.runAsNonRoot | bool | `true` |  |
+        | controller.image.runAsUser | int | `101` | This value must not be changed using the official image. uid=101(www-data) gid=82(www-data) groups=82(www-data) |
+        | controller.image.seccompProfile.type | string | `"RuntimeDefault"` |  |
+        | controller.image.tag | string | `"v1.13.4"` |  |
+        | controller.ingressClass | string | `"nginx"` | For backwards compatibility with ingress.class annotation, use ingressClass. Algorithm is as follows, first ingressClassName is considered, if not present, controller looks for ingress.class annotation |
+        | controller.ingressClassByName | bool | `false` | Process IngressClass per name (additionally as per spec.controller). |
+        | controller.ingressClassResource | object | `{"aliases":[],"annotations":{},"controllerValue":"k8s.io/ingress-nginx","default":false,"enabled":true,"name":"nginx","parameters":{}}` | This section refers to the creation of the IngressClass resource. IngressClasses are immutable and cannot be changed after creation. We do not support namespaced IngressClasses, yet, so a ClusterRole and a ClusterRoleBinding is required. |
+        | controller.ingressClassResource.aliases | list | `[]` | Aliases of this IngressClass. Creates copies with identical settings but the respective alias as name. Useful for development environments with only one Ingress Controller but production-like Ingress resources. `default` gets enabled on the original IngressClass only. |
+        | controller.ingressClassResource.annotations | object | `{}` | Annotations to be added to the IngressClass resource. |
+        | controller.ingressClassResource.controllerValue | string | `"k8s.io/ingress-nginx"` | Controller of the IngressClass. An Ingress Controller looks for IngressClasses it should reconcile by this value. This value is also being set as the `--controller-class` argument of this Ingress Controller. Ref: https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-class |
+        | controller.ingressClassResource.default | bool | `false` | If true, Ingresses without `ingressClassName` get assigned to this IngressClass on creation. Ingress creation gets rejected if there are multiple default IngressClasses. Ref: https://kubernetes.io/docs/concepts/services-networking/ingress/#default-ingress-class |
+        | controller.ingressClassResource.enabled | bool | `true` | Create the IngressClass or not |
+        | controller.ingressClassResource.name | string | `"nginx"` | Name of the IngressClass |
+        | controller.ingressClassResource.parameters | object | `{}` | A link to a custom resource containing additional configuration for the controller. This is optional if the controller consuming this IngressClass does not require additional parameters. Ref: https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-class |
+        | controller.keda.apiVersion | string | `"keda.sh/v1alpha1"` |  |
+        | controller.keda.behavior | object | `{}` |  |
+        | controller.keda.cooldownPeriod | int | `300` |  |
+        | controller.keda.enabled | bool | `false` |  |
+        | controller.keda.maxReplicas | int | `11` |  |
+        | controller.keda.minReplicas | int | `1` |  |
+        | controller.keda.pollingInterval | int | `30` |  |
+        | controller.keda.restoreToOriginalReplicaCount | bool | `false` |  |
+        | controller.keda.scaledObject.annotations | object | `{}` |  |
+        | controller.keda.triggers | list | `[]` |  |
+        | controller.kind | string | `"Deployment"` | Use a `DaemonSet` or `Deployment` |
+        | controller.labels | object | `{}` | Labels to be added to the controller Deployment or DaemonSet and other resources that do not have option to specify labels # |
+        | controller.lifecycle | object | `{"preStop":{"exec":{"command":["/wait-shutdown"]}}}` | Improve connection draining when ingress controller pod is deleted using a lifecycle hook: With this new hook, we increased the default terminationGracePeriodSeconds from 30 seconds to 300, allowing the draining of connections up to five minutes. If the active connections end before that, the pod will terminate gracefully at that time. To effectively take advantage of this feature, the Configmap feature worker-shutdown-timeout new value is 240s instead of 10s. # |
+        | controller.livenessProbe.failureThreshold | int | `5` |  |
+        | controller.livenessProbe.httpGet.path | string | `"/healthz"` |  |
+        | controller.livenessProbe.httpGet.port | int | `10254` |  |
+        | controller.livenessProbe.httpGet.scheme | string | `"HTTP"` |  |
+        | controller.livenessProbe.initialDelaySeconds | int | `10` |  |
+        | controller.livenessProbe.periodSeconds | int | `10` |  |
+        | controller.livenessProbe.successThreshold | int | `1` |  |
+        | controller.livenessProbe.timeoutSeconds | int | `1` |  |
+        | controller.maxmindLicenseKey | string | `""` | Maxmind license key to download GeoLite2 Databases. # https://blog.maxmind.com/2019/12/significant-changes-to-accessing-and-using-geolite2-databases/ |
+        | controller.metrics.enabled | bool | `false` |  |
+        | controller.metrics.port | int | `10254` |  |
+        | controller.metrics.portName | string | `"metrics"` |  |
+        | controller.metrics.prometheusRule.additionalLabels | object | `{}` |  |
+        | controller.metrics.prometheusRule.annotations | object | `{}` | Annotations to be added to the PrometheusRule. |
+        | controller.metrics.prometheusRule.enabled | bool | `false` |  |
+        | controller.metrics.prometheusRule.rules | list | `[]` |  |
+        | controller.metrics.service.annotations | object | `{}` |  |
+        | controller.metrics.service.enabled | bool | `true` | Enable the metrics service or not. |
+        | controller.metrics.service.externalIPs | list | `[]` | List of IP addresses at which the stats-exporter service is available # Ref: https://kubernetes.io/docs/concepts/services-networking/service/#external-ips # |
+        | controller.metrics.service.labels | object | `{}` | Labels to be added to the metrics service resource |
+        | controller.metrics.service.loadBalancerSourceRanges | list | `[]` |  |
+        | controller.metrics.service.servicePort | int | `10254` |  |
+        | controller.metrics.service.type | string | `"ClusterIP"` |  |
+        | controller.metrics.serviceMonitor.additionalLabels | object | `{}` |  |
+        | controller.metrics.serviceMonitor.annotations | object | `{}` | Annotations to be added to the ServiceMonitor. |
+        | controller.metrics.serviceMonitor.enabled | bool | `false` |  |
+        | controller.metrics.serviceMonitor.labelLimit | int | `0` | Per-scrape limit on number of labels that will be accepted for a sample. |
+        | controller.metrics.serviceMonitor.labelNameLengthLimit | int | `0` | Per-scrape limit on length of labels name that will be accepted for a sample. |
+        | controller.metrics.serviceMonitor.labelValueLengthLimit | int | `0` | Per-scrape limit on length of labels value that will be accepted for a sample. |
+        | controller.metrics.serviceMonitor.metricRelabelings | list | `[]` |  |
+        | controller.metrics.serviceMonitor.namespace | string | `""` |  |
+        | controller.metrics.serviceMonitor.namespaceSelector | object | `{}` |  |
+        | controller.metrics.serviceMonitor.relabelings | list | `[]` |  |
+        | controller.metrics.serviceMonitor.sampleLimit | int | `0` | Defines a per-scrape limit on the number of scraped samples that will be accepted. |
+        | controller.metrics.serviceMonitor.scrapeInterval | string | `"30s"` |  |
+        | controller.metrics.serviceMonitor.targetLabels | list | `[]` |  |
+        | controller.metrics.serviceMonitor.targetLimit | int | `0` | Defines a limit on the number of scraped targets that will be accepted. |
+        | controller.minAvailable | int | `1` | Minimum available pods set in PodDisruptionBudget. Define either 'minAvailable' or 'maxUnavailable', never both. |
+        | controller.minReadySeconds | int | `0` | `minReadySeconds` to avoid killing pods before we are ready # |
+        | controller.name | string | `"controller"` |  |
+        | controller.networkPolicy.enabled | bool | `false` | Enable 'networkPolicy' or not |
+        | controller.nodeSelector | object | `{"kubernetes.io/os":"linux"}` | Node labels for controller pod assignment # Ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/ # |
+        | controller.podAnnotations | object | `{}` | Annotations to be added to controller pods # |
+        | controller.podLabels | object | `{}` | Labels to add to the pod container metadata |
+        | controller.podSecurityContext | object | `{}` | Security context for controller pods |
+        | controller.priorityClassName | string | `""` |  |
+        | controller.progressDeadlineSeconds | int | `0` | Specifies the number of seconds you want to wait for the controller deployment to progress before the system reports back that it has failed. Ref.: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#progress-deadline-seconds |
+        | controller.proxySetHeaders | object | `{}` | Will add custom headers before sending traffic to backends according to https://github.com/kubernetes/ingress-nginx/tree/main/docs/examples/customization/custom-headers |
+        | controller.publishService | object | `{"enabled":true,"pathOverride":""}` | Allows customization of the source of the IP address or FQDN to report in the ingress status field. By default, it reads the information provided by the service. If disable, the status field reports the IP address of the node or nodes where an ingress controller pod is running. |
+        | controller.publishService.enabled | bool | `true` | Enable 'publishService' or not |
+        | controller.publishService.pathOverride | string | `""` | Allows overriding of the publish service to bind to Must be <namespace>/<service_name> |
+        | controller.readinessProbe.failureThreshold | int | `3` |  |
+        | controller.readinessProbe.httpGet.path | string | `"/healthz"` |  |
+        | controller.readinessProbe.httpGet.port | int | `10254` |  |
+        | controller.readinessProbe.httpGet.scheme | string | `"HTTP"` |  |
+        | controller.readinessProbe.initialDelaySeconds | int | `10` |  |
+        | controller.readinessProbe.periodSeconds | int | `10` |  |
+        | controller.readinessProbe.successThreshold | int | `1` |  |
+        | controller.readinessProbe.timeoutSeconds | int | `1` |  |
+        | controller.replicaCount | int | `1` |  |
+        | controller.reportNodeInternalIp | bool | `false` | Bare-metal considerations via the host network https://kubernetes.github.io/ingress-nginx/deploy/baremetal/#via-the-host-network Ingress status was blank because there is no Service exposing the Ingress-Nginx Controller in a configuration using the host network, the default --publish-service flag used in standard cloud setups does not apply |
+        | controller.resources.requests.cpu | string | `"100m"` |  |
+        | controller.resources.requests.memory | string | `"90Mi"` |  |
+        | controller.runtimeClassName | string | `""` | Instruct the kubelet to use the named RuntimeClass to run the pod |
+        | controller.scope.enabled | bool | `false` | Enable 'scope' or not |
+        | controller.scope.namespace | string | `""` | Namespace to limit the controller to; defaults to $(POD_NAMESPACE) |
+        | controller.scope.namespaceSelector | string | `""` | When scope.enabled == false, instead of watching all namespaces, we watching namespaces whose labels only match with namespaceSelector. Format like foo=bar. Defaults to empty, means watching all namespaces. |
+        | controller.service.annotations | object | `{}` | Annotations to be added to the external controller service. See `controller.service.internal.annotations` for annotations to be added to the internal controller service. |
+        | controller.service.appProtocol | bool | `true` | Declare the app protocol of the external HTTP and HTTPS listeners or not. Supersedes provider-specific annotations for declaring the backend protocol. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#application-protocol |
+        | controller.service.clusterIP | string | `""` | Pre-defined cluster internal IP address of the external controller service. Take care of collisions with existing services. This value is immutable. Set once, it can not be changed without deleting and re-creating the service. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#choosing-your-own-ip-address |
+        | controller.service.clusterIPs | list | `[]` | Pre-defined cluster internal IP addresses of the external controller service. Take care of collisions with existing services. This value is immutable. Set once, it can not be changed without deleting and re-creating the service. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#choosing-your-own-ip-address |
+        | controller.service.enableHttp | bool | `true` | Enable the HTTP listener on both controller services or not. |
+        | controller.service.enableHttps | bool | `true` | Enable the HTTPS listener on both controller services or not. |
+        | controller.service.enabled | bool | `true` | Enable controller services or not. This does not influence the creation of either the admission webhook or the metrics service. |
+        | controller.service.external.enabled | bool | `true` | Enable the external controller service or not. Useful for internal-only deployments. |
+        | controller.service.external.labels | object | `{}` | Labels to be added to the external controller service. |
+        | controller.service.externalIPs | list | `[]` | List of node IP addresses at which the external controller service is available. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#external-ips |
+        | controller.service.externalTrafficPolicy | string | `""` | External traffic policy of the external controller service. Set to "Local" to preserve source IP on providers supporting it. Ref: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip |
+        | controller.service.internal.annotations | object | `{}` | Annotations to be added to the internal controller service. Mandatory for the internal controller service to be created. Varies with the cloud service. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer |
+        | controller.service.internal.appProtocol | bool | `true` | Declare the app protocol of the internal HTTP and HTTPS listeners or not. Supersedes provider-specific annotations for declaring the backend protocol. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#application-protocol |
+        | controller.service.internal.clusterIP | string | `""` | Pre-defined cluster internal IP address of the internal controller service. Take care of collisions with existing services. This value is immutable. Set once, it can not be changed without deleting and re-creating the service. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#choosing-your-own-ip-address |
+        | controller.service.internal.clusterIPs | list | `[]` | Pre-defined cluster internal IP addresses of the internal controller service. Take care of collisions with existing services. This value is immutable. Set once, it can not be changed without deleting and re-creating the service. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#choosing-your-own-ip-address |
+        | controller.service.internal.enabled | bool | `false` | Enable the internal controller service or not. Remember to configure `controller.service.internal.annotations` when enabling this. |
+        | controller.service.internal.externalIPs | list | `[]` | List of node IP addresses at which the internal controller service is available. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#external-ips |
+        | controller.service.internal.externalTrafficPolicy | string | `""` | External traffic policy of the internal controller service. Set to "Local" to preserve source IP on providers supporting it. Ref: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip |
+        | controller.service.internal.ipFamilies | list | `["IPv4"]` | List of IP families (e.g. IPv4, IPv6) assigned to the internal controller service. This field is usually assigned automatically based on cluster configuration and the `ipFamilyPolicy` field. Ref: https://kubernetes.io/docs/concepts/services-networking/dual-stack/#services |
+        | controller.service.internal.ipFamilyPolicy | string | `"SingleStack"` | Represents the dual-stack capabilities of the internal controller service. Possible values are SingleStack, PreferDualStack or RequireDualStack. Fields `ipFamilies` and `clusterIP` depend on the value of this field. Ref: https://kubernetes.io/docs/concepts/services-networking/dual-stack/#services |
+        | controller.service.internal.labels | object | `{}` | Labels to be added to the internal controller service. |
+        | controller.service.internal.loadBalancerClass | string | `""` | Load balancer class of the internal controller service. Used by cloud providers to select a load balancer implementation other than the cloud provider default. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#load-balancer-class |
+        | controller.service.internal.loadBalancerIP | string | `""` | Deprecated: Pre-defined IP address of the internal controller service. Used by cloud providers to connect the resulting load balancer service to a pre-existing static IP. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer |
+        | controller.service.internal.loadBalancerSourceRanges | list | `[]` | Restrict access to the internal controller service. Values must be CIDRs. Allows any source address by default. |
+        | controller.service.internal.nodePorts.http | string | `""` | Node port allocated for the internal HTTP listener. If left empty, the service controller allocates one from the configured node port range. |
+        | controller.service.internal.nodePorts.https | string | `""` | Node port allocated for the internal HTTPS listener. If left empty, the service controller allocates one from the configured node port range. |
+        | controller.service.internal.nodePorts.tcp | object | `{}` | Node port mapping for internal TCP listeners. If left empty, the service controller allocates them from the configured node port range. Example: tcp:   8080: 30080 |
+        | controller.service.internal.nodePorts.udp | object | `{}` | Node port mapping for internal UDP listeners. If left empty, the service controller allocates them from the configured node port range. Example: udp:   53: 30053 |
+        | controller.service.internal.ports | object | `{}` |  |
+        | controller.service.internal.sessionAffinity | string | `""` | Session affinity of the internal controller service. Must be either "None" or "ClientIP" if set. Defaults to "None". Ref: https://kubernetes.io/docs/reference/networking/virtual-ips/#session-affinity |
+        | controller.service.internal.targetPorts | object | `{}` |  |
+        | controller.service.internal.trafficDistribution | string | `""` | Traffic distribution policy of the internal controller service. Set to "PreferClose" to route traffic to endpoints that are topologically closer to the client. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#traffic-distribution |
+        | controller.service.internal.type | string | `""` | Type of the internal controller service. Defaults to the value of `controller.service.type`. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types |
+        | controller.service.ipFamilies | list | `["IPv4"]` | List of IP families (e.g. IPv4, IPv6) assigned to the external controller service. This field is usually assigned automatically based on cluster configuration and the `ipFamilyPolicy` field. Ref: https://kubernetes.io/docs/concepts/services-networking/dual-stack/#services |
+        | controller.service.ipFamilyPolicy | string | `"SingleStack"` | Represents the dual-stack capabilities of the external controller service. Possible values are SingleStack, PreferDualStack or RequireDualStack. Fields `ipFamilies` and `clusterIP` depend on the value of this field. Ref: https://kubernetes.io/docs/concepts/services-networking/dual-stack/#services |
+        | controller.service.labels | object | `{}` | Labels to be added to both controller services. |
+        | controller.service.loadBalancerClass | string | `""` | Load balancer class of the external controller service. Used by cloud providers to select a load balancer implementation other than the cloud provider default. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#load-balancer-class |
+        | controller.service.loadBalancerIP | string | `""` | Deprecated: Pre-defined IP address of the external controller service. Used by cloud providers to connect the resulting load balancer service to a pre-existing static IP. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer |
+        | controller.service.loadBalancerSourceRanges | list | `[]` | Restrict access to the external controller service. Values must be CIDRs. Allows any source address by default. |
+        | controller.service.nodePorts.http | string | `""` | Node port allocated for the external HTTP listener. If left empty, the service controller allocates one from the configured node port range. |
+        | controller.service.nodePorts.https | string | `""` | Node port allocated for the external HTTPS listener. If left empty, the service controller allocates one from the configured node port range. |
+        | controller.service.nodePorts.tcp | object | `{}` | Node port mapping for external TCP listeners. If left empty, the service controller allocates them from the configured node port range. Example: tcp:   8080: 30080 |
+        | controller.service.nodePorts.udp | object | `{}` | Node port mapping for external UDP listeners. If left empty, the service controller allocates them from the configured node port range. Example: udp:   53: 30053 |
+        | controller.service.ports.http | int | `80` | Port the external HTTP listener is published with. |
+        | controller.service.ports.https | int | `443` | Port the external HTTPS listener is published with. |
+        | controller.service.sessionAffinity | string | `""` | Session affinity of the external controller service. Must be either "None" or "ClientIP" if set. Defaults to "None". Ref: https://kubernetes.io/docs/reference/networking/virtual-ips/#session-affinity |
+        | controller.service.targetPorts.http | string | `"http"` | Port of the ingress controller the external HTTP listener is mapped to. |
+        | controller.service.targetPorts.https | string | `"https"` | Port of the ingress controller the external HTTPS listener is mapped to. |
+        | controller.service.trafficDistribution | string | `""` | Traffic distribution policy of the external controller service. Set to "PreferClose" to route traffic to endpoints that are topologically closer to the client. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#traffic-distribution |
+        | controller.service.type | string | `"LoadBalancer"` | Type of the external controller service. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types |
+        | controller.shareProcessNamespace | bool | `false` |  |
+        | controller.sysctls | object | `{}` | sysctls for controller pods # Ref: https://kubernetes.io/docs/tasks/administer-cluster/sysctl-cluster/ |
+        | controller.tcp.annotations | object | `{}` | Annotations to be added to the tcp config configmap |
+        | controller.tcp.configMapNamespace | string | `""` | Allows customization of the tcp-services-configmap; defaults to $(POD_NAMESPACE) |
+        | controller.terminationGracePeriodSeconds | int | `300` | `terminationGracePeriodSeconds` to avoid killing pods before we are ready # wait up to five minutes for the drain of connections # |
+        | controller.tolerations | list | `[]` | Node tolerations for server scheduling to nodes with taints # Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/ # |
+        | controller.topologySpreadConstraints | list | `[]` | Topology spread constraints rely on node labels to identify the topology domain(s) that each Node is in. # Ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-topology-spread-constraints/ # |
+        | controller.udp.annotations | object | `{}` | Annotations to be added to the udp config configmap |
+        | controller.udp.configMapNamespace | string | `""` | Allows customization of the udp-services-configmap; defaults to $(POD_NAMESPACE) |
+        | controller.unhealthyPodEvictionPolicy | string | `""` | Eviction policy for unhealthy pods guarded by PodDisruptionBudget. Ref: https://kubernetes.io/blog/2023/01/06/unhealthy-pod-eviction-policy-for-pdbs/ |
+        | controller.updateStrategy | object | `{}` | The update strategy to apply to the Deployment or DaemonSet # |
+        | controller.watchIngressWithoutClass | bool | `false` | Process Ingress objects without ingressClass annotation/ingressClassName field Overrides value for --watch-ingress-without-class flag of the controller binary Defaults to false |
+        | defaultBackend.affinity | object | `{}` | Affinity and anti-affinity rules for server scheduling to nodes # Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity |
+        | defaultBackend.autoscaling.annotations | object | `{}` |  |
+        | defaultBackend.autoscaling.enabled | bool | `false` |  |
+        | defaultBackend.autoscaling.maxReplicas | int | `2` |  |
+        | defaultBackend.autoscaling.minReplicas | int | `1` |  |
+        | defaultBackend.autoscaling.targetCPUUtilizationPercentage | int | `50` |  |
+        | defaultBackend.autoscaling.targetMemoryUtilizationPercentage | int | `50` |  |
+        | defaultBackend.containerSecurityContext | object | `{}` | Security context for default backend containers |
+        | defaultBackend.enabled | bool | `false` |  |
+        | defaultBackend.extraArgs | object | `{}` |  |
+        | defaultBackend.extraConfigMaps | list | `[]` |  |
+        | defaultBackend.extraEnvs | list | `[]` | Additional environment variables to set for defaultBackend pods |
+        | defaultBackend.extraVolumeMounts | list | `[]` |  |
+        | defaultBackend.extraVolumes | list | `[]` |  |
+        | defaultBackend.image.allowPrivilegeEscalation | bool | `false` |  |
+        | defaultBackend.image.image | string | `"defaultbackend-amd64"` |  |
+        | defaultBackend.image.pullPolicy | string | `"IfNotPresent"` |  |
+        | defaultBackend.image.readOnlyRootFilesystem | bool | `true` |  |
+        | defaultBackend.image.runAsGroup | int | `65534` |  |
+        | defaultBackend.image.runAsNonRoot | bool | `true` |  |
+        | defaultBackend.image.runAsUser | int | `65534` |  |
+        | defaultBackend.image.seccompProfile.type | string | `"RuntimeDefault"` |  |
+        | defaultBackend.image.tag | string | `"1.5"` |  |
+        | defaultBackend.labels | object | `{}` | Labels to be added to the default backend resources |
+        | defaultBackend.livenessProbe.failureThreshold | int | `3` |  |
+        | defaultBackend.livenessProbe.initialDelaySeconds | int | `30` |  |
+        | defaultBackend.livenessProbe.periodSeconds | int | `10` |  |
+        | defaultBackend.livenessProbe.successThreshold | int | `1` |  |
+        | defaultBackend.livenessProbe.timeoutSeconds | int | `5` |  |
+        | defaultBackend.minAvailable | int | `1` | Minimum available pods set in PodDisruptionBudget. Define either 'minAvailable' or 'maxUnavailable', never both. |
+        | defaultBackend.minReadySeconds | int | `0` | `minReadySeconds` to avoid killing pods before we are ready # |
+        | defaultBackend.name | string | `"defaultbackend"` |  |
+        | defaultBackend.networkPolicy.enabled | bool | `false` | Enable 'networkPolicy' or not |
+        | defaultBackend.nodeSelector | object | `{"kubernetes.io/os":"linux"}` | Node labels for default backend pod assignment # Ref: https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/ # |
+        | defaultBackend.podAnnotations | object | `{}` | Annotations to be added to default backend pods # |
+        | defaultBackend.podLabels | object | `{}` | Labels to add to the pod container metadata |
+        | defaultBackend.podSecurityContext | object | `{}` | Security context for default backend pods |
+        | defaultBackend.port | int | `8080` |  |
+        | defaultBackend.priorityClassName | string | `""` |  |
+        | defaultBackend.readinessProbe.failureThreshold | int | `6` |  |
+        | defaultBackend.readinessProbe.initialDelaySeconds | int | `0` |  |
+        | defaultBackend.readinessProbe.periodSeconds | int | `5` |  |
+        | defaultBackend.readinessProbe.successThreshold | int | `1` |  |
+        | defaultBackend.readinessProbe.timeoutSeconds | int | `5` |  |
+        | defaultBackend.replicaCount | int | `1` |  |
+        | defaultBackend.resources | object | `{}` |  |
+        | defaultBackend.runtimeClassName | string | `""` | Instruct the kubelet to use the named RuntimeClass to run the pod |
+        | defaultBackend.service.annotations | object | `{}` |  |
+        | defaultBackend.service.clusterIPs | list | `[]` | Pre-defined cluster internal IP addresses of the default backend service. Take care of collisions with existing services. This value is immutable. Set once, it can not be changed without deleting and re-creating the service. Ref: https://kubernetes.io/docs/concepts/services-networking/service/#choosing-your-own-ip-address |
+        | defaultBackend.service.externalIPs | list | `[]` | List of IP addresses at which the default backend service is available # Ref: https://kubernetes.io/docs/concepts/services-networking/service/#external-ips # |
+        | defaultBackend.service.loadBalancerSourceRanges | list | `[]` |  |
+        | defaultBackend.service.servicePort | int | `80` |  |
+        | defaultBackend.service.type | string | `"ClusterIP"` |  |
+        | defaultBackend.serviceAccount.automountServiceAccountToken | bool | `true` |  |
+        | defaultBackend.serviceAccount.create | bool | `true` |  |
+        | defaultBackend.serviceAccount.name | string | `""` |  |
+        | defaultBackend.tolerations | list | `[]` | Node tolerations for server scheduling to nodes with taints # Ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/ # |
+        | defaultBackend.topologySpreadConstraints | list | `[]` | Topology spread constraints rely on node labels to identify the topology domain(s) that each Node is in. Ref.: https://kubernetes.io/docs/concepts/workloads/pods/pod-topology-spread-constraints/ |
+        | defaultBackend.unhealthyPodEvictionPolicy | string | `""` | Eviction policy for unhealthy pods guarded by PodDisruptionBudget. Ref: https://kubernetes.io/blog/2023/01/06/unhealthy-pod-eviction-policy-for-pdbs/ |
+        | defaultBackend.updateStrategy | object | `{}` | The update strategy to apply to the Deployment or DaemonSet # |
+        | dhParam | string | `""` | A base64-encoded Diffie-Hellman parameter. This can be generated with: `openssl dhparam 4096 2> /dev/null | base64` # Ref: https://github.com/kubernetes/ingress-nginx/tree/main/docs/examples/customization/ssl-dh-param |
+        | global.image.registry | string | `"registry.k8s.io"` | Registry host to pull images from. |
+        | imagePullSecrets | list | `[]` | Optional array of imagePullSecrets containing private registry credentials # Ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/ |
+        | namespaceOverride | string | `""` | Override the deployment namespace; defaults to .Release.Namespace |
+        | portNamePrefix | string | `""` | Prefix for TCP and UDP ports names in ingress controller service # Some cloud providers, like Yandex Cloud may have a requirements for a port name regex to support cloud load balancer integration |
+        | rbac.create | bool | `true` |  |
+        | rbac.scope | bool | `false` |  |
+        | revisionHistoryLimit | int | `10` | Rollback limit # |
+        | serviceAccount.annotations | object | `{}` | Annotations for the controller service account |
+        | serviceAccount.automountServiceAccountToken | bool | `true` |  |
+        | serviceAccount.create | bool | `true` |  |
+        | serviceAccount.name | string | `""` |  |
+        | tcp | object | `{}` | TCP service key-value pairs # Ref: https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/exposing-tcp-udp-services.md # |
+        | udp | object | `{}` | UDP service key-value pairs # Ref: https://github.com/kubernetes/ingress-nginx/blob/main/docs/user-guide/exposing-tcp-udp-services.md # |
+      status: deployed
+    name: rke2-ingress-nginx
+    namespace: kube-system
+    resources:
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: rke2-ingress-nginx
+      namespace: kube-system
+    - apiVersion: v1
+      kind: ConfigMap
+      name: rke2-ingress-nginx-controller
+      namespace: kube-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: rke2-ingress-nginx
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: rke2-ingress-nginx
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: Role
+      name: rke2-ingress-nginx
+      namespace: kube-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: RoleBinding
+      name: rke2-ingress-nginx
+      namespace: kube-system
+    - apiVersion: v1
+      kind: Service
+      name: rke2-ingress-nginx-controller-admission
+      namespace: kube-system
+    - apiVersion: apps/v1
+      kind: DaemonSet
+      name: rke2-ingress-nginx-controller
+      namespace: kube-system
+    - apiVersion: networking.k8s.io/v1
+      kind: IngressClass
+      name: nginx
+    - apiVersion: admissionregistration.k8s.io/v1
+      kind: ValidatingWebhookConfiguration
+      name: rke2-ingress-nginx-admission
+    version: 3
+  status:
+    observedGeneration: 4
+    summary:
+      state: deployed
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/7xW3W7jNhN9FWK+mw+FJOsndhwBQZF2gWKxKFrsFr3oJhcjcmSxpkiBpBSkgd+9IO04NuLNJtu0uUqomTlzzpwZ5B568ijQI9T3gFobj14a7cKfpvmTuHfkMytNxtF7RZk0Mymgho5Un+IwQPLFOHOryaaraQ01zKYiYR+kFpefiFvyX03T2BPU4LosIGWWFKGjbCoyu6Yy7clbyV3qyE5ks6l4UUE3IA9V12NDqbtznnrYJKCwIfUs5Q5dBzUU1WLeVFVbYCmqMp83JRYtlotygeeUL4uipXnB5xiK7gic6Ba2H081k0Bs9iO1ZElzclB/vgcc5O9knTQaaohUG2X4+pcQ+o4U+filReUoAW60t0YpslB7O1ICa6nDxPbCf4O0Y5z5+aI4X17gIi04r9KzqmrS5eJcpBUK3rb5xfJCCNjcbBJwA/GgJ+/Q+vDLMzZD62WL3HdjE6TmHepVIA4pC53XDIUgca0ZE+S4lUPIrNk1XAnBIgAz8c0xb5gjPlpiviPGDSTQKiJ/MMlm1EJRGvkEumFUx/qWEF6Gx5c8W2Y5JHAADzX8vJWJfYoyMekYMsdRYaMoYdS2kkvSnjkzWk7MtCxMBqUmyyy50Ftn4iA67wdXz2YrGTXgpp8FT1hNnlzq5MrNnhhI8tjEQypO6NG6bFtidGQDGGkfq42zapEX8zKvvneXZ3l+PeZ5uZguzyCBNd3dGiuC0eARFRJ4Arl7gJskBj7qE8pVdMmmIqvOsiBfj3JHdWvgB8d5mqiTwy0pFUxl1Wn2R3GbZJ+/tr3kHT2bu485yCMtLPHnsnYRm5uv7O12mFGs10/tJgF/N4TiOAxK8rgCkMC0V7LKiirL8xI2myRe2L3IVQJStybsy7EN32vnUSnGTT8o8hQsL63z72hQ5o6Czcu8nKdFmVb5b2VRn53XRfEHhKv3kihtfFzG7/7hDyRgCUXU9n/sw14pdrxH1/pafz5+uvn/U6nDKDz6MXQmHjh8+9EN+/gw2FPndn9B7SQ5XXFuRn1wSV8HF4x5BGEb5BmOvjNW/hVNka2XLhyrQ/Af1eg82Y9G0cENjyXrEw2kuFpZWqEnkQbhyf5HwG8A84PUQurVswLXuw5C3VSQClTNvwL+9lRfyjGN5HbTe4WhTnj2zcyKw+COyGxPSE9vuBA4SEsr6bz9ooRXv75/wmwqGvJYZDvgXVo86vsTW2weL0f4dy82J34iTVssqPME3Nj3aO+gvt9sNn8HAAD//4rIKhAjCwAA
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.rke2-metrics-server.v1
+      objectset.rio.cattle.io/owner-namespace: kube-system
+    creationTimestamp: "2025-12-30T21:47:33Z"
+    generation: 1
+    labels:
+      objectset.rio.cattle.io/hash: 1365b33f1a2d3205b2a1fa2626a7e0811fe51c5a
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"761789a6-1cc3-433b-867d-3adcff0989dd"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:artifacthub.io/changes: {}
+                f:fleet.cattle.io/bundle-id: {}
+              f:apiVersion: {}
+              f:appVersion: {}
+              f:description: {}
+              f:home: {}
+              f:icon: {}
+              f:keywords: {}
+              f:kubeVersion: {}
+              f:maintainers: {}
+              f:name: {}
+              f:sources: {}
+              f:type: {}
+              f:version: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:notes: {}
+            f:readme: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:47:33Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:47:33Z"
+    name: rke2-metrics-server
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.rke2-metrics-server.v1
+      uid: 761789a6-1cc3-433b-867d-3adcff0989dd
+    resourceVersion: "1585"
+    uid: 866ad1bf-d16a-4b4e-9ed8-de2895c439b5
+  spec:
+    chart:
+      metadata:
+        annotations:
+          artifacthub.io/changes: |
+            - kind: added
+              description: "Add chart options to secure the connection between Metrics Server and the Kubernetes API Server."
+            - kind: added
+              description: "Add `unhealthyPodEvictionPolicy` to the Metrics Server PDB as a user enabled feature."
+            - kind: changed
+              description: "Update the _Addon Resizer_ OCI image to [`1.8.23`](https://github.com/kubernetes/autoscaler/releases/tag/addon-resizer-1.8.23)."
+            - kind: changed
+              description: "Update the _Metrics Server_ OCI image to [`0.8.0`](https://github.com/kubernetes-sigs/metrics-server/releases/tag/v0.8.0)."
+          fleet.cattle.io/bundle-id: rke2
+        apiVersion: v2
+        appVersion: 0.8.0
+        description: Metrics Server is a scalable, efficient source of container resource
+          metrics for Kubernetes built-in autoscaling pipelines.
+        home: https://github.com/kubernetes-sigs/metrics-server
+        icon: https://avatars.githubusercontent.com/u/36015203?s=400&v=4
+        keywords:
+        - kubernetes
+        - metrics-server
+        - metrics
+        kubeVersion: '>= v1.34.2'
+        maintainers:
+        - name: stevehipwell
+          url: https://github.com/stevehipwell
+        - name: krmichel
+          url: https://github.com/krmichel
+        - name: endrec
+          url: https://github.com/endrec
+        name: rke2-metrics-server
+        sources:
+        - https://github.com/kubernetes-sigs/metrics-server
+        type: application
+        version: 3.13.002
+    helmVersion: 3
+    info:
+      description: Install complete
+      firstDeployed: "2025-12-30T21:47:11Z"
+      lastDeployed: "2025-12-30T21:47:11Z"
+      notes: |
+        ***********************************************************************
+        * Metrics Server                                                      *
+        ***********************************************************************
+          Chart version: 3.13.002
+          App version:   0.8.0
+          Image tag:     rancher/hardened-k8s-metrics-server:v0.8.0-build20251015
+        ***********************************************************************
+      readme: |
+        # Kubernetes Metrics Server
+
+        [Metrics Server](https://github.com/kubernetes-sigs/metrics-server/) is a scalable, efficient source of container resource metrics for Kubernetes built-in autoscaling pipelines.
+
+        ## Installing the Chart
+
+        Before you can install the chart you will need to add the `metrics-server` repo to [Helm](https://helm.sh/).
+
+        ```shell
+        helm repo add metrics-server https://kubernetes-sigs.github.io/metrics-server/
+        ```
+
+        After you've installed the repo you can install the chart.
+
+        ```shell
+        helm upgrade --install metrics-server metrics-server/metrics-server
+        ```
+
+        ## Configuration
+
+        The following table lists the configurable parameters of the _Metrics Server_ chart and their default values.
+
+        | Parameter                                        | Description                                                                                                                                                                                                                                                      | Default                                                                        |
+        | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+        | `image.repository`                               | Image repository.                                                                                                                                                                                                                                                | `registry.k8s.io/metrics-server/metrics-server`                                |
+        | `image.tag`                                      | Image tag, will override the default tag derived from the chart app version.                                                                                                                                                                                     | `""`                                                                           |
+        | `image.pullPolicy`                               | Image pull policy.                                                                                                                                                                                                                                               | `IfNotPresent`                                                                 |
+        | `imagePullSecrets`                               | Image pull secrets.                                                                                                                                                                                                                                              | `[]`                                                                           |
+        | `nameOverride`                                   | Override the `name` of the chart.                                                                                                                                                                                                                                | `nil`                                                                          |
+        | `fullnameOverride`                               | Override the `fullname` of the chart.                                                                                                                                                                                                                            | `nil`                                                                          |
+        | `serviceAccount.create`                          | If `true`, create a new service account.                                                                                                                                                                                                                         | `true`                                                                         |
+        | `serviceAccount.annotations`                     | Annotations to add to the service account.                                                                                                                                                                                                                       | `{}`                                                                           |
+        | `serviceAccount.name`                            | Service account to be used. If not set and `serviceAccount.create` is `true`, a name is generated using the full name template.                                                                                                                                  | `nil`                                                                          |
+        | `serviceAccount.secrets`                         | The list of secrets mountable by this service account. See <https://kubernetes.io/docs/reference/labels-annotations-taints/#enforce-mountable-secrets>                                                                                                           | `[]`                                                                           |
+        | `rbac.create`                                    | If `true`, create the RBAC resources.                                                                                                                                                                                                                            | `true`                                                                         |
+        | `rbac.pspEnabled`                                | If `true`, create a pod security policy resource, unless Kubernetes version is 1.25 or later.                                                                                                                                                                    | `false`                                                                        |
+        | `apiService.create`                              | If `true`, create the `v1beta1.metrics.k8s.io` API service. You typically want this enabled! If you disable API service creation you have to manage it outside of this chart for e.g horizontal pod autoscaling to work with this release.                       | `true`                                                                         |
+        | `apiService.annotations`                         | Annotations to add to the API service                                                                                                                                                                                                                            | `{}`                                                                           |
+        | `apiService.insecureSkipTLSVerify`               | Specifies whether to skip TLS verification (NOTE: this setting is not a proxy for the `--kubelet-insecure-tls` metrics-server flag)                                                                                                                              | `true`                                                                         |
+        | `apiService.caBundle`                            | The PEM encoded CA bundle for TLS verification                                                                                                                                                                                                                   | `""`                                                                           |
+        | `commonLabels`                                   | Labels to add to each object of the chart.                                                                                                                                                                                                                       | `{}`                                                                           |
+        | `podLabels`                                      | Labels to add to the pod.                                                                                                                                                                                                                                        | `{}`                                                                           |
+        | `podAnnotations`                                 | Annotations to add to the pod.                                                                                                                                                                                                                                   | `{}`                                                                           |
+        | `podSecurityContext`                             | Security context for the pod.                                                                                                                                                                                                                                    | `{}`                                                                           |
+        | `securityContext`                                | Security context for the _metrics-server_ container.                                                                                                                                                                                                             | _See values.yaml_                                                              |
+        | `priorityClassName`                              | Priority class name to use.                                                                                                                                                                                                                                      | `system-cluster-critical`                                                      |
+        | `containerPort`                                  | port for the _metrics-server_ container.                                                                                                                                                                                                                         | `10250`                                                                        |
+        | `hostNetwork.enabled`                            | If `true`, start _metric-server_ in hostNetwork mode. You would require this enabled if you use alternate overlay networking for pods and API server unable to communicate with metrics-server. As an example, this is required if you use Weave network on EKS. | `false`                                                                        |
+        | `replicas`                                       | Number of replicas to run.                                                                                                                                                                                                                                       | `1`                                                                            |
+        | `revisionHistoryLimit`                           | Number of revisions to keep.                                                                                                                                                                                                                                     | `nil`                                                                          |
+        | `updateStrategy`                                 | Customise the default update strategy.                                                                                                                                                                                                                           | `{}`                                                                           |
+        | `podDisruptionBudget.enabled`                    | If `true`, create `PodDisruptionBudget` resource.                                                                                                                                                                                                                | `{}`                                                                           |
+        | `podDisruptionBudget.minAvailable`               | Set the `PodDisruptionBudget` minimum available pods.                                                                                                                                                                                                            | `nil`                                                                          |
+        | `podDisruptionBudget.maxUnavailable`             | Set the `PodDisruptionBudget` maximum unavailable pods.                                                                                                                                                                                                          | `nil`                                                                          |
+        | `podDisruptionBudget.maxUnavailable`             | Set the `PodDisruptionBudget` maximum unavailable pods.                                                                                                                                                                                                          | `nil`                                                                          |
+        | `podDisruptionBudget.unhealthyPodEvictionPolicy` | Unhealthy pod eviction policy for the PDB.                                                                                                                                                                                                                       | `nil`                                                                          |
+        | `defaultArgs`                                    | Default arguments to pass to the _metrics-server_ command.                                                                                                                                                                                                       | See _values.yaml_                                                              |
+        | `args`                                           | Additional arguments to pass to the _metrics-server_ command.                                                                                                                                                                                                    | `[]`                                                                           |
+        | `livenessProbe`                                  | Liveness probe.                                                                                                                                                                                                                                                  | See _values.yaml_                                                              |
+        | `readinessProbe`                                 | Readiness probe.                                                                                                                                                                                                                                                 | See _values.yaml_                                                              |
+        | `service.type`                                   | Service type.                                                                                                                                                                                                                                                    | `ClusterIP`                                                                    |
+        | `service.port`                                   | Service port.                                                                                                                                                                                                                                                    | `443`                                                                          |
+        | `service.annotations`                            | Annotations to add to the service.                                                                                                                                                                                                                               | `{}`                                                                           |
+        | `service.labels`                                 | Labels to add to the service.                                                                                                                                                                                                                                    | `{}`                                                                           |
+        | `addonResizer.enabled`                           | If `true`, run the addon-resizer as a sidecar to automatically scale resource requests with cluster size.                                                                                                                                                        | `false`                                                                        |
+        | `addonResizer.securityContext`                   | Security context for the _metrics_server_container.                                                                                                                                                                                                              | _See values.yaml                                                               |
+        | `addonResizer.image.repository`                  | addon-resizer image repository                                                                                                                                                                                                                                   | `registry.k8s.io/autoscaling/addon-resizer`                                    |
+        | `addonResizer.image.tag`                         | addon-resizer image tag                                                                                                                                                                                                                                          | `1.8.23`                                                                       |
+        | `addonResizer.resources`                         | Resource requests and limits for the _nanny_ container.                                                                                                                                                                                                          | `{ requests: { cpu: 40m, memory: 25Mi }, limits: { cpu: 40m, memory: 25Mi } }` |
+        | `addonResizer.nanny.cpu`                         | The base CPU requirement.                                                                                                                                                                                                                                        | `0m`                                                                           |
+        | `addonResizer.nanny.extraCPU`                    | The amount of CPU to add per node.                                                                                                                                                                                                                               | `1m`                                                                           |
+        | `addonResizer.nanny.memory`                      | The base memory requirement.                                                                                                                                                                                                                                     | `0Mi`                                                                          |
+        | `addonResizer.nanny.extraMemory`                 | The amount of memory to add per node.                                                                                                                                                                                                                            | `2Mi`                                                                          |
+        | `addonResizer.nanny.minClusterSize`              | Specifies the smallest number of nodes resources will be scaled to.                                                                                                                                                                                              | `100`                                                                          |
+        | `addonResizer.nanny.pollPeriod`                  | The time, in milliseconds, to poll the dependent container.                                                                                                                                                                                                      | `300000`                                                                       |
+        | `addonResizer.nanny.threshold`                   | A number between 0-100. The dependent's resources are rewritten when they deviate from expected by more than threshold.                                                                                                                                          | `5`                                                                            |
+        | `metrics.enabled`                                | If `true`, allow unauthenticated access to `/metrics`.                                                                                                                                                                                                           | `false`                                                                        |
+        | `serviceMonitor.enabled`                         | If `true`, create a _Prometheus_ service monitor. This needs `metrics.enabled` to be `true`.                                                                                                                                                                     | `false`                                                                        |
+        | `serviceMonitor.additionalLabels`                | Additional labels to be set on the ServiceMonitor.                                                                                                                                                                                                               | `{}`                                                                           |
+        | `serviceMonitor.metricRelabelings`               | _Prometheus_ metric relabeling.                                                                                                                                                                                                                                  | `[]`                                                                           |
+        | `serviceMonitor.relabelings`                     | _Prometheus_ relabeling.                                                                                                                                                                                                                                         | `[]`                                                                           |
+        | `serviceMonitor.interval`                        | _Prometheus_ scrape frequency.                                                                                                                                                                                                                                   | `1m`                                                                           |
+        | `serviceMonitor.scrapeTimeout`                   | _Prometheus_ scrape timeout.                                                                                                                                                                                                                                     | `10s`                                                                          |
+        | `resources`                                      | Resource requests and limits for the _metrics-server_ container. See <https://github.com/kubernetes-sigs/metrics-server#scaling>                                                                                                                                 | `{ requests: { cpu: 100m, memory: 200Mi }}`                                    |
+        | `extraVolumeMounts`                              | Additional volume mounts for the _metrics-server_ container.                                                                                                                                                                                                     | `[]`                                                                           |
+        | `extraVolumes`                                   | Additional volumes for the pod.                                                                                                                                                                                                                                  | `[]`                                                                           |
+        | `nodeSelector`                                   | Node labels for pod assignment.                                                                                                                                                                                                                                  | `{}`                                                                           |
+        | `tolerations`                                    | Tolerations for pod assignment.                                                                                                                                                                                                                                  | `[]`                                                                           |
+        | `affinity`                                       | Affinity for pod assignment.                                                                                                                                                                                                                                     | `{}`                                                                           |
+        | `topologySpreadConstraints`                      | Pod Topology Spread Constraints.                                                                                                                                                                                                                                 | `[]`                                                                           |
+        | `deploymentAnnotations`                          | Annotations to add to the deployment.                                                                                                                                                                                                                            | `{}`                                                                           |
+        | `schedulerName`                                  | scheduler to set to the deployment.                                                                                                                                                                                                                              | `""`                                                                           |
+        | `dnsConfig`                                      | Set the dns configuration options for the deployment.                                                                                                                                                                                                            | `{}`                                                                           |
+        | `tmpVolume`                                      | Volume to be mounted in Pods for temporary files.                                                                                                                                                                                                                | `{"emptyDir":{}}`                                                              |
+        | `tls.type`                                       | TLS option to use. Either use `metrics-server` for self-signed certificates, `helm`, `cert-manager` or `existingSecret`.                                                                                                                                         | `"metrics-server"`                                                             |
+        | `tls.clusterDomain`                              | Kubernetes cluster domain. Used to configure Subject Alt Names for the certificate when using `tls.type` `helm` or `cert-manager`.                                                                                                                               | `"cluster.local"`                                                              |
+        | `tls.certManager.addInjectorAnnotations`         | Automatically add the cert-manager.io/inject-ca-from annotation to the APIService resource.                                                                                                                                                                      | `true`                                                                         |
+        | `tls.certManager.existingIssuer.enabled`         | Use an existing cert-manager issuer                                                                                                                                                                                                                              | `false`                                                                        |
+        | `tls.certManager.existingIssuer.kind`            | Kind of the existing cert-manager issuer                                                                                                                                                                                                                         | `"Issuer"`                                                                     |
+        | `tls.certManager.existingIssuer.name`            | Name of the existing cert-manager issuer                                                                                                                                                                                                                         | `"my-issuer"`                                                                  |
+        | `tls.certManager.duration`                       | Set the requested duration (i.e. lifetime) of the Certificate.                                                                                                                                                                                                   | `""`                                                                           |
+        | `tls.certManager.renewBefore`                    | How long before the currently issued certificate’s expiry cert-manager should renew the certificate.                                                                                                                                                             | `""`                                                                           |
+        | `tls.certManager.annotations`                    | Add extra annotations to the Certificate resource                                                                                                                                                                                                                | `{}`                                                                           |
+        | `tls.certManager.labels`                         | Add extra labels to the Certificate resource                                                                                                                                                                                                                     | `{}`                                                                           |
+        | `tls.helm.certDurationDays`                      | Cert validity duration in days                                                                                                                                                                                                                                   | `365`                                                                          |
+        | `tls.helm.lookup`                                | Use helm lookup function to reuse Secret created in previous helm install                                                                                                                                                                                        | `true`                                                                         |
+        | `tls.existingSecret.lookup`                      | Use helm lookup function to provision `apiService.caBundle`                                                                                                                                                                                                      | `true`                                                                         |
+        | `tls.existingSecret.name`                        | Name of the existing Secret to use for TLS                                                                                                                                                                                                                       | `""`                                                                           |
+
+        ## Hardening metrics-server
+
+        By default, metrics-server is using a self-signed certificate which is generated during startup. The `APIservice` resource is registered with `.spec.insecureSkipTLSVerify` set to `true` as you can see here:
+
+        ```yaml
+        apiVersion: apiregistration.k8s.io/v1
+        kind: APIService
+        metadata:
+          name: v1beta1.metrics.k8s.io
+        spec:
+          #..
+          insecureSkipTLSVerify: true # <-- see here
+          service:
+            name: metrics-server
+          #..
+        ```
+
+        To harden metrics-server, you have these options described in the following section.
+
+        ### Option 1: Let helm generate a self-signed certificate
+
+        This option is probably the easiest solution for you. We delegate the process to generate a self-signed certificate to helm.
+        As helm generates them during deploy time, helm can also inject the `apiService.caBundle` for you.
+
+        **The only disadvantage of using this method is that it is not GitOps friendly** (e.g. Argo CD). If you are using one of these
+        GitOps tools with drift detection, it will always detect changes. However if you are deploying the helm chart via Terraform
+        for example (or maybe even Flux), this method is perfectly fine.
+
+        To use this method, please setup your values file like this:
+
+        ```yaml
+        apiService:
+          insecureSkipTLSVerify: false
+        tls:
+          type: helm
+        ```
+
+        ### Option 2: Use cert-manager
+
+        > **Requirement:** cert-manager needs to be installed before you install metrics-server
+
+        To use this method, please setup your values file like this:
+
+        ```yaml
+        apiService:
+          insecureSkipTLSVerify: false
+        tls:
+          type: cert-manager
+        ```
+
+        There are other optional parameters, if you want to customize the behavior of the certificate even more.
+
+        ### Option 3: Use existing Secret
+
+        This option allows you to reuse an existing Secret. This Secrets can have an arbitrary origin, e.g.
+
+        - Created via kubectl / Terraform / etc.
+        - Synced from a secret management solution like AWS Secrets Manager, HashiCorp Vault, etc.
+
+        When using this type of TLS option, the keys `tls.key` and the `tls.crt` key must be provided in the data field of the
+        existing Secret.
+
+        You need to pass the certificate of the issuing CA (or the certificate itself) via `apiService.caBundle` to ensure
+        proper configuration of the `APIservice` resource. Otherwise you cannot set `apiService.insecureSkipTLSVerify` to
+        `false`.
+
+        To use this method, please setup your values file like this:
+
+        ```yaml
+        apiService:
+          insecureSkipTLSVerify: false
+          caBundle: |
+            -----BEGIN CERTIFICATE-----
+            ...
+            -----END CERTIFICATE-----
+
+        tls:
+          type: existingSecret
+          existingSecret:
+            name: metrics-server-existing
+        ```
+      status: deployed
+    name: rke2-metrics-server
+    namespace: kube-system
+    resources:
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: rke2-metrics-server
+      namespace: kube-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: system:rke2-metrics-server-aggregated-reader
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: system:rke2-metrics-server
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: rke2-metrics-server:system:auth-delegator
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: system:rke2-metrics-server
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: RoleBinding
+      name: rke2-metrics-server-auth-reader
+      namespace: kube-system
+    - apiVersion: v1
+      kind: Service
+      name: rke2-metrics-server
+      namespace: kube-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: rke2-metrics-server
+      namespace: kube-system
+    - apiVersion: apiregistration.k8s.io/v1
+      kind: APIService
+      name: v1beta1.metrics.k8s.io
+    version: 1
+  status:
+    observedGeneration: 1
+    summary:
+      state: deployed
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/6xVTW/jNhP+K8KcJVkfdtYWEOB92wBtsV0UyC56aDeHETWyWFNDgqScpoH+e0HJsR3Um/UWzSmihs/MPB/yM/TksUGPUD0DMmuPXmp24VHXf5DwjnxqpU4Feq8olXohG6igI9UnaAzEX6zTj0w22e53UMFin8fRe8nN7UcSlvxXrzH2BBW4Lg2dUkuK0FG6z1O7oyLpB+UHl+7zq4CcQRHQdkNNiXtynnoYY1BYk3pz1Q5dBxWsM2rzdVvf3JS4zgXV2Uo0yxVRmS03KJryZtmsNgUG0MPgZ1PCfHhpiBimIe+pJUssyEH1+zOgkb+SdVIzVDCtWCstdr+E0jtS5Kc3LSpHMQjN3mqlyELl7UAx7CQHhY5EfwOVw6RtmTdlVtAq2eT0LlluijbZ1LRMsF6uW9qs2iJ/B+PDGIMzJAJ/okPrwz9v2KlVRP6M23rgRlEydQyDBPJeb15AODGnk2VapCXE0JATVpqZB/gwLRD9SKqPpkGiVtvo/VCTZfIU+O/0REHnvXHVYrGVvhvqVOh+sVs7Jv+o7c6ooa8lbx+3i5mSRLCEGKSYurzctfiYzvcHRzawT+yvgIJ4Uv60zOchy0q6jfZ5Wi7TsGuPkj1KJjv7gHqUCqqZXfc/iyw6sqHXSdX7+TD6GWsH48MX/Of0YGd3XeJAsid1vvRDDP7JBBg0RkkxiQgx7E/aTFJkGYxjPH0LjnuVMUhudVD8tUw/sfOoVCR0bxR5ghhaaZ2/I6P0EwUbFFmxSvIiKbNPRV4tb6pV+RuEnF5TxTpoXcHt9PeZ8zT61FHUaqX0o+Tt1FgzsXdRh3uKaiKOmgNuhC4ywTu6DXx5DMRV8PL6XyTb0on1S5k+xtTupaD/C6EHPovrVzuM8Ruo32tu5fYDGrg0d/IiXyKmum/pgkbSn544PLp0t3Yhy69aD87r/v6w/R21kuXBP4dJDilJ0HsUXU/sk+ZYNmMKlqlg0aZS/3MEW6NIcfCdtvKvyZsX51CD82TvtaKLJPwHuN9JbiRvr4RHY9wrpDukXvPH84/0deYKOT9mMR9Pfg2/ZI7snpofiMnOua2yGNzQ92ifoHoex/HvAAAA//+40tVH9gcAAA
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.rke2-multus.v1
+      objectset.rio.cattle.io/owner-namespace: kube-system
+    creationTimestamp: "2025-12-30T21:47:33Z"
+    generation: 1
+    labels:
+      objectset.rio.cattle.io/hash: 80ef18fb663a81ceb05cd45ee3049acd364d592a
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"31d302e5-91e7-492f-9be4-ab48fe95f217"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:fleet.cattle.io/bundle-id: {}
+              f:apiVersion: {}
+              f:appVersion: {}
+              f:description: {}
+              f:home: {}
+              f:icon: {}
+              f:kubeVersion: {}
+              f:maintainers: {}
+              f:name: {}
+              f:sources: {}
+              f:type: {}
+              f:version: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:notes: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:47:33Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:47:33Z"
+    name: rke2-multus
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.rke2-multus.v1
+      uid: 31d302e5-91e7-492f-9be4-ab48fe95f217
+    resourceVersion: "1579"
+    uid: 287f62e9-2f2a-45eb-8dcb-2f71d7011ae5
+  spec:
+    chart:
+      metadata:
+        annotations:
+          fleet.cattle.io/bundle-id: rke2
+        apiVersion: v2
+        appVersion: 4.2.3
+        description: Multus Helm chart for Kubernetes
+        home: https://github.com/k8snetworkplumbingwg/multus-cni
+        icon: https://raw.githubusercontent.com/k8snetworkplumbingwg/multus-cni/master/doc/images/Multus.png
+        kubeVersion: '>= v1.34.2'
+        maintainers:
+        - email: charts@rancher.com
+          name: Rancher Labs
+        name: rke2-multus
+        sources:
+        - https://github.com/intel/multus-cni
+        type: application
+        version: v4.2.300
+    helmVersion: 3
+    info:
+      description: Install complete
+      firstDeployed: "2025-12-30T21:46:53Z"
+      lastDeployed: "2025-12-30T21:46:53Z"
+      notes: |
+        ======
+        1. The following components have been deployed as part of this helm chart:
+        Cluster Role: multus
+        Cluster Role Binding: rke2-multus
+        Config Map: rke2-multus-v4.2.300-config
+        Custom Resource Definition: network-attachment-definitions.k8s.cni.cncf.io
+        Daemon Set: rke2-multus
+        Service Account: multus
+
+        You can now deploy any other CNI and create its Network Attachment Defintion.
+        ---------
+
+        2. To uninstall helm chart use the command:
+        helm delete rke2-multus
+
+        You may have to manually delete CRD -
+        kubectl delete crd network-attachment-definitions.k8s.cni.cncf.io
+        ---------
+      status: deployed
+    name: rke2-multus
+    namespace: kube-system
+    resources:
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: multus
+      namespace: kube-system
+    - apiVersion: v1
+      kind: ConfigMap
+      name: rke2-multus-v4.2.300-config
+      namespace: kube-system
+    - apiVersion: apiextensions.k8s.io/v1
+      kind: CustomResourceDefinition
+      name: network-attachment-definitions.k8s.cni.cncf.io
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: rke2-multus
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: rke2-multus
+    - apiVersion: apps/v1
+      kind: DaemonSet
+      name: rke2-multus
+      namespace: kube-system
+    version: 1
+  status:
+    observedGeneration: 1
+    summary:
+      state: deployed
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/6yUX2vbPBTGv4o517bjP4mTGArvywpjbDDoxi629uJYOq61yJKRZHch+LsP2VmzlK4t3e5aWXrOc37POTlASw45OoTyAKiUduiEVtb/q6vvxJwlFxuhY4bOSYqFXggOJTQk2wi7DsI/3tN3ikx0O+yghMWQhsF7ofjFJ2KG3LPPFLYEJdgm9pViQ5LQUjyksdlRFpleOdESk2gt2XhIXyRoO2RedddXFNm9ddTCGILEiuSTLTdoGyghr7IlZxVtVjyjzXaTY1EVBd+uKpZuiyLNt4wv823uRY8NPOIW5o+PmQlhMntFNRlSjCyU3w6AnfhCxgqtoISp1Upqtvvor16SJDd9qVFaCoFp5YyWkgyUzvQUwk4on9g9+Feg7afM82JTbGpkUbHcULQscBVtE7aOqMBtneF6zYoKxpsxBNsR8zxZg8b5P54Ys1oSud9YV73ikqKpojfkYZ4TyMCfdKeTJE7jBELgZJkR3cwD/uc8cA0FnGrspQuOjQWnGHa0v9OGe8rwIKObcArmVOO6T5KcLoIhjfNl7C20KJRDocjMMVGLQkI5N23/M6hYQyZmuj1Bv5oPgw9YWRhvnhkTq3szDwE0znW2XCxuhWv6yosujgUW09u5qLc9nGNJEhjHcNrX+2byEISqtad/juydsg6lDJhuO0mOIIRaGOsuqZN6Tz6SLMlWUZpFefI5S8vlukyzr+B36CW3lHa+Hbg6jyJocKCgIlKBmB0Qj6+VJ+DQ9f4F/6X9+tUydOL5YKmU5hTvNtbP3zTwx505+nzj1U8hqkFwgTCG/0Aloh8dGdGScij/VpKZXk1TdT8D6Xhi6H/eLJmB+FtSZHDOPAnB9m2LZg/lYRzHnwEAAP//0Nlx3xMGAAA
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.rke2-runtimeclasses.v1
+      objectset.rio.cattle.io/owner-namespace: kube-system
+    creationTimestamp: "2025-12-30T21:47:33Z"
+    generation: 1
+    labels:
+      objectset.rio.cattle.io/hash: 3b24dcbe85d2e8983a6b66d95bc1966139cd4393
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"36868fac-648e-46a5-90c7-e6a9f2a77c6b"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:fleet.cattle.io/bundle-id: {}
+              f:apiVersion: {}
+              f:appVersion: {}
+              f:description: {}
+              f:keywords: {}
+              f:kubeVersion: {}
+              f:maintainers: {}
+              f:name: {}
+              f:sources: {}
+              f:version: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:notes: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:47:33Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:47:33Z"
+    name: rke2-runtimeclasses
+    namespace: kube-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.rke2-runtimeclasses.v1
+      uid: 36868fac-648e-46a5-90c7-e6a9f2a77c6b
+    resourceVersion: "1580"
+    uid: 412c0ba4-8d81-4fc4-a1de-a3d0bbd0328f
+  spec:
+    chart:
+      metadata:
+        annotations:
+          fleet.cattle.io/bundle-id: rke2
+        apiVersion: v2
+        appVersion: 0.1.0
+        description: Add the default runtime classes
+        keywords:
+        - runtimeclasses
+        kubeVersion: '>= v1.34.2'
+        maintainers:
+        - email: charts@rancher.com
+          name: Rancher Labs
+        name: rke2-runtimeclasses
+        sources:
+        - https://github.com/rancher/rke2-charts
+        version: 0.1.000
+    helmVersion: 3
+    info:
+      description: Install complete
+      firstDeployed: "2025-12-30T21:47:12Z"
+      lastDeployed: "2025-12-30T21:47:12Z"
+      notes: |
+        Runtime classes have been installed.
+      status: deployed
+    name: rke2-runtimeclasses
+    namespace: kube-system
+    resources:
+    - apiVersion: node.k8s.io/v1
+      kind: RuntimeClass
+      name: nvidia
+    - apiVersion: node.k8s.io/v1
+      kind: RuntimeClass
+      name: nvidia-experimental
+    - apiVersion: node.k8s.io/v1
+      kind: RuntimeClass
+      name: crun
+    version: 1
+  status:
+    observedGeneration: 1
+    summary:
+      state: deployed
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14473"

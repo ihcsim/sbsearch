@@ -1,0 +1,13 @@
+2025-12-30T21:48:30.338929423Z I1230 21:48:30.338677       1 leaderelection.go:257] attempting to acquire leader lease cattle-fleet-system/fleet-cleanup-lock...
+2025-12-30T21:48:30.356972204Z I1230 21:48:30.356892       1 leaderelection.go:271] successfully acquired lease cattle-fleet-system/fleet-cleanup-lock
+2025-12-30T21:48:30.464539038Z time="2025-12-30T21:48:30Z" level=info msg="Starting fleet.cattle.io/v1alpha1, Kind=Cluster controller"
+2025-12-30T21:48:30.464570901Z time="2025-12-30T21:48:30Z" level=info msg="Starting /v1, Kind=Secret controller"
+2025-12-30T21:48:30.464574629Z time="2025-12-30T21:48:30Z" level=info msg="Starting fleet.cattle.io/v1alpha1, Kind=ClusterRegistrationToken controller"
+2025-12-30T21:48:30.464577224Z time="2025-12-30T21:48:30Z" level=info msg="Starting rbac.authorization.k8s.io/v1, Kind=ClusterRole controller"
+2025-12-30T21:48:30.464579549Z time="2025-12-30T21:48:30Z" level=info msg="Starting rbac.authorization.k8s.io/v1, Kind=Role controller"
+2025-12-30T21:48:30.464581924Z time="2025-12-30T21:48:30Z" level=info msg="Starting /v1, Kind=Namespace controller"
+2025-12-30T21:48:30.465064719Z time="2025-12-30T21:48:30Z" level=info msg="Starting fleet.cattle.io/v1alpha1, Kind=ClusterGroup controller"
+2025-12-30T21:48:30.465072254Z time="2025-12-30T21:48:30Z" level=info msg="Starting rbac.authorization.k8s.io/v1, Kind=RoleBinding controller"
+2025-12-30T21:48:30.465083287Z time="2025-12-30T21:48:30Z" level=info msg="Starting /v1, Kind=ServiceAccount controller"
+2025-12-30T21:48:30.465086613Z time="2025-12-30T21:48:30Z" level=info msg="Starting fleet.cattle.io/v1alpha1, Kind=ClusterRegistration controller"
+2025-12-30T21:48:30.465150341Z time="2025-12-30T21:48:30Z" level=info msg="Starting rbac.authorization.k8s.io/v1, Kind=ClusterRoleBinding controller"

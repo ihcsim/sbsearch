@@ -1,0 +1,167 @@
+apiVersion: v1
+items:
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/6yV34/jNBDH/5VoeCTO1Wm3PyLxcNxKCCGEtCAegHuYOJPG1LEje1K0rPK/I7t7uz22bKPl3lp57O/Mdz4zeYCeGBtkhOoB0FrHyNrZEP+6+k9SHIgLr12hkNlQod073UAFHZle4DBA/p9x7i9LXuyPB6jg3VHm2Q/aNt/8TMoTX71msSeoIHRFVCo8GcJAxVEWHq3qyIveWc3Oa7sXyjfFUc56Mwyo4sOns/NHwn1g6mHKwWBN5lULOgwdVLDeLVflstzKzRKXal3Wq1Kt27Ju21qpctdupMSbTbuMjz4WdDl7OJ1fTS6HVMkdteTJKgpQ/f4AOOhfyQftLFSQfKiNU4efYugtGeJ00qIJlINylr0zhjxU7EfK4aBt7OhTY95m/ZiwkDdbtV5IJWhVS7Harluxk+Va7Fa4xqZZIeICpo9TDmEgFS1WHXqOP14hUSGjcfuzBijyrFtNzbOlkF+I63TTULQllnoxYqbvLy8++iKuNbY1RHx2D/dk+RKLKVAYp9A86/77dj3axpBIZvdKidmyB6JBeApu9IkbSDxcCAzkj1qRQKXcaBkqiPh+zlgJOTQUlNfDCS743gZGY0LGHWUf7m5D1jqfvcyugOujwPdDPMdhMFolCiCH45O6XGwKWSy+Hof1rtgW5ScPCnkD05Sn1fSU6zIHbVsXKbqYcKZcPxji5IT2gW9pMO4+gVUuyhshS7Fc/FLKarWr5OY3iOthTpQnbFKZX11wIRb6h32f3Z1OsjQEGXfImX5hJOQQGHmMTWs+6X65jXLGxMVd8rQeEhbvH6m4Ii96tLhPQzlz674i/cHZVu9/xGGOqm4p8JtlfY2qwJE75/XfCb3isA1xLD5LyIyByd85Q7ON+P9S32rbaLufr/jxbGrk9ExR/K7FKafmO7LkTxNWLXIIY9+jv4fqYZqmfwIAAP//4GKIAxwIAAA
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.rancher-monitoring-crd.v1
+      objectset.rio.cattle.io/owner-namespace: cattle-monitoring-system
+    creationTimestamp: "2025-12-30T21:49:17Z"
+    generation: 2
+    labels:
+      objectset.rio.cattle.io/hash: 69342328173a3c62b42c6f2bffbcc29f711a57f3
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"158c601c-e4b1-486f-9126-94a6add4aaa0"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:catalog.cattle.io/certified: {}
+                f:catalog.cattle.io/hidden: {}
+                f:catalog.cattle.io/namespace: {}
+                f:catalog.cattle.io/release-name: {}
+                f:fleet.cattle.io/agent-namespace: {}
+                f:fleet.cattle.io/bundle-id: {}
+                f:fleet.cattle.io/keep-resources: {}
+                f:fleet.cattle.io/service-account: {}
+              f:apiVersion: {}
+              f:description: {}
+              f:name: {}
+              f:type: {}
+              f:version: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:readme: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:49:27Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:49:27Z"
+    name: rancher-monitoring-crd
+    namespace: cattle-monitoring-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.rancher-monitoring-crd.v1
+      uid: 158c601c-e4b1-486f-9126-94a6add4aaa0
+    resourceVersion: "3562"
+    uid: 6b610500-0634-4e92-86a0-5bca5bb1fedc
+  spec:
+    chart:
+      metadata:
+        annotations:
+          catalog.cattle.io/certified: rancher
+          catalog.cattle.io/hidden: "true"
+          catalog.cattle.io/namespace: cattle-monitoring-system
+          catalog.cattle.io/release-name: rancher-monitoring-crd
+          fleet.cattle.io/agent-namespace: cattle-fleet-local-system
+          fleet.cattle.io/bundle-id: mcc-rancher-monitoring-crd
+          fleet.cattle.io/keep-resources: "false"
+          fleet.cattle.io/service-account: "null"
+        apiVersion: v2
+        description: Installs the CRDs for rancher-monitoring.
+        name: rancher-monitoring-crd
+        type: application
+        version: 107.1.0+up69.8.2-rancher.15
+    helmVersion: 3
+    info:
+      description: Install complete
+      firstDeployed: "2025-12-30T21:49:17Z"
+      lastDeployed: "2025-12-30T21:49:17Z"
+      readme: |-
+        # rancher-monitoring-crd
+        A Rancher chart that installs the CRDs used by rancher-monitoring.
+
+        ## How does this chart work?
+
+        This chart marshalls all of the CRD files placed in the `crd-manifest` directory into a ConfigMap that is installed onto a cluster alongside relevant RBAC (ServiceAccount, ClusterRoleBinding, ClusterRole, and PodSecurityPolicy).
+
+        Once the relevant dependent resourcees are installed / upgraded / rolled back, this chart executes a post-install / post-upgrade / post-rollback Job that:
+        - Patches any existing versions of the CRDs contained within the `crd-manifest` on the cluster to set `spec.preserveUnknownFields=false`; this step is required since, based on [Kubernetes docs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/#field-pruning) and a [known workaround](https://github.com/kubernetes-sigs/controller-tools/issues/476#issuecomment-691519936), such CRDs cannot be upgraded normally from `apiextensions.k8s.io/v1beta1` to `apiextensions.k8s.io/v1`.
+        - Runs a `kubectl apply` on the CRDs that are contained within the crd-manifest ConfigMap to upgrade CRDs in the cluster
+
+        On an uninstall, this chart executes a separate post-delete Job that:
+        - Patches any existing versions of the CRDs contained within `crd-manifest` on the cluster to set `metadata.finalizers=[]`
+        - Runs a `kubectl delete` on the CRDs that are contained within the crd-manifest ConfigMap to clean up the CRDs from the cluster
+
+        Note: If the relevant CRDs already existed in the cluster at the time of install, this chart will absorb ownership of the lifecycle of those CRDs; therefore, on a `helm uninstall`, those CRDs will also be removed from the cluster alongside this chart.
+
+        ## Why can't we just place the CRDs in the templates/ directory of the main chart?
+
+        In Helm today, you cannot declare a CRD and declare a resource of that CRD's kind in templates/ without encountering a failure on render.
+
+        ## [Helm 3] Why can't we just place the CRDs in the crds/ directory of the main chart?
+
+        The Helm 3 `crds/` directory only supports the installation of CRDs, but does not support the upgrade and removal of CRDs, unlike what this chart facilitiates.
+      status: deployed
+    name: rancher-monitoring-crd
+    namespace: cattle-monitoring-system
+    resources:
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: rancher-monitoring-crd-manager
+      namespace: cattle-monitoring-system
+    - apiVersion: v1
+      kind: ConfigMap
+      name: rancher-monitoring-crd-manifest
+      namespace: cattle-monitoring-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: rancher-monitoring-crd-manager
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: rancher-monitoring-crd-manager
+    version: 1
+  status:
+    observedGeneration: 2
+    summary:
+      state: deployed
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14484"

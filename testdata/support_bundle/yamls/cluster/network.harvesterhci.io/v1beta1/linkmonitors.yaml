@@ -1,0 +1,100 @@
+apiVersion: v1
+items:
+- apiVersion: network.harvesterhci.io/v1beta1
+  kind: LinkMonitor
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:40Z"
+    finalizers:
+    - wrangler.cattle.io/harvester-network-link-monitor-controller
+    generation: 3
+    managedFields:
+    - apiVersion: network.harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/harvester-network-link-monitor-controller"null: {}
+        f:spec:
+          .: {}
+          f:targetLinkRule:
+            .: {}
+            f:nameRule: {}
+        f:status:
+          .: {}
+          f:linkStatus:
+            .: {}
+            f:isim-dev: {}
+      manager: harvester-network-controller
+      operation: Update
+      time: "2025-12-30T21:50:35Z"
+    name: mgmt
+    resourceVersion: "6190"
+    uid: 683087b7-7530-474a-9f08-4b2b309dc436
+  spec:
+    targetLinkRule:
+      nameRule: mgmt(-br|-bo)
+  status:
+    linkStatus:
+      isim-dev:
+      - index: 3
+        mac: 52:54:00:67:d7:dc
+        name: mgmt-br
+        promiscuous: true
+        state: up
+        type: bridge
+      - index: 4
+        mac: 52:54:00:67:d7:dc
+        masterIndex: 3
+        name: mgmt-bo
+        promiscuous: true
+        state: up
+        type: bond
+- apiVersion: network.harvesterhci.io/v1beta1
+  kind: LinkMonitor
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    finalizers:
+    - wrangler.cattle.io/harvester-network-link-monitor-controller
+    generation: 3
+    managedFields:
+    - apiVersion: network.harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/harvester-network-link-monitor-controller"null: {}
+        f:spec:
+          .: {}
+          f:targetLinkRule:
+            .: {}
+            f:typeRule: {}
+        f:status:
+          .: {}
+          f:linkStatus:
+            .: {}
+            f:isim-dev: {}
+      manager: harvester-network-controller
+      operation: Update
+      time: "2025-12-30T21:50:35Z"
+    name: nic
+    resourceVersion: "6191"
+    uid: 06ff2db8-a197-4de1-996d-dfb64bd8cb7b
+  spec:
+    targetLinkRule:
+      typeRule: device
+  status:
+    linkStatus:
+      isim-dev:
+      - index: 2
+        mac: 52:54:00:67:d7:dc
+        masterIndex: 4
+        name: enp1s0
+        promiscuous: true
+        state: up
+        type: device
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14456"

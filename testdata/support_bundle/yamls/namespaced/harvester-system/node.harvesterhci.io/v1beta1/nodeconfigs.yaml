@@ -1,0 +1,73 @@
+apiVersion: v1
+items:
+- apiVersion: node.harvesterhci.io/v1beta1
+  kind: NodeConfig
+  metadata:
+    annotations:
+      AppliedConfig: '{"ntpServers":"0.suse.pool.ntp.org"}'
+    creationTimestamp: "2025-12-30T21:50:36Z"
+    finalizers:
+    - wrangler.cattle.io/harvester-node-config-controller
+    generation: 1
+    managedFields:
+    - apiVersion: node.harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:longhornConfig: {}
+          f:ntpConfigs:
+            .: {}
+            f:ntpServers: {}
+      manager: harvester
+      operation: Update
+      time: "2025-12-30T21:50:36Z"
+    - apiVersion: node.harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:AppliedConfig: {}
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/harvester-node-config-controller"null: {}
+      manager: harvester-node-manager
+      operation: Update
+      time: "2025-12-30T21:50:36Z"
+    - apiVersion: node.harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:ntpConditions: {}
+      manager: harvester-node-manager
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:50:36Z"
+    name: isim-dev
+    namespace: harvester-system
+    resourceVersion: "6430"
+    uid: 40532ed8-bed8-4d04-b6bf-de478e37c1b5
+  spec:
+    longhornConfig: {}
+    ntpConfigs:
+      ntpServers: 0.suse.pool.ntp.org
+  status:
+    ntpConditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "null"
+      message: NTP config is created or modified, need to wait it to be applied
+      reason: NTPConfigModified
+      status: "False"
+      type: Modified
+    - lastProbeTime: "null"
+      lastTransitionTime: "null"
+      message: NTP config is Applied
+      reason: NTPConfigApplied
+      status: "True"
+      type: Applied
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14493"

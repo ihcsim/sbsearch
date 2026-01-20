@@ -1,0 +1,604 @@
+apiVersion: v1
+items:
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      operator.cdi.kubevirt.io/lastAppliedConfiguration: '{"kind":"RoleBinding","apiVersion":"rbac.authorization.k8s.io/v1","metadata":{"name":"cdi-apiserver","namespace":"harvester-system","creationTimestamp":"null","labels":{"app":"containerized-data-importer","app.kubernetes.io/component":"storage","app.kubernetes.io/managed-by":"cdi-operator","cdi.kubevirt.io":""}},"subjects":[{"kind":"ServiceAccount","name":"cdi-apiserver"}],"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"Role","name":"cdi-apiserver"}}'
+    creationTimestamp: "2025-12-30T21:49:40Z"
+    labels:
+      app: containerized-data-importer
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-operator
+      cdi.kubevirt.io: "null"
+      operator.cdi.kubevirt.io/createVersion: 1.62.0-150700.9.3.1
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:operator.cdi.kubevirt.io/lastAppliedConfiguration: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cdi.kubevirt.io: {}
+            f:operator.cdi.kubevirt.io/createVersion: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"81182c2f-d27e-4d9f-a9db-6e45ca0714a5"}: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:49:40Z"
+    name: cdi-apiserver
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: CDI
+      name: cdi
+      uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+    resourceVersion: "4656"
+    uid: 381eced8-9357-4f7e-9c39-4821a1740334
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: cdi-apiserver
+  subjects:
+  - kind: ServiceAccount
+    name: cdi-apiserver
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      operator.cdi.kubevirt.io/lastAppliedConfiguration: '{"kind":"RoleBinding","apiVersion":"rbac.authorization.k8s.io/v1","metadata":{"name":"cdi-deployment","namespace":"harvester-system","creationTimestamp":"null","labels":{"app":"containerized-data-importer","app.kubernetes.io/component":"storage","app.kubernetes.io/managed-by":"cdi-operator","cdi.kubevirt.io":""}},"subjects":[{"kind":"ServiceAccount","name":"cdi-sa"}],"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"Role","name":"cdi-deployment"}}'
+    creationTimestamp: "2025-12-30T21:49:40Z"
+    labels:
+      app: containerized-data-importer
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-operator
+      cdi.kubevirt.io: "null"
+      operator.cdi.kubevirt.io/createVersion: 1.62.0-150700.9.3.1
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:operator.cdi.kubevirt.io/lastAppliedConfiguration: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cdi.kubevirt.io: {}
+            f:operator.cdi.kubevirt.io/createVersion: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"81182c2f-d27e-4d9f-a9db-6e45ca0714a5"}: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:49:40Z"
+    name: cdi-deployment
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: CDI
+      name: cdi
+      uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+    resourceVersion: "4658"
+    uid: d518c49e-c622-4781-b8db-5d18cc383a79
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: cdi-deployment
+  subjects:
+  - kind: ServiceAccount
+    name: cdi-sa
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      operator.cdi.kubevirt.io/lastAppliedConfiguration: '{"metadata":{"name":"cdi-monitoring","namespace":"harvester-system","creationTimestamp":"null","labels":{"cdi.kubevirt.io":"","prometheus.cdi.kubevirt.io":"true"}},"subjects":[{"kind":"ServiceAccount","name":"prometheus-k8s","namespace":"monitoring"}],"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"Role","name":"cdi-monitoring"}}'
+    creationTimestamp: "2025-12-30T21:49:40Z"
+    labels:
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-operator
+      cdi.kubevirt.io: "null"
+      prometheus.cdi.kubevirt.io: "true"
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:operator.cdi.kubevirt.io/lastAppliedConfiguration: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cdi.kubevirt.io: {}
+            f:prometheus.cdi.kubevirt.io: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"2704747f-4820-4fba-9438-e16029345ede"}: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:49:40Z"
+    name: cdi-monitoring
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: cdi-deployment
+      uid: 2704747f-4820-4fba-9438-e16029345ede
+    resourceVersion: "4670"
+    uid: 5be7ca25-a392-4517-8b1a-304713552540
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: cdi-monitoring
+  subjects:
+  - kind: ServiceAccount
+    name: prometheus-k8s
+    namespace: monitoring
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      app: containerized-data-importer
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: cdi
+      app.kubernetes.io/version: 1.62.0
+      cdi.kubevirt.io: "null"
+      helm.sh/chart: cdi-0.2.0
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/version: {}
+            f:cdi.kubevirt.io: {}
+            f:helm.sh/chart: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: fleetagent
+      operation: Update
+      time: "2025-12-30T21:49:31Z"
+    name: cdi-operator
+    namespace: harvester-system
+    resourceVersion: "3765"
+    uid: 77707fa2-dc4a-4e89-8c62-61544e9119d4
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: cdi-operator
+  subjects:
+  - kind: ServiceAccount
+    name: cdi-operator
+    namespace: harvester-system
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      operator.cdi.kubevirt.io/lastAppliedConfiguration: '{"kind":"RoleBinding","apiVersion":"rbac.authorization.k8s.io/v1","metadata":{"name":"cdi-uploadproxy","namespace":"harvester-system","creationTimestamp":"null","labels":{"app":"containerized-data-importer","app.kubernetes.io/component":"storage","app.kubernetes.io/managed-by":"cdi-operator","cdi.kubevirt.io":""}},"subjects":[{"kind":"ServiceAccount","name":"cdi-uploadproxy"}],"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"Role","name":"cdi-uploadproxy"}}'
+    creationTimestamp: "2025-12-30T21:49:40Z"
+    labels:
+      app: containerized-data-importer
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-operator
+      cdi.kubevirt.io: "null"
+      operator.cdi.kubevirt.io/createVersion: 1.62.0-150700.9.3.1
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:operator.cdi.kubevirt.io/lastAppliedConfiguration: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cdi.kubevirt.io: {}
+            f:operator.cdi.kubevirt.io/createVersion: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"81182c2f-d27e-4d9f-a9db-6e45ca0714a5"}: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:49:40Z"
+    name: cdi-uploadproxy
+    namespace: harvester-system
+    ownerReferences:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: CDI
+      name: cdi
+      uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+    resourceVersion: "4683"
+    uid: 2e2ecdc7-c46d-41c7-9b79-cb34d988542e
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: cdi-uploadproxy
+  subjects:
+  - kind: ServiceAccount
+    name: cdi-uploadproxy
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:50:03Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      kubevirt.io: "null"
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:kubevirt.io: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:50:44Z"
+    name: kubevirt-apiserver
+    namespace: harvester-system
+    resourceVersion: "6679"
+    uid: 5788ca07-9860-4579-911d-c25b94ed5277
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: kubevirt-apiserver
+  subjects:
+  - kind: ServiceAccount
+    name: kubevirt-apiserver
+    namespace: harvester-system
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:50:03Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      kubevirt.io: "null"
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:kubevirt.io: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:50:44Z"
+    name: kubevirt-controller
+    namespace: harvester-system
+    resourceVersion: "6682"
+    uid: 71415696-270c-4a1e-b1dc-059340cfe7a4
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: kubevirt-controller
+  subjects:
+  - kind: ServiceAccount
+    name: kubevirt-controller
+    namespace: harvester-system
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:50:03Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      kubevirt.io: "null"
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:kubevirt.io: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:50:45Z"
+    name: kubevirt-exportproxy
+    namespace: harvester-system
+    resourceVersion: "6687"
+    uid: a5777c5d-6b7c-44ef-aa5c-0299073c9454
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: kubevirt-exportproxy
+  subjects:
+  - kind: ServiceAccount
+    name: kubevirt-exportproxy
+    namespace: harvester-system
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:50:03Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      kubevirt.io: "null"
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:kubevirt.io: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:50:44Z"
+    name: kubevirt-handler
+    namespace: harvester-system
+    resourceVersion: "6685"
+    uid: f6ff04b2-31a0-4b4f-a3c1-34c157112291
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: kubevirt-handler
+  subjects:
+  - kind: ServiceAccount
+    name: kubevirt-handler
+    namespace: harvester-system
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:50:04Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      kubevirt.io: "null"
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:kubevirt.io: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:50:45Z"
+    name: kubevirt-monitoring
+    namespace: harvester-system
+    resourceVersion: "6711"
+    uid: 088a42ee-cdeb-46fe-84af-c41a926f8362
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: kubevirt-monitoring
+  subjects:
+  - kind: ServiceAccount
+    name: rancher-monitoring-operator
+    namespace: cattle-monitoring-system
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      app.kubernetes.io/component: operator
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: virt-operator
+      app.kubernetes.io/part-of: kubevirt-operator
+      app.kubernetes.io/version: 1.6.3
+      helm.sh/chart: kubevirt-operator-0.6.1
+      helm.sh/release: harvester
+      kubevirt.io: "null"
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:helm.sh/chart: {}
+            f:helm.sh/release: {}
+            f:kubevirt.io: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: fleetagent
+      operation: Update
+      time: "2025-12-30T21:49:31Z"
+    name: kubevirt-operator-rolebinding
+    namespace: harvester-system
+    resourceVersion: "3764"
+    uid: 6aff27c6-6b4a-41c2-ae2e-57441e2630cc
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: kubevirt-operator
+  subjects:
+  - kind: ServiceAccount
+    name: kubevirt-operator
+    namespace: harvester-system
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:50:04Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      kubevirt.io: "null"
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:kubevirt.io: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:50:45Z"
+    name: kubevirt-synchronization-controller
+    namespace: harvester-system
+    resourceVersion: "6705"
+    uid: 30fac4ca-4257-4412-a1fa-aa1129bb53c4
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: kubevirt-synchronization-controller
+  subjects:
+  - kind: ServiceAccount
+    name: kubevirt-synchronization-controller
+    namespace: harvester-system
+kind: List
+metadata:
+  resourceVersion: "14492"

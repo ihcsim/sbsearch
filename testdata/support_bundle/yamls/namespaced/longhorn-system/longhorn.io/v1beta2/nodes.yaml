@@ -1,0 +1,175 @@
+apiVersion: v1
+items:
+- apiVersion: longhorn.io/v1beta2
+  kind: Node
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:45Z"
+    finalizers:
+    - longhorn.io
+    - wrangler.cattle.io/harvester-ndm-node-handler
+    generation: 1
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:allowScheduling: {}
+          f:disks:
+            .: {}
+            f:default-disk-f43de0a073e6adfd:
+              .: {}
+              f:allowScheduling: {}
+              f:diskDriver: {}
+              f:diskType: {}
+              f:evictionRequested: {}
+              f:path: {}
+              f:storageReserved: {}
+              f:tags: {}
+          f:evictionRequested: {}
+          f:instanceManagerCPURequest: {}
+          f:name: {}
+          f:tags: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2025-12-30T21:49:45Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            v:"wrangler.cattle.io/harvester-ndm-node-handler"null: {}
+      manager: node-disk-manager
+      operation: Update
+      time: "2025-12-30T21:50:15Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:autoEvicting: {}
+          f:conditions: {}
+          f:diskStatus:
+            .: {}
+            f:default-disk-f43de0a073e6adfd:
+              .: {}
+              f:conditions: {}
+              f:diskDriver: {}
+              f:diskName: {}
+              f:diskPath: {}
+              f:diskType: {}
+              f:diskUUID: {}
+              f:filesystemType: {}
+              f:instanceManagerName: {}
+              f:scheduledBackingImage:
+                .: {}
+                f:vmi-5987e3f0-076b-438e-82a4-f635689704b3: {}
+              f:scheduledReplica:
+                .: {}
+                f:pvc-a30f7311-cc82-4e85-89d6-144156fce238-r-06057446: {}
+              f:storageAvailable: {}
+              f:storageMaximum: {}
+              f:storageScheduled: {}
+          f:region: {}
+          f:snapshotCheckStatus: {}
+          f:zone: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:59:45Z"
+    name: isim-dev
+    namespace: longhorn-system
+    resourceVersion: "13902"
+    uid: 8e8f94bf-9755-48df-a674-5043c3f0e156
+  spec:
+    allowScheduling: true
+    disks:
+      default-disk-f43de0a073e6adfd:
+        allowScheduling: true
+        diskDriver: "null"
+        diskType: filesystem
+        evictionRequested: false
+        path: /var/lib/harvester/defaultdisk
+        storageReserved: 0
+        tags: []
+    evictionRequested: false
+    instanceManagerCPURequest: 0
+    name: isim-dev
+    tags: []
+  status:
+    autoEvicting: false
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:49:45Z"
+      message: Node isim-dev is ready
+      reason: "null"
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:49:45Z"
+      message: "null"
+      reason: "null"
+      status: "True"
+      type: Schedulable
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:49:45Z"
+      message: "null"
+      reason: "null"
+      status: "True"
+      type: Multipathd
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:49:45Z"
+      message: "null"
+      reason: "null"
+      status: "True"
+      type: NFSClientInstalled
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:49:45Z"
+      message: Kernel modules [dm_crypt] are loaded
+      reason: "null"
+      status: "True"
+      type: KernelModulesLoaded
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:50:15Z"
+      message: "null"
+      reason: "null"
+      status: "True"
+      type: MountPropagation
+    diskStatus:
+      default-disk-f43de0a073e6adfd:
+        conditions:
+        - lastProbeTime: "null"
+          lastTransitionTime: "2025-12-30T21:50:15Z"
+          message: Disk default-disk-f43de0a073e6adfd(/var/lib/harvester/defaultdisk)
+            on node isim-dev is ready
+          reason: "null"
+          status: "True"
+          type: Ready
+        - lastProbeTime: "null"
+          lastTransitionTime: "2025-12-30T21:50:15Z"
+          message: Disk default-disk-f43de0a073e6adfd(/var/lib/harvester/defaultdisk)
+            on node isim-dev is schedulable
+          reason: "null"
+          status: "True"
+          type: Schedulable
+        diskDriver: "null"
+        diskName: default-disk-f43de0a073e6adfd
+        diskPath: /var/lib/harvester/defaultdisk
+        diskType: filesystem
+        diskUUID: e06ad177-0001-4488-b554-c0da2d4f366b
+        filesystemType: ext2/ext3
+        instanceManagerName: instance-manager-d835fabb525a12275b07e20022b5b213
+        scheduledBackingImage:
+          vmi-5987e3f0-076b-438e-82a4-f635689704b3: 2.57138688e+08
+        scheduledReplica:
+          pvc-a30f7311-cc82-4e85-89d6-144156fce238-r-06057446: 1.073741824e+10
+        storageAvailable: 7.97966336e+10
+        storageMaximum: 8.0733671424e+10
+        storageScheduled: 1.0994556928e+10
+    region: "null"
+    snapshotCheckStatus: {}
+    zone: "null"
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14495"

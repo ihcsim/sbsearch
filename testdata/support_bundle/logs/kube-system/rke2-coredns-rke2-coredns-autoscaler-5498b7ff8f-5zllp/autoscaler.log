@@ -1,0 +1,13 @@
+2025-12-30T21:47:14.808374815Z I1230 21:47:14.807342       1 autoscaler.go:49] Scaling Namespace: kube-system, Target: deployment/rke2-coredns-rke2-coredns
+2025-12-30T21:47:14.910548298Z I1230 21:47:14.910424       1 plugin.go:50] Set control mode to linear
+2025-12-30T21:47:14.910583444Z I1230 21:47:14.910452       1 linear_controller.go:60] ConfigMap version change (old:  new: 598) - rebuilding params
+2025-12-30T21:47:14.910586851Z I1230 21:47:14.910457       1 linear_controller.go:61] Params from apiserver: 
+2025-12-30T21:47:14.910589306Z {
+2025-12-30T21:47:14.910593035Z   "coresPerReplica": 256,
+2025-12-30T21:47:14.910596492Z   "nodesPerReplica": 16,
+2025-12-30T21:47:14.910599889Z   "preventSinglePointFailure": true,
+2025-12-30T21:47:14.910602415Z   "min": 0,
+2025-12-30T21:47:14.910604941Z   "max": 0,
+2025-12-30T21:47:14.910607185Z   "includeUnschedulableNodes": false
+2025-12-30T21:47:14.910609490Z }
+2025-12-30T21:47:14.910612156Z I1230 21:47:14.910505       1 linear_controller.go:80] Defaulting min replicas count to 1 for linear controller

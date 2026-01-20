@@ -1,0 +1,368 @@
+apiVersion: v1
+items:
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: backing-image-manager
+    usage:
+      cpu: 309218n
+      memory: 13452Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      longhorn.io/component: backing-image-manager
+      longhorn.io/disk-uuid: e06ad177-0001-4488-b554-c0da2d4f366b
+      longhorn.io/managed-by: longhorn-manager
+      longhorn.io/node: isim-dev
+    name: bim-13aaaae89cd2339efddf37199e7643cb76425cef3c810eb3fd75f6e457aeda31
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:09Z"
+  window: 27.272s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: csi-attacher
+    usage:
+      cpu: 788662n
+      memory: 13196Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: csi-attacher
+      pod-template-hash: 7b996ff85b
+    name: csi-attacher-7b996ff85b-j7kgq
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:26Z"
+  window: 30.359s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: csi-attacher
+    usage:
+      cpu: 528586n
+      memory: 10216Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: csi-attacher
+      pod-template-hash: 7b996ff85b
+    name: csi-attacher-7b996ff85b-jn2ph
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:22Z"
+  window: 19.467s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: csi-attacher
+    usage:
+      cpu: 525316n
+      memory: 10436Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: csi-attacher
+      pod-template-hash: 7b996ff85b
+    name: csi-attacher-7b996ff85b-w6f72
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:24Z"
+  window: 15.899s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: csi-provisioner
+    usage:
+      cpu: 964483n
+      memory: 15428Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: csi-provisioner
+      pod-template-hash: b5c5f5cbf
+    name: csi-provisioner-b5c5f5cbf-5kzn4
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:13Z"
+  window: 14.613s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: csi-provisioner
+    usage:
+      cpu: 784320n
+      memory: 13760Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: csi-provisioner
+      pod-template-hash: b5c5f5cbf
+    name: csi-provisioner-b5c5f5cbf-jmvqx
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:20Z"
+  window: 11.582s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: csi-provisioner
+    usage:
+      cpu: 687447n
+      memory: 9428Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: csi-provisioner
+      pod-template-hash: b5c5f5cbf
+    name: csi-provisioner-b5c5f5cbf-pqbp6
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:17Z"
+  window: 17.805s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: csi-resizer
+    usage:
+      cpu: 345426n
+      memory: 8580Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: csi-resizer
+      pod-template-hash: 85fb9c8c9f
+    name: csi-resizer-85fb9c8c9f-2987s
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:14Z"
+  window: 10.474s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: csi-resizer
+    usage:
+      cpu: 333160n
+      memory: 10248Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: csi-resizer
+      pod-template-hash: 85fb9c8c9f
+    name: csi-resizer-85fb9c8c9f-xdhvc
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:10Z"
+  window: 19.342s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: csi-resizer
+    usage:
+      cpu: 527800n
+      memory: 10920Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: csi-resizer
+      pod-template-hash: 85fb9c8c9f
+    name: csi-resizer-85fb9c8c9f-zsmcv
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:26Z"
+  window: 14.856s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: csi-snapshotter
+    usage:
+      cpu: 358089n
+      memory: 10476Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: csi-snapshotter
+      pod-template-hash: 867b4445d6
+    name: csi-snapshotter-867b4445d6-2hwp2
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:13Z"
+  window: 16.225s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: csi-snapshotter
+    usage:
+      cpu: 553880n
+      memory: 12620Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: csi-snapshotter
+      pod-template-hash: 867b4445d6
+    name: csi-snapshotter-867b4445d6-hddxq
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:23Z"
+  window: 14.059s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: csi-snapshotter
+    usage:
+      cpu: 313230n
+      memory: 10504Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: csi-snapshotter
+      pod-template-hash: 867b4445d6
+    name: csi-snapshotter-867b4445d6-pcbq5
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:13Z"
+  window: 10.264s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: engine-image-ei-3154f3aa
+    usage:
+      cpu: 6860290n
+      memory: 26292Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      controller-revision-hash: 66c4fb75dd
+      longhorn.io/component: engine-image
+      longhorn.io/engine-image: ei-3154f3aa
+      pod-template-generation: "1"
+    name: engine-image-ei-3154f3aa-v4vwg
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:18Z"
+  window: 13.435s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: instance-manager
+    usage:
+      cpu: 7306197n
+      memory: 171056Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      longhorn.io/component: instance-manager
+      longhorn.io/data-engine: v1
+      longhorn.io/instance-manager-image: imi-9fecca02
+      longhorn.io/instance-manager-type: aio
+      longhorn.io/managed-by: longhorn-manager
+      longhorn.io/node: isim-dev
+    name: instance-manager-d835fabb525a12275b07e20022b5b213
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:21Z"
+  window: 11.731s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: node-driver-registrar
+    usage:
+      cpu: 26260n
+      memory: 6156Ki
+  - name: longhorn-csi-plugin
+    usage:
+      cpu: 180857n
+      memory: 19208Ki
+  - name: longhorn-liveness-probe
+    usage:
+      cpu: 270339n
+      memory: 8764Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: longhorn-csi-plugin
+      controller-revision-hash: 6d74f4bbbc
+      pod-template-generation: "1"
+    name: longhorn-csi-plugin-wz4rv
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:15Z"
+  window: 12.59s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: longhorn-driver-deployer
+    usage:
+      cpu: "0"
+      memory: 12516Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: longhorn-driver-deployer
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: longhorn
+      app.kubernetes.io/version: v1.10.1
+      helm.sh/chart: longhorn-1.10.1
+      pod-template-hash: 5dbd77f4d
+    name: longhorn-driver-deployer-5dbd77f4d-fb6wl
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:15Z"
+  window: 23.402s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: longhorn-manager
+    usage:
+      cpu: 7537600n
+      memory: 167228Ki
+  - name: pre-pull-share-manager-image
+    usage:
+      cpu: "0"
+      memory: 472Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: longhorn-manager
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: longhorn
+      app.kubernetes.io/version: v1.10.1
+      controller-revision-hash: 6fc5d957fd
+      helm.sh/chart: longhorn-1.10.1
+      longhorn.io/admission-webhook: longhorn-admission-webhook
+      longhorn.io/recovery-backend: longhorn-recovery-backend
+      pod-template-generation: "1"
+    name: longhorn-manager-jmvf2
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:14Z"
+  window: 14.468s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: longhorn-ui
+    usage:
+      cpu: "0"
+      memory: 3452Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: longhorn-ui
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: longhorn
+      app.kubernetes.io/version: v1.10.1
+      helm.sh/chart: longhorn-1.10.1
+      pod-template-hash: 677666b49d
+    name: longhorn-ui-677666b49d-b288n
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:22Z"
+  window: 13.369s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: longhorn-ui
+    usage:
+      cpu: "0"
+      memory: 2736Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: longhorn-ui
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: longhorn
+      app.kubernetes.io/version: v1.10.1
+      helm.sh/chart: longhorn-1.10.1
+      pod-template-hash: 677666b49d
+    name: longhorn-ui-677666b49d-xvn4v
+    namespace: longhorn-system
+  timestamp: "2025-12-30T22:00:15Z"
+  window: 13.549s
+kind: List
+metadata: {}

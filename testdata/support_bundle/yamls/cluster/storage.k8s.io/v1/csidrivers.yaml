@@ -1,0 +1,46 @@
+apiVersion: v1
+items:
+- apiVersion: storage.k8s.io/v1
+  kind: CSIDriver
+  metadata:
+    annotations:
+      driver.longhorn.io/git-commit: e05ffab501b8a8454765df78b91b655ba01ee1e7
+      driver.longhorn.io/version: v1.10.1-hotfix-2
+    creationTimestamp: "2025-12-30T21:50:18Z"
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:driver.longhorn.io/git-commit: {}
+            f:driver.longhorn.io/version: {}
+        f:spec:
+          f:attachRequired: {}
+          f:fsGroupPolicy: {}
+          f:podInfoOnMount: {}
+          f:requiresRepublish: {}
+          f:seLinuxMount: {}
+          f:storageCapacity: {}
+          f:volumeLifecycleModes:
+            .: {}
+            v:"Persistent"null: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2025-12-30T21:50:18Z"
+    name: driver.longhorn.io
+    resourceVersion: "5704"
+    uid: fa89a481-fe2c-4aae-9b99-e4d87a0637a7
+  spec:
+    attachRequired: true
+    fsGroupPolicy: ReadWriteOnceWithFSType
+    podInfoOnMount: true
+    requiresRepublish: false
+    seLinuxMount: false
+    storageCapacity: true
+    volumeLifecycleModes:
+    - Persistent
+kind: List
+metadata:
+  resourceVersion: "14450"

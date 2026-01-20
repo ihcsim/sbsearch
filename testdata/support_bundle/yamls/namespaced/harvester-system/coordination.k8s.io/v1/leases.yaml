@@ -1,0 +1,167 @@
+apiVersion: v1
+items:
+- apiVersion: coordination.k8s.io/v1
+  kind: Lease
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:44Z"
+    managedFields:
+    - apiVersion: coordination.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:acquireTime: {}
+          f:holderIdentity: {}
+          f:leaseDurationSeconds: {}
+          f:leaseTransitions: {}
+          f:renewTime: {}
+      manager: virt-cdi-controller
+      operation: Update
+      time: "2025-12-30T22:00:35Z"
+    name: cdi-controller-leader-election-helper
+    namespace: harvester-system
+    resourceVersion: "14482"
+    uid: bbcfda57-d1d4-4c08-9ff7-575a0a44faac
+  spec:
+    acquireTime: "2025-12-30T21:49:44.506208Z"
+    holderIdentity: cdi-deployment-ccd4878d6-477ck_87d5acde-e9ea-4727-bc14-6a5a75c26058
+    leaseDurationSeconds: 15
+    leaseTransitions: 0
+    renewTime: "2025-12-30T22:00:35.313915Z"
+- apiVersion: coordination.k8s.io/v1
+  kind: Lease
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:37Z"
+    managedFields:
+    - apiVersion: coordination.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:acquireTime: {}
+          f:holderIdentity: {}
+          f:leaseDurationSeconds: {}
+          f:leaseTransitions: {}
+          f:renewTime: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T22:00:35Z"
+    name: cdi-operator-leader-election-helper
+    namespace: harvester-system
+    resourceVersion: "14488"
+    uid: 4fd6201e-86bb-4006-bf68-b9d33f0455b1
+  spec:
+    acquireTime: "2025-12-30T21:49:37.039637Z"
+    holderIdentity: cdi-operator-664c664b49-frkcb_2d27b8d5-2e3b-4e93-b8eb-4a9954a8a548
+    leaseDurationSeconds: 15
+    leaseTransitions: 0
+    renewTime: "2025-12-30T22:00:35.663503Z"
+- apiVersion: coordination.k8s.io/v1
+  kind: Lease
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:35Z"
+    managedFields:
+    - apiVersion: coordination.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:acquireTime: {}
+          f:holderIdentity: {}
+          f:leaseDurationSeconds: {}
+          f:leaseTransitions: {}
+          f:renewTime: {}
+      manager: networkfs-manager
+      operation: Update
+      time: "2025-12-30T22:00:34Z"
+    name: harvester-networkfs-manager
+    namespace: harvester-system
+    resourceVersion: "14477"
+    uid: 1ec06f00-8aeb-4945-8a16-655ced186b2e
+  spec:
+    acquireTime: "2025-12-30T21:49:35.409469Z"
+    holderIdentity: isim-dev
+    leaseDurationSeconds: 45
+    leaseTransitions: 0
+    renewTime: "2025-12-30T22:00:34.955100Z"
+- apiVersion: coordination.k8s.io/v1
+  kind: Lease
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:35Z"
+    managedFields:
+    - apiVersion: coordination.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:acquireTime: {}
+          f:holderIdentity: {}
+          f:leaseDurationSeconds: {}
+          f:leaseTransitions: {}
+          f:renewTime: {}
+      manager: kube-vip
+      operation: Update
+      time: "2025-12-30T22:00:35Z"
+    name: plndr-svcs-lock
+    namespace: harvester-system
+    resourceVersion: "14480"
+    uid: 27deb4f1-c6fc-4146-b60e-1f1da0f547ae
+  spec:
+    acquireTime: "2025-12-30T21:49:35.369323Z"
+    holderIdentity: isim-dev
+    leaseDurationSeconds: 5
+    leaseTransitions: 0
+    renewTime: "2025-12-30T22:00:35.112371Z"
+- apiVersion: coordination.k8s.io/v1
+  kind: Lease
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:36Z"
+    managedFields:
+    - apiVersion: coordination.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:acquireTime: {}
+          f:holderIdentity: {}
+          f:leaseDurationSeconds: {}
+          f:leaseTransitions: {}
+          f:renewTime: {}
+      manager: virt-controller
+      operation: Update
+      time: "2025-12-30T22:00:35Z"
+    name: virt-controller
+    namespace: harvester-system
+    resourceVersion: "14491"
+    uid: e1f06957-9548-422c-b561-5b6fc5d36d1f
+  spec:
+    acquireTime: "2025-12-30T21:50:36.782196Z"
+    holderIdentity: virt-controller-667794cf47-4wkk2
+    leaseDurationSeconds: 15
+    leaseTransitions: 0
+    renewTime: "2025-12-30T22:00:35.664418Z"
+- apiVersion: coordination.k8s.io/v1
+  kind: Lease
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:43Z"
+    managedFields:
+    - apiVersion: coordination.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:acquireTime: {}
+          f:holderIdentity: {}
+          f:leaseDurationSeconds: {}
+          f:leaseTransitions: {}
+          f:renewTime: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T22:00:34Z"
+    name: virt-operator
+    namespace: harvester-system
+    resourceVersion: "14479"
+    uid: 976af84c-b466-4b86-9b4d-56a40de99dc4
+  spec:
+    acquireTime: "2025-12-30T21:49:43.654140Z"
+    holderIdentity: virt-operator-669f6964cd-b2bfh
+    leaseDurationSeconds: 15
+    leaseTransitions: 0
+    renewTime: "2025-12-30T22:00:34.954768Z"
+kind: List
+metadata:
+  resourceVersion: "14492"

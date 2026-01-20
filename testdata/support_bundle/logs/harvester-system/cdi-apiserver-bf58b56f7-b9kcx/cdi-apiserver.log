@@ -1,0 +1,6 @@
+2025-12-30T21:49:42.167638496Z I1230 21:49:42.167370       1 apiserver.go:92] Note: increase the -v level in the api deployment for more detailed logging, eg. -v=2 or -v=3
+2025-12-30T21:49:42.169016637Z W1230 21:49:42.167633       1 client_config.go:659] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+2025-12-30T21:49:42.171942346Z I1230 21:49:42.171825       1 envvar.go:172] "Feature gate default state" feature="WatchListClient" enabled=false
+2025-12-30T21:49:42.171964512Z I1230 21:49:42.171861       1 envvar.go:172] "Feature gate default state" feature="InformerResourceVersion" enabled=false
+2025-12-30T21:49:42.373143379Z I1230 21:49:42.373021       1 certwatcher.go:126] Updated current TLS certificate
+2025-12-30T21:49:42.917122535Z I1230 21:49:42.916911       1 certwatcher.go:82] Starting certificate watcher

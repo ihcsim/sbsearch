@@ -1,0 +1,218 @@
+apiVersion: v1
+items:
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: fleet
+      meta.helm.sh/release-namespace: cattle-fleet-system
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: helm
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: fleet-controller
+    namespace: cattle-fleet-system
+    resourceVersion: "1756"
+    uid: 80e77178-4f83-4b51-b785-a7f6db19c05e
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: fleet-controller
+  subjects:
+  - kind: ServiceAccount
+    name: fleet-controller
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: fleet
+      meta.helm.sh/release-namespace: cattle-fleet-system
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: helm
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: gitjob
+    namespace: cattle-fleet-system
+    resourceVersion: "1755"
+    uid: 7903dae9-a831-4c07-8bd7-37aac53e1223
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: gitjob
+  subjects:
+  - kind: ServiceAccount
+    name: gitjob
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2025-12-30T21:51:41Z"
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"e2bd79de-c4d4-460c-95a4-69dc52335211"}: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:51:41Z"
+    name: helm-operation-2ncj5-helm-installer-rolebinding
+    namespace: cattle-fleet-system
+    ownerReferences:
+    - apiVersion: catalog.cattle.io/v1
+      kind: Operation
+      name: helm-operation-2ncj5
+      uid: e2bd79de-c4d4-460c-95a4-69dc52335211
+    resourceVersion: "7706"
+    uid: f0acadc6-b06c-4359-869c-22eb15fc57b7
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: helm-operation-2ncj5-helm-installer-role
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: helm-installer
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:45Z"
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"6103ac20-6cf3-4a4f-8fc5-00b2f9096f4c"}: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:47:45Z"
+    name: helm-operation-4db4g-helm-installer-rolebinding
+    namespace: cattle-fleet-system
+    ownerReferences:
+    - apiVersion: catalog.cattle.io/v1
+      kind: Operation
+      name: helm-operation-4db4g
+      uid: 6103ac20-6cf3-4a4f-8fc5-00b2f9096f4c
+    resourceVersion: "1701"
+    uid: 757b4f89-cb99-4a83-9567-7d7f72dce862
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: helm-operation-4db4g-helm-installer-role
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: helm-installer
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:01Z"
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"2932a636-0292-4c91-b0b8-7fa2cbd43fab"}: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:48:01Z"
+    name: helm-operation-fgm6s-helm-installer-rolebinding
+    namespace: cattle-fleet-system
+    ownerReferences:
+    - apiVersion: catalog.cattle.io/v1
+      kind: Operation
+      name: helm-operation-fgm6s
+      uid: 2932a636-0292-4c91-b0b8-7fa2cbd43fab
+    resourceVersion: "1954"
+    uid: 6088fc70-16f3-46cf-bc69-69a41523781c
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: helm-operation-fgm6s-helm-installer-role
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: helm-installer
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: fleet
+      meta.helm.sh/release-namespace: cattle-fleet-system
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: helm
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: helmops
+    namespace: cattle-fleet-system
+    resourceVersion: "1757"
+    uid: d5b5e8c1-096d-4f49-b3c9-610465ddebc5
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: helmops
+  subjects:
+  - kind: ServiceAccount
+    name: helmops
+kind: List
+metadata:
+  resourceVersion: "14479"

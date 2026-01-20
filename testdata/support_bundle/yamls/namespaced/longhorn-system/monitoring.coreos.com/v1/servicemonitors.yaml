@@ -1,0 +1,57 @@
+apiVersion: v1
+items:
+- apiVersion: monitoring.coreos.com/v1
+  kind: ServiceMonitor
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      name: longhorn-prometheus-servicemonitor
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: monitoring.coreos.com/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:name: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          .: {}
+          f:endpoints: {}
+          f:namespaceSelector:
+            .: {}
+            f:matchNames: {}
+          f:selector: {}
+      manager: fleetagent
+      operation: Update
+      time: "2025-12-30T21:49:31Z"
+    name: longhorn-prometheus-servicemonitor
+    namespace: longhorn-system
+    resourceVersion: "3945"
+    uid: c574a9fb-2d9f-4ea3-b8cf-ed0698029f60
+  spec:
+    endpoints:
+    - port: manager
+    namespaceSelector:
+      matchNames:
+      - longhorn-system
+    selector:
+      matchLabels:
+        app: longhorn-manager
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14495"

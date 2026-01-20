@@ -1,0 +1,443 @@
+apiVersion: v1
+items:
+- action: Binding
+  apiVersion: v1
+  eventTime: "2025-12-30T21:48:14.515080Z"
+  firstTimestamp: "null"
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: fleet-agent-f78f57f66-5ps4k
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2226"
+    uid: 357fd9cc-4637-4a7c-adcb-184d72fdd3d9
+  kind: Event
+  lastTimestamp: "null"
+  message: Successfully assigned cattle-fleet-local-system/fleet-agent-f78f57f66-5ps4k
+    to isim-dev
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:14Z"
+    managedFields:
+    - apiVersion: events.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:action: {}
+        f:eventTime: {}
+        f:note: {}
+        f:reason: {}
+        f:regarding: {}
+        f:reportingController: {}
+        f:reportingInstance: {}
+        f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2025-12-30T21:48:14Z"
+    name: fleet-agent-f78f57f66-5ps4k.18861c8cb90c3d2f
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2232"
+    uid: 7de3e8ec-0f70-4fe1-9b65-66c6da107540
+  reason: Scheduled
+  reportingComponent: default-scheduler
+  reportingInstance: default-scheduler-isim-dev
+  source: {}
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:14Z"
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: fleet-agent-f78f57f66-5ps4k
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2234"
+    uid: 357fd9cc-4637-4a7c-adcb-184d72fdd3d9
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:14Z"
+  message: Add eth0 [10.52.0.20/32] from k8s-pod-network
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:14Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: multus
+      operation: Update
+      time: "2025-12-30T21:48:14Z"
+    name: fleet-agent-f78f57f66-5ps4k.18861c8cd0702025
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2238"
+    uid: 969569f6-7bff-4cae-8c96-f7cf15b025de
+  reason: AddedInterface
+  reportingComponent: multus
+  reportingInstance: "null"
+  source:
+    component: multus
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:15Z"
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-agent}
+    kind: Pod
+    name: fleet-agent-f78f57f66-5ps4k
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2230"
+    uid: 357fd9cc-4637-4a7c-adcb-184d72fdd3d9
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:15Z"
+  message: Container image "rancher/fleet-agent:v0.14.0" already present on machine
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:15Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:15Z"
+    name: fleet-agent-f78f57f66-5ps4k.18861c8cd75d6d02
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2240"
+    uid: 7bd8e499-c078-487c-8d35-11cf10f32831
+  reason: Pulled
+  reportingComponent: kubelet
+  reportingInstance: isim-dev
+  source:
+    component: kubelet
+    host: isim-dev
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:15Z"
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-agent}
+    kind: Pod
+    name: fleet-agent-f78f57f66-5ps4k
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2230"
+    uid: 357fd9cc-4637-4a7c-adcb-184d72fdd3d9
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:15Z"
+  message: 'Created container: fleet-agent'
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:15Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:15Z"
+    name: fleet-agent-f78f57f66-5ps4k.18861c8ceda5167c
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2247"
+    uid: 3d1cffd7-56cc-4d75-9e25-af7a1178d318
+  reason: Created
+  reportingComponent: kubelet
+  reportingInstance: isim-dev
+  source:
+    component: kubelet
+    host: isim-dev
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:15Z"
+  involvedObject:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-agent}
+    kind: Pod
+    name: fleet-agent-f78f57f66-5ps4k
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2230"
+    uid: 357fd9cc-4637-4a7c-adcb-184d72fdd3d9
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:15Z"
+  message: Started container fleet-agent
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:15Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:15Z"
+    name: fleet-agent-f78f57f66-5ps4k.18861c8cf1b6d786
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2248"
+    uid: 15c3ef63-5ae7-46d0-9025-ca07427986da
+  reason: Started
+  reportingComponent: kubelet
+  reportingInstance: isim-dev
+  source:
+    component: kubelet
+    host: isim-dev
+  type: Normal
+- action: Binding
+  apiVersion: v1
+  eventTime: "2025-12-30T21:48:14.402540Z"
+  firstTimestamp: "null"
+  involvedObject:
+    apiVersion: v1
+    kind: Pod
+    name: fleet-agent-f78f57f66-6t4lr
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2197"
+    uid: 306cac6a-b9a6-405a-8268-421e5fee6938
+  kind: Event
+  lastTimestamp: "null"
+  message: Successfully assigned cattle-fleet-local-system/fleet-agent-f78f57f66-6t4lr
+    to isim-dev
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:14Z"
+    managedFields:
+    - apiVersion: events.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:action: {}
+        f:eventTime: {}
+        f:note: {}
+        f:reason: {}
+        f:regarding: {}
+        f:reportingController: {}
+        f:reportingInstance: {}
+        f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2025-12-30T21:48:14Z"
+    name: fleet-agent-f78f57f66-6t4lr.18861c8cb2570dd3
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2202"
+    uid: a4fd5405-20ec-43e3-9ff4-a94f7adc42d7
+  reason: Scheduled
+  reportingComponent: default-scheduler
+  reportingInstance: default-scheduler-isim-dev
+  source: {}
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:14Z"
+  involvedObject:
+    apiVersion: apps/v1
+    kind: ReplicaSet
+    name: fleet-agent-f78f57f66
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2193"
+    uid: 300f7db1-849e-44c9-a4e0-726b374a1c6d
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:14Z"
+  message: 'Created pod: fleet-agent-f78f57f66-6t4lr'
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:14Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:48:14Z"
+    name: fleet-agent-f78f57f66.18861c8cb20cd169
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2198"
+    uid: f1cebaed-6975-459d-b61b-2b2993f47abf
+  reason: SuccessfulCreate
+  reportingComponent: replicaset-controller
+  reportingInstance: "null"
+  source:
+    component: replicaset-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:14Z"
+  involvedObject:
+    apiVersion: apps/v1
+    kind: ReplicaSet
+    name: fleet-agent-f78f57f66
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2223"
+    uid: 06c2293f-6937-47a2-b0e9-be8f41cba62a
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:14Z"
+  message: 'Created pod: fleet-agent-f78f57f66-5ps4k'
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:14Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:48:14Z"
+    name: fleet-agent-f78f57f66.18861c8cb86470cd
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2228"
+    uid: 14d372f0-8b55-4541-8682-a3255e2fe810
+  reason: SuccessfulCreate
+  reportingComponent: replicaset-controller
+  reportingInstance: "null"
+  source:
+    component: replicaset-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:14Z"
+  involvedObject:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: fleet-agent
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2192"
+    uid: af267720-f653-417b-aeb6-9c91059dce1e
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:14Z"
+  message: Scaled up replica set fleet-agent-f78f57f66 from 0 to 1
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:14Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:48:14Z"
+    name: fleet-agent.18861c8cb1946013
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2194"
+    uid: e56c13c0-f4bb-4b47-80cf-8b94433f4606
+  reason: ScalingReplicaSet
+  reportingComponent: deployment-controller
+  reportingInstance: "null"
+  source:
+    component: deployment-controller
+  type: Normal
+- apiVersion: v1
+  count: 1
+  eventTime: "null"
+  firstTimestamp: "2025-12-30T21:48:14Z"
+  involvedObject:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: fleet-agent
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2222"
+    uid: 1072ccc5-8d0e-4c23-8dde-69e1612c5536
+  kind: Event
+  lastTimestamp: "2025-12-30T21:48:14Z"
+  message: Scaled up replica set fleet-agent-f78f57f66 from 0 to 1
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:14Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:48:14Z"
+    name: fleet-agent.18861c8cb7f89953
+    namespace: cattle-fleet-local-system
+    resourceVersion: "2224"
+    uid: acd7d281-713a-4557-9b5d-a41f03ffebe2
+  reason: ScalingReplicaSet
+  reportingComponent: deployment-controller
+  reportingInstance: "null"
+  source:
+    component: deployment-controller
+  type: Normal
+kind: List
+metadata:
+  resourceVersion: "14474"

@@ -1,0 +1,70 @@
+apiVersion: v1
+items:
+- apiVersion: fleet.cattle.io/v1alpha1
+  kind: ClusterRegistration
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:15Z"
+    generateName: request-
+    generation: 1
+    managedFields:
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+        f:spec:
+          .: {}
+          f:clientID: {}
+          f:clientRandom: {}
+          f:clusterLabels:
+            .: {}
+            f:fleet.cattle.io/created-by-agent-pod: {}
+            f:name: {}
+            f:provider.cattle.io: {}
+      manager: fleetagent
+      operation: Update
+      time: "2025-12-30T21:48:15Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"2f141302-575c-4671-a309-cb7bfeceb46c"}: {}
+      manager: fleetcontroller
+      operation: Update
+      time: "2025-12-30T21:48:15Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:clusterName: {}
+          f:granted: {}
+      manager: fleetcontroller
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:17Z"
+    name: request-9k7kd
+    namespace: fleet-local
+    ownerReferences:
+    - apiVersion: fleet.cattle.io/v1alpha1
+      kind: Cluster
+      name: local
+      uid: 2f141302-575c-4671-a309-cb7bfeceb46c
+    resourceVersion: "2274"
+    uid: a6406cd0-93fd-44ef-8220-51ee3cb45968
+  spec:
+    clientID: lc6tbmd2j6mzt9x9v48m6bn2vxx7hvzkdvv2pcz4mplg589dt52jm6
+    clientRandom: 9gsm4lnnqt5srrg54tzr877chzsdwbqd94c7r8vfrz6t6f8xpzznw5
+    clusterLabels:
+      fleet.cattle.io/created-by-agent-pod: fleet-agent-f78f57f66-5ps4k
+      name: local
+      provider.cattle.io: harvester
+  status:
+    clusterName: local
+    granted: true
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14484"

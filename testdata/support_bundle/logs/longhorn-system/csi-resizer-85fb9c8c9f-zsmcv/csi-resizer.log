@@ -1,0 +1,16 @@
+2025-12-30T21:50:20.485191762Z I1230 21:50:20.483665       1 main.go:116] "Version" version="v"
+2025-12-30T21:50:20.485224491Z I1230 21:50:20.483812       1 feature_gate.go:385] feature gates: {map[RecoverVolumeExpansionFailure:false]}
+2025-12-30T21:50:20.485229340Z I1230 21:50:20.483989       1 envvar.go:172] "Feature gate default state" feature="InformerResourceVersion" enabled=false
+2025-12-30T21:50:20.485230662Z I1230 21:50:20.483998       1 envvar.go:172] "Feature gate default state" feature="InOrderInformers" enabled=true
+2025-12-30T21:50:20.485232005Z I1230 21:50:20.484001       1 envvar.go:172] "Feature gate default state" feature="WatchListClient" enabled=false
+2025-12-30T21:50:20.485233306Z I1230 21:50:20.484004       1 envvar.go:172] "Feature gate default state" feature="ClientsAllowCBOR" enabled=false
+2025-12-30T21:50:20.485234529Z I1230 21:50:20.484010       1 envvar.go:172] "Feature gate default state" feature="ClientsPreferCBOR" enabled=false
+2025-12-30T21:50:21.486877508Z I1230 21:50:21.486728       1 common.go:143] "Probing CSI driver for readiness"
+2025-12-30T21:50:21.489719510Z I1230 21:50:21.489637       1 main.go:171] "CSI driver name" driverName="driver.longhorn.io"
+2025-12-30T21:50:21.491121067Z I1230 21:50:21.490865       1 main.go:216] "ServeMux listening" address=":8000"
+2025-12-30T21:50:21.491422215Z I1230 21:50:21.491393       1 leaderelection.go:257] attempting to acquire leader lease longhorn-system/external-resizer-driver-longhorn-io...
+2025-12-30T21:50:21.497676329Z I1230 21:50:21.497274       1 leaderelection.go:271] successfully acquired lease longhorn-system/external-resizer-driver-longhorn-io
+2025-12-30T21:50:21.497685776Z I1230 21:50:21.497421       1 leader_election.go:194] "became leader, starting"
+2025-12-30T21:50:21.497687719Z I1230 21:50:21.497441       1 controller.go:275] "Starting external resizer" controller="driver.longhorn.io"
+2025-12-30T21:50:21.498767581Z I1230 21:50:21.498708       1 reflector.go:430] "Caches populated" type="*v1.PersistentVolume" reflector="k8s.io/client-go/informers/factory.go:160"
+2025-12-30T21:50:21.499432430Z I1230 21:50:21.499198       1 reflector.go:430] "Caches populated" type="*v1.PersistentVolumeClaim" reflector="k8s.io/client-go/informers/factory.go:160"

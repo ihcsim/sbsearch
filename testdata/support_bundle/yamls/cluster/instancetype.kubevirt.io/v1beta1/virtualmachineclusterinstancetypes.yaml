@@ -1,0 +1,5007 @@
+apiVersion: v1
+items:
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The CX Series provides exclusive compute resources for compute
+        intensive applications.
+
+        *CX* is the abbreviation of "Compute Exclusive".
+
+        The exclusive resources are given to the compute threads of the
+        VM. In order to ensure this, some additional cores (depending
+        on the number of disks and NICs) will be requested to offload
+        the IO threading from cores dedicated to the workload.
+        In addition, in this series, the NUMA topology of the used
+        cores is provided to the VM.
+
+        The amount of spec.cpu.maxSockets is set to the same as
+        guest cpus. This avoids KubeVirt's default behavior of
+        providing extra CPUs for hotplugging, which can exceed the
+        amount of available CPUs on a node and cause the VM to fail.
+
+        Requirements for CX series instance types:
+        - CPU manager has to be enabled.
+        - Huge pages have to be available on the nodes.
+      instancetype.kubevirt.io/displayName: Compute Exclusive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:05Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: compute.exclusive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "8"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 2Mi
+      instancetype.kubevirt.io/icon-pf: pficon-registry
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 16Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/size: 2xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:maxSockets: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+          f:ioThreadsPolicy: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:05Z"
+    name: cx1.2xlarge
+    resourceVersion: "7114"
+    uid: e459fab5-6d68-41e6-8f86-62730c7cc9e5
+  spec:
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 8
+      isolateEmulatorThread: true
+      maxSockets: 8
+      numa:
+        guestMappingPassthrough: {}
+    ioThreadsPolicy: auto
+    memory:
+      guest: 16Gi
+      hugepages:
+        pageSize: 2Mi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The CX Series provides exclusive compute resources for compute
+        intensive applications.
+
+        *CX* is the abbreviation of "Compute Exclusive".
+
+        The exclusive resources are given to the compute threads of the
+        VM. In order to ensure this, some additional cores (depending
+        on the number of disks and NICs) will be requested to offload
+        the IO threading from cores dedicated to the workload.
+        In addition, in this series, the NUMA topology of the used
+        cores is provided to the VM.
+
+        The amount of spec.cpu.maxSockets is set to the same as
+        guest cpus. This avoids KubeVirt's default behavior of
+        providing extra CPUs for hotplugging, which can exceed the
+        amount of available CPUs on a node and cause the VM to fail.
+
+        Requirements for CX series instance types:
+        - CPU manager has to be enabled.
+        - Huge pages have to be available on the nodes.
+      instancetype.kubevirt.io/displayName: Compute Exclusive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:05Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: compute.exclusive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "8"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-registry
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 16Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/size: 2xlarge1gi
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:maxSockets: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+          f:ioThreadsPolicy: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:05Z"
+    name: cx1.2xlarge1gi
+    resourceVersion: "7115"
+    uid: b4ed8a52-84bd-4c71-b52f-f9c6881b3eb1
+  spec:
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 8
+      isolateEmulatorThread: true
+      maxSockets: 8
+      numa:
+        guestMappingPassthrough: {}
+    ioThreadsPolicy: auto
+    memory:
+      guest: 16Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The CX Series provides exclusive compute resources for compute
+        intensive applications.
+
+        *CX* is the abbreviation of "Compute Exclusive".
+
+        The exclusive resources are given to the compute threads of the
+        VM. In order to ensure this, some additional cores (depending
+        on the number of disks and NICs) will be requested to offload
+        the IO threading from cores dedicated to the workload.
+        In addition, in this series, the NUMA topology of the used
+        cores is provided to the VM.
+
+        The amount of spec.cpu.maxSockets is set to the same as
+        guest cpus. This avoids KubeVirt's default behavior of
+        providing extra CPUs for hotplugging, which can exceed the
+        amount of available CPUs on a node and cause the VM to fail.
+
+        Requirements for CX series instance types:
+        - CPU manager has to be enabled.
+        - Huge pages have to be available on the nodes.
+      instancetype.kubevirt.io/displayName: Compute Exclusive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:05Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: compute.exclusive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "16"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 2Mi
+      instancetype.kubevirt.io/icon-pf: pficon-registry
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 32Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/size: 4xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:maxSockets: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+          f:ioThreadsPolicy: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:05Z"
+    name: cx1.4xlarge
+    resourceVersion: "7116"
+    uid: 17e021c7-4a32-4785-825d-27bdc15ceeb1
+  spec:
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 16
+      isolateEmulatorThread: true
+      maxSockets: 16
+      numa:
+        guestMappingPassthrough: {}
+    ioThreadsPolicy: auto
+    memory:
+      guest: 32Gi
+      hugepages:
+        pageSize: 2Mi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The CX Series provides exclusive compute resources for compute
+        intensive applications.
+
+        *CX* is the abbreviation of "Compute Exclusive".
+
+        The exclusive resources are given to the compute threads of the
+        VM. In order to ensure this, some additional cores (depending
+        on the number of disks and NICs) will be requested to offload
+        the IO threading from cores dedicated to the workload.
+        In addition, in this series, the NUMA topology of the used
+        cores is provided to the VM.
+
+        The amount of spec.cpu.maxSockets is set to the same as
+        guest cpus. This avoids KubeVirt's default behavior of
+        providing extra CPUs for hotplugging, which can exceed the
+        amount of available CPUs on a node and cause the VM to fail.
+
+        Requirements for CX series instance types:
+        - CPU manager has to be enabled.
+        - Huge pages have to be available on the nodes.
+      instancetype.kubevirt.io/displayName: Compute Exclusive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:05Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: compute.exclusive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "16"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-registry
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 32Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/size: 4xlarge1gi
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:maxSockets: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+          f:ioThreadsPolicy: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:05Z"
+    name: cx1.4xlarge1gi
+    resourceVersion: "7117"
+    uid: 157bc9d2-cee0-4a5c-8fb7-8ece2510bb8b
+  spec:
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 16
+      isolateEmulatorThread: true
+      maxSockets: 16
+      numa:
+        guestMappingPassthrough: {}
+    ioThreadsPolicy: auto
+    memory:
+      guest: 32Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The CX Series provides exclusive compute resources for compute
+        intensive applications.
+
+        *CX* is the abbreviation of "Compute Exclusive".
+
+        The exclusive resources are given to the compute threads of the
+        VM. In order to ensure this, some additional cores (depending
+        on the number of disks and NICs) will be requested to offload
+        the IO threading from cores dedicated to the workload.
+        In addition, in this series, the NUMA topology of the used
+        cores is provided to the VM.
+
+        The amount of spec.cpu.maxSockets is set to the same as
+        guest cpus. This avoids KubeVirt's default behavior of
+        providing extra CPUs for hotplugging, which can exceed the
+        amount of available CPUs on a node and cause the VM to fail.
+
+        Requirements for CX series instance types:
+        - CPU manager has to be enabled.
+        - Huge pages have to be available on the nodes.
+      instancetype.kubevirt.io/displayName: Compute Exclusive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:05Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: compute.exclusive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "32"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 2Mi
+      instancetype.kubevirt.io/icon-pf: pficon-registry
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 64Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/size: 8xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:maxSockets: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+          f:ioThreadsPolicy: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:05Z"
+    name: cx1.8xlarge
+    resourceVersion: "7118"
+    uid: 7f94128a-580f-4264-a314-2a08eb216d1e
+  spec:
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 32
+      isolateEmulatorThread: true
+      maxSockets: 32
+      numa:
+        guestMappingPassthrough: {}
+    ioThreadsPolicy: auto
+    memory:
+      guest: 64Gi
+      hugepages:
+        pageSize: 2Mi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The CX Series provides exclusive compute resources for compute
+        intensive applications.
+
+        *CX* is the abbreviation of "Compute Exclusive".
+
+        The exclusive resources are given to the compute threads of the
+        VM. In order to ensure this, some additional cores (depending
+        on the number of disks and NICs) will be requested to offload
+        the IO threading from cores dedicated to the workload.
+        In addition, in this series, the NUMA topology of the used
+        cores is provided to the VM.
+
+        The amount of spec.cpu.maxSockets is set to the same as
+        guest cpus. This avoids KubeVirt's default behavior of
+        providing extra CPUs for hotplugging, which can exceed the
+        amount of available CPUs on a node and cause the VM to fail.
+
+        Requirements for CX series instance types:
+        - CPU manager has to be enabled.
+        - Huge pages have to be available on the nodes.
+      instancetype.kubevirt.io/displayName: Compute Exclusive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:05Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: compute.exclusive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "32"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-registry
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 64Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/size: 8xlarge1gi
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:maxSockets: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+          f:ioThreadsPolicy: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:05Z"
+    name: cx1.8xlarge1gi
+    resourceVersion: "7119"
+    uid: 4e218fd0-131e-4353-b1c0-85118cb6efd0
+  spec:
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 32
+      isolateEmulatorThread: true
+      maxSockets: 32
+      numa:
+        guestMappingPassthrough: {}
+    ioThreadsPolicy: auto
+    memory:
+      guest: 64Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The CX Series provides exclusive compute resources for compute
+        intensive applications.
+
+        *CX* is the abbreviation of "Compute Exclusive".
+
+        The exclusive resources are given to the compute threads of the
+        VM. In order to ensure this, some additional cores (depending
+        on the number of disks and NICs) will be requested to offload
+        the IO threading from cores dedicated to the workload.
+        In addition, in this series, the NUMA topology of the used
+        cores is provided to the VM.
+
+        The amount of spec.cpu.maxSockets is set to the same as
+        guest cpus. This avoids KubeVirt's default behavior of
+        providing extra CPUs for hotplugging, which can exceed the
+        amount of available CPUs on a node and cause the VM to fail.
+
+        Requirements for CX series instance types:
+        - CPU manager has to be enabled.
+        - Huge pages have to be available on the nodes.
+      instancetype.kubevirt.io/displayName: Compute Exclusive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:05Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: compute.exclusive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "2"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 2Mi
+      instancetype.kubevirt.io/icon-pf: pficon-registry
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 4Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/size: large
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:maxSockets: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+          f:ioThreadsPolicy: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:05Z"
+    name: cx1.large
+    resourceVersion: "7120"
+    uid: 68cbfe52-cd94-48d5-a811-a6e91360e9c5
+  spec:
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 2
+      isolateEmulatorThread: true
+      maxSockets: 2
+      numa:
+        guestMappingPassthrough: {}
+    ioThreadsPolicy: auto
+    memory:
+      guest: 4Gi
+      hugepages:
+        pageSize: 2Mi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The CX Series provides exclusive compute resources for compute
+        intensive applications.
+
+        *CX* is the abbreviation of "Compute Exclusive".
+
+        The exclusive resources are given to the compute threads of the
+        VM. In order to ensure this, some additional cores (depending
+        on the number of disks and NICs) will be requested to offload
+        the IO threading from cores dedicated to the workload.
+        In addition, in this series, the NUMA topology of the used
+        cores is provided to the VM.
+
+        The amount of spec.cpu.maxSockets is set to the same as
+        guest cpus. This avoids KubeVirt's default behavior of
+        providing extra CPUs for hotplugging, which can exceed the
+        amount of available CPUs on a node and cause the VM to fail.
+
+        Requirements for CX series instance types:
+        - CPU manager has to be enabled.
+        - Huge pages have to be available on the nodes.
+      instancetype.kubevirt.io/displayName: Compute Exclusive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:05Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: compute.exclusive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "2"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-registry
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 4Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/size: large1gi
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:maxSockets: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+          f:ioThreadsPolicy: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:05Z"
+    name: cx1.large1gi
+    resourceVersion: "7121"
+    uid: a15f4119-7957-4829-a90c-c34c1bdcf4b1
+  spec:
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 2
+      isolateEmulatorThread: true
+      maxSockets: 2
+      numa:
+        guestMappingPassthrough: {}
+    ioThreadsPolicy: auto
+    memory:
+      guest: 4Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The CX Series provides exclusive compute resources for compute
+        intensive applications.
+
+        *CX* is the abbreviation of "Compute Exclusive".
+
+        The exclusive resources are given to the compute threads of the
+        VM. In order to ensure this, some additional cores (depending
+        on the number of disks and NICs) will be requested to offload
+        the IO threading from cores dedicated to the workload.
+        In addition, in this series, the NUMA topology of the used
+        cores is provided to the VM.
+
+        The amount of spec.cpu.maxSockets is set to the same as
+        guest cpus. This avoids KubeVirt's default behavior of
+        providing extra CPUs for hotplugging, which can exceed the
+        amount of available CPUs on a node and cause the VM to fail.
+
+        Requirements for CX series instance types:
+        - CPU manager has to be enabled.
+        - Huge pages have to be available on the nodes.
+      instancetype.kubevirt.io/displayName: Compute Exclusive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:05Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: compute.exclusive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "1"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 2Mi
+      instancetype.kubevirt.io/icon-pf: pficon-registry
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 2Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/size: medium
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:maxSockets: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+          f:ioThreadsPolicy: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:05Z"
+    name: cx1.medium
+    resourceVersion: "7122"
+    uid: 59caeca5-6a1b-4915-bc5d-dfc7c135ba28
+  spec:
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 1
+      isolateEmulatorThread: true
+      maxSockets: 1
+      numa:
+        guestMappingPassthrough: {}
+    ioThreadsPolicy: auto
+    memory:
+      guest: 2Gi
+      hugepages:
+        pageSize: 2Mi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The CX Series provides exclusive compute resources for compute
+        intensive applications.
+
+        *CX* is the abbreviation of "Compute Exclusive".
+
+        The exclusive resources are given to the compute threads of the
+        VM. In order to ensure this, some additional cores (depending
+        on the number of disks and NICs) will be requested to offload
+        the IO threading from cores dedicated to the workload.
+        In addition, in this series, the NUMA topology of the used
+        cores is provided to the VM.
+
+        The amount of spec.cpu.maxSockets is set to the same as
+        guest cpus. This avoids KubeVirt's default behavior of
+        providing extra CPUs for hotplugging, which can exceed the
+        amount of available CPUs on a node and cause the VM to fail.
+
+        Requirements for CX series instance types:
+        - CPU manager has to be enabled.
+        - Huge pages have to be available on the nodes.
+      instancetype.kubevirt.io/displayName: Compute Exclusive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:05Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: compute.exclusive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "1"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-registry
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 2Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/size: medium1gi
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:maxSockets: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+          f:ioThreadsPolicy: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:05Z"
+    name: cx1.medium1gi
+    resourceVersion: "7123"
+    uid: 1ad8bfaf-462f-4173-bdcb-01b7fad6fb77
+  spec:
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 1
+      isolateEmulatorThread: true
+      maxSockets: 1
+      numa:
+        guestMappingPassthrough: {}
+    ioThreadsPolicy: auto
+    memory:
+      guest: 2Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The CX Series provides exclusive compute resources for compute
+        intensive applications.
+
+        *CX* is the abbreviation of "Compute Exclusive".
+
+        The exclusive resources are given to the compute threads of the
+        VM. In order to ensure this, some additional cores (depending
+        on the number of disks and NICs) will be requested to offload
+        the IO threading from cores dedicated to the workload.
+        In addition, in this series, the NUMA topology of the used
+        cores is provided to the VM.
+
+        The amount of spec.cpu.maxSockets is set to the same as
+        guest cpus. This avoids KubeVirt's default behavior of
+        providing extra CPUs for hotplugging, which can exceed the
+        amount of available CPUs on a node and cause the VM to fail.
+
+        Requirements for CX series instance types:
+        - CPU manager has to be enabled.
+        - Huge pages have to be available on the nodes.
+      instancetype.kubevirt.io/displayName: Compute Exclusive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:05Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: compute.exclusive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "4"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 2Mi
+      instancetype.kubevirt.io/icon-pf: pficon-registry
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 8Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/size: xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:maxSockets: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+          f:ioThreadsPolicy: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:05Z"
+    name: cx1.xlarge
+    resourceVersion: "7124"
+    uid: b49516ba-b567-4c30-98a1-6dfe6d1a69d6
+  spec:
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 4
+      isolateEmulatorThread: true
+      maxSockets: 4
+      numa:
+        guestMappingPassthrough: {}
+    ioThreadsPolicy: auto
+    memory:
+      guest: 8Gi
+      hugepages:
+        pageSize: 2Mi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The CX Series provides exclusive compute resources for compute
+        intensive applications.
+
+        *CX* is the abbreviation of "Compute Exclusive".
+
+        The exclusive resources are given to the compute threads of the
+        VM. In order to ensure this, some additional cores (depending
+        on the number of disks and NICs) will be requested to offload
+        the IO threading from cores dedicated to the workload.
+        In addition, in this series, the NUMA topology of the used
+        cores is provided to the VM.
+
+        The amount of spec.cpu.maxSockets is set to the same as
+        guest cpus. This avoids KubeVirt's default behavior of
+        providing extra CPUs for hotplugging, which can exceed the
+        amount of available CPUs on a node and cause the VM to fail.
+
+        Requirements for CX series instance types:
+        - CPU manager has to be enabled.
+        - Huge pages have to be available on the nodes.
+      instancetype.kubevirt.io/displayName: Compute Exclusive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:05Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: compute.exclusive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "4"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-registry
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 8Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/size: xlarge1gi
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:maxSockets: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+          f:ioThreadsPolicy: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:05Z"
+    name: cx1.xlarge1gi
+    resourceVersion: "7131"
+    uid: 2d24b835-cc8e-4855-a9f0-17a46a6036ef
+  spec:
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 4
+      isolateEmulatorThread: true
+      maxSockets: 4
+      numa:
+        guestMappingPassthrough: {}
+    ioThreadsPolicy: auto
+    memory:
+      guest: 8Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The M Series provides resources for memory intensive
+        applications.
+
+        *M* is the abbreviation of "Memory".
+      instancetype.kubevirt.io/displayName: Memory Intensive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:06Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: memory.intensive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "8"
+      instancetype.kubevirt.io/hugepages: 2Mi
+      instancetype.kubevirt.io/icon-pf: fa-memory
+      instancetype.kubevirt.io/memory: 64Gi
+      instancetype.kubevirt.io/size: 2xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:06Z"
+    name: m1.2xlarge
+    resourceVersion: "7133"
+    uid: d4400404-e0a9-44d5-9c9f-8050e98ebafb
+  spec:
+    cpu:
+      guest: 8
+    memory:
+      guest: 64Gi
+      hugepages:
+        pageSize: 2Mi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The M Series provides resources for memory intensive
+        applications.
+
+        *M* is the abbreviation of "Memory".
+      instancetype.kubevirt.io/displayName: Memory Intensive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:06Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: memory.intensive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "8"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: fa-memory
+      instancetype.kubevirt.io/memory: 64Gi
+      instancetype.kubevirt.io/size: 2xlarge1gi
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:06Z"
+    name: m1.2xlarge1gi
+    resourceVersion: "7135"
+    uid: 7dc21bb0-b490-4021-9f80-3fbf5e474ded
+  spec:
+    cpu:
+      guest: 8
+    memory:
+      guest: 64Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The M Series provides resources for memory intensive
+        applications.
+
+        *M* is the abbreviation of "Memory".
+      instancetype.kubevirt.io/displayName: Memory Intensive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:06Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: memory.intensive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "16"
+      instancetype.kubevirt.io/hugepages: 2Mi
+      instancetype.kubevirt.io/icon-pf: fa-memory
+      instancetype.kubevirt.io/memory: 128Gi
+      instancetype.kubevirt.io/size: 4xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:06Z"
+    name: m1.4xlarge
+    resourceVersion: "7146"
+    uid: 0c0756d0-ff05-4047-b9a3-52ef048bda4f
+  spec:
+    cpu:
+      guest: 16
+    memory:
+      guest: 128Gi
+      hugepages:
+        pageSize: 2Mi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The M Series provides resources for memory intensive
+        applications.
+
+        *M* is the abbreviation of "Memory".
+      instancetype.kubevirt.io/displayName: Memory Intensive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:06Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: memory.intensive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "16"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: fa-memory
+      instancetype.kubevirt.io/memory: 128Gi
+      instancetype.kubevirt.io/size: 4xlarge1gi
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:06Z"
+    name: m1.4xlarge1gi
+    resourceVersion: "7149"
+    uid: fad4dd8c-603b-4f8d-9efe-da95030976ae
+  spec:
+    cpu:
+      guest: 16
+    memory:
+      guest: 128Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The M Series provides resources for memory intensive
+        applications.
+
+        *M* is the abbreviation of "Memory".
+      instancetype.kubevirt.io/displayName: Memory Intensive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:06Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: memory.intensive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "32"
+      instancetype.kubevirt.io/hugepages: 2Mi
+      instancetype.kubevirt.io/icon-pf: fa-memory
+      instancetype.kubevirt.io/memory: 256Gi
+      instancetype.kubevirt.io/size: 8xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:06Z"
+    name: m1.8xlarge
+    resourceVersion: "7153"
+    uid: 676251d3-b878-4602-b566-fe4137880565
+  spec:
+    cpu:
+      guest: 32
+    memory:
+      guest: 256Gi
+      hugepages:
+        pageSize: 2Mi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The M Series provides resources for memory intensive
+        applications.
+
+        *M* is the abbreviation of "Memory".
+      instancetype.kubevirt.io/displayName: Memory Intensive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:07Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: memory.intensive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "32"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: fa-memory
+      instancetype.kubevirt.io/memory: 256Gi
+      instancetype.kubevirt.io/size: 8xlarge1gi
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:07Z"
+    name: m1.8xlarge1gi
+    resourceVersion: "7156"
+    uid: 106f50e8-c41b-4263-abcc-28adada74548
+  spec:
+    cpu:
+      guest: 32
+    memory:
+      guest: 256Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The M Series provides resources for memory intensive
+        applications.
+
+        *M* is the abbreviation of "Memory".
+      instancetype.kubevirt.io/displayName: Memory Intensive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:07Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: memory.intensive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "2"
+      instancetype.kubevirt.io/hugepages: 2Mi
+      instancetype.kubevirt.io/icon-pf: fa-memory
+      instancetype.kubevirt.io/memory: 16Gi
+      instancetype.kubevirt.io/size: large
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:07Z"
+    name: m1.large
+    resourceVersion: "7157"
+    uid: 7772be22-ded2-4b23-b824-16ba273e0985
+  spec:
+    cpu:
+      guest: 2
+    memory:
+      guest: 16Gi
+      hugepages:
+        pageSize: 2Mi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The M Series provides resources for memory intensive
+        applications.
+
+        *M* is the abbreviation of "Memory".
+      instancetype.kubevirt.io/displayName: Memory Intensive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:07Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: memory.intensive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "2"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: fa-memory
+      instancetype.kubevirt.io/memory: 16Gi
+      instancetype.kubevirt.io/size: large1gi
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:07Z"
+    name: m1.large1gi
+    resourceVersion: "7158"
+    uid: 9d572ca1-074f-4dd8-a3b9-833441fccac1
+  spec:
+    cpu:
+      guest: 2
+    memory:
+      guest: 16Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The M Series provides resources for memory intensive
+        applications.
+
+        *M* is the abbreviation of "Memory".
+      instancetype.kubevirt.io/displayName: Memory Intensive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:07Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: memory.intensive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "4"
+      instancetype.kubevirt.io/hugepages: 2Mi
+      instancetype.kubevirt.io/icon-pf: fa-memory
+      instancetype.kubevirt.io/memory: 32Gi
+      instancetype.kubevirt.io/size: xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:07Z"
+    name: m1.xlarge
+    resourceVersion: "7159"
+    uid: b0603d9c-e833-4171-a477-fbf288ecf546
+  spec:
+    cpu:
+      guest: 4
+    memory:
+      guest: 32Gi
+      hugepages:
+        pageSize: 2Mi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The M Series provides resources for memory intensive
+        applications.
+
+        *M* is the abbreviation of "Memory".
+      instancetype.kubevirt.io/displayName: Memory Intensive
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:07Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: memory.intensive
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "4"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: fa-memory
+      instancetype.kubevirt.io/memory: 32Gi
+      instancetype.kubevirt.io/size: xlarge1gi
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:07Z"
+    name: m1.xlarge1gi
+    resourceVersion: "7166"
+    uid: 69c4c419-f1b1-4dcb-8cf6-9f8175f5fa54
+  spec:
+    cpu:
+      guest: 4
+    memory:
+      guest: 32Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The N Series provides resources for network intensive DPDK
+        applications, like VNFs.
+
+        *N* is the abbreviation for "Network".
+
+        This series of instancetypes requires nodes capable
+        of running DPDK workloads and being marked with the respective
+        node-role.kubevirt.io/worker-dpdk label as such.
+      instancetype.kubevirt.io/displayName: Network
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:08Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: network
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "16"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-network
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 32Gi
+      instancetype.kubevirt.io/size: 2xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:annotations:
+            .: {}
+            f:cpu-load-balancing.crio.io: {}
+            f:cpu-quota.crio.io: {}
+            f:irq-load-balancing.crio.io: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:08Z"
+    name: n1.2xlarge
+    resourceVersion: "7167"
+    uid: 7607519b-8a59-4b43-b4f3-9cb4242edf0d
+  spec:
+    annotations:
+      cpu-load-balancing.crio.io: disable
+      cpu-quota.crio.io: disable
+      irq-load-balancing.crio.io: disable
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 16
+      isolateEmulatorThread: true
+    memory:
+      guest: 32Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The N Series provides resources for network intensive DPDK
+        applications, like VNFs.
+
+        *N* is the abbreviation for "Network".
+
+        This series of instancetypes requires nodes capable
+        of running DPDK workloads and being marked with the respective
+        node-role.kubevirt.io/worker-dpdk label as such.
+      instancetype.kubevirt.io/displayName: Network
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:08Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: network
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "32"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-network
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 64Gi
+      instancetype.kubevirt.io/size: 4xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:annotations:
+            .: {}
+            f:cpu-load-balancing.crio.io: {}
+            f:cpu-quota.crio.io: {}
+            f:irq-load-balancing.crio.io: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:08Z"
+    name: n1.4xlarge
+    resourceVersion: "7170"
+    uid: 54f451a4-a129-4083-9021-0dadd4906167
+  spec:
+    annotations:
+      cpu-load-balancing.crio.io: disable
+      cpu-quota.crio.io: disable
+      irq-load-balancing.crio.io: disable
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 32
+      isolateEmulatorThread: true
+    memory:
+      guest: 64Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The N Series provides resources for network intensive DPDK
+        applications, like VNFs.
+
+        *N* is the abbreviation for "Network".
+
+        This series of instancetypes requires nodes capable
+        of running DPDK workloads and being marked with the respective
+        node-role.kubevirt.io/worker-dpdk label as such.
+      instancetype.kubevirt.io/displayName: Network
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:08Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: network
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "64"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-network
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 128Gi
+      instancetype.kubevirt.io/size: 8xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:annotations:
+            .: {}
+            f:cpu-load-balancing.crio.io: {}
+            f:cpu-quota.crio.io: {}
+            f:irq-load-balancing.crio.io: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:08Z"
+    name: n1.8xlarge
+    resourceVersion: "7179"
+    uid: 1a996f69-625a-49e7-9b32-7afdfcf2fc55
+  spec:
+    annotations:
+      cpu-load-balancing.crio.io: disable
+      cpu-quota.crio.io: disable
+      irq-load-balancing.crio.io: disable
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 64
+      isolateEmulatorThread: true
+    memory:
+      guest: 128Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The N Series provides resources for network intensive DPDK
+        applications, like VNFs.
+
+        *N* is the abbreviation for "Network".
+
+        This series of instancetypes requires nodes capable
+        of running DPDK workloads and being marked with the respective
+        node-role.kubevirt.io/worker-dpdk label as such.
+      instancetype.kubevirt.io/displayName: Network
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:08Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: network
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "4"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-network
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 8Gi
+      instancetype.kubevirt.io/size: large
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:annotations:
+            .: {}
+            f:cpu-load-balancing.crio.io: {}
+            f:cpu-quota.crio.io: {}
+            f:irq-load-balancing.crio.io: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:08Z"
+    name: n1.large
+    resourceVersion: "7180"
+    uid: 07fdc351-9bc8-430e-b53a-2f598bd2d793
+  spec:
+    annotations:
+      cpu-load-balancing.crio.io: disable
+      cpu-quota.crio.io: disable
+      irq-load-balancing.crio.io: disable
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 4
+      isolateEmulatorThread: true
+    memory:
+      guest: 8Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The N Series provides resources for network intensive DPDK
+        applications, like VNFs.
+
+        *N* is the abbreviation for "Network".
+
+        This series of instancetypes requires nodes capable
+        of running DPDK workloads and being marked with the respective
+        node-role.kubevirt.io/worker-dpdk label as such.
+      instancetype.kubevirt.io/displayName: Network
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:08Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: network
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "4"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-network
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 4Gi
+      instancetype.kubevirt.io/size: medium
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:annotations:
+            .: {}
+            f:cpu-load-balancing.crio.io: {}
+            f:cpu-quota.crio.io: {}
+            f:irq-load-balancing.crio.io: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:08Z"
+    name: n1.medium
+    resourceVersion: "7183"
+    uid: f3d72d78-9726-4750-b771-1b29b7e9efdd
+  spec:
+    annotations:
+      cpu-load-balancing.crio.io: disable
+      cpu-quota.crio.io: disable
+      irq-load-balancing.crio.io: disable
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 4
+      isolateEmulatorThread: true
+    memory:
+      guest: 4Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The N Series provides resources for network intensive DPDK
+        applications, like VNFs.
+
+        *N* is the abbreviation for "Network".
+
+        This series of instancetypes requires nodes capable
+        of running DPDK workloads and being marked with the respective
+        node-role.kubevirt.io/worker-dpdk label as such.
+      instancetype.kubevirt.io/displayName: Network
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:09Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: network
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "8"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-network
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 16Gi
+      instancetype.kubevirt.io/size: xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:annotations:
+            .: {}
+            f:cpu-load-balancing.crio.io: {}
+            f:cpu-quota.crio.io: {}
+            f:irq-load-balancing.crio.io: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:09Z"
+    name: n1.xlarge
+    resourceVersion: "7186"
+    uid: 5b1df668-907d-4205-ba60-6350e50193e8
+  spec:
+    annotations:
+      cpu-load-balancing.crio.io: disable
+      cpu-quota.crio.io: disable
+      irq-load-balancing.crio.io: disable
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 8
+      isolateEmulatorThread: true
+    memory:
+      guest: 16Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The O Series is based on the U Series, with the only difference
+        being that memory is overcommitted.
+
+        *O* is the abbreviation for "Overcommitted".
+      instancetype.kubevirt.io/displayName: Overcommitted
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:09Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: overcommitted
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "8"
+      instancetype.kubevirt.io/icon-pf: pficon-virtual-machine
+      instancetype.kubevirt.io/memory: 32Gi
+      instancetype.kubevirt.io/size: 2xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:overcommitPercent: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:09Z"
+    name: o1.2xlarge
+    resourceVersion: "7187"
+    uid: 82bad01e-e0f9-43ef-88b9-cccf80a356d8
+  spec:
+    cpu:
+      guest: 8
+    memory:
+      guest: 32Gi
+      overcommitPercent: 50
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The O Series is based on the U Series, with the only difference
+        being that memory is overcommitted.
+
+        *O* is the abbreviation for "Overcommitted".
+      instancetype.kubevirt.io/displayName: Overcommitted
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:09Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: overcommitted
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "16"
+      instancetype.kubevirt.io/icon-pf: pficon-virtual-machine
+      instancetype.kubevirt.io/memory: 64Gi
+      instancetype.kubevirt.io/size: 4xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:overcommitPercent: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:09Z"
+    name: o1.4xlarge
+    resourceVersion: "7188"
+    uid: f9aac50d-5cdc-4e6a-a3bf-857c4b3ec205
+  spec:
+    cpu:
+      guest: 16
+    memory:
+      guest: 64Gi
+      overcommitPercent: 50
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The O Series is based on the U Series, with the only difference
+        being that memory is overcommitted.
+
+        *O* is the abbreviation for "Overcommitted".
+      instancetype.kubevirt.io/displayName: Overcommitted
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:09Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: overcommitted
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "32"
+      instancetype.kubevirt.io/icon-pf: pficon-virtual-machine
+      instancetype.kubevirt.io/memory: 128Gi
+      instancetype.kubevirt.io/size: 8xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:overcommitPercent: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:09Z"
+    name: o1.8xlarge
+    resourceVersion: "7189"
+    uid: 35ec1432-d4ae-4f06-8198-a66cfb2a9367
+  spec:
+    cpu:
+      guest: 32
+    memory:
+      guest: 128Gi
+      overcommitPercent: 50
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The O Series is based on the U Series, with the only difference
+        being that memory is overcommitted.
+
+        *O* is the abbreviation for "Overcommitted".
+      instancetype.kubevirt.io/displayName: Overcommitted
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:09Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: overcommitted
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "2"
+      instancetype.kubevirt.io/icon-pf: pficon-virtual-machine
+      instancetype.kubevirt.io/memory: 8Gi
+      instancetype.kubevirt.io/size: large
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:overcommitPercent: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:09Z"
+    name: o1.large
+    resourceVersion: "7196"
+    uid: 1883d870-4ac5-4c34-837f-8c48712a4810
+  spec:
+    cpu:
+      guest: 2
+    memory:
+      guest: 8Gi
+      overcommitPercent: 50
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The O Series is based on the U Series, with the only difference
+        being that memory is overcommitted.
+
+        *O* is the abbreviation for "Overcommitted".
+      instancetype.kubevirt.io/displayName: Overcommitted
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:10Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: overcommitted
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "1"
+      instancetype.kubevirt.io/icon-pf: pficon-virtual-machine
+      instancetype.kubevirt.io/memory: 4Gi
+      instancetype.kubevirt.io/size: medium
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:overcommitPercent: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:10Z"
+    name: o1.medium
+    resourceVersion: "7197"
+    uid: 2d2b0190-5aa6-4c37-9be0-22d11ade0247
+  spec:
+    cpu:
+      guest: 1
+    memory:
+      guest: 4Gi
+      overcommitPercent: 50
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The O Series is based on the U Series, with the only difference
+        being that memory is overcommitted.
+
+        *O* is the abbreviation for "Overcommitted".
+      instancetype.kubevirt.io/displayName: Overcommitted
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:10Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: overcommitted
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "1"
+      instancetype.kubevirt.io/icon-pf: pficon-virtual-machine
+      instancetype.kubevirt.io/memory: 1Gi
+      instancetype.kubevirt.io/size: micro
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:overcommitPercent: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:10Z"
+    name: o1.micro
+    resourceVersion: "7199"
+    uid: 2f6dd759-e426-43ad-8da1-249ecaa6d759
+  spec:
+    cpu:
+      guest: 1
+    memory:
+      guest: 1Gi
+      overcommitPercent: 50
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The O Series is based on the U Series, with the only difference
+        being that memory is overcommitted.
+
+        *O* is the abbreviation for "Overcommitted".
+      instancetype.kubevirt.io/displayName: Overcommitted
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:10Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: overcommitted
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "1"
+      instancetype.kubevirt.io/icon-pf: pficon-virtual-machine
+      instancetype.kubevirt.io/memory: 512Mi
+      instancetype.kubevirt.io/size: nano
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:overcommitPercent: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:10Z"
+    name: o1.nano
+    resourceVersion: "7207"
+    uid: 4b6c970f-b9b4-4594-90ed-686bfdb82c17
+  spec:
+    cpu:
+      guest: 1
+    memory:
+      guest: 512Mi
+      overcommitPercent: 50
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The O Series is based on the U Series, with the only difference
+        being that memory is overcommitted.
+
+        *O* is the abbreviation for "Overcommitted".
+      instancetype.kubevirt.io/displayName: Overcommitted
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:10Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: overcommitted
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "1"
+      instancetype.kubevirt.io/icon-pf: pficon-virtual-machine
+      instancetype.kubevirt.io/memory: 2Gi
+      instancetype.kubevirt.io/size: small
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:overcommitPercent: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:10Z"
+    name: o1.small
+    resourceVersion: "7210"
+    uid: a1221489-b13b-48bb-9fb4-cced91e05fab
+  spec:
+    cpu:
+      guest: 1
+    memory:
+      guest: 2Gi
+      overcommitPercent: 50
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The O Series is based on the U Series, with the only difference
+        being that memory is overcommitted.
+
+        *O* is the abbreviation for "Overcommitted".
+      instancetype.kubevirt.io/displayName: Overcommitted
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:10Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: overcommitted
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "4"
+      instancetype.kubevirt.io/icon-pf: pficon-virtual-machine
+      instancetype.kubevirt.io/memory: 16Gi
+      instancetype.kubevirt.io/size: xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:overcommitPercent: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:10Z"
+    name: o1.xlarge
+    resourceVersion: "7212"
+    uid: 272d5255-26c1-4cf8-b8b8-9d7be1e7d008
+  spec:
+    cpu:
+      guest: 4
+    memory:
+      guest: 16Gi
+      overcommitPercent: 50
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The RT Series provides resources for realtime applications, like Oslat.
+
+        *RT* is the abbreviation for "realtime".
+
+        This series of instance types requires nodes capable of running
+        realtime applications.
+      instancetype.kubevirt.io/displayName: Realtime
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:11Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: realtime
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "8"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 32Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/realtime: "true"
+      instancetype.kubevirt.io/size: 2xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/realtime: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:annotations:
+            .: {}
+            f:cpu-load-balancing.crio.io: {}
+            f:cpu-quota.crio.io: {}
+            f:irq-load-balancing.crio.io: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+            f:realtime: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:11Z"
+    name: rt1.2xlarge
+    resourceVersion: "7215"
+    uid: 9ddeaed6-64b5-4fa5-8f72-d7c850b7e5f6
+  spec:
+    annotations:
+      cpu-load-balancing.crio.io: disable
+      cpu-quota.crio.io: disable
+      irq-load-balancing.crio.io: disable
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 8
+      isolateEmulatorThread: true
+      numa:
+        guestMappingPassthrough: {}
+      realtime: {}
+    memory:
+      guest: 32Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The RT Series provides resources for realtime applications, like Oslat.
+
+        *RT* is the abbreviation for "realtime".
+
+        This series of instance types requires nodes capable of running
+        realtime applications.
+      instancetype.kubevirt.io/displayName: Realtime
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:11Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: realtime
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "16"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 64Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/realtime: "true"
+      instancetype.kubevirt.io/size: 4xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/realtime: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:annotations:
+            .: {}
+            f:cpu-load-balancing.crio.io: {}
+            f:cpu-quota.crio.io: {}
+            f:irq-load-balancing.crio.io: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+            f:realtime: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:11Z"
+    name: rt1.4xlarge
+    resourceVersion: "7216"
+    uid: 77deffca-5320-40d3-938a-a536a451a1bf
+  spec:
+    annotations:
+      cpu-load-balancing.crio.io: disable
+      cpu-quota.crio.io: disable
+      irq-load-balancing.crio.io: disable
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 16
+      isolateEmulatorThread: true
+      numa:
+        guestMappingPassthrough: {}
+      realtime: {}
+    memory:
+      guest: 64Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The RT Series provides resources for realtime applications, like Oslat.
+
+        *RT* is the abbreviation for "realtime".
+
+        This series of instance types requires nodes capable of running
+        realtime applications.
+      instancetype.kubevirt.io/displayName: Realtime
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:11Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: realtime
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "32"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 128Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/realtime: "true"
+      instancetype.kubevirt.io/size: 8xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/realtime: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:annotations:
+            .: {}
+            f:cpu-load-balancing.crio.io: {}
+            f:cpu-quota.crio.io: {}
+            f:irq-load-balancing.crio.io: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+            f:realtime: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:11Z"
+    name: rt1.8xlarge
+    resourceVersion: "7217"
+    uid: a45b08ab-a6b8-4f22-ba17-d9b6253d4b88
+  spec:
+    annotations:
+      cpu-load-balancing.crio.io: disable
+      cpu-quota.crio.io: disable
+      irq-load-balancing.crio.io: disable
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 32
+      isolateEmulatorThread: true
+      numa:
+        guestMappingPassthrough: {}
+      realtime: {}
+    memory:
+      guest: 128Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The RT Series provides resources for realtime applications, like Oslat.
+
+        *RT* is the abbreviation for "realtime".
+
+        This series of instance types requires nodes capable of running
+        realtime applications.
+      instancetype.kubevirt.io/displayName: Realtime
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:11Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: realtime
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "2"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 8Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/realtime: "true"
+      instancetype.kubevirt.io/size: large
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/realtime: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:annotations:
+            .: {}
+            f:cpu-load-balancing.crio.io: {}
+            f:cpu-quota.crio.io: {}
+            f:irq-load-balancing.crio.io: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+            f:realtime: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:11Z"
+    name: rt1.large
+    resourceVersion: "7220"
+    uid: 47316b59-ec6d-40ae-bb56-5e6fd206cabc
+  spec:
+    annotations:
+      cpu-load-balancing.crio.io: disable
+      cpu-quota.crio.io: disable
+      irq-load-balancing.crio.io: disable
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 2
+      isolateEmulatorThread: true
+      numa:
+        guestMappingPassthrough: {}
+      realtime: {}
+    memory:
+      guest: 8Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The RT Series provides resources for realtime applications, like Oslat.
+
+        *RT* is the abbreviation for "realtime".
+
+        This series of instance types requires nodes capable of running
+        realtime applications.
+      instancetype.kubevirt.io/displayName: Realtime
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:11Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: realtime
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "1"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 4Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/realtime: "true"
+      instancetype.kubevirt.io/size: medium
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/realtime: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:annotations:
+            .: {}
+            f:cpu-load-balancing.crio.io: {}
+            f:cpu-quota.crio.io: {}
+            f:irq-load-balancing.crio.io: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+            f:realtime: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:11Z"
+    name: rt1.medium
+    resourceVersion: "7229"
+    uid: 54b65bfc-f2f3-4cc3-acf9-9fd2cf38da88
+  spec:
+    annotations:
+      cpu-load-balancing.crio.io: disable
+      cpu-quota.crio.io: disable
+      irq-load-balancing.crio.io: disable
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 1
+      isolateEmulatorThread: true
+      numa:
+        guestMappingPassthrough: {}
+      realtime: {}
+    memory:
+      guest: 4Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The RT Series provides resources for realtime applications, like Oslat.
+
+        *RT* is the abbreviation for "realtime".
+
+        This series of instance types requires nodes capable of running
+        realtime applications.
+      instancetype.kubevirt.io/displayName: Realtime
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:12Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: realtime
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "1"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 1Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/realtime: "true"
+      instancetype.kubevirt.io/size: micro
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/realtime: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:annotations:
+            .: {}
+            f:cpu-load-balancing.crio.io: {}
+            f:cpu-quota.crio.io: {}
+            f:irq-load-balancing.crio.io: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+            f:realtime: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:12Z"
+    name: rt1.micro
+    resourceVersion: "7230"
+    uid: 890ee930-d87d-4f36-ab76-d311790126d8
+  spec:
+    annotations:
+      cpu-load-balancing.crio.io: disable
+      cpu-quota.crio.io: disable
+      irq-load-balancing.crio.io: disable
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 1
+      isolateEmulatorThread: true
+      numa:
+        guestMappingPassthrough: {}
+      realtime: {}
+    memory:
+      guest: 1Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The RT Series provides resources for realtime applications, like Oslat.
+
+        *RT* is the abbreviation for "realtime".
+
+        This series of instance types requires nodes capable of running
+        realtime applications.
+      instancetype.kubevirt.io/displayName: Realtime
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:12Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: realtime
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "1"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 2Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/realtime: "true"
+      instancetype.kubevirt.io/size: small
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/realtime: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:annotations:
+            .: {}
+            f:cpu-load-balancing.crio.io: {}
+            f:cpu-quota.crio.io: {}
+            f:irq-load-balancing.crio.io: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+            f:realtime: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:12Z"
+    name: rt1.small
+    resourceVersion: "7232"
+    uid: 4cc244bf-e3b2-4072-a6d5-274433bbeee8
+  spec:
+    annotations:
+      cpu-load-balancing.crio.io: disable
+      cpu-quota.crio.io: disable
+      irq-load-balancing.crio.io: disable
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 1
+      isolateEmulatorThread: true
+      numa:
+        guestMappingPassthrough: {}
+      realtime: {}
+    memory:
+      guest: 2Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The RT Series provides resources for realtime applications, like Oslat.
+
+        *RT* is the abbreviation for "realtime".
+
+        This series of instance types requires nodes capable of running
+        realtime applications.
+      instancetype.kubevirt.io/displayName: Realtime
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:12Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: realtime
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "4"
+      instancetype.kubevirt.io/dedicatedCPUPlacement: "true"
+      instancetype.kubevirt.io/hugepages: 1Gi
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/isolateEmulatorThread: "true"
+      instancetype.kubevirt.io/memory: 16Gi
+      instancetype.kubevirt.io/numa: "true"
+      instancetype.kubevirt.io/realtime: "true"
+      instancetype.kubevirt.io/size: xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/dedicatedCPUPlacement: {}
+            f:instancetype.kubevirt.io/hugepages: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/isolateEmulatorThread: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/numa: {}
+            f:instancetype.kubevirt.io/realtime: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:annotations:
+            .: {}
+            f:cpu-load-balancing.crio.io: {}
+            f:cpu-quota.crio.io: {}
+            f:irq-load-balancing.crio.io: {}
+          f:cpu:
+            .: {}
+            f:dedicatedCPUPlacement: {}
+            f:guest: {}
+            f:isolateEmulatorThread: {}
+            f:numa:
+              .: {}
+              f:guestMappingPassthrough: {}
+            f:realtime: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+            f:hugepages:
+              .: {}
+              f:pageSize: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:12Z"
+    name: rt1.xlarge
+    resourceVersion: "7240"
+    uid: a8be7b18-5cc1-4443-a953-4ac40ed62062
+  spec:
+    annotations:
+      cpu-load-balancing.crio.io: disable
+      cpu-quota.crio.io: disable
+      irq-load-balancing.crio.io: disable
+    cpu:
+      dedicatedCPUPlacement: true
+      guest: 4
+      isolateEmulatorThread: true
+      numa:
+        guestMappingPassthrough: {}
+      realtime: {}
+    memory:
+      guest: 16Gi
+      hugepages:
+        pageSize: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The U Series is quite neutral and provides resources for
+        general purpose applications.
+
+        *U* is the abbreviation for "Universal", hinting at the universal
+        attitude towards workloads.
+
+        VMs of instance types will share physical CPU cores on a
+        time-slice basis with other VMs.
+      instancetype.kubevirt.io/displayName: General Purpose
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:12Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: general.purpose
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "8"
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/memory: 32Gi
+      instancetype.kubevirt.io/size: 2xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:12Z"
+    name: u1.2xlarge
+    resourceVersion: "7241"
+    uid: 790ef674-c6ee-4dcc-a0e7-cc869e37e36e
+  spec:
+    cpu:
+      guest: 8
+    memory:
+      guest: 32Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The U Series is quite neutral and provides resources for
+        general purpose applications.
+
+        *U* is the abbreviation for "Universal", hinting at the universal
+        attitude towards workloads.
+
+        VMs of instance types will share physical CPU cores on a
+        time-slice basis with other VMs.
+      instancetype.kubevirt.io/displayName: General Purpose
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:12Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: general.purpose
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "2"
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/memory: 4Gi
+      instancetype.kubevirt.io/size: 2xmedium
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:12Z"
+    name: u1.2xmedium
+    resourceVersion: "7243"
+    uid: 2100b4e6-1d8f-46e0-9f2c-663829e32a23
+  spec:
+    cpu:
+      guest: 2
+    memory:
+      guest: 4Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The U Series is quite neutral and provides resources for
+        general purpose applications.
+
+        *U* is the abbreviation for "Universal", hinting at the universal
+        attitude towards workloads.
+
+        VMs of instance types will share physical CPU cores on a
+        time-slice basis with other VMs.
+      instancetype.kubevirt.io/displayName: General Purpose
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:13Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: general.purpose
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "16"
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/memory: 64Gi
+      instancetype.kubevirt.io/size: 4xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:13Z"
+    name: u1.4xlarge
+    resourceVersion: "7246"
+    uid: 7b101d73-2093-4937-96f9-abdc37bf7f32
+  spec:
+    cpu:
+      guest: 16
+    memory:
+      guest: 64Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The U Series is quite neutral and provides resources for
+        general purpose applications.
+
+        *U* is the abbreviation for "Universal", hinting at the universal
+        attitude towards workloads.
+
+        VMs of instance types will share physical CPU cores on a
+        time-slice basis with other VMs.
+      instancetype.kubevirt.io/displayName: General Purpose
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:13Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: general.purpose
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "32"
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/memory: 128Gi
+      instancetype.kubevirt.io/size: 8xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:13Z"
+    name: u1.8xlarge
+    resourceVersion: "7249"
+    uid: 5f80254d-c00d-4cd1-8d77-c2baeb059893
+  spec:
+    cpu:
+      guest: 32
+    memory:
+      guest: 128Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The U Series is quite neutral and provides resources for
+        general purpose applications.
+
+        *U* is the abbreviation for "Universal", hinting at the universal
+        attitude towards workloads.
+
+        VMs of instance types will share physical CPU cores on a
+        time-slice basis with other VMs.
+      instancetype.kubevirt.io/displayName: General Purpose
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:13Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: general.purpose
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "2"
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/memory: 8Gi
+      instancetype.kubevirt.io/size: large
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:13Z"
+    name: u1.large
+    resourceVersion: "7251"
+    uid: 43b98b08-4afc-46ad-a8f2-83620674e284
+  spec:
+    cpu:
+      guest: 2
+    memory:
+      guest: 8Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The U Series is quite neutral and provides resources for
+        general purpose applications.
+
+        *U* is the abbreviation for "Universal", hinting at the universal
+        attitude towards workloads.
+
+        VMs of instance types will share physical CPU cores on a
+        time-slice basis with other VMs.
+      instancetype.kubevirt.io/displayName: General Purpose
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:13Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: general.purpose
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "1"
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/memory: 4Gi
+      instancetype.kubevirt.io/size: medium
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:13Z"
+    name: u1.medium
+    resourceVersion: "7252"
+    uid: 90497dc2-e056-447c-a16e-804fb6b3f66a
+  spec:
+    cpu:
+      guest: 1
+    memory:
+      guest: 4Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The U Series is quite neutral and provides resources for
+        general purpose applications.
+
+        *U* is the abbreviation for "Universal", hinting at the universal
+        attitude towards workloads.
+
+        VMs of instance types will share physical CPU cores on a
+        time-slice basis with other VMs.
+      instancetype.kubevirt.io/displayName: General Purpose
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:13Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: general.purpose
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "1"
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/memory: 1Gi
+      instancetype.kubevirt.io/size: micro
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:13Z"
+    name: u1.micro
+    resourceVersion: "7260"
+    uid: 4cf68863-5dcf-4faa-b534-c152e16a33fe
+  spec:
+    cpu:
+      guest: 1
+    memory:
+      guest: 1Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The U Series is quite neutral and provides resources for
+        general purpose applications.
+
+        *U* is the abbreviation for "Universal", hinting at the universal
+        attitude towards workloads.
+
+        VMs of instance types will share physical CPU cores on a
+        time-slice basis with other VMs.
+      instancetype.kubevirt.io/displayName: General Purpose
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:14Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: general.purpose
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "1"
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/memory: 512Mi
+      instancetype.kubevirt.io/size: nano
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:14Z"
+    name: u1.nano
+    resourceVersion: "7261"
+    uid: 46772a50-52f6-495e-844f-6cb5b6f6a9b8
+  spec:
+    cpu:
+      guest: 1
+    memory:
+      guest: 512Mi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The U Series is quite neutral and provides resources for
+        general purpose applications.
+
+        *U* is the abbreviation for "Universal", hinting at the universal
+        attitude towards workloads.
+
+        VMs of instance types will share physical CPU cores on a
+        time-slice basis with other VMs.
+      instancetype.kubevirt.io/displayName: General Purpose
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:14Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: general.purpose
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "1"
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/memory: 2Gi
+      instancetype.kubevirt.io/size: small
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:14Z"
+    name: u1.small
+    resourceVersion: "7263"
+    uid: 97a90abd-a95a-41dc-af6c-b949bcc3bcbd
+  spec:
+    cpu:
+      guest: 1
+    memory:
+      guest: 2Gi
+- apiVersion: instancetype.kubevirt.io/v1beta1
+  kind: VirtualMachineClusterInstancetype
+  metadata:
+    annotations:
+      instancetype.kubevirt.io/description: |-
+        The U Series is quite neutral and provides resources for
+        general purpose applications.
+
+        *U* is the abbreviation for "Universal", hinting at the universal
+        attitude towards workloads.
+
+        VMs of instance types will share physical CPU cores on a
+        time-slice basis with other VMs.
+      instancetype.kubevirt.io/displayName: General Purpose
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:51:14Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      instancetype.kubevirt.io/class: general.purpose
+      instancetype.kubevirt.io/common-instancetypes-version: v1.4.1
+      instancetype.kubevirt.io/cpu: "4"
+      instancetype.kubevirt.io/icon-pf: pficon-server-group
+      instancetype.kubevirt.io/memory: 16Gi
+      instancetype.kubevirt.io/size: xlarge
+      instancetype.kubevirt.io/vendor: kubevirt.io
+      instancetype.kubevirt.io/version: "1"
+    managedFields:
+    - apiVersion: instancetype.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:instancetype.kubevirt.io/description: {}
+            f:instancetype.kubevirt.io/displayName: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:instancetype.kubevirt.io/class: {}
+            f:instancetype.kubevirt.io/common-instancetypes-version: {}
+            f:instancetype.kubevirt.io/cpu: {}
+            f:instancetype.kubevirt.io/icon-pf: {}
+            f:instancetype.kubevirt.io/memory: {}
+            f:instancetype.kubevirt.io/size: {}
+            f:instancetype.kubevirt.io/vendor: {}
+            f:instancetype.kubevirt.io/version: {}
+        f:spec:
+          .: {}
+          f:cpu:
+            .: {}
+            f:guest: {}
+          f:memory:
+            .: {}
+            f:guest: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:51:14Z"
+    name: u1.xlarge
+    resourceVersion: "7271"
+    uid: 7fcdd27b-fac0-4641-8695-98f7fe9fe791
+  spec:
+    cpu:
+      guest: 4
+    memory:
+      guest: 16Gi
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14455"

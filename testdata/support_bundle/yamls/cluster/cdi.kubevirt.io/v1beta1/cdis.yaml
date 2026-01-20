@@ -1,0 +1,114 @@
+apiVersion: v1
+items:
+- apiVersion: cdi.kubevirt.io/v1beta1
+  kind: CDI
+  metadata:
+    annotations:
+      cdi.kubevirt.io/configAuthority: "null"
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    finalizers:
+    - operator.cdi.kubevirt.io
+    generation: 3
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          .: {}
+          f:config:
+            .: {}
+            f:featureGates: {}
+          f:imagePullPolicy: {}
+          f:infra:
+            .: {}
+            f:nodeSelector:
+              .: {}
+              f:kubernetes.io/os: {}
+            f:tolerations: {}
+          f:workload:
+            .: {}
+            f:nodeSelector:
+              .: {}
+              f:kubernetes.io/os: {}
+      manager: fleetagent
+      operation: Update
+      time: "2025-12-30T21:49:31Z"
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cdi.kubevirt.io/configAuthority: {}
+          f:finalizers:
+            .: {}
+            v:"operator.cdi.kubevirt.io"null: {}
+        f:spec:
+          f:customizeComponents: {}
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:observedVersion: {}
+          f:operatorVersion: {}
+          f:phase: {}
+          f:targetVersion: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:50:01Z"
+    name: cdi
+    resourceVersion: "5406"
+    uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+  spec:
+    config:
+      featureGates:
+      - HonorWaitForFirstConsumer
+    customizeComponents: {}
+    imagePullPolicy: IfNotPresent
+    infra:
+      nodeSelector:
+        kubernetes.io/os: linux
+      tolerations:
+      - key: CriticalAddonsOnly
+        operator: Exists
+    workload:
+      nodeSelector:
+        kubernetes.io/os: linux
+  status:
+    conditions:
+    - lastHeartbeatTime: "2025-12-30T21:50:01Z"
+      lastTransitionTime: "2025-12-30T21:50:01Z"
+      message: Deployment Completed
+      reason: DeployCompleted
+      status: "True"
+      type: Available
+    - lastHeartbeatTime: "2025-12-30T21:50:01Z"
+      lastTransitionTime: "2025-12-30T21:50:01Z"
+      status: "False"
+      type: Progressing
+    - lastHeartbeatTime: "2025-12-30T21:50:01Z"
+      lastTransitionTime: "2025-12-30T21:49:38Z"
+      status: "False"
+      type: Degraded
+    observedVersion: 1.62.0-150700.9.3.1
+    operatorVersion: 1.62.0-150700.9.3.1
+    phase: Deployed
+    targetVersion: 1.62.0-150700.9.3.1
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14455"

@@ -1,0 +1,315 @@
+apiVersion: v1
+items:
+- allowVolumeExpansion: true
+  apiVersion: storage.k8s.io/v1
+  kind: StorageClass
+  metadata:
+    annotations:
+      harvesterhci.io/is-reserved-storageclass: "true"
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+      storageclass.beta.kubernetes.io/is-default-class: "false"
+      storageclass.kubernetes.io/is-default-class: "false"
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:allowVolumeExpansion: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/is-reserved-storageclass: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:parameters:
+          .: {}
+          f:baseImage: {}
+          f:fromBackup: {}
+          f:migratable: {}
+          f:numberOfReplicas: {}
+          f:staleReplicaTimeout: {}
+        f:provisioner: {}
+        f:reclaimPolicy: {}
+        f:volumeBindingMode: {}
+      manager: fleetagent
+      operation: Update
+      time: "2025-12-30T21:49:31Z"
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:storageclass.beta.kubernetes.io/is-default-class: {}
+            f:storageclass.kubernetes.io/is-default-class: {}
+      manager: Mozilla
+      operation: Update
+      time: "2025-12-30T21:55:28Z"
+    name: harvester-longhorn
+    resourceVersion: "10738"
+    uid: 647d503a-2bd6-45c4-802c-231115c3b0c4
+  parameters:
+    baseImage: "null"
+    fromBackup: "null"
+    migratable: "true"
+    numberOfReplicas: "3"
+    staleReplicaTimeout: "30"
+  provisioner: driver.longhorn.io
+  reclaimPolicy: Delete
+  volumeBindingMode: Immediate
+- allowVolumeExpansion: true
+  apiVersion: storage.k8s.io/v1
+  kind: StorageClass
+  metadata:
+    annotations:
+      harvesterhci.io/is-reserved-storageclass: "true"
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+      storageclass.beta.kubernetes.io/is-default-class: "true"
+      storageclass.kubernetes.io/is-default-class: "true"
+    creationTimestamp: "2025-12-30T21:55:26Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:allowVolumeExpansion: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/is-reserved-storageclass: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:parameters:
+          .: {}
+          f:dataEngine: {}
+          f:migratable: {}
+          f:numberOfReplicas: {}
+          f:staleReplicaTimeout: {}
+        f:provisioner: {}
+        f:reclaimPolicy: {}
+        f:volumeBindingMode: {}
+      manager: harvester
+      operation: Update
+      time: "2025-12-30T21:55:26Z"
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:storageclass.beta.kubernetes.io/is-default-class: {}
+            f:storageclass.kubernetes.io/is-default-class: {}
+      manager: Mozilla
+      operation: Update
+      time: "2025-12-30T21:55:28Z"
+    name: harvester-longhorn-single
+    resourceVersion: "10741"
+    uid: b0f1e77c-d495-428f-9611-e78ee3a100f4
+  parameters:
+    dataEngine: v1
+    migratable: "true"
+    numberOfReplicas: "1"
+    staleReplicaTimeout: "30"
+  provisioner: driver.longhorn.io
+  reclaimPolicy: Delete
+  volumeBindingMode: Immediate
+- allowVolumeExpansion: true
+  apiVersion: storage.k8s.io/v1
+  kind: StorageClass
+  metadata:
+    annotations:
+      longhorn.io/last-applied-configmap: |
+        kind: StorageClass
+        apiVersion: storage.k8s.io/v1
+        metadata:
+          name: longhorn
+          annotations:
+            storageclass.kubernetes.io/is-default-class: "false"
+        provisioner: driver.longhorn.io
+        allowVolumeExpansion: true
+        reclaimPolicy: "Delete"
+        volumeBindingMode: Immediate
+        parameters:
+          numberOfReplicas: "3"
+          staleReplicaTimeout: "30"
+          fromBackup: ""
+          fsType: "ext4"
+          migratable: "true"
+          dataLocality: "disabled"
+          unmapMarkSnapChainRemoved: "ignored"
+          disableRevisionCounter: "true"
+          dataEngine: "v1"
+          backupTargetName: "default"
+      storageclass.kubernetes.io/is-default-class: "false"
+    creationTimestamp: "2025-12-30T21:49:43Z"
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:allowVolumeExpansion: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:longhorn.io/last-applied-configmap: {}
+            f:storageclass.kubernetes.io/is-default-class: {}
+        f:parameters:
+          .: {}
+          f:backupTargetName: {}
+          f:dataEngine: {}
+          f:dataLocality: {}
+          f:disableRevisionCounter: {}
+          f:fromBackup: {}
+          f:fsType: {}
+          f:migratable: {}
+          f:numberOfReplicas: {}
+          f:staleReplicaTimeout: {}
+          f:unmapMarkSnapChainRemoved: {}
+        f:provisioner: {}
+        f:reclaimPolicy: {}
+        f:volumeBindingMode: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2025-12-30T21:49:43Z"
+    name: longhorn
+    resourceVersion: "4795"
+    uid: bcaf8f1c-ddca-44d7-af82-2a37a8c373ca
+  parameters:
+    backupTargetName: default
+    dataEngine: v1
+    dataLocality: disabled
+    disableRevisionCounter: "true"
+    fromBackup: "null"
+    fsType: ext4
+    migratable: "true"
+    numberOfReplicas: "3"
+    staleReplicaTimeout: "30"
+    unmapMarkSnapChainRemoved: ignored
+  provisioner: driver.longhorn.io
+  reclaimPolicy: Delete
+  volumeBindingMode: Immediate
+- allowVolumeExpansion: true
+  apiVersion: storage.k8s.io/v1
+  kind: StorageClass
+  metadata:
+    creationTimestamp: "2025-12-30T21:55:42Z"
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:allowVolumeExpansion: {}
+        f:parameters:
+          .: {}
+          f:backingImage: {}
+          f:migratable: {}
+          f:numberOfReplicas: {}
+          f:staleReplicaTimeout: {}
+        f:provisioner: {}
+        f:reclaimPolicy: {}
+        f:volumeBindingMode: {}
+      manager: harvester
+      operation: Update
+      time: "2025-12-30T21:55:42Z"
+    name: longhorn-image-zs97p
+    resourceVersion: "10904"
+    uid: c9670e53-1406-4b5b-85b1-771639062022
+  parameters:
+    backingImage: vmi-5987e3f0-076b-438e-82a4-f635689704b3
+    migratable: "true"
+    numberOfReplicas: "1"
+    staleReplicaTimeout: "30"
+  provisioner: driver.longhorn.io
+  reclaimPolicy: Delete
+  volumeBindingMode: Immediate
+- allowVolumeExpansion: true
+  apiVersion: storage.k8s.io/v1
+  kind: StorageClass
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:45Z"
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:allowVolumeExpansion: {}
+        f:parameters:
+          .: {}
+          f:staleReplicaTimeout: {}
+        f:provisioner: {}
+        f:reclaimPolicy: {}
+        f:volumeBindingMode: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2025-12-30T21:49:45Z"
+    name: longhorn-static
+    resourceVersion: "4990"
+    uid: d78cd1f6-08de-439d-85a6-8fa8fd358bfb
+  parameters:
+    staleReplicaTimeout: "30"
+  provisioner: driver.longhorn.io
+  reclaimPolicy: Delete
+  volumeBindingMode: Immediate
+- allowVolumeExpansion: true
+  apiVersion: storage.k8s.io/v1
+  kind: StorageClass
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: storage.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:allowVolumeExpansion: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:parameters:
+          .: {}
+          f:numberOfReplicas: {}
+          f:staleReplicaTimeout: {}
+        f:provisioner: {}
+        f:reclaimPolicy: {}
+        f:volumeBindingMode: {}
+      manager: fleetagent
+      operation: Update
+      time: "2025-12-30T21:49:31Z"
+    name: vmstate-persistence
+    resourceVersion: "3656"
+    uid: 353d0d58-fd7e-4855-870e-d37373b23ca4
+  parameters:
+    numberOfReplicas: "3"
+    staleReplicaTimeout: "30"
+  provisioner: driver.longhorn.io
+  reclaimPolicy: Delete
+  volumeBindingMode: Immediate
+kind: List
+metadata:
+  resourceVersion: "14450"

@@ -1,0 +1,23 @@
+2025-12-30T21:49:35.362242946Z 2025/12/30 21:49:35 INFO kube-vip.io version=v0.9.2 build=b56b80cd30497207e340d581a0db34469aa41c57
+2025-12-30T21:49:35.362269891Z 2025/12/30 21:49:35 INFO starting namespace=kube-system Mode=ARP "Control Plane"=false Services=true
+2025-12-30T21:49:35.362274410Z 2025/12/30 21:49:35 INFO No interface is specified for VIP in config, auto-detecting default Interface
+2025-12-30T21:49:35.362418029Z 2025/12/30 21:49:35 INFO prometheus HTTP server started
+2025-12-30T21:49:35.363180962Z 2025/12/30 21:49:35 INFO kube-vip bind interface=mgmt-br
+2025-12-30T21:49:35.363644538Z 2025/12/30 21:49:35 WARN Node name is missing from the config, fall back to hostname
+2025-12-30T21:49:35.363648977Z 2025/12/30 21:49:35 INFO using node name name=isim-dev
+2025-12-30T21:49:35.369786130Z 2025/12/30 21:49:35 INFO Starting Kube-vip Manager with the ARP engine
+2025-12-30T21:49:35.370098251Z 2025/12/30 21:49:35 INFO Start ARP/NDP advertisement
+2025-12-30T21:49:35.370101317Z 2025/12/30 21:49:35 INFO Starting UPNP Port Refresher
+2025-12-30T21:49:35.370103300Z 2025/12/30 21:49:35 INFO Starting ARP/NDP advertisement
+2025-12-30T21:49:35.370105746Z 2025/12/30 21:49:35 INFO beginning services leadership namespace=harvester-system "lock name"=plndr-svcs-lock id=isim-dev
+2025-12-30T21:49:35.370113381Z I1230 21:49:35.369311       1 leaderelection.go:257] attempting to acquire leader lease harvester-system/plndr-svcs-lock...
+2025-12-30T21:49:35.562448712Z I1230 21:49:35.544773       1 leaderelection.go:271] successfully acquired lease harvester-system/plndr-svcs-lock
+2025-12-30T21:49:35.562466317Z 2025/12/30 21:49:35 INFO (svcs) starting services watcher for all namespaces
+2025-12-30T21:50:35.033053007Z 2025/12/30 21:50:35 INFO creating new macvlan interface for DHCP interface=vip-44463faa
+2025-12-30T21:50:35.033273159Z 2025/12/30 21:50:35 INFO new macvlan interface interface=vip-44463faa "hardware address"="24\x1au\x7fd"
+2025-12-30T21:50:35.090515263Z 2025/12/30 21:50:35 INFO (svcs) adding VIP ip=192.168.122.39 interface=vip-44463faa namespace=kube-system name=ingress-expose
+2025-12-30T21:50:35.206607748Z 2025/12/30 21:50:35 INFO layer 2 broadcaster starting
+2025-12-30T21:50:35.206637182Z 2025/12/30 21:50:35 INFO inserting ARP/NDP instance name=192.168.122.39/32-vip-44463faa
+2025-12-30T21:50:35.318613351Z 2025/12/30 21:50:35 INFO [service] service=ingress-expose namespace=kube-system "synchronised in"=293ms
+2025-12-30T21:54:35.369581306Z 2025/12/30 21:54:35 INFO [UPNP] Refreshing Instances "number of instances"=1
+2025-12-30T21:59:35.376468242Z 2025/12/30 21:59:35 INFO [UPNP] Refreshing Instances "number of instances"=1

@@ -1,0 +1,174 @@
+apiVersion: v1
+items:
+- apiVersion: management.cattle.io/v3
+  kind: Cluster
+  metadata:
+    annotations:
+      provisioner.cattle.io/encrypt-migrated: "true"
+    creationTimestamp: "2025-12-30T21:47:33Z"
+    finalizers:
+    - wrangler.cattle.io/mgmt-cluster-remove
+    generation: 12
+    labels:
+      provider.cattle.io: harvester
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:provisioner.cattle.io/encrypt-migrated: {}
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/mgmt-cluster-remove"null: {}
+          f:labels:
+            .: {}
+            f:provider.cattle.io: {}
+        f:spec:
+          .: {}
+          f:agentImageOverride: {}
+          f:answers: {}
+          f:clusterSecrets: {}
+          f:description: {}
+          f:desiredAgentImage: {}
+          f:desiredAuthImage: {}
+          f:displayName: {}
+          f:dockerRootDir: {}
+          f:enableNetworkPolicy: {}
+          f:fleetWorkspaceName: {}
+          f:internal: {}
+          f:localClusterAuthEndpoint:
+            .: {}
+            f:enabled: {}
+          f:windowsPreferedCluster: {}
+        f:status:
+          .: {}
+          f:agentImage: {}
+          f:aksStatus:
+            .: {}
+            f:privateRequiresTunnel: {}
+            f:rbacEnabled: {}
+            f:upstreamSpec: {}
+          f:aliStatus:
+            .: {}
+            f:privateRequiresTunnel: {}
+            f:upstreamSpec: {}
+          f:appliedEnableNetworkPolicy: {}
+          f:appliedSpec:
+            .: {}
+            f:agentImageOverride: {}
+            f:answers: {}
+            f:clusterSecrets: {}
+            f:description: {}
+            f:desiredAgentImage: {}
+            f:desiredAuthImage: {}
+            f:displayName: {}
+            f:enableNetworkPolicy: {}
+            f:internal: {}
+            f:localClusterAuthEndpoint:
+              .: {}
+              f:enabled: {}
+            f:windowsPreferedCluster: {}
+          f:authImage: {}
+          f:capabilities:
+            .: {}
+            f:loadBalancerCapabilities: {}
+          f:conditions: {}
+          f:driver: {}
+          f:eksStatus:
+            .: {}
+            f:generatedNodeRole: {}
+            f:managedLaunchTemplateID: {}
+            f:managedLaunchTemplateVersions: {}
+            f:privateRequiresTunnel: {}
+            f:securityGroups: {}
+            f:subnets: {}
+            f:upstreamSpec: {}
+            f:virtualNetwork: {}
+          f:gkeStatus:
+            .: {}
+            f:privateRequiresTunnel: {}
+            f:upstreamSpec: {}
+          f:provider: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:52:28Z"
+    name: local
+    resourceVersion: "8690"
+    uid: 67bd8aaf-bd81-4e49-8ca6-4735d14da031
+  spec:
+    agentImageOverride: "null"
+    answers: {}
+    clusterSecrets: {}
+    description: "null"
+    desiredAgentImage: "null"
+    desiredAuthImage: "null"
+    displayName: local
+    dockerRootDir: /var/lib/docker
+    enableNetworkPolicy: "null"
+    fleetWorkspaceName: fleet-local
+    internal: true
+    localClusterAuthEndpoint:
+      enabled: false
+    windowsPreferedCluster: false
+  status:
+    agentImage: "null"
+    aksStatus:
+      privateRequiresTunnel: "null"
+      rbacEnabled: "null"
+      upstreamSpec: null
+    aliStatus:
+      privateRequiresTunnel: "null"
+      upstreamSpec: null
+    appliedEnableNetworkPolicy: false
+    appliedSpec:
+      agentImageOverride: "null"
+      answers: {}
+      clusterSecrets: {}
+      description: "null"
+      desiredAgentImage: "null"
+      desiredAuthImage: "null"
+      displayName: "null"
+      enableNetworkPolicy: "null"
+      internal: false
+      localClusterAuthEndpoint:
+        enabled: false
+      windowsPreferedCluster: false
+    authImage: "null"
+    capabilities:
+      loadBalancerCapabilities: {}
+    conditions:
+    - status: "True"
+      type: Ready
+    - status: Unknown
+      type: DefaultProjectCreated
+    - status: Unknown
+      type: SystemProjectCreated
+    - lastUpdateTime: "2025-12-30T21:47:48Z"
+      status: "True"
+      type: Connected
+    - lastUpdateTime: "2025-12-30T21:52:28Z"
+      status: "True"
+      type: Updated
+    - lastUpdateTime: "2025-12-30T21:51:42Z"
+      status: "True"
+      type: Provisioned
+    driver: imported
+    eksStatus:
+      generatedNodeRole: "null"
+      managedLaunchTemplateID: "null"
+      managedLaunchTemplateVersions: "null"
+      privateRequiresTunnel: "null"
+      securityGroups: "null"
+      subnets: "null"
+      upstreamSpec: "null"
+      virtualNetwork: "null"
+    gkeStatus:
+      privateRequiresTunnel: "null"
+      upstreamSpec: null
+    provider: harvester
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14456"

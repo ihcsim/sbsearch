@@ -1,0 +1,79 @@
+apiVersion: v1
+items:
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: rancher-provisioning-capi
+      meta.helm.sh/release-namespace: cattle-provisioning-capi-system
+    creationTimestamp: "2025-12-30T21:48:35Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      cluster.x-k8s.io/provider: cluster-api
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cluster.x-k8s.io/provider: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: helm
+      operation: Update
+      time: "2025-12-30T21:48:35Z"
+    name: capi-leader-election-rolebinding
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2526"
+    uid: cf47cfe7-7c44-4039-a39a-d05788a18784
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: capi-leader-election-role
+  subjects:
+  - kind: ServiceAccount
+    name: capi-manager
+    namespace: cattle-provisioning-capi-system
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:33Z"
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"ffd550b9-4d01-487b-b00b-c36b0ec2feeb"}: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:48:33Z"
+    name: helm-operation-l225g-helm-installer-rolebinding
+    namespace: cattle-provisioning-capi-system
+    ownerReferences:
+    - apiVersion: catalog.cattle.io/v1
+      kind: Operation
+      name: helm-operation-l225g
+      uid: ffd550b9-4d01-487b-b00b-c36b0ec2feeb
+    resourceVersion: "2480"
+    uid: b0832858-2fe7-46f4-910c-a5c9544e31d4
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: helm-operation-l225g-helm-installer-role
+  subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: helm-installer
+kind: List
+metadata:
+  resourceVersion: "14499"

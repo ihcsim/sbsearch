@@ -1,0 +1,215 @@
+apiVersion: v1
+items:
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:52:13Z"
+  deprecatedLastTimestamp: "2025-12-30T21:52:13Z"
+  deprecatedSource:
+    component: machine-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:52:13Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: manager
+      operation: Update
+      time: "2025-12-30T21:52:13Z"
+    name: custom-84a61a1928a2.18861cc46b57623c
+    namespace: fleet-local
+    resourceVersion: "8426"
+    uid: f1c74389-75d9-4312-a3ff-60bea8c9aa6f
+  note: isim-dev
+  reason: SuccessfulSetNodeRef
+  regarding:
+    apiVersion: cluster.x-k8s.io/v1beta1
+    kind: Machine
+    name: custom-84a61a1928a2
+    namespace: fleet-local
+    resourceVersion: "8412"
+    uid: a0370775-19f2-41af-bb7d-9918396887a7
+  reportingController: machine-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:44Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:44Z"
+  deprecatedSource:
+    component: cluster-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:44Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: manager
+      operation: Update
+      time: "2025-12-30T21:48:44Z"
+    name: local.18861c93c29f095c
+    namespace: fleet-local
+    resourceVersion: "2733"
+    uid: 4f757f6d-b69e-4cb9-b7fa-01f4604eb339
+  note: Cluster local is Provisioning
+  reason: Provisioning
+  regarding:
+    apiVersion: cluster.x-k8s.io/v1beta1
+    kind: Cluster
+    name: local
+    namespace: fleet-local
+    resourceVersion: "2722"
+    uid: f9f866b9-8f90-45b8-a753-4db235e67fec
+  reportingController: cluster-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 2
+  deprecatedFirstTimestamp: "2025-12-30T21:48:44Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:44Z"
+  deprecatedSource:
+    component: cluster-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:44Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: manager
+      operation: Update
+      time: "2025-12-30T21:48:44Z"
+    name: local.18861c93c3bec9c3
+    namespace: fleet-local
+    resourceVersion: "2750"
+    uid: 97757064-81a2-4392-b306-758cc0fbef13
+  note: Cluster local InfrastructureReady is now True
+  reason: InfrastructureReady
+  regarding:
+    apiVersion: cluster.x-k8s.io/v1beta1
+    kind: Cluster
+    name: local
+    namespace: fleet-local
+    resourceVersion: "2737"
+    uid: f9f866b9-8f90-45b8-a753-4db235e67fec
+  reportingController: cluster-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 2
+  deprecatedFirstTimestamp: "2025-12-30T21:48:44Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:44Z"
+  deprecatedSource:
+    component: cluster-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:44Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: manager
+      operation: Update
+      time: "2025-12-30T21:48:44Z"
+    name: local.18861c93c3c14b90
+    namespace: fleet-local
+    resourceVersion: "2751"
+    uid: e3c225e5-d453-466d-a750-5cbb83ccd76e
+  note: Cluster local is Provisioned
+  reason: Provisioned
+  regarding:
+    apiVersion: cluster.x-k8s.io/v1beta1
+    kind: Cluster
+    name: local
+    namespace: fleet-local
+    resourceVersion: "2737"
+    uid: f9f866b9-8f90-45b8-a753-4db235e67fec
+  reportingController: cluster-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 2
+  deprecatedFirstTimestamp: "2025-12-30T21:52:28Z"
+  deprecatedLastTimestamp: "2025-12-30T21:52:28Z"
+  deprecatedSource:
+    component: cluster-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:52:28Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: manager
+      operation: Update
+      time: "2025-12-30T21:52:28Z"
+    name: local.18861cc7e9b4017e
+    namespace: fleet-local
+    resourceVersion: "8685"
+    uid: 1fe0728c-5c12-47d0-a9e7-1d55e1996431
+  note: Cluster local ControlPlaneReady is now True
+  reason: ControlPlaneReady
+  regarding:
+    apiVersion: cluster.x-k8s.io/v1beta1
+    kind: Cluster
+    name: local
+    namespace: fleet-local
+    resourceVersion: "8674"
+    uid: f9f866b9-8f90-45b8-a753-4db235e67fec
+  reportingController: cluster-controller
+  type: Normal
+kind: List
+metadata:
+  resourceVersion: "14484"

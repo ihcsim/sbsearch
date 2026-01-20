@@ -1,0 +1,1322 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: d1eff1906fb1e363b88299d104cfa90563e1b375d527b07229e64ff76e25c6ec
+      cni.projectcalico.org/podIP: 10.52.0.21/32
+      cni.projectcalico.org/podIPs: 10.52.0.21/32
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "k8s-pod-network",
+            "ips": [
+                "10.52.0.21"
+            ],
+            "default": true,
+            "dns": {}
+        }]
+    creationTimestamp: "2025-12-30T21:48:29Z"
+    generateName: fleet-controller-6c5d89f545-
+    generation: 1
+    labels:
+      app: fleet-controller
+      fleet.cattle.io/shard-default: "true"
+      fleet.cattle.io/shard-id: "null"
+      pod-template-hash: 6c5d89f545
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:29Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:fleet.cattle.io/shard-default: {}
+            f:fleet.cattle.io/shard-id: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"d10aeb6e-dc72-4927-976f-4a757802863c"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"fleet-agentmanagement"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"CATTLE_ELECTION_LEASE_DURATION"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CATTLE_ELECTION_RENEW_DEADLINE"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CATTLE_ELECTION_RETRY_PERIOD"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"FLEET_AGENT_ELECTION_LEASE_DURATION"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"FLEET_AGENT_ELECTION_RENEW_DEADLINE"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"FLEET_AGENT_ELECTION_RETRY_PERIOD"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"FLEET_AGENT_REPLICA_COUNT"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"FLEET_DEBUG_DISABLE_SECURITY_CONTEXT"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"FLEET_PROPAGATE_DEBUG_SETTINGS_TO_AGENTS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"NAMESPACE"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:privileged: {}
+                f:readOnlyRootFilesystem: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+            k:{"name":"fleet-cleanup"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"CATTLE_ELECTION_LEASE_DURATION"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CATTLE_ELECTION_RENEW_DEADLINE"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CATTLE_ELECTION_RETRY_PERIOD"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"NAMESPACE"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:privileged: {}
+                f:readOnlyRootFilesystem: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+            k:{"name":"fleet-controller"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"BUNDLE_RECONCILER_WORKERS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"BUNDLEDEPLOYMENT_RECONCILER_WORKERS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CATTLE_ELECTION_LEASE_DURATION"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CATTLE_ELECTION_RENEW_DEADLINE"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CATTLE_ELECTION_RETRY_PERIOD"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CLUSTER_RECONCILER_WORKERS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CLUSTERGROUP_RECONCILER_WORKERS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"IMAGESCAN_RECONCILER_WORKERS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"NAMESPACE"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+                k:{"name":"SCHEDULE_RECONCILER_WORKERS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":8080,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:privileged: {}
+                f:readOnlyRootFilesystem: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/tmp"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:nodeSelector: {}
+          f:priorityClassName: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext:
+            .: {}
+            f:runAsGroup: {}
+            f:runAsNonRoot: {}
+            f:runAsUser: {}
+          f:serviceAccount: {}
+          f:serviceAccountName: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"tmp"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:48:29Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.52.0.21"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:30Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:k8s.v1.cni.cncf.io/network-status: {}
+      manager: multus
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:30Z"
+    name: fleet-controller-6c5d89f545-bxkt2
+    namespace: cattle-fleet-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: fleet-controller-6c5d89f545
+      uid: d10aeb6e-dc72-4927-976f-4a757802863c
+    resourceVersion: "2432"
+    uid: a2d7bc39-1e68-41d0-9b96-acaa56eff4eb
+  spec:
+    containers:
+    - command:
+      - fleetcontroller
+      env:
+      - name: NAMESPACE
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.namespace
+      - name: CATTLE_ELECTION_LEASE_DURATION
+        value: 30s
+      - name: CATTLE_ELECTION_RETRY_PERIOD
+        value: 10s
+      - name: CATTLE_ELECTION_RENEW_DEADLINE
+        value: 25s
+      - name: BUNDLE_RECONCILER_WORKERS
+        value: "50"
+      - name: BUNDLEDEPLOYMENT_RECONCILER_WORKERS
+        value: "50"
+      - name: CLUSTER_RECONCILER_WORKERS
+        value: "50"
+      - name: CLUSTERGROUP_RECONCILER_WORKERS
+        value: "50"
+      - name: IMAGESCAN_RECONCILER_WORKERS
+        value: "50"
+      - name: SCHEDULE_RECONCILER_WORKERS
+        value: "50"
+      image: rancher/fleet:v0.14.0
+      imagePullPolicy: IfNotPresent
+      name: fleet-controller
+      ports:
+      - containerPort: 8080
+        name: metrics
+        protocol: TCP
+      resources: {}
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+          - ALL
+        privileged: false
+        readOnlyRootFilesystem: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /tmp
+        name: tmp
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-m6v9m
+        readOnly: true
+    - command:
+      - fleetcontroller
+      - cleanup
+      env:
+      - name: NAMESPACE
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.namespace
+      - name: CATTLE_ELECTION_LEASE_DURATION
+        value: 30s
+      - name: CATTLE_ELECTION_RETRY_PERIOD
+        value: 10s
+      - name: CATTLE_ELECTION_RENEW_DEADLINE
+        value: 25s
+      image: rancher/fleet:v0.14.0
+      imagePullPolicy: IfNotPresent
+      name: fleet-cleanup
+      resources: {}
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+          - ALL
+        privileged: false
+        readOnlyRootFilesystem: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-m6v9m
+        readOnly: true
+    - command:
+      - fleetcontroller
+      - agentmanagement
+      - --disable-bootstrap
+      env:
+      - name: NAMESPACE
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.namespace
+      - name: FLEET_PROPAGATE_DEBUG_SETTINGS_TO_AGENTS
+        value: "true"
+      - name: FLEET_DEBUG_DISABLE_SECURITY_CONTEXT
+        value: "false"
+      - name: CATTLE_ELECTION_LEASE_DURATION
+        value: 30s
+      - name: CATTLE_ELECTION_RETRY_PERIOD
+        value: 10s
+      - name: CATTLE_ELECTION_RENEW_DEADLINE
+        value: 25s
+      - name: FLEET_AGENT_REPLICA_COUNT
+        value: "1"
+      - name: FLEET_AGENT_ELECTION_LEASE_DURATION
+        value: 30s
+      - name: FLEET_AGENT_ELECTION_RETRY_PERIOD
+        value: 10s
+      - name: FLEET_AGENT_ELECTION_RENEW_DEADLINE
+        value: 25s
+      image: rancher/fleet:v0.14.0
+      imagePullPolicy: IfNotPresent
+      name: fleet-agentmanagement
+      resources: {}
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+          - ALL
+        privileged: false
+        readOnlyRootFilesystem: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-m6v9m
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: isim-dev
+    nodeSelector:
+      kubernetes.io/os: linux
+    preemptionPolicy: PreemptLowerPriority
+    priority: 1e+09
+    priorityClassName: rancher-critical
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      runAsGroup: 1000
+      runAsNonRoot: true
+      runAsUser: 1000
+    serviceAccount: fleet-controller
+    serviceAccountName: fleet-controller
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoSchedule
+      key: cattle.io/os
+      operator: Equal
+      value: linux
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - emptyDir: {}
+      name: tmp
+    - name: kube-api-access-m6v9m
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:30Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:29Z"
+      observedGeneration: 1
+      status: "True"
+      type: Initialized
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:30Z"
+      observedGeneration: 1
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:30Z"
+      observedGeneration: 1
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:29Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://c701390c312e5b18b8635a1d6d6f0939ae5c900e1af9ac4f699a2573cb7ae643
+      image: docker.io/rancher/fleet:v0.14.0
+      imageID: sha256:7f4512ae7a76fe8fb68558d3f2c50aad7233cb3b65bfd6ab66ef1fbad9e2c670
+      lastState: {}
+      name: fleet-agentmanagement
+      ready: true
+      resources: {}
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-12-30T21:48:30Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-m6v9m
+        readOnly: true
+        recursiveReadOnly: Disabled
+    - containerID: containerd://66e23c3fcd186efb1248c7d58f413ab63ae72fb1b79b93e6bf5e6c225a52b011
+      image: docker.io/rancher/fleet:v0.14.0
+      imageID: sha256:7f4512ae7a76fe8fb68558d3f2c50aad7233cb3b65bfd6ab66ef1fbad9e2c670
+      lastState: {}
+      name: fleet-cleanup
+      ready: true
+      resources: {}
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-12-30T21:48:30Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-m6v9m
+        readOnly: true
+        recursiveReadOnly: Disabled
+    - containerID: containerd://8cf1c53e499ad59316a680420cbd419e48e1431eaba4a9376864718a57adb0cc
+      image: docker.io/rancher/fleet:v0.14.0
+      imageID: sha256:7f4512ae7a76fe8fb68558d3f2c50aad7233cb3b65bfd6ab66ef1fbad9e2c670
+      lastState: {}
+      name: fleet-controller
+      ready: true
+      resources: {}
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-12-30T21:48:30Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+      volumeMounts:
+      - mountPath: /tmp
+        name: tmp
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-m6v9m
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.122.168
+    hostIPs:
+    - ip: 192.168.122.168
+    observedGeneration: 1
+    phase: Running
+    podIP: 10.52.0.21
+    podIPs:
+    - ip: 10.52.0.21
+    qosClass: BestEffort
+    startTime: "2025-12-30T21:48:29Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: fb8e8e804eb91c948a95372b0f4c3e54de1f6fe6a85099e1819e57ffdb7ed436
+      cni.projectcalico.org/podIP: 10.52.0.15/32
+      cni.projectcalico.org/podIPs: 10.52.0.15/32
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "k8s-pod-network",
+            "ips": [
+                "10.52.0.15"
+            ],
+            "default": true,
+            "dns": {}
+        }]
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    generateName: gitjob-6c68674ccf-
+    generation: 1
+    labels:
+      app: gitjob
+      fleet.cattle.io/shard-default: "true"
+      fleet.cattle.io/shard-id: "null"
+      pod-template-hash: 6c68674ccf
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:47:51Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:fleet.cattle.io/shard-default: {}
+            f:fleet.cattle.io/shard-id: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"a167171f-a851-4244-b894-625da880ed27"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"gitjob"}:
+              .: {}
+              f:args: {}
+              f:env:
+                .: {}
+                k:{"name":"CATTLE_ELECTION_LEASE_DURATION"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CATTLE_ELECTION_RENEW_DEADLINE"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CATTLE_ELECTION_RETRY_PERIOD"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"GITREPO_RECONCILER_WORKERS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"GITREPO_SYNC_PERIOD"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"NAMESPACE"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":8081,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:privileged: {}
+                f:readOnlyRootFilesystem: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/tmp"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:nodeSelector: {}
+          f:priorityClassName: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext:
+            .: {}
+            f:runAsGroup: {}
+            f:runAsNonRoot: {}
+            f:runAsUser: {}
+          f:serviceAccount: {}
+          f:serviceAccountName: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"tmp"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:k8s.v1.cni.cncf.io/network-status: {}
+      manager: multus
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:47:51Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.52.0.15"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:47:53Z"
+    name: gitjob-6c68674ccf-fkfbd
+    namespace: cattle-fleet-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: gitjob-6c68674ccf
+      uid: a167171f-a851-4244-b894-625da880ed27
+    resourceVersion: "1874"
+    uid: 10645dc8-d43a-4112-b079-b4f3add59937
+  spec:
+    containers:
+    - args:
+      - fleetcontroller
+      - gitjob
+      - --gitjob-image
+      - rancher/fleet:v0.14.0
+      env:
+      - name: NAMESPACE
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.namespace
+      - name: CATTLE_ELECTION_LEASE_DURATION
+        value: 30s
+      - name: CATTLE_ELECTION_RETRY_PERIOD
+        value: 10s
+      - name: CATTLE_ELECTION_RENEW_DEADLINE
+        value: 25s
+      - name: GITREPO_SYNC_PERIOD
+        value: 2h
+      - name: GITREPO_RECONCILER_WORKERS
+        value: "50"
+      image: rancher/fleet:v0.14.0
+      imagePullPolicy: IfNotPresent
+      name: gitjob
+      ports:
+      - containerPort: 8081
+        name: metrics
+        protocol: TCP
+      resources: {}
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+          - ALL
+        privileged: false
+        readOnlyRootFilesystem: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /tmp
+        name: tmp
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-khqbt
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: isim-dev
+    nodeSelector:
+      kubernetes.io/os: linux
+    preemptionPolicy: PreemptLowerPriority
+    priority: 1e+09
+    priorityClassName: rancher-critical
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      runAsGroup: 1000
+      runAsNonRoot: true
+      runAsUser: 1000
+    serviceAccount: gitjob
+    serviceAccountName: gitjob
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoSchedule
+      key: cattle.io/os
+      operator: Equal
+      value: linux
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - emptyDir: {}
+      name: tmp
+    - name: kube-api-access-khqbt
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:47:53Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:47:51Z"
+      observedGeneration: 1
+      status: "True"
+      type: Initialized
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:47:53Z"
+      observedGeneration: 1
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:47:53Z"
+      observedGeneration: 1
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:47:51Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://b95a4ace16e1d45a9b54433ccca75d5c5c10f6d0becdf173be371e96d77c47c9
+      image: docker.io/rancher/fleet:v0.14.0
+      imageID: sha256:7f4512ae7a76fe8fb68558d3f2c50aad7233cb3b65bfd6ab66ef1fbad9e2c670
+      lastState: {}
+      name: gitjob
+      ready: true
+      resources: {}
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-12-30T21:47:52Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+      volumeMounts:
+      - mountPath: /tmp
+        name: tmp
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-khqbt
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.122.168
+    hostIPs:
+    - ip: 192.168.122.168
+    observedGeneration: 1
+    phase: Running
+    podIP: 10.52.0.15
+    podIPs:
+    - ip: 10.52.0.15
+    qosClass: BestEffort
+    startTime: "2025-12-30T21:47:51Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 440403b02204a67ffeb5d70517e09d91cb3e09653c53deb32c8bcfcde50e41d1
+      cni.projectcalico.org/podIP: 10.52.0.13/32
+      cni.projectcalico.org/podIPs: 10.52.0.13/32
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "k8s-pod-network",
+            "ips": [
+                "10.52.0.13"
+            ],
+            "default": true,
+            "dns": {}
+        }]
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    generateName: helmops-76b7885dff-
+    generation: 1
+    labels:
+      app: helmops
+      fleet.cattle.io/shard-default: "true"
+      fleet.cattle.io/shard-id: "null"
+      pod-template-hash: 76b7885dff
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:47:51Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:fleet.cattle.io/shard-default: {}
+            f:fleet.cattle.io/shard-id: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"29819a35-61d1-4b91-9a1b-97b47be81544"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"helmops"}:
+              .: {}
+              f:args: {}
+              f:env:
+                .: {}
+                k:{"name":"CATTLE_ELECTION_LEASE_DURATION"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CATTLE_ELECTION_RENEW_DEADLINE"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CATTLE_ELECTION_RETRY_PERIOD"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"HELMOPS_RECONCILER_WORKERS"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"NAMESPACE"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":8081,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:privileged: {}
+                f:readOnlyRootFilesystem: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/tmp"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:nodeSelector: {}
+          f:priorityClassName: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext:
+            .: {}
+            f:runAsGroup: {}
+            f:runAsNonRoot: {}
+            f:runAsUser: {}
+          f:serviceAccount: {}
+          f:serviceAccountName: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"tmp"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:k8s.v1.cni.cncf.io/network-status: {}
+      manager: multus
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:47:51Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.52.0.13"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:47:53Z"
+    name: helmops-76b7885dff-ngxtz
+    namespace: cattle-fleet-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: helmops-76b7885dff
+      uid: 29819a35-61d1-4b91-9a1b-97b47be81544
+    resourceVersion: "1867"
+    uid: 8e3ae676-3d62-4dfd-a169-73b1d68bb297
+  spec:
+    containers:
+    - args:
+      - fleetcontroller
+      - helmops
+      env:
+      - name: NAMESPACE
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.namespace
+      - name: CATTLE_ELECTION_LEASE_DURATION
+        value: 30s
+      - name: CATTLE_ELECTION_RETRY_PERIOD
+        value: 10s
+      - name: CATTLE_ELECTION_RENEW_DEADLINE
+        value: 25s
+      - name: HELMOPS_RECONCILER_WORKERS
+        value: "50"
+      image: rancher/fleet:v0.14.0
+      imagePullPolicy: IfNotPresent
+      name: helmops
+      ports:
+      - containerPort: 8081
+        name: metrics
+        protocol: TCP
+      resources: {}
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+          - ALL
+        privileged: false
+        readOnlyRootFilesystem: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /tmp
+        name: tmp
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-75vqw
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: isim-dev
+    nodeSelector:
+      kubernetes.io/os: linux
+    preemptionPolicy: PreemptLowerPriority
+    priority: 1e+09
+    priorityClassName: rancher-critical
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext:
+      runAsGroup: 1000
+      runAsNonRoot: true
+      runAsUser: 1000
+    serviceAccount: helmops
+    serviceAccountName: helmops
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoSchedule
+      key: cattle.io/os
+      operator: Equal
+      value: linux
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - emptyDir: {}
+      name: tmp
+    - name: kube-api-access-75vqw
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:47:53Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:47:51Z"
+      observedGeneration: 1
+      status: "True"
+      type: Initialized
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:47:53Z"
+      observedGeneration: 1
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:47:53Z"
+      observedGeneration: 1
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:47:51Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://d0d99edcf1dcb7f6fd9ecdb13c416ff2ed32c143f30e7b5af19d2d2bfd81319f
+      image: docker.io/rancher/fleet:v0.14.0
+      imageID: sha256:7f4512ae7a76fe8fb68558d3f2c50aad7233cb3b65bfd6ab66ef1fbad9e2c670
+      lastState: {}
+      name: helmops
+      ready: true
+      resources: {}
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-12-30T21:47:52Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+      volumeMounts:
+      - mountPath: /tmp
+        name: tmp
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-75vqw
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.122.168
+    hostIPs:
+    - ip: 192.168.122.168
+    observedGeneration: 1
+    phase: Running
+    podIP: 10.52.0.13
+    podIPs:
+    - ip: 10.52.0.13
+    qosClass: BestEffort
+    startTime: "2025-12-30T21:47:51Z"
+kind: List
+metadata:
+  resourceVersion: "14479"

@@ -1,0 +1,91 @@
+apiVersion: v1
+items:
+- apiVersion: longhorn.io/v1beta2
+  kind: EngineImage
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:45Z"
+    finalizers:
+    - longhorn.io
+    generation: 1
+    labels:
+      longhorn.io/component: engine-image
+      longhorn.io/engine-image: ei-3154f3aa
+      longhorn.io/managed-by: longhorn-manager
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:longhorn.io/component: {}
+            f:longhorn.io/engine-image: {}
+            f:longhorn.io/managed-by: {}
+        f:spec:
+          .: {}
+          f:image: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2025-12-30T21:49:45Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:buildDate: {}
+          f:cliAPIMinVersion: {}
+          f:cliAPIVersion: {}
+          f:conditions: {}
+          f:controllerAPIMinVersion: {}
+          f:controllerAPIVersion: {}
+          f:dataFormatMinVersion: {}
+          f:dataFormatVersion: {}
+          f:gitCommit: {}
+          f:incompatible: {}
+          f:noRefSince: {}
+          f:nodeDeploymentMap:
+            .: {}
+            f:isim-dev: {}
+          f:ownerID: {}
+          f:refCount: {}
+          f:state: {}
+          f:version: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:58:01Z"
+    name: ei-3154f3aa
+    namespace: longhorn-system
+    resourceVersion: "12627"
+    uid: 8ae4e0fb-3761-401d-8e58-8e9b6ad310c3
+  spec:
+    image: longhornio/longhorn-engine:v1.10.1
+  status:
+    buildDate: "2025-11-12T01:33:41+00:00"
+    cliAPIMinVersion: 8
+    cliAPIVersion: 10
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:51:58Z"
+      message: Engine image ei-3154f3aa (longhornio/longhorn-engine:v1.10.1) is fully
+        deployed on all ready nodes
+      reason: "null"
+      status: "True"
+      type: ready
+    controllerAPIMinVersion: 4
+    controllerAPIVersion: 5
+    dataFormatMinVersion: 1
+    dataFormatVersion: 1
+    gitCommit: 42443896750ef538413c6f8481c975b8f6213625
+    incompatible: false
+    noRefSince: "null"
+    nodeDeploymentMap:
+      isim-dev: true
+    ownerID: isim-dev
+    refCount: 3
+    state: deployed
+    version: v1.10.1
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14495"

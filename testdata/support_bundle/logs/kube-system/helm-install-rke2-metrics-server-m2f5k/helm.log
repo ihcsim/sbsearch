@@ -1,0 +1,56 @@
+2025-12-30T21:47:11.489428325Z if [[ ${KUBERNETES_SERVICE_HOST} =~ .*:.* ]]; then
+2025-12-30T21:47:11.489445633Z 	echo "KUBERNETES_SERVICE_HOST is using IPv6"
+2025-12-30T21:47:11.489447807Z 	CHART="${CHART//%\{KUBERNETES_API\}%/[${KUBERNETES_SERVICE_HOST}]:${KUBERNETES_SERVICE_PORT}}"
+2025-12-30T21:47:11.489449470Z else
+2025-12-30T21:47:11.489450703Z 	CHART="${CHART//%\{KUBERNETES_API\}%/${KUBERNETES_SERVICE_HOST}:${KUBERNETES_SERVICE_PORT}}"
+2025-12-30T21:47:11.489451876Z fi
+2025-12-30T21:47:11.489455704Z 
+2025-12-30T21:47:11.489456886Z set +v -x
+2025-12-30T21:47:11.489498188Z + [[ '' == \v\2 ]]
+2025-12-30T21:47:11.489499981Z + shopt -s nullglob
+2025-12-30T21:47:11.489513841Z + [[ -f /config/ca-file.pem ]]
+2025-12-30T21:47:11.489551202Z + [[ -f /tmp/ca-file.pem ]]
+2025-12-30T21:47:11.489570595Z + [[ false == \t\r\u\e ]]
+2025-12-30T21:47:11.489572369Z + [[ false == \t\r\u\e ]]
+2025-12-30T21:47:11.489581439Z + [[ -n '' ]]
+2025-12-30T21:47:11.489597032Z + helm_content_decode
+2025-12-30T21:47:11.489600460Z + set -e
+2025-12-30T21:47:11.489617176Z + ENC_CHART_PATH=/chart/rke2-metrics-server.tgz.base64
+2025-12-30T21:47:11.489618820Z + CHART_PATH=/tmp/rke2-metrics-server.tgz
+2025-12-30T21:47:11.489621837Z + [[ ! -f /chart/rke2-metrics-server.tgz.base64 ]]
+2025-12-30T21:47:11.489644968Z + base64 -d /chart/rke2-metrics-server.tgz.base64
+2025-12-30T21:47:11.490496977Z + CHART=/tmp/rke2-metrics-server.tgz
+2025-12-30T21:47:11.490504333Z + set +e
+2025-12-30T21:47:11.490543107Z + [[ install != \d\e\l\e\t\e ]]
+2025-12-30T21:47:11.490544480Z + helm_repo_init
+2025-12-30T21:47:11.490566338Z + grep -q -e 'https\?://'
+2025-12-30T21:47:11.491153749Z + [[ /tmp/rke2-metrics-server.tgz == stable/* ]]
+2025-12-30T21:47:11.491156947Z + [[ -n '' ]]
+2025-12-30T21:47:11.491176289Z + helm_update install --set-string global.clusterCIDR=10.52.0.0/16 --set-string global.clusterCIDRv4=10.52.0.0/16 --set-string global.clusterDNS=10.53.0.10 --set-string global.clusterDomain=cluster.local --set-string global.rke2DataDir=/var/lib/rancher/rke2 --set-string global.serviceCIDR=10.53.0.0/16 --set-string global.systemDefaultIngressClass=ingress-nginx
+2025-12-30T21:47:11.491704010Z ++ helm ls --all -f '^rke2-metrics-server$' --namespace kube-system --output json
+2025-12-30T21:47:11.491707358Z ++ jq -r '"\(.[0].chart),\(.[0].status)"'
+2025-12-30T21:47:11.494856950Z ++ tr '[:upper:]' '[:lower:]'
+2025-12-30T21:47:11.544810808Z + LINE=null,null
+2025-12-30T21:47:11.544822113Z + IFS=,
+2025-12-30T21:47:11.544823636Z + read -r INSTALLED_VERSION STATUS _
+2025-12-30T21:47:11.544844472Z + VALUES=
+2025-12-30T21:47:11.544889671Z + [[ install = \d\e\l\e\t\e ]]
+2025-12-30T21:47:11.544906277Z + [[ null =~ ^(|null)$ ]]
+2025-12-30T21:47:11.544972582Z + [[ null =~ ^(|null)$ ]]
+2025-12-30T21:47:11.545006616Z + echo 'Installing helm chart'
+2025-12-30T21:47:11.545095710Z + helm install --set-string global.clusterCIDR=10.52.0.0/16 --set-string global.clusterCIDRv4=10.52.0.0/16 --set-string global.clusterDNS=10.53.0.10 --set-string global.clusterDomain=cluster.local --set-string global.rke2DataDir=/var/lib/rancher/rke2 --set-string global.serviceCIDR=10.53.0.0/16 --set-string global.systemDefaultIngressClass=ingress-nginx rke2-metrics-server /tmp/rke2-metrics-server.tgz
+2025-12-30T21:47:11.790952568Z NAME: rke2-metrics-server
+2025-12-30T21:47:11.790970006Z LAST DEPLOYED: Tue Dec 30 21:47:11 2025
+2025-12-30T21:47:11.790971800Z NAMESPACE: kube-system
+2025-12-30T21:47:11.790973073Z STATUS: deployed
+2025-12-30T21:47:11.790974696Z REVISION: 1
+2025-12-30T21:47:11.790986963Z TEST SUITE: None
+2025-12-30T21:47:11.790988185Z NOTES:
+2025-12-30T21:47:11.790989890Z ***********************************************************************
+2025-12-30T21:47:11.791000072Z * Metrics Server                                                      *
+2025-12-30T21:47:11.791001314Z ***********************************************************************
+2025-12-30T21:47:11.791002347Z   Chart version: 3.13.002
+2025-12-30T21:47:11.791003369Z   App version:   0.8.0
+2025-12-30T21:47:11.791012439Z   Image tag:     rancher/hardened-k8s-metrics-server:v0.8.0-build20251015
+2025-12-30T21:47:11.791013601Z ***********************************************************************
+2025-12-30T21:47:11.792776397Z + exit

@@ -1,0 +1,49 @@
+apiVersion: v1
+items:
+- apiVersion: rbac.authorization.k8s.io/v1
+  kind: RoleBinding
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/6yRT4/TMBDFvwqacxxI89eROCAOHLgVbojDxJ40Jo4d2ZMiqPrdUZpWYlfqqtLu0fK893567wQTMWpkhPYE6JxnZONdXJ+++0WKI3EajE8VMltKjX9vNLSg7BKZgjgEv8yC/UgOkrsS/9utt8cRWugtEf/3d8zQzgNmybuvxumPnzfjPR1M5HCh+f6Qu8OJoAUzzT7wRiSsV2gfUsYZFd3orrpzAhY7si+2MWAcoAUqSRb1LquyruvqpijxQ9WXZdV02NeyJpmXeVZW2Wp6l1QUFdV5oXJR7bQURSFr0WitRCaLnqq8l1o2QgXSETabG/bGIzb66zZRxD+RaVojg7e0p/6y8my+rKNBC6FDleLCgw/m76XqdGxiajwkMBq37rz3luCNkM8JxGWrEdofp1vENwpHo+iTUn5x/OqwZ808GfTn+V8AAAD//80fOBPyAgAA
+      objectset.rio.cattle.io/id: cluster-group-token
+      objectset.rio.cattle.io/owner-gvk: fleet.cattle.io/v1alpha1, Kind=ClusterRegistrationToken
+      objectset.rio.cattle.io/owner-name: import-token-local
+      objectset.rio.cattle.io/owner-namespace: fleet-local
+    creationTimestamp: "2025-12-30T21:48:12Z"
+    labels:
+      objectset.rio.cattle.io/hash: e5e9472161bbb7845a06f5568baf797e93531561
+    managedFields:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:roleRef: {}
+        f:subjects: {}
+      manager: fleetcontroller
+      operation: Update
+      time: "2025-12-30T21:48:12Z"
+    name: import-token-local-46e734c3-62d9-4497-8ddc-194fe63f9d98-creds
+    namespace: cattle-fleet-clusters-system
+    resourceVersion: "2144"
+    uid: 4f20f212-9134-4370-9c0e-8ca92c256c20
+  roleRef:
+    apiGroup: rbac.authorization.k8s.io
+    kind: Role
+    name: import-token-local-46e734c3-62d9-4497-8ddc-194fe63f9d98-creds
+  subjects:
+  - kind: ServiceAccount
+    name: import-token-local-46e734c3-62d9-4497-8ddc-194fe63f9d98
+    namespace: fleet-local
+kind: List
+metadata:
+  resourceVersion: "14481"

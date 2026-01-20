@@ -1,0 +1,2399 @@
+apiVersion: v1
+items:
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:39Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:39Z"
+  deprecatedSource:
+    component: endpoint-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:49:39Z"
+    name: cdi-prometheus-metrics.18861ca09243dffd
+    namespace: default
+    resourceVersion: "4558"
+    uid: 241bb2de-9c2c-490a-a938-fc0d76c974da
+  note: 'Failed to create endpoint for service harvester-system/cdi-prometheus-metrics:
+    endpoints "cdi-prometheus-metrics" already exists'
+  reason: FailedToCreateEndpoint
+  regarding:
+    apiVersion: v1
+    kind: Endpoints
+    name: cdi-prometheus-metrics
+  reportingController: endpoint-controller
+  type: Warning
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedSource:
+    component: operator-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:49:38Z"
+    name: cdi.18861ca03b702689
+    namespace: default
+    resourceVersion: "4388"
+    uid: e658b363-9251-4753-8166-b0b85d804d0a
+  note: Started Deployment
+  reason: DeployStarted
+  regarding:
+    apiVersion: cdi.kubevirt.io/v1beta1
+    kind: CDI
+    name: cdi
+    resourceVersion: "3859"
+    uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+  reportingController: operator-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedSource:
+    component: operator-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:49:38Z"
+    name: cdi.18861ca04161dfbb
+    namespace: default
+    resourceVersion: "4392"
+    uid: 144df505-2f80-4e9b-bae3-b0d5f49ae9ff
+  note: Successfully created resource *v1.ClusterRole cdi-uploadproxy
+  reason: CreateResourceSuccess
+  regarding:
+    apiVersion: cdi.kubevirt.io/v1beta1
+    kind: CDI
+    name: cdi
+    resourceVersion: "4390"
+    uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+  reportingController: operator-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedSource:
+    component: operator-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:49:38Z"
+    name: cdi.18861ca0485e2cf5
+    namespace: default
+    resourceVersion: "4394"
+    uid: 765914e7-ba26-4183-9715-3687b852b4d3
+  note: Successfully created resource *v1.ClusterRoleBinding cdi-uploadproxy
+  reason: CreateResourceSuccess
+  regarding:
+    apiVersion: cdi.kubevirt.io/v1beta1
+    kind: CDI
+    name: cdi
+    resourceVersion: "4390"
+    uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+  reportingController: operator-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedSource:
+    component: operator-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:49:38Z"
+    name: cdi.18861ca04ba06820
+    namespace: default
+    resourceVersion: "4396"
+    uid: 6a83e05e-3e7b-4a5b-b8a7-1e4d0d251979
+  note: Successfully created resource *v1.ClusterRole cdi-cronjob
+  reason: CreateResourceSuccess
+  regarding:
+    apiVersion: cdi.kubevirt.io/v1beta1
+    kind: CDI
+    name: cdi
+    resourceVersion: "4390"
+    uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+  reportingController: operator-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedSource:
+    component: operator-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:49:38Z"
+    name: cdi.18861ca04d820e9e
+    namespace: default
+    resourceVersion: "4398"
+    uid: 422e21c9-4a51-4803-a412-5f6194320885
+  note: Successfully created resource *v1.ClusterRoleBinding cdi-cronjob
+  reason: CreateResourceSuccess
+  regarding:
+    apiVersion: cdi.kubevirt.io/v1beta1
+    kind: CDI
+    name: cdi
+    resourceVersion: "4390"
+    uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+  reportingController: operator-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedSource:
+    component: operator-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:49:38Z"
+    name: cdi.18861ca04efdf2f7
+    namespace: default
+    resourceVersion: "4400"
+    uid: a211950f-bd33-4249-887f-d87deb83c4f7
+  note: Successfully created resource *v1.ClusterRole cdi.kubevirt.io:admin
+  reason: CreateResourceSuccess
+  regarding:
+    apiVersion: cdi.kubevirt.io/v1beta1
+    kind: CDI
+    name: cdi
+    resourceVersion: "4390"
+    uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+  reportingController: operator-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedSource:
+    component: operator-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:49:38Z"
+    name: cdi.18861ca053f90742
+    namespace: default
+    resourceVersion: "4408"
+    uid: 54f2320d-7056-4b53-a471-65294c4f4ab3
+  note: Successfully created resource *v1.ClusterRole cdi.kubevirt.io:edit
+  reason: CreateResourceSuccess
+  regarding:
+    apiVersion: cdi.kubevirt.io/v1beta1
+    kind: CDI
+    name: cdi
+    resourceVersion: "4390"
+    uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+  reportingController: operator-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedSource:
+    component: operator-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:49:38Z"
+    name: cdi.18861ca058457deb
+    namespace: default
+    resourceVersion: "4416"
+    uid: 5dbceda4-77b8-45ca-99e0-8b6dd65ff5ed
+  note: Successfully created resource *v1.ClusterRole cdi.kubevirt.io:view
+  reason: CreateResourceSuccess
+  regarding:
+    apiVersion: cdi.kubevirt.io/v1beta1
+    kind: CDI
+    name: cdi
+    resourceVersion: "4390"
+    uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+  reportingController: operator-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedSource:
+    component: operator-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:49:38Z"
+    name: cdi.18861ca05ef257ca
+    namespace: default
+    resourceVersion: "4432"
+    uid: 5845b24d-07cf-455e-87a5-633bc4973218
+  note: Successfully created resource *v1.ClusterRole cdi.kubevirt.io:config-reader
+  reason: CreateResourceSuccess
+  regarding:
+    apiVersion: cdi.kubevirt.io/v1beta1
+    kind: CDI
+    name: cdi
+    resourceVersion: "4390"
+    uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+  reportingController: operator-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:38Z"
+  deprecatedSource:
+    component: operator-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:38Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:49:38Z"
+    name: cdi.18861ca06423ee6c
+    namespace: default
+    resourceVersion: "4441"
+    uid: 02730978-072a-4799-9777-d0c8f687da51
+  note: Successfully created resource *v1.ClusterRoleBinding cdi.kubevirt.io:config-reader
+  reason: CreateResourceSuccess
+  regarding:
+    apiVersion: cdi.kubevirt.io/v1beta1
+    kind: CDI
+    name: cdi
+    resourceVersion: "4390"
+    uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+  reportingController: operator-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 15
+  deprecatedFirstTimestamp: "2025-12-30T21:49:39Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:39Z"
+  deprecatedSource:
+    component: operator-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: virt-cdi-operator
+      operation: Update
+      time: "2025-12-30T21:49:39Z"
+    name: cdi.18861ca065029234
+    namespace: default
+    resourceVersion: "4498"
+    uid: bf7beff6-14b5-4e06-a014-ba3f1ffd9a50
+  note: '(combined from similar events): Successfully created resource *v1.CustomResourceDefinition
+    openstackvolumepopulators.forklift.cdi.kubevirt.io'
+  reason: CreateResourceSuccess
+  regarding:
+    apiVersion: cdi.kubevirt.io/v1beta1
+    kind: CDI
+    name: cdi
+    resourceVersion: "4390"
+    uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:46:28Z"
+  deprecatedLastTimestamp: "2025-12-30T21:46:28Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:46:45Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:46:45Z"
+    name: isim-dev.18861c73f3cb5b19
+    namespace: default
+    resourceVersion: "209"
+    uid: 0a80d359-7958-4e93-8c4f-f1d7ecffb00d
+  note: Starting kubelet.
+  reason: Starting
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:46:28Z"
+  deprecatedLastTimestamp: "2025-12-30T21:46:28Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:46:45Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:46:45Z"
+    name: isim-dev.18861c73f4158636
+    namespace: default
+    resourceVersion: "210"
+    uid: 01fa770e-9e46-4932-8505-bdae2babaf34
+  note: invalid capacity 0 on image filesystem
+  reason: InvalidDiskCapacity
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Warning
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 8
+  deprecatedFirstTimestamp: "2025-12-30T21:46:28Z"
+  deprecatedLastTimestamp: "2025-12-30T21:46:28Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:46:45Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:46:45Z"
+    name: isim-dev.18861c73f4697913
+    namespace: default
+    resourceVersion: "233"
+    uid: 8113f20b-bbff-499f-bc64-f4ec273e2907
+  note: 'Node isim-dev status is now: NodeHasSufficientMemory'
+  reason: NodeHasSufficientMemory
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 8
+  deprecatedFirstTimestamp: "2025-12-30T21:46:28Z"
+  deprecatedLastTimestamp: "2025-12-30T21:46:28Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:46:45Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:46:45Z"
+    name: isim-dev.18861c73f469ad69
+    namespace: default
+    resourceVersion: "234"
+    uid: d3880c75-df60-40be-8af6-12452bf5c356
+  note: 'Node isim-dev status is now: NodeHasNoDiskPressure'
+  reason: NodeHasNoDiskPressure
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 7
+  deprecatedFirstTimestamp: "2025-12-30T21:46:28Z"
+  deprecatedLastTimestamp: "2025-12-30T21:46:28Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:46:45Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:46:45Z"
+    name: isim-dev.18861c73f469bc8c
+    namespace: default
+    resourceVersion: "232"
+    uid: 94da13c3-ef48-4197-a1cc-ba12e0ee7476
+  note: 'Node isim-dev status is now: NodeHasSufficientPID'
+  reason: NodeHasSufficientPID
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:46:28Z"
+  deprecatedLastTimestamp: "2025-12-30T21:46:28Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:46:45Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:46:45Z"
+    name: isim-dev.18861c73f8989f72
+    namespace: default
+    resourceVersion: "217"
+    uid: 3086d980-d269-48ea-9de1-9e75447bd77a
+  note: Updated Node Allocatable limit across pods
+  reason: NodeAllocatableEnforced
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- action: StartKubeProxy
+  apiVersion: events.k8s.io/v1
+  deprecatedFirstTimestamp: "null"
+  deprecatedLastTimestamp: null
+  deprecatedSource: {}
+  eventTime: "2025-12-30T21:46:40.971098Z"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:46:40Z"
+    managedFields:
+    - apiVersion: events.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:action: {}
+        f:eventTime: {}
+        f:reason: {}
+        f:regarding: {}
+        f:reportingController: {}
+        f:reportingInstance: {}
+        f:type: {}
+      manager: kube-proxy
+      operation: Update
+      time: "2025-12-30T21:46:40Z"
+    name: isim-dev.18861c76f1644b08
+    namespace: default
+    resourceVersion: "204"
+    uid: 5c38aced-c59c-4a76-8b0a-335b38d0aff8
+  reason: Starting
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: kube-proxy
+  reportingInstance: kube-proxy-isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:46:46Z"
+  deprecatedLastTimestamp: "2025-12-30T21:46:46Z"
+  deprecatedSource:
+    component: rke2-cert-monitor
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:46:46Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: rke2
+      operation: Update
+      time: "2025-12-30T21:46:46Z"
+    name: isim-dev.18861c781f59c1b6
+    namespace: default
+    resourceVersion: "244"
+    uid: c285d311-c43b-438f-bc37-f6255300e8d5
+  note: Node and Certificate Authority certificates managed by rke2 are OK
+  reason: CertificateExpirationOK
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: rke2-cert-monitor
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:46:49Z"
+  deprecatedLastTimestamp: "2025-12-30T21:46:49Z"
+  deprecatedSource:
+    component: cloud-node-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:46:49Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: cloud-controller-manager
+      operation: Update
+      time: "2025-12-30T21:46:49Z"
+    name: isim-dev.18861c78db6de9b9
+    namespace: default
+    resourceVersion: "340"
+    uid: 17388d80-4c36-4501-b0a1-738badaf16e6
+  note: Node synced successfully
+  reason: Synced
+  regarding:
+    apiVersion: v1
+    kind: Node
+    name: isim-dev
+    resourceVersion: "245"
+    uid: 75908add-436d-4a4a-ac7f-91584193f4b7
+  reportingController: cloud-node-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:46:50Z"
+  deprecatedLastTimestamp: "2025-12-30T21:46:50Z"
+  deprecatedSource:
+    component: rke2-supervisor
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:46:50Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: rke2-supervisor@isim-dev
+      operation: Update
+      time: "2025-12-30T21:46:50Z"
+    name: isim-dev.18861c792bf6a581
+    namespace: default
+    resourceVersion: "365"
+    uid: 49da6c6d-d6e2-4835-84d4-d867ebc7ae9b
+  note: Deferred node password secret validation complete
+  reason: NodePasswordValidationComplete
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: rke2-supervisor
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:46:51Z"
+  deprecatedLastTimestamp: "2025-12-30T21:46:51Z"
+  deprecatedSource:
+    component: node-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:46:51Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:46:51Z"
+    name: isim-dev.18861c7975997320
+    namespace: default
+    resourceVersion: "490"
+    uid: b417f93a-4d7e-4591-a558-0e06657e27f8
+  note: 'Node isim-dev event: Registered Node isim-dev in Controller'
+  reason: RegisteredNode
+  regarding:
+    apiVersion: v1
+    kind: Node
+    name: isim-dev
+    uid: 75908add-436d-4a4a-ac7f-91584193f4b7
+  reportingController: node-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:47Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:47Z"
+  deprecatedSource:
+    component: system-upgrade-controller
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:47Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: system-upgrade-controller
+      operation: Update
+      time: "2025-12-30T21:48:47Z"
+    name: isim-dev.18861c947e0db8a0
+    namespace: default
+    resourceVersion: "2881"
+    uid: 364a374f-3daa-4804-90b0-b2ae8f91696b
+  note: system-upgrade-controller v0.17.0 (f2c9e60) starting leader election for cattle-system/system-upgrade-controller
+  reason: Starting
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: system-upgrade-controller
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:48Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:48Z"
+  deprecatedSource:
+    component: system-upgrade-controller
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:48Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: system-upgrade-controller
+      operation: Update
+      time: "2025-12-30T21:48:48Z"
+    name: isim-dev.18861c9485791fc4
+    namespace: default
+    resourceVersion: "2885"
+    uid: 0e64443b-3039-4b68-a010-d70128b02d89
+  note: system-upgrade-controller v0.17.0 (f2c9e60) running as cattle-system/system-upgrade-controller
+  reason: Started
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: system-upgrade-controller
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:51:54Z"
+  deprecatedLastTimestamp: "2025-12-30T21:51:54Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:51:54Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:51:54Z"
+    name: isim-dev.18861cc006fc71b5
+    namespace: default
+    resourceVersion: "8018"
+    uid: ff0d55af-84ae-4001-95d5-e78842ecb230
+  note: Starting kubelet.
+  reason: Starting
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:51:54Z"
+  deprecatedLastTimestamp: "2025-12-30T21:51:54Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:51:54Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:51:54Z"
+    name: isim-dev.18861cc007b97f4e
+    namespace: default
+    resourceVersion: "8019"
+    uid: d7c46b19-7de4-4f1b-9224-a3586b0fb550
+  note: invalid capacity 0 on image filesystem
+  reason: InvalidDiskCapacity
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Warning
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:51:55Z"
+  deprecatedLastTimestamp: "2025-12-30T21:51:55Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:51:55Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:51:55Z"
+    name: isim-dev.18861cc01bcea39d
+    namespace: default
+    resourceVersion: "8025"
+    uid: e4f26454-dbcc-4fb3-a9ef-4a5fdc780767
+  note: Updated Node Allocatable limit across pods
+  reason: NodeAllocatableEnforced
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:51:55Z"
+  deprecatedLastTimestamp: "2025-12-30T21:51:55Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:51:55Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:51:55Z"
+    name: isim-dev.18861cc0217e397f
+    namespace: default
+    resourceVersion: "8026"
+    uid: a0c67832-082b-4f15-a06c-ea84b27ed91f
+  note: 'Node isim-dev status is now: NodeHasSufficientMemory'
+  reason: NodeHasSufficientMemory
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:51:55Z"
+  deprecatedLastTimestamp: "2025-12-30T21:51:55Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:51:55Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:51:55Z"
+    name: isim-dev.18861cc0217e748d
+    namespace: default
+    resourceVersion: "8027"
+    uid: 22341b3d-3840-4b3f-a46b-6357ead93d8e
+  note: 'Node isim-dev status is now: NodeHasNoDiskPressure'
+  reason: NodeHasNoDiskPressure
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:51:55Z"
+  deprecatedLastTimestamp: "2025-12-30T21:51:55Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:51:55Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:51:55Z"
+    name: isim-dev.18861cc0217e8706
+    namespace: default
+    resourceVersion: "8028"
+    uid: 0fd7ad0f-31a8-434d-aebe-b1c4a9514ed4
+  note: 'Node isim-dev status is now: NodeHasSufficientPID'
+  reason: NodeHasSufficientPID
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- action: StartKubeProxy
+  apiVersion: events.k8s.io/v1
+  deprecatedFirstTimestamp: "null"
+  deprecatedLastTimestamp: null
+  deprecatedSource: {}
+  eventTime: "2025-12-30T21:51:56.093666Z"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:51:56Z"
+    managedFields:
+    - apiVersion: events.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:action: {}
+        f:eventTime: {}
+        f:reason: {}
+        f:regarding: {}
+        f:reportingController: {}
+        f:reportingInstance: {}
+        f:type: {}
+      manager: kube-proxy
+      operation: Update
+      time: "2025-12-30T21:51:56Z"
+    name: isim-dev.18861cc050291662
+    namespace: default
+    resourceVersion: "8049"
+    uid: a4294082-fedd-4330-b4c4-aef6dd89a993
+  reason: Starting
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: kube-proxy
+  reportingInstance: kube-proxy-isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:52:12Z"
+  deprecatedLastTimestamp: "2025-12-30T21:52:12Z"
+  deprecatedSource:
+    component: rke2-cert-monitor
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:52:12Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: rke2
+      operation: Update
+      time: "2025-12-30T21:52:12Z"
+    name: isim-dev.18861cc408aa499e
+    namespace: default
+    resourceVersion: "8380"
+    uid: 457f442b-f57e-462f-85d2-d32a5799ef98
+  note: Node and Certificate Authority certificates managed by rke2 are OK
+  reason: CertificateExpirationOK
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: rke2-cert-monitor
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:52:16Z"
+  deprecatedLastTimestamp: "2025-12-30T21:52:16Z"
+  deprecatedSource:
+    component: rke2-supervisor
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:52:16Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: rke2-supervisor@isim-dev
+      operation: Update
+      time: "2025-12-30T21:52:16Z"
+    name: isim-dev.18861cc52283aaa9
+    namespace: default
+    resourceVersion: "8529"
+    uid: 43f60020-2dee-4837-b60f-2db6ba6bda45
+  note: Deferred node password secret validation complete
+  reason: NodePasswordValidationComplete
+  regarding:
+    kind: Node
+    name: isim-dev
+    uid: isim-dev
+  reportingController: rke2-supervisor
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:52:46Z"
+  deprecatedLastTimestamp: "2025-12-30T21:52:46Z"
+  deprecatedSource:
+    component: node-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:52:46Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:52:46Z"
+    name: isim-dev.18861ccc007a1637
+    namespace: default
+    resourceVersion: "8900"
+    uid: 1d7bda5b-7bb0-45ae-9ebc-f060f8b387ff
+  note: 'Node isim-dev event: Registered Node isim-dev in Controller'
+  reason: RegisteredNode
+  regarding:
+    apiVersion: v1
+    kind: Node
+    name: isim-dev
+    uid: 75908add-436d-4a4a-ac7f-91584193f4b7
+  reportingController: node-controller
+  type: Normal
+- action: Scheduling
+  apiVersion: events.k8s.io/v1
+  deprecatedFirstTimestamp: "null"
+  deprecatedLastTimestamp: null
+  deprecatedSource: {}
+  eventTime: "2025-12-30T21:57:51.547563Z"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:57:51Z"
+    managedFields:
+    - apiVersion: events.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:action: {}
+        f:eventTime: {}
+        f:note: {}
+        f:reason: {}
+        f:regarding: {}
+        f:reportingController: {}
+        f:reportingInstance: {}
+        f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2025-12-30T21:57:51Z"
+    name: virt-launcher-vm-00-pb825.18861d1312dd3830
+    namespace: default
+    resourceVersion: "12484"
+    uid: 0fa200ca-cbfa-463d-8446-b44fc70b9f23
+  note: '0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims.
+    not found'
+  reason: FailedScheduling
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: virt-launcher-vm-00-pb825
+    namespace: default
+    resourceVersion: "12479"
+    uid: e0762618-5577-4082-9f9e-eaa13b7521fa
+  reportingController: default-scheduler
+  reportingInstance: default-scheduler-isim-dev
+  type: Warning
+- action: Scheduling
+  apiVersion: events.k8s.io/v1
+  deprecatedFirstTimestamp: "null"
+  deprecatedLastTimestamp: null
+  deprecatedSource: {}
+  eventTime: "2025-12-30T21:58:01.343525Z"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:01Z"
+    managedFields:
+    - apiVersion: events.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:action: {}
+        f:eventTime: {}
+        f:note: {}
+        f:reason: {}
+        f:regarding: {}
+        f:reportingController: {}
+        f:reportingInstance: {}
+        f:series:
+          .: {}
+          f:count: {}
+          f:lastObservedTime: {}
+        f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2025-12-30T21:58:03Z"
+    name: virt-launcher-vm-00-pb825.18861d155abfaf0e
+    namespace: default
+    resourceVersion: "12662"
+    uid: eb51314b-e507-41a1-8b6b-27c25e1f51cb
+  note: '0/1 nodes are available: pod has unbound immediate PersistentVolumeClaims.
+    not found'
+  reason: FailedScheduling
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: virt-launcher-vm-00-pb825
+    namespace: default
+    resourceVersion: "12485"
+    uid: e0762618-5577-4082-9f9e-eaa13b7521fa
+  reportingController: default-scheduler
+  reportingInstance: default-scheduler-isim-dev
+  series:
+    count: 2
+    lastObservedTime: "2025-12-30T21:58:03.372406Z"
+  type: Warning
+- action: Binding
+  apiVersion: events.k8s.io/v1
+  deprecatedFirstTimestamp: "null"
+  deprecatedLastTimestamp: null
+  deprecatedSource: {}
+  eventTime: "2025-12-30T21:58:03.390113Z"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:03Z"
+    managedFields:
+    - apiVersion: events.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:action: {}
+        f:eventTime: {}
+        f:note: {}
+        f:reason: {}
+        f:regarding: {}
+        f:reportingController: {}
+        f:reportingInstance: {}
+        f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2025-12-30T21:58:03Z"
+    name: virt-launcher-vm-00-pb825.18861d15d4bc2da7
+    namespace: default
+    resourceVersion: "12667"
+    uid: e008c162-1415-4e61-b3c8-068619181208
+  note: Successfully assigned default/virt-launcher-vm-00-pb825 to isim-dev
+  reason: Scheduled
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: virt-launcher-vm-00-pb825
+    namespace: default
+    resourceVersion: "12485"
+    uid: e0762618-5577-4082-9f9e-eaa13b7521fa
+  reportingController: default-scheduler
+  reportingInstance: default-scheduler-isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:58:13Z"
+  deprecatedLastTimestamp: "2025-12-30T21:58:13Z"
+  deprecatedSource:
+    component: attachdetach-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:13Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:58:13Z"
+    name: virt-launcher-vm-00-pb825.18861d18482484e5
+    namespace: default
+    resourceVersion: "12824"
+    uid: 9ac26bcd-2d1d-4843-a0f2-f2629c8c7605
+  note: 'AttachVolume.Attach succeeded for volume "pvc-a30f7311-cc82-4e85-89d6-144156fce238" '
+  reason: SuccessfulAttachVolume
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: virt-launcher-vm-00-pb825
+    namespace: default
+    resourceVersion: "12665"
+    uid: e0762618-5577-4082-9f9e-eaa13b7521fa
+  reportingController: attachdetach-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedLastTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:14Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:58:14Z"
+    name: virt-launcher-vm-00-pb825.18861d1858a777a5
+    namespace: default
+    resourceVersion: "12827"
+    uid: c17549f3-cac1-4e53-9dc6-11d416b91d27
+  note: MapVolume.MapPodDevice succeeded for volume "pvc-a30f7311-cc82-4e85-89d6-144156fce238"
+    globalMapPath "/var/lib/kubelet/plugins/kubernetes.io/csi/volumeDevices/pvc-a30f7311-cc82-4e85-89d6-144156fce238/dev"null
+  reason: SuccessfulMountVolume
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: virt-launcher-vm-00-pb825
+    namespace: default
+    resourceVersion: "12665"
+    uid: e0762618-5577-4082-9f9e-eaa13b7521fa
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedLastTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:14Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:58:14Z"
+    name: virt-launcher-vm-00-pb825.18861d1858a83abe
+    namespace: default
+    resourceVersion: "12828"
+    uid: 41849a25-56fa-4a0f-9375-7ac1edbdc100
+  note: MapVolume.MapPodDevice succeeded for volume "pvc-a30f7311-cc82-4e85-89d6-144156fce238"
+    volumeMapPath "/var/lib/kubelet/pods/e0762618-5577-4082-9f9e-eaa13b7521fa/volumeDevices/kubernetes.io~csi"null
+  reason: SuccessfulMountVolume
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: virt-launcher-vm-00-pb825
+    namespace: default
+    resourceVersion: "12665"
+    uid: e0762618-5577-4082-9f9e-eaa13b7521fa
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedLastTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedSource:
+    component: multus
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:14Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: multus
+      operation: Update
+      time: "2025-12-30T21:58:14Z"
+    name: virt-launcher-vm-00-pb825.18861d185ed95339
+    namespace: default
+    resourceVersion: "12830"
+    uid: 4fd81c64-a27a-4a79-a6e5-ad0966c30390
+  note: Add eth0 [10.52.0.87/32] from k8s-pod-network
+  reason: AddedInterface
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: virt-launcher-vm-00-pb825
+    namespace: default
+    resourceVersion: "12670"
+    uid: e0762618-5577-4082-9f9e-eaa13b7521fa
+  reportingController: multus
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedLastTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:14Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:58:14Z"
+    name: virt-launcher-vm-00-pb825.18861d1865123948
+    namespace: default
+    resourceVersion: "12837"
+    uid: 4da4f9c3-43c6-422d-8a8b-11161eb0b139
+  note: Container image "registry.suse.com/suse/sles/15.7/virt-launcher:1.6.3-150700.3.13.1"
+    already present on machine
+  reason: Pulled
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.initContainers{guest-console-log}
+    kind: Pod
+    name: virt-launcher-vm-00-pb825
+    namespace: default
+    resourceVersion: "12665"
+    uid: e0762618-5577-4082-9f9e-eaa13b7521fa
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedLastTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:14Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:58:14Z"
+    name: virt-launcher-vm-00-pb825.18861d1865ec7948
+    namespace: default
+    resourceVersion: "12838"
+    uid: 16d13efe-a3b7-4c65-86eb-d90be3556e56
+  note: 'Created container: guest-console-log'
+  reason: Created
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.initContainers{guest-console-log}
+    kind: Pod
+    name: virt-launcher-vm-00-pb825
+    namespace: default
+    resourceVersion: "12665"
+    uid: e0762618-5577-4082-9f9e-eaa13b7521fa
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedLastTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:14Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:58:14Z"
+    name: virt-launcher-vm-00-pb825.18861d186cb3c73d
+    namespace: default
+    resourceVersion: "12839"
+    uid: 2b331048-35dd-4372-824c-08f1d7c02327
+  note: Started container guest-console-log
+  reason: Started
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.initContainers{guest-console-log}
+    kind: Pod
+    name: virt-launcher-vm-00-pb825
+    namespace: default
+    resourceVersion: "12665"
+    uid: e0762618-5577-4082-9f9e-eaa13b7521fa
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedLastTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:14Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:58:14Z"
+    name: virt-launcher-vm-00-pb825.18861d18814e467e
+    namespace: default
+    resourceVersion: "12844"
+    uid: ce9e4876-8c1e-4115-9d59-7a8083a51eb5
+  note: Container image "registry.suse.com/suse/sles/15.7/virt-launcher:1.6.3-150700.3.13.1"
+    already present on machine
+  reason: Pulled
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{compute}
+    kind: Pod
+    name: virt-launcher-vm-00-pb825
+    namespace: default
+    resourceVersion: "12665"
+    uid: e0762618-5577-4082-9f9e-eaa13b7521fa
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedLastTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:14Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:58:14Z"
+    name: virt-launcher-vm-00-pb825.18861d1883660264
+    namespace: default
+    resourceVersion: "12846"
+    uid: ccb27cf8-a9dc-4f64-b2a3-73649c75b0ca
+  note: 'Created container: compute'
+  reason: Created
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{compute}
+    kind: Pod
+    name: virt-launcher-vm-00-pb825
+    namespace: default
+    resourceVersion: "12665"
+    uid: e0762618-5577-4082-9f9e-eaa13b7521fa
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedLastTimestamp: "2025-12-30T21:58:14Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:14Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:58:14Z"
+    name: virt-launcher-vm-00-pb825.18861d1888829b99
+    namespace: default
+    resourceVersion: "12848"
+    uid: ce9ef160-7db1-4f69-ab13-b1f45dbb5949
+  note: Started container compute
+  reason: Started
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{compute}
+    kind: Pod
+    name: virt-launcher-vm-00-pb825
+    namespace: default
+    resourceVersion: "12665"
+    uid: e0762618-5577-4082-9f9e-eaa13b7521fa
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:57:51Z"
+  deprecatedLastTimestamp: "2025-12-30T21:57:51Z"
+  deprecatedSource:
+    component: persistentvolume-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:57:51Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:57:51Z"
+    name: vm-00-disk-0-xx3er.18861d130b310daa
+    namespace: default
+    resourceVersion: "12469"
+    uid: b64ac5e0-beb5-444f-9231-e2f6bb5fec01
+  note: 'Error saving claim: Operation cannot be fulfilled on persistentvolumeclaims
+    "vm-00-disk-0-xx3er": the object has been modified; please apply your changes
+    to the latest version and try again'
+  reason: ProvisioningFailed
+  regarding:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: vm-00-disk-0-xx3er
+    namespace: default
+    resourceVersion: "12464"
+    uid: a30f7311-cc82-4e85-89d6-144156fce238
+  reportingController: persistentvolume-controller
+  type: Warning
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 2
+  deprecatedFirstTimestamp: "2025-12-30T21:58:01Z"
+  deprecatedLastTimestamp: "2025-12-30T21:58:01Z"
+  deprecatedSource:
+    component: persistentvolume-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:01Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:58:01Z"
+    name: vm-00-disk-0-xx3er.18861d155abac28a
+    namespace: default
+    resourceVersion: "12606"
+    uid: 2b30c3f4-5ed0-44a5-bb97-6a11dbf49816
+  note: Waiting for a volume to be created either by the external provisioner 'driver.longhorn.io'
+    or manually by the system administrator. If volume creation is delayed, please
+    verify that the provisioner is running and correctly registered.
+  reason: ExternalProvisioning
+  regarding:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: vm-00-disk-0-xx3er
+    namespace: default
+    resourceVersion: "12602"
+    uid: a30f7311-cc82-4e85-89d6-144156fce238
+  reportingController: persistentvolume-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:58:01Z"
+  deprecatedLastTimestamp: "2025-12-30T21:58:01Z"
+  deprecatedSource:
+    component: driver.longhorn.io_csi-provisioner-b5c5f5cbf-5kzn4_ccf49fd9-4dd1-48b1-bb44-998fd013a093
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:01Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: csi-provisioner
+      operation: Update
+      time: "2025-12-30T21:58:01Z"
+    name: vm-00-disk-0-xx3er.18861d155ac3f335
+    namespace: default
+    resourceVersion: "12604"
+    uid: 7c9b6957-d7c0-4811-b41c-d685df6ba26a
+  note: External provisioner is provisioning volume for claim "default/vm-00-disk-0-xx3er"null
+  reason: Provisioning
+  regarding:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: vm-00-disk-0-xx3er
+    namespace: default
+    resourceVersion: "12602"
+    uid: a30f7311-cc82-4e85-89d6-144156fce238
+  reportingController: driver.longhorn.io_csi-provisioner-b5c5f5cbf-5kzn4_ccf49fd9-4dd1-48b1-bb44-998fd013a093
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:58:03Z"
+  deprecatedLastTimestamp: "2025-12-30T21:58:03Z"
+  deprecatedSource:
+    component: driver.longhorn.io_csi-provisioner-b5c5f5cbf-5kzn4_ccf49fd9-4dd1-48b1-bb44-998fd013a093
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:03Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: csi-provisioner
+      operation: Update
+      time: "2025-12-30T21:58:03Z"
+    name: vm-00-disk-0-xx3er.18861d15d3bec2ba
+    namespace: default
+    resourceVersion: "12659"
+    uid: cad973d2-6b6a-4e40-bc8f-94b723629100
+  note: Successfully provisioned volume pvc-a30f7311-cc82-4e85-89d6-144156fce238
+  reason: ProvisioningSucceeded
+  regarding:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: vm-00-disk-0-xx3er
+    namespace: default
+    resourceVersion: "12602"
+    uid: a30f7311-cc82-4e85-89d6-144156fce238
+  reportingController: driver.longhorn.io_csi-provisioner-b5c5f5cbf-5kzn4_ccf49fd9-4dd1-48b1-bb44-998fd013a093
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:57:51Z"
+  deprecatedLastTimestamp: "2025-12-30T21:57:51Z"
+  deprecatedSource:
+    component: virtualmachine-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:57:51Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: virt-controller
+      operation: Update
+      time: "2025-12-30T21:57:51Z"
+    name: vm-00.18861d1310c21ce2
+    namespace: default
+    resourceVersion: "12476"
+    uid: d6f530b3-fa87-406e-abdc-8cc709ecce36
+  note: Started the virtual machine by creating the new virtual machine instance vm-00
+  reason: SuccessfulCreate
+  regarding:
+    apiVersion: kubevirt.io/v1
+    kind: VirtualMachine
+    name: vm-00
+    namespace: default
+    resourceVersion: "12472"
+    uid: 083d9da5-5212-4f15-b735-dca39372d317
+  reportingController: virtualmachine-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:57:51Z"
+  deprecatedLastTimestamp: "2025-12-30T21:57:51Z"
+  deprecatedSource:
+    component: virtualmachine-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:57:51Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: virt-controller
+      operation: Update
+      time: "2025-12-30T21:57:51Z"
+    name: vm-00.18861d1312d9118d
+    namespace: default
+    resourceVersion: "12482"
+    uid: 96cedbd4-0f44-4ff2-abc9-6d65729515a6
+  note: Created virtual machine pod virt-launcher-vm-00-pb825
+  reason: SuccessfulCreate
+  regarding:
+    apiVersion: kubevirt.io/v1
+    kind: VirtualMachineInstance
+    name: vm-00
+    namespace: default
+    resourceVersion: "12477"
+    uid: 86079a85-5289-4e46-88ce-871a9eb2c0ae
+  reportingController: virtualmachine-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:58:17Z"
+  deprecatedLastTimestamp: "2025-12-30T21:58:17Z"
+  deprecatedSource:
+    component: virt-handler
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:17Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: virt-handler
+      operation: Update
+      time: "2025-12-30T21:58:17Z"
+    name: vm-00.18861d190fd6afdd
+    namespace: default
+    resourceVersion: "12882"
+    uid: b38f0f1a-9f96-497f-8c59-774fad6d933f
+  note: VirtualMachineInstance defined.
+  reason: Created
+  regarding:
+    apiVersion: kubevirt.io/v1
+    kind: VirtualMachineInstance
+    name: vm-00
+    namespace: default
+    resourceVersion: "12860"
+    uid: 86079a85-5289-4e46-88ce-871a9eb2c0ae
+  reportingController: virt-handler
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:58:17Z"
+  deprecatedLastTimestamp: "2025-12-30T21:58:17Z"
+  deprecatedSource:
+    component: virt-handler
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:17Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: virt-handler
+      operation: Update
+      time: "2025-12-30T21:58:17Z"
+    name: vm-00.18861d19127c7d0d
+    namespace: default
+    resourceVersion: "12890"
+    uid: 9a7ac2c7-1253-4f71-9851-9ddf02f54066
+  note: VirtualMachineInstance started.
+  reason: Started
+  regarding:
+    apiVersion: kubevirt.io/v1
+    kind: VirtualMachineInstance
+    name: vm-00
+    namespace: default
+    resourceVersion: "12883"
+    uid: 86079a85-5289-4e46-88ce-871a9eb2c0ae
+  reportingController: virt-handler
+  reportingInstance: isim-dev
+  type: Normal
+kind: List
+metadata:
+  resourceVersion: "14471"

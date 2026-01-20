@@ -1,0 +1,145 @@
+apiVersion: v1
+items:
+- apiVersion: harvesterhci.io/v1beta1
+  kind: Addon
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"harvesterhci.io/v1beta1","kind":"Addon","metadata":{"annotations":{},"name":"rancher-monitoring","namespace":"cattle-monitoring-system"},"spec":{"chart":"rancher-monitoring","enabled":false,"repo":"http://harvester-cluster-repo.cattle-system.svc/charts","valuesContent":"rancherMonitoring:\n  enabled: false\nkube-state-metrics:\n  metricLabelsAllowlist:\n    - 'nodes=[*]'\nalertmanager:\n  enabled: true\n  config:\n    global:\n      resolve_timeout: 5m\n  service:\n    port: 9093\n  alertmanagerSpec:\n    externalUrl: \"https://192.168.122.39/api/v1/namespaces/cattle-monitoring-system/services/http:rancher-monitoring-alertmanager:9093/proxy/\"\n    retention: 120h\n    storage:\n      volumeClaimTemplate:\n        spec:\n          storageClassName: harvester-longhorn\n          accessModes:\n          - ReadWriteOnce\n          resources:\n            requests:\n              storage: 5Gi\n    resources:\n      limits:\n        memory: 600Mi\n        cpu: 1000m\n      requests:\n        memory: 100Mi\n        cpu: 100m\ngrafana:\n  persistence:\n    enabled: true\n    size: 2Gi\n    storageClassName: harvester-longhorn\n    type: pvc\n    accessModes:\n    - ReadWriteOnce\n  resources:\n    limits:\n      cpu: 200m\n      memory: 500Mi\n    requests:\n      cpu: 100m\n      memory: 200Mi\nprometheus:\n  service:\n    port: 9090\n  prometheusSpec:\n    evaluationInterval: 1m\n    resources:\n      limits:\n        cpu: 1000m\n        memory: 2500Mi\n      requests:\n        cpu: 750m\n        memory: 1750Mi\n    retention: 5d\n    retentionSize: 50GiB\n    scrapeInterval: 1m\n    storageSpec:\n      volumeClaimTemplate:\n        spec:\n          accessModes:\n          - ReadWriteOnce\n          resources:\n            requests:\n              storage: 50Gi\n          storageClassName: harvester-longhorn\n          volumeMode: Filesystem\n    externalUrl: \"https://192.168.122.39/api/v1/namespaces/cattle-monitoring-system/services/http:rancher-monitoring-prometheus:9090/proxy/\"\nprometheus-node-exporter:\n  resources:\n    limits:\n      cpu: 200m\n      memory: 180Mi\n    requests:\n      cpu: 100m\n      memory: 30Mi\n","version":"107.1.0+up69.8.2-rancher.15"}}
+    creationTimestamp: "2025-12-30T21:49:32Z"
+    generation: 1
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          .: {}
+          f:chart: {}
+          f:enabled: {}
+          f:repo: {}
+          f:valuesContent: {}
+          f:version: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2025-12-30T21:49:32Z"
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:status: {}
+      manager: harvester
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:50:36Z"
+    name: rancher-monitoring
+    namespace: cattle-monitoring-system
+    resourceVersion: "6303"
+    uid: b5c15681-fa76-4ab5-b6d2-075ede4a84cb
+  spec:
+    chart: rancher-monitoring
+    enabled: false
+    repo: http://harvester-cluster-repo.cattle-system.svc/charts
+    valuesContent: |
+      rancherMonitoring:
+        enabled: false
+      kube-state-metrics:
+        metricLabelsAllowlist:
+          - 'nodes=[*]'
+      alertmanager:
+        enabled: true
+        config:
+          global:
+            resolve_timeout: 5m
+        service:
+          port: 9093
+        alertmanagerSpec:
+          externalUrl: "https://192.168.122.39/api/v1/namespaces/cattle-monitoring-system/services/http:rancher-monitoring-alertmanager:9093/proxy/"
+          retention: 120h
+          storage:
+            volumeClaimTemplate:
+              spec:
+                storageClassName: harvester-longhorn
+                accessModes:
+                - ReadWriteOnce
+                resources:
+                  requests:
+                    storage: 5Gi
+          resources:
+            limits:
+              memory: 600Mi
+              cpu: 1000m
+            requests:
+              memory: 100Mi
+              cpu: 100m
+      grafana:
+        persistence:
+          enabled: true
+          size: 2Gi
+          storageClassName: harvester-longhorn
+          type: pvc
+          accessModes:
+          - ReadWriteOnce
+        resources:
+          limits:
+            cpu: 200m
+            memory: 500Mi
+          requests:
+            cpu: 100m
+            memory: 200Mi
+      prometheus:
+        service:
+          port: 9090
+        prometheusSpec:
+          evaluationInterval: 1m
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 2500Mi
+            requests:
+              cpu: 750m
+              memory: 1750Mi
+          retention: 5d
+          retentionSize: 50GiB
+          scrapeInterval: 1m
+          storageSpec:
+            volumeClaimTemplate:
+              spec:
+                accessModes:
+                - ReadWriteOnce
+                resources:
+                  requests:
+                    storage: 50Gi
+                storageClassName: harvester-longhorn
+                volumeMode: Filesystem
+          externalUrl: "https://192.168.122.39/api/v1/namespaces/cattle-monitoring-system/services/http:rancher-monitoring-prometheus:9090/proxy/"
+      prometheus-node-exporter:
+        resources:
+          limits:
+            cpu: 200m
+            memory: 180Mi
+          requests:
+            cpu: 100m
+            memory: 30Mi
+    version: 107.1.0+up69.8.2-rancher.15
+  status:
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:50:35Z"
+      status: "True"
+      type: Completed
+    - lastUpdateTime: "2025-12-30T21:50:35Z"
+      status: "False"
+      type: InProgress
+    - lastUpdateTime: "2025-12-30T21:50:35Z"
+      status: "False"
+      type: OperationFailed
+    status: AddonDisabled
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14484"

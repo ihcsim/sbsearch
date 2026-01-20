@@ -1,0 +1,429 @@
+apiVersion: v1
+items:
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: cdi-apiserver
+    usage:
+      cpu: 751071n
+      memory: 24380Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: containerized-data-importer
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-operator
+      cdi.kubevirt.io: cdi-apiserver
+      operator.cdi.kubevirt.io/createVersion: 1.62.0-150700.9.3.1
+      pod-template-hash: bf58b56f7
+    name: cdi-apiserver-bf58b56f7-b9kcx
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:22Z"
+  window: 10.963s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: cdi-deployment
+    usage:
+      cpu: 6716245n
+      memory: 110740Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: containerized-data-importer
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-operator
+      cdi.kubevirt.io: cdi-deployment
+      operator.cdi.kubevirt.io/createVersion: 1.62.0-150700.9.3.1
+      pod-template-hash: ccd4878d6
+      prometheus.cdi.kubevirt.io: "true"
+    name: cdi-deployment-ccd4878d6-477ck
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:24Z"
+  window: 18.294s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: cdi-operator
+    usage:
+      cpu: 832853n
+      memory: 161772Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      cdi.kubevirt.io: cdi-operator
+      name: cdi-operator
+      operator.cdi.kubevirt.io: "null"
+      pod-template-hash: 664c664b49
+      prometheus.cdi.kubevirt.io: "true"
+    name: cdi-operator-664c664b49-frkcb
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:26Z"
+  window: 14.251s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: cdi-uploadproxy
+    usage:
+      cpu: 331977n
+      memory: 16816Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app: containerized-data-importer
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-operator
+      cdi.kubevirt.io: cdi-uploadproxy
+      operator.cdi.kubevirt.io/createVersion: 1.62.0-150700.9.3.1
+      pod-template-hash: 5449fb9c7b
+    name: cdi-uploadproxy-5449fb9c7b-gjrcr
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:26Z"
+  window: 15.736s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: apiserver
+    usage:
+      cpu: 16081914n
+      memory: 395872Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/component: apiserver
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: harvester
+      app.kubernetes.io/part-of: harvester
+      app.kubernetes.io/version: v1.7.0
+      helm.sh/chart: harvester-1.7.0
+      helm.sh/release: harvester
+      pod-template-hash: 8db57f44b
+    name: harvester-8db57f44b-cnhts
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:24Z"
+  window: 25.026s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: harvester-load-balancer
+    usage:
+      cpu: 602103n
+      memory: 29840Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/name: harvester-load-balancer
+      pod-template-hash: 8cd989745
+    name: harvester-load-balancer-8cd989745-5ss8p
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:25Z"
+  window: 13.692s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: harvester-load-balancer-webhook
+    usage:
+      cpu: 282235n
+      memory: 129392Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/name: harvester-load-balancer-webhook
+      pod-template-hash: 55d88bf6fc
+    name: harvester-load-balancer-webhook-55d88bf6fc-lr8xk
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:25Z"
+  window: 18.52s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: harvester-network-manager
+    usage:
+      cpu: 458070n
+      memory: 38612Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/name: harvester-network-controller-manager
+      pod-template-hash: b5f8c4685
+    name: harvester-network-controller-manager-b5f8c4685-vv7h7
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:26Z"
+  window: 26.127s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: harvester-network
+    usage:
+      cpu: 42342n
+      memory: 49804Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/name: harvester-network-controller
+      controller-revision-hash: d566b89b5
+      pod-template-generation: "1"
+    name: harvester-network-controller-vgtt7
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:17Z"
+  window: 19.862s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: harvester-network-webhook
+    usage:
+      cpu: 106750n
+      memory: 103832Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/name: harvester-network-webhook
+      pod-template-hash: 5df9787db4
+    name: harvester-network-webhook-5df9787db4-hpph5
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:15Z"
+  window: 19.822s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: harvester-networkfs-manager
+    usage:
+      cpu: 554167n
+      memory: 23288Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/name: harvester-networkfs-manager
+      controller-revision-hash: 646c79cf6d
+      pod-template-generation: "1"
+    name: harvester-networkfs-manager-mpf79
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:24Z"
+  window: 14.409s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: harvester-node-disk-manager
+    usage:
+      cpu: 69817n
+      memory: 29904Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/name: harvester-node-disk-manager
+      controller-revision-hash: 7c965566d6
+      pod-template-generation: "1"
+    name: harvester-node-disk-manager-nbzmf
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:09Z"
+  window: 18.448s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: harvester-node-disk-manager-webhook
+    usage:
+      cpu: 322169n
+      memory: 128508Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/component: webhook
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: harvester-node-disk-manager-webhook
+      app.kubernetes.io/version: v1.7.0
+      helm.sh/chart: harvester-node-disk-manager-1.7.0
+      pod-template-hash: f4f6496f9
+    name: harvester-node-disk-manager-webhook-f4f6496f9-c864x
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:19Z"
+  window: 13.018s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: node-manager
+    usage:
+      cpu: 483007n
+      memory: 18700Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/name: harvester-node-manager
+      controller-revision-hash: 67cff497b
+      name: harvester-node-manager
+      pod-template-generation: "1"
+    name: harvester-node-manager-hm924
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:18Z"
+  window: 19.244s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: harvester-node-manager-webhook
+    usage:
+      cpu: 24984339n
+      memory: 106044Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/name: harvester-node-manager-webhook
+      pod-template-hash: 744d67b465
+    name: harvester-node-manager-webhook-744d67b465-slfgx
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:20Z"
+  window: 14.431s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: harvester-webhook
+    usage:
+      cpu: 2570412n
+      memory: 142624Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/component: webhook-server
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: harvester
+      app.kubernetes.io/part-of: harvester
+      app.kubernetes.io/version: v1.7.0
+      helm.sh/chart: harvester-1.7.0
+      helm.sh/release: harvester
+      pod-template-hash: 6cb965f6d9
+    name: harvester-webhook-6cb965f6d9-z24qs
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:22Z"
+  window: 14.479s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: kube-vip
+    usage:
+      cpu: 1944693n
+      memory: 26356Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/instance: harvester
+      app.kubernetes.io/name: kube-vip
+      controller-revision-hash: 6789dd59d4
+      pod-template-generation: "1"
+    name: kube-vip-gnlb7
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:25Z"
+  window: 27.248s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: virt-api
+    usage:
+      cpu: 720219n
+      memory: 246496Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      app.kubernetes.io/version: 1.6.3-150700.3.13.1
+      kubevirt.io: virt-api
+      pod-template-hash: 75c4845cd
+      prometheus.kubevirt.io: "true"
+    name: virt-api-75c4845cd-v5jkf
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:23Z"
+  window: 18.393s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: virt-controller
+    usage:
+      cpu: 2050762n
+      memory: 121104Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      app.kubernetes.io/version: 1.6.3-150700.3.13.1
+      kubevirt.io: virt-controller
+      pod-template-hash: 667794cf47
+      prometheus.kubevirt.io: "true"
+    name: virt-controller-667794cf47-4wkk2
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:18Z"
+  window: 17.828s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: virt-controller
+    usage:
+      cpu: 981683n
+      memory: 99164Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      app.kubernetes.io/version: 1.6.3-150700.3.13.1
+      kubevirt.io: virt-controller
+      pod-template-hash: 667794cf47
+      prometheus.kubevirt.io: "true"
+    name: virt-controller-667794cf47-6xdmq
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:18Z"
+  window: 15.778s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: virt-handler
+    usage:
+      cpu: 967650n
+      memory: 92236Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      app.kubernetes.io/version: 1.6.3-150700.3.13.1
+      controller-revision-hash: 6c9d7dd86d
+      kubevirt.io: virt-handler
+      pod-template-generation: "1"
+      prometheus.kubevirt.io: "true"
+    name: virt-handler-wsl8k
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:22Z"
+  window: 13.076s
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: virt-operator
+    usage:
+      cpu: 18782994n
+      memory: 324828Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:36Z"
+    labels:
+      app.kubernetes.io/component: operator
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: virt-operator
+      app.kubernetes.io/part-of: kubevirt-operator
+      app.kubernetes.io/version: 1.6.3
+      helm.sh/chart: kubevirt-operator-0.6.1
+      helm.sh/release: harvester
+      kubevirt.io: virt-operator
+      pod-template-hash: 669f6964cd
+      prometheus.kubevirt.io: "true"
+    name: virt-operator-669f6964cd-b2bfh
+    namespace: harvester-system
+  timestamp: "2025-12-30T22:00:25Z"
+  window: 17.018s
+kind: List
+metadata: {}

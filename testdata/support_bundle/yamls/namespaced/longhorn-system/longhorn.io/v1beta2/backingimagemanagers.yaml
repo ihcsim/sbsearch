@@ -1,0 +1,102 @@
+apiVersion: v1
+items:
+- apiVersion: longhorn.io/v1beta2
+  kind: BackingImageManager
+  metadata:
+    creationTimestamp: "2025-12-30T21:55:43Z"
+    finalizers:
+    - longhorn.io
+    generation: 1
+    labels:
+      longhorn.io/component: backing-image-manager
+      longhorn.io/disk-uuid: e06ad177-0001-4488-b554-c0da2d4f366b
+      longhorn.io/managed-by: longhorn-manager
+      longhorn.io/node: isim-dev
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:longhorn.io/component: {}
+            f:longhorn.io/disk-uuid: {}
+            f:longhorn.io/managed-by: {}
+            f:longhorn.io/node: {}
+        f:spec:
+          .: {}
+          f:backingImages:
+            .: {}
+            f:vmi-5987e3f0-076b-438e-82a4-f635689704b3: {}
+          f:diskPath: {}
+          f:diskUUID: {}
+          f:image: {}
+          f:nodeID: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2025-12-30T21:55:43Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:apiMinVersion: {}
+          f:apiVersion: {}
+          f:backingImageFileMap:
+            .: {}
+            f:vmi-5987e3f0-076b-438e-82a4-f635689704b3:
+              .: {}
+              f:currentChecksum: {}
+              f:message: {}
+              f:name: {}
+              f:progress: {}
+              f:realSize: {}
+              f:senderManagerAddress: {}
+              f:sendingReference: {}
+              f:size: {}
+              f:state: {}
+              f:uuid: {}
+              f:virtualSize: {}
+          f:currentState: {}
+          f:ip: {}
+          f:ownerID: {}
+          f:storageIP: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:56:50Z"
+    name: bim-13aaaae89cd2339efddf37199e7643cb76425cef3c810eb3fd75f6e457aeda31
+    namespace: longhorn-system
+    resourceVersion: "11750"
+    uid: dde2ba8e-8d64-4412-b2af-069c9a2e7fd1
+  spec:
+    backingImages:
+      vmi-5987e3f0-076b-438e-82a4-f635689704b3: c22539a2
+    diskPath: /var/lib/harvester/defaultdisk
+    diskUUID: e06ad177-0001-4488-b554-c0da2d4f366b
+    image: longhornio/backing-image-manager:v1.10.1
+    nodeID: isim-dev
+  status:
+    apiMinVersion: 3
+    apiVersion: 3
+    backingImageFileMap:
+      vmi-5987e3f0-076b-438e-82a4-f635689704b3:
+        currentChecksum: 92ea03f0c5cbdf4b39650d595bb563ea060068bc86530c184a7ed2e1e3f1a5c092ac02d709b134f68c26ed93186ddcd40ab562e6e9e7aaf9213e3e080db9498e
+        message: "null"
+        name: vmi-5987e3f0-076b-438e-82a4-f635689704b3
+        progress: 100
+        realSize: 2.57138688e+08
+        senderManagerAddress: "null"
+        sendingReference: 0
+        size: 2.58342912e+08
+        state: ready
+        uuid: c22539a2
+        virtualSize: 3.758096384e+09
+    currentState: running
+    ip: 10.52.0.85
+    ownerID: isim-dev
+    storageIP: 10.52.0.85
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14495"

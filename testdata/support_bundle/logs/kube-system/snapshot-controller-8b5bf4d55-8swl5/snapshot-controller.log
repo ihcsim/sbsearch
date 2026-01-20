@@ -1,0 +1,190 @@
+2025-12-30T21:49:37.838456258Z I1230 21:49:37.833151       1 feature_gate.go:385] feature gates: {map[]}
+2025-12-30T21:49:37.838493383Z I1230 21:49:37.833233       1 main.go:181] "Version" version="v8.3.0"
+2025-12-30T21:49:37.838510597Z I1230 21:49:37.833449       1 envvar.go:172] "Feature gate default state" feature="ClientsPreferCBOR" enabled=false
+2025-12-30T21:49:37.838516690Z I1230 21:49:37.833465       1 envvar.go:172] "Feature gate default state" feature="InformerResourceVersion" enabled=false
+2025-12-30T21:49:37.838518433Z I1230 21:49:37.833468       1 envvar.go:172] "Feature gate default state" feature="InOrderInformers" enabled=true
+2025-12-30T21:49:37.838520056Z I1230 21:49:37.833471       1 envvar.go:172] "Feature gate default state" feature="WatchListClient" enabled=false
+2025-12-30T21:49:37.838521820Z I1230 21:49:37.833473       1 envvar.go:172] "Feature gate default state" feature="ClientsAllowCBOR" enabled=false
+2025-12-30T21:49:37.838523674Z I1230 21:49:37.834670       1 main.go:232] Start NewCSISnapshotController with kubeconfig [] resyncPeriod [15m0s]
+2025-12-30T21:49:38.026428987Z I1230 21:49:38.019958       1 leaderelection.go:257] attempting to acquire leader lease kube-system/snapshot-controller-leader...
+2025-12-30T21:49:38.121403697Z E1230 21:49:38.120668       1 leaderelection.go:440] error initially creating leader election record: leases.coordination.k8s.io "snapshot-controller-leader" already exists
+2025-12-30T21:49:38.130456514Z I1230 21:49:38.126860       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:49:46.506680217Z I1230 21:49:46.506591       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:49:46.506699809Z I1230 21:49:46.506610       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:49:46.506704417Z I1230 21:49:46.506629       1 leader_election.go:202] "New leader detected" leader="snapshot-controller-8b5bf4d55-hmjk2"
+2025-12-30T21:49:55.439800120Z I1230 21:49:55.439690       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:49:55.439844174Z I1230 21:49:55.439708       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:05.363874404Z I1230 21:50:05.363758       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:50:05.363900168Z I1230 21:50:05.363792       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:12.377073853Z I1230 21:50:12.376957       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:50:12.377106321Z I1230 21:50:12.376975       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:18.076513399Z I1230 21:50:18.076369       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:50:18.076527613Z I1230 21:50:18.076386       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:23.718634914Z I1230 21:50:23.718549       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:50:23.718660078Z I1230 21:50:23.718565       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:29.983974192Z I1230 21:50:29.983850       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:50:29.984001451Z I1230 21:50:29.983870       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:40.000754758Z I1230 21:50:39.998934       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:50:40.000778047Z I1230 21:50:39.998952       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:48.327232695Z I1230 21:50:48.327145       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:50:48.327256521Z I1230 21:50:48.327164       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:50:57.062858110Z I1230 21:50:57.062745       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:50:57.062881610Z I1230 21:50:57.062760       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:05.018559692Z I1230 21:51:05.018384       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:51:05.018592240Z I1230 21:51:05.018407       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:11.569512442Z I1230 21:51:11.569321       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:51:11.569566610Z I1230 21:51:11.569339       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:19.784899440Z I1230 21:51:19.784808       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:51:19.784927391Z I1230 21:51:19.784823       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:30.389219227Z I1230 21:51:30.389122       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:51:30.389252579Z I1230 21:51:30.389138       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:36.374053404Z I1230 21:51:36.373924       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:51:36.374077660Z I1230 21:51:36.373940       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:42.682682195Z I1230 21:51:42.682572       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:51:42.682766508Z I1230 21:51:42.682736       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:51:53.381348473Z I1230 21:51:50.475938       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:51:53.381360396Z I1230 21:51:50.475954       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:01.435994110Z I1230 21:52:01.435921       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:52:01.436021481Z I1230 21:52:01.435937       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:06.596009705Z I1230 21:52:06.595933       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:52:06.596036706Z I1230 21:52:06.595947       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:15.225924417Z I1230 21:52:15.225823       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:52:15.225953713Z I1230 21:52:15.225847       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:24.436512303Z I1230 21:52:24.436316       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:52:24.436581454Z I1230 21:52:24.436336       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:33.383121900Z I1230 21:52:33.383042       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:52:33.383139293Z I1230 21:52:33.383059       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:41.622694092Z I1230 21:52:41.622440       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:52:41.622754427Z I1230 21:52:41.622486       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:52:52.106718463Z I1230 21:52:52.106583       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:52:52.106755914Z I1230 21:52:52.106605       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:00.796921854Z I1230 21:53:00.796511       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:53:00.796956990Z I1230 21:53:00.796525       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:07.731656626Z I1230 21:53:07.731540       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:53:07.731685972Z I1230 21:53:07.731561       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:13.867360035Z I1230 21:53:13.867282       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:53:13.867406482Z I1230 21:53:13.867298       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:22.137937302Z I1230 21:53:22.137723       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:53:22.137976297Z I1230 21:53:22.137744       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:29.760516981Z I1230 21:53:29.760385       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:53:29.760554943Z I1230 21:53:29.760405       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:39.413391050Z I1230 21:53:39.413277       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:53:39.413423872Z I1230 21:53:39.413295       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:45.067710506Z I1230 21:53:45.067575       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:53:45.067745572Z I1230 21:53:45.067598       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:53:55.235056919Z I1230 21:53:55.234975       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:53:55.235088139Z I1230 21:53:55.235001       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:03.071795710Z I1230 21:54:03.071604       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:54:03.071839132Z I1230 21:54:03.071619       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:11.861266944Z I1230 21:54:11.861120       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:54:11.861305136Z I1230 21:54:11.861139       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:20.534086519Z I1230 21:54:20.533974       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:54:20.534119382Z I1230 21:54:20.533992       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:29.303400575Z I1230 21:54:29.303289       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:54:29.303431493Z I1230 21:54:29.303307       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:40.248970539Z I1230 21:54:40.248900       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:54:40.248980738Z I1230 21:54:40.248913       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:48.665202654Z I1230 21:54:48.665086       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:54:48.665234665Z I1230 21:54:48.665167       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:54:56.721119781Z I1230 21:54:56.720993       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:54:56.721147424Z I1230 21:54:56.721017       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:05.281664842Z I1230 21:55:05.280186       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:55:05.281698607Z I1230 21:55:05.280205       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:16.015764582Z I1230 21:55:16.015657       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:55:16.015812763Z I1230 21:55:16.015674       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:22.435118767Z I1230 21:55:22.434926       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:55:22.435156137Z I1230 21:55:22.434946       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:28.467298585Z I1230 21:55:28.467130       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:55:28.467333340Z I1230 21:55:28.467153       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:34.420031208Z I1230 21:55:34.419874       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:55:34.420061635Z I1230 21:55:34.419895       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:44.121860837Z I1230 21:55:44.121743       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:55:44.121884381Z I1230 21:55:44.121768       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:55:53.657050778Z I1230 21:55:53.656968       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:55:53.657070135Z I1230 21:55:53.656981       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:03.928479928Z I1230 21:56:03.928382       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:56:03.928497993Z I1230 21:56:03.928399       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:14.264504360Z I1230 21:56:14.264384       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:56:14.264529719Z I1230 21:56:14.264404       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:25.118566082Z I1230 21:56:25.118448       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:56:25.118589646Z I1230 21:56:25.118466       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:30.138128987Z I1230 21:56:30.137912       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:56:30.138168721Z I1230 21:56:30.137930       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:37.200569043Z I1230 21:56:37.200447       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:56:37.200593240Z I1230 21:56:37.200469       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:44.053317578Z I1230 21:56:44.053165       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:56:44.053352254Z I1230 21:56:44.053183       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:56:50.844177767Z I1230 21:56:50.844080       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:56:50.844204518Z I1230 21:56:50.844093       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:01.482871528Z I1230 21:57:01.482640       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:57:01.482918106Z I1230 21:57:01.482662       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:08.842513508Z I1230 21:57:08.842198       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:57:08.842534679Z I1230 21:57:08.842219       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:18.429811324Z I1230 21:57:18.429649       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:57:18.429862582Z I1230 21:57:18.429670       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:24.479070522Z I1230 21:57:24.478960       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:57:24.479096130Z I1230 21:57:24.478983       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:30.315353453Z I1230 21:57:30.315269       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:57:30.315388418Z I1230 21:57:30.315290       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:36.172032848Z I1230 21:57:36.171904       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:57:36.172062665Z I1230 21:57:36.171919       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:43.331248685Z I1230 21:57:43.331146       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:57:43.331277018Z I1230 21:57:43.331163       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:57:50.096845785Z I1230 21:57:50.096718       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:57:50.096871284Z I1230 21:57:50.096737       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:00.524588067Z I1230 21:58:00.524439       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:58:00.524617052Z I1230 21:58:00.524458       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:07.838152563Z I1230 21:58:07.837976       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:58:07.838196256Z I1230 21:58:07.837998       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:16.415475050Z I1230 21:58:16.415345       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:58:16.415505528Z I1230 21:58:16.415367       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:23.523443552Z I1230 21:58:23.523347       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:58:23.523461286Z I1230 21:58:23.523361       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:32.666817982Z I1230 21:58:32.666692       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:58:32.666856135Z I1230 21:58:32.666707       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:38.453231913Z I1230 21:58:38.453132       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:58:38.453252271Z I1230 21:58:38.453147       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:44.895823306Z I1230 21:58:44.895662       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:58:44.895862801Z I1230 21:58:44.895725       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:58:50.122125081Z I1230 21:58:50.121948       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:58:50.122162963Z I1230 21:58:50.121983       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:00.829567165Z I1230 21:59:00.829411       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:59:00.829598585Z I1230 21:59:00.829433       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:08.836384051Z I1230 21:59:08.836259       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:59:08.836416463Z I1230 21:59:08.836278       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:19.130036211Z I1230 21:59:19.129945       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:59:19.130061909Z I1230 21:59:19.129966       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:24.519722108Z I1230 21:59:24.519567       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:59:24.519777684Z I1230 21:59:24.519585       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:30.836046349Z I1230 21:59:30.835922       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:59:30.836094570Z I1230 21:59:30.835937       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:36.008937611Z I1230 21:59:36.008782       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:59:36.008993206Z I1230 21:59:36.008807       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:45.351952430Z I1230 21:59:45.351886       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:59:45.351967568Z I1230 21:59:45.351901       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T21:59:53.002509431Z I1230 21:59:53.002269       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T21:59:53.002564435Z I1230 21:59:53.002289       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:03.091048089Z I1230 22:00:03.090931       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T22:00:03.091080510Z I1230 22:00:03.090954       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:12.945946873Z I1230 22:00:12.945644       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T22:00:12.945971370Z I1230 22:00:12.945658       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:20.261157523Z I1230 22:00:20.261037       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T22:00:20.261230431Z I1230 22:00:20.261060       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:28.506159834Z I1230 22:00:28.506064       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T22:00:28.506191314Z I1230 22:00:28.506088       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:38.194596323Z I1230 22:00:38.194539       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T22:00:38.194612293Z I1230 22:00:38.194554       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:43.521895883Z I1230 22:00:43.521795       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T22:00:43.521925339Z I1230 22:00:43.521817       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:49.884558690Z I1230 22:00:49.884306       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T22:00:49.884587725Z I1230 22:00:49.884347       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T22:00:55.902083401Z I1230 22:00:55.901937       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T22:00:55.902113487Z I1230 22:00:55.901956       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T22:01:05.749171460Z I1230 22:01:05.748952       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T22:01:05.749201997Z I1230 22:01:05.748971       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T22:01:15.803823564Z I1230 22:01:15.803718       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T22:01:15.803854032Z I1230 22:01:15.803736       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T22:01:25.607370843Z I1230 22:01:25.607162       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T22:01:25.607410128Z I1230 22:01:25.607180       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader
+2025-12-30T22:01:30.641364573Z I1230 22:01:30.641226       1 leaderelection.go:456] lock is held by snapshot-controller-8b5bf4d55-hmjk2 and has not yet expired
+2025-12-30T22:01:30.641415328Z I1230 22:01:30.641246       1 leaderelection.go:266] failed to acquire lease kube-system/snapshot-controller-leader

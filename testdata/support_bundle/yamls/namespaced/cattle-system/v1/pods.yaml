@@ -1,0 +1,5890 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+    creationTimestamp: "2025-12-30T21:49:41Z"
+    generateName: apply-sync-additional-ca-on-isim-dev-with-2c27af4f7e139d7-0ffdd-
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      batch.kubernetes.io/controller-uid: ff19e5a3-e94d-4920-ba86-c7aa63c5f345
+      batch.kubernetes.io/job-name: apply-sync-additional-ca-on-isim-dev-with-2c27af4f7e139d7-0ffdd
+      controller-uid: ff19e5a3-e94d-4920-ba86-c7aa63c5f345
+      job-name: apply-sync-additional-ca-on-isim-dev-with-2c27af4f7e139d7-0ffdd
+      plan.upgrade.cattle.io/sync-additional-ca: 2c27af4f7e139d7c15346edc0adb200edade07eef796ef2c41ef923b
+      upgrade.cattle.io/controller: system-upgrade-controller
+      upgrade.cattle.io/exclusive: "false"
+      upgrade.cattle.io/node: isim-dev
+      upgrade.cattle.io/plan: sync-additional-ca
+      upgrade.cattle.io/version: v1.1.0
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:batch.kubernetes.io/controller-uid: {}
+            f:batch.kubernetes.io/job-name: {}
+            f:controller-uid: {}
+            f:job-name: {}
+            f:plan.upgrade.cattle.io/sync-additional-ca: {}
+            f:upgrade.cattle.io/controller: {}
+            f:upgrade.cattle.io/exclusive: {}
+            f:upgrade.cattle.io/node: {}
+            f:upgrade.cattle.io/plan: {}
+            f:upgrade.cattle.io/version: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"ff19e5a3-e94d-4920-ba86-c7aa63c5f345"}: {}
+        f:spec:
+          f:affinity:
+            .: {}
+            f:nodeAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution: {}
+            f:podAntiAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution: {}
+          f:containers:
+            k:{"name":"upgrade"}:
+              .: {}
+              f:args: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"SYSTEM_UPGRADE_NODE_NAME"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+                k:{"name":"SYSTEM_UPGRADE_PLAN_LATEST_HASH"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"SYSTEM_UPGRADE_PLAN_LATEST_VERSION"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"SYSTEM_UPGRADE_PLAN_NAME"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"SYSTEM_UPGRADE_POD_NAME"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+                k:{"name":"SYSTEM_UPGRADE_POD_UID"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:capabilities:
+                  .: {}
+                  f:add: {}
+                f:privileged: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/ca"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/host"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/run/system-upgrade/pod"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:hostIPC: {}
+          f:hostNetwork: {}
+          f:hostPID: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:serviceAccount: {}
+          f:serviceAccountName: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"host-root"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"pod-info"}:
+              .: {}
+              f:downwardAPI:
+                .: {}
+                f:defaultMode: {}
+                f:items: {}
+              f:name: {}
+            k:{"name":"secret-harvester-additional-ca"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:optional: {}
+                f:secretName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:49:41Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:observedGeneration: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:observedGeneration: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:observedGeneration: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodScheduled"}:
+              f:observedGeneration: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:observedGeneration: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:observedGeneration: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"192.168.122.168"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:49:45Z"
+    name: apply-sync-additional-ca-on-isim-dev-with-2c27af4f7e139d7-pqp2l
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: batch/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Job
+      name: apply-sync-additional-ca-on-isim-dev-with-2c27af4f7e139d7-0ffdd
+      uid: ff19e5a3-e94d-4920-ba86-c7aa63c5f345
+    resourceVersion: "5007"
+    uid: 5fc5014d-6dc3-4228-900a-0d674c401cc8
+  spec:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+              - isim-dev
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+            - key: upgrade.cattle.io/plan
+              operator: In
+              values:
+              - sync-additional-ca
+          topologyKey: kubernetes.io/hostname
+    containers:
+    - args:
+      - echo "Update additional ca ..."; cp /ca/additional-ca.pem /host/etc/pki/trust/anchors;
+        chroot /host update-ca-certificates; echo "Done";
+      command:
+      - /bin/sh
+      - -c
+      env:
+      - name: SYSTEM_UPGRADE_NODE_NAME
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: spec.nodeName
+      - name: SYSTEM_UPGRADE_POD_NAME
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.name
+      - name: SYSTEM_UPGRADE_POD_UID
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.uid
+      - name: SYSTEM_UPGRADE_PLAN_NAME
+        value: sync-additional-ca
+      - name: SYSTEM_UPGRADE_PLAN_LATEST_HASH
+        value: 2c27af4f7e139d7c15346edc0adb200edade07eef796ef2c41ef923b
+      - name: SYSTEM_UPGRADE_PLAN_LATEST_VERSION
+        value: v1.1.0
+      image: registry.suse.com/bci/bci-base:15.7
+      imagePullPolicy: IfNotPresent
+      name: upgrade
+      resources: {}
+      securityContext:
+        capabilities:
+          add:
+          - CAP_SYS_BOOT
+        privileged: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /host
+        name: host-root
+      - mountPath: /run/system-upgrade/pod
+        name: pod-info
+        readOnly: true
+      - mountPath: /ca
+        name: secret-harvester-additional-ca
+        readOnly: true
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-sp5wv
+        readOnly: true
+    dnsPolicy: ClusterFirstWithHostNet
+    enableServiceLinks: true
+    hostIPC: true
+    hostNetwork: true
+    hostPID: true
+    nodeName: isim-dev
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Never
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: system-upgrade-controller
+    serviceAccountName: system-upgrade-controller
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoSchedule
+      key: node.kubernetes.io/unschedulable
+      operator: Exists
+    - effect: NoExecute
+      operator: Exists
+    volumes:
+    - hostPath:
+        path: /
+        type: Directory
+      name: host-root
+    - downwardAPI:
+        defaultMode: 420
+        items:
+        - fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.labels
+          path: labels
+        - fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.annotations
+          path: annotations
+      name: pod-info
+    - name: secret-harvester-additional-ca
+      secret:
+        defaultMode: 420
+        optional: false
+        secretName: harvester-additional-ca
+    - name: kube-api-access-sp5wv
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:49:45Z"
+      observedGeneration: 1
+      status: "False"
+      type: PodReadyToStartContainers
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:49:42Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "True"
+      type: Initialized
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:49:43Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:49:43Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:49:41Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://fa7d3f6c81182bf5aae07ec25728206c6dcbecaa11977c3c03ea65886e0d76b0
+      image: registry.suse.com/bci/bci-base:15.7
+      imageID: sha256:6c88f87e057b726712244c5c688b03e33cec51389ed2bd371957a8b155210245
+      lastState: {}
+      name: upgrade
+      ready: false
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://fa7d3f6c81182bf5aae07ec25728206c6dcbecaa11977c3c03ea65886e0d76b0
+          exitCode: 0
+          finishedAt: "2025-12-30T21:49:43Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:49:42Z"
+      user:
+        linux:
+          gid: 0
+          supplementalGroups:
+          - 0
+          uid: 0
+      volumeMounts:
+      - mountPath: /host
+        name: host-root
+      - mountPath: /run/system-upgrade/pod
+        name: pod-info
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /ca
+        name: secret-harvester-additional-ca
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-sp5wv
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.122.168
+    hostIPs:
+    - ip: 192.168.122.168
+    observedGeneration: 1
+    phase: Succeeded
+    podIP: 192.168.122.168
+    podIPs:
+    - ip: 192.168.122.168
+    qosClass: BestEffort
+    startTime: "2025-12-30T21:49:42Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    creationTimestamp: "2025-12-30T21:51:40Z"
+    generateName: apply-system-agent-upgrader-on-isim-dev-with-69db0346d5bc-3cc66-
+    generation: 1
+    labels:
+      batch.kubernetes.io/controller-uid: 8fc5252c-817c-417a-b9ac-aa14dbec7868
+      batch.kubernetes.io/job-name: apply-system-agent-upgrader-on-isim-dev-with-69db0346d5bc-3cc66
+      controller-uid: 8fc5252c-817c-417a-b9ac-aa14dbec7868
+      job-name: apply-system-agent-upgrader-on-isim-dev-with-69db0346d5bc-3cc66
+      plan.upgrade.cattle.io/system-agent-upgrader: 69db0346d5bcb77db36e134443334a767f964ab7e8a3c5f475915d24
+      upgrade.cattle.io/controller: system-upgrade-controller
+      upgrade.cattle.io/exclusive: "false"
+      upgrade.cattle.io/node: isim-dev
+      upgrade.cattle.io/plan: system-agent-upgrader
+      upgrade.cattle.io/version: v0.3.14-suc
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:batch.kubernetes.io/controller-uid: {}
+            f:batch.kubernetes.io/job-name: {}
+            f:controller-uid: {}
+            f:job-name: {}
+            f:plan.upgrade.cattle.io/system-agent-upgrader: {}
+            f:upgrade.cattle.io/controller: {}
+            f:upgrade.cattle.io/exclusive: {}
+            f:upgrade.cattle.io/node: {}
+            f:upgrade.cattle.io/plan: {}
+            f:upgrade.cattle.io/version: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"8fc5252c-817c-417a-b9ac-aa14dbec7868"}: {}
+        f:spec:
+          f:affinity:
+            .: {}
+            f:nodeAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution: {}
+            f:podAntiAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution: {}
+          f:containers:
+            k:{"name":"upgrade"}:
+              .: {}
+              f:env:
+                .: {}
+                k:{"name":"CATTLE_ROLE_WORKER"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"STRICT_VERIFY"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"SYSTEM_UPGRADE_NODE_NAME"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+                k:{"name":"SYSTEM_UPGRADE_PLAN_LATEST_HASH"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"SYSTEM_UPGRADE_PLAN_LATEST_VERSION"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"SYSTEM_UPGRADE_PLAN_NAME"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"SYSTEM_UPGRADE_POD_NAME"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+                k:{"name":"SYSTEM_UPGRADE_POD_UID"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+              f:envFrom: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:capabilities:
+                  .: {}
+                  f:add: {}
+                f:privileged: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/host"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/run/system-upgrade/pod"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/run/system-upgrade/secrets/stv-aggregation"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:hostIPC: {}
+          f:hostNetwork: {}
+          f:hostPID: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:serviceAccount: {}
+          f:serviceAccountName: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"host-root"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"pod-info"}:
+              .: {}
+              f:downwardAPI:
+                .: {}
+                f:defaultMode: {}
+                f:items: {}
+              f:name: {}
+            k:{"name":"secret-stv-aggregation"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:optional: {}
+                f:secretName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:51:40Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:observedGeneration: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:observedGeneration: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:observedGeneration: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodScheduled"}:
+              f:observedGeneration: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:observedGeneration: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:observedGeneration: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"192.168.122.168"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:51:46Z"
+    name: apply-system-agent-upgrader-on-isim-dev-with-69db0346d5bc-z2ww6
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: batch/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Job
+      name: apply-system-agent-upgrader-on-isim-dev-with-69db0346d5bc-3cc66
+      uid: 8fc5252c-817c-417a-b9ac-aa14dbec7868
+    resourceVersion: "7904"
+    uid: 79305244-2227-4375-9bc0-969b3b1981ba
+  spec:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+              - isim-dev
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+            - key: upgrade.cattle.io/plan
+              operator: In
+              values:
+              - system-agent-upgrader
+          topologyKey: kubernetes.io/hostname
+    containers:
+    - env:
+      - name: SYSTEM_UPGRADE_NODE_NAME
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: spec.nodeName
+      - name: SYSTEM_UPGRADE_POD_NAME
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.name
+      - name: SYSTEM_UPGRADE_POD_UID
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.uid
+      - name: STRICT_VERIFY
+        value: "false"
+      - name: CATTLE_ROLE_WORKER
+        value: "true"
+      - name: SYSTEM_UPGRADE_PLAN_NAME
+        value: system-agent-upgrader
+      - name: SYSTEM_UPGRADE_PLAN_LATEST_HASH
+        value: 69db0346d5bcb77db36e134443334a767f964ab7e8a3c5f475915d24
+      - name: SYSTEM_UPGRADE_PLAN_LATEST_VERSION
+        value: v0.3.14-suc
+      envFrom:
+      - secretRef:
+          name: stv-aggregation-local-d2bfee800d8d
+      image: rancher/system-agent:v0.3.14-suc
+      imagePullPolicy: IfNotPresent
+      name: upgrade
+      resources: {}
+      securityContext:
+        capabilities:
+          add:
+          - CAP_SYS_BOOT
+        privileged: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /host
+        name: host-root
+      - mountPath: /run/system-upgrade/pod
+        name: pod-info
+        readOnly: true
+      - mountPath: /run/system-upgrade/secrets/stv-aggregation
+        name: secret-stv-aggregation
+        readOnly: true
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-nxl5m
+        readOnly: true
+    dnsPolicy: ClusterFirstWithHostNet
+    enableServiceLinks: true
+    hostIPC: true
+    hostNetwork: true
+    hostPID: true
+    nodeName: isim-dev
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Never
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: system-agent-upgrader
+    serviceAccountName: system-agent-upgrader
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoSchedule
+      key: node.kubernetes.io/unschedulable
+      operator: Exists
+    - operator: Exists
+    volumes:
+    - hostPath:
+        path: /
+        type: Directory
+      name: host-root
+    - downwardAPI:
+        defaultMode: 420
+        items:
+        - fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.labels
+          path: labels
+        - fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.annotations
+          path: annotations
+      name: pod-info
+    - name: secret-stv-aggregation
+      secret:
+        defaultMode: 420
+        optional: false
+        secretName: stv-aggregation
+    - name: kube-api-access-nxl5m
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:51:46Z"
+      observedGeneration: 1
+      status: "False"
+      type: PodReadyToStartContainers
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:51:40Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "True"
+      type: Initialized
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:51:44Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:51:44Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:51:40Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://8415732bcc58cf517999442cc636ea0fa2a6d54a9a6103346758818b04ff085f
+      image: docker.io/rancher/system-agent:v0.3.14-suc
+      imageID: sha256:d0ea9bdf0cc02f9fea71958d5753c967b0422c6b9b92d867379912d2ac4c93d3
+      lastState: {}
+      name: upgrade
+      ready: false
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://8415732bcc58cf517999442cc636ea0fa2a6d54a9a6103346758818b04ff085f
+          exitCode: 0
+          finishedAt: "2025-12-30T21:51:44Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:51:42Z"
+      user:
+        linux:
+          gid: 0
+          supplementalGroups:
+          - 0
+          uid: 0
+      volumeMounts:
+      - mountPath: /host
+        name: host-root
+      - mountPath: /run/system-upgrade/pod
+        name: pod-info
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /run/system-upgrade/secrets/stv-aggregation
+        name: secret-stv-aggregation
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-nxl5m
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.122.168
+    hostIPs:
+    - ip: 192.168.122.168
+    observedGeneration: 1
+    phase: Succeeded
+    podIP: 192.168.122.168
+    podIPs:
+    - ip: 192.168.122.168
+    qosClass: BestEffort
+    startTime: "2025-12-30T21:51:40Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 97cdfd37c1374be29c680bcda7def6dba2167cce6b9e26a2abd7284c62fc8497
+      cni.projectcalico.org/podIP: 10.52.0.22/32
+      cni.projectcalico.org/podIPs: 10.52.0.22/32
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "k8s-pod-network",
+            "ips": [
+                "10.52.0.22"
+            ],
+            "default": true,
+            "dns": {}
+        }]
+    creationTimestamp: "2025-12-30T21:48:29Z"
+    generateName: harvester-cluster-repo-7487f5bc6f-
+    generation: 1
+    labels:
+      app: harvester-cluster-repo
+      pod-template-hash: 7487f5bc6f
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"a59dd01c-be46-4e10-87ca-018c9a12f87b"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"httpd"}:
+              .: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":80,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:initialDelaySeconds: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:48:29Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:30Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:k8s.v1.cni.cncf.io/network-status: {}
+      manager: multus
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:30Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.52.0.22"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:51:58Z"
+    name: harvester-cluster-repo-7487f5bc6f-fcmjl
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: harvester-cluster-repo-7487f5bc6f
+      uid: a59dd01c-be46-4e10-87ca-018c9a12f87b
+    resourceVersion: "8095"
+    uid: 1398cbb6-eb01-4bdf-9cb6-494970ff7bd0
+  spec:
+    containers:
+    - image: rancher/harvester-cluster-repo:v1.7.0
+      imagePullPolicy: IfNotPresent
+      name: httpd
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      readinessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /charts/index.yaml
+          port: 80
+          scheme: HTTP
+        initialDelaySeconds: 3
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 1
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-wgv2t
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: isim-dev
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-wgv2t
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:32Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:29Z"
+      observedGeneration: 1
+      status: "True"
+      type: Initialized
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:51:57Z"
+      observedGeneration: 1
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:51:57Z"
+      observedGeneration: 1
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:29Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://d8ce0becc3752004f5a8f565c975530a2080844c0436c1c53cb4449673156270
+      image: docker.io/rancher/harvester-cluster-repo:v1.7.0
+      imageID: sha256:cff9b2fe27a698adb3ca37272be77068fad0d2b4054454aacc5c6f135423f24c
+      lastState: {}
+      name: httpd
+      ready: true
+      resources: {}
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-12-30T21:48:31Z"
+      user:
+        linux:
+          gid: 486
+          supplementalGroups:
+          - 486
+          uid: 499
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-wgv2t
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.122.168
+    hostIPs:
+    - ip: 192.168.122.168
+    observedGeneration: 1
+    phase: Running
+    podIP: 10.52.0.22
+    podIPs:
+    - ip: 10.52.0.22
+    qosClass: BestEffort
+    startTime: "2025-12-30T21:48:29Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 3a295f6c8338035f231854ba2e19030f460604a0d46f83fd8f901f69d65bb80a
+      cni.projectcalico.org/podIP: "null"
+      cni.projectcalico.org/podIPs: "null"
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "k8s-pod-network",
+            "ips": [
+                "10.52.0.83"
+            ],
+            "default": true,
+            "dns": {}
+        }]
+      pod-impersonation.cattle.io/cluster-role: pod-impersonation-helm-op-nbxp4
+    creationTimestamp: "2025-12-30T21:51:41Z"
+    generateName: helm-operation-
+    generation: 1
+    labels:
+      pod-impersonation.cattle.io/token: p5xkjc2wm2b4fwhsnsv96lppfjcj2w5768p72d5m7vmg65mxzrf2mz
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:pod-impersonation.cattle.io/cluster-role: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:pod-impersonation.cattle.io/token: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"68b7cbf3-a23a-4b0f-bc78-2ac78a87dd03"}: {}
+        f:spec:
+          f:automountServiceAccountToken: {}
+          f:containers:
+            k:{"name":"helm"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"KUBECONFIG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:stdin: {}
+              f:stdinOnce: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:tty: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/home/shell/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+                k:{"mountPath":"/home/shell/helm"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+              f:workingDir: {}
+            k:{"name":"proxy"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"KUBECONFIG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:readOnlyRootFilesystem: {}
+                f:runAsGroup: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/root/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                  f:subPath: {}
+                k:{"mountPath":"/var/run/secrets/kubernetes.io/serviceaccount"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:initContainers:
+            .: {}
+            k:{"name":"init-kubeconfig-volume"}:
+              .: {}
+              f:command: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:runAsGroup: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/home/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+                k:{"mountPath":"/tmp/.kube"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:nodeSelector: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"admin-kubeconfig"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"data"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:secretName: {}
+            k:{"name":"pod-impersonation-helm-op-ltp5d-token"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:secretName: {}
+            k:{"name":"user-kube-configmap"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"user-kubeconfig"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:51:41Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:k8s.v1.cni.cncf.io/network-status: {}
+      manager: multus
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:51:42Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:52:04Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:initContainerStatuses: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.52.0.83"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:52:04Z"
+    name: helm-operation-2ncj5
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: pod-impersonation-helm-op-nbxp4
+      uid: 68b7cbf3-a23a-4b0f-bc78-2ac78a87dd03
+    resourceVersion: "8276"
+    uid: 2bba5ca5-ed09-453c-b73f-e2131e288e70
+  spec:
+    automountServiceAccountToken: false
+    containers:
+    - command:
+      - helm-cmd
+      env:
+      - name: KUBECONFIG
+        value: /home/shell/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: helm
+      resources: {}
+      stdin: true
+      stdinOnce: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      tty: true
+      volumeMounts:
+      - mountPath: /home/shell/helm
+        name: data
+        readOnly: true
+      - mountPath: /home/shell/.kube/config
+        name: user-kubeconfig
+        subPath: config
+      workingDir: /home/shell/helm
+    - command:
+      - sh
+      - -c
+      - kubectl proxy --disable-filter || true
+      env:
+      - name: KUBECONFIG
+        value: /root/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: proxy
+      resources: {}
+      securityContext:
+        readOnlyRootFilesystem: true
+        runAsGroup: 0
+        runAsUser: 0
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /root/.kube/config
+        name: admin-kubeconfig
+        readOnly: true
+        subPath: config
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: pod-impersonation-helm-op-ltp5d-token
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    initContainers:
+    - command:
+      - sh
+      - -c
+      - cp /home/.kube/config /tmp/.kube && chown 1000 /tmp/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: init-kubeconfig-volume
+      resources: {}
+      securityContext:
+        runAsGroup: 0
+        runAsUser: 0
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /home/.kube/config
+        name: user-kube-configmap
+        subPath: config
+      - mountPath: /tmp/.kube
+        name: user-kubeconfig
+    nodeName: isim-dev
+    nodeSelector:
+      kubernetes.io/os: linux
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Never
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 0
+    tolerations:
+    - effect: NoSchedule
+      key: node.cloudprovider.kubernetes.io/uninitialized
+      operator: Equal
+      value: "true"
+    - effect: NoSchedule
+      key: cattle.io/os
+      operator: Equal
+      value: linux
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/controlplane
+      operator: Equal
+      value: "true"
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/control-plane
+      operator: Exists
+    - effect: NoExecute
+      key: node-role.kubernetes.io/etcd
+      operator: Exists
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: data
+      secret:
+        defaultMode: 420
+        secretName: helm-operation-dbpb4
+    - configMap:
+        defaultMode: 420
+        name: impersonation-helm-op-admin-kubeconfig-bzwjz
+      name: admin-kubeconfig
+    - emptyDir: {}
+      name: user-kubeconfig
+    - configMap:
+        defaultMode: 384
+        name: impersonation-helm-op-user-kubeconfig-jqvzw
+      name: user-kube-configmap
+    - name: pod-impersonation-helm-op-ltp5d-token
+      secret:
+        defaultMode: 420
+        secretName: pod-impersonation-helm-op-ltp5d-token
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:52:04Z"
+      observedGeneration: 1
+      status: "False"
+      type: PodReadyToStartContainers
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:51:42Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "True"
+      type: Initialized
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:52:02Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:52:02Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:51:41Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://ee293313d8c7edc37388cc3ce065583752679789f7c884cd10145dc4dd7ec148
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: helm
+      ready: false
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://ee293313d8c7edc37388cc3ce065583752679789f7c884cd10145dc4dd7ec148
+          exitCode: 0
+          finishedAt: "2025-12-30T21:52:01Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:51:44Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+      volumeMounts:
+      - mountPath: /home/shell/helm
+        name: data
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /home/shell/.kube/config
+        name: user-kubeconfig
+    - containerID: containerd://f6d098f70bf92fc11476dadd4aaebe17fb6f4f2576572a8783a9db02f3742cae
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: proxy
+      ready: false
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://f6d098f70bf92fc11476dadd4aaebe17fb6f4f2576572a8783a9db02f3742cae
+          exitCode: 0
+          finishedAt: "2025-12-30T21:52:02Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:51:44Z"
+      user:
+        linux:
+          gid: 0
+          supplementalGroups:
+          - 0
+          uid: 0
+      volumeMounts:
+      - mountPath: /root/.kube/config
+        name: admin-kubeconfig
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: pod-impersonation-helm-op-ltp5d-token
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.122.168
+    hostIPs:
+    - ip: 192.168.122.168
+    initContainerStatuses:
+    - containerID: containerd://39343adf340b24d9dc9ce990afa111c5d7ffcbdcf06ee6e52cc585dcde29ad66
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: init-kubeconfig-volume
+      ready: true
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://39343adf340b24d9dc9ce990afa111c5d7ffcbdcf06ee6e52cc585dcde29ad66
+          exitCode: 0
+          finishedAt: "2025-12-30T21:51:42Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:51:42Z"
+      user:
+        linux:
+          gid: 0
+          supplementalGroups:
+          - 0
+          uid: 0
+      volumeMounts:
+      - mountPath: /home/.kube/config
+        name: user-kube-configmap
+      - mountPath: /tmp/.kube
+        name: user-kubeconfig
+    observedGeneration: 1
+    phase: Succeeded
+    podIP: 10.52.0.83
+    podIPs:
+    - ip: 10.52.0.83
+    qosClass: BestEffort
+    startTime: "2025-12-30T21:51:41Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 110bc3450c08ae6c7eecafa2a98d75635260ee369e75e385ce799dcf06a52a86
+      cni.projectcalico.org/podIP: "null"
+      cni.projectcalico.org/podIPs: "null"
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "k8s-pod-network",
+            "ips": [
+                "10.52.0.12"
+            ],
+            "default": true,
+            "dns": {}
+        }]
+      pod-impersonation.cattle.io/cluster-role: pod-impersonation-helm-op-ttgsb
+    creationTimestamp: "2025-12-30T21:47:45Z"
+    generateName: helm-operation-
+    generation: 1
+    labels:
+      pod-impersonation.cattle.io/token: hwm8jzcnffdzb6q7pbk878wrggxzr9sk4pb5c4hqv52r6ghd8tjxnn
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:k8s.v1.cni.cncf.io/network-status: {}
+      manager: multus
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:47:45Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:pod-impersonation.cattle.io/cluster-role: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:pod-impersonation.cattle.io/token: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"5c7a35b0-6c11-49ac-921a-6ad1fd79aa29"}: {}
+        f:spec:
+          f:automountServiceAccountToken: {}
+          f:containers:
+            k:{"name":"helm"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"KUBECONFIG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:stdin: {}
+              f:stdinOnce: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:tty: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/home/shell/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+                k:{"mountPath":"/home/shell/helm"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+              f:workingDir: {}
+            k:{"name":"proxy"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"KUBECONFIG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:readOnlyRootFilesystem: {}
+                f:runAsGroup: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/root/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                  f:subPath: {}
+                k:{"mountPath":"/var/run/secrets/kubernetes.io/serviceaccount"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:initContainers:
+            .: {}
+            k:{"name":"init-kubeconfig-volume"}:
+              .: {}
+              f:command: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:runAsGroup: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/home/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+                k:{"mountPath":"/tmp/.kube"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:nodeSelector: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"admin-kubeconfig"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"data"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:secretName: {}
+            k:{"name":"pod-impersonation-helm-op-mkxch-token"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:secretName: {}
+            k:{"name":"user-kube-configmap"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"user-kubeconfig"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:47:45Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:01Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:initContainerStatuses: {}
+          f:phase: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:01Z"
+    name: helm-operation-4db4g
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: pod-impersonation-helm-op-ttgsb
+      uid: 5c7a35b0-6c11-49ac-921a-6ad1fd79aa29
+    resourceVersion: "8084"
+    uid: 1e4fb950-d1a4-4565-bf4f-e3a6ef656e7e
+  spec:
+    automountServiceAccountToken: false
+    containers:
+    - command:
+      - helm-cmd
+      env:
+      - name: KUBECONFIG
+        value: /home/shell/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: helm
+      resources: {}
+      stdin: true
+      stdinOnce: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      tty: true
+      volumeMounts:
+      - mountPath: /home/shell/helm
+        name: data
+        readOnly: true
+      - mountPath: /home/shell/.kube/config
+        name: user-kubeconfig
+        subPath: config
+      workingDir: /home/shell/helm
+    - command:
+      - sh
+      - -c
+      - kubectl proxy --disable-filter || true
+      env:
+      - name: KUBECONFIG
+        value: /root/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: proxy
+      resources: {}
+      securityContext:
+        readOnlyRootFilesystem: true
+        runAsGroup: 0
+        runAsUser: 0
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /root/.kube/config
+        name: admin-kubeconfig
+        readOnly: true
+        subPath: config
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: pod-impersonation-helm-op-mkxch-token
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    initContainers:
+    - command:
+      - sh
+      - -c
+      - cp /home/.kube/config /tmp/.kube && chown 1000 /tmp/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: init-kubeconfig-volume
+      resources: {}
+      securityContext:
+        runAsGroup: 0
+        runAsUser: 0
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /home/.kube/config
+        name: user-kube-configmap
+        subPath: config
+      - mountPath: /tmp/.kube
+        name: user-kubeconfig
+    nodeName: isim-dev
+    nodeSelector:
+      kubernetes.io/os: linux
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Never
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 0
+    tolerations:
+    - effect: NoExecute
+      key: node-role.kubernetes.io/etcd
+      operator: Exists
+    - effect: NoSchedule
+      key: node.cloudprovider.kubernetes.io/uninitialized
+      operator: Equal
+      value: "true"
+    - effect: NoSchedule
+      key: cattle.io/os
+      operator: Equal
+      value: linux
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/controlplane
+      operator: Equal
+      value: "true"
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/control-plane
+      operator: Exists
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: data
+      secret:
+        defaultMode: 420
+        secretName: helm-operation-g474t
+    - configMap:
+        defaultMode: 420
+        name: impersonation-helm-op-admin-kubeconfig-5l5ht
+      name: admin-kubeconfig
+    - emptyDir: {}
+      name: user-kubeconfig
+    - configMap:
+        defaultMode: 384
+        name: impersonation-helm-op-user-kubeconfig-2spbc
+      name: user-kube-configmap
+    - name: pod-impersonation-helm-op-mkxch-token
+      secret:
+        defaultMode: 420
+        secretName: pod-impersonation-helm-op-mkxch-token
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:01Z"
+      observedGeneration: 1
+      status: "False"
+      type: PodReadyToStartContainers
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:47:49Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "True"
+      type: Initialized
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:47:59Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:47:59Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:47:45Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://752a3d7b486ecb0b7f1d86696bdadf113aadcc053e90a77919c97f1bef84c9af
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: helm
+      ready: false
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://752a3d7b486ecb0b7f1d86696bdadf113aadcc053e90a77919c97f1bef84c9af
+          exitCode: 0
+          finishedAt: "2025-12-30T21:47:58Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:47:49Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+      volumeMounts:
+      - mountPath: /home/shell/helm
+        name: data
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /home/shell/.kube/config
+        name: user-kubeconfig
+    - containerID: containerd://a4dd30b753c333133a4fb48bb51b2d098e7388f97994db970cbc7c266d4b6216
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: proxy
+      ready: false
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://a4dd30b753c333133a4fb48bb51b2d098e7388f97994db970cbc7c266d4b6216
+          exitCode: 0
+          finishedAt: "2025-12-30T21:47:59Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:47:49Z"
+      user:
+        linux:
+          gid: 0
+          supplementalGroups:
+          - 0
+          uid: 0
+      volumeMounts:
+      - mountPath: /root/.kube/config
+        name: admin-kubeconfig
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: pod-impersonation-helm-op-mkxch-token
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.122.168
+    hostIPs:
+    - ip: 192.168.122.168
+    initContainerStatuses:
+    - containerID: containerd://588d00ae0027c900a8656a98fbeef9f806285708642afcdb37a7057e23fc8924
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: init-kubeconfig-volume
+      ready: true
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://588d00ae0027c900a8656a98fbeef9f806285708642afcdb37a7057e23fc8924
+          exitCode: 0
+          finishedAt: "2025-12-30T21:47:47Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:47:47Z"
+      user:
+        linux:
+          gid: 0
+          supplementalGroups:
+          - 0
+          uid: 0
+      volumeMounts:
+      - mountPath: /home/.kube/config
+        name: user-kube-configmap
+      - mountPath: /tmp/.kube
+        name: user-kubeconfig
+    observedGeneration: 1
+    phase: Succeeded
+    qosClass: BestEffort
+    startTime: "2025-12-30T21:47:45Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 8dc7d6eff3cffc604b874fc17b4941ee8ac76d251ee3b588a16482a9be77b7c1
+      cni.projectcalico.org/podIP: "null"
+      cni.projectcalico.org/podIPs: "null"
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "k8s-pod-network",
+            "ips": [
+                "10.52.0.17"
+            ],
+            "default": true,
+            "dns": {}
+        }]
+      pod-impersonation.cattle.io/cluster-role: pod-impersonation-helm-op-9sls4
+    creationTimestamp: "2025-12-30T21:48:01Z"
+    generateName: helm-operation-
+    generation: 1
+    labels:
+      pod-impersonation.cattle.io/token: 28zmg6ldsjgkvckwtmj29ll67fsmtkmj8n6dcp7gwvxk5s7jjj4d7n
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:k8s.v1.cni.cncf.io/network-status: {}
+      manager: multus
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:01Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:pod-impersonation.cattle.io/cluster-role: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:pod-impersonation.cattle.io/token: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"4694692d-e419-4be4-a957-81e2f32a4236"}: {}
+        f:spec:
+          f:automountServiceAccountToken: {}
+          f:containers:
+            k:{"name":"helm"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"KUBECONFIG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:stdin: {}
+              f:stdinOnce: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:tty: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/home/shell/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+                k:{"mountPath":"/home/shell/helm"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+              f:workingDir: {}
+            k:{"name":"proxy"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"KUBECONFIG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:readOnlyRootFilesystem: {}
+                f:runAsGroup: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/root/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                  f:subPath: {}
+                k:{"mountPath":"/var/run/secrets/kubernetes.io/serviceaccount"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:initContainers:
+            .: {}
+            k:{"name":"init-kubeconfig-volume"}:
+              .: {}
+              f:command: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:runAsGroup: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/home/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+                k:{"mountPath":"/tmp/.kube"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:nodeSelector: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"admin-kubeconfig"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"data"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:secretName: {}
+            k:{"name":"pod-impersonation-helm-op-jgfbn-token"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:secretName: {}
+            k:{"name":"user-kube-configmap"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"user-kubeconfig"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:48:01Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:06Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:initContainerStatuses: {}
+          f:phase: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:06Z"
+    name: helm-operation-fgm6s
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: pod-impersonation-helm-op-9sls4
+      uid: 4694692d-e419-4be4-a957-81e2f32a4236
+    resourceVersion: "8085"
+    uid: e2b02d5d-4f44-4f7e-9d2a-9fdd14cf3dc4
+  spec:
+    automountServiceAccountToken: false
+    containers:
+    - command:
+      - helm-cmd
+      env:
+      - name: KUBECONFIG
+        value: /home/shell/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: helm
+      resources: {}
+      stdin: true
+      stdinOnce: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      tty: true
+      volumeMounts:
+      - mountPath: /home/shell/helm
+        name: data
+        readOnly: true
+      - mountPath: /home/shell/.kube/config
+        name: user-kubeconfig
+        subPath: config
+      workingDir: /home/shell/helm
+    - command:
+      - sh
+      - -c
+      - kubectl proxy --disable-filter || true
+      env:
+      - name: KUBECONFIG
+        value: /root/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: proxy
+      resources: {}
+      securityContext:
+        readOnlyRootFilesystem: true
+        runAsGroup: 0
+        runAsUser: 0
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /root/.kube/config
+        name: admin-kubeconfig
+        readOnly: true
+        subPath: config
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: pod-impersonation-helm-op-jgfbn-token
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    initContainers:
+    - command:
+      - sh
+      - -c
+      - cp /home/.kube/config /tmp/.kube && chown 1000 /tmp/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: init-kubeconfig-volume
+      resources: {}
+      securityContext:
+        runAsGroup: 0
+        runAsUser: 0
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /home/.kube/config
+        name: user-kube-configmap
+        subPath: config
+      - mountPath: /tmp/.kube
+        name: user-kubeconfig
+    nodeName: isim-dev
+    nodeSelector:
+      kubernetes.io/os: linux
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Never
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 0
+    tolerations:
+    - effect: NoSchedule
+      key: cattle.io/os
+      operator: Equal
+      value: linux
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/controlplane
+      operator: Equal
+      value: "true"
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/control-plane
+      operator: Exists
+    - effect: NoExecute
+      key: node-role.kubernetes.io/etcd
+      operator: Exists
+    - effect: NoSchedule
+      key: node.cloudprovider.kubernetes.io/uninitialized
+      operator: Equal
+      value: "true"
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: data
+      secret:
+        defaultMode: 420
+        secretName: helm-operation-7797k
+    - configMap:
+        defaultMode: 420
+        name: impersonation-helm-op-admin-kubeconfig-nvfd8
+      name: admin-kubeconfig
+    - emptyDir: {}
+      name: user-kubeconfig
+    - configMap:
+        defaultMode: 384
+        name: impersonation-helm-op-user-kubeconfig-4kblt
+      name: user-kube-configmap
+    - name: pod-impersonation-helm-op-jgfbn-token
+      secret:
+        defaultMode: 420
+        secretName: pod-impersonation-helm-op-jgfbn-token
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:06Z"
+      observedGeneration: 1
+      status: "False"
+      type: PodReadyToStartContainers
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:02Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "True"
+      type: Initialized
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:04Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:04Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:01Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://3eb43618216becdf56d3e8ee91aabab7b46ebb3ae3281bf8b742034c3a7e9b4a
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: helm
+      ready: false
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://3eb43618216becdf56d3e8ee91aabab7b46ebb3ae3281bf8b742034c3a7e9b4a
+          exitCode: 0
+          finishedAt: "2025-12-30T21:48:04Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:48:02Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+      volumeMounts:
+      - mountPath: /home/shell/helm
+        name: data
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /home/shell/.kube/config
+        name: user-kubeconfig
+    - containerID: containerd://5642ae4cf9d075941e4bd21b0b2db99103fe5b8ad81889c61ac89997cd13ea8c
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: proxy
+      ready: false
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://5642ae4cf9d075941e4bd21b0b2db99103fe5b8ad81889c61ac89997cd13ea8c
+          exitCode: 0
+          finishedAt: "2025-12-30T21:48:04Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:48:02Z"
+      user:
+        linux:
+          gid: 0
+          supplementalGroups:
+          - 0
+          uid: 0
+      volumeMounts:
+      - mountPath: /root/.kube/config
+        name: admin-kubeconfig
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: pod-impersonation-helm-op-jgfbn-token
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.122.168
+    hostIPs:
+    - ip: 192.168.122.168
+    initContainerStatuses:
+    - containerID: containerd://698d8082f6ea587af90139933b574fdf38ad8a8e75d2d4b781df16a8c05919f3
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: init-kubeconfig-volume
+      ready: true
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://698d8082f6ea587af90139933b574fdf38ad8a8e75d2d4b781df16a8c05919f3
+          exitCode: 0
+          finishedAt: "2025-12-30T21:48:02Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:48:02Z"
+      user:
+        linux:
+          gid: 0
+          supplementalGroups:
+          - 0
+          uid: 0
+      volumeMounts:
+      - mountPath: /home/.kube/config
+        name: user-kube-configmap
+      - mountPath: /tmp/.kube
+        name: user-kubeconfig
+    observedGeneration: 1
+    phase: Succeeded
+    qosClass: BestEffort
+    startTime: "2025-12-30T21:48:01Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 27cee42f684e12074322a4c499557f23ef981fa32eb5bf39dcd9dc2a2b8dcdc5
+      cni.projectcalico.org/podIP: "null"
+      cni.projectcalico.org/podIPs: "null"
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "k8s-pod-network",
+            "ips": [
+                "10.52.0.27"
+            ],
+            "default": true,
+            "dns": {}
+        }]
+      pod-impersonation.cattle.io/cluster-role: pod-impersonation-helm-op-md2vf
+    creationTimestamp: "2025-12-30T21:48:44Z"
+    generateName: helm-operation-
+    generation: 1
+    labels:
+      pod-impersonation.cattle.io/token: 45dg6299z9hf578mxtvxn6xfk6qrcvdwjhgp6ztgmcb66n249d8wkv
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:pod-impersonation.cattle.io/cluster-role: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:pod-impersonation.cattle.io/token: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"120f7a29-f2ce-4a6c-bf3a-c6a4b5c57872"}: {}
+        f:spec:
+          f:automountServiceAccountToken: {}
+          f:containers:
+            k:{"name":"helm"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"KUBECONFIG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:stdin: {}
+              f:stdinOnce: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:tty: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/home/shell/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+                k:{"mountPath":"/home/shell/helm"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+              f:workingDir: {}
+            k:{"name":"proxy"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"KUBECONFIG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:readOnlyRootFilesystem: {}
+                f:runAsGroup: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/root/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                  f:subPath: {}
+                k:{"mountPath":"/var/run/secrets/kubernetes.io/serviceaccount"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:initContainers:
+            .: {}
+            k:{"name":"init-kubeconfig-volume"}:
+              .: {}
+              f:command: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:runAsGroup: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/home/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+                k:{"mountPath":"/tmp/.kube"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:nodeSelector: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"admin-kubeconfig"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"data"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:secretName: {}
+            k:{"name":"pod-impersonation-helm-op-rwkln-token"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:secretName: {}
+            k:{"name":"user-kube-configmap"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"user-kubeconfig"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:48:44Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:k8s.v1.cni.cncf.io/network-status: {}
+      manager: multus
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:45Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:51Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:initContainerStatuses: {}
+          f:phase: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:51Z"
+    name: helm-operation-gmkh5
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: pod-impersonation-helm-op-md2vf
+      uid: 120f7a29-f2ce-4a6c-bf3a-c6a4b5c57872
+    resourceVersion: "8068"
+    uid: 0a37885d-18e6-4ea1-93e0-534f81728c3d
+  spec:
+    automountServiceAccountToken: false
+    containers:
+    - command:
+      - helm-cmd
+      env:
+      - name: KUBECONFIG
+        value: /home/shell/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: helm
+      resources: {}
+      stdin: true
+      stdinOnce: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      tty: true
+      volumeMounts:
+      - mountPath: /home/shell/helm
+        name: data
+        readOnly: true
+      - mountPath: /home/shell/.kube/config
+        name: user-kubeconfig
+        subPath: config
+      workingDir: /home/shell/helm
+    - command:
+      - sh
+      - -c
+      - kubectl proxy --disable-filter || true
+      env:
+      - name: KUBECONFIG
+        value: /root/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: proxy
+      resources: {}
+      securityContext:
+        readOnlyRootFilesystem: true
+        runAsGroup: 0
+        runAsUser: 0
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /root/.kube/config
+        name: admin-kubeconfig
+        readOnly: true
+        subPath: config
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: pod-impersonation-helm-op-rwkln-token
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    initContainers:
+    - command:
+      - sh
+      - -c
+      - cp /home/.kube/config /tmp/.kube && chown 1000 /tmp/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: init-kubeconfig-volume
+      resources: {}
+      securityContext:
+        runAsGroup: 0
+        runAsUser: 0
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /home/.kube/config
+        name: user-kube-configmap
+        subPath: config
+      - mountPath: /tmp/.kube
+        name: user-kubeconfig
+    nodeName: isim-dev
+    nodeSelector:
+      kubernetes.io/os: linux
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Never
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 0
+    tolerations:
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/control-plane
+      operator: Exists
+    - effect: NoExecute
+      key: node-role.kubernetes.io/etcd
+      operator: Exists
+    - effect: NoSchedule
+      key: node.cloudprovider.kubernetes.io/uninitialized
+      operator: Equal
+      value: "true"
+    - effect: NoSchedule
+      key: cattle.io/os
+      operator: Equal
+      value: linux
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/controlplane
+      operator: Equal
+      value: "true"
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: data
+      secret:
+        defaultMode: 420
+        secretName: helm-operation-bf8x5
+    - configMap:
+        defaultMode: 420
+        name: impersonation-helm-op-admin-kubeconfig-ftk78
+      name: admin-kubeconfig
+    - emptyDir: {}
+      name: user-kubeconfig
+    - configMap:
+        defaultMode: 384
+        name: impersonation-helm-op-user-kubeconfig-8q4v7
+      name: user-kube-configmap
+    - name: pod-impersonation-helm-op-rwkln-token
+      secret:
+        defaultMode: 420
+        secretName: pod-impersonation-helm-op-rwkln-token
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:51Z"
+      observedGeneration: 1
+      status: "False"
+      type: PodReadyToStartContainers
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:45Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "True"
+      type: Initialized
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:49Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:49Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:44Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://0e78dffeaabcb7934826b056c6862fc14a520890c1176e619d2335844288a7d3
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: helm
+      ready: false
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://0e78dffeaabcb7934826b056c6862fc14a520890c1176e619d2335844288a7d3
+          exitCode: 0
+          finishedAt: "2025-12-30T21:48:49Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:48:45Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+      volumeMounts:
+      - mountPath: /home/shell/helm
+        name: data
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /home/shell/.kube/config
+        name: user-kubeconfig
+    - containerID: containerd://20731236bc422775b5a221fb5160ab6ac8da357aad82b151de86f67737b893f1
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: proxy
+      ready: false
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://20731236bc422775b5a221fb5160ab6ac8da357aad82b151de86f67737b893f1
+          exitCode: 0
+          finishedAt: "2025-12-30T21:48:49Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:48:45Z"
+      user:
+        linux:
+          gid: 0
+          supplementalGroups:
+          - 0
+          uid: 0
+      volumeMounts:
+      - mountPath: /root/.kube/config
+        name: admin-kubeconfig
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: pod-impersonation-helm-op-rwkln-token
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.122.168
+    hostIPs:
+    - ip: 192.168.122.168
+    initContainerStatuses:
+    - containerID: containerd://1c8c08a37d73324d5e5ae2e15dad22683caedb0d71dd718e33f30ede0a4531a4
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: init-kubeconfig-volume
+      ready: true
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://1c8c08a37d73324d5e5ae2e15dad22683caedb0d71dd718e33f30ede0a4531a4
+          exitCode: 0
+          finishedAt: "2025-12-30T21:48:45Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:48:45Z"
+      user:
+        linux:
+          gid: 0
+          supplementalGroups:
+          - 0
+          uid: 0
+      volumeMounts:
+      - mountPath: /home/.kube/config
+        name: user-kube-configmap
+      - mountPath: /tmp/.kube
+        name: user-kubeconfig
+    observedGeneration: 1
+    phase: Succeeded
+    qosClass: BestEffort
+    startTime: "2025-12-30T21:48:44Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: d616c68a434d42aa2c83e25f71d980185996bed00e47c822b4d73bdf27b070f7
+      cni.projectcalico.org/podIP: "null"
+      cni.projectcalico.org/podIPs: "null"
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "k8s-pod-network",
+            "ips": [
+                "10.52.0.23"
+            ],
+            "default": true,
+            "dns": {}
+        }]
+      pod-impersonation.cattle.io/cluster-role: pod-impersonation-helm-op-857g5
+    creationTimestamp: "2025-12-30T21:48:33Z"
+    generateName: helm-operation-
+    generation: 1
+    labels:
+      pod-impersonation.cattle.io/token: 8jx4r5nghj6fjw866pmnfc75w57f4kt58s5ldnlbdt5qswbtrt6xhn
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:pod-impersonation.cattle.io/cluster-role: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:pod-impersonation.cattle.io/token: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"cff69dd3-b088-4200-a7d9-94ad39e2fbd7"}: {}
+        f:spec:
+          f:automountServiceAccountToken: {}
+          f:containers:
+            k:{"name":"helm"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"KUBECONFIG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:stdin: {}
+              f:stdinOnce: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:tty: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/home/shell/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+                k:{"mountPath":"/home/shell/helm"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+              f:workingDir: {}
+            k:{"name":"proxy"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"KUBECONFIG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:readOnlyRootFilesystem: {}
+                f:runAsGroup: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/root/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                  f:subPath: {}
+                k:{"mountPath":"/var/run/secrets/kubernetes.io/serviceaccount"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:initContainers:
+            .: {}
+            k:{"name":"init-kubeconfig-volume"}:
+              .: {}
+              f:command: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:runAsGroup: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/home/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+                k:{"mountPath":"/tmp/.kube"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:nodeSelector: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"admin-kubeconfig"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"data"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:secretName: {}
+            k:{"name":"pod-impersonation-helm-op-tkkn8-token"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:secretName: {}
+            k:{"name":"user-kube-configmap"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"user-kubeconfig"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:48:33Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:k8s.v1.cni.cncf.io/network-status: {}
+      manager: multus
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:34Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:44Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:initContainerStatuses: {}
+          f:phase: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:44Z"
+    name: helm-operation-l225g
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: pod-impersonation-helm-op-857g5
+      uid: cff69dd3-b088-4200-a7d9-94ad39e2fbd7
+    resourceVersion: "8047"
+    uid: 75233842-e3c0-4456-8346-d085b0d54ef7
+  spec:
+    automountServiceAccountToken: false
+    containers:
+    - command:
+      - helm-cmd
+      env:
+      - name: KUBECONFIG
+        value: /home/shell/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: helm
+      resources: {}
+      stdin: true
+      stdinOnce: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      tty: true
+      volumeMounts:
+      - mountPath: /home/shell/helm
+        name: data
+        readOnly: true
+      - mountPath: /home/shell/.kube/config
+        name: user-kubeconfig
+        subPath: config
+      workingDir: /home/shell/helm
+    - command:
+      - sh
+      - -c
+      - kubectl proxy --disable-filter || true
+      env:
+      - name: KUBECONFIG
+        value: /root/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: proxy
+      resources: {}
+      securityContext:
+        readOnlyRootFilesystem: true
+        runAsGroup: 0
+        runAsUser: 0
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /root/.kube/config
+        name: admin-kubeconfig
+        readOnly: true
+        subPath: config
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: pod-impersonation-helm-op-tkkn8-token
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    initContainers:
+    - command:
+      - sh
+      - -c
+      - cp /home/.kube/config /tmp/.kube && chown 1000 /tmp/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: init-kubeconfig-volume
+      resources: {}
+      securityContext:
+        runAsGroup: 0
+        runAsUser: 0
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /home/.kube/config
+        name: user-kube-configmap
+        subPath: config
+      - mountPath: /tmp/.kube
+        name: user-kubeconfig
+    nodeName: isim-dev
+    nodeSelector:
+      kubernetes.io/os: linux
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Never
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 0
+    tolerations:
+    - effect: NoSchedule
+      key: cattle.io/os
+      operator: Equal
+      value: linux
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/controlplane
+      operator: Equal
+      value: "true"
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/control-plane
+      operator: Exists
+    - effect: NoExecute
+      key: node-role.kubernetes.io/etcd
+      operator: Exists
+    - effect: NoSchedule
+      key: node.cloudprovider.kubernetes.io/uninitialized
+      operator: Equal
+      value: "true"
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: data
+      secret:
+        defaultMode: 420
+        secretName: helm-operation-7n6zj
+    - configMap:
+        defaultMode: 420
+        name: impersonation-helm-op-admin-kubeconfig-mx9mx
+      name: admin-kubeconfig
+    - emptyDir: {}
+      name: user-kubeconfig
+    - configMap:
+        defaultMode: 384
+        name: impersonation-helm-op-user-kubeconfig-5nqnx
+      name: user-kube-configmap
+    - name: pod-impersonation-helm-op-tkkn8-token
+      secret:
+        defaultMode: 420
+        secretName: pod-impersonation-helm-op-tkkn8-token
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:44Z"
+      observedGeneration: 1
+      status: "False"
+      type: PodReadyToStartContainers
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:34Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "True"
+      type: Initialized
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:42Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:42Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:33Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://0126f2ea40104aadb8c9ab4ee69ea5415369f158e434aa901fa043bbc5ee430d
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: helm
+      ready: false
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://0126f2ea40104aadb8c9ab4ee69ea5415369f158e434aa901fa043bbc5ee430d
+          exitCode: 0
+          finishedAt: "2025-12-30T21:48:41Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:48:34Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+      volumeMounts:
+      - mountPath: /home/shell/helm
+        name: data
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /home/shell/.kube/config
+        name: user-kubeconfig
+    - containerID: containerd://c9144cd4ba3dbc9bc5a0511e9cd92b0bba108a79000d8adf271aeb01a8b35c18
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: proxy
+      ready: false
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://c9144cd4ba3dbc9bc5a0511e9cd92b0bba108a79000d8adf271aeb01a8b35c18
+          exitCode: 0
+          finishedAt: "2025-12-30T21:48:42Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:48:34Z"
+      user:
+        linux:
+          gid: 0
+          supplementalGroups:
+          - 0
+          uid: 0
+      volumeMounts:
+      - mountPath: /root/.kube/config
+        name: admin-kubeconfig
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: pod-impersonation-helm-op-tkkn8-token
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.122.168
+    hostIPs:
+    - ip: 192.168.122.168
+    initContainerStatuses:
+    - containerID: containerd://bb375cd550aa41cb7f489c03bc083d3296ee90b7167ff85f7b72f73e0e3e9d0c
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: init-kubeconfig-volume
+      ready: true
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://bb375cd550aa41cb7f489c03bc083d3296ee90b7167ff85f7b72f73e0e3e9d0c
+          exitCode: 0
+          finishedAt: "2025-12-30T21:48:34Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:48:34Z"
+      user:
+        linux:
+          gid: 0
+          supplementalGroups:
+          - 0
+          uid: 0
+      volumeMounts:
+      - mountPath: /home/.kube/config
+        name: user-kube-configmap
+      - mountPath: /tmp/.kube
+        name: user-kubeconfig
+    observedGeneration: 1
+    phase: Succeeded
+    qosClass: BestEffort
+    startTime: "2025-12-30T21:48:33Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 3dc4e48c5a5d374e4ca37e14d7054902bb82e96bc5487910eb36b8a6084df431
+      cni.projectcalico.org/podIP: "null"
+      cni.projectcalico.org/podIPs: "null"
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "k8s-pod-network",
+            "ips": [
+                "10.52.0.31"
+            ],
+            "default": true,
+            "dns": {}
+        }]
+      pod-impersonation.cattle.io/cluster-role: pod-impersonation-helm-op-m2nq6
+    creationTimestamp: "2025-12-30T21:48:51Z"
+    generateName: helm-operation-
+    generation: 1
+    labels:
+      pod-impersonation.cattle.io/token: 9dhsxttnpb2gsb27587x887c5p5rjvgg29t5x92sphx7tr296jwmqc
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:pod-impersonation.cattle.io/cluster-role: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:pod-impersonation.cattle.io/token: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"ed000615-0c64-4d3a-abaf-ff5ca5b3c884"}: {}
+        f:spec:
+          f:automountServiceAccountToken: {}
+          f:containers:
+            k:{"name":"helm"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"KUBECONFIG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:stdin: {}
+              f:stdinOnce: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:tty: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/home/shell/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+                k:{"mountPath":"/home/shell/helm"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+              f:workingDir: {}
+            k:{"name":"proxy"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"KUBECONFIG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:readOnlyRootFilesystem: {}
+                f:runAsGroup: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/root/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                  f:subPath: {}
+                k:{"mountPath":"/var/run/secrets/kubernetes.io/serviceaccount"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:initContainers:
+            .: {}
+            k:{"name":"init-kubeconfig-volume"}:
+              .: {}
+              f:command: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:runAsGroup: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/home/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+                k:{"mountPath":"/tmp/.kube"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:nodeSelector: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"admin-kubeconfig"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"data"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:secretName: {}
+            k:{"name":"pod-impersonation-helm-op-fpl2d-token"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:secretName: {}
+            k:{"name":"user-kube-configmap"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"user-kubeconfig"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:48:51Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:k8s.v1.cni.cncf.io/network-status: {}
+      manager: multus
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:52Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:56Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:initContainerStatuses: {}
+          f:phase: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:56Z"
+    name: helm-operation-lvb7v
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: pod-impersonation-helm-op-m2nq6
+      uid: ed000615-0c64-4d3a-abaf-ff5ca5b3c884
+    resourceVersion: "8077"
+    uid: 6094cd9c-5d6c-44e9-98ff-9afec908dc3f
+  spec:
+    automountServiceAccountToken: false
+    containers:
+    - command:
+      - helm-cmd
+      env:
+      - name: KUBECONFIG
+        value: /home/shell/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: helm
+      resources: {}
+      stdin: true
+      stdinOnce: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      tty: true
+      volumeMounts:
+      - mountPath: /home/shell/helm
+        name: data
+        readOnly: true
+      - mountPath: /home/shell/.kube/config
+        name: user-kubeconfig
+        subPath: config
+      workingDir: /home/shell/helm
+    - command:
+      - sh
+      - -c
+      - kubectl proxy --disable-filter || true
+      env:
+      - name: KUBECONFIG
+        value: /root/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: proxy
+      resources: {}
+      securityContext:
+        readOnlyRootFilesystem: true
+        runAsGroup: 0
+        runAsUser: 0
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /root/.kube/config
+        name: admin-kubeconfig
+        readOnly: true
+        subPath: config
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: pod-impersonation-helm-op-fpl2d-token
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    initContainers:
+    - command:
+      - sh
+      - -c
+      - cp /home/.kube/config /tmp/.kube && chown 1000 /tmp/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: init-kubeconfig-volume
+      resources: {}
+      securityContext:
+        runAsGroup: 0
+        runAsUser: 0
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /home/.kube/config
+        name: user-kube-configmap
+        subPath: config
+      - mountPath: /tmp/.kube
+        name: user-kubeconfig
+    nodeName: isim-dev
+    nodeSelector:
+      kubernetes.io/os: linux
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Never
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 0
+    tolerations:
+    - effect: NoSchedule
+      key: cattle.io/os
+      operator: Equal
+      value: linux
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/controlplane
+      operator: Equal
+      value: "true"
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/control-plane
+      operator: Exists
+    - effect: NoExecute
+      key: node-role.kubernetes.io/etcd
+      operator: Exists
+    - effect: NoSchedule
+      key: node.cloudprovider.kubernetes.io/uninitialized
+      operator: Equal
+      value: "true"
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: data
+      secret:
+        defaultMode: 420
+        secretName: helm-operation-2b2f7
+    - configMap:
+        defaultMode: 420
+        name: impersonation-helm-op-admin-kubeconfig-wgjzv
+      name: admin-kubeconfig
+    - emptyDir: {}
+      name: user-kubeconfig
+    - configMap:
+        defaultMode: 384
+        name: impersonation-helm-op-user-kubeconfig-8gzct
+      name: user-kube-configmap
+    - name: pod-impersonation-helm-op-fpl2d-token
+      secret:
+        defaultMode: 420
+        secretName: pod-impersonation-helm-op-fpl2d-token
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:56Z"
+      observedGeneration: 1
+      status: "False"
+      type: PodReadyToStartContainers
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:52Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "True"
+      type: Initialized
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:54Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:54Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:51Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://01a4e6202ebd85dc45de30bde74cb7e62bc964d5779503b669d69ca61ea2d3a3
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: helm
+      ready: false
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://01a4e6202ebd85dc45de30bde74cb7e62bc964d5779503b669d69ca61ea2d3a3
+          exitCode: 0
+          finishedAt: "2025-12-30T21:48:54Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:48:52Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+      volumeMounts:
+      - mountPath: /home/shell/helm
+        name: data
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /home/shell/.kube/config
+        name: user-kubeconfig
+    - containerID: containerd://5b63c67ec449408d0762e92a56e2339470d8dcd1b804c57310b8f9b3b098cd96
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: proxy
+      ready: false
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://5b63c67ec449408d0762e92a56e2339470d8dcd1b804c57310b8f9b3b098cd96
+          exitCode: 0
+          finishedAt: "2025-12-30T21:48:54Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:48:52Z"
+      user:
+        linux:
+          gid: 0
+          supplementalGroups:
+          - 0
+          uid: 0
+      volumeMounts:
+      - mountPath: /root/.kube/config
+        name: admin-kubeconfig
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: pod-impersonation-helm-op-fpl2d-token
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.122.168
+    hostIPs:
+    - ip: 192.168.122.168
+    initContainerStatuses:
+    - containerID: containerd://0c78d207772c4ccacf4f58a9d935486dfe5e0dbc330818a4a56550d006469b29
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: init-kubeconfig-volume
+      ready: true
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://0c78d207772c4ccacf4f58a9d935486dfe5e0dbc330818a4a56550d006469b29
+          exitCode: 0
+          finishedAt: "2025-12-30T21:48:52Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:48:52Z"
+      user:
+        linux:
+          gid: 0
+          supplementalGroups:
+          - 0
+          uid: 0
+      volumeMounts:
+      - mountPath: /home/.kube/config
+        name: user-kube-configmap
+      - mountPath: /tmp/.kube
+        name: user-kubeconfig
+    observedGeneration: 1
+    phase: Succeeded
+    qosClass: BestEffort
+    startTime: "2025-12-30T21:48:51Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 444998ae8043b61879b224640d50dad425a0c52a9787aabc9482c9c26e32bbca
+      cni.projectcalico.org/podIP: "null"
+      cni.projectcalico.org/podIPs: "null"
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "k8s-pod-network",
+            "ips": [
+                "10.52.0.18"
+            ],
+            "default": true,
+            "dns": {}
+        }]
+      pod-impersonation.cattle.io/cluster-role: pod-impersonation-helm-op-699z9
+    creationTimestamp: "2025-12-30T21:48:06Z"
+    generateName: helm-operation-
+    generation: 1
+    labels:
+      pod-impersonation.cattle.io/token: 622c59mxzgb77zdtgklmbjvhppv4pgzfdcj8ppbtpnjqlh9bnxdk62
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:pod-impersonation.cattle.io/cluster-role: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:pod-impersonation.cattle.io/token: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"0a310196-02ef-449e-9a0f-0fdc0939d29b"}: {}
+        f:spec:
+          f:automountServiceAccountToken: {}
+          f:containers:
+            k:{"name":"helm"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"KUBECONFIG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:stdin: {}
+              f:stdinOnce: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:tty: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/home/shell/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+                k:{"mountPath":"/home/shell/helm"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+              f:workingDir: {}
+            k:{"name":"proxy"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"KUBECONFIG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:readOnlyRootFilesystem: {}
+                f:runAsGroup: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/root/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                  f:subPath: {}
+                k:{"mountPath":"/var/run/secrets/kubernetes.io/serviceaccount"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:initContainers:
+            .: {}
+            k:{"name":"init-kubeconfig-volume"}:
+              .: {}
+              f:command: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:runAsGroup: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/home/.kube/config"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:subPath: {}
+                k:{"mountPath":"/tmp/.kube"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:nodeSelector: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"admin-kubeconfig"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"data"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:secretName: {}
+            k:{"name":"pod-impersonation-helm-op-dk7pq-token"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:secretName: {}
+            k:{"name":"user-kube-configmap"}:
+              .: {}
+              f:configMap:
+                .: {}
+                f:defaultMode: {}
+                f:name: {}
+              f:name: {}
+            k:{"name":"user-kubeconfig"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:48:06Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:k8s.v1.cni.cncf.io/network-status: {}
+      manager: multus
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:07Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:33Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:initContainerStatuses: {}
+          f:phase: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:33Z"
+    name: helm-operation-pjtxs
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: pod-impersonation-helm-op-699z9
+      uid: 0a310196-02ef-449e-9a0f-0fdc0939d29b
+    resourceVersion: "8078"
+    uid: ae3f607e-ae34-40ec-ad93-dfd24e89419d
+  spec:
+    automountServiceAccountToken: false
+    containers:
+    - command:
+      - helm-cmd
+      env:
+      - name: KUBECONFIG
+        value: /home/shell/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: helm
+      resources: {}
+      stdin: true
+      stdinOnce: true
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      tty: true
+      volumeMounts:
+      - mountPath: /home/shell/helm
+        name: data
+        readOnly: true
+      - mountPath: /home/shell/.kube/config
+        name: user-kubeconfig
+        subPath: config
+      workingDir: /home/shell/helm
+    - command:
+      - sh
+      - -c
+      - kubectl proxy --disable-filter || true
+      env:
+      - name: KUBECONFIG
+        value: /root/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: proxy
+      resources: {}
+      securityContext:
+        readOnlyRootFilesystem: true
+        runAsGroup: 0
+        runAsUser: 0
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /root/.kube/config
+        name: admin-kubeconfig
+        readOnly: true
+        subPath: config
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: pod-impersonation-helm-op-dk7pq-token
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    initContainers:
+    - command:
+      - sh
+      - -c
+      - cp /home/.kube/config /tmp/.kube && chown 1000 /tmp/.kube/config
+      image: rancher/shell:v0.6.0
+      imagePullPolicy: IfNotPresent
+      name: init-kubeconfig-volume
+      resources: {}
+      securityContext:
+        runAsGroup: 0
+        runAsUser: 0
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /home/.kube/config
+        name: user-kube-configmap
+        subPath: config
+      - mountPath: /tmp/.kube
+        name: user-kubeconfig
+    nodeName: isim-dev
+    nodeSelector:
+      kubernetes.io/os: linux
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Never
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 0
+    tolerations:
+    - effect: NoSchedule
+      key: cattle.io/os
+      operator: Equal
+      value: linux
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/controlplane
+      operator: Equal
+      value: "true"
+    - effect: NoSchedule
+      key: node-role.kubernetes.io/control-plane
+      operator: Exists
+    - effect: NoExecute
+      key: node-role.kubernetes.io/etcd
+      operator: Exists
+    - effect: NoSchedule
+      key: node.cloudprovider.kubernetes.io/uninitialized
+      operator: Equal
+      value: "true"
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: data
+      secret:
+        defaultMode: 420
+        secretName: helm-operation-5vn62
+    - configMap:
+        defaultMode: 420
+        name: impersonation-helm-op-admin-kubeconfig-cf9c9
+      name: admin-kubeconfig
+    - emptyDir: {}
+      name: user-kubeconfig
+    - configMap:
+        defaultMode: 384
+        name: impersonation-helm-op-user-kubeconfig-qltj5
+      name: user-kube-configmap
+    - name: pod-impersonation-helm-op-dk7pq-token
+      secret:
+        defaultMode: 420
+        secretName: pod-impersonation-helm-op-dk7pq-token
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:33Z"
+      observedGeneration: 1
+      status: "False"
+      type: PodReadyToStartContainers
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:07Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "True"
+      type: Initialized
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:31Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:31Z"
+      observedGeneration: 1
+      reason: PodCompleted
+      status: "False"
+      type: ContainersReady
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:06Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://b1bac40e80efa0d4e551cb07f9767211d49dc7f24f8082d30ce750cae7a182c7
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: helm
+      ready: false
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://b1bac40e80efa0d4e551cb07f9767211d49dc7f24f8082d30ce750cae7a182c7
+          exitCode: 0
+          finishedAt: "2025-12-30T21:48:30Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:48:07Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+      volumeMounts:
+      - mountPath: /home/shell/helm
+        name: data
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /home/shell/.kube/config
+        name: user-kubeconfig
+    - containerID: containerd://fff09c06f9bf2c7c10e9b7564e5fbc5a01326ba5474868c631e132b959889388
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: proxy
+      ready: false
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://fff09c06f9bf2c7c10e9b7564e5fbc5a01326ba5474868c631e132b959889388
+          exitCode: 0
+          finishedAt: "2025-12-30T21:48:31Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:48:07Z"
+      user:
+        linux:
+          gid: 0
+          supplementalGroups:
+          - 0
+          uid: 0
+      volumeMounts:
+      - mountPath: /root/.kube/config
+        name: admin-kubeconfig
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: pod-impersonation-helm-op-dk7pq-token
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.122.168
+    hostIPs:
+    - ip: 192.168.122.168
+    initContainerStatuses:
+    - containerID: containerd://5cf4aba35c1100a3a3dfe60949cf7ff94e7cb30738419638f73d67766dbc8f32
+      image: docker.io/rancher/shell:v0.6.0
+      imageID: sha256:05a054accfeb9a7726e0a0cd3f0968a47850e1624c50d2b2258b880797a09c4e
+      lastState: {}
+      name: init-kubeconfig-volume
+      ready: true
+      resources: {}
+      restartCount: 0
+      started: false
+      state:
+        terminated:
+          containerID: containerd://5cf4aba35c1100a3a3dfe60949cf7ff94e7cb30738419638f73d67766dbc8f32
+          exitCode: 0
+          finishedAt: "2025-12-30T21:48:07Z"
+          reason: Completed
+          startedAt: "2025-12-30T21:48:07Z"
+      user:
+        linux:
+          gid: 0
+          supplementalGroups:
+          - 0
+          uid: 0
+      volumeMounts:
+      - mountPath: /home/.kube/config
+        name: user-kube-configmap
+      - mountPath: /tmp/.kube
+        name: user-kubeconfig
+    observedGeneration: 1
+    phase: Succeeded
+    qosClass: BestEffort
+    startTime: "2025-12-30T21:48:06Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 66a5891ba5083f760d6c3a1b7434e62e906216c0a3c8d860757ddcd14c349fb3
+      cni.projectcalico.org/podIP: 10.52.0.79/32
+      cni.projectcalico.org/podIPs: 10.52.0.79/32
+      harvesterhci.io/timestamp: "2025-12-30T21:50:35Z"
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "k8s-pod-network",
+            "ips": [
+                "10.52.0.79"
+            ],
+            "default": true,
+            "dns": {}
+        }]
+    creationTimestamp: "2025-12-30T21:50:36Z"
+    generateName: rancher-75f954475f-
+    generation: 1
+    labels:
+      app: rancher
+      pod-template-hash: 75f954475f
+      release: rancher
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/timestamp: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:pod-template-hash: {}
+            f:release: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"4b294e90-1a5a-4d4f-a9a9-371f38aa0754"}: {}
+        f:spec:
+          f:affinity:
+            .: {}
+            f:nodeAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution: {}
+            f:podAntiAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution: {}
+          f:containers:
+            k:{"name":"rancher"}:
+              .: {}
+              f:args: {}
+              f:env:
+                .: {}
+                k:{"name":"CATTLE_AGENT_TLS_MODE"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CATTLE_BOOTSTRAP_PASSWORD"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:secretKeyRef: {}
+                k:{"name":"CATTLE_FEATURES"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CATTLE_NAMESPACE"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CATTLE_PEER_SERVICE"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"CATTLE_SYSTEM_CATALOG"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"IMPERATIVE_API_APP_SELECTOR"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"IMPERATIVE_API_DIRECT"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":80,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:protocol: {}
+                k:{"containerPort":6666,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:protocol: {}
+              f:readinessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:resources: {}
+              f:startupProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:priorityClassName: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:serviceAccount: {}
+          f:serviceAccountName: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:50:36Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            .: {}
+            k:{"type":"PodScheduled"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:50:36Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:50:39Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:k8s.v1.cni.cncf.io/network-status: {}
+      manager: multus
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:50:39Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.52.0.79"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:52:09Z"
+    name: rancher-75f954475f-tdk4p
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: rancher-75f954475f
+      uid: 4b294e90-1a5a-4d4f-a9a9-371f38aa0754
+    resourceVersion: "8345"
+    uid: 5c81fc6f-cef4-4c70-9177-bd427142fc14
+  spec:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: kubernetes.io/os
+              operator: NotIn
+              values:
+              - windows
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+            - key: app
+              operator: In
+              values:
+              - rancher
+          topologyKey: kubernetes.io/hostname
+    containers:
+    - args:
+      - --no-cacerts
+      - --http-listen-port=80
+      - --https-listen-port=443
+      - --add-local=true
+      env:
+      - name: CATTLE_NAMESPACE
+        value: cattle-system
+      - name: CATTLE_PEER_SERVICE
+        value: rancher
+      - name: CATTLE_FEATURES
+        value: multi-cluster-management=false,multi-cluster-management-agent=false,managed-system-upgrade-controller=false,turtles=false,embedded-cluster-api=true
+      - name: CATTLE_SYSTEM_CATALOG
+        value: bundled
+      - name: CATTLE_BOOTSTRAP_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            key: bootstrapPassword
+            name: bootstrap-secret
+      - name: CATTLE_AGENT_TLS_MODE
+        value: system-store
+      - name: IMPERATIVE_API_DIRECT
+        value: "true"
+      - name: IMPERATIVE_API_APP_SELECTOR
+        value: rancher
+      image: rancher/rancher:v2.13.0
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 5
+        httpGet:
+          path: /healthz
+          port: 80
+          scheme: HTTP
+        periodSeconds: 30
+        successThreshold: 1
+        timeoutSeconds: 5
+      name: rancher
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      - containerPort: 6666
+        protocol: TCP
+      readinessProbe:
+        failureThreshold: 5
+        httpGet:
+          path: /healthz
+          port: 80
+          scheme: HTTP
+        periodSeconds: 30
+        successThreshold: 1
+        timeoutSeconds: 5
+      resources: {}
+      startupProbe:
+        failureThreshold: 12
+        httpGet:
+          path: /healthz
+          port: 80
+          scheme: HTTP
+        periodSeconds: 10
+        successThreshold: 1
+        timeoutSeconds: 5
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-6ktth
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: isim-dev
+    preemptionPolicy: PreemptLowerPriority
+    priority: 1e+09
+    priorityClassName: rancher-critical
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: rancher
+    serviceAccountName: rancher
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoSchedule
+      key: cattle.io/os
+      operator: Equal
+      value: linux
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-6ktth
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:50:41Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:50:38Z"
+      observedGeneration: 1
+      status: "True"
+      type: Initialized
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:52:09Z"
+      observedGeneration: 1
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:52:09Z"
+      observedGeneration: 1
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:50:38Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://2d160daebdade10fd0aae693c8dc344a68ece65c77553d891afec3f0be8cc58c
+      image: docker.io/rancher/rancher:v2.13.0
+      imageID: sha256:fec1d56fa0c479d6741d1138fc7d2464d46eb0807391af6654e9c02e4bf95d93
+      lastState: {}
+      name: rancher
+      ready: true
+      resources: {}
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-12-30T21:50:41Z"
+      user:
+        linux:
+          gid: 0
+          supplementalGroups:
+          - 0
+          uid: 0
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-6ktth
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.122.168
+    hostIPs:
+    - ip: 192.168.122.168
+    observedGeneration: 1
+    phase: Running
+    podIP: 10.52.0.79
+    podIPs:
+    - ip: 10.52.0.79
+    qosClass: BestEffort
+    startTime: "2025-12-30T21:50:38Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 17009999872d70ae6cf0b7ede5c7fc2f2f652aa2b5a1914b5020d6584fb493d9
+      cni.projectcalico.org/podIP: 10.52.0.52/32
+      cni.projectcalico.org/podIPs: 10.52.0.52/32
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "k8s-pod-network",
+            "ips": [
+                "10.52.0.52"
+            ],
+            "default": true,
+            "dns": {}
+        }]
+      kubectl.kubernetes.io/restartedAt: "2025-12-30T21:49:33Z"
+    creationTimestamp: "2025-12-30T21:49:33Z"
+    generateName: rancher-webhook-7bb7b55886-
+    generation: 1
+    labels:
+      app: rancher-webhook
+      pod-template-hash: 7bb7b55886
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/restartedAt: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:pod-template-hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"55350bcd-b30e-4fc3-9fc6-3893173f5fdc"}: {}
+        f:spec:
+          f:containers:
+            k:{"name":"rancher-webhook"}:
+              .: {}
+              f:env:
+                .: {}
+                k:{"name":"CATTLE_PORT"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"ENABLE_MCM"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"NAMESPACE"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+                k:{"name":"STAMP"}:
+                  .: {}
+                  f:name: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:livenessProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:name: {}
+              f:ports:
+                .: {}
+                k:{"containerPort":9443,"protocol":"TCP"}:
+                  .: {}
+                  f:containerPort: {}
+                  f:name: {}
+                  f:protocol: {}
+              f:resources: {}
+              f:startupProbe:
+                .: {}
+                f:failureThreshold: {}
+                f:httpGet:
+                  .: {}
+                  f:path: {}
+                  f:port: {}
+                  f:scheme: {}
+                f:periodSeconds: {}
+                f:successThreshold: {}
+                f:timeoutSeconds: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:nodeSelector: {}
+          f:priorityClassName: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:serviceAccount: {}
+          f:serviceAccountName: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:49:33Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:49:34Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:k8s.v1.cni.cncf.io/network-status: {}
+      manager: multus
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:49:34Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.52.0.52"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:52:05Z"
+    name: rancher-webhook-7bb7b55886-ppv7b
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: rancher-webhook-7bb7b55886
+      uid: 55350bcd-b30e-4fc3-9fc6-3893173f5fdc
+    resourceVersion: "8291"
+    uid: 82b5a92c-7a61-4305-89a8-e887f6e17d0c
+  spec:
+    containers:
+    - env:
+      - name: STAMP
+      - name: ENABLE_MCM
+        value: "false"
+      - name: CATTLE_PORT
+        value: "9443"
+      - name: NAMESPACE
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.namespace
+      image: rancher/rancher-webhook:v0.9.1
+      imagePullPolicy: IfNotPresent
+      livenessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /healthz
+          port: https
+          scheme: HTTPS
+        periodSeconds: 5
+        successThreshold: 1
+        timeoutSeconds: 1
+      name: rancher-webhook
+      ports:
+      - containerPort: 9443
+        name: https
+        protocol: TCP
+      resources: {}
+      startupProbe:
+        failureThreshold: 60
+        httpGet:
+          path: /healthz
+          port: https
+          scheme: HTTPS
+        periodSeconds: 5
+        successThreshold: 1
+        timeoutSeconds: 1
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-zjstc
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: isim-dev
+    nodeSelector:
+      kubernetes.io/os: linux
+    preemptionPolicy: PreemptLowerPriority
+    priority: 1e+09
+    priorityClassName: rancher-critical
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: rancher-webhook
+    serviceAccountName: rancher-webhook
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - effect: NoSchedule
+      key: cattle.io/os
+      operator: Equal
+      value: linux
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - name: kube-api-access-zjstc
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:49:37Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:49:33Z"
+      observedGeneration: 1
+      status: "True"
+      type: Initialized
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:52:05Z"
+      observedGeneration: 1
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:52:05Z"
+      observedGeneration: 1
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:49:33Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://1f6bb51653bc5c5d2ea427b312c74f07fbcebd27ade40b8f19d5f9736b73d64f
+      image: docker.io/rancher/rancher-webhook:v0.9.1
+      imageID: sha256:639605244309ff3697255ab1158641f3df0d7126272e778548c9fd0faa261203
+      lastState: {}
+      name: rancher-webhook
+      ready: true
+      resources: {}
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-12-30T21:49:36Z"
+      user:
+        linux:
+          gid: 1000
+          supplementalGroups:
+          - 1000
+          uid: 1000
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-zjstc
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.122.168
+    hostIPs:
+    - ip: 192.168.122.168
+    observedGeneration: 1
+    phase: Running
+    podIP: 10.52.0.52
+    podIPs:
+    - ip: 10.52.0.52
+    qosClass: BestEffort
+    startTime: "2025-12-30T21:49:33Z"
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 1722dc5b273bb12abe305984b3c6fb914a3a48cd33829247dd762ad412c2ada1
+      cni.projectcalico.org/podIP: 10.52.0.29/32
+      cni.projectcalico.org/podIPs: 10.52.0.29/32
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "k8s-pod-network",
+            "ips": [
+                "10.52.0.29"
+            ],
+            "default": true,
+            "dns": {}
+        }]
+    creationTimestamp: "2025-12-30T21:48:47Z"
+    generateName: system-upgrade-controller-65d9b4b8b-
+    generation: 1
+    labels:
+      app.kubernetes.io/component: controller
+      app.kubernetes.io/name: system-upgrade-controller
+      pod-template-hash: 65d9b4b8b
+      upgrade.cattle.io/controller: system-upgrade-controller
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:47Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/name: {}
+            f:pod-template-hash: {}
+            f:upgrade.cattle.io/controller: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"547c0a0d-fcb1-4eb1-9376-3b3bf91e7341"}: {}
+        f:spec:
+          f:affinity:
+            .: {}
+            f:nodeAffinity:
+              .: {}
+              f:preferredDuringSchedulingIgnoredDuringExecution: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution: {}
+            f:podAntiAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution: {}
+          f:containers:
+            k:{"name":"system-upgrade-controller"}:
+              .: {}
+              f:env:
+                .: {}
+                k:{"name":"SYSTEM_UPGRADE_CONTROLLER_NAME"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+                k:{"name":"SYSTEM_UPGRADE_CONTROLLER_NAMESPACE"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+                k:{"name":"SYSTEM_UPGRADE_CONTROLLER_NODE_NAME"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+              f:envFrom: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:runAsGroup: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+                f:seccompProfile:
+                  .: {}
+                  f:type: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/etc/ca-certificates"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/etc/pki"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/etc/ssl"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                k:{"mountPath":"/tmp"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext: {}
+          f:serviceAccount: {}
+          f:serviceAccountName: {}
+          f:terminationGracePeriodSeconds: {}
+          f:tolerations: {}
+          f:volumes:
+            .: {}
+            k:{"name":"etc-ca-certificates"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"etc-pki"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"etc-ssl"}:
+              .: {}
+              f:hostPath:
+                .: {}
+                f:path: {}
+                f:type: {}
+              f:name: {}
+            k:{"name":"tmp"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:48:47Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:k8s.v1.cni.cncf.io/network-status: {}
+      manager: multus
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:47Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.52.0.29"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:48Z"
+    name: system-upgrade-controller-65d9b4b8b-66vw7
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: apps/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: system-upgrade-controller-65d9b4b8b
+      uid: 547c0a0d-fcb1-4eb1-9376-3b3bf91e7341
+    resourceVersion: "2886"
+    uid: c4086dc3-a8cd-4abe-986f-10c4eb799ba9
+  spec:
+    affinity:
+      nodeAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - preference:
+            matchExpressions:
+            - key: node-role.kubernetes.io/control-plane
+              operator: In
+              values:
+              - "true"
+          weight: 100
+        - preference:
+            matchExpressions:
+            - key: node-role.kubernetes.io/master
+              operator: In
+              values:
+              - "true"
+          weight: 100
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: kubernetes.io/os
+              operator: NotIn
+              values:
+              - windows
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+            - key: app.kubernetes.io/name
+              operator: In
+              values:
+              - system-upgrade-controller
+          topologyKey: kubernetes.io/hostname
+    containers:
+    - env:
+      - name: SYSTEM_UPGRADE_CONTROLLER_NAME
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.labels['upgrade.cattle.io/controller']
+      - name: SYSTEM_UPGRADE_CONTROLLER_NAMESPACE
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.namespace
+      - name: SYSTEM_UPGRADE_CONTROLLER_NODE_NAME
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: spec.nodeName
+      envFrom:
+      - configMapRef:
+          name: system-upgrade-controller-config
+      image: rancher/system-upgrade-controller:v0.17.0
+      imagePullPolicy: IfNotPresent
+      name: system-upgrade-controller
+      resources: {}
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+          - ALL
+        runAsGroup: 65534
+        runAsNonRoot: true
+        runAsUser: 65534
+        seccompProfile:
+          type: RuntimeDefault
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /etc/ssl
+        name: etc-ssl
+        readOnly: true
+      - mountPath: /etc/pki
+        name: etc-pki
+        readOnly: true
+      - mountPath: /etc/ca-certificates
+        name: etc-ca-certificates
+        readOnly: true
+      - mountPath: /tmp
+        name: tmp
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-glmzv
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: true
+    nodeName: isim-dev
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: system-upgrade-controller
+    serviceAccountName: system-upgrade-controller
+    terminationGracePeriodSeconds: 30
+    tolerations:
+    - operator: Exists
+    volumes:
+    - hostPath:
+        path: /etc/ssl
+        type: DirectoryOrCreate
+      name: etc-ssl
+    - hostPath:
+        path: /etc/pki
+        type: DirectoryOrCreate
+      name: etc-pki
+    - hostPath:
+        path: /etc/ca-certificates
+        type: DirectoryOrCreate
+      name: etc-ca-certificates
+    - emptyDir: {}
+      name: tmp
+    - name: kube-api-access-glmzv
+      projected:
+        defaultMode: 420
+        sources:
+        - serviceAccountToken:
+            expirationSeconds: 3607
+            path: token
+        - configMap:
+            items:
+            - key: ca.crt
+              path: ca.crt
+            name: kube-root-ca.crt
+        - downwardAPI:
+            items:
+            - fieldRef:
+                apiVersion: v1
+                fieldPath: metadata.namespace
+              path: namespace
+  status:
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:48Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:47Z"
+      observedGeneration: 1
+      status: "True"
+      type: Initialized
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:48Z"
+      observedGeneration: 1
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:48Z"
+      observedGeneration: 1
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:48:47Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: containerd://bee55bcb399d1db5efab3f8eb5c12d9f86c98f78814814fe48ffa10de9a45acd
+      image: docker.io/rancher/system-upgrade-controller:v0.17.0
+      imageID: sha256:e0be34db9b1b1ab2e616fe9af70abbd54bb1e1fa59b857f194f6eafbd8ac4af6
+      lastState: {}
+      name: system-upgrade-controller
+      ready: true
+      resources: {}
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-12-30T21:48:47Z"
+      user:
+        linux:
+          gid: 65534
+          supplementalGroups:
+          - 65534
+          uid: 65534
+      volumeMounts:
+      - mountPath: /etc/ssl
+        name: etc-ssl
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /etc/pki
+        name: etc-pki
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /etc/ca-certificates
+        name: etc-ca-certificates
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /tmp
+        name: tmp
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: kube-api-access-glmzv
+        readOnly: true
+        recursiveReadOnly: Disabled
+    hostIP: 192.168.122.168
+    hostIPs:
+    - ip: 192.168.122.168
+    observedGeneration: 1
+    phase: Running
+    podIP: 10.52.0.29
+    podIPs:
+    - ip: 10.52.0.29
+    qosClass: BestEffort
+    startTime: "2025-12-30T21:48:47Z"
+kind: List
+metadata:
+  resourceVersion: "14473"

@@ -1,0 +1,114 @@
+apiVersion: v1
+items:
+- apiVersion: admissionregistration.k8s.io/v1
+  kind: ValidatingAdmissionPolicyBinding
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: harvester
+      meta.helm.sh/release-namespace: harvester-system
+      objectset.rio.cattle.io/id: default-mcc-harvester-cattle-fleet-local-system
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/part-of: harvester
+      app.kubernetes.io/version: v1.7.0
+      helm.sh/chart: harvester-1.7.0
+      helm.sh/release: harvester
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: admissionregistration.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:objectset.rio.cattle.io/id: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:helm.sh/chart: {}
+            f:helm.sh/release: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          f:policyName: {}
+          f:validationActions:
+            .: {}
+            v:"Deny"null: {}
+      manager: fleetagent
+      operation: Update
+      time: "2025-12-30T21:49:31Z"
+    name: harvester-immutable-promote-cidr
+    resourceVersion: "4002"
+    uid: 57aab6b7-4f09-46ec-8840-c449c713e342
+  spec:
+    policyName: harvester-immutable-promote-cidr
+    validationActions:
+    - Deny
+- apiVersion: admissionregistration.k8s.io/v1
+  kind: ValidatingAdmissionPolicyBinding
+  metadata:
+    annotations:
+      kubevirt.io/generation: "3"
+      kubevirt.io/install-strategy-identifier: b0bdb51f9c5fb273f28ae187010768729d661564
+      kubevirt.io/install-strategy-registry: registry.suse.com/suse/sles/15.7
+      kubevirt.io/install-strategy-version: 1.6.3-150700.3.13.1
+    creationTimestamp: "2025-12-30T21:50:04Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      kubevirt.io: kubevirt-node-restriction
+    managedFields:
+    - apiVersion: admissionregistration.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubevirt.io/generation: {}
+            f:kubevirt.io/install-strategy-identifier: {}
+            f:kubevirt.io/install-strategy-registry: {}
+            f:kubevirt.io/install-strategy-version: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:kubevirt.io: {}
+        f:spec:
+          f:matchResources: {}
+          f:policyName: {}
+          f:validationActions:
+            .: {}
+            v:"Deny"null: {}
+      manager: virt-operator
+      operation: Update
+      time: "2025-12-30T21:50:45Z"
+    name: kubevirt-node-restriction-binding
+    resourceVersion: "6717"
+    uid: 164781c7-28c1-46c2-83e2-cf5fb9f89e87
+  spec:
+    matchResources:
+      matchPolicy: Equivalent
+      namespaceSelector: {}
+      objectSelector: {}
+      resourceRules:
+      - apiGroups:
+        - "null"
+        apiVersions:
+        - '*'
+        operations:
+        - '*'
+        resources:
+        - nodes
+        scope: '*'
+    policyName: kubevirt-node-restriction-policy
+    validationActions:
+    - Deny
+kind: List
+metadata:
+  resourceVersion: "14450"

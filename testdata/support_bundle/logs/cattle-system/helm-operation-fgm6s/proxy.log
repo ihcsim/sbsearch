@@ -1,0 +1,3 @@
+2025-12-30T21:48:02.719729761Z W1230 21:48:02.719333       6 proxy.go:177] Request filter disabled, your proxy is vulnerable to XSRF attacks, please be cautious
+2025-12-30T21:48:02.719824597Z Starting to serve on 127.0.0.1:8001
+2025-12-30T21:48:04.559638740Z Terminated

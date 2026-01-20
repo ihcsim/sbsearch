@@ -1,0 +1,97 @@
+apiVersion: v1
+items:
+- apiVersion: harvesterhci.io/v1beta1
+  kind: VirtualMachineImage
+  metadata:
+    annotations:
+      harvesterhci.io/storageClassName: harvester-longhorn-single
+    creationTimestamp: "2025-12-30T21:55:42Z"
+    finalizers:
+    - wrangler.cattle.io/vm-image-controller
+    generateName: image-
+    generation: 21
+    labels:
+      harvesterhci.io/image-type: raw_qcow2
+      harvesterhci.io/imageDisplayName: ubuntu-24.04-minimal-cloudimg-amd64.img
+      harvesterhci.io/os-type: ubuntu
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/storageClassName: {}
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/vm-image-controller"null: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:harvesterhci.io/image-type: {}
+            f:harvesterhci.io/imageDisplayName: {}
+            f:harvesterhci.io/os-type: {}
+        f:spec:
+          .: {}
+          f:backend: {}
+          f:checksum: {}
+          f:displayName: {}
+          f:pvcName: {}
+          f:pvcNamespace: {}
+          f:retry: {}
+          f:sourceType: {}
+          f:targetStorageClassName: {}
+          f:url: {}
+        f:status:
+          .: {}
+          f:appliedUrl: {}
+          f:conditions: {}
+          f:failed: {}
+          f:progress: {}
+          f:size: {}
+          f:storageClassName: {}
+          f:virtualSize: {}
+      manager: harvester
+      operation: Update
+      time: "2025-12-30T21:56:50Z"
+    name: image-zs97p
+    namespace: default
+    resourceVersion: "11771"
+    uid: 5987e3f0-076b-438e-82a4-f635689704b3
+  spec:
+    backend: backingimage
+    checksum: "null"
+    displayName: ubuntu-24.04-minimal-cloudimg-amd64.img
+    pvcName: "null"
+    pvcNamespace: "null"
+    retry: 3
+    sourceType: download
+    storageClassParameters:
+      migratable: "true"
+      numberOfReplicas: "1"
+      staleReplicaTimeout: "30"
+    targetStorageClassName: harvester-longhorn-single
+    url: https://cloud-images.ubuntu.com/minimal/releases/noble/release-20251001/ubuntu-24.04-minimal-cloudimg-amd64.img
+  status:
+    appliedUrl: https://cloud-images.ubuntu.com/minimal/releases/noble/release-20251001/ubuntu-24.04-minimal-cloudimg-amd64.img
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:56:50Z"
+      reason: Imported
+      status: "True"
+      type: Imported
+    - lastUpdateTime: "2025-12-30T21:55:42Z"
+      reason: Initialized
+      status: "True"
+      type: Initialized
+    - lastUpdateTime: "2025-12-30T21:56:50Z"
+      status: "False"
+      type: RetryLimitExceeded
+    failed: 0
+    progress: 100
+    size: 2.58342912e+08
+    storageClassName: longhorn-image-zs97p
+    virtualSize: 3.758096384e+09
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14471"

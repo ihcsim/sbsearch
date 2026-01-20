@@ -1,0 +1,17 @@
+2025-12-30T21:50:20.671212017Z I1230 21:50:20.669414       1 feature_gate.go:385] feature gates: {map[]}
+2025-12-30T21:50:20.671238645Z I1230 21:50:20.669525       1 csi-provisioner.go:168] "Version" version="v"
+2025-12-30T21:50:20.671241159Z I1230 21:50:20.669530       1 csi-provisioner.go:191] Building kube configs for running in cluster...
+2025-12-30T21:50:20.671243233Z I1230 21:50:20.670447       1 envvar.go:172] "Feature gate default state" feature="ClientsPreferCBOR" enabled=false
+2025-12-30T21:50:20.671244476Z I1230 21:50:20.670467       1 envvar.go:172] "Feature gate default state" feature="InformerResourceVersion" enabled=false
+2025-12-30T21:50:20.671245668Z I1230 21:50:20.670470       1 envvar.go:172] "Feature gate default state" feature="InOrderInformers" enabled=true
+2025-12-30T21:50:20.671246729Z I1230 21:50:20.670473       1 envvar.go:172] "Feature gate default state" feature="WatchListClient" enabled=false
+2025-12-30T21:50:20.671247971Z I1230 21:50:20.670476       1 envvar.go:172] "Feature gate default state" feature="ClientsAllowCBOR" enabled=false
+2025-12-30T21:50:21.674479154Z I1230 21:50:21.673660       1 common.go:143] "Probing CSI driver for readiness"
+2025-12-30T21:50:21.683481844Z I1230 21:50:21.680230       1 csi-provisioner.go:246] Detected CSI driver driver.longhorn.io
+2025-12-30T21:50:21.683486382Z I1230 21:50:21.682777       1 csi-provisioner.go:315] CSI driver supports PUBLISH_UNPUBLISH_VOLUME, watching VolumeAttachments
+2025-12-30T21:50:21.706090143Z I1230 21:50:21.705996       1 csi-provisioner.go:480] using apps/v1/Deployment csi-provisioner as owner of CSIStorageCapacity objects
+2025-12-30T21:50:21.706228881Z I1230 21:50:21.706170       1 nodes.go:205] Started node topology worker
+2025-12-30T21:50:21.708200627Z I1230 21:50:21.708139       1 csi-provisioner.go:545] using the CSIStorageCapacity v1 API
+2025-12-30T21:50:21.708417174Z I1230 21:50:21.708384       1 csi-provisioner.go:608] ServeMux listening at ":8000"
+2025-12-30T21:50:21.708497688Z I1230 21:50:21.708467       1 controller.go:758] "Using saving PVs to API server in background"
+2025-12-30T21:50:21.708753245Z I1230 21:50:21.708729       1 leaderelection.go:257] attempting to acquire leader lease longhorn-system/driver-longhorn-io...

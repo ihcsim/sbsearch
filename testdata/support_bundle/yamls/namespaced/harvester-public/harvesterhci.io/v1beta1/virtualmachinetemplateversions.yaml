@@ -1,0 +1,681 @@
+apiVersion: v1
+items:
+- apiVersion: harvesterhci.io/v1beta1
+  kind: VirtualMachineTemplateVersion
+  metadata:
+    annotations:
+      harvesterhci.io/default-userdata-secret: iso-image-template-userdata
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    generation: 2
+    labels:
+      template.harvesterhci.io/templateID: iso-image-base-template
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/default-userdata-secret: {}
+          f:labels:
+            .: {}
+            f:template.harvesterhci.io/templateID: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"94c0d226-0c1e-4f13-9bc1-0c9c1bd2ad53"}: {}
+        f:spec:
+          .: {}
+          f:templateId: {}
+          f:vm:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:harvesterhci.io/volumeClaimTemplates: {}
+              f:creationTimestamp: {}
+            f:spec:
+              .: {}
+              f:runStrategy: {}
+              f:template:
+                .: {}
+                f:metadata:
+                  .: {}
+                  f:creationTimestamp: {}
+                f:spec:
+                  .: {}
+                  f:domain:
+                    .: {}
+                    f:cpu:
+                      .: {}
+                      f:cores: {}
+                    f:devices:
+                      .: {}
+                      f:disks: {}
+                      f:interfaces: {}
+                    f:features:
+                      .: {}
+                      f:acpi:
+                        .: {}
+                        f:enabled: {}
+                    f:resources:
+                      .: {}
+                      f:limits:
+                        .: {}
+                        f:cpu: {}
+                        f:memory: {}
+                  f:evictionStrategy: {}
+                  f:networks: {}
+                  f:volumes: {}
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:version: {}
+      manager: harvester
+      operation: Update
+      time: "2025-12-30T21:50:35Z"
+    name: iso-image-base-version
+    namespace: harvester-public
+    ownerReferences:
+    - apiVersion: harvesterhci.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: VirtualMachineTemplate
+      name: iso-image-base-template
+      uid: 94c0d226-0c1e-4f13-9bc1-0c9c1bd2ad53
+    resourceVersion: "6261"
+    uid: d90315a4-94fc-4723-a959-b1a9fb1cfc33
+  spec:
+    templateId: harvester-public/iso-image-base-template
+    vm:
+      metadata:
+        annotations:
+          harvesterhci.io/volumeClaimTemplates: |-
+            [{
+              "metadata": {
+                "name": "pvc-cdrom-disk",
+                "annotations": {
+                  "harvesterhci.io/imageId": ""
+                }
+              },
+              "spec":{
+                "accessModes": ["ReadWriteMany"],
+                "resources":{
+                  "requests":{
+                    "storage": "10Gi"
+                  }
+                },
+                "volumeMode": "Block"
+              }
+            },
+            {
+              "metadata": {
+                "name": "pvc-rootdisk"
+              },
+              "spec":{
+                "accessModes": ["ReadWriteMany"],
+                "resources":{
+                  "requests":{
+                    "storage": "10Gi"
+                  }
+                },
+                "volumeMode": "Block"
+              }
+            }]
+        creationTimestamp: null
+      spec:
+        runStrategy: RerunOnFailure
+        template:
+          metadata:
+            creationTimestamp: null
+          spec:
+            domain:
+              cpu:
+                cores: 1
+              devices:
+                disks:
+                - bootOrder: 2
+                  cdrom:
+                    bus: sata
+                    readonly: true
+                  name: cdrom-disk
+                - bootOrder: 1
+                  disk:
+                    bus: virtio
+                  name: rootdisk
+                interfaces:
+                - masquerade: {}
+                  model: virtio
+                  name: default
+              features:
+                acpi:
+                  enabled: true
+              resources:
+                limits:
+                  cpu: "1"
+                  memory: 2Gi
+            evictionStrategy: LiveMigrateIfPossible
+            networks:
+            - name: default
+              pod: {}
+            volumes:
+            - name: cdrom-disk
+              persistentVolumeClaim:
+                claimName: pvc-cdrom-disk
+            - name: rootdisk
+              persistentVolumeClaim:
+                claimName: pvc-rootdisk
+            - cloudInitNoCloud:
+                secretRef:
+                  name: iso-image-template-userdata
+              name: cloudinitdisk
+  status:
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:50:35Z"
+      status: "True"
+      type: ready
+    - lastUpdateTime: "2025-12-30T21:50:35Z"
+      status: "True"
+      type: assigned
+    version: 1
+- apiVersion: harvesterhci.io/v1beta1
+  kind: VirtualMachineTemplateVersion
+  metadata:
+    annotations:
+      harvesterhci.io/default-userdata-secret: raw-image-template-userdata
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    generation: 2
+    labels:
+      template.harvesterhci.io/templateID: raw-image-base-template
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:harvesterhci.io/default-userdata-secret: {}
+          f:labels:
+            .: {}
+            f:template.harvesterhci.io/templateID: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"9f2d8136-356c-4429-929f-1fb250162991"}: {}
+        f:spec:
+          .: {}
+          f:templateId: {}
+          f:vm:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:harvesterhci.io/volumeClaimTemplates: {}
+              f:creationTimestamp: {}
+            f:spec:
+              .: {}
+              f:runStrategy: {}
+              f:template:
+                .: {}
+                f:metadata:
+                  .: {}
+                  f:creationTimestamp: {}
+                f:spec:
+                  .: {}
+                  f:domain:
+                    .: {}
+                    f:cpu:
+                      .: {}
+                      f:cores: {}
+                    f:devices:
+                      .: {}
+                      f:disks: {}
+                      f:interfaces: {}
+                    f:features:
+                      .: {}
+                      f:acpi:
+                        .: {}
+                        f:enabled: {}
+                    f:resources:
+                      .: {}
+                      f:limits:
+                        .: {}
+                        f:cpu: {}
+                        f:memory: {}
+                  f:evictionStrategy: {}
+                  f:networks: {}
+                  f:volumes: {}
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:version: {}
+      manager: harvester
+      operation: Update
+      time: "2025-12-30T21:50:36Z"
+    name: raw-image-base-version
+    namespace: harvester-public
+    ownerReferences:
+    - apiVersion: harvesterhci.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: VirtualMachineTemplate
+      name: raw-image-base-template
+      uid: 9f2d8136-356c-4429-929f-1fb250162991
+    resourceVersion: "6310"
+    uid: 05528c8a-aefb-435d-8b04-3112cb522a15
+  spec:
+    templateId: harvester-public/raw-image-base-template
+    vm:
+      metadata:
+        annotations:
+          harvesterhci.io/volumeClaimTemplates: |-
+            [{
+              "metadata": {
+                "name": "pvc-rootdisk",
+                "annotations": {
+                  "harvesterhci.io/imageId": ""
+                }
+              },
+              "spec":{
+                "accessModes": ["ReadWriteMany"],
+                "resources":{
+                  "requests":{
+                    "storage": "10Gi"
+                  }
+                },
+                "volumeMode": "Block"
+              }
+            }]
+        creationTimestamp: null
+      spec:
+        runStrategy: RerunOnFailure
+        template:
+          metadata:
+            creationTimestamp: null
+          spec:
+            domain:
+              cpu:
+                cores: 1
+              devices:
+                disks:
+                - bootOrder: 1
+                  disk:
+                    bus: virtio
+                  name: rootdisk
+                interfaces:
+                - masquerade: {}
+                  model: virtio
+                  name: default
+              features:
+                acpi:
+                  enabled: true
+              resources:
+                limits:
+                  cpu: "1"
+                  memory: 2Gi
+            evictionStrategy: LiveMigrateIfPossible
+            networks:
+            - name: default
+              pod: {}
+            volumes:
+            - name: rootdisk
+              persistentVolumeClaim:
+                claimName: pvc-rootdisk
+            - cloudInitNoCloud:
+                secretRef:
+                  name: raw-image-template-userdata
+              name: cloudinitdisk
+  status:
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:50:35Z"
+      status: "True"
+      type: ready
+    - lastUpdateTime: "2025-12-30T21:50:35Z"
+      status: "True"
+      type: assigned
+    version: 1
+- apiVersion: harvesterhci.io/v1beta1
+  kind: VirtualMachineTemplateVersion
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    generation: 2
+    labels:
+      template.harvesterhci.io/templateID: windows-iso-image-base-template
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:template.harvesterhci.io/templateID: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"288b13d0-c1ac-4a15-8cc4-d7b58dc7f26d"}: {}
+        f:spec:
+          .: {}
+          f:templateId: {}
+          f:vm:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:harvesterhci.io/reservedMemory: {}
+                f:harvesterhci.io/volumeClaimTemplates: {}
+              f:creationTimestamp: {}
+              f:labels:
+                .: {}
+                f:harvesterhci.io/os: {}
+            f:spec:
+              .: {}
+              f:runStrategy: {}
+              f:template:
+                .: {}
+                f:metadata:
+                  .: {}
+                  f:creationTimestamp: {}
+                f:spec:
+                  .: {}
+                  f:domain:
+                    .: {}
+                    f:cpu:
+                      .: {}
+                      f:cores: {}
+                    f:devices:
+                      .: {}
+                      f:disks: {}
+                      f:inputs: {}
+                      f:interfaces: {}
+                    f:features:
+                      .: {}
+                      f:acpi:
+                        .: {}
+                        f:enabled: {}
+                    f:resources:
+                      .: {}
+                      f:limits:
+                        .: {}
+                        f:cpu: {}
+                        f:memory: {}
+                  f:evictionStrategy: {}
+                  f:networks: {}
+                  f:volumes: {}
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:version: {}
+      manager: harvester
+      operation: Update
+      time: "2025-12-30T21:50:36Z"
+    name: windows-iso-image-base-version
+    namespace: harvester-public
+    ownerReferences:
+    - apiVersion: harvesterhci.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: VirtualMachineTemplate
+      name: windows-iso-image-base-template
+      uid: 288b13d0-c1ac-4a15-8cc4-d7b58dc7f26d
+    resourceVersion: "6364"
+    uid: dbaa8f72-4f45-4434-b651-2b06c41efa20
+  spec:
+    templateId: harvester-public/windows-iso-image-base-template
+    vm:
+      metadata:
+        annotations:
+          harvesterhci.io/reservedMemory: 256Mi
+          harvesterhci.io/volumeClaimTemplates: |-
+            [{
+              "metadata": {
+                "name": "pvc-cdrom-disk",
+                "annotations": {
+                  "harvesterhci.io/imageId": ""
+                }
+              },
+              "spec":{
+                "accessModes": ["ReadWriteMany"],
+                "resources":{
+                  "requests":{
+                    "storage": "20Gi"
+                  }
+                },
+                "volumeMode": "Block"
+              }
+            },
+            {
+              "metadata": {
+                "name": "pvc-rootdisk"
+              },
+              "spec":{
+                "accessModes": ["ReadWriteMany"],
+                "resources":{
+                  "requests":{
+                    "storage": "32Gi"
+                  }
+                },
+                "volumeMode": "Block"
+              }
+            }]
+        creationTimestamp: "null"
+        labels:
+          harvesterhci.io/os: windows
+      spec:
+        runStrategy: RerunOnFailure
+        template:
+          metadata:
+            creationTimestamp: null
+          spec:
+            domain:
+              cpu:
+                cores: 1
+              devices:
+                disks:
+                - bootOrder: 1
+                  cdrom:
+                    bus: sata
+                  name: cdrom-disk
+                - bootOrder: 2
+                  disk:
+                    bus: virtio
+                  name: rootdisk
+                - cdrom:
+                    bus: sata
+                  name: virtio-container-disk
+                inputs:
+                - bus: usb
+                  name: tablet
+                  type: tablet
+                interfaces:
+                - masquerade: {}
+                  model: e1000
+                  name: default
+              features:
+                acpi:
+                  enabled: true
+              resources:
+                limits:
+                  cpu: "1"
+                  memory: 2Gi
+            evictionStrategy: LiveMigrateIfPossible
+            networks:
+            - name: default
+              pod: {}
+            volumes:
+            - name: cdrom-disk
+              persistentVolumeClaim:
+                claimName: pvc-cdrom-disk
+            - name: rootdisk
+              persistentVolumeClaim:
+                claimName: pvc-rootdisk
+            - containerDisk:
+                image: registry.suse.com/suse/vmdp/vmdp:2.5.4.3
+                imagePullPolicy: IfNotPresent
+              name: virtio-container-disk
+  status:
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:50:35Z"
+      status: "True"
+      type: ready
+    - lastUpdateTime: "2025-12-30T21:50:36Z"
+      status: "True"
+      type: assigned
+    version: 1
+- apiVersion: harvesterhci.io/v1beta1
+  kind: VirtualMachineTemplateVersion
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    generation: 2
+    labels:
+      template.harvesterhci.io/templateID: windows-raw-image-base-template
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:template.harvesterhci.io/templateID: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"dce5f7df-3e31-4731-ba2c-dff39cafea7f"}: {}
+        f:spec:
+          .: {}
+          f:templateId: {}
+          f:vm:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:harvesterhci.io/reservedMemory: {}
+                f:harvesterhci.io/volumeClaimTemplates: {}
+              f:creationTimestamp: {}
+              f:labels:
+                .: {}
+                f:harvesterhci.io/os: {}
+            f:spec:
+              .: {}
+              f:runStrategy: {}
+              f:template:
+                .: {}
+                f:metadata:
+                  .: {}
+                  f:creationTimestamp: {}
+                f:spec:
+                  .: {}
+                  f:domain:
+                    .: {}
+                    f:cpu:
+                      .: {}
+                      f:cores: {}
+                    f:devices:
+                      .: {}
+                      f:disks: {}
+                      f:interfaces: {}
+                    f:features:
+                      .: {}
+                      f:acpi:
+                        .: {}
+                        f:enabled: {}
+                    f:resources:
+                      .: {}
+                      f:limits:
+                        .: {}
+                        f:cpu: {}
+                        f:memory: {}
+                  f:evictionStrategy: {}
+                  f:networks: {}
+                  f:volumes: {}
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:version: {}
+      manager: harvester
+      operation: Update
+      time: "2025-12-30T21:50:36Z"
+    name: windows-raw-image-base-version
+    namespace: harvester-public
+    ownerReferences:
+    - apiVersion: harvesterhci.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: VirtualMachineTemplate
+      name: windows-raw-image-base-template
+      uid: dce5f7df-3e31-4731-ba2c-dff39cafea7f
+    resourceVersion: "6398"
+    uid: 51514192-73c4-4e7d-b5aa-acd66bdb2b69
+  spec:
+    templateId: harvester-public/windows-raw-image-base-template
+    vm:
+      metadata:
+        annotations:
+          harvesterhci.io/reservedMemory: 256Mi
+          harvesterhci.io/volumeClaimTemplates: |-
+            [{
+              "metadata": {
+                "name": "pvc-rootdisk",
+                "annotations": {
+                  "harvesterhci.io/imageId": ""
+                }
+              },
+              "spec":{
+                "accessModes": ["ReadWriteMany"],
+                "resources":{
+                  "requests":{
+                    "storage": "32Gi"
+                  }
+                },
+                "volumeMode": "Block"
+              }
+            }]
+        creationTimestamp: "null"
+        labels:
+          harvesterhci.io/os: windows
+      spec:
+        runStrategy: RerunOnFailure
+        template:
+          metadata:
+            creationTimestamp: null
+          spec:
+            domain:
+              cpu:
+                cores: 1
+              devices:
+                disks:
+                - bootOrder: 1
+                  disk:
+                    bus: virtio
+                  name: rootdisk
+                interfaces:
+                - masquerade: {}
+                  model: virtio
+                  name: default
+              features:
+                acpi:
+                  enabled: true
+              resources:
+                limits:
+                  cpu: "1"
+                  memory: 2Gi
+            evictionStrategy: LiveMigrateIfPossible
+            networks:
+            - name: default
+              pod: {}
+            volumes:
+            - name: rootdisk
+              persistentVolumeClaim:
+                claimName: pvc-rootdisk
+  status:
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:50:35Z"
+      status: "True"
+      type: ready
+    - lastUpdateTime: "2025-12-30T21:50:36Z"
+      status: "True"
+      type: assigned
+    version: 1
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14523"

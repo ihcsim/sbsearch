@@ -254,3 +254,63 @@ impl Tui {
         }
     }
 }
+
+#[cfg(test)]
+mod tests {
+
+    use super::*;
+    use std::fs::File;
+    use std::io::{BufRead, BufReader};
+    use tempfile::NamedTempFile;
+
+    #[test]
+    fn test_read_entries_from_sb() {
+        let path = "./testdata/support_bundle/logs";
+        let keyword = "vm-00";
+        let mut tui = Tui::new(path, keyword);
+        tui.read_entries_from_sb();
+
+        // there are 218 entries containing "vm-00" in the testdata support bundle.
+        // after paging, only 100 entries are loaded into entries_offset with a total
+        // of 3 pages.
+        assert_eq!(tui.entries_cache.len(), 218);
+        assert_eq!(tui.entries_offset.len(), DEFAULT_MAX_ENTRIES_PER_PAGE);
+        assert_eq!(tui.page_final, 3);
+        assert_eq!(tui.nav_state, ListState::default().with_selected(Some(0)));
+        assert!(!tui.page_reload);
+        tui.exit();
+
+        let keyword = "vm-00-disk-0-";
+        let mut tui = Tui::new(path, keyword);
+        tui.read_entries_from_sb();
+        assert_eq!(tui.entries_cache.len(), 72);
+        assert_eq!(tui.entries_offset.len(), 72);
+        assert_eq!(tui.page_final, 1);
+        assert_eq!(tui.nav_state, ListState::default().with_selected(Some(0)));
+        assert!(!tui.page_reload);
+        tui.exit();
+    }
+
+    #[test]
+    fn test_save_to_file() {
+        let path = "./testdata/support_bundle/logs";
+        let keyword = "vm-00";
+        let mut tui = Tui::new(path, keyword);
+
+        let file = NamedTempFile::new().unwrap();
+        tui.last_saved_filename = file.path().to_str().unwrap().to_string();
+
+        tui.read_entries_from_sb();
+
+        let result = tui.save_to_file();
+        assert!(result.is_ok());
+
+        let opened = File::open(file.path()).unwrap();
+        let reader = BufReader::new(opened);
+        let mut num_lines = 0;
+        for _line in reader.lines() {
+            num_lines += 1;
+        }
+        assert_eq!(num_lines, tui.entries_cache.len());
+    }
+}

@@ -1,0 +1,242 @@
+apiVersion: v1
+items:
+- apiVersion: longhorn.io/v1beta2
+  kind: Engine
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:01Z"
+    finalizers:
+    - longhorn.io
+    generation: 2
+    labels:
+      longhornnode: isim-dev
+      longhornvolume: pvc-a30f7311-cc82-4e85-89d6-144156fce238
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:longhornnode: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"48ed1aa3-7577-42b1-a63d-e9b2bdfbfaa0"}: {}
+        f:spec:
+          .: {}
+          f:active: {}
+          f:backupVolume: {}
+          f:dataEngine: {}
+          f:desireState: {}
+          f:disableFrontend: {}
+          f:frontend: {}
+          f:image: {}
+          f:logRequested: {}
+          f:nodeID: {}
+          f:replicaAddressMap:
+            .: {}
+            f:pvc-a30f7311-cc82-4e85-89d6-144156fce238-r-06057446: {}
+          f:requestedBackupRestore: {}
+          f:requestedDataSource: {}
+          f:revisionCounterDisabled: {}
+          f:salvageRequested: {}
+          f:snapshotMaxCount: {}
+          f:snapshotMaxSize: {}
+          f:unmapMarkSnapChainRemovedEnabled: {}
+          f:upgradedReplicaAddressMap: {}
+          f:volumeName: {}
+          f:volumeSize: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2025-12-30T21:58:04Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:backupStatus: {}
+          f:cloneStatus:
+            .: {}
+            f:tcp://10.52.0.60:10000:
+              .: {}
+              f:error: {}
+              f:fromReplicaAddress: {}
+              f:isCloning: {}
+              f:progress: {}
+              f:snapshotName: {}
+              f:state: {}
+          f:conditions: {}
+          f:currentImage: {}
+          f:currentReplicaAddressMap:
+            .: {}
+            f:pvc-a30f7311-cc82-4e85-89d6-144156fce238-r-06057446: {}
+          f:currentSize: {}
+          f:currentState: {}
+          f:endpoint: {}
+          f:instanceManagerName: {}
+          f:ip: {}
+          f:isExpanding: {}
+          f:lastExpansionError: {}
+          f:lastExpansionFailedAt: {}
+          f:lastRestoredBackup: {}
+          f:logFetched: {}
+          f:ownerID: {}
+          f:port: {}
+          f:purgeStatus:
+            .: {}
+            f:tcp://10.52.0.60:10000:
+              .: {}
+              f:error: {}
+              f:isPurging: {}
+              f:progress: {}
+              f:state: {}
+          f:rebuildStatus: {}
+          f:replicaModeMap:
+            .: {}
+            f:pvc-a30f7311-cc82-4e85-89d6-144156fce238-r-06057446: {}
+          f:replicaTransitionTimeMap:
+            .: {}
+            f:pvc-a30f7311-cc82-4e85-89d6-144156fce238-r-06057446: {}
+          f:restoreStatus:
+            .: {}
+            f:tcp://10.52.0.60:10000:
+              .: {}
+              f:backupURL: {}
+              f:currentRestoringBackup: {}
+              f:isRestoring: {}
+              f:lastRestored: {}
+              f:state: {}
+          f:salvageExecuted: {}
+          f:snapshotMaxCount: {}
+          f:snapshotMaxSize: {}
+          f:snapshots:
+            .: {}
+            f:volume-head:
+              .: {}
+              f:children: {}
+              f:created: {}
+              f:labels: {}
+              f:name: {}
+              f:parent: {}
+              f:removed: {}
+              f:size: {}
+              f:usercreated: {}
+          f:snapshotsError: {}
+          f:started: {}
+          f:starting: {}
+          f:storageIP: {}
+          f:unmapMarkSnapChainRemovedEnabled: {}
+          f:uuid: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2025-12-30T22:00:27Z"
+    name: pvc-a30f7311-cc82-4e85-89d6-144156fce238-e-0
+    namespace: longhorn-system
+    ownerReferences:
+    - apiVersion: longhorn.io/v1beta2
+      kind: Volume
+      name: pvc-a30f7311-cc82-4e85-89d6-144156fce238
+      uid: 48ed1aa3-7577-42b1-a63d-e9b2bdfbfaa0
+    resourceVersion: "14366"
+    uid: c12e1cac-7eb0-4991-a651-c638f31f74f8
+  spec:
+    active: true
+    backupVolume: "null"
+    dataEngine: v1
+    desireState: running
+    disableFrontend: false
+    frontend: blockdev
+    image: longhornio/longhorn-engine:v1.10.1
+    logRequested: false
+    nodeID: isim-dev
+    replicaAddressMap:
+      pvc-a30f7311-cc82-4e85-89d6-144156fce238-r-06057446: 10.52.0.60:10000
+    requestedBackupRestore: "null"
+    requestedDataSource: "null"
+    revisionCounterDisabled: true
+    salvageRequested: false
+    snapshotMaxCount: 250
+    snapshotMaxSize: "0"
+    unmapMarkSnapChainRemovedEnabled: false
+    upgradedReplicaAddressMap: {}
+    volumeName: pvc-a30f7311-cc82-4e85-89d6-144156fce238
+    volumeSize: "10737418240"
+  status:
+    backupStatus: "null"
+    cloneStatus:
+      tcp://10.52.0.60:10000:
+        error: "null"
+        fromReplicaAddress: "null"
+        isCloning: false
+        progress: 0
+        snapshotName: "null"
+        state: "null"
+    conditions:
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:58:01Z"
+      message: "null"
+      reason: "null"
+      status: "True"
+      type: InstanceCreation
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:58:01Z"
+      message: "null"
+      reason: "null"
+      status: "False"
+      type: FilesystemReadOnly
+    currentImage: longhornio/longhorn-engine:v1.10.1
+    currentReplicaAddressMap:
+      pvc-a30f7311-cc82-4e85-89d6-144156fce238-r-06057446: 10.52.0.60:10000
+    currentSize: "10737418240"
+    currentState: running
+    endpoint: /dev/longhorn/pvc-a30f7311-cc82-4e85-89d6-144156fce238
+    instanceManagerName: instance-manager-d835fabb525a12275b07e20022b5b213
+    ip: 10.52.0.60
+    isExpanding: false
+    lastExpansionError: "null"
+    lastExpansionFailedAt: "null"
+    lastRestoredBackup: "null"
+    logFetched: false
+    ownerID: isim-dev
+    port: 10010
+    purgeStatus:
+      tcp://10.52.0.60:10000:
+        error: "null"
+        isPurging: false
+        progress: 0
+        state: "null"
+    rebuildStatus: {}
+    replicaModeMap:
+      pvc-a30f7311-cc82-4e85-89d6-144156fce238-r-06057446: RW
+    replicaTransitionTimeMap:
+      pvc-a30f7311-cc82-4e85-89d6-144156fce238-r-06057446: "2025-12-30T21:58:12Z"
+    restoreStatus:
+      tcp://10.52.0.60:10000:
+        backupURL: "null"
+        currentRestoringBackup: "null"
+        isRestoring: false
+        lastRestored: "null"
+        state: "null"
+    salvageExecuted: false
+    snapshotMaxCount: 250
+    snapshotMaxSize: "0"
+    snapshots:
+      volume-head:
+        children: {}
+        created: "2025-12-30T21:58:03Z"
+        labels: {}
+        name: volume-head
+        parent: "null"
+        removed: false
+        size: "590057472"
+        usercreated: false
+    snapshotsError: "null"
+    started: true
+    starting: false
+    storageIP: 10.52.0.60
+    unmapMarkSnapChainRemovedEnabled: false
+    uuid: 32a9dc6d-5f93-48a4-bf66-ef8e5b3a2652
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14495"

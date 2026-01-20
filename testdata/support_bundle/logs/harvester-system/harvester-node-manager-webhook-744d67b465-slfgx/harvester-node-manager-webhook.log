@@ -1,0 +1,26 @@
+2025-12-30T21:49:35.469916244Z time="2025-12-30T21:49:35Z" level=info msg="generated self-signed CA certificate CN=dynamiclistener-ca@1767131375,O=dynamiclistener-org: notBefore=2025-12-30 21:49:35.465262107 +0000 UTC notAfter=2035-12-28 21:49:35.465262107 +0000 UTC"
+2025-12-30T21:49:35.530396477Z time="2025-12-30T21:49:35Z" level=info msg="Listening on :8443"
+2025-12-30T21:49:35.530413483Z time="2025-12-30T21:49:35Z" level=info msg="certificate CN=dynamic,O=dynamic signed by CN=dynamiclistener-ca@1767131375,O=dynamiclistener-org: notBefore=2025-12-30 21:49:35 +0000 UTC notAfter=2026-12-30 21:49:35 +0000 UTC"
+2025-12-30T21:49:35.530415777Z time="2025-12-30T21:49:35Z" level=warning msg="dynamiclistener [::]:8443: no cached certificate available for preload - deferring certificate load until storage initialization or first client request"
+2025-12-30T21:49:35.542427692Z time="2025-12-30T21:49:35Z" level=info msg="Creating new TLS secret for harvester-system/harvester-node-manager-webhook-tls (count: 1): map[listener.cattle.io/cn-harvester-node-manager-webhook.har-ef92b8:harvester-node-manager-webhook.harvester-system.svc listener.cattle.io/fingerprint:SHA1=C48E93FE02CBAA0222C512CD685B6E613162C8E3]"
+2025-12-30T21:49:35.633057145Z time="2025-12-30T21:49:35Z" level=info msg="Active TLS secret harvester-system/harvester-node-manager-webhook-tls (ver=4257) (count 1): map[listener.cattle.io/cn-harvester-node-manager-webhook.har-ef92b8:harvester-node-manager-webhook.harvester-system.svc listener.cattle.io/fingerprint:SHA1=C48E93FE02CBAA0222C512CD685B6E613162C8E3]"
+2025-12-30T21:49:36.284774024Z time="2025-12-30T21:49:36Z" level=info msg="Starting /v1, Kind=Secret controller"
+2025-12-30T21:49:36.284839236Z time="2025-12-30T21:49:36Z" level=info msg="Sleeping for 15 seconds then applying webhook config"
+2025-12-30T21:49:36.286682202Z time="2025-12-30T21:49:36Z" level=info msg="Starting apiextensions.k8s.io/v1, Kind=CustomResourceDefinition controller"
+2025-12-30T21:49:36.286693664Z time="2025-12-30T21:49:36Z" level=info msg="Starting apiregistration.k8s.io/v1, Kind=APIService controller"
+2025-12-30T21:49:36.290755414Z time="2025-12-30T21:49:36Z" level=info msg="Updating TLS secret for harvester-system/harvester-node-manager-webhook-tls (count: 1): map[listener.cattle.io/cn-harvester-node-manager-webhook.har-ef92b8:harvester-node-manager-webhook.harvester-system.svc listener.cattle.io/fingerprint:SHA1=C48E93FE02CBAA0222C512CD685B6E613162C8E3]"
+2025-12-30T21:49:39.969079576Z W1230 21:49:39.965429       1 gvks.go:80] Failed to read API for groups: map[upload.cdi.kubevirt.io/v1beta1:stale GroupVersion discovery: upload.cdi.kubevirt.io/v1beta1]
+2025-12-30T21:49:41.470682395Z W1230 21:49:41.470527       1 gvks.go:80] Failed to read API for groups: map[upload.cdi.kubevirt.io/v1beta1:stale GroupVersion discovery: upload.cdi.kubevirt.io/v1beta1]
+2025-12-30T21:50:05.221706960Z W1230 21:50:05.221527       1 gvks.go:80] Failed to read API for groups: map[subresources.kubevirt.io/v1:stale GroupVersion discovery: subresources.kubevirt.io/v1 subresources.kubevirt.io/v1alpha3:stale GroupVersion discovery: subresources.kubevirt.io/v1alpha3]
+2025-12-30T21:50:36.766801618Z W1230 21:50:36.761773       1 gvks.go:80] Failed to read API for groups: map[ext.cattle.io/v1:stale GroupVersion discovery: ext.cattle.io/v1]
+2025-12-30T21:50:38.592606479Z W1230 21:50:38.588362       1 gvks.go:80] Failed to read API for groups: map[ext.cattle.io/v1:stale GroupVersion discovery: ext.cattle.io/v1]
+2025-12-30T21:50:40.634484515Z W1230 21:50:40.631947       1 gvks.go:80] Failed to read API for groups: map[ext.cattle.io/v1:stale GroupVersion discovery: ext.cattle.io/v1]
+2025-12-30T21:50:40.795122436Z W1230 21:50:40.794175       1 gvks.go:80] Failed to read API for groups: map[ext.cattle.io/v1:stale GroupVersion discovery: ext.cattle.io/v1]
+2025-12-30T21:50:40.945301971Z W1230 21:50:40.945201       1 gvks.go:80] Failed to read API for groups: map[ext.cattle.io/v1:stale GroupVersion discovery: ext.cattle.io/v1]
+2025-12-30T21:50:41.021033551Z W1230 21:50:41.020928       1 gvks.go:80] Failed to read API for groups: map[ext.cattle.io/v1:stale GroupVersion discovery: ext.cattle.io/v1]
+2025-12-30T21:50:41.210777524Z W1230 21:50:41.210683       1 gvks.go:80] Failed to read API for groups: map[ext.cattle.io/v1:stale GroupVersion discovery: ext.cattle.io/v1]
+2025-12-30T21:50:41.276439948Z W1230 21:50:41.273841       1 gvks.go:80] Failed to read API for groups: map[ext.cattle.io/v1:stale GroupVersion discovery: ext.cattle.io/v1]
+2025-12-30T21:50:46.273830926Z W1230 21:50:46.273748       1 gvks.go:80] Failed to read API for groups: map[ext.cattle.io/v1:stale GroupVersion discovery: ext.cattle.io/v1]
+2025-12-30T21:50:49.566664242Z W1230 21:50:49.566555       1 gvks.go:80] Failed to read API for groups: map[ext.cattle.io/v1:stale GroupVersion discovery: ext.cattle.io/v1]
+2025-12-30T21:50:50.167834943Z W1230 21:50:50.167310       1 gvks.go:80] Failed to read API for groups: map[ext.cattle.io/v1:stale GroupVersion discovery: ext.cattle.io/v1]
+2025-12-30T21:51:59.152198063Z W1230 21:51:59.144902       1 gvks.go:80] Failed to read API for groups: map[ext.cattle.io/v1:stale GroupVersion discovery: ext.cattle.io/v1]

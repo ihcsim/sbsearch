@@ -1,0 +1,17 @@
+2025-12-30T21:47:52.966425415Z {"level":"info","ts":"2025-12-30T21:47:52Z","logger":"setup","msg":"starting config controller"}
+2025-12-30T21:47:52.966452146Z {"level":"info","ts":"2025-12-30T21:47:52Z","logger":"setup","msg":"starting helmops controller"}
+2025-12-30T21:47:52.966453689Z {"level":"info","ts":"2025-12-30T21:47:52Z","logger":"setup","msg":"starting helmops status controller"}
+2025-12-30T21:47:52.966504259Z {"level":"info","ts":"2025-12-30T21:47:52Z","logger":"controller-runtime.metrics","msg":"Starting metrics server"}
+2025-12-30T21:47:52.966751740Z {"level":"info","ts":"2025-12-30T21:47:52Z","logger":"controller-runtime.metrics","msg":"Serving metrics server","bindAddress":":8081","secure":false}
+2025-12-30T21:47:52.967309115Z I1230 21:47:52.967270       8 leaderelection.go:257] attempting to acquire leader lease cattle-fleet-system/fleet-helmops-leader-election-shard...
+2025-12-30T21:47:52.975802222Z I1230 21:47:52.975515       8 leaderelection.go:271] successfully acquired lease cattle-fleet-system/fleet-helmops-leader-election-shard
+2025-12-30T21:47:52.976079812Z {"level":"info","ts":"2025-12-30T21:47:52Z","msg":"Starting EventSource","controller":"HelmOpStatus","controllerGroup":"fleet.cattle.io","controllerKind":"HelmOp","source":"kind source: *v1alpha1.Bundle"}
+2025-12-30T21:47:52.976237720Z {"level":"info","ts":"2025-12-30T21:47:52Z","msg":"Starting EventSource","controller":"HelmOpStatus","controllerGroup":"fleet.cattle.io","controllerKind":"HelmOp","source":"kind source: *v1alpha1.HelmOp"}
+2025-12-30T21:47:52.976848379Z {"level":"info","ts":"2025-12-30T21:47:52Z","msg":"Starting EventSource","controller":"configmap","controllerGroup":"","controllerKind":"ConfigMap","source":"kind source: *v1.ConfigMap"}
+2025-12-30T21:47:52.976854470Z {"level":"info","ts":"2025-12-30T21:47:52Z","msg":"Starting EventSource","controller":"helmop","controllerGroup":"fleet.cattle.io","controllerKind":"HelmOp","source":"kind source: *v1alpha1.HelmOp"}
+2025-12-30T21:47:53.076705130Z {"level":"info","ts":"2025-12-30T21:47:53Z","msg":"Starting Controller","controller":"HelmOpStatus","controllerGroup":"fleet.cattle.io","controllerKind":"HelmOp"}
+2025-12-30T21:47:53.076725560Z {"level":"info","ts":"2025-12-30T21:47:53Z","msg":"Starting workers","controller":"HelmOpStatus","controllerGroup":"fleet.cattle.io","controllerKind":"HelmOp","worker count":50}
+2025-12-30T21:47:53.076870272Z {"level":"info","ts":"2025-12-30T21:47:53Z","msg":"Starting Controller","controller":"configmap","controllerGroup":"","controllerKind":"ConfigMap"}
+2025-12-30T21:47:53.076881965Z {"level":"info","ts":"2025-12-30T21:47:53Z","msg":"Starting workers","controller":"configmap","controllerGroup":"","controllerKind":"ConfigMap","worker count":1}
+2025-12-30T21:47:53.077041977Z {"level":"info","ts":"2025-12-30T21:47:53Z","msg":"Starting Controller","controller":"helmop","controllerGroup":"fleet.cattle.io","controllerKind":"HelmOp"}
+2025-12-30T21:47:53.077044873Z {"level":"info","ts":"2025-12-30T21:47:53Z","msg":"Starting workers","controller":"helmop","controllerGroup":"fleet.cattle.io","controllerKind":"HelmOp","worker count":50}

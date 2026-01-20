@@ -1,0 +1,37 @@
+apiVersion: v1
+items:
+- apiVersion: coordination.k8s.io/v1
+  kind: Lease
+  metadata:
+    creationTimestamp: "2025-12-30T21:46:50Z"
+    managedFields:
+    - apiVersion: coordination.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"75908add-436d-4a4a-ac7f-91584193f4b7"}: {}
+        f:spec:
+          f:holderIdentity: {}
+          f:leaseDurationSeconds: {}
+          f:renewTime: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T22:00:34Z"
+    name: isim-dev
+    namespace: kube-node-lease
+    ownerReferences:
+    - apiVersion: v1
+      kind: Node
+      name: isim-dev
+      uid: 75908add-436d-4a4a-ac7f-91584193f4b7
+    resourceVersion: "14474"
+    uid: 1bc6e259-b26b-4f5a-a8d9-9b36841f1eb6
+  spec:
+    holderIdentity: isim-dev
+    leaseDurationSeconds: 40
+    renewTime: "2025-12-30T22:00:34.614393Z"
+kind: List
+metadata:
+  resourceVersion: "14523"

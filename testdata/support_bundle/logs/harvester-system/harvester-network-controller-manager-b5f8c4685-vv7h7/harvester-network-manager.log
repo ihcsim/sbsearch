@@ -1,0 +1,14 @@
+2025-12-30T21:49:34.872665982Z time="2025-12-30T21:49:34Z" level=info msg="Starting harvester-network-controller version v1.7.0"
+2025-12-30T21:49:34.872695783Z time="2025-12-30T21:49:34Z" level=info msg="Set log level to info"
+2025-12-30T21:49:34.872697777Z time="2025-12-30T21:49:34Z" level=info msg="namespace harvester-system threadiness 2 nodeName  helper-image rancher/harvester-network-helper:v1.7.0"
+2025-12-30T21:49:34.872700001Z W1230 21:49:34.871034       1 client_config.go:667] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+2025-12-30T21:49:34.872706654Z I1230 21:49:34.871715       1 leaderelection.go:257] attempting to acquire leader lease kube-system/harvester-network-controllers...
+2025-12-30T21:49:34.956106810Z I1230 21:49:34.954687       1 leaderelection.go:271] successfully acquired lease kube-system/harvester-network-controllers
+2025-12-30T21:49:38.653348105Z time="2025-12-30T21:49:38Z" level=info msg="Do not update the existing CRD NetworkAttachmentDefinition"
+2025-12-30T21:49:40.073831962Z time="2025-12-30T21:49:40Z" level=info msg="Starting /v1, Kind=Node controller"
+2025-12-30T21:49:40.074046826Z time="2025-12-30T21:49:40Z" level=info msg="Starting batch/v1, Kind=Job controller"
+2025-12-30T21:49:40.074177861Z time="2025-12-30T21:49:40Z" level=info msg="Starting k8s.cni.cncf.io/v1, Kind=NetworkAttachmentDefinition controller"
+2025-12-30T21:49:40.074319247Z time="2025-12-30T21:49:40Z" level=info msg="Starting network.harvesterhci.io/v1beta1, Kind=ClusterNetwork controller"
+2025-12-30T21:49:40.076358158Z time="2025-12-30T21:49:40Z" level=info msg="Starting network.harvesterhci.io/v1beta1, Kind=LinkMonitor controller"
+2025-12-30T21:49:40.076406516Z time="2025-12-30T21:49:40Z" level=info msg="Starting network.harvesterhci.io/v1beta1, Kind=VlanConfig controller"
+2025-12-30T21:49:40.076517290Z time="2025-12-30T21:49:40Z" level=info msg="Starting network.harvesterhci.io/v1beta1, Kind=VlanStatus controller"

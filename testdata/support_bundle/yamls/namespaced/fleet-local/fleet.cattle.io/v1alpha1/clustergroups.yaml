@@ -1,0 +1,103 @@
+apiVersion: v1
+items:
+- apiVersion: fleet.cattle.io/v1alpha1
+  kind: ClusterGroup
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4yQTY7bMAyFr1Jo7aR182cb6KLIsl3NDRiJjjmRSUOiEwSB7z6Qncn8YDLIjiK/9/ioi2lRwYGCqS4GmEVBSTimp+ye0WpEnQeSuQVVj3OSn+RMZWqPqDPr+6gYTHYXlhNjmO2PB1OZLsiRIgkT798hxzz78Y/Y/dk+6MbQoqmMFwv+ITh2YPEWetINmfGwQ//tqQ3EJul+QwFlWZZQrDDP67pYrFdLXOcW7QI2Rb7clPWu3iTTaziHNfRezdS4EyB2aNP6iB6tSkh1C2qb/7dkH24dhiRS0H6cXX9/Kz2rqX5lxlHsPJxNdUlBhJ8Q3Hn7mQoYpQ8Wx85o5DBSQDfiI9JSjMT7qRZHNaEbHyz6RknoGuDrJNzaPR9YTjzWJyD923V+0qf0fdtCOH+59dViGIaXAAAA//8lXw3tmQIAAA
+      objectset.rio.cattle.io/id: fleet-cluster
+      objectset.rio.cattle.io/owner-gvk: provisioning.cattle.io/v1, Kind=Cluster
+      objectset.rio.cattle.io/owner-name: local
+      objectset.rio.cattle.io/owner-namespace: fleet-local
+    creationTimestamp: "2025-12-30T21:47:33Z"
+    generation: 1
+    labels:
+      objectset.rio.cattle.io/hash: f2a8a9999a85e11ff83654e61cec3a781479fbf7
+    managedFields:
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:spec:
+          .: {}
+          f:selector: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:47:33Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:clusterCount: {}
+          f:conditions: {}
+          f:display:
+            .: {}
+            f:readyBundles: {}
+            f:readyClusters: {}
+          f:nonReadyClusterCount: {}
+          f:resourceCounts:
+            .: {}
+            f:desiredReady: {}
+            f:missing: {}
+            f:modified: {}
+            f:notReady: {}
+            f:orphaned: {}
+            f:ready: {}
+            f:unknown: {}
+            f:waitApplied: {}
+          f:summary:
+            .: {}
+            f:desiredReady: {}
+            f:ready: {}
+      manager: fleetcontroller
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:51:30Z"
+    name: default
+    namespace: fleet-local
+    resourceVersion: "7501"
+    uid: 021727b6-41c3-448c-9afa-eaee87131a52
+  spec:
+    selector:
+      matchLabels:
+        name: local
+  status:
+    clusterCount: 1
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:51:30Z"
+      status: "True"
+      type: Ready
+    - lastUpdateTime: "2025-12-30T21:47:53Z"
+      status: "True"
+      type: Processed
+    display:
+      readyBundles: 6/6
+      readyClusters: 1/1
+    nonReadyClusterCount: 0
+    resourceCounts:
+      desiredReady: 211
+      missing: 0
+      modified: 0
+      notReady: 0
+      orphaned: 0
+      ready: 211
+      unknown: 0
+      waitApplied: 0
+    summary:
+      desiredReady: 6
+      ready: 6
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14492"

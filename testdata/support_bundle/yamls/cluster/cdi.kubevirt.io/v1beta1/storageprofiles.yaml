@@ -1,0 +1,360 @@
+apiVersion: v1
+items:
+- apiVersion: cdi.kubevirt.io/v1beta1
+  kind: StorageProfile
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:44Z"
+    generation: 1
+    labels:
+      app: containerized-data-importer
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-controller
+      cdi.kubevirt.io: "null"
+    managedFields:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cdi.kubevirt.io: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"81182c2f-d27e-4d9f-a9db-6e45ca0714a5"}: {}
+        f:spec: {}
+        f:status:
+          .: {}
+          f:claimPropertySets: {}
+          f:cloneStrategy: {}
+          f:dataImportCronSourceFormat: {}
+          f:provisioner: {}
+          f:snapshotClass: {}
+          f:storageClass: {}
+      manager: virt-cdi-controller
+      operation: Update
+      time: "2025-12-30T21:49:44Z"
+    name: harvester-longhorn
+    ownerReferences:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: CDI
+      name: cdi
+      uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+    resourceVersion: "4937"
+    uid: 1c016b41-b543-4445-91d9-1c1e0bf8e730
+  spec: {}
+  status:
+    claimPropertySets:
+    - accessModes:
+      - ReadWriteMany
+      volumeMode: Block
+    - accessModes:
+      - ReadWriteOnce
+      volumeMode: Block
+    cloneStrategy: snapshot
+    dataImportCronSourceFormat: pvc
+    provisioner: driver.longhorn.io
+    snapshotClass: longhorn
+    storageClass: harvester-longhorn
+- apiVersion: cdi.kubevirt.io/v1beta1
+  kind: StorageProfile
+  metadata:
+    creationTimestamp: "2025-12-30T21:55:26Z"
+    generation: 1
+    labels:
+      app: containerized-data-importer
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-controller
+      cdi.kubevirt.io: "null"
+    managedFields:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cdi.kubevirt.io: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"81182c2f-d27e-4d9f-a9db-6e45ca0714a5"}: {}
+        f:spec: {}
+        f:status:
+          .: {}
+          f:claimPropertySets: {}
+          f:cloneStrategy: {}
+          f:dataImportCronSourceFormat: {}
+          f:provisioner: {}
+          f:snapshotClass: {}
+          f:storageClass: {}
+      manager: virt-cdi-controller
+      operation: Update
+      time: "2025-12-30T21:55:26Z"
+    name: harvester-longhorn-single
+    ownerReferences:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: CDI
+      name: cdi
+      uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+    resourceVersion: "10699"
+    uid: 68ad12fd-6df3-419e-8b86-efd76863c156
+  spec: {}
+  status:
+    claimPropertySets:
+    - accessModes:
+      - ReadWriteMany
+      volumeMode: Block
+    - accessModes:
+      - ReadWriteOnce
+      volumeMode: Block
+    cloneStrategy: snapshot
+    dataImportCronSourceFormat: pvc
+    provisioner: driver.longhorn.io
+    snapshotClass: longhorn
+    storageClass: harvester-longhorn-single
+- apiVersion: cdi.kubevirt.io/v1beta1
+  kind: StorageProfile
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:44Z"
+    generation: 1
+    labels:
+      app: containerized-data-importer
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-controller
+      cdi.kubevirt.io: "null"
+    managedFields:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cdi.kubevirt.io: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"81182c2f-d27e-4d9f-a9db-6e45ca0714a5"}: {}
+        f:spec: {}
+        f:status:
+          .: {}
+          f:claimPropertySets: {}
+          f:cloneStrategy: {}
+          f:dataImportCronSourceFormat: {}
+          f:provisioner: {}
+          f:snapshotClass: {}
+          f:storageClass: {}
+      manager: virt-cdi-controller
+      operation: Update
+      time: "2025-12-30T21:49:44Z"
+    name: longhorn
+    ownerReferences:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: CDI
+      name: cdi
+      uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+    resourceVersion: "4936"
+    uid: 92275e8f-8b9f-4cef-989e-ba1a44e56347
+  spec: {}
+  status:
+    claimPropertySets:
+    - accessModes:
+      - ReadWriteMany
+      volumeMode: Block
+    - accessModes:
+      - ReadWriteOnce
+      volumeMode: Block
+    cloneStrategy: snapshot
+    dataImportCronSourceFormat: pvc
+    provisioner: driver.longhorn.io
+    snapshotClass: longhorn
+    storageClass: longhorn
+- apiVersion: cdi.kubevirt.io/v1beta1
+  kind: StorageProfile
+  metadata:
+    creationTimestamp: "2025-12-30T21:55:42Z"
+    generation: 1
+    labels:
+      app: containerized-data-importer
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-controller
+      cdi.kubevirt.io: "null"
+    managedFields:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cdi.kubevirt.io: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"81182c2f-d27e-4d9f-a9db-6e45ca0714a5"}: {}
+        f:spec: {}
+        f:status:
+          .: {}
+          f:claimPropertySets: {}
+          f:cloneStrategy: {}
+          f:dataImportCronSourceFormat: {}
+          f:provisioner: {}
+          f:snapshotClass: {}
+          f:storageClass: {}
+      manager: virt-cdi-controller
+      operation: Update
+      time: "2025-12-30T21:55:42Z"
+    name: longhorn-image-zs97p
+    ownerReferences:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: CDI
+      name: cdi
+      uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+    resourceVersion: "10905"
+    uid: 92d1a986-406d-4550-a888-1f25d4ae5160
+  spec: {}
+  status:
+    claimPropertySets:
+    - accessModes:
+      - ReadWriteMany
+      volumeMode: Block
+    - accessModes:
+      - ReadWriteOnce
+      volumeMode: Block
+    cloneStrategy: snapshot
+    dataImportCronSourceFormat: pvc
+    provisioner: driver.longhorn.io
+    snapshotClass: longhorn
+    storageClass: longhorn-image-zs97p
+- apiVersion: cdi.kubevirt.io/v1beta1
+  kind: StorageProfile
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:45Z"
+    generation: 1
+    labels:
+      app: containerized-data-importer
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-controller
+      cdi.kubevirt.io: "null"
+    managedFields:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cdi.kubevirt.io: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"81182c2f-d27e-4d9f-a9db-6e45ca0714a5"}: {}
+        f:spec: {}
+        f:status:
+          .: {}
+          f:claimPropertySets: {}
+          f:cloneStrategy: {}
+          f:dataImportCronSourceFormat: {}
+          f:provisioner: {}
+          f:snapshotClass: {}
+          f:storageClass: {}
+      manager: virt-cdi-controller
+      operation: Update
+      time: "2025-12-30T21:49:45Z"
+    name: longhorn-static
+    ownerReferences:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: CDI
+      name: cdi
+      uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+    resourceVersion: "4992"
+    uid: b470f5b8-10a1-408c-86b0-8465e253be2e
+  spec: {}
+  status:
+    claimPropertySets:
+    - accessModes:
+      - ReadWriteOnce
+      volumeMode: Block
+    cloneStrategy: snapshot
+    dataImportCronSourceFormat: pvc
+    provisioner: driver.longhorn.io
+    snapshotClass: longhorn
+    storageClass: longhorn-static
+- apiVersion: cdi.kubevirt.io/v1beta1
+  kind: StorageProfile
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:44Z"
+    generation: 1
+    labels:
+      app: containerized-data-importer
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-controller
+      cdi.kubevirt.io: "null"
+    managedFields:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cdi.kubevirt.io: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"81182c2f-d27e-4d9f-a9db-6e45ca0714a5"}: {}
+        f:spec: {}
+        f:status:
+          .: {}
+          f:claimPropertySets: {}
+          f:cloneStrategy: {}
+          f:dataImportCronSourceFormat: {}
+          f:provisioner: {}
+          f:snapshotClass: {}
+          f:storageClass: {}
+      manager: virt-cdi-controller
+      operation: Update
+      time: "2025-12-30T21:49:44Z"
+    name: vmstate-persistence
+    ownerReferences:
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: CDI
+      name: cdi
+      uid: 81182c2f-d27e-4d9f-a9db-6e45ca0714a5
+    resourceVersion: "4935"
+    uid: d250a152-5fa8-41db-bd73-ba1a02a3be8d
+  spec: {}
+  status:
+    claimPropertySets:
+    - accessModes:
+      - ReadWriteOnce
+      volumeMode: Block
+    cloneStrategy: snapshot
+    dataImportCronSourceFormat: pvc
+    provisioner: driver.longhorn.io
+    snapshotClass: longhorn
+    storageClass: vmstate-persistence
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14455"

@@ -1,0 +1,27 @@
+apiVersion: v1
+items:
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: guest-console-log
+    usage:
+      cpu: "0"
+      memory: 11512Ki
+  - name: compute
+    usage:
+      cpu: 58118111n
+      memory: 1184096Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:34Z"
+    labels:
+      harvesterhci.io/vmName: vm-00
+      kubevirt.io: virt-launcher
+      kubevirt.io/created-by: 86079a85-5289-4e46-88ce-871a9eb2c0ae
+      kubevirt.io/nodeName: isim-dev
+      vm.kubevirt.io/name: vm-00
+    name: virt-launcher-vm-00-pb825
+    namespace: default
+  timestamp: "2025-12-30T22:00:19Z"
+  window: 19.7s
+kind: List
+metadata: {}

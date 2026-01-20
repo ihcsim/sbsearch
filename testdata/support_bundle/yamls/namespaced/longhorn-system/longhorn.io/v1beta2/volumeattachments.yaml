@@ -1,0 +1,91 @@
+apiVersion: v1
+items:
+- apiVersion: longhorn.io/v1beta2
+  kind: VolumeAttachment
+  metadata:
+    creationTimestamp: "2025-12-30T21:58:01Z"
+    finalizers:
+    - longhorn.io
+    generation: 2
+    labels:
+      longhornvolume: pvc-a30f7311-cc82-4e85-89d6-144156fce238
+    managedFields:
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:longhornvolume: {}
+        f:spec:
+          .: {}
+          f:attachmentTickets:
+            .: {}
+            f:csi-528fef6d1807735386537001c3080da57f734b22fc5a1729c89dd610ebd6a367:
+              .: {}
+              f:generation: {}
+              f:id: {}
+              f:nodeID: {}
+              f:parameters:
+                .: {}
+                f:disableFrontend: {}
+                f:lastAttachedBy: {}
+              f:type: {}
+          f:volume: {}
+      manager: longhorn-manager
+      operation: Update
+      time: "2025-12-30T21:58:03Z"
+    - apiVersion: longhorn.io/v1beta2
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:attachmentTicketStatuses:
+            .: {}
+            f:csi-528fef6d1807735386537001c3080da57f734b22fc5a1729c89dd610ebd6a367:
+              .: {}
+              f:conditions: {}
+              f:generation: {}
+              f:id: {}
+              f:satisfied: {}
+      manager: longhorn-manager
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:58:07Z"
+    name: pvc-a30f7311-cc82-4e85-89d6-144156fce238
+    namespace: longhorn-system
+    ownerReferences:
+    - apiVersion: longhorn.io/v1beta2
+      kind: Volume
+      name: pvc-a30f7311-cc82-4e85-89d6-144156fce238
+      uid: 48ed1aa3-7577-42b1-a63d-e9b2bdfbfaa0
+    resourceVersion: "12747"
+    uid: 5aa55d7f-f8b6-4141-810f-6309e60308f6
+  spec:
+    attachmentTickets:
+      csi-528fef6d1807735386537001c3080da57f734b22fc5a1729c89dd610ebd6a367:
+        generation: 0
+        id: csi-528fef6d1807735386537001c3080da57f734b22fc5a1729c89dd610ebd6a367
+        nodeID: isim-dev
+        parameters:
+          disableFrontend: "false"
+          lastAttachedBy: "null"
+        type: csi-attacher
+    volume: pvc-a30f7311-cc82-4e85-89d6-144156fce238
+  status:
+    attachmentTicketStatuses:
+      csi-528fef6d1807735386537001c3080da57f734b22fc5a1729c89dd610ebd6a367:
+        conditions:
+        - lastProbeTime: "null"
+          lastTransitionTime: "2025-12-30T21:58:07Z"
+          message: "null"
+          reason: "null"
+          status: "True"
+          type: Satisfied
+        generation: 0
+        id: csi-528fef6d1807735386537001c3080da57f734b22fc5a1729c89dd610ebd6a367
+        satisfied: true
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14495"

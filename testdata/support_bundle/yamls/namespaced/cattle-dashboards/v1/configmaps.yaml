@@ -1,0 +1,2091 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  data:
+    harvester_vm_dashboard.json: |-
+      {
+        "annotations": {
+          "list": [
+            {
+              "builtIn": 1,
+              "datasource": "-- Grafana --",
+              "enable": true,
+              "hide": true,
+              "iconColor": "rgba(0, 211, 255, 1)",
+              "name": "Annotations & Alerts",
+              "type": "dashboard"
+            }
+          ]
+        },
+        "editable": true,
+        "gnetId": null,
+        "graphTooltip": 0,
+        "iteration": 1632473428813,
+        "links": [],
+        "panels": [
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {},
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 8,
+              "x": 0,
+              "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 4,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null as zero",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.5.8",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "topk(${count}, (avg(rate(kubevirt_vmi_vcpu_seconds_total[5m])) by (domain, name)) / 1000)",
+                "instant": false,
+                "interval": "",
+                "legendFormat": "{{name}}",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "CPU Usage",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "$$hashKey": "object:370",
+                "format": "percentunit",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "$$hashKey": "object:371",
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {},
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 8,
+              "x": 8,
+              "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 6,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null as zero",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.5.8",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "topk(${count}, ((kubevirt_vmi_memory_available_bytes - kubevirt_vmi_memory_unused_bytes) / kubevirt_vmi_memory_available_bytes))",
+                "instant": false,
+                "interval": "",
+                "legendFormat": "{{name}}",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Memory Usage",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "$$hashKey": "object:771",
+                "format": "percentunit",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "$$hashKey": "object:772",
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {},
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 8,
+              "x": 16,
+              "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 2,
+            "legend": {
+              "alignAsTable": false,
+              "avg": false,
+              "current": false,
+              "hideEmpty": false,
+              "hideZero": true,
+              "max": false,
+              "min": false,
+              "rightSide": false,
+              "show": true,
+              "sideWidth": null,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null as zero",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.5.8",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "topk(${count}, (irate(kubevirt_vmi_storage_read_traffic_bytes_total[5m]))) ",
+                "interval": "",
+                "legendFormat": "{{name}}: {{drive}}",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Storage Read Traffic Bytes",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "$$hashKey": "object:1285",
+                "format": "Bps",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "$$hashKey": "object:1286",
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {},
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 8,
+              "x": 0,
+              "y": 7
+            },
+            "hiddenSeries": false,
+            "id": 12,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "hideEmpty": false,
+              "hideZero": true,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null as zero",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.5.8",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "topk(${count}, (irate(kubevirt_vmi_storage_write_traffic_bytes_total[5m]))) ",
+                "interval": "",
+                "legendFormat": "{{name}}: {{drive}}",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Storage Write Traffic Bytes",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "$$hashKey": "object:1613",
+                "format": "Bps",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "$$hashKey": "object:1614",
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {},
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 8,
+              "x": 8,
+              "y": 7
+            },
+            "hiddenSeries": false,
+            "id": 16,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "hideEmpty": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null as zero",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.5.8",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "topk(${count}, (irate(kubevirt_vmi_network_receive_bytes_total[5m])*8))",
+                "instant": false,
+                "interval": "",
+                "legendFormat": "{{name}}",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Network Receive Bits",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "$$hashKey": "object:2188",
+                "format": "bps",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "$$hashKey": "object:2189",
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {},
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 8,
+              "x": 16,
+              "y": 7
+            },
+            "hiddenSeries": false,
+            "id": 18,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": true,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null as zero",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.5.8",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "topk(${count}, (irate(kubevirt_vmi_network_transmit_bytes_total[5m])*8))",
+                "interval": "",
+                "legendFormat": "{{name}}",
+                "refId": "A"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Network Transmit Bits",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "$$hashKey": "object:2273",
+                "format": "bps",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "$$hashKey": "object:2274",
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {
+                "decimals": 0,
+                "mappings": [],
+                "thresholds": {
+                  "mode": "percentage",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "#EAB839",
+                      "value": 65
+                    },
+                    {
+                      "color": "red",
+                      "value": 90
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 8,
+              "x": 0,
+              "y": 14
+            },
+            "id": 20,
+            "options": {
+              "displayMode": "gradient",
+              "orientation": "horizontal",
+              "reduceOptions": {
+                "calcs": [
+                  "mean"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "showUnfilled": true,
+              "text": {}
+            },
+            "pluginVersion": "7.5.8",
+            "targets": [
+              {
+                "expr": "topk(${count}, (delta(kubevirt_vmi_network_receive_packets_total[2h])))",
+                "instant": true,
+                "interval": "",
+                "legendFormat": "{{name}}",
+                "refId": "A"
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Network Receive Packets (2h)",
+            "type": "bargauge"
+          },
+          {
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {
+                "decimals": 0,
+                "mappings": [],
+                "thresholds": {
+                  "mode": "percentage",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "#EAB839",
+                      "value": 65
+                    },
+                    {
+                      "color": "red",
+                      "value": 90
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 8,
+              "x": 8,
+              "y": 14
+            },
+            "id": 22,
+            "options": {
+              "displayMode": "gradient",
+              "orientation": "horizontal",
+              "reduceOptions": {
+                "calcs": [
+                  "mean"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "showUnfilled": true,
+              "text": {}
+            },
+            "pluginVersion": "7.5.8",
+            "targets": [
+              {
+                "expr": "topk(${count}, (delta(kubevirt_vmi_network_transmit_packets_total[2h])))",
+                "instant": true,
+                "interval": "",
+                "legendFormat": "{{name}}",
+                "refId": "A"
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Network Transmit Packets (2h)",
+            "type": "bargauge"
+          }
+        ],
+        "schemaVersion": 27,
+        "style": "dark",
+        "tags": [],
+        "templating": {
+          "list": [
+            {
+              "allValue": null,
+              "current": {
+                "selected": true,
+                "text": "10",
+                "value": "10"
+              },
+              "description": null,
+              "error": null,
+              "hide": 0,
+              "includeAll": false,
+              "label": "count",
+              "multi": false,
+              "name": "count",
+              "options": [
+                {
+                  "selected": false,
+                  "text": "5",
+                  "value": "5"
+                },
+                {
+                  "selected": true,
+                  "text": "10",
+                  "value": "10"
+                },
+                {
+                  "selected": false,
+                  "text": "20",
+                  "value": "20"
+                }
+              ],
+              "query": "5, 10, 20",
+              "queryValue": "",
+              "skipUrlSync": false,
+              "type": "custom"
+            }
+          ]
+        },
+        "time": {
+          "from": "now-30m",
+          "to": "now"
+        },
+        "timepicker": {
+          "refresh_intervals": [
+            "5s",
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+          ]
+        },
+        "timezone": "",
+        "title": "Harvester VM Dashboard",
+        "uid": "harvester-vm-dashboard-1",
+        "version": 1
+      }
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","data":{"harvester_vm_dashboard.json":"{\n  \"annotations\": {\n    \"list\": [\n      {\n        \"builtIn\": 1,\n        \"datasource\": \"-- Grafana --\",\n        \"enable\": true,\n        \"hide\": true,\n        \"iconColor\": \"rgba(0, 211, 255, 1)\",\n        \"name\": \"Annotations \u0026 Alerts\",\n        \"type\": \"dashboard\"\n      }\n    ]\n  },\n  \"editable\": true,\n  \"gnetId\": null,\n  \"graphTooltip\": 0,\n  \"iteration\": 1632473428813,\n  \"links\": [],\n  \"panels\": [\n    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\": 10,\n      \"dashes\": false,\n      \"datasource\": null,\n      \"fieldConfig\": {\n        \"defaults\": {},\n        \"overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n        \"h\": 7,\n        \"w\": 8,\n        \"x\": 0,\n        \"y\": 0\n      },\n      \"hiddenSeries\": false,\n      \"id\": 4,\n      \"legend\": {\n        \"avg\": false,\n        \"current\": false,\n        \"max\": false,\n        \"min\": false,\n        \"show\": true,\n        \"total\": false,\n        \"values\": false\n      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"nullPointMode\": \"null as zero\",\n      \"options\": {\n        \"alertThreshold\": true\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.5.8\",\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n      \"stack\": true,\n      \"steppedLine\": false,\n      \"targets\": [\n        {\n          \"expr\": \"topk(${count}, (avg(rate(kubevirt_vmi_vcpu_seconds_total[5m])) by (domain, name)) / 1000)\",\n          \"instant\": false,\n          \"interval\": \"\",\n          \"legendFormat\": \"{{name}}\",\n          \"refId\": \"A\"\n        }\n      ],\n      \"thresholds\": [],\n      \"timeFrom\": null,\n      \"timeRegions\": [],\n      \"timeShift\": null,\n      \"title\": \"CPU Usage\",\n      \"tooltip\": {\n        \"shared\": true,\n        \"sort\": 0,\n        \"value_type\": \"individual\"\n      },\n      \"type\": \"graph\",\n      \"xaxis\": {\n        \"buckets\": null,\n        \"mode\": \"time\",\n        \"name\": null,\n        \"show\": true,\n        \"values\": []\n      },\n      \"yaxes\": [\n        {\n          \"$$hashKey\": \"object:370\",\n          \"format\": \"percentunit\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        },\n        {\n          \"$$hashKey\": \"object:371\",\n          \"format\": \"short\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\": {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\": 10,\n      \"dashes\": false,\n      \"datasource\": null,\n      \"fieldConfig\": {\n        \"defaults\": {},\n        \"overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n        \"h\": 7,\n        \"w\": 8,\n        \"x\": 8,\n        \"y\": 0\n      },\n      \"hiddenSeries\": false,\n      \"id\": 6,\n      \"legend\": {\n        \"avg\": false,\n        \"current\": false,\n        \"max\": false,\n        \"min\": false,\n        \"show\": true,\n        \"total\": false,\n        \"values\": false\n      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"nullPointMode\": \"null as zero\",\n      \"options\": {\n        \"alertThreshold\": true\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.5.8\",\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n        {\n          \"expr\": \"topk(${count}, ((kubevirt_vmi_memory_available_bytes - kubevirt_vmi_memory_unused_bytes) / kubevirt_vmi_memory_available_bytes))\",\n          \"instant\": false,\n          \"interval\": \"\",\n          \"legendFormat\": \"{{name}}\",\n          \"refId\": \"A\"\n        }\n      ],\n      \"thresholds\": [],\n      \"timeFrom\": null,\n      \"timeRegions\": [],\n      \"timeShift\": null,\n      \"title\": \"Memory Usage\",\n      \"tooltip\": {\n        \"shared\": true,\n        \"sort\": 0,\n        \"value_type\": \"individual\"\n      },\n      \"type\": \"graph\",\n      \"xaxis\": {\n        \"buckets\": null,\n        \"mode\": \"time\",\n        \"name\": null,\n        \"show\": true,\n        \"values\": []\n      },\n      \"yaxes\": [\n        {\n          \"$$hashKey\": \"object:771\",\n          \"format\": \"percentunit\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        },\n        {\n          \"$$hashKey\": \"object:772\",\n          \"format\": \"short\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\": {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\": 10,\n      \"dashes\": false,\n      \"datasource\": null,\n      \"fieldConfig\": {\n        \"defaults\": {},\n        \"overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n        \"h\": 7,\n        \"w\": 8,\n        \"x\": 16,\n        \"y\": 0\n      },\n      \"hiddenSeries\": false,\n      \"id\": 2,\n      \"legend\": {\n        \"alignAsTable\": false,\n        \"avg\": false,\n        \"current\": false,\n        \"hideEmpty\": false,\n        \"hideZero\": true,\n        \"max\": false,\n        \"min\": false,\n        \"rightSide\": false,\n        \"show\": true,\n        \"sideWidth\": null,\n        \"total\": false,\n        \"values\": false\n      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"nullPointMode\": \"null as zero\",\n      \"options\": {\n        \"alertThreshold\": true\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.5.8\",\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n        {\n          \"expr\": \"topk(${count}, (irate(kubevirt_vmi_storage_read_traffic_bytes_total[5m]))) \",\n          \"interval\": \"\",\n          \"legendFormat\": \"{{name}}: {{drive}}\",\n          \"refId\": \"A\"\n        }\n      ],\n      \"thresholds\": [],\n      \"timeFrom\": null,\n      \"timeRegions\": [],\n      \"timeShift\": null,\n      \"title\": \"Storage Read Traffic Bytes\",\n      \"tooltip\": {\n        \"shared\": true,\n        \"sort\": 0,\n        \"value_type\": \"individual\"\n      },\n      \"type\": \"graph\",\n      \"xaxis\": {\n        \"buckets\": null,\n        \"mode\": \"time\",\n        \"name\": null,\n        \"show\": true,\n        \"values\": []\n      },\n      \"yaxes\": [\n        {\n          \"$$hashKey\": \"object:1285\",\n          \"format\": \"Bps\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        },\n        {\n          \"$$hashKey\": \"object:1286\",\n          \"format\": \"short\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\": {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\": 10,\n      \"dashes\": false,\n      \"datasource\": null,\n      \"fieldConfig\": {\n        \"defaults\": {},\n        \"overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n        \"h\": 7,\n        \"w\": 8,\n        \"x\": 0,\n        \"y\": 7\n      },\n      \"hiddenSeries\": false,\n      \"id\": 12,\n      \"legend\": {\n        \"avg\": false,\n        \"current\": false,\n        \"hideEmpty\": false,\n        \"hideZero\": true,\n        \"max\": false,\n        \"min\": false,\n        \"show\": true,\n        \"total\": false,\n        \"values\": false\n      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"nullPointMode\": \"null as zero\",\n      \"options\": {\n        \"alertThreshold\": true\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.5.8\",\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n        {\n          \"expr\": \"topk(${count}, (irate(kubevirt_vmi_storage_write_traffic_bytes_total[5m]))) \",\n          \"interval\": \"\",\n          \"legendFormat\": \"{{name}}: {{drive}}\",\n          \"refId\": \"A\"\n        }\n      ],\n      \"thresholds\": [],\n      \"timeFrom\": null,\n      \"timeRegions\": [],\n      \"timeShift\": null,\n      \"title\": \"Storage Write Traffic Bytes\",\n      \"tooltip\": {\n        \"shared\": true,\n        \"sort\": 0,\n        \"value_type\": \"individual\"\n      },\n      \"type\": \"graph\",\n      \"xaxis\": {\n        \"buckets\": null,\n        \"mode\": \"time\",\n        \"name\": null,\n        \"show\": true,\n        \"values\": []\n      },\n      \"yaxes\": [\n        {\n          \"$$hashKey\": \"object:1613\",\n          \"format\": \"Bps\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        },\n        {\n          \"$$hashKey\": \"object:1614\",\n          \"format\": \"short\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\": {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\": 10,\n      \"dashes\": false,\n      \"datasource\": null,\n      \"fieldConfig\": {\n        \"defaults\": {},\n        \"overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n        \"h\": 7,\n        \"w\": 8,\n        \"x\": 8,\n        \"y\": 7\n      },\n      \"hiddenSeries\": false,\n      \"id\": 16,\n      \"legend\": {\n        \"avg\": false,\n        \"current\": false,\n        \"hideEmpty\": false,\n        \"max\": false,\n        \"min\": false,\n        \"show\": true,\n        \"total\": false,\n        \"values\": false\n      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"nullPointMode\": \"null as zero\",\n      \"options\": {\n        \"alertThreshold\": true\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.5.8\",\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n        {\n          \"expr\": \"topk(${count}, (irate(kubevirt_vmi_network_receive_bytes_total[5m])*8))\",\n          \"instant\": false,\n          \"interval\": \"\",\n          \"legendFormat\": \"{{name}}\",\n          \"refId\": \"A\"\n        }\n      ],\n      \"thresholds\": [],\n      \"timeFrom\": null,\n      \"timeRegions\": [],\n      \"timeShift\": null,\n      \"title\": \"Network Receive Bits\",\n      \"tooltip\": {\n        \"shared\": true,\n        \"sort\": 0,\n        \"value_type\": \"individual\"\n      },\n      \"type\": \"graph\",\n      \"xaxis\": {\n        \"buckets\": null,\n        \"mode\": \"time\",\n        \"name\": null,\n        \"show\": true,\n        \"values\": []\n      },\n      \"yaxes\": [\n        {\n          \"$$hashKey\": \"object:2188\",\n          \"format\": \"bps\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        },\n        {\n          \"$$hashKey\": \"object:2189\",\n          \"format\": \"short\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\": {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\": 10,\n      \"dashes\": false,\n      \"datasource\": null,\n      \"fieldConfig\": {\n        \"defaults\": {},\n        \"overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n        \"h\": 7,\n        \"w\": 8,\n        \"x\": 16,\n        \"y\": 7\n      },\n      \"hiddenSeries\": false,\n      \"id\": 18,\n      \"legend\": {\n        \"avg\": false,\n        \"current\": false,\n        \"max\": false,\n        \"min\": false,\n        \"show\": true,\n        \"total\": false,\n        \"values\": false\n      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"nullPointMode\": \"null as zero\",\n      \"options\": {\n        \"alertThreshold\": true\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.5.8\",\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n        {\n          \"expr\": \"topk(${count}, (irate(kubevirt_vmi_network_transmit_bytes_total[5m])*8))\",\n          \"interval\": \"\",\n          \"legendFormat\": \"{{name}}\",\n          \"refId\": \"A\"\n        }\n      ],\n      \"thresholds\": [],\n      \"timeFrom\": null,\n      \"timeRegions\": [],\n      \"timeShift\": null,\n      \"title\": \"Network Transmit Bits\",\n      \"tooltip\": {\n        \"shared\": true,\n        \"sort\": 0,\n        \"value_type\": \"individual\"\n      },\n      \"type\": \"graph\",\n      \"xaxis\": {\n        \"buckets\": null,\n        \"mode\": \"time\",\n        \"name\": null,\n        \"show\": true,\n        \"values\": []\n      },\n      \"yaxes\": [\n        {\n          \"$$hashKey\": \"object:2273\",\n          \"format\": \"bps\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        },\n        {\n          \"$$hashKey\": \"object:2274\",\n          \"format\": \"short\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\": {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n    {\n      \"datasource\": null,\n      \"fieldConfig\": {\n        \"defaults\": {\n          \"decimals\": 0,\n          \"mappings\": [],\n          \"thresholds\": {\n            \"mode\": \"percentage\",\n            \"steps\": [\n              {\n                \"color\": \"green\",\n                \"value\": null\n              },\n              {\n                \"color\": \"#EAB839\",\n                \"value\": 65\n              },\n              {\n                \"color\": \"red\",\n                \"value\": 90\n              }\n            ]\n          }\n        },\n        \"overrides\": []\n      },\n      \"gridPos\": {\n        \"h\": 7,\n        \"w\": 8,\n        \"x\": 0,\n        \"y\": 14\n      },\n      \"id\": 20,\n      \"options\": {\n        \"displayMode\": \"gradient\",\n        \"orientation\": \"horizontal\",\n        \"reduceOptions\": {\n          \"calcs\": [\n            \"mean\"\n          ],\n          \"fields\": \"\",\n          \"values\": false\n        },\n        \"showUnfilled\": true,\n        \"text\": {}\n      },\n      \"pluginVersion\": \"7.5.8\",\n      \"targets\": [\n        {\n          \"expr\": \"topk(${count}, (delta(kubevirt_vmi_network_receive_packets_total[2h])))\",\n          \"instant\": true,\n          \"interval\": \"\",\n          \"legendFormat\": \"{{name}}\",\n          \"refId\": \"A\"\n        }\n      ],\n      \"timeFrom\": null,\n      \"timeShift\": null,\n      \"title\": \"Network Receive Packets (2h)\",\n      \"type\": \"bargauge\"\n    },\n    {\n      \"datasource\": null,\n      \"fieldConfig\": {\n        \"defaults\": {\n          \"decimals\": 0,\n          \"mappings\": [],\n          \"thresholds\": {\n            \"mode\": \"percentage\",\n            \"steps\": [\n              {\n                \"color\": \"green\",\n                \"value\": null\n              },\n              {\n                \"color\": \"#EAB839\",\n                \"value\": 65\n              },\n              {\n                \"color\": \"red\",\n                \"value\": 90\n              }\n            ]\n          }\n        },\n        \"overrides\": []\n      },\n      \"gridPos\": {\n        \"h\": 7,\n        \"w\": 8,\n        \"x\": 8,\n        \"y\": 14\n      },\n      \"id\": 22,\n      \"options\": {\n        \"displayMode\": \"gradient\",\n        \"orientation\": \"horizontal\",\n        \"reduceOptions\": {\n          \"calcs\": [\n            \"mean\"\n          ],\n          \"fields\": \"\",\n          \"values\": false\n        },\n        \"showUnfilled\": true,\n        \"text\": {}\n      },\n      \"pluginVersion\": \"7.5.8\",\n      \"targets\": [\n        {\n          \"expr\": \"topk(${count}, (delta(kubevirt_vmi_network_transmit_packets_total[2h])))\",\n          \"instant\": true,\n          \"interval\": \"\",\n          \"legendFormat\": \"{{name}}\",\n          \"refId\": \"A\"\n        }\n      ],\n      \"timeFrom\": null,\n      \"timeShift\": null,\n      \"title\": \"Network Transmit Packets (2h)\",\n      \"type\": \"bargauge\"\n    }\n  ],\n  \"schemaVersion\": 27,\n  \"style\": \"dark\",\n  \"tags\": [],\n  \"templating\": {\n    \"list\": [\n      {\n        \"allValue\": null,\n        \"current\": {\n          \"selected\": true,\n          \"text\": \"10\",\n          \"value\": \"10\"\n        },\n        \"description\": null,\n        \"error\": null,\n        \"hide\": 0,\n        \"includeAll\": false,\n        \"label\": \"count\",\n        \"multi\": false,\n        \"name\": \"count\",\n        \"options\": [\n          {\n            \"selected\": false,\n            \"text\": \"5\",\n            \"value\": \"5\"\n          },\n          {\n            \"selected\": true,\n            \"text\": \"10\",\n            \"value\": \"10\"\n          },\n          {\n            \"selected\": false,\n            \"text\": \"20\",\n            \"value\": \"20\"\n          }\n        ],\n        \"query\": \"5, 10, 20\",\n        \"queryValue\": \"\",\n        \"skipUrlSync\": false,\n        \"type\": \"custom\"\n      }\n    ]\n  },\n  \"time\": {\n    \"from\": \"now-30m\",\n    \"to\": \"now\"\n  },\n  \"timepicker\": {\n    \"refresh_intervals\": [\n      \"5s\",\n      \"10s\",\n      \"30s\",\n      \"1m\",\n      \"5m\",\n      \"15m\",\n      \"30m\",\n      \"1h\",\n      \"2h\",\n      \"1d\"\n    ]\n  },\n  \"timezone\": \"\",\n  \"title\": \"Harvester VM Dashboard\",\n  \"uid\": \"harvester-vm-dashboard-1\",\n  \"version\": 1\n}"},"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"grafana_dashboard":"1"},"name":"harvester-vm-dashboard","namespace":"cattle-dashboards"}}
+    creationTimestamp: "2025-12-30T21:48:44Z"
+    labels:
+      grafana_dashboard: "1"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data:
+          .: {}
+          f:harvester_vm_dashboard.json: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:grafana_dashboard: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2025-12-30T21:48:44Z"
+    name: harvester-vm-dashboard
+    namespace: cattle-dashboards
+    resourceVersion: "2685"
+    uid: 3ecd0e37-d45c-4b1d-90cf-1170e78438ad
+- apiVersion: v1
+  data:
+    harvester_vm_info_details.json: |-
+      {
+        "annotations": {
+          "list": [
+            {
+              "builtIn": 1,
+              "datasource": "-- Grafana --",
+              "enable": true,
+              "hide": true,
+              "iconColor": "rgba(0, 211, 255, 1)",
+              "name": "Annotations & Alerts",
+              "type": "dashboard"
+            }
+          ]
+        },
+        "description": "Harvester VM Info Detail",
+        "editable": true,
+        "gnetId": 11748,
+        "graphTooltip": 0,
+        "iteration": 1632474807858,
+        "links": [],
+        "panels": [
+          {
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {
+                "decimals": 2,
+                "mappings": [],
+                "thresholds": {
+                  "mode": "percentage",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "#EAB839",
+                      "value": 65
+                    },
+                    {
+                      "color": "red",
+                      "value": 90
+                    }
+                  ]
+                },
+                "unit": "percentunit"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 12,
+              "x": 0,
+              "y": 0
+            },
+            "id": 1,
+            "interval": "",
+            "links": [],
+            "options": {
+              "reduceOptions": {
+                "calcs": [
+                  "mean"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "showThresholdLabels": false,
+              "showThresholdMarkers": true,
+              "text": {}
+            },
+            "pluginVersion": "7.5.8",
+            "targets": [
+              {
+                "expr": "sum(avg(rate(kubevirt_vmi_vcpu_seconds_total{namespace=\"$namespace\", name=\"$vm\"}[5m])) by (domain, name)) / 1000",
+                "format": "time_series",
+                "instant": false,
+                "interval": "",
+                "intervalFactor": 2,
+                "legendFormat": "{{name}}",
+                "legendLink": null,
+                "refId": "A",
+                "step": 10
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "CPU Usage",
+            "type": "gauge"
+          },
+          {
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {
+                "decimals": 2,
+                "mappings": [],
+                "thresholds": {
+                  "mode": "percentage",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "#EAB839",
+                      "value": 65
+                    },
+                    {
+                      "color": "red",
+                      "value": 90
+                    }
+                  ]
+                },
+                "unit": "percentunit"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 7,
+              "w": 12,
+              "x": 12,
+              "y": 0
+            },
+            "id": 3,
+            "links": [],
+            "options": {
+              "reduceOptions": {
+                "calcs": [
+                  "mean"
+                ],
+                "fields": "",
+                "values": false
+              },
+              "showThresholdLabels": false,
+              "showThresholdMarkers": true,
+              "text": {}
+            },
+            "pluginVersion": "7.5.8",
+            "targets": [
+              {
+                "expr": "sum((kubevirt_vmi_memory_available_bytes{namespace=\"$namespace\", name=\"$vm\"} -kubevirt_vmi_memory_unused_bytes{namespace=\"$namespace\", name=\"$vm\"})/kubevirt_vmi_memory_available_bytes{namespace=\"$namespace\", name=\"$vm\"})",
+                "format": "time_series",
+                "interval": "",
+                "intervalFactor": 2,
+                "legendFormat": "",
+                "legendLink": null,
+                "refId": "A",
+                "step": 10
+              }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Memory Usage",
+            "type": "gauge"
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {},
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 8,
+              "x": 0,
+              "y": 7
+            },
+            "hiddenSeries": false,
+            "id": 19,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": false,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "null as zero",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.5.8",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "irate(kubevirt_vmi_storage_read_traffic_bytes_total{namespace=\"$namespace\", name=\"$vm\"}[5m])",
+                "format": "time_series",
+                "interval": "",
+                "intervalFactor": 1,
+                "legendFormat": "{{drive}}-read",
+                "refId": "A"
+              },
+              {
+                "expr": "irate(kubevirt_vmi_storage_write_traffic_bytes_total{namespace=\"$namespace\", name=\"$vm\"}[5m])",
+                "interval": "",
+                "legendFormat": "{{drive}}-write",
+                "refId": "B"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "IO Traffic",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "$$hashKey": "object:304",
+                "format": "Bps",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "$$hashKey": "object:305",
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {},
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 8,
+              "x": 8,
+              "y": 7
+            },
+            "hiddenSeries": false,
+            "id": 20,
+            "legend": {
+              "alignAsTable": false,
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": false,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "null as zero",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.5.8",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "irate(kubevirt_vmi_storage_read_times_seconds_total{namespace=\"$namespace\", name=\"$vm\"}[5m])",
+                "format": "time_series",
+                "interval": "",
+                "intervalFactor": 1,
+                "legendFormat": "{{drive}}-read",
+                "refId": "A"
+              },
+              {
+                "expr": "irate(kubevirt_vmi_storage_write_times_seconds_total{namespace=\"$namespace\", name=\"$vm\"}[5m])",
+                "interval": "",
+                "legendFormat": "{{drive}}-write",
+                "refId": "B"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "IO Time",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "$$hashKey": "object:361",
+                "format": "s",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "$$hashKey": "object:362",
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {},
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 8,
+              "x": 16,
+              "y": 7
+            },
+            "hiddenSeries": false,
+            "id": 15,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": false,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "null as zero",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.5.8",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "irate(kubevirt_vmi_storage_iops_read_total{namespace=\"$namespace\", name=\"$vm\"}[5m])",
+                "format": "time_series",
+                "instant": false,
+                "interval": "",
+                "intervalFactor": 1,
+                "legendFormat": "{{drive}}-read",
+                "refId": "A"
+              },
+              {
+                "expr": "irate(kubevirt_vmi_storage_iops_write_total{namespace=\"$namespace\", name=\"$vm\"}[5m])",
+                "interval": "",
+                "legendFormat": "{{drive}}-writ",
+                "refId": "B"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "IOPS",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "$$hashKey": "object:247",
+                "format": "iops",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "$$hashKey": "object:248",
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          },
+          {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+              "defaults": {},
+              "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+              "h": 7,
+              "w": 24,
+              "x": 0,
+              "y": 14
+            },
+            "hiddenSeries": false,
+            "id": 9,
+            "legend": {
+              "avg": false,
+              "current": false,
+              "max": false,
+              "min": false,
+              "show": false,
+              "total": false,
+              "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "null as zero",
+            "options": {
+              "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.5.8",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+              {
+                "expr": "irate(kubevirt_vmi_network_receive_bytes_total{namespace=\"$namespace\", name=\"$vm\"}[5m])*8",
+                "format": "time_series",
+                "interval": "",
+                "intervalFactor": 1,
+                "legendFormat": "{{interface}}-receive",
+                "refId": "A"
+              },
+              {
+                "expr": "irate(kubevirt_vmi_network_transmit_bytes_total{namespace=\"$namespace\", name=\"$vm\"}[5m])*8",
+                "interval": "",
+                "legendFormat": "{{interface}}-transmit",
+                "refId": "B"
+              }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Network Traffic",
+            "tooltip": {
+              "shared": true,
+              "sort": 0,
+              "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+              "buckets": null,
+              "mode": "time",
+              "name": null,
+              "show": true,
+              "values": []
+            },
+            "yaxes": [
+              {
+                "$$hashKey": "object:421",
+                "format": "bps",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              },
+              {
+                "$$hashKey": "object:422",
+                "format": "short",
+                "label": null,
+                "logBase": 1,
+                "max": null,
+                "min": null,
+                "show": true
+              }
+            ],
+            "yaxis": {
+              "align": false,
+              "alignLevel": null
+            }
+          }
+        ],
+        "refresh": "10s",
+        "schemaVersion": 27,
+        "style": "dark",
+        "tags": [],
+        "templating": {
+          "list": [
+            {
+              "allValue": null,
+              "current": {
+                "selected": false,
+                "text": "default",
+                "value": "default"
+              },
+              "datasource": null,
+              "definition": "label_values(kubevirt_vmi_vcpu_seconds_total, namespace)",
+              "description": null,
+              "error": null,
+              "hide": 0,
+              "includeAll": false,
+              "label": "namespace",
+              "multi": false,
+              "name": "namespace",
+              "options": [],
+              "query": {
+                "query": "label_values(kubevirt_vmi_vcpu_seconds_total, namespace)",
+                "refId": "Prometheus-namespace-Variable-Query"
+              },
+              "refresh": 1,
+              "regex": "",
+              "skipUrlSync": false,
+              "sort": 2,
+              "tagValuesQuery": "",
+              "tags": [],
+              "tagsQuery": "",
+              "type": "query",
+              "useTags": false
+            },
+            {
+              "allValue": null,
+              "current": {
+                "selected": false,
+                "text": "tt",
+                "value": "tt"
+              },
+              "datasource": null,
+              "definition": "label_values(kubevirt_vmi_vcpu_seconds_total{namespace=\"$namespace\"}, name)",
+              "description": null,
+              "error": null,
+              "hide": 0,
+              "includeAll": false,
+              "label": "vm",
+              "multi": false,
+              "name": "vm",
+              "options": [],
+              "query": {
+                "query": "label_values(kubevirt_vmi_vcpu_seconds_total{namespace=\"$namespace\"}, name)",
+                "refId": "Prometheus-vm-Variable-Query"
+              },
+              "refresh": 1,
+              "regex": "",
+              "skipUrlSync": false,
+              "sort": 2,
+              "tagValuesQuery": "",
+              "tags": [],
+              "tagsQuery": "",
+              "type": "query",
+              "useTags": false
+            }
+          ]
+        },
+        "time": {
+          "from": "now-3h",
+          "to": "now"
+        },
+        "timepicker": {
+          "refresh_intervals": [
+            "5s",
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+          ],
+          "time_options": [
+            "5m",
+            "15m",
+            "1h",
+            "6h",
+            "12h",
+            "24h",
+            "2d",
+            "7d",
+            "30d"
+          ]
+        },
+        "timezone": "",
+        "title": "Harvester VM Info Detail",
+        "uid": "harvester-vm-detail-1",
+        "version": 2
+      }
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","data":{"harvester_vm_info_details.json":"{\n  \"annotations\": {\n    \"list\": [\n      {\n        \"builtIn\": 1,\n        \"datasource\": \"-- Grafana --\",\n        \"enable\": true,\n        \"hide\": true,\n        \"iconColor\": \"rgba(0, 211, 255, 1)\",\n        \"name\": \"Annotations \u0026 Alerts\",\n        \"type\": \"dashboard\"\n      }\n    ]\n  },\n  \"description\": \"Harvester VM Info Detail\",\n  \"editable\": true,\n  \"gnetId\": 11748,\n  \"graphTooltip\": 0,\n  \"iteration\": 1632474807858,\n  \"links\": [],\n  \"panels\": [\n    {\n      \"datasource\": null,\n      \"fieldConfig\": {\n        \"defaults\": {\n          \"decimals\": 2,\n          \"mappings\": [],\n          \"thresholds\": {\n            \"mode\": \"percentage\",\n            \"steps\": [\n              {\n                \"color\": \"green\",\n                \"value\": null\n              },\n              {\n                \"color\": \"#EAB839\",\n                \"value\": 65\n              },\n              {\n                \"color\": \"red\",\n                \"value\": 90\n              }\n            ]\n          },\n          \"unit\": \"percentunit\"\n        },\n        \"overrides\": []\n      },\n      \"gridPos\": {\n        \"h\": 7,\n        \"w\": 12,\n        \"x\": 0,\n        \"y\": 0\n      },\n      \"id\": 1,\n      \"interval\": \"\",\n      \"links\": [],\n      \"options\": {\n        \"reduceOptions\": {\n          \"calcs\": [\n            \"mean\"\n          ],\n          \"fields\": \"\",\n          \"values\": false\n        },\n        \"showThresholdLabels\": false,\n        \"showThresholdMarkers\": true,\n        \"text\": {}\n      },\n      \"pluginVersion\": \"7.5.8\",\n      \"targets\": [\n        {\n          \"expr\": \"sum(avg(rate(kubevirt_vmi_vcpu_seconds_total{namespace=\\\"$namespace\\\", name=\\\"$vm\\\"}[5m])) by (domain, name)) / 1000\",\n          \"format\": \"time_series\",\n          \"instant\": false,\n          \"interval\": \"\",\n          \"intervalFactor\": 2,\n          \"legendFormat\": \"{{name}}\",\n          \"legendLink\": null,\n          \"refId\": \"A\",\n          \"step\": 10\n        }\n      ],\n      \"timeFrom\": null,\n      \"timeShift\": null,\n      \"title\": \"CPU Usage\",\n      \"type\": \"gauge\"\n    },\n    {\n      \"datasource\": null,\n      \"fieldConfig\": {\n        \"defaults\": {\n          \"decimals\": 2,\n          \"mappings\": [],\n          \"thresholds\": {\n            \"mode\": \"percentage\",\n            \"steps\": [\n              {\n                \"color\": \"green\",\n                \"value\": null\n              },\n              {\n                \"color\": \"#EAB839\",\n                \"value\": 65\n              },\n              {\n                \"color\": \"red\",\n                \"value\": 90\n              }\n            ]\n          },\n          \"unit\": \"percentunit\"\n        },\n        \"overrides\": []\n      },\n      \"gridPos\": {\n        \"h\": 7,\n        \"w\": 12,\n        \"x\": 12,\n        \"y\": 0\n      },\n      \"id\": 3,\n      \"links\": [],\n      \"options\": {\n        \"reduceOptions\": {\n          \"calcs\": [\n            \"mean\"\n          ],\n          \"fields\": \"\",\n          \"values\": false\n        },\n        \"showThresholdLabels\": false,\n        \"showThresholdMarkers\": true,\n        \"text\": {}\n      },\n      \"pluginVersion\": \"7.5.8\",\n      \"targets\": [\n        {\n          \"expr\": \"sum((kubevirt_vmi_memory_available_bytes{namespace=\\\"$namespace\\\", name=\\\"$vm\\\"} -kubevirt_vmi_memory_unused_bytes{namespace=\\\"$namespace\\\", name=\\\"$vm\\\"})/kubevirt_vmi_memory_available_bytes{namespace=\\\"$namespace\\\", name=\\\"$vm\\\"})\",\n          \"format\": \"time_series\",\n          \"interval\": \"\",\n          \"intervalFactor\": 2,\n          \"legendFormat\": \"\",\n          \"legendLink\": null,\n          \"refId\": \"A\",\n          \"step\": 10\n        }\n      ],\n      \"timeFrom\": null,\n      \"timeShift\": null,\n      \"title\": \"Memory Usage\",\n      \"type\": \"gauge\"\n    },\n    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\": 10,\n      \"dashes\": false,\n      \"datasource\": null,\n      \"fieldConfig\": {\n        \"defaults\": {},\n        \"overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n        \"h\": 7,\n        \"w\": 8,\n        \"x\": 0,\n        \"y\": 7\n      },\n      \"hiddenSeries\": false,\n      \"id\": 19,\n      \"legend\": {\n        \"avg\": false,\n        \"current\": false,\n        \"max\": false,\n        \"min\": false,\n        \"show\": false,\n        \"total\": false,\n        \"values\": false\n      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"links\": [],\n      \"nullPointMode\": \"null as zero\",\n      \"options\": {\n        \"alertThreshold\": true\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.5.8\",\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n        {\n          \"expr\": \"irate(kubevirt_vmi_storage_read_traffic_bytes_total{namespace=\\\"$namespace\\\", name=\\\"$vm\\\"}[5m])\",\n          \"format\": \"time_series\",\n          \"interval\": \"\",\n          \"intervalFactor\": 1,\n          \"legendFormat\": \"{{drive}}-read\",\n          \"refId\": \"A\"\n        },\n        {\n          \"expr\": \"irate(kubevirt_vmi_storage_write_traffic_bytes_total{namespace=\\\"$namespace\\\", name=\\\"$vm\\\"}[5m])\",\n          \"interval\": \"\",\n          \"legendFormat\": \"{{drive}}-write\",\n          \"refId\": \"B\"\n        }\n      ],\n      \"thresholds\": [],\n      \"timeFrom\": null,\n      \"timeRegions\": [],\n      \"timeShift\": null,\n      \"title\": \"IO Traffic\",\n      \"tooltip\": {\n        \"shared\": true,\n        \"sort\": 0,\n        \"value_type\": \"individual\"\n      },\n      \"type\": \"graph\",\n      \"xaxis\": {\n        \"buckets\": null,\n        \"mode\": \"time\",\n        \"name\": null,\n        \"show\": true,\n        \"values\": []\n      },\n      \"yaxes\": [\n        {\n          \"$$hashKey\": \"object:304\",\n          \"format\": \"Bps\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        },\n        {\n          \"$$hashKey\": \"object:305\",\n          \"format\": \"short\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\": {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\": 10,\n      \"dashes\": false,\n      \"datasource\": null,\n      \"fieldConfig\": {\n        \"defaults\": {},\n        \"overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n        \"h\": 7,\n        \"w\": 8,\n        \"x\": 8,\n        \"y\": 7\n      },\n      \"hiddenSeries\": false,\n      \"id\": 20,\n      \"legend\": {\n        \"alignAsTable\": false,\n        \"avg\": false,\n        \"current\": false,\n        \"max\": false,\n        \"min\": false,\n        \"show\": false,\n        \"total\": false,\n        \"values\": false\n      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"links\": [],\n      \"nullPointMode\": \"null as zero\",\n      \"options\": {\n        \"alertThreshold\": true\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.5.8\",\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n        {\n          \"expr\": \"irate(kubevirt_vmi_storage_read_times_seconds_total{namespace=\\\"$namespace\\\", name=\\\"$vm\\\"}[5m])\",\n          \"format\": \"time_series\",\n          \"interval\": \"\",\n          \"intervalFactor\": 1,\n          \"legendFormat\": \"{{drive}}-read\",\n          \"refId\": \"A\"\n        },\n        {\n          \"expr\": \"irate(kubevirt_vmi_storage_write_times_seconds_total{namespace=\\\"$namespace\\\", name=\\\"$vm\\\"}[5m])\",\n          \"interval\": \"\",\n          \"legendFormat\": \"{{drive}}-write\",\n          \"refId\": \"B\"\n        }\n      ],\n      \"thresholds\": [],\n      \"timeFrom\": null,\n      \"timeRegions\": [],\n      \"timeShift\": null,\n      \"title\": \"IO Time\",\n      \"tooltip\": {\n        \"shared\": true,\n        \"sort\": 0,\n        \"value_type\": \"individual\"\n      },\n      \"type\": \"graph\",\n      \"xaxis\": {\n        \"buckets\": null,\n        \"mode\": \"time\",\n        \"name\": null,\n        \"show\": true,\n        \"values\": []\n      },\n      \"yaxes\": [\n        {\n          \"$$hashKey\": \"object:361\",\n          \"format\": \"s\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        },\n        {\n          \"$$hashKey\": \"object:362\",\n          \"format\": \"short\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\": {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\": 10,\n      \"dashes\": false,\n      \"datasource\": null,\n      \"fieldConfig\": {\n        \"defaults\": {},\n        \"overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n        \"h\": 7,\n        \"w\": 8,\n        \"x\": 16,\n        \"y\": 7\n      },\n      \"hiddenSeries\": false,\n      \"id\": 15,\n      \"legend\": {\n        \"avg\": false,\n        \"current\": false,\n        \"max\": false,\n        \"min\": false,\n        \"show\": false,\n        \"total\": false,\n        \"values\": false\n      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"links\": [],\n      \"nullPointMode\": \"null as zero\",\n      \"options\": {\n        \"alertThreshold\": true\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.5.8\",\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n        {\n          \"expr\": \"irate(kubevirt_vmi_storage_iops_read_total{namespace=\\\"$namespace\\\", name=\\\"$vm\\\"}[5m])\",\n          \"format\": \"time_series\",\n          \"instant\": false,\n          \"interval\": \"\",\n          \"intervalFactor\": 1,\n          \"legendFormat\": \"{{drive}}-read\",\n          \"refId\": \"A\"\n        },\n        {\n          \"expr\": \"irate(kubevirt_vmi_storage_iops_write_total{namespace=\\\"$namespace\\\", name=\\\"$vm\\\"}[5m])\",\n          \"interval\": \"\",\n          \"legendFormat\": \"{{drive}}-writ\",\n          \"refId\": \"B\"\n        }\n      ],\n      \"thresholds\": [],\n      \"timeFrom\": null,\n      \"timeRegions\": [],\n      \"timeShift\": null,\n      \"title\": \"IOPS\",\n      \"tooltip\": {\n        \"shared\": true,\n        \"sort\": 0,\n        \"value_type\": \"individual\"\n      },\n      \"type\": \"graph\",\n      \"xaxis\": {\n        \"buckets\": null,\n        \"mode\": \"time\",\n        \"name\": null,\n        \"show\": true,\n        \"values\": []\n      },\n      \"yaxes\": [\n        {\n          \"$$hashKey\": \"object:247\",\n          \"format\": \"iops\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        },\n        {\n          \"$$hashKey\": \"object:248\",\n          \"format\": \"short\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\": {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    },\n    {\n      \"aliasColors\": {},\n      \"bars\": false,\n      \"dashLength\": 10,\n      \"dashes\": false,\n      \"datasource\": null,\n      \"fieldConfig\": {\n        \"defaults\": {},\n        \"overrides\": []\n      },\n      \"fill\": 1,\n      \"fillGradient\": 0,\n      \"gridPos\": {\n        \"h\": 7,\n        \"w\": 24,\n        \"x\": 0,\n        \"y\": 14\n      },\n      \"hiddenSeries\": false,\n      \"id\": 9,\n      \"legend\": {\n        \"avg\": false,\n        \"current\": false,\n        \"max\": false,\n        \"min\": false,\n        \"show\": false,\n        \"total\": false,\n        \"values\": false\n      },\n      \"lines\": true,\n      \"linewidth\": 1,\n      \"links\": [],\n      \"nullPointMode\": \"null as zero\",\n      \"options\": {\n        \"alertThreshold\": true\n      },\n      \"percentage\": false,\n      \"pluginVersion\": \"7.5.8\",\n      \"pointradius\": 2,\n      \"points\": false,\n      \"renderer\": \"flot\",\n      \"seriesOverrides\": [],\n      \"spaceLength\": 10,\n      \"stack\": false,\n      \"steppedLine\": false,\n      \"targets\": [\n        {\n          \"expr\": \"irate(kubevirt_vmi_network_receive_bytes_total{namespace=\\\"$namespace\\\", name=\\\"$vm\\\"}[5m])*8\",\n          \"format\": \"time_series\",\n          \"interval\": \"\",\n          \"intervalFactor\": 1,\n          \"legendFormat\": \"{{interface}}-receive\",\n          \"refId\": \"A\"\n        },\n        {\n          \"expr\": \"irate(kubevirt_vmi_network_transmit_bytes_total{namespace=\\\"$namespace\\\", name=\\\"$vm\\\"}[5m])*8\",\n          \"interval\": \"\",\n          \"legendFormat\": \"{{interface}}-transmit\",\n          \"refId\": \"B\"\n        }\n      ],\n      \"thresholds\": [],\n      \"timeFrom\": null,\n      \"timeRegions\": [],\n      \"timeShift\": null,\n      \"title\": \"Network Traffic\",\n      \"tooltip\": {\n        \"shared\": true,\n        \"sort\": 0,\n        \"value_type\": \"individual\"\n      },\n      \"type\": \"graph\",\n      \"xaxis\": {\n        \"buckets\": null,\n        \"mode\": \"time\",\n        \"name\": null,\n        \"show\": true,\n        \"values\": []\n      },\n      \"yaxes\": [\n        {\n          \"$$hashKey\": \"object:421\",\n          \"format\": \"bps\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        },\n        {\n          \"$$hashKey\": \"object:422\",\n          \"format\": \"short\",\n          \"label\": null,\n          \"logBase\": 1,\n          \"max\": null,\n          \"min\": null,\n          \"show\": true\n        }\n      ],\n      \"yaxis\": {\n        \"align\": false,\n        \"alignLevel\": null\n      }\n    }\n  ],\n  \"refresh\": \"10s\",\n  \"schemaVersion\": 27,\n  \"style\": \"dark\",\n  \"tags\": [],\n  \"templating\": {\n    \"list\": [\n      {\n        \"allValue\": null,\n        \"current\": {\n          \"selected\": false,\n          \"text\": \"default\",\n          \"value\": \"default\"\n        },\n        \"datasource\": null,\n        \"definition\": \"label_values(kubevirt_vmi_vcpu_seconds_total, namespace)\",\n        \"description\": null,\n        \"error\": null,\n        \"hide\": 0,\n        \"includeAll\": false,\n        \"label\": \"namespace\",\n        \"multi\": false,\n        \"name\": \"namespace\",\n        \"options\": [],\n        \"query\": {\n          \"query\": \"label_values(kubevirt_vmi_vcpu_seconds_total, namespace)\",\n          \"refId\": \"Prometheus-namespace-Variable-Query\"\n        },\n        \"refresh\": 1,\n        \"regex\": \"\",\n        \"skipUrlSync\": false,\n        \"sort\": 2,\n        \"tagValuesQuery\": \"\",\n        \"tags\": [],\n        \"tagsQuery\": \"\",\n        \"type\": \"query\",\n        \"useTags\": false\n      },\n      {\n        \"allValue\": null,\n        \"current\": {\n          \"selected\": false,\n          \"text\": \"tt\",\n          \"value\": \"tt\"\n        },\n        \"datasource\": null,\n        \"definition\": \"label_values(kubevirt_vmi_vcpu_seconds_total{namespace=\\\"$namespace\\\"}, name)\",\n        \"description\": null,\n        \"error\": null,\n        \"hide\": 0,\n        \"includeAll\": false,\n        \"label\": \"vm\",\n        \"multi\": false,\n        \"name\": \"vm\",\n        \"options\": [],\n        \"query\": {\n          \"query\": \"label_values(kubevirt_vmi_vcpu_seconds_total{namespace=\\\"$namespace\\\"}, name)\",\n          \"refId\": \"Prometheus-vm-Variable-Query\"\n        },\n        \"refresh\": 1,\n        \"regex\": \"\",\n        \"skipUrlSync\": false,\n        \"sort\": 2,\n        \"tagValuesQuery\": \"\",\n        \"tags\": [],\n        \"tagsQuery\": \"\",\n        \"type\": \"query\",\n        \"useTags\": false\n      }\n    ]\n  },\n  \"time\": {\n    \"from\": \"now-3h\",\n    \"to\": \"now\"\n  },\n  \"timepicker\": {\n    \"refresh_intervals\": [\n      \"5s\",\n      \"10s\",\n      \"30s\",\n      \"1m\",\n      \"5m\",\n      \"15m\",\n      \"30m\",\n      \"1h\",\n      \"2h\",\n      \"1d\"\n    ],\n    \"time_options\": [\n      \"5m\",\n      \"15m\",\n      \"1h\",\n      \"6h\",\n      \"12h\",\n      \"24h\",\n      \"2d\",\n      \"7d\",\n      \"30d\"\n    ]\n  },\n  \"timezone\": \"\",\n  \"title\": \"Harvester VM Info Detail\",\n  \"uid\": \"harvester-vm-detail-1\",\n  \"version\": 2\n}"},"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"grafana_dashboard":"1"},"name":"harvester-vm-detail-dashboard","namespace":"cattle-dashboards"}}
+    creationTimestamp: "2025-12-30T21:48:44Z"
+    labels:
+      grafana_dashboard: "1"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data:
+          .: {}
+          f:harvester_vm_info_details.json: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:grafana_dashboard: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2025-12-30T21:48:44Z"
+    name: harvester-vm-detail-dashboard
+    namespace: cattle-dashboards
+    resourceVersion: "2689"
+    uid: c71887ba-669c-4a1d-b67c-c9968f6d510a
+- apiVersion: v1
+  data:
+    harvester_vm_migration_details.json: |-
+      {
+        "annotations": {
+          "list": [
+            {
+              "builtIn": 1,
+              "datasource": {
+                "type": "grafana",
+                "uid": "-- Grafana --"
+              },
+              "enable": true,
+              "hide": true,
+              "iconColor": "rgba(0, 211, 255, 1)",
+              "name": "Annotations & Alerts",
+              "target": {
+                "limit": 100,
+                "matchAny": false,
+                "tags": [],
+                "type": "dashboard"
+              },
+              "type": "dashboard"
+            }
+          ]
+        },
+        "description": "Harvester VM Migration Details",
+        "editable": true,
+        "fiscalYearStartMonth": 0,
+        "graphTooltip": 0,
+        "id": 36,
+        "links": [],
+        "liveNow": false,
+        "panels": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
+            "description": "The remaining guest OS data to be migrated to the new VM.",
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "decbytes"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 0,
+              "y": 0
+            },
+            "id": 2,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": false
+              },
+              "timezone": [
+                ""
+              ],
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "prometheus"
+                },
+                "editorMode": "code",
+                "exemplar": false,
+                "expr": "kubevirt_vmi_migration_data_remaining_bytes{namespace=\"$namespace\", name=\"$vm\"}",
+                "hide": false,
+                "legendFormat": "remaining bytes",
+                "range": true,
+                "refId": "A"
+              }
+            ],
+            "title": "Migration Data Remaining Bytes",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
+            "description": "The total Guest OS data processed and migrated to the new VM.",
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "decbytes"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 12,
+              "y": 0
+            },
+            "id": 4,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": false
+              },
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "prometheus"
+                },
+                "editorMode": "code",
+                "expr": "kubevirt_vmi_migration_data_processed_bytes{namespace=\"$namespace\", name=\"$vm\"}",
+                "legendFormat": "processed bytes",
+                "range": true,
+                "refId": "A"
+              }
+            ],
+            "title": "Migration Data Processed Bytes",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
+            "description": "The rate at which the memory is being transferred.",
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "Bps"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 0,
+              "y": 8
+            },
+            "id": 8,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": false
+              },
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "prometheus"
+                },
+                "editorMode": "code",
+                "expr": "kubevirt_vmi_migration_disk_transfer_rate_bytes{namespace=\"$namespace\", name=\"$vm\"}",
+                "legendFormat": "memory transfer rate",
+                "range": true,
+                "refId": "A"
+              }
+            ],
+            "title": "Migration Memory Transfer Rate",
+            "type": "timeseries"
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "prometheus"
+            },
+            "description": "The rate of memory being dirty in the Guest OS.",
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "barAlignment": 0,
+                  "drawStyle": "line",
+                  "fillOpacity": 0,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineInterpolation": "linear",
+                  "lineWidth": 1,
+                  "pointSize": 5,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "showPoints": "auto",
+                  "spanNulls": false,
+                  "stacking": {
+                    "group": "A",
+                    "mode": "none"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "mappings": [],
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": null
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "Bps"
+              },
+              "overrides": []
+            },
+            "gridPos": {
+              "h": 8,
+              "w": 12,
+              "x": 12,
+              "y": 8
+            },
+            "id": 6,
+            "options": {
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": false
+              },
+              "tooltip": {
+                "mode": "single",
+                "sort": "none"
+              }
+            },
+            "targets": [
+              {
+                "datasource": {
+                  "type": "prometheus",
+                  "uid": "prometheus"
+                },
+                "editorMode": "code",
+                "expr": "kubevirt_vmi_migration_dirty_memory_rate_bytes{namespace=\"$namespace\", name=\"$vm\"}",
+                "legendFormat": "dirty memory rate",
+                "range": true,
+                "refId": "A"
+              }
+            ],
+            "title": "Migration Dirty Memory Rate",
+            "type": "timeseries"
+          }
+        ],
+        "schemaVersion": 37,
+        "style": "dark",
+        "tags": [],
+        "templating": {
+          "list": [
+            {
+              "current": {
+                "selected": false,
+                "text": "default",
+                "value": "default"
+              },
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "definition": "label_values(kubevirt_vmi_migration_data_remaining_bytes, namespace)",
+              "hide": 0,
+              "includeAll": false,
+              "label": "namespace",
+              "multi": false,
+              "name": "namespace",
+              "options": [],
+              "query": {
+                "query": "label_values(kubevirt_vmi_migration_data_remaining_bytes, namespace)",
+                "refId": "StandardVariableQuery"
+              },
+              "refresh": 1,
+              "regex": "",
+              "skipUrlSync": false,
+              "sort": 0,
+              "type": "query"
+            },
+            {
+              "current": {
+                "selected": true,
+                "text": "test",
+                "value": "test"
+              },
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+              },
+              "definition": "label_values(kubevirt_vmi_migration_data_remaining_bytes, name)",
+              "hide": 0,
+              "includeAll": false,
+              "label": "vm",
+              "multi": false,
+              "name": "vm",
+              "options": [],
+              "query": {
+                "query": "label_values(kubevirt_vmi_migration_data_remaining_bytes, name)",
+                "refId": "StandardVariableQuery"
+              },
+              "refresh": 1,
+              "regex": "",
+              "skipUrlSync": false,
+              "sort": 0,
+              "type": "query"
+            }
+          ]
+        },
+        "time": {
+          "from": "now-3h",
+          "to": "now"
+        },
+        "timepicker": {},
+        "timezone": "",
+        "title": "Harvester VM Migration Details",
+        "uid": "harvester-vm-migration-details-1",
+        "version": 1,
+        "weekStart": ""
+      }
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"v1","data":{"harvester_vm_migration_details.json":"{\n  \"annotations\": {\n    \"list\": [\n      {\n        \"builtIn\": 1,\n        \"datasource\": {\n          \"type\": \"grafana\",\n          \"uid\": \"-- Grafana --\"\n        },\n        \"enable\": true,\n        \"hide\": true,\n        \"iconColor\": \"rgba(0, 211, 255, 1)\",\n        \"name\": \"Annotations \u0026 Alerts\",\n        \"target\": {\n          \"limit\": 100,\n          \"matchAny\": false,\n          \"tags\": [],\n          \"type\": \"dashboard\"\n        },\n        \"type\": \"dashboard\"\n      }\n    ]\n  },\n  \"description\": \"Harvester VM Migration Details\",\n  \"editable\": true,\n  \"fiscalYearStartMonth\": 0,\n  \"graphTooltip\": 0,\n  \"id\": 36,\n  \"links\": [],\n  \"liveNow\": false,\n  \"panels\": [\n    {\n      \"datasource\": {\n        \"type\": \"prometheus\",\n        \"uid\": \"prometheus\"\n      },\n      \"description\": \"The remaining guest OS data to be migrated to the new VM.\",\n      \"fieldConfig\": {\n        \"defaults\": {\n          \"color\": {\n            \"mode\": \"palette-classic\"\n          },\n          \"custom\": {\n            \"axisCenteredZero\": false,\n            \"axisColorMode\": \"text\",\n            \"axisLabel\": \"\",\n            \"axisPlacement\": \"auto\",\n            \"barAlignment\": 0,\n            \"drawStyle\": \"line\",\n            \"fillOpacity\": 0,\n            \"gradientMode\": \"none\",\n            \"hideFrom\": {\n              \"legend\": false,\n              \"tooltip\": false,\n              \"viz\": false\n            },\n            \"lineInterpolation\": \"linear\",\n            \"lineWidth\": 1,\n            \"pointSize\": 5,\n            \"scaleDistribution\": {\n              \"type\": \"linear\"\n            },\n            \"showPoints\": \"auto\",\n            \"spanNulls\": false,\n            \"stacking\": {\n              \"group\": \"A\",\n              \"mode\": \"none\"\n            },\n            \"thresholdsStyle\": {\n              \"mode\": \"off\"\n            }\n          },\n          \"mappings\": [],\n          \"thresholds\": {\n            \"mode\": \"absolute\",\n            \"steps\": [\n              {\n                \"color\": \"green\",\n                \"value\": null\n              },\n              {\n                \"color\": \"red\",\n                \"value\": 80\n              }\n            ]\n          },\n          \"unit\": \"decbytes\"\n        },\n        \"overrides\": []\n      },\n      \"gridPos\": {\n        \"h\": 8,\n        \"w\": 12,\n        \"x\": 0,\n        \"y\": 0\n      },\n      \"id\": 2,\n      \"options\": {\n        \"legend\": {\n          \"calcs\": [],\n          \"displayMode\": \"list\",\n          \"placement\": \"bottom\",\n          \"showLegend\": false\n        },\n        \"timezone\": [\n          \"\"\n        ],\n        \"tooltip\": {\n          \"mode\": \"single\",\n          \"sort\": \"none\"\n        }\n      },\n      \"targets\": [\n        {\n          \"datasource\": {\n            \"type\": \"prometheus\",\n            \"uid\": \"prometheus\"\n          },\n          \"editorMode\": \"code\",\n          \"exemplar\": false,\n          \"expr\": \"kubevirt_vmi_migration_data_remaining_bytes{namespace=\\\"$namespace\\\", name=\\\"$vm\\\"}\",\n          \"hide\": false,\n          \"legendFormat\": \"remaining bytes\",\n          \"range\": true,\n          \"refId\": \"A\"\n        }\n      ],\n      \"title\": \"Migration Data Remaining Bytes\",\n      \"type\": \"timeseries\"\n    },\n    {\n      \"datasource\": {\n        \"type\": \"prometheus\",\n        \"uid\": \"prometheus\"\n      },\n      \"description\": \"The total Guest OS data processed and migrated to the new VM.\",\n      \"fieldConfig\": {\n        \"defaults\": {\n          \"color\": {\n            \"mode\": \"palette-classic\"\n          },\n          \"custom\": {\n            \"axisCenteredZero\": false,\n            \"axisColorMode\": \"text\",\n            \"axisLabel\": \"\",\n            \"axisPlacement\": \"auto\",\n            \"barAlignment\": 0,\n            \"drawStyle\": \"line\",\n            \"fillOpacity\": 0,\n            \"gradientMode\": \"none\",\n            \"hideFrom\": {\n              \"legend\": false,\n              \"tooltip\": false,\n              \"viz\": false\n            },\n            \"lineInterpolation\": \"linear\",\n            \"lineWidth\": 1,\n            \"pointSize\": 5,\n            \"scaleDistribution\": {\n              \"type\": \"linear\"\n            },\n            \"showPoints\": \"auto\",\n            \"spanNulls\": false,\n            \"stacking\": {\n              \"group\": \"A\",\n              \"mode\": \"none\"\n            },\n            \"thresholdsStyle\": {\n              \"mode\": \"off\"\n            }\n          },\n          \"mappings\": [],\n          \"thresholds\": {\n            \"mode\": \"absolute\",\n            \"steps\": [\n              {\n                \"color\": \"green\",\n                \"value\": null\n              },\n              {\n                \"color\": \"red\",\n                \"value\": 80\n              }\n            ]\n          },\n          \"unit\": \"decbytes\"\n        },\n        \"overrides\": []\n      },\n      \"gridPos\": {\n        \"h\": 8,\n        \"w\": 12,\n        \"x\": 12,\n        \"y\": 0\n      },\n      \"id\": 4,\n      \"options\": {\n        \"legend\": {\n          \"calcs\": [],\n          \"displayMode\": \"list\",\n          \"placement\": \"bottom\",\n          \"showLegend\": false\n        },\n        \"tooltip\": {\n          \"mode\": \"single\",\n          \"sort\": \"none\"\n        }\n      },\n      \"targets\": [\n        {\n          \"datasource\": {\n            \"type\": \"prometheus\",\n            \"uid\": \"prometheus\"\n          },\n          \"editorMode\": \"code\",\n          \"expr\": \"kubevirt_vmi_migration_data_processed_bytes{namespace=\\\"$namespace\\\", name=\\\"$vm\\\"}\",\n          \"legendFormat\": \"processed bytes\",\n          \"range\": true,\n          \"refId\": \"A\"\n        }\n      ],\n      \"title\": \"Migration Data Processed Bytes\",\n      \"type\": \"timeseries\"\n    },\n    {\n      \"datasource\": {\n        \"type\": \"prometheus\",\n        \"uid\": \"prometheus\"\n      },\n      \"description\": \"The rate at which the memory is being transferred.\",\n      \"fieldConfig\": {\n        \"defaults\": {\n          \"color\": {\n            \"mode\": \"palette-classic\"\n          },\n          \"custom\": {\n            \"axisCenteredZero\": false,\n            \"axisColorMode\": \"text\",\n            \"axisLabel\": \"\",\n            \"axisPlacement\": \"auto\",\n            \"barAlignment\": 0,\n            \"drawStyle\": \"line\",\n            \"fillOpacity\": 0,\n            \"gradientMode\": \"none\",\n            \"hideFrom\": {\n              \"legend\": false,\n              \"tooltip\": false,\n              \"viz\": false\n            },\n            \"lineInterpolation\": \"linear\",\n            \"lineWidth\": 1,\n            \"pointSize\": 5,\n            \"scaleDistribution\": {\n              \"type\": \"linear\"\n            },\n            \"showPoints\": \"auto\",\n            \"spanNulls\": false,\n            \"stacking\": {\n              \"group\": \"A\",\n              \"mode\": \"none\"\n            },\n            \"thresholdsStyle\": {\n              \"mode\": \"off\"\n            }\n          },\n          \"mappings\": [],\n          \"thresholds\": {\n            \"mode\": \"absolute\",\n            \"steps\": [\n              {\n                \"color\": \"green\",\n                \"value\": null\n              },\n              {\n                \"color\": \"red\",\n                \"value\": 80\n              }\n            ]\n          },\n          \"unit\": \"Bps\"\n        },\n        \"overrides\": []\n      },\n      \"gridPos\": {\n        \"h\": 8,\n        \"w\": 12,\n        \"x\": 0,\n        \"y\": 8\n      },\n      \"id\": 8,\n      \"options\": {\n        \"legend\": {\n          \"calcs\": [],\n          \"displayMode\": \"list\",\n          \"placement\": \"bottom\",\n          \"showLegend\": false\n        },\n        \"tooltip\": {\n          \"mode\": \"single\",\n          \"sort\": \"none\"\n        }\n      },\n      \"targets\": [\n        {\n          \"datasource\": {\n            \"type\": \"prometheus\",\n            \"uid\": \"prometheus\"\n          },\n          \"editorMode\": \"code\",\n          \"expr\": \"kubevirt_vmi_migration_disk_transfer_rate_bytes{namespace=\\\"$namespace\\\", name=\\\"$vm\\\"}\",\n          \"legendFormat\": \"memory transfer rate\",\n          \"range\": true,\n          \"refId\": \"A\"\n        }\n      ],\n      \"title\": \"Migration Memory Transfer Rate\",\n      \"type\": \"timeseries\"\n    },\n    {\n      \"datasource\": {\n        \"type\": \"prometheus\",\n        \"uid\": \"prometheus\"\n      },\n      \"description\": \"The rate of memory being dirty in the Guest OS.\",\n      \"fieldConfig\": {\n        \"defaults\": {\n          \"color\": {\n            \"mode\": \"palette-classic\"\n          },\n          \"custom\": {\n            \"axisCenteredZero\": false,\n            \"axisColorMode\": \"text\",\n            \"axisLabel\": \"\",\n            \"axisPlacement\": \"auto\",\n            \"barAlignment\": 0,\n            \"drawStyle\": \"line\",\n            \"fillOpacity\": 0,\n            \"gradientMode\": \"none\",\n            \"hideFrom\": {\n              \"legend\": false,\n              \"tooltip\": false,\n              \"viz\": false\n            },\n            \"lineInterpolation\": \"linear\",\n            \"lineWidth\": 1,\n            \"pointSize\": 5,\n            \"scaleDistribution\": {\n              \"type\": \"linear\"\n            },\n            \"showPoints\": \"auto\",\n            \"spanNulls\": false,\n            \"stacking\": {\n              \"group\": \"A\",\n              \"mode\": \"none\"\n            },\n            \"thresholdsStyle\": {\n              \"mode\": \"off\"\n            }\n          },\n          \"mappings\": [],\n          \"thresholds\": {\n            \"mode\": \"absolute\",\n            \"steps\": [\n              {\n                \"color\": \"green\",\n                \"value\": null\n              },\n              {\n                \"color\": \"red\",\n                \"value\": 80\n              }\n            ]\n          },\n          \"unit\": \"Bps\"\n        },\n        \"overrides\": []\n      },\n      \"gridPos\": {\n        \"h\": 8,\n        \"w\": 12,\n        \"x\": 12,\n        \"y\": 8\n      },\n      \"id\": 6,\n      \"options\": {\n        \"legend\": {\n          \"calcs\": [],\n          \"displayMode\": \"list\",\n          \"placement\": \"bottom\",\n          \"showLegend\": false\n        },\n        \"tooltip\": {\n          \"mode\": \"single\",\n          \"sort\": \"none\"\n        }\n      },\n      \"targets\": [\n        {\n          \"datasource\": {\n            \"type\": \"prometheus\",\n            \"uid\": \"prometheus\"\n          },\n          \"editorMode\": \"code\",\n          \"expr\": \"kubevirt_vmi_migration_dirty_memory_rate_bytes{namespace=\\\"$namespace\\\", name=\\\"$vm\\\"}\",\n          \"legendFormat\": \"dirty memory rate\",\n          \"range\": true,\n          \"refId\": \"A\"\n        }\n      ],\n      \"title\": \"Migration Dirty Memory Rate\",\n      \"type\": \"timeseries\"\n    }\n  ],\n  \"schemaVersion\": 37,\n  \"style\": \"dark\",\n  \"tags\": [],\n  \"templating\": {\n    \"list\": [\n      {\n        \"current\": {\n          \"selected\": false,\n          \"text\": \"default\",\n          \"value\": \"default\"\n        },\n        \"datasource\": {\n          \"type\": \"prometheus\",\n          \"uid\": \"prometheus\"\n        },\n        \"definition\": \"label_values(kubevirt_vmi_migration_data_remaining_bytes, namespace)\",\n        \"hide\": 0,\n        \"includeAll\": false,\n        \"label\": \"namespace\",\n        \"multi\": false,\n        \"name\": \"namespace\",\n        \"options\": [],\n        \"query\": {\n          \"query\": \"label_values(kubevirt_vmi_migration_data_remaining_bytes, namespace)\",\n          \"refId\": \"StandardVariableQuery\"\n        },\n        \"refresh\": 1,\n        \"regex\": \"\",\n        \"skipUrlSync\": false,\n        \"sort\": 0,\n        \"type\": \"query\"\n      },\n      {\n        \"current\": {\n          \"selected\": true,\n          \"text\": \"test\",\n          \"value\": \"test\"\n        },\n        \"datasource\": {\n          \"type\": \"prometheus\",\n          \"uid\": \"prometheus\"\n        },\n        \"definition\": \"label_values(kubevirt_vmi_migration_data_remaining_bytes, name)\",\n        \"hide\": 0,\n        \"includeAll\": false,\n        \"label\": \"vm\",\n        \"multi\": false,\n        \"name\": \"vm\",\n        \"options\": [],\n        \"query\": {\n          \"query\": \"label_values(kubevirt_vmi_migration_data_remaining_bytes, name)\",\n          \"refId\": \"StandardVariableQuery\"\n        },\n        \"refresh\": 1,\n        \"regex\": \"\",\n        \"skipUrlSync\": false,\n        \"sort\": 0,\n        \"type\": \"query\"\n      }\n    ]\n  },\n  \"time\": {\n    \"from\": \"now-3h\",\n    \"to\": \"now\"\n  },\n  \"timepicker\": {},\n  \"timezone\": \"\",\n  \"title\": \"Harvester VM Migration Details\",\n  \"uid\": \"harvester-vm-migration-details-1\",\n  \"version\": 1,\n  \"weekStart\": \"\"\n}"},"kind":"ConfigMap","metadata":{"annotations":{},"labels":{"grafana_dashboard":"1"},"name":"harvester-vm-migration-details-dashboard","namespace":"cattle-dashboards"}}
+    creationTimestamp: "2025-12-30T21:48:44Z"
+    labels:
+      grafana_dashboard: "1"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data:
+          .: {}
+          f:harvester_vm_migration_details.json: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+          f:labels:
+            .: {}
+            f:grafana_dashboard: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2025-12-30T21:48:44Z"
+    name: harvester-vm-migration-details-dashboard
+    namespace: cattle-dashboards
+    resourceVersion: "2691"
+    uid: 82be8128-6d80-4b8f-b89c-6ec28ae28923
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIBeTCCAR+gAwIBAgIBADAKBggqhkjOPQQDAjAkMSIwIAYDVQQDDBlya2UyLXNl
+      cnZlci1jYUAxNzY3MTMxMTg0MB4XDTI1MTIzMDIxNDYyNFoXDTM1MTIyODIxNDYy
+      NFowJDEiMCAGA1UEAwwZcmtlMi1zZXJ2ZXItY2FAMTc2NzEzMTE4NDBZMBMGByqG
+      SM49AgEGCCqGSM49AwEHA0IABNdsln5pHqWtt+Dq9xtPuaMdOwx3TzDrpNMsS2Z4
+      BWh82fNxhIPdsAF/8FHaDKMJC4of7GKCnITfILkiSv9uH5GjQjBAMA4GA1UdDwEB
+      /wQEAwICpDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBRJqy2SvM3zcKZy/TEg
+      e2Vo2YaLcDAKBggqhkjOPQQDAgNIADBFAiEAisgoXN8tBPOOObwxDeMVyzoBiTQ/
+      gyA8N23JTMdItXECIFq8E0Vx2Pcs/LvqWbeqxxzERlxhl+CihscULgEz//cK
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2025-12-30T21:48:44Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:data:
+          .: {}
+          f:ca.crt: {}
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubernetes.io/description: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:48:44Z"
+    name: kube-root-ca.crt
+    namespace: cattle-dashboards
+    resourceVersion: "2680"
+    uid: 88b8da3a-2bc9-49c2-9484-a71da5520c2e
+kind: List
+metadata:
+  resourceVersion: "14474"

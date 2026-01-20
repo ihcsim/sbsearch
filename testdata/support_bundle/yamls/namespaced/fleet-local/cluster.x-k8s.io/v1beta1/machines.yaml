@@ -1,0 +1,305 @@
+apiVersion: v1
+items:
+- apiVersion: cluster.x-k8s.io/v1beta1
+  kind: Machine
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/5yTwY6bMBCGX6XyGbLYEDBIvbTqadUeUqn3wYwTF2Mje8i2WvHuFXSbJrvdtM0R+H/7Gz77kQ1I0AEBax4ZOOcJyHgXl0fffkVFEWkTjN8oILK4Mf7OdKxhkxvAwR67dAB1MA5Z8mrBPzgM6f7Ys4bdHXny5t647u1nVAHprzUHA7KGqSmSH1JZQMmB10KC+KdqHEEtfesVWDYnzEKLdp1P2SkShs23tJdxaT29+LXlz0ryh5x3FLxNRwtuCVKYro1/gHhYJigV5lgXGedcVjrTulBYiVrKou5aLoRqszwrO5aw0ONZ/xWsZ6FzpjR4ewZ2mURS3dXAk9B09ay2RVFyVdUcJWYcqrZoeVUWJaLINdeiymRXy0xu81zXZV0LxdtsK0Qlixzki8UffOgxXOw/J+yq5HON2iJSepIZR1SLytZ7ihRgXL16p81+h3o906P5giEa71jzDOXIWcJ645Yxd/cf3p3WuJVnPp2VT5eqjNMBIoVJ0RTw/8jerwwfT5fsZrRIQFO8+Fs7hO47azTYiC8pf3+b5x8BAAD//ysMZ3IpBAAA
+      objectset.rio.cattle.io/id: unmanaged-machine
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: custom-84a61a1928a2
+      objectset.rio.cattle.io/owner-namespace: local
+      pre-terminate.delete.hook.machine.cluster.x-k8s.io/rke-bootstrap-cleanup: rke-bootstrap-controller
+    creationTimestamp: "2025-12-30T21:51:42Z"
+    finalizers:
+    - machine.cluster.x-k8s.io
+    generation: 3
+    labels:
+      cluster.x-k8s.io/cluster-name: local
+      cluster.x-k8s.io/control-plane: "true"
+      objectset.rio.cattle.io/hash: c6ce3e94011187f0ff4ce7298849db122cb0306d
+      rke.cattle.io/cluster-name: local
+      rke.cattle.io/control-plane-role: "true"
+      rke.cattle.io/etcd-role: "true"
+      rke.cattle.io/machine-id: c54461c791e8e01a7b4b17646ee23f1f2708d9808533f96992c1b05227843a8
+      rke.cattle.io/worker-role: "true"
+    managedFields:
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+            f:pre-terminate.delete.hook.machine.cluster.x-k8s.io/rke-bootstrap-cleanup: {}
+          f:labels:
+            .: {}
+            f:cluster.x-k8s.io/cluster-name: {}
+            f:cluster.x-k8s.io/control-plane: {}
+            f:objectset.rio.cattle.io/hash: {}
+            f:rke.cattle.io/cluster-name: {}
+            f:rke.cattle.io/control-plane-role: {}
+            f:rke.cattle.io/etcd-role: {}
+            f:rke.cattle.io/machine-id: {}
+            f:rke.cattle.io/worker-role: {}
+        f:spec:
+          .: {}
+          f:bootstrap:
+            .: {}
+            f:configRef: {}
+          f:clusterName: {}
+          f:infrastructureRef: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:51:42Z"
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"machine.cluster.x-k8s.io"null: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"f9f866b9-8f90-45b8-a753-4db235e67fec"}: {}
+        f:spec:
+          f:bootstrap:
+            f:dataSecretName: {}
+          f:providerID: {}
+      manager: manager
+      operation: Update
+      time: "2025-12-30T21:52:13Z"
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:addresses: {}
+          f:bootstrapReady: {}
+          f:infrastructureReady: {}
+          f:lastUpdated: {}
+          f:nodeInfo:
+            .: {}
+            f:architecture: {}
+            f:bootID: {}
+            f:containerRuntimeVersion: {}
+            f:kernelVersion: {}
+            f:kubeProxyVersion: {}
+            f:kubeletVersion: {}
+            f:machineID: {}
+            f:operatingSystem: {}
+            f:osImage: {}
+            f:systemUUID: {}
+          f:nodeRef: {}
+          f:observedGeneration: {}
+          f:phase: {}
+          f:v1beta2:
+            .: {}
+            f:conditions:
+              .: {}
+              k:{"type":"Available"}:
+                .: {}
+                f:lastTransitionTime: {}
+                f:message: {}
+                f:observedGeneration: {}
+                f:reason: {}
+                f:status: {}
+                f:type: {}
+              k:{"type":"BootstrapConfigReady"}:
+                .: {}
+                f:lastTransitionTime: {}
+                f:message: {}
+                f:observedGeneration: {}
+                f:reason: {}
+                f:status: {}
+                f:type: {}
+              k:{"type":"Deleting"}:
+                .: {}
+                f:lastTransitionTime: {}
+                f:message: {}
+                f:observedGeneration: {}
+                f:reason: {}
+                f:status: {}
+                f:type: {}
+              k:{"type":"InfrastructureReady"}:
+                .: {}
+                f:lastTransitionTime: {}
+                f:message: {}
+                f:observedGeneration: {}
+                f:reason: {}
+                f:status: {}
+                f:type: {}
+              k:{"type":"NodeHealthy"}:
+                .: {}
+                f:lastTransitionTime: {}
+                f:message: {}
+                f:observedGeneration: {}
+                f:reason: {}
+                f:status: {}
+                f:type: {}
+              k:{"type":"NodeReady"}:
+                .: {}
+                f:lastTransitionTime: {}
+                f:message: {}
+                f:observedGeneration: {}
+                f:reason: {}
+                f:status: {}
+                f:type: {}
+              k:{"type":"Paused"}:
+                .: {}
+                f:lastTransitionTime: {}
+                f:message: {}
+                f:observedGeneration: {}
+                f:reason: {}
+                f:status: {}
+                f:type: {}
+              k:{"type":"Ready"}:
+                .: {}
+                f:lastTransitionTime: {}
+                f:message: {}
+                f:observedGeneration: {}
+                f:reason: {}
+                f:status: {}
+                f:type: {}
+      manager: manager
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:52:28Z"
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:52:28Z"
+    name: custom-84a61a1928a2
+    namespace: fleet-local
+    ownerReferences:
+    - apiVersion: cluster.x-k8s.io/v1beta1
+      kind: Cluster
+      name: local
+      uid: f9f866b9-8f90-45b8-a753-4db235e67fec
+    resourceVersion: "8684"
+    uid: a0370775-19f2-41af-bb7d-9918396887a7
+  spec:
+    bootstrap:
+      configRef:
+        apiVersion: rke.cattle.io/v1
+        kind: RKEBootstrap
+        name: custom-84a61a1928a2
+        namespace: fleet-local
+      dataSecretName: custom-84a61a1928a2-machine-bootstrap
+    clusterName: local
+    infrastructureRef:
+      apiVersion: rke.cattle.io/v1
+      kind: CustomMachine
+      name: custom-84a61a1928a2
+      namespace: fleet-local
+    nodeDeletionTimeout: 10s
+    providerID: rke2://isim-dev
+  status:
+    addresses:
+    - address: 192.168.122.168
+      type: InternalIP
+    - address: isim-dev
+      type: Hostname
+    bootstrapReady: true
+    conditions:
+    - lastTransitionTime: "2025-12-30T21:51:43Z"
+      status: "True"
+      type: Ready
+    - lastTransitionTime: "2025-12-30T21:51:43Z"
+      status: "True"
+      type: BootstrapReady
+    - lastTransitionTime: "2025-12-30T21:51:42Z"
+      status: "True"
+      type: InfrastructureReady
+    - lastTransitionTime: "2025-12-30T21:52:13Z"
+      status: "True"
+      type: NodeHealthy
+    - lastTransitionTime: "2025-12-30T21:51:42Z"
+      status: "True"
+      type: PlanApplied
+    - lastTransitionTime: "2025-12-30T21:52:28Z"
+      status: "True"
+      type: Reconciled
+    infrastructureReady: true
+    lastUpdated: "2025-12-30T21:52:13Z"
+    nodeInfo:
+      architecture: amd64
+      bootID: 2da0e59d-e4df-4aee-82da-c6def875d0c0
+      containerRuntimeVersion: containerd://2.1.5-k3s1
+      kernelVersion: 6.4.0-36-default
+      kubeProxyVersion: "null"
+      kubeletVersion: v1.34.2+rke2r1
+      machineID: d7ae5494b16feda56e30f1546954480c
+      operatingSystem: linux
+      osImage: Harvester v1.7.0
+      systemUUID: c8261f9d-2a6e-4998-b72a-da8ba468f4ff
+    nodeRef:
+      apiVersion: v1
+      kind: Node
+      name: isim-dev
+      uid: 75908add-436d-4a4a-ac7f-91584193f4b7
+    observedGeneration: 3
+    phase: Running
+    v1beta2:
+      conditions:
+      - lastTransitionTime: "2025-12-30T21:52:28Z"
+        message: "null"
+        observedGeneration: 3
+        reason: Available
+        status: "True"
+        type: Available
+      - lastTransitionTime: "2025-12-30T21:52:28Z"
+        message: "null"
+        observedGeneration: 3
+        reason: Ready
+        status: "True"
+        type: Ready
+      - lastTransitionTime: "2025-12-30T21:51:42Z"
+        message: "null"
+        observedGeneration: 3
+        reason: Ready
+        status: "True"
+        type: BootstrapConfigReady
+      - lastTransitionTime: "2025-12-30T21:51:42Z"
+        message: "null"
+        observedGeneration: 3
+        reason: Ready
+        status: "True"
+        type: InfrastructureReady
+      - lastTransitionTime: "2025-12-30T21:52:28Z"
+        message: "null"
+        observedGeneration: 3
+        reason: NodeHealthy
+        status: "True"
+        type: NodeHealthy
+      - lastTransitionTime: "2025-12-30T21:46:58Z"
+        message: "null"
+        observedGeneration: 3
+        reason: NodeReady
+        status: "True"
+        type: NodeReady
+      - lastTransitionTime: "2025-12-30T21:51:42Z"
+        message: "null"
+        observedGeneration: 3
+        reason: NotPaused
+        status: "False"
+        type: Paused
+      - lastTransitionTime: "2025-12-30T21:51:42Z"
+        message: "null"
+        observedGeneration: 3
+        reason: NotDeleting
+        status: "False"
+        type: Deleting
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14484"

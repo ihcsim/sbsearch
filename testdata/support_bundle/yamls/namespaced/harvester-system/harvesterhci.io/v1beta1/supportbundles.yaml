@@ -1,0 +1,55 @@
+apiVersion: v1
+items:
+- apiVersion: harvesterhci.io/v1beta1
+  kind: SupportBundle
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:30Z"
+    generation: 3
+    managedFields:
+    - apiVersion: harvesterhci.io/v1beta1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:description: {}
+          f:expiration: {}
+          f:extraCollectionNamespaces: {}
+          f:issueURL: {}
+          f:nodeTimeout: {}
+          f:timeout: {}
+        f:status:
+          .: {}
+          f:progress: {}
+          f:state: {}
+      manager: harvester
+      operation: Update
+      time: "2025-12-30T22:00:33Z"
+    name: bundle-local-v1.7.0-j1qut
+    namespace: harvester-system
+    resourceVersion: "14470"
+    uid: 214273de-7d8d-4367-b632-e11c44e7b531
+  spec:
+    description: test
+    expiration: 30
+    extraCollectionNamespaces:
+    - cattle-local-user-passwords
+    - cattle-system
+    - cattle-ui-plugin-system
+    - cluster-fleet-local-local-1a3d67d0a899
+    - default
+    - fleet-default
+    - harvester-public
+    - kube-node-lease
+    - kube-public
+    - kube-system
+    - user-j6klr
+    issueURL: "null"
+    nodeTimeout: 30
+    timeout: 50
+  status:
+    progress: 16
+    state: generating
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14492"

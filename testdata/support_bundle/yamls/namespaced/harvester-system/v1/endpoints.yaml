@@ -1,0 +1,628 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-12-30T21:49:48Z"
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    labels:
+      app: containerized-data-importer
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-operator
+      cdi.kubevirt.io: cdi-apiserver
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+      operator.cdi.kubevirt.io/createVersion: 1.62.0-150700.9.3.1
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cdi.kubevirt.io: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+            f:operator.cdi.kubevirt.io/createVersion: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:49:48Z"
+    name: cdi-api
+    namespace: harvester-system
+    resourceVersion: "5094"
+    uid: 43673d30-c1f9-465c-a977-4183db822e64
+  subsets:
+  - addresses:
+    - ip: 10.52.0.54
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: cdi-apiserver-bf58b56f7-b9kcx
+        namespace: harvester-system
+        uid: beb80825-51ca-4227-a4f5-755392095e29
+    ports:
+    - port: 8443
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-12-30T21:49:50Z"
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    labels:
+      app: containerized-data-importer
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-operator
+      cdi.kubevirt.io: "null"
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+      operator.cdi.kubevirt.io/createVersion: 1.62.0-150700.9.3.1
+      prometheus.cdi.kubevirt.io: "true"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cdi.kubevirt.io: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+            f:operator.cdi.kubevirt.io/createVersion: {}
+            f:prometheus.cdi.kubevirt.io: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:49:51Z"
+    name: cdi-prometheus-metrics
+    namespace: harvester-system
+    resourceVersion: "5143"
+    uid: b4605311-2c0e-466a-b8ab-cf4191befcac
+  subsets:
+  - addresses:
+    - ip: 10.52.0.44
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: cdi-operator-664c664b49-frkcb
+        namespace: harvester-system
+        uid: efc77910-3db9-4d9a-9737-96b9765bcb6d
+    - ip: 10.52.0.55
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: cdi-deployment-ccd4878d6-477ck
+        namespace: harvester-system
+        uid: e199f509-677e-46bc-91ad-8c0d90cb204b
+    ports:
+    - name: metrics
+      port: 8080
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:39Z"
+    labels:
+      app: containerized-data-importer
+      app.kubernetes.io/component: storage
+      app.kubernetes.io/managed-by: cdi-operator
+      cdi.kubevirt.io: cdi-uploadproxy
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+      operator.cdi.kubevirt.io/createVersion: 1.62.0-150700.9.3.1
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cdi.kubevirt.io: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+            f:operator.cdi.kubevirt.io/createVersion: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:51:58Z"
+    name: cdi-uploadproxy
+    namespace: harvester-system
+    resourceVersion: "8140"
+    uid: 96e4aa7a-ecb8-4755-abb2-79e1283cacf9
+  subsets:
+  - addresses:
+    - ip: 10.52.0.53
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: cdi-uploadproxy-5449fb9c7b-gjrcr
+        namespace: harvester-system
+        uid: 82180cd7-192c-49f1-a077-7f9e7ea78148
+    ports:
+    - port: 8443
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-12-30T21:49:37Z"
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      app.kubernetes.io/component: apiserver
+      app.kubernetes.io/managed-by: Helm
+      app.kubernetes.io/name: harvester
+      app.kubernetes.io/part-of: harvester
+      app.kubernetes.io/version: v1.7.0
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+      helm.sh/chart: harvester-1.7.0
+      helm.sh/release: harvester
+      kubernetes.io/cluster-service: "true"
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:app.kubernetes.io/name: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+            f:helm.sh/chart: {}
+            f:helm.sh/release: {}
+            f:kubernetes.io/cluster-service: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:49:38Z"
+    name: harvester
+    namespace: harvester-system
+    resourceVersion: "4379"
+    uid: bdfefc4d-652d-4c62-b854-857cceccd5d6
+  subsets:
+  - addresses:
+    - ip: 10.52.0.41
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: harvester-8db57f44b-cnhts
+        namespace: harvester-system
+        uid: 592bb583-618b-4223-85d2-dc8859804efa
+    ports:
+    - name: https
+      port: 8443
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-12-30T21:49:37Z"
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:49:37Z"
+    name: harvester-load-balancer-webhook
+    namespace: harvester-system
+    resourceVersion: "4356"
+    uid: e4e48ef3-ee3a-4881-9332-f577d6a1d92b
+  subsets:
+  - addresses:
+    - ip: 10.52.0.46
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: harvester-load-balancer-webhook-55d88bf6fc-lr8xk
+        namespace: harvester-system
+        uid: 1fc213b8-3e14-40d3-ba82-17732950c5af
+    ports:
+    - name: https
+      port: 8443
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-12-30T21:49:37Z"
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:49:37Z"
+    name: harvester-network-webhook
+    namespace: harvester-system
+    resourceVersion: "4327"
+    uid: 5acfd4e1-e594-4ff1-aaac-bfe977a89ddc
+  subsets:
+  - addresses:
+    - ip: 10.52.0.39
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: harvester-network-webhook-5df9787db4-hpph5
+        namespace: harvester-system
+        uid: 2b5b2de8-7df0-4c52-9179-545ce20ee261
+    ports:
+    - name: https
+      port: 8443
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-12-30T21:49:36Z"
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:49:36Z"
+    name: harvester-node-disk-manager-webhook
+    namespace: harvester-system
+    resourceVersion: "4283"
+    uid: 3ac36b95-8b3d-46a8-989e-185b108e7340
+  subsets:
+  - addresses:
+    - ip: 10.52.0.48
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: harvester-node-disk-manager-webhook-f4f6496f9-c864x
+        namespace: harvester-system
+        uid: b9b265f8-7e77-473b-baff-be198a7a7daf
+    ports:
+    - name: https
+      port: 8443
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-12-30T21:49:36Z"
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:49:36Z"
+    name: harvester-node-manager-webhook
+    namespace: harvester-system
+    resourceVersion: "4274"
+    uid: 6056cdb5-3151-416a-9674-0d56304223eb
+  subsets:
+  - addresses:
+    - ip: 10.52.0.37
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: harvester-node-manager-webhook-744d67b465-slfgx
+        namespace: harvester-system
+        uid: fed53f45-1288-4b8c-9c22-da3621283e15
+    ports:
+    - name: https
+      port: 8443
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-12-30T21:49:37Z"
+    creationTimestamp: "2025-12-30T21:49:31Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+      objectset.rio.cattle.io/hash: e852fa897f5eae59a44b4bfe186aad80b10b94b3
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+            f:objectset.rio.cattle.io/hash: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:49:37Z"
+    name: harvester-webhook
+    namespace: harvester-system
+    resourceVersion: "4343"
+    uid: c0e92460-7d7b-44a9-ba21-40cec6071667
+  subsets:
+  - addresses:
+    - ip: 10.52.0.35
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: harvester-webhook-6cb965f6d9-z24qs
+        namespace: harvester-system
+        uid: f994dda6-430c-4232-a0f7-9bb00ed557f3
+    ports:
+    - name: https
+      port: 9443
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-12-30T21:50:04Z"
+    creationTimestamp: "2025-12-30T21:50:04Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+      kubevirt.io: "null"
+      prometheus.kubevirt.io: "true"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+            f:kubevirt.io: {}
+            f:prometheus.kubevirt.io: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:50:04Z"
+    name: kubevirt-operator-webhook
+    namespace: harvester-system
+    resourceVersion: "5465"
+    uid: d4a5b398-bed0-46d9-8321-359d29da2308
+  subsets:
+  - addresses:
+    - ip: 10.52.0.51
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: virt-operator-669f6964cd-b2bfh
+        namespace: harvester-system
+        uid: a4c6d10a-8301-4e49-97f3-2372ba25f6b7
+    ports:
+    - name: webhooks
+      port: 8444
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:04Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+      kubevirt.io: "null"
+      prometheus.kubevirt.io: "true"
+      service.kubernetes.io/headless: "null"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+            f:kubevirt.io: {}
+            f:prometheus.kubevirt.io: {}
+            f:service.kubernetes.io/headless: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:52:02Z"
+    name: kubevirt-prometheus-metrics
+    namespace: harvester-system
+    resourceVersion: "8222"
+    uid: a9d1a985-0b35-4d47-b439-a561bee4ba73
+  subsets:
+  - addresses:
+    - ip: 10.52.0.51
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: virt-operator-669f6964cd-b2bfh
+        namespace: harvester-system
+        uid: a4c6d10a-8301-4e49-97f3-2372ba25f6b7
+    - ip: 10.52.0.59
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: virt-api-75c4845cd-v5jkf
+        namespace: harvester-system
+        uid: f50be18a-4d00-4d5c-be16-cce5a7361ab1
+    - ip: 10.52.0.74
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: virt-controller-667794cf47-6xdmq
+        namespace: harvester-system
+        uid: 470dc1f1-108b-4ab3-afeb-96aae35a68f3
+    - ip: 10.52.0.75
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: virt-controller-667794cf47-4wkk2
+        namespace: harvester-system
+        uid: d755cc1a-ba8b-4b06-a547-c75510ee1ec3
+    - ip: 10.52.0.76
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: virt-handler-wsl8k
+        namespace: harvester-system
+        uid: de373a6d-538e-49ab-bb29-09daf7f70475
+    ports:
+    - name: metrics
+      port: 8443
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    creationTimestamp: "2025-12-30T21:50:04Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+      kubevirt.io: virt-api
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+            f:kubevirt.io: {}
+        f:subsets: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:50:47Z"
+    name: virt-api
+    namespace: harvester-system
+    resourceVersion: "6802"
+    uid: e3f3cbcf-2531-48ae-9f2a-efb6d520e8c0
+  subsets:
+  - addresses:
+    - ip: 10.52.0.59
+      nodeName: isim-dev
+      targetRef:
+        kind: Pod
+        name: virt-api-75c4845cd-v5jkf
+        namespace: harvester-system
+        uid: f50be18a-4d00-4d5c-be16-cce5a7361ab1
+    ports:
+    - port: 8443
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2025-12-30T21:50:04Z"
+    creationTimestamp: "2025-12-30T21:50:04Z"
+    labels:
+      app.kubernetes.io/component: kubevirt
+      app.kubernetes.io/managed-by: virt-operator
+      endpoints.kubernetes.io/managed-by: endpoint-controller
+      kubevirt.io: virt-exportproxy
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:endpoints.kubernetes.io/last-change-trigger-time: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/component: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:endpoints.kubernetes.io/managed-by: {}
+            f:kubevirt.io: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:50:04Z"
+    name: virt-exportproxy
+    namespace: harvester-system
+    resourceVersion: "5470"
+    uid: 88799eab-047a-4ca9-aec2-7a13ea95ebed
+kind: List
+metadata:
+  resourceVersion: "14492"

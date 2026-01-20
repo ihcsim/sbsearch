@@ -1,0 +1,14 @@
+2025-12-30T21:47:12.672694020Z I1230 21:47:12.672508       1 serving.go:380] Generated self-signed cert (/tmp/apiserver.crt, /tmp/apiserver.key)
+2025-12-30T21:47:12.815375276Z I1230 21:47:12.815251       1 handler.go:288] Adding GroupVersion metrics.k8s.io v1beta1 to ResourceManager
+2025-12-30T21:47:12.924481215Z I1230 21:47:12.924283       1 requestheader_controller.go:180] Starting RequestHeaderAuthRequestController
+2025-12-30T21:47:12.924504676Z I1230 21:47:12.924337       1 shared_informer.go:350] "Waiting for caches to sync" controller="RequestHeaderAuthRequestController"
+2025-12-30T21:47:12.924510098Z I1230 21:47:12.924366       1 configmap_cafile_content.go:205] "Starting controller" name="client-ca::kube-system::extension-apiserver-authentication::client-ca-file"
+2025-12-30T21:47:12.924512553Z I1230 21:47:12.924371       1 shared_informer.go:350] "Waiting for caches to sync" controller="client-ca::kube-system::extension-apiserver-authentication::client-ca-file"
+2025-12-30T21:47:12.924514898Z I1230 21:47:12.924384       1 configmap_cafile_content.go:205] "Starting controller" name="client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"
+2025-12-30T21:47:12.924516983Z I1230 21:47:12.924389       1 shared_informer.go:350] "Waiting for caches to sync" controller="client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"
+2025-12-30T21:47:12.924710453Z I1230 21:47:12.924655       1 dynamic_serving_content.go:135] "Starting controller" name="serving-cert::/tmp/apiserver.crt::/tmp/apiserver.key"
+2025-12-30T21:47:12.924826987Z I1230 21:47:12.924785       1 secure_serving.go:211] Serving securely on [::]:10250
+2025-12-30T21:47:12.924833680Z I1230 21:47:12.924813       1 tlsconfig.go:243] "Starting DynamicServingCertificateController"
+2025-12-30T21:47:13.024558782Z I1230 21:47:13.024438       1 shared_informer.go:357] "Caches are synced" controller="RequestHeaderAuthRequestController"
+2025-12-30T21:47:13.024583165Z I1230 21:47:13.024438       1 shared_informer.go:357] "Caches are synced" controller="client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"
+2025-12-30T21:47:13.024584608Z I1230 21:47:13.024446       1 shared_informer.go:357] "Caches are synced" controller="client-ca::kube-system::extension-apiserver-authentication::client-ca-file"

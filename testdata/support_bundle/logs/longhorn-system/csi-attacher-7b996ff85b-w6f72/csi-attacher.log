@@ -1,0 +1,13 @@
+2025-12-30T21:50:20.662072120Z I1230 21:50:20.660610       1 feature_gate.go:385] feature gates: {map[]}
+2025-12-30T21:50:20.662169455Z I1230 21:50:20.660713       1 main.go:131] "Version" version="v"
+2025-12-30T21:50:20.662171948Z I1230 21:50:20.660942       1 envvar.go:172] "Feature gate default state" feature="ClientsAllowCBOR" enabled=false
+2025-12-30T21:50:20.662174453Z I1230 21:50:20.660956       1 envvar.go:172] "Feature gate default state" feature="ClientsPreferCBOR" enabled=false
+2025-12-30T21:50:20.662176296Z I1230 21:50:20.660959       1 envvar.go:172] "Feature gate default state" feature="InOrderInformers" enabled=true
+2025-12-30T21:50:20.662177970Z I1230 21:50:20.660961       1 envvar.go:172] "Feature gate default state" feature="InformerResourceVersion" enabled=false
+2025-12-30T21:50:20.662179883Z I1230 21:50:20.660963       1 envvar.go:172] "Feature gate default state" feature="WatchListClient" enabled=false
+2025-12-30T21:50:20.662181986Z W1230 21:50:20.661884       1 logging.go:55] [core] [Channel #1 SubChannel #2]grpc: addrConn.createTransport failed to connect to {Addr: "/csi/csi.sock", ServerName: "localhost", Attributes: {"<%!p(networktype.keyType=grpc.internal.transport.networktype)>": "unix" }, BalancerAttributes: {"<%!p(pickfirstleaf.managedByPickfirstKeyType={})>": "<%!p(bool=true)>" }}. Err: connection error: desc = "transport: Error while dialing: dial unix /csi/csi.sock: connect: no such file or directory"
+2025-12-30T21:50:21.663770065Z I1230 21:50:21.663326       1 common.go:143] "Probing CSI driver for readiness"
+2025-12-30T21:50:21.670227612Z I1230 21:50:21.666991       1 main.go:192] "CSI driver name" driver="driver.longhorn.io"
+2025-12-30T21:50:21.670240856Z I1230 21:50:21.667087       1 main.go:222] "ServeMux listening" driver="driver.longhorn.io" address=":8000" metricsPath="/metrics"
+2025-12-30T21:50:21.670242809Z I1230 21:50:21.668213       1 main.go:276] "CSI driver supports ControllerPublishUnpublish, using real CSI handler" driver="driver.longhorn.io"
+2025-12-30T21:50:21.670244983Z I1230 21:50:21.668665       1 leaderelection.go:257] attempting to acquire leader lease longhorn-system/external-attacher-leader-driver-longhorn-io...

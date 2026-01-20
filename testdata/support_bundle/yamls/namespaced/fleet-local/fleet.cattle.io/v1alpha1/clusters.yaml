@@ -1,0 +1,187 @@
+apiVersion: v1
+items:
+- apiVersion: fleet.cattle.io/v1alpha1
+  kind: Cluster
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4xS3W7bPAx9lQ+8dvot619iYBdFV2zFgA5oL4teMBJta5EpQaKSGoHffZDdpO7Pit6J5Dnk4RF30JKgRkEod4DMTlCM45hDt/pDSiLJUTDuSKGIpSPj/jcaSqgskcyUTVEoQPFPsNsyhVm9WUMJPriNicax4XoC2cyL/34Z1t8uP9mNsSUowTqF9lPg6FHRQfTI6wuwuCI7rNoiY00tsUz4T8vNtIneYvd67IecV9hPKm4wNlnmV1zgcrlc4uKU5vOqWhyfnZ7Q2VyROsbzxfzkfFmtqnMoRks1hecmUEKDYUODk/2b0R/YET2p4QxqYrmoKsNGupxgp2ka+0AVhUD6ewqG6zvVkE7WcH1dszukrx5JpXxMUN7vOcR5cPZbVHP16APFOJ7b/Q7W1O1FTTwZ1GTPPAUUF6CEa4YCNmgTZSJISAQP/UNfwJZM3QiU8/6h74txk5vJxmPb2WTxWeyiUAsFrNOKLh1Xpr4jFUj2ps1yQQ2Fd1A3H/gpKCkeHM0Pi1HuiBhKTta+/I1M0RRNIH1LqLsfRm7Juwjll5eFn2Tb3/4pP94mlLu+gPCGFl7jA0WXgqJLl1gGbdPOA6Q1MRqux7fTpjKkh4CdPKNc8A3yUyUc0onX7LY8vLdo5MJ7O/KzIaltMXTvTt236Pv+bwAAAP//+ae0spUEAAA
+      objectset.rio.cattle.io/id: fleet-cluster
+      objectset.rio.cattle.io/owner-gvk: provisioning.cattle.io/v1, Kind=Cluster
+      objectset.rio.cattle.io/owner-name: local
+      objectset.rio.cattle.io/owner-namespace: fleet-local
+    creationTimestamp: "2025-12-30T21:47:33Z"
+    finalizers:
+    - fleet.cattle.io/cluster-finalizer
+    generation: 2
+    labels:
+      management.cattle.io/cluster-display-name: local
+      management.cattle.io/cluster-name: local
+      name: local
+      objectset.rio.cattle.io/hash: f2a8a9999a85e11ff83654e61cec3a781479fbf7
+      provider.cattle.io: harvester
+    managedFields:
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:management.cattle.io/cluster-display-name: {}
+            f:management.cattle.io/cluster-name: {}
+            f:name: {}
+            f:objectset.rio.cattle.io/hash: {}
+            f:provider.cattle.io: {}
+        f:spec:
+          .: {}
+          f:agentAffinity:
+            .: {}
+            f:nodeAffinity:
+              .: {}
+              f:preferredDuringSchedulingIgnoredDuringExecution: {}
+          f:agentNamespace: {}
+          f:kubeConfigSecret: {}
+          f:kubeConfigSecretNamespace: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:47:33Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"fleet.cattle.io/cluster-finalizer"null: {}
+        f:spec:
+          f:clientID: {}
+      manager: fleetcontroller
+      operation: Update
+      time: "2025-12-30T21:48:13Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:agent:
+            f:lastSeen: {}
+      manager: fleetagent
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:34Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:agent:
+            .: {}
+            f:namespace: {}
+          f:agentAffinityHash: {}
+          f:agentDeployedGeneration: {}
+          f:agentMigrated: {}
+          f:agentNamespaceMigrated: {}
+          f:agentTLSMode: {}
+          f:apiServerCAHash: {}
+          f:apiServerURL: {}
+          f:cattleNamespaceMigrated: {}
+          f:conditions: {}
+          f:desiredReadyGitRepos: {}
+          f:desiredReadyHelmOps: {}
+          f:display:
+            .: {}
+            f:readyBundles: {}
+          f:garbageCollectionInterval: {}
+          f:namespace: {}
+          f:readyGitRepos: {}
+          f:readyHelmOps: {}
+          f:resourceCounts:
+            .: {}
+            f:desiredReady: {}
+            f:missing: {}
+            f:modified: {}
+            f:notReady: {}
+            f:orphaned: {}
+            f:ready: {}
+            f:unknown: {}
+            f:waitApplied: {}
+          f:summary:
+            .: {}
+            f:desiredReady: {}
+            f:ready: {}
+      manager: fleetcontroller
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:51:30Z"
+    name: local
+    namespace: fleet-local
+    resourceVersion: "7499"
+    uid: 2f141302-575c-4671-a309-cb7bfeceb46c
+  spec:
+    agentAffinity:
+      nodeAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - preference:
+            matchExpressions:
+            - key: fleet.cattle.io/agent
+              operator: In
+              values:
+              - "true"
+          weight: 1
+    agentNamespace: cattle-fleet-local-system
+    clientID: lc6tbmd2j6mzt9x9v48m6bn2vxx7hvzkdvv2pcz4mplg589dt52jm6
+    kubeConfigSecret: local-kubeconfig
+    kubeConfigSecretNamespace: fleet-local
+  status:
+    agent:
+      lastSeen: "2025-12-30T21:48:34Z"
+      namespace: cattle-fleet-local-system
+    agentAffinityHash: f50425c0999a8e18c2d104cdb8cb063762763f232f538b5a7c8bdb61
+    agentDeployedGeneration: 0
+    agentMigrated: true
+    agentNamespaceMigrated: true
+    agentTLSMode: system-store
+    apiServerCAHash: e9a19d4483388e810ecde41d6d640b831da50961e24aa247b8e4e4fe
+    apiServerURL: https://10.53.0.1:443
+    cattleNamespaceMigrated: true
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:48:12Z"
+      status: "True"
+      type: Processed
+    - lastUpdateTime: "2025-12-30T21:48:14Z"
+      status: "True"
+      type: Imported
+    - lastUpdateTime: "2025-12-30T21:48:12Z"
+      status: "True"
+      type: Reconciled
+    - lastUpdateTime: "2025-12-30T21:51:30Z"
+      status: "True"
+      type: Ready
+    desiredReadyGitRepos: 0
+    desiredReadyHelmOps: 0
+    display:
+      readyBundles: 6/6
+    garbageCollectionInterval: 15m0s
+    namespace: cluster-fleet-local-local-1a3d67d0a899
+    readyGitRepos: 0
+    readyHelmOps: 0
+    resourceCounts:
+      desiredReady: 211
+      missing: 0
+      modified: 0
+      notReady: 0
+      orphaned: 0
+      ready: 211
+      unknown: 0
+      waitApplied: 0
+    summary:
+      desiredReady: 6
+      ready: 6
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14484"

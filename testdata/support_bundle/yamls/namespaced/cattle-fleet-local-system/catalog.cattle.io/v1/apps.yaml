@@ -1,0 +1,137 @@
+apiVersion: v1
+items:
+- apiVersion: catalog.cattle.io/v1
+  kind: App
+  metadata:
+    annotations:
+      objectset.rio.cattle.io/applied: H4sIAAAAAAAA/6xVTY/bNhD9K8FcKyr6sKwPoIe2AYqiQFskRQ8tchiSozVrihRIygvX0H8vKLlZZ9fZuMleDAvz8WbeeyOdYKCAEgNCdwI0xgYMyhofHy3/m0TwFFKnbCowBE2psq+VhA52pAeG4wjJJ/PsvSHH7g576OD1IU9e/ayM/PYdCUfhs2UGB4IO/C6NSKkjTegpPeRpr4kCwzsygWkrUKeH/KZ2fkQRe64xtvZZOjB/9IEGmBPQyEk/u/4O/S52KUWOPMs3JbYZl43s66wRbZNVm7wk3rTbpq6Ii9j0vMyTyWENfX6wBJY13lJPjowgD91fJ8BR/UHOK2ugg4UErq3Y/xpT35CmsER61J4SENYEZ7UmB11wEyWwVyYq+UGQ/035tDhB5LKkot6wfttu2KZoiCHlxFC2ddVs61rmAub3cwJ+JBGZFTt0If55xnwL5AXrK/itbD2u5pORmtgy7zUVHufviUbmyNvJLWTDQuKVRE/uoAQxFMJOJkAHUe+PhSngWQccHjKzNEuzbzzLtlUli7LeVNS2fd7X23bbbKkvGy5Fw4UssSwybHhVNZVEWfWcIy9hnpPlMD+Alwko09tIqCQvnBpXT8BPxgfU+pWww6gpLKsp58MbGrU9UuSpyIqK5QUrs9+LvNs0Xd7+CfFAbsnyAcMUiZP/pb7MGVxo8vgAHEeR4hR21ql/FiOl+8ZHkRaznt3+g558IPfWanqQ5ZOI7HJWF2vm5Gthv1dGKnP3JeiMn2ufTHGJ9W715HdnS17j/WbGvwhIUo+T/goQHEf/EX2r4QZ68XUMhXvr9srcXVPtlzX6m9VKHJ/sx1Brex9/b8d/f3Hv+fxwJ/FzE98lJH8kQw7XM80S8NMwoDtCd5rn+d8AAAD//4Ggq6ivBwAA
+      objectset.rio.cattle.io/id: helm-app
+      objectset.rio.cattle.io/owner-gvk: /v1, Kind=Secret
+      objectset.rio.cattle.io/owner-name: sh.helm.release.v1.fleet-agent-local.v1
+      objectset.rio.cattle.io/owner-namespace: cattle-fleet-local-system
+    creationTimestamp: "2025-12-30T21:48:20Z"
+    generation: 2
+    labels:
+      objectset.rio.cattle.io/hash: c3c1ab0143a90bd8df708c9805413eb896875ebc
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:objectset.rio.cattle.io/applied: {}
+            f:objectset.rio.cattle.io/id: {}
+            f:objectset.rio.cattle.io/owner-gvk: {}
+            f:objectset.rio.cattle.io/owner-name: {}
+            f:objectset.rio.cattle.io/owner-namespace: {}
+          f:labels:
+            .: {}
+            f:objectset.rio.cattle.io/hash: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"c1d3e274-f694-428e-ae1e-ad9758677d1c"}: {}
+        f:spec:
+          .: {}
+          f:chart:
+            .: {}
+            f:metadata:
+              .: {}
+              f:annotations:
+                .: {}
+                f:fleet.cattle.io/agent-namespace: {}
+                f:fleet.cattle.io/bundle-id: {}
+                f:fleet.cattle.io/keep-resources: {}
+                f:fleet.cattle.io/service-account: {}
+              f:apiVersion: {}
+              f:name: {}
+              f:version: {}
+          f:helmVersion: {}
+          f:info:
+            .: {}
+            f:description: {}
+            f:firstDeployed: {}
+            f:lastDeployed: {}
+            f:status: {}
+          f:name: {}
+          f:namespace: {}
+          f:resources: {}
+          f:version: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:48:20Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:observedGeneration: {}
+          f:summary:
+            .: {}
+            f:state: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:20Z"
+    name: fleet-agent-local
+    namespace: cattle-fleet-local-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: false
+      controller: true
+      kind: Secret
+      name: sh.helm.release.v1.fleet-agent-local.v1
+      uid: c1d3e274-f694-428e-ae1e-ad9758677d1c
+    resourceVersion: "2299"
+    uid: 79e01fd7-cbb5-431a-a830-ed2c5f97619e
+  spec:
+    chart:
+      metadata:
+        annotations:
+          fleet.cattle.io/agent-namespace: cattle-fleet-local-system
+          fleet.cattle.io/bundle-id: fleet-agent-local
+          fleet.cattle.io/keep-resources: "false"
+          fleet.cattle.io/service-account: "null"
+        apiVersion: v2
+        name: fleet-agent-local
+        version: v0.0.0+s-0655d23745e99f1f769686ef38bdc8bcd3a320a8b5585dad5fbbab3a08a18
+    helmVersion: 3
+    info:
+      description: Install complete
+      firstDeployed: "2025-12-30T21:48:19Z"
+      lastDeployed: "2025-12-30T21:48:19Z"
+      status: deployed
+    name: fleet-agent-local
+    namespace: cattle-fleet-local-system
+    resources:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: cattle-fleet-local-system-fleet-agent-role
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      name: cattle-fleet-local-system-fleet-agent-role-binding
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: fleet-agent
+      namespace: cattle-fleet-local-system
+    - apiVersion: v1
+      kind: ServiceAccount
+      name: default
+      namespace: cattle-fleet-local-system
+    - apiVersion: apps/v1
+      kind: Deployment
+      name: fleet-agent
+      namespace: cattle-fleet-local-system
+    - apiVersion: networking.k8s.io/v1
+      kind: NetworkPolicy
+      name: default-allow-all
+      namespace: cattle-fleet-local-system
+    version: 1
+  status:
+    observedGeneration: 2
+    summary:
+      state: deployed
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14474"

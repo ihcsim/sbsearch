@@ -1,0 +1,67 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    annotations:
+      meta.helm.sh/release-name: rancher-provisioning-capi
+      meta.helm.sh/release-namespace: cattle-provisioning-capi-system
+      need-a-cert.cattle.io/secret-name: capi-webhook-service-cert
+    creationTimestamp: "2025-12-30T21:48:35Z"
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      cluster.x-k8s.io/provider: cluster-api
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+            f:need-a-cert.cattle.io/secret-name: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cluster.x-k8s.io/provider: {}
+        f:spec:
+          f:internalTrafficPolicy: {}
+          f:ports:
+            .: {}
+            k:{"port":443,"protocol":"TCP"}:
+              .: {}
+              f:port: {}
+              f:protocol: {}
+              f:targetPort: {}
+          f:selector: {}
+          f:sessionAffinity: {}
+          f:type: {}
+      manager: helm
+      operation: Update
+      time: "2025-12-30T21:48:35Z"
+    name: capi-webhook-service
+    namespace: cattle-provisioning-capi-system
+    resourceVersion: "2528"
+    uid: 0df6f22a-d0b5-47ba-bfa4-5edbb76166bf
+  spec:
+    clusterIP: 10.53.8.201
+    clusterIPs:
+    - 10.53.8.201
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - port: 443
+      protocol: TCP
+      targetPort: webhook-server
+    selector:
+      cluster.x-k8s.io/provider: cluster-api
+    sessionAffinity: None
+    type: ClusterIP
+  status:
+    loadBalancer: {}
+kind: List
+metadata:
+  resourceVersion: "14499"

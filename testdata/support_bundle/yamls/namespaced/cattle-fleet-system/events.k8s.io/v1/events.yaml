@@ -1,0 +1,2768 @@
+apiVersion: v1
+items:
+- action: Binding
+  apiVersion: events.k8s.io/v1
+  deprecatedFirstTimestamp: "null"
+  deprecatedLastTimestamp: null
+  deprecatedSource: {}
+  eventTime: "2025-12-30T21:47:55.181567Z"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:55Z"
+    managedFields:
+    - apiVersion: events.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:action: {}
+        f:eventTime: {}
+        f:note: {}
+        f:reason: {}
+        f:regarding: {}
+        f:reportingController: {}
+        f:reportingInstance: {}
+        f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2025-12-30T21:47:55Z"
+    name: fleet-cleanup-clusterregistrations-7l69v.18861c8838ae5439
+    namespace: cattle-fleet-system
+    resourceVersion: "1888"
+    uid: 8ab7e0a7-1c33-4380-b2e6-ad2476883100
+  note: Successfully assigned cattle-fleet-system/fleet-cleanup-clusterregistrations-7l69v
+    to isim-dev
+  reason: Scheduled
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: fleet-cleanup-clusterregistrations-7l69v
+    namespace: cattle-fleet-system
+    resourceVersion: "1884"
+    uid: 4603ed30-17ef-4822-86e8-0c5f390d0b9a
+  reportingController: default-scheduler
+  reportingInstance: default-scheduler-isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:55Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:55Z"
+  deprecatedSource:
+    component: multus
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:55Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: multus
+      operation: Update
+      time: "2025-12-30T21:47:55Z"
+    name: fleet-cleanup-clusterregistrations-7l69v.18861c8850a2e69d
+    namespace: cattle-fleet-system
+    resourceVersion: "1897"
+    uid: 4e420a15-682f-4a52-bfea-e5f61f3f3d08
+  note: Add eth0 [10.52.0.16/32] from k8s-pod-network
+  reason: AddedInterface
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: fleet-cleanup-clusterregistrations-7l69v
+    namespace: cattle-fleet-system
+    resourceVersion: "1889"
+    uid: 4603ed30-17ef-4822-86e8-0c5f390d0b9a
+  reportingController: multus
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:55Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:55Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:55Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:55Z"
+    name: fleet-cleanup-clusterregistrations-7l69v.18861c8857e73cf2
+    namespace: cattle-fleet-system
+    resourceVersion: "1899"
+    uid: faba209f-8dce-4d1a-801d-864259c3d1c6
+  note: Container image "rancher/fleet:v0.14.0" already present on machine
+  reason: Pulled
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{cleanup}
+    kind: Pod
+    name: fleet-cleanup-clusterregistrations-7l69v
+    namespace: cattle-fleet-system
+    resourceVersion: "1887"
+    uid: 4603ed30-17ef-4822-86e8-0c5f390d0b9a
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:55Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:55Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:55Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:55Z"
+    name: fleet-cleanup-clusterregistrations-7l69v.18861c8859101fc0
+    namespace: cattle-fleet-system
+    resourceVersion: "1900"
+    uid: d31b6e7a-5df2-45f8-82d3-b5eac127bace
+  note: 'Created container: cleanup'
+  reason: Created
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{cleanup}
+    kind: Pod
+    name: fleet-cleanup-clusterregistrations-7l69v
+    namespace: cattle-fleet-system
+    resourceVersion: "1887"
+    uid: 4603ed30-17ef-4822-86e8-0c5f390d0b9a
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:55Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:55Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:55Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:55Z"
+    name: fleet-cleanup-clusterregistrations-7l69v.18861c885cc66a04
+    namespace: cattle-fleet-system
+    resourceVersion: "1901"
+    uid: 85777db1-bb1c-4fd3-98bb-e6e165852d3a
+  note: Started container cleanup
+  reason: Started
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{cleanup}
+    kind: Pod
+    name: fleet-cleanup-clusterregistrations-7l69v
+    namespace: cattle-fleet-system
+    resourceVersion: "1887"
+    uid: 4603ed30-17ef-4822-86e8-0c5f390d0b9a
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- action: Binding
+  apiVersion: events.k8s.io/v1
+  deprecatedFirstTimestamp: "null"
+  deprecatedLastTimestamp: null
+  deprecatedSource: {}
+  eventTime: "2025-12-30T21:51:47.221514Z"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:51:47Z"
+    managedFields:
+    - apiVersion: events.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:action: {}
+        f:eventTime: {}
+        f:note: {}
+        f:reason: {}
+        f:regarding: {}
+        f:reportingController: {}
+        f:reportingInstance: {}
+        f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2025-12-30T21:51:47Z"
+    name: fleet-cleanup-clusterregistrations-l4ncl.18861cbe3f56d7ac
+    namespace: cattle-fleet-system
+    resourceVersion: "7896"
+    uid: 05499af4-a6de-420b-91cf-87922fa9a132
+  note: Successfully assigned cattle-fleet-system/fleet-cleanup-clusterregistrations-l4ncl
+    to isim-dev
+  reason: Scheduled
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: fleet-cleanup-clusterregistrations-l4ncl
+    namespace: cattle-fleet-system
+    resourceVersion: "7893"
+    uid: 19a78bf5-4e90-4167-ae3b-880bd563565f
+  reportingController: default-scheduler
+  reportingInstance: default-scheduler-isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:51:56Z"
+  deprecatedLastTimestamp: "2025-12-30T21:51:56Z"
+  deprecatedSource:
+    component: multus
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:51:56Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: multus
+      operation: Update
+      time: "2025-12-30T21:51:56Z"
+    name: fleet-cleanup-clusterregistrations-l4ncl.18861cc061be4db6
+    namespace: cattle-fleet-system
+    resourceVersion: "8054"
+    uid: 86ad0ac1-e5e0-4ba4-a448-83f36b6ef34e
+  note: Add eth0 [10.52.0.84/32] from k8s-pod-network
+  reason: AddedInterface
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: fleet-cleanup-clusterregistrations-l4ncl
+    namespace: cattle-fleet-system
+    resourceVersion: "7897"
+    uid: 19a78bf5-4e90-4167-ae3b-880bd563565f
+  reportingController: multus
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:51:56Z"
+  deprecatedLastTimestamp: "2025-12-30T21:51:56Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:51:56Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:51:56Z"
+    name: fleet-cleanup-clusterregistrations-l4ncl.18861cc068e9c1c2
+    namespace: cattle-fleet-system
+    resourceVersion: "8057"
+    uid: 228c8939-29dc-4d69-923a-df648ff11618
+  note: Container image "rancher/fleet:v0.14.0" already present on machine
+  reason: Pulled
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{cleanup}
+    kind: Pod
+    name: fleet-cleanup-clusterregistrations-l4ncl
+    namespace: cattle-fleet-system
+    resourceVersion: "7897"
+    uid: 19a78bf5-4e90-4167-ae3b-880bd563565f
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:51:56Z"
+  deprecatedLastTimestamp: "2025-12-30T21:51:56Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:51:56Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:51:56Z"
+    name: fleet-cleanup-clusterregistrations-l4ncl.18861cc06a1f2f12
+    namespace: cattle-fleet-system
+    resourceVersion: "8058"
+    uid: be55a044-6f7b-4edf-bd60-d280561b1ea2
+  note: 'Created container: cleanup'
+  reason: Created
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{cleanup}
+    kind: Pod
+    name: fleet-cleanup-clusterregistrations-l4ncl
+    namespace: cattle-fleet-system
+    resourceVersion: "7897"
+    uid: 19a78bf5-4e90-4167-ae3b-880bd563565f
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:51:56Z"
+  deprecatedLastTimestamp: "2025-12-30T21:51:56Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:51:56Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:51:56Z"
+    name: fleet-cleanup-clusterregistrations-l4ncl.18861cc06e556e60
+    namespace: cattle-fleet-system
+    resourceVersion: "8065"
+    uid: 960d5b17-8be7-4344-a441-9ac7f0e8cd32
+  note: Started container cleanup
+  reason: Started
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{cleanup}
+    kind: Pod
+    name: fleet-cleanup-clusterregistrations-l4ncl
+    namespace: cattle-fleet-system
+    resourceVersion: "7897"
+    uid: 19a78bf5-4e90-4167-ae3b-880bd563565f
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:55Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:55Z"
+  deprecatedSource:
+    component: job-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:55Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:47:55Z"
+    name: fleet-cleanup-clusterregistrations.18861c88380693f4
+    namespace: cattle-fleet-system
+    resourceVersion: "1885"
+    uid: b29694f1-4b12-421b-94e1-9e49f6e14501
+  note: 'Created pod: fleet-cleanup-clusterregistrations-7l69v'
+  reason: SuccessfulCreate
+  regarding:
+    apiVersion: batch/v1
+    kind: Job
+    name: fleet-cleanup-clusterregistrations
+    namespace: cattle-fleet-system
+    resourceVersion: "1883"
+    uid: d0775c73-eae5-4965-a52e-9b60394f2aa9
+  reportingController: job-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:58Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:58Z"
+  deprecatedSource:
+    component: job-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:58Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:47:58Z"
+    name: fleet-cleanup-clusterregistrations.18861c890465d408
+    namespace: cattle-fleet-system
+    resourceVersion: "1915"
+    uid: 06d78d28-ca61-4077-a146-a3b835a2ee90
+  note: Job completed
+  reason: Completed
+  regarding:
+    apiVersion: batch/v1
+    kind: Job
+    name: fleet-cleanup-clusterregistrations
+    namespace: cattle-fleet-system
+    resourceVersion: "1912"
+    uid: d0775c73-eae5-4965-a52e-9b60394f2aa9
+  reportingController: job-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:51:47Z"
+  deprecatedLastTimestamp: "2025-12-30T21:51:47Z"
+  deprecatedSource:
+    component: job-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:51:47Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:51:47Z"
+    name: fleet-cleanup-clusterregistrations.18861cbe3efeb1cd
+    namespace: cattle-fleet-system
+    resourceVersion: "7895"
+    uid: 6995c8ff-52ea-40ff-b0bc-2d77cf3f9bc8
+  note: 'Created pod: fleet-cleanup-clusterregistrations-l4ncl'
+  reason: SuccessfulCreate
+  regarding:
+    apiVersion: batch/v1
+    kind: Job
+    name: fleet-cleanup-clusterregistrations
+    namespace: cattle-fleet-system
+    resourceVersion: "7891"
+    uid: 39cb1f17-e4a4-4def-81e4-d5826f33e933
+  reportingController: job-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:51:59Z"
+  deprecatedLastTimestamp: "2025-12-30T21:51:59Z"
+  deprecatedSource:
+    component: job-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:51:59Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:51:59Z"
+    name: fleet-cleanup-clusterregistrations.18861cc1038644b2
+    namespace: cattle-fleet-system
+    resourceVersion: "8162"
+    uid: 69929a83-7bc9-45df-99b5-a2a0c7f67bf0
+  note: Job completed
+  reason: Completed
+  regarding:
+    apiVersion: batch/v1
+    kind: Job
+    name: fleet-cleanup-clusterregistrations
+    namespace: cattle-fleet-system
+    resourceVersion: "8159"
+    uid: 39cb1f17-e4a4-4def-81e4-d5826f33e933
+  reportingController: job-controller
+  type: Normal
+- action: Binding
+  apiVersion: events.k8s.io/v1
+  deprecatedFirstTimestamp: "null"
+  deprecatedLastTimestamp: null
+  deprecatedSource: {}
+  eventTime: "2025-12-30T21:47:51.127235Z"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    managedFields:
+    - apiVersion: events.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:action: {}
+        f:eventTime: {}
+        f:note: {}
+        f:reason: {}
+        f:regarding: {}
+        f:reportingController: {}
+        f:reportingInstance: {}
+        f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: fleet-controller-6c5d89f545-7xsb8.18861c8747061db1
+    namespace: cattle-fleet-system
+    resourceVersion: "1796"
+    uid: eb1795be-0aca-40e5-8303-8d5b9c59da0f
+  note: Successfully assigned cattle-fleet-system/fleet-controller-6c5d89f545-7xsb8
+    to isim-dev
+  reason: Scheduled
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: fleet-controller-6c5d89f545-7xsb8
+    namespace: cattle-fleet-system
+    resourceVersion: "1782"
+    uid: 956a5132-8b67-465c-a2a0-7b00d2d9aae4
+  reportingController: default-scheduler
+  reportingInstance: default-scheduler-isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedSource:
+    component: multus
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: multus
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: fleet-controller-6c5d89f545-7xsb8.18861c8761c9a5f8
+    namespace: cattle-fleet-system
+    resourceVersion: "1821"
+    uid: fa9c032d-2aad-4565-baff-1f61172139ed
+  note: Add eth0 [10.52.0.14/32] from k8s-pod-network
+  reason: AddedInterface
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: fleet-controller-6c5d89f545-7xsb8
+    namespace: cattle-fleet-system
+    resourceVersion: "1807"
+    uid: 956a5132-8b67-465c-a2a0-7b00d2d9aae4
+  reportingController: multus
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: fleet-controller-6c5d89f545-7xsb8.18861c8769a847a2
+    namespace: cattle-fleet-system
+    resourceVersion: "1826"
+    uid: b80f31e5-5eda-4cb2-9fca-6bc0cf63de7f
+  note: Container image "rancher/fleet:v0.14.0" already present on machine
+  reason: Pulled
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-controller}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-7xsb8
+    namespace: cattle-fleet-system
+    resourceVersion: "1787"
+    uid: 956a5132-8b67-465c-a2a0-7b00d2d9aae4
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:52Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:52Z"
+    name: fleet-controller-6c5d89f545-7xsb8.18861c87ade4c471
+    namespace: cattle-fleet-system
+    resourceVersion: "1831"
+    uid: 95e9d9db-2fc7-4b19-8780-3038ccf502b7
+  note: 'Created container: fleet-controller'
+  reason: Created
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-controller}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-7xsb8
+    namespace: cattle-fleet-system
+    resourceVersion: "1787"
+    uid: 956a5132-8b67-465c-a2a0-7b00d2d9aae4
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:52Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:52Z"
+    name: fleet-controller-6c5d89f545-7xsb8.18861c87b1c7b74d
+    namespace: cattle-fleet-system
+    resourceVersion: "1833"
+    uid: 5b0fcb8c-a112-4af4-b130-3b1961db44b9
+  note: Started container fleet-controller
+  reason: Started
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-controller}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-7xsb8
+    namespace: cattle-fleet-system
+    resourceVersion: "1787"
+    uid: 956a5132-8b67-465c-a2a0-7b00d2d9aae4
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:52Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:52Z"
+    name: fleet-controller-6c5d89f545-7xsb8.18861c87b1d6bc35
+    namespace: cattle-fleet-system
+    resourceVersion: "1835"
+    uid: f7d78cd8-6c2f-45f8-a415-3b14864f6db1
+  note: Container image "rancher/fleet:v0.14.0" already present on machine
+  reason: Pulled
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-cleanup}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-7xsb8
+    namespace: cattle-fleet-system
+    resourceVersion: "1787"
+    uid: 956a5132-8b67-465c-a2a0-7b00d2d9aae4
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:52Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:52Z"
+    name: fleet-controller-6c5d89f545-7xsb8.18861c87b4f2a9fb
+    namespace: cattle-fleet-system
+    resourceVersion: "1843"
+    uid: 5d2046ab-e733-4f3d-89e0-f1689adb2ead
+  note: 'Created container: fleet-cleanup'
+  reason: Created
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-cleanup}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-7xsb8
+    namespace: cattle-fleet-system
+    resourceVersion: "1787"
+    uid: 956a5132-8b67-465c-a2a0-7b00d2d9aae4
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:53Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:53Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:53Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:53Z"
+    name: fleet-controller-6c5d89f545-7xsb8.18861c87b8f41fc8
+    namespace: cattle-fleet-system
+    resourceVersion: "1846"
+    uid: a187886b-9cd8-45da-bc5f-559e52900e3e
+  note: Started container fleet-cleanup
+  reason: Started
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-cleanup}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-7xsb8
+    namespace: cattle-fleet-system
+    resourceVersion: "1787"
+    uid: 956a5132-8b67-465c-a2a0-7b00d2d9aae4
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:53Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:53Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:53Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:53Z"
+    name: fleet-controller-6c5d89f545-7xsb8.18861c87b8fec735
+    namespace: cattle-fleet-system
+    resourceVersion: "1847"
+    uid: fde1c8d0-6c4f-4b74-9a2b-0ee386f42211
+  note: Container image "rancher/fleet:v0.14.0" already present on machine
+  reason: Pulled
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-agentmanagement}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-7xsb8
+    namespace: cattle-fleet-system
+    resourceVersion: "1787"
+    uid: 956a5132-8b67-465c-a2a0-7b00d2d9aae4
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:53Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:53Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:53Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:53Z"
+    name: fleet-controller-6c5d89f545-7xsb8.18861c87bb7c8706
+    namespace: cattle-fleet-system
+    resourceVersion: "1850"
+    uid: d11b49f7-dcfd-411e-bc55-c07e87e7ce06
+  note: 'Created container: fleet-agentmanagement'
+  reason: Created
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-agentmanagement}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-7xsb8
+    namespace: cattle-fleet-system
+    resourceVersion: "1787"
+    uid: 956a5132-8b67-465c-a2a0-7b00d2d9aae4
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:53Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:53Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:53Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:53Z"
+    name: fleet-controller-6c5d89f545-7xsb8.18861c87c12eb9a3
+    namespace: cattle-fleet-system
+    resourceVersion: "1852"
+    uid: 65d92d9e-26e0-4614-b58c-069faa053d5e
+  note: Started container fleet-agentmanagement
+  reason: Started
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-agentmanagement}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-7xsb8
+    namespace: cattle-fleet-system
+    resourceVersion: "1787"
+    uid: 956a5132-8b67-465c-a2a0-7b00d2d9aae4
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:29Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:29Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:29Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:29Z"
+    name: fleet-controller-6c5d89f545-7xsb8.18861c9030154bee
+    namespace: cattle-fleet-system
+    resourceVersion: "2365"
+    uid: 241c7fe6-8c18-4aef-a001-2e598b9cf40e
+  note: Stopping container fleet-controller
+  reason: Killing
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-controller}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-7xsb8
+    namespace: cattle-fleet-system
+    resourceVersion: "1787"
+    uid: 956a5132-8b67-465c-a2a0-7b00d2d9aae4
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:29Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:29Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:29Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:29Z"
+    name: fleet-controller-6c5d89f545-7xsb8.18861c903015835a
+    namespace: cattle-fleet-system
+    resourceVersion: "2364"
+    uid: e330b6a6-6a38-41e7-8613-2f2a597891f0
+  note: Stopping container fleet-agentmanagement
+  reason: Killing
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-agentmanagement}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-7xsb8
+    namespace: cattle-fleet-system
+    resourceVersion: "1787"
+    uid: 956a5132-8b67-465c-a2a0-7b00d2d9aae4
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:29Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:29Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:29Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:29Z"
+    name: fleet-controller-6c5d89f545-7xsb8.18861c903016f057
+    namespace: cattle-fleet-system
+    resourceVersion: "2368"
+    uid: 69e2ac7e-7871-4b2b-a37e-f2e40b336e40
+  note: Stopping container fleet-cleanup
+  reason: Killing
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-cleanup}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-7xsb8
+    namespace: cattle-fleet-system
+    resourceVersion: "1787"
+    uid: 956a5132-8b67-465c-a2a0-7b00d2d9aae4
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- action: Binding
+  apiVersion: events.k8s.io/v1
+  deprecatedFirstTimestamp: "null"
+  deprecatedLastTimestamp: null
+  deprecatedSource: {}
+  eventTime: "2025-12-30T21:48:29.547612Z"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:29Z"
+    managedFields:
+    - apiVersion: events.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:action: {}
+        f:eventTime: {}
+        f:note: {}
+        f:reason: {}
+        f:regarding: {}
+        f:reportingController: {}
+        f:reportingInstance: {}
+        f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2025-12-30T21:48:29Z"
+    name: fleet-controller-6c5d89f545-bxkt2.18861c90390e7d27
+    namespace: cattle-fleet-system
+    resourceVersion: "2382"
+    uid: c91f2953-3216-4758-94b4-154f7dcf7dbd
+  note: Successfully assigned cattle-fleet-system/fleet-controller-6c5d89f545-bxkt2
+    to isim-dev
+  reason: Scheduled
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: fleet-controller-6c5d89f545-bxkt2
+    namespace: cattle-fleet-system
+    resourceVersion: "2377"
+    uid: a2d7bc39-1e68-41d0-9b96-acaa56eff4eb
+  reportingController: default-scheduler
+  reportingInstance: default-scheduler-isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedSource:
+    component: multus
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:30Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: multus
+      operation: Update
+      time: "2025-12-30T21:48:30Z"
+    name: fleet-controller-6c5d89f545-bxkt2.18861c905532526f
+    namespace: cattle-fleet-system
+    resourceVersion: "2410"
+    uid: 458b8725-b406-4912-a632-f347294ff6ba
+  note: Add eth0 [10.52.0.21/32] from k8s-pod-network
+  reason: AddedInterface
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: fleet-controller-6c5d89f545-bxkt2
+    namespace: cattle-fleet-system
+    resourceVersion: "2384"
+    uid: a2d7bc39-1e68-41d0-9b96-acaa56eff4eb
+  reportingController: multus
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:30Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:30Z"
+    name: fleet-controller-6c5d89f545-bxkt2.18861c905ac27fd6
+    namespace: cattle-fleet-system
+    resourceVersion: "2412"
+    uid: 4bf06a41-f9b3-4875-acf0-613143a2a16a
+  note: Container image "rancher/fleet:v0.14.0" already present on machine
+  reason: Pulled
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-controller}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-bxkt2
+    namespace: cattle-fleet-system
+    resourceVersion: "2381"
+    uid: a2d7bc39-1e68-41d0-9b96-acaa56eff4eb
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:30Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:30Z"
+    name: fleet-controller-6c5d89f545-bxkt2.18861c905bf0c621
+    namespace: cattle-fleet-system
+    resourceVersion: "2413"
+    uid: 7ad200ac-8673-46ea-af67-2e8710d18826
+  note: 'Created container: fleet-controller'
+  reason: Created
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-controller}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-bxkt2
+    namespace: cattle-fleet-system
+    resourceVersion: "2381"
+    uid: a2d7bc39-1e68-41d0-9b96-acaa56eff4eb
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:30Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:30Z"
+    name: fleet-controller-6c5d89f545-bxkt2.18861c905edf8c8e
+    namespace: cattle-fleet-system
+    resourceVersion: "2414"
+    uid: b928c764-91e0-4558-bb3c-58ddd66af537
+  note: Started container fleet-controller
+  reason: Started
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-controller}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-bxkt2
+    namespace: cattle-fleet-system
+    resourceVersion: "2381"
+    uid: a2d7bc39-1e68-41d0-9b96-acaa56eff4eb
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:30Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:30Z"
+    name: fleet-controller-6c5d89f545-bxkt2.18861c905eed0b6f
+    namespace: cattle-fleet-system
+    resourceVersion: "2415"
+    uid: d415794f-c306-4e16-95eb-567b0fdb1b8d
+  note: Container image "rancher/fleet:v0.14.0" already present on machine
+  reason: Pulled
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-cleanup}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-bxkt2
+    namespace: cattle-fleet-system
+    resourceVersion: "2381"
+    uid: a2d7bc39-1e68-41d0-9b96-acaa56eff4eb
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:30Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:30Z"
+    name: fleet-controller-6c5d89f545-bxkt2.18861c90604dcb3f
+    namespace: cattle-fleet-system
+    resourceVersion: "2416"
+    uid: 4d67b85e-0d24-4224-8156-a716d8c3c106
+  note: 'Created container: fleet-cleanup'
+  reason: Created
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-cleanup}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-bxkt2
+    namespace: cattle-fleet-system
+    resourceVersion: "2381"
+    uid: a2d7bc39-1e68-41d0-9b96-acaa56eff4eb
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:30Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:30Z"
+    name: fleet-controller-6c5d89f545-bxkt2.18861c9066af0f98
+    namespace: cattle-fleet-system
+    resourceVersion: "2417"
+    uid: c197a289-ea95-4ec0-9a16-6b8ba6ab828e
+  note: Started container fleet-cleanup
+  reason: Started
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-cleanup}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-bxkt2
+    namespace: cattle-fleet-system
+    resourceVersion: "2381"
+    uid: a2d7bc39-1e68-41d0-9b96-acaa56eff4eb
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:30Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:30Z"
+    name: fleet-controller-6c5d89f545-bxkt2.18861c9066b6ddd9
+    namespace: cattle-fleet-system
+    resourceVersion: "2418"
+    uid: 07b8cbda-14c9-4f7f-b20b-b7b3dabcc966
+  note: Container image "rancher/fleet:v0.14.0" already present on machine
+  reason: Pulled
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-agentmanagement}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-bxkt2
+    namespace: cattle-fleet-system
+    resourceVersion: "2381"
+    uid: a2d7bc39-1e68-41d0-9b96-acaa56eff4eb
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:30Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:30Z"
+    name: fleet-controller-6c5d89f545-bxkt2.18861c906844ea4c
+    namespace: cattle-fleet-system
+    resourceVersion: "2419"
+    uid: 36c8d474-71e7-4f35-912b-095dedba2992
+  note: 'Created container: fleet-agentmanagement'
+  reason: Created
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-agentmanagement}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-bxkt2
+    namespace: cattle-fleet-system
+    resourceVersion: "2381"
+    uid: a2d7bc39-1e68-41d0-9b96-acaa56eff4eb
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:30Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:30Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:48:30Z"
+    name: fleet-controller-6c5d89f545-bxkt2.18861c906d050c5e
+    namespace: cattle-fleet-system
+    resourceVersion: "2425"
+    uid: dd834824-c3f3-4bbd-a374-e66f4edbaaf7
+  note: Started container fleet-agentmanagement
+  reason: Started
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{fleet-agentmanagement}
+    kind: Pod
+    name: fleet-controller-6c5d89f545-bxkt2
+    namespace: cattle-fleet-system
+    resourceVersion: "2381"
+    uid: a2d7bc39-1e68-41d0-9b96-acaa56eff4eb
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedSource:
+    component: replicaset-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: fleet-controller-6c5d89f545.18861c87467530d6
+    namespace: cattle-fleet-system
+    resourceVersion: "1802"
+    uid: e9c877af-37f6-4ed9-b498-e665798d318e
+  note: 'Created pod: fleet-controller-6c5d89f545-7xsb8'
+  reason: SuccessfulCreate
+  regarding:
+    apiVersion: apps/v1
+    kind: ReplicaSet
+    name: fleet-controller-6c5d89f545
+    namespace: cattle-fleet-system
+    resourceVersion: "1776"
+    uid: d10aeb6e-dc72-4927-976f-4a757802863c
+  reportingController: replicaset-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:29Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:29Z"
+  deprecatedSource:
+    component: replicaset-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:29Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:48:29Z"
+    name: fleet-controller-6c5d89f545.18861c902ff22e09
+    namespace: cattle-fleet-system
+    resourceVersion: "2362"
+    uid: 881b5e6c-b069-4bb7-8d5f-bae85c2e5801
+  note: 'Deleted pod: fleet-controller-6c5d89f545-7xsb8'
+  reason: SuccessfulDelete
+  regarding:
+    apiVersion: apps/v1
+    kind: ReplicaSet
+    name: fleet-controller-6c5d89f545
+    namespace: cattle-fleet-system
+    resourceVersion: "2356"
+    uid: d10aeb6e-dc72-4927-976f-4a757802863c
+  reportingController: replicaset-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:29Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:29Z"
+  deprecatedSource:
+    component: replicaset-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:29Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:48:29Z"
+    name: fleet-controller-6c5d89f545.18861c903863f121
+    namespace: cattle-fleet-system
+    resourceVersion: "2380"
+    uid: 91256b3d-c20a-488c-bf85-3c111a249067
+  note: 'Created pod: fleet-controller-6c5d89f545-bxkt2'
+  reason: SuccessfulCreate
+  regarding:
+    apiVersion: apps/v1
+    kind: ReplicaSet
+    name: fleet-controller-6c5d89f545
+    namespace: cattle-fleet-system
+    resourceVersion: "2374"
+    uid: d10aeb6e-dc72-4927-976f-4a757802863c
+  reportingController: replicaset-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedSource:
+    component: fleet-controller-6c5d89f545-7xsb8_07c84fc6-b310-4d8e-859a-010a8a74ad6a
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:52Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: fleetcontroller
+      operation: Update
+      time: "2025-12-30T21:47:52Z"
+    name: fleet-controller-leader-election-shard.18861c87b49d372a
+    namespace: cattle-fleet-system
+    resourceVersion: "1842"
+    uid: 0f54e1e7-cce4-46c3-bf17-fc6d4cf5f783
+  note: fleet-controller-6c5d89f545-7xsb8_07c84fc6-b310-4d8e-859a-010a8a74ad6a became
+    leader
+  reason: LeaderElection
+  regarding:
+    apiVersion: coordination.k8s.io/v1
+    kind: Lease
+    name: fleet-controller-leader-election-shard
+    namespace: cattle-fleet-system
+    resourceVersion: "1837"
+    uid: b8e2fc50-c4bd-4c81-9901-5fe546ddb7a1
+  reportingController: fleet-controller-6c5d89f545-7xsb8_07c84fc6-b310-4d8e-859a-010a8a74ad6a
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:16Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:16Z"
+  deprecatedSource:
+    component: fleet-controller-6c5d89f545-bxkt2_e05f5730-1d20-4f47-b592-8cafce367b50
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:16Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: fleetcontroller
+      operation: Update
+      time: "2025-12-30T21:49:16Z"
+    name: fleet-controller-leader-election-shard.18861c9b09f32ea1
+    namespace: cattle-fleet-system
+    resourceVersion: "3193"
+    uid: 82e61f68-e846-467c-a1eb-32ad1541474e
+  note: fleet-controller-6c5d89f545-bxkt2_e05f5730-1d20-4f47-b592-8cafce367b50 became
+    leader
+  reason: LeaderElection
+  regarding:
+    apiVersion: coordination.k8s.io/v1
+    kind: Lease
+    name: fleet-controller-leader-election-shard
+    namespace: cattle-fleet-system
+    resourceVersion: "3191"
+    uid: b8e2fc50-c4bd-4c81-9901-5fe546ddb7a1
+  reportingController: fleet-controller-6c5d89f545-bxkt2_e05f5730-1d20-4f47-b592-8cafce367b50
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 2
+  deprecatedFirstTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:29Z"
+  deprecatedSource:
+    component: deployment-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:48:29Z"
+    name: fleet-controller.18861c874590d86e
+    namespace: cattle-fleet-system
+    resourceVersion: "2375"
+    uid: d753088c-b61e-49ee-9822-45ad5eddcce5
+  note: Scaled up replica set fleet-controller-6c5d89f545 from 0 to 1
+  reason: ScalingReplicaSet
+  regarding:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: fleet-controller
+    namespace: cattle-fleet-system
+    resourceVersion: "1771"
+    uid: 297bf31e-faa2-467d-9248-370a12cfc14e
+  reportingController: deployment-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:48:29Z"
+  deprecatedLastTimestamp: "2025-12-30T21:48:29Z"
+  deprecatedSource:
+    component: deployment-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:29Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:48:29Z"
+    name: fleet-controller.18861c902f7aa986
+    namespace: cattle-fleet-system
+    resourceVersion: "2357"
+    uid: 24759e82-792b-4deb-a1b6-d30bb949dfbd
+  note: Scaled down replica set fleet-controller-6c5d89f545 from 1 to 0
+  reason: ScalingReplicaSet
+  regarding:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: fleet-controller
+    namespace: cattle-fleet-system
+    resourceVersion: "2349"
+    uid: 297bf31e-faa2-467d-9248-370a12cfc14e
+  reportingController: deployment-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedSource:
+    component: gitjob-6c68674ccf-fkfbd_d81a179d-2d46-4986-864c-a99681cb8718
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:52Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: fleetcontroller
+      operation: Update
+      time: "2025-12-30T21:47:52Z"
+    name: fleet-gitops-leader-election-shard.18861c87b42ea56e
+    namespace: cattle-fleet-system
+    resourceVersion: "1839"
+    uid: 31298fa4-7e5e-483d-b25a-b0e339e8b5c6
+  note: gitjob-6c68674ccf-fkfbd_d81a179d-2d46-4986-864c-a99681cb8718 became leader
+  reason: LeaderElection
+  regarding:
+    apiVersion: coordination.k8s.io/v1
+    kind: Lease
+    name: fleet-gitops-leader-election-shard
+    namespace: cattle-fleet-system
+    resourceVersion: "1836"
+    uid: e76b2f0f-2898-49b0-8470-ee22c9805581
+  reportingController: gitjob-6c68674ccf-fkfbd_d81a179d-2d46-4986-864c-a99681cb8718
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedSource:
+    component: helmops-76b7885dff-ngxtz_9156de12-bc95-4e6d-9e6e-2bb73467371e
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:52Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: fleetcontroller
+      operation: Update
+      time: "2025-12-30T21:47:52Z"
+    name: fleet-helmops-leader-election-shard.18861c87b5301b33
+    namespace: cattle-fleet-system
+    resourceVersion: "1845"
+    uid: 4dd904aa-2807-44cf-a2a1-28e41c080bcd
+  note: helmops-76b7885dff-ngxtz_9156de12-bc95-4e6d-9e6e-2bb73467371e became leader
+  reason: LeaderElection
+  regarding:
+    apiVersion: coordination.k8s.io/v1
+    kind: Lease
+    name: fleet-helmops-leader-election-shard
+    namespace: cattle-fleet-system
+    resourceVersion: "1841"
+    uid: 680e1ad7-a8f3-4963-abdd-ee135cafa1c0
+  reportingController: helmops-76b7885dff-ngxtz_9156de12-bc95-4e6d-9e6e-2bb73467371e
+  type: Normal
+- action: Binding
+  apiVersion: events.k8s.io/v1
+  deprecatedFirstTimestamp: "null"
+  deprecatedLastTimestamp: null
+  deprecatedSource: {}
+  eventTime: "2025-12-30T21:47:51.134307Z"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    managedFields:
+    - apiVersion: events.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:action: {}
+        f:eventTime: {}
+        f:note: {}
+        f:reason: {}
+        f:regarding: {}
+        f:reportingController: {}
+        f:reportingInstance: {}
+        f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: gitjob-6c68674ccf-fkfbd.18861c874772017e
+    namespace: cattle-fleet-system
+    resourceVersion: "1801"
+    uid: 54000369-bfb2-497b-9203-f65721c7df30
+  note: Successfully assigned cattle-fleet-system/gitjob-6c68674ccf-fkfbd to isim-dev
+  reason: Scheduled
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: gitjob-6c68674ccf-fkfbd
+    namespace: cattle-fleet-system
+    resourceVersion: "1779"
+    uid: 10645dc8-d43a-4112-b079-b4f3add59937
+  reportingController: default-scheduler
+  reportingInstance: default-scheduler-isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedSource:
+    component: multus
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: multus
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: gitjob-6c68674ccf-fkfbd.18861c87626f18c1
+    namespace: cattle-fleet-system
+    resourceVersion: "1823"
+    uid: 5088a53a-1261-4d16-804c-49c7cc3c6794
+  note: Add eth0 [10.52.0.15/32] from k8s-pod-network
+  reason: AddedInterface
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: gitjob-6c68674ccf-fkfbd
+    namespace: cattle-fleet-system
+    resourceVersion: "1809"
+    uid: 10645dc8-d43a-4112-b079-b4f3add59937
+  reportingController: multus
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: gitjob-6c68674ccf-fkfbd.18861c876abe0ec3
+    namespace: cattle-fleet-system
+    resourceVersion: "1827"
+    uid: 32afc0db-18ea-4d66-b920-dd7973b291bf
+  note: Container image "rancher/fleet:v0.14.0" already present on machine
+  reason: Pulled
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{gitjob}
+    kind: Pod
+    name: gitjob-6c68674ccf-fkfbd
+    namespace: cattle-fleet-system
+    resourceVersion: "1792"
+    uid: 10645dc8-d43a-4112-b079-b4f3add59937
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:52Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:52Z"
+    name: gitjob-6c68674ccf-fkfbd.18861c87ad232c3c
+    namespace: cattle-fleet-system
+    resourceVersion: "1829"
+    uid: 686a7212-ec36-4dc3-a80d-c93a0624ed58
+  note: 'Created container: gitjob'
+  reason: Created
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{gitjob}
+    kind: Pod
+    name: gitjob-6c68674ccf-fkfbd
+    namespace: cattle-fleet-system
+    resourceVersion: "1792"
+    uid: 10645dc8-d43a-4112-b079-b4f3add59937
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:52Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:52Z"
+    name: gitjob-6c68674ccf-fkfbd.18861c87b1d46cd2
+    namespace: cattle-fleet-system
+    resourceVersion: "1834"
+    uid: 8cb8fc2f-a91b-4d7e-a6ac-946c68bbc7b4
+  note: Started container gitjob
+  reason: Started
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{gitjob}
+    kind: Pod
+    name: gitjob-6c68674ccf-fkfbd
+    namespace: cattle-fleet-system
+    resourceVersion: "1792"
+    uid: 10645dc8-d43a-4112-b079-b4f3add59937
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedSource:
+    component: replicaset-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: gitjob-6c68674ccf.18861c874670d821
+    namespace: cattle-fleet-system
+    resourceVersion: "1797"
+    uid: 2d4b6acb-7633-4b18-97ef-3b93eb15f4ba
+  note: 'Created pod: gitjob-6c68674ccf-fkfbd'
+  reason: SuccessfulCreate
+  regarding:
+    apiVersion: apps/v1
+    kind: ReplicaSet
+    name: gitjob-6c68674ccf
+    namespace: cattle-fleet-system
+    resourceVersion: "1773"
+    uid: a167171f-a851-4244-b894-625da880ed27
+  reportingController: replicaset-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedSource:
+    component: deployment-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: gitjob.18861c87456594f3
+    namespace: cattle-fleet-system
+    resourceVersion: "1777"
+    uid: 4b20ca40-1a4b-4899-8f00-f070ac2b76d6
+  note: Scaled up replica set gitjob-6c68674ccf from 0 to 1
+  reason: ScalingReplicaSet
+  regarding:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: gitjob
+    namespace: cattle-fleet-system
+    resourceVersion: "1770"
+    uid: d0b47c19-97b4-4856-810a-7642035abb5a
+  reportingController: deployment-controller
+  type: Normal
+- action: Binding
+  apiVersion: events.k8s.io/v1
+  deprecatedFirstTimestamp: "null"
+  deprecatedLastTimestamp: null
+  deprecatedSource: {}
+  eventTime: "2025-12-30T21:47:51.127240Z"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    managedFields:
+    - apiVersion: events.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:action: {}
+        f:eventTime: {}
+        f:note: {}
+        f:reason: {}
+        f:regarding: {}
+        f:reportingController: {}
+        f:reportingInstance: {}
+        f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: helmops-76b7885dff-ngxtz.18861c8747061dbc
+    namespace: cattle-fleet-system
+    resourceVersion: "1798"
+    uid: c81ddf09-3e5c-4444-b6c4-2c199162b246
+  note: Successfully assigned cattle-fleet-system/helmops-76b7885dff-ngxtz to isim-dev
+  reason: Scheduled
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: helmops-76b7885dff-ngxtz
+    namespace: cattle-fleet-system
+    resourceVersion: "1784"
+    uid: 8e3ae676-3d62-4dfd-a169-73b1d68bb297
+  reportingController: default-scheduler
+  reportingInstance: default-scheduler-isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedSource:
+    component: multus
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: multus
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: helmops-76b7885dff-ngxtz.18861c876003d103
+    namespace: cattle-fleet-system
+    resourceVersion: "1817"
+    uid: 7594159a-2947-4707-b647-01a4c71f6d36
+  note: Add eth0 [10.52.0.13/32] from k8s-pod-network
+  reason: AddedInterface
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: helmops-76b7885dff-ngxtz
+    namespace: cattle-fleet-system
+    resourceVersion: "1805"
+    uid: 8e3ae676-3d62-4dfd-a169-73b1d68bb297
+  reportingController: multus
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: helmops-76b7885dff-ngxtz.18861c8768ac7ada
+    namespace: cattle-fleet-system
+    resourceVersion: "1825"
+    uid: d2204ad6-0ffe-442e-bf87-d53a8fa18aeb
+  note: Container image "rancher/fleet:v0.14.0" already present on machine
+  reason: Pulled
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{helmops}
+    kind: Pod
+    name: helmops-76b7885dff-ngxtz
+    namespace: cattle-fleet-system
+    resourceVersion: "1785"
+    uid: 8e3ae676-3d62-4dfd-a169-73b1d68bb297
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:52Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:52Z"
+    name: helmops-76b7885dff-ngxtz.18861c87ad69b25f
+    namespace: cattle-fleet-system
+    resourceVersion: "1830"
+    uid: 723c7533-2b94-4ba2-b419-3a9c06b223af
+  note: 'Created container: helmops'
+  reason: Created
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{helmops}
+    kind: Pod
+    name: helmops-76b7885dff-ngxtz
+    namespace: cattle-fleet-system
+    resourceVersion: "1785"
+    uid: 8e3ae676-3d62-4dfd-a169-73b1d68bb297
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:52Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:52Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:47:52Z"
+    name: helmops-76b7885dff-ngxtz.18861c87b1bf3989
+    namespace: cattle-fleet-system
+    resourceVersion: "1832"
+    uid: 5da75448-3689-48a5-a625-0fee1ccc1ecf
+  note: Started container helmops
+  reason: Started
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{helmops}
+    kind: Pod
+    name: helmops-76b7885dff-ngxtz
+    namespace: cattle-fleet-system
+    resourceVersion: "1785"
+    uid: 8e3ae676-3d62-4dfd-a169-73b1d68bb297
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedSource:
+    component: replicaset-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: helmops-76b7885dff.18861c87466b13a0
+    namespace: cattle-fleet-system
+    resourceVersion: "1788"
+    uid: cf3c9eb3-405d-49ed-aed8-39b0bcb08b0e
+  note: 'Created pod: helmops-76b7885dff-ngxtz'
+  reason: SuccessfulCreate
+  regarding:
+    apiVersion: apps/v1
+    kind: ReplicaSet
+    name: helmops-76b7885dff
+    namespace: cattle-fleet-system
+    resourceVersion: "1775"
+    uid: 29819a35-61d1-4b91-9a1b-97b47be81544
+  reportingController: replicaset-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedLastTimestamp: "2025-12-30T21:47:51Z"
+  deprecatedSource:
+    component: deployment-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:47:51Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:47:51Z"
+    name: helmops.18861c874593fa3a
+    namespace: cattle-fleet-system
+    resourceVersion: "1791"
+    uid: f5c3abb8-b12c-4e8c-a9eb-b954ff8db88a
+  note: Scaled up replica set helmops-76b7885dff from 0 to 1
+  reason: ScalingReplicaSet
+  regarding:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: helmops
+    namespace: cattle-fleet-system
+    resourceVersion: "1772"
+    uid: fa830082-d7bb-45b2-8ad8-f34a728e3a40
+  reportingController: deployment-controller
+  type: Normal
+kind: List
+metadata:
+  resourceVersion: "14479"

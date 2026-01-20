@@ -1,0 +1,687 @@
+apiVersion: v1
+items:
+- apiVersion: management.cattle.io/v3
+  kind: ManagedChart
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"management.cattle.io/v3","kind":"ManagedChart","metadata":{"annotations":{},"name":"harvester","namespace":"fleet-local"},"spec":{"chart":"harvester","defaultNamespace":"harvester-system","diff":{"comparePatches":[{"apiVersion":"storage.k8s.io/v1","jsonPointers":["/metadata/annotations"],"kind":"StorageClass","name":"harvester-longhorn"},{"apiVersion":"apiextensions.k8s.io/v1","jsonPointers":["/status/acceptedNames","/status/conditions","/status/storedVersions"],"kind":"CustomResourceDefinition","name":"engineimages.longhorn.io"},{"apiVersion":"apiextensions.k8s.io/v1","jsonPointers":["/status/acceptedNames","/status/conditions","/status/storedVersions"],"kind":"CustomResourceDefinition","name":"nodes.longhorn.io"},{"apiVersion":"apiextensions.k8s.io/v1","jsonPointers":["/status/acceptedNames","/status/conditions","/status/storedVersions"],"kind":"CustomResourceDefinition","name":"volumes.longhorn.io"},{"apiVersion":"apiextensions.k8s.io/v1","jsonPointers":["/status/acceptedNames","/status/conditions","/status/storedVersions"],"kind":"CustomResourceDefinition","name":"settings.longhorn.io"},{"apiVersion":"apiextensions.k8s.io/v1","jsonPointers":["/status/acceptedNames","/status/conditions","/status/storedVersions"],"kind":"CustomResourceDefinition","name":"replicas.longhorn.io"},{"apiVersion":"apiextensions.k8s.io/v1","jsonPointers":["/status/acceptedNames","/status/conditions","/status/storedVersions"],"kind":"CustomResourceDefinition","name":"instancemanagers.longhorn.io"},{"apiVersion":"apiextensions.k8s.io/v1","jsonPointers":["/status/acceptedNames","/status/conditions","/status/storedVersions"],"kind":"CustomResourceDefinition","name":"engines.longhorn.io"}]},"releaseName":"harvester","repoName":"harvester-charts","targets":[{"clusterName":"local","clusterSelector":{"matchExpressions":[{"key":"provisioning.cattle.io/unmanaged-system-agent","operator":"DoesNotExist"}]}}],"timeoutSeconds":600,"values":{"containers":{"apiserver":{"hciMode":true,"image":{"imagePullPolicy":"IfNotPresent"}}},"harvester-load-balancer":{"enabled":true},"harvester-network-controller":{"enabled":true,"image":{"pullPolicy":"IfNotPresent"},"vipEnabled":true},"harvester-networkfs-manager":{"enabled":true,"image":{"pullPolicy":"IfNotPresent"}},"harvester-node-disk-manager":{"enabled":true,"image":{"pullPolicy":"IfNotPresent"},"labelFilter":["COS_*","HARV_*"]},"kube-vip":{"enabled":true},"kube-vip-cloud-provider":{"enabled":true},"kubevirt":{"spec":{"monitorAccount":"rancher-monitoring-operator","monitorNamespace":"cattle-monitoring-system"}},"longhorn":{"defaultSettings":{"defaultDataPath":"/var/lib/harvester/defaultdisk","detachManuallyAttachedVolumesWhenCordoned":true,"nodeDrainPolicy":"allow-if-replica-is-stopped","storageReservedPercentageForDefaultDisk":"0","taintToleration":"kubevirt.io/drain:NoSchedule"},"enabled":true},"multus":{"enabled":false},"promote":{"clusterDNS":"10.53.0.10","clusterPodCIDR":"10.52.0.0/16","clusterServiceCIDR":"10.53.0.0/16"},"rancherEmbedded":true,"service":{"vip":{"enabled":true,"hwAddress":"32:34:1a:75:7f:64","ip":"192.168.122.39","mode":"dhcp"}},"webhook":{"image":{"imagePullPolicy":"IfNotPresent"}}},"version":"1.7.0"}}
+    creationTimestamp: "2025-12-30T21:48:43Z"
+    generation: 1
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          .: {}
+          f:chart: {}
+          f:defaultNamespace: {}
+          f:diff:
+            .: {}
+            f:comparePatches: {}
+          f:releaseName: {}
+          f:repoName: {}
+          f:targets: {}
+          f:timeoutSeconds: {}
+          f:values:
+            .: {}
+            f:containers:
+              .: {}
+              f:apiserver:
+                .: {}
+                f:hciMode: {}
+                f:image:
+                  .: {}
+                  f:imagePullPolicy: {}
+            f:harvester-load-balancer:
+              .: {}
+              f:enabled: {}
+            f:harvester-network-controller:
+              .: {}
+              f:enabled: {}
+              f:image:
+                .: {}
+                f:pullPolicy: {}
+              f:vipEnabled: {}
+            f:harvester-networkfs-manager:
+              .: {}
+              f:enabled: {}
+              f:image:
+                .: {}
+                f:pullPolicy: {}
+            f:harvester-node-disk-manager:
+              .: {}
+              f:enabled: {}
+              f:image:
+                .: {}
+                f:pullPolicy: {}
+              f:labelFilter: {}
+            f:kube-vip:
+              .: {}
+              f:enabled: {}
+            f:kube-vip-cloud-provider:
+              .: {}
+              f:enabled: {}
+            f:kubevirt:
+              .: {}
+              f:spec:
+                .: {}
+                f:monitorAccount: {}
+                f:monitorNamespace: {}
+            f:longhorn:
+              .: {}
+              f:defaultSettings:
+                .: {}
+                f:defaultDataPath: {}
+                f:detachManuallyAttachedVolumesWhenCordoned: {}
+                f:nodeDrainPolicy: {}
+                f:storageReservedPercentageForDefaultDisk: {}
+                f:taintToleration: {}
+              f:enabled: {}
+            f:multus:
+              .: {}
+              f:enabled: {}
+            f:promote:
+              .: {}
+              f:clusterDNS: {}
+              f:clusterPodCIDR: {}
+              f:clusterServiceCIDR: {}
+            f:rancherEmbedded: {}
+            f:service:
+              .: {}
+              f:vip:
+                .: {}
+                f:enabled: {}
+                f:hwAddress: {}
+                f:ip: {}
+                f:mode: {}
+            f:webhook:
+              .: {}
+              f:image:
+                .: {}
+                f:imagePullPolicy: {}
+          f:version: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2025-12-30T21:48:43Z"
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:display:
+            .: {}
+            f:readyClusters: {}
+          f:maxNew: {}
+          f:maxUnavailable: {}
+          f:maxUnavailablePartitions: {}
+          f:observedGeneration: {}
+          f:partitions: {}
+          f:resourcesSha256Sum: {}
+          f:summary:
+            .: {}
+            f:desiredReady: {}
+            f:ready: {}
+          f:unavailable: {}
+          f:unavailablePartitions: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:51:39Z"
+    name: harvester
+    namespace: fleet-local
+    resourceVersion: "7628"
+    uid: 913e32c9-b1ed-4993-bea3-44575573eb60
+  spec:
+    chart: harvester
+    defaultNamespace: harvester-system
+    diff:
+      comparePatches:
+      - apiVersion: storage.k8s.io/v1
+        jsonPointers:
+        - /metadata/annotations
+        kind: StorageClass
+        name: harvester-longhorn
+      - apiVersion: apiextensions.k8s.io/v1
+        jsonPointers:
+        - /status/acceptedNames
+        - /status/conditions
+        - /status/storedVersions
+        kind: CustomResourceDefinition
+        name: engineimages.longhorn.io
+      - apiVersion: apiextensions.k8s.io/v1
+        jsonPointers:
+        - /status/acceptedNames
+        - /status/conditions
+        - /status/storedVersions
+        kind: CustomResourceDefinition
+        name: nodes.longhorn.io
+      - apiVersion: apiextensions.k8s.io/v1
+        jsonPointers:
+        - /status/acceptedNames
+        - /status/conditions
+        - /status/storedVersions
+        kind: CustomResourceDefinition
+        name: volumes.longhorn.io
+      - apiVersion: apiextensions.k8s.io/v1
+        jsonPointers:
+        - /status/acceptedNames
+        - /status/conditions
+        - /status/storedVersions
+        kind: CustomResourceDefinition
+        name: settings.longhorn.io
+      - apiVersion: apiextensions.k8s.io/v1
+        jsonPointers:
+        - /status/acceptedNames
+        - /status/conditions
+        - /status/storedVersions
+        kind: CustomResourceDefinition
+        name: replicas.longhorn.io
+      - apiVersion: apiextensions.k8s.io/v1
+        jsonPointers:
+        - /status/acceptedNames
+        - /status/conditions
+        - /status/storedVersions
+        kind: CustomResourceDefinition
+        name: instancemanagers.longhorn.io
+      - apiVersion: apiextensions.k8s.io/v1
+        jsonPointers:
+        - /status/acceptedNames
+        - /status/conditions
+        - /status/storedVersions
+        kind: CustomResourceDefinition
+        name: engines.longhorn.io
+    releaseName: harvester
+    repoName: harvester-charts
+    targets:
+    - clusterName: local
+      clusterSelector:
+        matchExpressions:
+        - key: provisioning.cattle.io/unmanaged-system-agent
+          operator: DoesNotExist
+    timeoutSeconds: 600
+    values:
+      containers:
+        apiserver:
+          hciMode: true
+          image:
+            imagePullPolicy: IfNotPresent
+      harvester-load-balancer:
+        enabled: true
+      harvester-network-controller:
+        enabled: true
+        image:
+          pullPolicy: IfNotPresent
+        vipEnabled: true
+      harvester-networkfs-manager:
+        enabled: true
+        image:
+          pullPolicy: IfNotPresent
+      harvester-node-disk-manager:
+        enabled: true
+        image:
+          pullPolicy: IfNotPresent
+        labelFilter:
+        - COS_*
+        - HARV_*
+      kube-vip:
+        enabled: true
+      kube-vip-cloud-provider:
+        enabled: true
+      kubevirt:
+        spec:
+          monitorAccount: rancher-monitoring-operator
+          monitorNamespace: cattle-monitoring-system
+      longhorn:
+        defaultSettings:
+          defaultDataPath: /var/lib/harvester/defaultdisk
+          detachManuallyAttachedVolumesWhenCordoned: true
+          nodeDrainPolicy: allow-if-replica-is-stopped
+          storageReservedPercentageForDefaultDisk: "0"
+          taintToleration: kubevirt.io/drain:NoSchedule
+        enabled: true
+      multus:
+        enabled: false
+      promote:
+        clusterDNS: 10.53.0.10
+        clusterPodCIDR: 10.52.0.0/16
+        clusterServiceCIDR: 10.53.0.0/16
+      rancherEmbedded: true
+      service:
+        vip:
+          enabled: true
+          hwAddress: 32:34:1a:75:7f:64
+          ip: 192.168.122.39
+          mode: dhcp
+      webhook:
+        image:
+          imagePullPolicy: IfNotPresent
+    version: 1.7.0
+  status:
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:51:30Z"
+      status: "True"
+      type: Ready
+    - lastUpdateTime: "2025-12-30T21:51:39Z"
+      status: "True"
+      type: Defined
+    display:
+      readyClusters: 1/1
+    maxNew: 50
+    maxUnavailable: 1
+    maxUnavailablePartitions: 0
+    observedGeneration: 1
+    partitions:
+    - count: 1
+      maxUnavailable: 1
+      name: All
+      summary:
+        desiredReady: 1
+        ready: 1
+    resourcesSha256Sum: 46083697aa39619df0cb7899c23d22d5eaf962f52b8880bcb2aa80809210eb86
+    summary:
+      desiredReady: 1
+      ready: 1
+    unavailable: 0
+    unavailablePartitions: 0
+- apiVersion: management.cattle.io/v3
+  kind: ManagedChart
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"management.cattle.io/v3","kind":"ManagedChart","metadata":{"annotations":{},"name":"harvester-crd","namespace":"fleet-local"},"spec":{"chart":"harvester-crd","defaultNamespace":"harvester-system","releaseName":"harvester-crd","repoName":"harvester-charts","takeOwnership":true,"targets":[{"clusterName":"local","clusterSelector":{"matchExpressions":[{"key":"provisioning.cattle.io/unmanaged-system-agent","operator":"DoesNotExist"}]}}],"timeoutSeconds":600,"values":{},"version":"1.7.0"}}
+    creationTimestamp: "2025-12-30T21:48:43Z"
+    generation: 1
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          .: {}
+          f:chart: {}
+          f:defaultNamespace: {}
+          f:releaseName: {}
+          f:repoName: {}
+          f:takeOwnership: {}
+          f:targets: {}
+          f:timeoutSeconds: {}
+          f:values: {}
+          f:version: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2025-12-30T21:48:43Z"
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:display:
+            .: {}
+            f:readyClusters: {}
+          f:maxNew: {}
+          f:maxUnavailable: {}
+          f:maxUnavailablePartitions: {}
+          f:observedGeneration: {}
+          f:partitions: {}
+          f:resourcesSha256Sum: {}
+          f:summary:
+            .: {}
+            f:desiredReady: {}
+            f:ready: {}
+          f:unavailable: {}
+          f:unavailablePartitions: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:51:39Z"
+    name: harvester-crd
+    namespace: fleet-local
+    resourceVersion: "7616"
+    uid: 4fa0b945-a112-41a8-a166-0eba2f0907ef
+  spec:
+    chart: harvester-crd
+    defaultNamespace: harvester-system
+    releaseName: harvester-crd
+    repoName: harvester-charts
+    takeOwnership: true
+    targets:
+    - clusterName: local
+      clusterSelector:
+        matchExpressions:
+        - key: provisioning.cattle.io/unmanaged-system-agent
+          operator: DoesNotExist
+    timeoutSeconds: 600
+    values: {}
+    version: 1.7.0
+  status:
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:49:21Z"
+      status: "True"
+      type: Ready
+    - lastUpdateTime: "2025-12-30T21:51:39Z"
+      status: "True"
+      type: Defined
+    display:
+      readyClusters: 1/1
+    maxNew: 50
+    maxUnavailable: 1
+    maxUnavailablePartitions: 0
+    observedGeneration: 1
+    partitions:
+    - count: 1
+      maxUnavailable: 1
+      name: All
+      summary:
+        desiredReady: 1
+        ready: 1
+    resourcesSha256Sum: 7e9d742c54a33870d0fbe1b796b741ec78013f8b44f3e30522e40966a7720683
+    summary:
+      desiredReady: 1
+      ready: 1
+    unavailable: 0
+    unavailablePartitions: 0
+- apiVersion: management.cattle.io/v3
+  kind: ManagedChart
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"management.cattle.io/v3","kind":"ManagedChart","metadata":{"annotations":{},"name":"kubeovn-operator-crd","namespace":"fleet-local"},"spec":{"chart":"kubeovn-operator-crd","defaultNamespace":"kube-system","releaseName":"kubeovn-operator-crd","repoName":"harvester-charts","targets":[{"clusterName":"local","clusterSelector":{"matchExpressions":[{"key":"provisioning.cattle.io/unmanaged-system-agent","operator":"DoesNotExist"}]}}],"timeoutSeconds":600,"version":"1.14.10-dev.1"}}
+    creationTimestamp: "2025-12-30T21:48:44Z"
+    generation: 1
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          .: {}
+          f:chart: {}
+          f:defaultNamespace: {}
+          f:releaseName: {}
+          f:repoName: {}
+          f:targets: {}
+          f:timeoutSeconds: {}
+          f:version: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2025-12-30T21:48:44Z"
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:display:
+            .: {}
+            f:readyClusters: {}
+          f:maxNew: {}
+          f:maxUnavailable: {}
+          f:maxUnavailablePartitions: {}
+          f:observedGeneration: {}
+          f:partitions: {}
+          f:resourcesSha256Sum: {}
+          f:summary:
+            .: {}
+            f:desiredReady: {}
+            f:ready: {}
+          f:unavailable: {}
+          f:unavailablePartitions: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:51:39Z"
+    name: kubeovn-operator-crd
+    namespace: fleet-local
+    resourceVersion: "7614"
+    uid: 4d7f9616-5549-4292-b7f6-4a435e3806b8
+  spec:
+    chart: kubeovn-operator-crd
+    defaultNamespace: kube-system
+    releaseName: kubeovn-operator-crd
+    repoName: harvester-charts
+    targets:
+    - clusterName: local
+      clusterSelector:
+        matchExpressions:
+        - key: provisioning.cattle.io/unmanaged-system-agent
+          operator: DoesNotExist
+    timeoutSeconds: 600
+    version: 1.14.10-dev.1
+  status:
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:49:17Z"
+      status: "True"
+      type: Ready
+    - lastUpdateTime: "2025-12-30T21:51:39Z"
+      status: "True"
+      type: Defined
+    display:
+      readyClusters: 1/1
+    maxNew: 50
+    maxUnavailable: 1
+    maxUnavailablePartitions: 0
+    observedGeneration: 1
+    partitions:
+    - count: 1
+      maxUnavailable: 1
+      name: All
+      summary:
+        desiredReady: 1
+        ready: 1
+    resourcesSha256Sum: bdef11785d4b19caa0f899427a89d621f25b10b56039deeedd4f8b84ce4e8025
+    summary:
+      desiredReady: 1
+      ready: 1
+    unavailable: 0
+    unavailablePartitions: 0
+- apiVersion: management.cattle.io/v3
+  kind: ManagedChart
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"management.cattle.io/v3","kind":"ManagedChart","metadata":{"annotations":{},"name":"rancher-logging-crd","namespace":"fleet-local"},"spec":{"chart":"rancher-logging-crd","defaultNamespace":"cattle-logging-system","releaseName":"rancher-logging-crd","repoName":"harvester-charts","targets":[{"clusterName":"local","clusterSelector":{"matchExpressions":[{"key":"provisioning.cattle.io/unmanaged-system-agent","operator":"DoesNotExist"}]}}],"timeoutSeconds":600,"version":"107.0.1+up4.10.0-rancher.10"}}
+    creationTimestamp: "2025-12-30T21:48:44Z"
+    generation: 1
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          .: {}
+          f:chart: {}
+          f:defaultNamespace: {}
+          f:releaseName: {}
+          f:repoName: {}
+          f:targets: {}
+          f:timeoutSeconds: {}
+          f:version: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2025-12-30T21:48:44Z"
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:display:
+            .: {}
+            f:readyClusters: {}
+          f:maxNew: {}
+          f:maxUnavailable: {}
+          f:maxUnavailablePartitions: {}
+          f:observedGeneration: {}
+          f:partitions: {}
+          f:resourcesSha256Sum: {}
+          f:summary:
+            .: {}
+            f:desiredReady: {}
+            f:ready: {}
+          f:unavailable: {}
+          f:unavailablePartitions: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:51:39Z"
+    name: rancher-logging-crd
+    namespace: fleet-local
+    resourceVersion: "7621"
+    uid: f2e3908a-d0af-459b-a92e-64cb01ed6f76
+  spec:
+    chart: rancher-logging-crd
+    defaultNamespace: cattle-logging-system
+    releaseName: rancher-logging-crd
+    repoName: harvester-charts
+    targets:
+    - clusterName: local
+      clusterSelector:
+        matchExpressions:
+        - key: provisioning.cattle.io/unmanaged-system-agent
+          operator: DoesNotExist
+    timeoutSeconds: 600
+    version: 107.0.1+up4.10.0-rancher.10
+  status:
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:49:26Z"
+      status: "True"
+      type: Ready
+    - lastUpdateTime: "2025-12-30T21:51:39Z"
+      status: "True"
+      type: Defined
+    display:
+      readyClusters: 1/1
+    maxNew: 50
+    maxUnavailable: 1
+    maxUnavailablePartitions: 0
+    observedGeneration: 1
+    partitions:
+    - count: 1
+      maxUnavailable: 1
+      name: All
+      summary:
+        desiredReady: 1
+        ready: 1
+    resourcesSha256Sum: b936844cc6d2d97e1ac5960d1494531e7ed38fbfac6383c7564987f2b379643e
+    summary:
+      desiredReady: 1
+      ready: 1
+    unavailable: 0
+    unavailablePartitions: 0
+- apiVersion: management.cattle.io/v3
+  kind: ManagedChart
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"management.cattle.io/v3","kind":"ManagedChart","metadata":{"annotations":{},"name":"rancher-monitoring-crd","namespace":"fleet-local"},"spec":{"chart":"rancher-monitoring-crd","defaultNamespace":"cattle-monitoring-system","releaseName":"rancher-monitoring-crd","repoName":"harvester-charts","targets":[{"clusterName":"local","clusterSelector":{"matchExpressions":[{"key":"provisioning.cattle.io/unmanaged-system-agent","operator":"DoesNotExist"}]}}],"timeoutSeconds":600,"version":"107.1.0+up69.8.2-rancher.15"}}
+    creationTimestamp: "2025-12-30T21:48:44Z"
+    generation: 1
+    managedFields:
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          .: {}
+          f:chart: {}
+          f:defaultNamespace: {}
+          f:releaseName: {}
+          f:repoName: {}
+          f:targets: {}
+          f:timeoutSeconds: {}
+          f:version: {}
+      manager: kubectl-client-side-apply
+      operation: Update
+      time: "2025-12-30T21:48:44Z"
+    - apiVersion: management.cattle.io/v3
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:conditions: {}
+          f:display:
+            .: {}
+            f:readyClusters: {}
+          f:maxNew: {}
+          f:maxUnavailable: {}
+          f:maxUnavailablePartitions: {}
+          f:observedGeneration: {}
+          f:partitions: {}
+          f:resourcesSha256Sum: {}
+          f:summary:
+            .: {}
+            f:desiredReady: {}
+            f:ready: {}
+          f:unavailable: {}
+          f:unavailablePartitions: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:51:39Z"
+    name: rancher-monitoring-crd
+    namespace: fleet-local
+    resourceVersion: "7618"
+    uid: 0cff4e78-168d-42c6-afb0-997bd64bc6bf
+  spec:
+    chart: rancher-monitoring-crd
+    defaultNamespace: cattle-monitoring-system
+    releaseName: rancher-monitoring-crd
+    repoName: harvester-charts
+    targets:
+    - clusterName: local
+      clusterSelector:
+        matchExpressions:
+        - key: provisioning.cattle.io/unmanaged-system-agent
+          operator: DoesNotExist
+    timeoutSeconds: 600
+    version: 107.1.0+up69.8.2-rancher.15
+  status:
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:49:27Z"
+      status: "True"
+      type: Ready
+    - lastUpdateTime: "2025-12-30T21:51:39Z"
+      status: "True"
+      type: Defined
+    display:
+      readyClusters: 1/1
+    maxNew: 50
+    maxUnavailable: 1
+    maxUnavailablePartitions: 0
+    observedGeneration: 1
+    partitions:
+    - count: 1
+      maxUnavailable: 1
+      name: All
+      summary:
+        desiredReady: 1
+        ready: 1
+    resourcesSha256Sum: ce9116b6bd130f51130f8b644dc9831619c56e588b7d142f024cd3485eca39a5
+    summary:
+      desiredReady: 1
+      ready: 1
+    unavailable: 0
+    unavailablePartitions: 0
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14492"

@@ -1,0 +1,47 @@
+2025-12-30T21:49:37.475586929Z Done configuring CNI.  Sleep=false
+2025-12-30T21:49:37.575011033Z Sleep and Watching for service account token and CA file changes...
+2025-12-30T21:49:37.758597497Z 2025-12-30T21:49:37Z [debug] Filtering pods with filter key 'spec.nodeName' and filter value 'isim-dev'
+2025-12-30T21:49:37.849161774Z 2025-12-30T21:49:37Z [verbose] pod controller created
+2025-12-30T21:49:37.849180962Z 2025-12-30T21:49:37Z [verbose] Starting informer factories ...
+2025-12-30T21:49:37.849183107Z 2025-12-30T21:49:37Z [verbose] Informer factories started
+2025-12-30T21:49:37.849184370Z 2025-12-30T21:49:37Z [verbose] starting network controller
+2025-12-30T21:49:38.049768250Z 2025-12-30T21:49:38Z [verbose] using expression: 30 4 * * *
+2025-12-30T21:49:55.035931260Z 2025-12-30T21:49:55Z [verbose] deleted pod [cattle-system/rancher-webhook-7f5698c594-nxgtt]
+2025-12-30T21:49:55.036802053Z 2025-12-30T21:49:55Z [verbose] skipped net-attach-def for default network
+2025-12-30T21:49:55.036806551Z 2025-12-30T21:49:55Z [verbose] result of garbage collecting pods: <nil>
+2025-12-30T21:50:08.159162575Z 2025-12-30T21:50:08Z [verbose] deleted pod [harvester-system/kubevirt-b0bdb51f9c5fb273f28ae187010768729d661564-jobv5ftzcxhnp]
+2025-12-30T21:50:08.159305545Z 2025-12-30T21:50:08Z [verbose] skipped net-attach-def for default network
+2025-12-30T21:50:08.159310554Z 2025-12-30T21:50:08Z [verbose] result of garbage collecting pods: <nil>
+2025-12-30T21:50:36.162426495Z 2025-12-30T21:50:36Z [verbose] deleted pod [kube-system/helm-install-rke2-ingress-nginx-fvrz5]
+2025-12-30T21:50:36.162453835Z 2025-12-30T21:50:36Z [verbose] skipped net-attach-def for default network
+2025-12-30T21:50:36.162456921Z 2025-12-30T21:50:36Z [verbose] result of garbage collecting pods: <nil>
+2025-12-30T21:50:39.472495797Z 2025-12-30T21:50:39Z [verbose] deleted pod [cattle-system/rancher-5565d4555b-qfk9f]
+2025-12-30T21:50:39.472522699Z 2025-12-30T21:50:39Z [verbose] skipped net-attach-def for default network
+2025-12-30T21:50:39.472527165Z 2025-12-30T21:50:39Z [verbose] result of garbage collecting pods: <nil>
+2025-12-30T21:50:42.597516035Z 2025-12-30T21:50:42Z [verbose] deleted pod [cattle-provisioning-capi-system/capi-controller-manager-55f48fd4d9-zhncq]
+2025-12-30T21:50:42.597535170Z 2025-12-30T21:50:42Z [verbose] skipped net-attach-def for default network
+2025-12-30T21:50:42.597537974Z 2025-12-30T21:50:42Z [verbose] result of garbage collecting pods: <nil>
+2025-12-30T21:50:45.321236500Z 2025-12-30T21:50:45Z [verbose] deleted pod [kube-system/rke2-ingress-nginx-admission-create-f2rcr]
+2025-12-30T21:50:45.321272362Z 2025-12-30T21:50:45Z [verbose] skipped net-attach-def for default network
+2025-12-30T21:50:45.321274905Z 2025-12-30T21:50:45Z [verbose] result of garbage collecting pods: <nil>
+2025-12-30T21:50:48.655251135Z 2025-12-30T21:50:48Z [verbose] deleted pod [kube-system/rke2-ingress-nginx-controller-tp542]
+2025-12-30T21:50:48.655275422Z 2025-12-30T21:50:48Z [verbose] skipped net-attach-def for default network
+2025-12-30T21:50:48.655277695Z 2025-12-30T21:50:48Z [verbose] result of garbage collecting pods: <nil>
+2025-12-30T21:50:50.801595911Z 2025-12-30T21:50:50Z [verbose] deleted pod [kube-system/rke2-ingress-nginx-admission-patch-6jc6r]
+2025-12-30T21:50:50.801634190Z 2025-12-30T21:50:50Z [verbose] skipped net-attach-def for default network
+2025-12-30T21:50:50.801636855Z 2025-12-30T21:50:50Z [verbose] result of garbage collecting pods: <nil>
+2025-12-30T21:50:53.687736348Z 2025-12-30T21:50:53Z [verbose] deleted pod [harvester-system/virt-api-75c4845cd-pbn2l]
+2025-12-30T21:50:53.687773578Z 2025-12-30T21:50:53Z [verbose] skipped net-attach-def for default network
+2025-12-30T21:50:53.687776573Z 2025-12-30T21:50:53Z [verbose] result of garbage collecting pods: <nil>
+2025-12-30T21:51:56.349850891Z 2025-12-30T21:51:56Z [verbose] deleted pod [kube-system/kube-proxy-isim-dev]
+2025-12-30T21:51:56.349870637Z 2025-12-30T21:51:56Z [verbose] result of garbage collecting pods: <nil>
+2025-12-30T21:51:59.199282795Z 2025-12-30T21:51:59Z [verbose] deleted pod [cattle-fleet-system/fleet-cleanup-clusterregistrations-l4ncl]
+2025-12-30T21:51:59.199310988Z 2025-12-30T21:51:59Z [verbose] skipped net-attach-def for default network
+2025-12-30T21:51:59.199313623Z 2025-12-30T21:51:59Z [verbose] result of garbage collecting pods: <nil>
+2025-12-30T21:52:24.938527535Z 2025-12-30T21:52:24Z [verbose] deleted pod [kube-system/kube-scheduler-isim-dev]
+2025-12-30T21:52:24.938702637Z 2025-12-30T21:52:24Z [verbose] result of garbage collecting pods: <nil>
+2025-12-30T21:52:26.933500362Z 2025-12-30T21:52:26Z [verbose] deleted pod [kube-system/kube-controller-manager-isim-dev]
+2025-12-30T21:52:26.933517875Z 2025-12-30T21:52:26Z [verbose] result of garbage collecting pods: <nil>
+2025-12-30T21:56:51.543205064Z 2025-12-30T21:56:51Z [verbose] deleted pod [longhorn-system/backing-image-ds-vmi-5987e3f0-076b-438e-82a4-f635689704b3]
+2025-12-30T21:56:51.543250770Z 2025-12-30T21:56:51Z [verbose] skipped net-attach-def for default network
+2025-12-30T21:56:51.543259708Z 2025-12-30T21:56:51Z [verbose] result of garbage collecting pods: <nil>

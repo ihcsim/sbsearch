@@ -1,0 +1,236 @@
+apiVersion: v1
+items:
+- apiVersion: catalog.cattle.io/v1
+  kind: Operation
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:44Z"
+    generation: 1
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"120f7a29-f2ce-4a6c-bf3a-c6a4b5c57872"}: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:48:44Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:action: {}
+          f:automaticCPTolerations: {}
+          f:command: {}
+          f:conditions: {}
+          f:namespace: {}
+          f:observedGeneration: {}
+          f:podCreated: {}
+          f:podName: {}
+          f:podNamespace: {}
+          f:releaseName: {}
+          f:token: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:49Z"
+    name: helm-operation-gmkh5
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: pod-impersonation-helm-op-md2vf
+      uid: 120f7a29-f2ce-4a6c-bf3a-c6a4b5c57872
+    resourceVersion: "2945"
+    uid: 107b5dbf-bb90-4f55-85e0-e5bb750fdbf2
+  status:
+    action: upgrade
+    automaticCPTolerations: true
+    command:
+    - helm
+    - upgrade
+    - --history-max=5
+    - --install=true
+    - --labels=catalog.cattle.io/cluster-repo-name=rancher-charts
+    - --namespace=cattle-system
+    - --reset-values=true
+    - --timeout=5m0s
+    - --values=/home/shell/helm/values-system-upgrade-controller-108.0.0.yaml
+    - --version=108.0.0
+    - --wait=true
+    - mcc-local-managed-system-upgrade-controller
+    - /home/shell/helm/system-upgrade-controller-108.0.0.tgz
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:48:49Z"
+      status: "False"
+      type: Reconciling
+    - lastUpdateTime: "2025-12-30T21:48:44Z"
+      status: "False"
+      type: Stalled
+    namespace: cattle-system
+    observedGeneration: 1
+    podCreated: true
+    podName: helm-operation-gmkh5
+    podNamespace: cattle-system
+    releaseName: mcc-local-managed-system-upgrade-controller
+    token: 45dg6299z9hf578mxtvxn6xfk6qrcvdwjhgp6ztgmcb66n249d8wkv
+- apiVersion: catalog.cattle.io/v1
+  kind: Operation
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:51Z"
+    generation: 1
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"ed000615-0c64-4d3a-abaf-ff5ca5b3c884"}: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:48:51Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:action: {}
+          f:automaticCPTolerations: {}
+          f:command: {}
+          f:conditions: {}
+          f:namespace: {}
+          f:observedGeneration: {}
+          f:podCreated: {}
+          f:podName: {}
+          f:podNamespace: {}
+          f:releaseName: {}
+          f:token: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:54Z"
+    name: helm-operation-lvb7v
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: pod-impersonation-helm-op-m2nq6
+      uid: ed000615-0c64-4d3a-abaf-ff5ca5b3c884
+    resourceVersion: "3045"
+    uid: 0b7345fa-d3dc-45b0-8433-0520963e0267
+  status:
+    action: upgrade
+    automaticCPTolerations: true
+    command:
+    - helm
+    - upgrade
+    - --history-max=5
+    - --install=true
+    - --labels=catalog.cattle.io/cluster-repo-name=rancher-charts
+    - --namespace=cattle-system
+    - --reset-values=true
+    - --take-ownership=true
+    - --timeout=5m0s
+    - --values=/home/shell/helm/values-rancher-webhook-108.0.1-up0.9.1.yaml
+    - --version=108.0.1+up0.9.1
+    - --wait=true
+    - rancher-webhook
+    - /home/shell/helm/rancher-webhook-108.0.1-up0.9.1.tgz
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:48:54Z"
+      status: "False"
+      type: Reconciling
+    - lastUpdateTime: "2025-12-30T21:48:51Z"
+      status: "False"
+      type: Stalled
+    namespace: cattle-system
+    observedGeneration: 1
+    podCreated: true
+    podName: helm-operation-lvb7v
+    podNamespace: cattle-system
+    releaseName: rancher-webhook
+    token: 9dhsxttnpb2gsb27587x887c5p5rjvgg29t5x92sphx7tr296jwmqc
+- apiVersion: catalog.cattle.io/v1
+  kind: Operation
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:06Z"
+    generation: 1
+    managedFields:
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"0a310196-02ef-449e-9a0f-0fdc0939d29b"}: {}
+      manager: rancher
+      operation: Update
+      time: "2025-12-30T21:48:06Z"
+    - apiVersion: catalog.cattle.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:action: {}
+          f:automaticCPTolerations: {}
+          f:command: {}
+          f:conditions: {}
+          f:namespace: {}
+          f:observedGeneration: {}
+          f:podCreated: {}
+          f:podName: {}
+          f:podNamespace: {}
+          f:releaseName: {}
+          f:token: {}
+      manager: rancher
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:31Z"
+    name: helm-operation-pjtxs
+    namespace: cattle-system
+    ownerReferences:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      name: pod-impersonation-helm-op-699z9
+      uid: 0a310196-02ef-449e-9a0f-0fdc0939d29b
+    resourceVersion: "2456"
+    uid: 1b86cda4-d0f5-457e-ab68-39811541b740
+  status:
+    action: upgrade
+    automaticCPTolerations: true
+    command:
+    - helm
+    - upgrade
+    - --history-max=5
+    - --install=true
+    - --labels=catalog.cattle.io/cluster-repo-name=rancher-charts
+    - --namespace=cattle-system
+    - --reset-values=true
+    - --take-ownership=true
+    - --timeout=5m0s
+    - --values=/home/shell/helm/values-rancher-webhook-108.0.1-up0.9.1.yaml
+    - --version=108.0.1+up0.9.1
+    - --wait=true
+    - rancher-webhook
+    - /home/shell/helm/rancher-webhook-108.0.1-up0.9.1.tgz
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:48:31Z"
+      status: "False"
+      type: Reconciling
+    - lastUpdateTime: "2025-12-30T21:48:06Z"
+      status: "False"
+      type: Stalled
+    namespace: cattle-system
+    observedGeneration: 1
+    podCreated: true
+    podName: helm-operation-pjtxs
+    podNamespace: cattle-system
+    releaseName: rancher-webhook
+    token: 622c59mxzgb77zdtgklmbjvhppv4pgzfdcj8ppbtpnjqlh9bnxdk62
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14473"

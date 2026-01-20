@@ -1,0 +1,12 @@
+2025-12-30T21:48:08.649704432Z helm upgrade --history-max=5 --install=true --labels=catalog.cattle.io/cluster-repo-name=rancher-charts --namespace=cattle-system --reset-values=true --take-ownership=true --timeout=5m0s --values=/home/shell/helm/values-rancher-webhook-108.0.1-up0.9.1.yaml --version=108.0.1+up0.9.1 --wait=true rancher-webhook /home/shell/helm/rancher-webhook-108.0.1-up0.9.1.tgz
+2025-12-30T21:48:08.678692298Z Release "rancher-webhook" does not exist. Installing it now.
+2025-12-30T21:48:30.898381566Z NAME: rancher-webhook
+2025-12-30T21:48:30.898757147Z LAST DEPLOYED: Tue Dec 30 21:48:08 2025
+2025-12-30T21:48:30.898766597Z NAMESPACE: cattle-system
+2025-12-30T21:48:30.898769072Z STATUS: deployed
+2025-12-30T21:48:30.898776456Z REVISION: 1
+2025-12-30T21:48:30.898778591Z TEST SUITE: None
+2025-12-30T21:48:30.901451177Z 
+2025-12-30T21:48:30.901462781Z ---------------------------------------------------------------------
+2025-12-30T21:48:30.903338885Z SUCCESS: helm upgrade --history-max=5 --install=true --labels=catalog.cattle.io/cluster-repo-name=rancher-charts --namespace=cattle-system --reset-values=true --take-ownership=true --timeout=5m0s --values=/home/shell/helm/values-rancher-webhook-108.0.1-up0.9.1.yaml --version=108.0.1+up0.9.1 --wait=true rancher-webhook /home/shell/helm/rancher-webhook-108.0.1-up0.9.1.tgz
+2025-12-30T21:48:30.903547151Z ---------------------------------------------------------------------

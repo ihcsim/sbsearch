@@ -1,0 +1,37 @@
+2025-12-30T21:50:20.645711644Z I1230 21:50:20.644248       1 feature_gate.go:385] feature gates: {map[]}
+2025-12-30T21:50:20.645737670Z I1230 21:50:20.645624       1 csi-provisioner.go:168] "Version" version="v"
+2025-12-30T21:50:20.645740085Z I1230 21:50:20.645635       1 csi-provisioner.go:191] Building kube configs for running in cluster...
+2025-12-30T21:50:20.646604648Z I1230 21:50:20.645863       1 envvar.go:172] "Feature gate default state" feature="ClientsPreferCBOR" enabled=false
+2025-12-30T21:50:20.646612081Z I1230 21:50:20.645876       1 envvar.go:172] "Feature gate default state" feature="InformerResourceVersion" enabled=false
+2025-12-30T21:50:20.646613524Z I1230 21:50:20.645880       1 envvar.go:172] "Feature gate default state" feature="InOrderInformers" enabled=true
+2025-12-30T21:50:20.646614726Z I1230 21:50:20.645883       1 envvar.go:172] "Feature gate default state" feature="WatchListClient" enabled=false
+2025-12-30T21:50:20.646615798Z I1230 21:50:20.645890       1 envvar.go:172] "Feature gate default state" feature="ClientsAllowCBOR" enabled=false
+2025-12-30T21:50:21.649527315Z I1230 21:50:21.649106       1 common.go:143] "Probing CSI driver for readiness"
+2025-12-30T21:50:21.650425571Z I1230 21:50:21.650326       1 csi-provisioner.go:246] Detected CSI driver driver.longhorn.io
+2025-12-30T21:50:21.653321660Z I1230 21:50:21.653092       1 csi-provisioner.go:315] CSI driver supports PUBLISH_UNPUBLISH_VOLUME, watching VolumeAttachments
+2025-12-30T21:50:21.674460802Z I1230 21:50:21.673626       1 csi-provisioner.go:480] using apps/v1/Deployment csi-provisioner as owner of CSIStorageCapacity objects
+2025-12-30T21:50:21.674469166Z I1230 21:50:21.674029       1 nodes.go:205] Started node topology worker
+2025-12-30T21:50:21.683473249Z I1230 21:50:21.679054       1 csi-provisioner.go:545] using the CSIStorageCapacity v1 API
+2025-12-30T21:50:21.684999117Z I1230 21:50:21.683979       1 controller.go:758] "Using saving PVs to API server in background"
+2025-12-30T21:50:21.685003235Z I1230 21:50:21.684199       1 csi-provisioner.go:608] ServeMux listening at ":8000"
+2025-12-30T21:50:21.685004737Z I1230 21:50:21.684383       1 leaderelection.go:257] attempting to acquire leader lease longhorn-system/driver-longhorn-io...
+2025-12-30T21:50:21.693583327Z I1230 21:50:21.690914       1 leaderelection.go:271] successfully acquired lease longhorn-system/driver-longhorn-io
+2025-12-30T21:50:21.693597332Z I1230 21:50:21.691261       1 leader_election.go:194] "became leader, starting"
+2025-12-30T21:50:21.698444019Z I1230 21:50:21.696882       1 reflector.go:430] "Caches populated" type="*v1.StorageClass" reflector="k8s.io/client-go/informers/factory.go:160"
+2025-12-30T21:50:21.698462091Z I1230 21:50:21.697020       1 reflector.go:430] "Caches populated" type="*v1.PersistentVolumeClaim" reflector="k8s.io/client-go/informers/factory.go:160"
+2025-12-30T21:50:21.698464776Z I1230 21:50:21.697578       1 reflector.go:430] "Caches populated" type="*v1.CSINode" reflector="k8s.io/client-go/informers/factory.go:160"
+2025-12-30T21:50:21.698466900Z I1230 21:50:21.697714       1 reflector.go:430] "Caches populated" type="*v1.Node" reflector="k8s.io/client-go/informers/factory.go:160"
+2025-12-30T21:50:21.698469115Z I1230 21:50:21.697954       1 reflector.go:430] "Caches populated" type="*v1.CSIStorageCapacity" reflector="k8s.io/client-go/informers/factory.go:160"
+2025-12-30T21:50:21.698471369Z I1230 21:50:21.698208       1 reflector.go:430] "Caches populated" type="*v1.VolumeAttachment" reflector="k8s.io/client-go/informers/factory.go:160"
+2025-12-30T21:50:21.792642529Z I1230 21:50:21.792061       1 controller.go:838] "Starting provisioner controller" component="driver.longhorn.io_csi-provisioner-b5c5f5cbf-5kzn4_ccf49fd9-4dd1-48b1-bb44-998fd013a093"
+2025-12-30T21:50:21.792658097Z I1230 21:50:21.792106       1 capacity.go:243] Starting Capacity Controller
+2025-12-30T21:50:21.792667614Z I1230 21:50:21.792156       1 capacity.go:255] Started Capacity Controller
+2025-12-30T21:50:21.792669207Z I1230 21:50:21.792180       1 clone_controller.go:66] Starting CloningProtection controller
+2025-12-30T21:50:21.792670289Z I1230 21:50:21.792195       1 clone_controller.go:82] Started CloningProtection controller
+2025-12-30T21:50:21.792671280Z I1230 21:50:21.792081       1 volume_store.go:98] "Starting save volume queue"
+2025-12-30T21:50:21.794074279Z I1230 21:50:21.793923       1 reflector.go:430] "Caches populated" type="*v1.StorageClass" reflector="sigs.k8s.io/sig-storage-lib-external-provisioner/v11/controller/controller.go:875"
+2025-12-30T21:50:21.794078497Z I1230 21:50:21.793923       1 reflector.go:430] "Caches populated" type="*v1.PersistentVolume" reflector="sigs.k8s.io/sig-storage-lib-external-provisioner/v11/controller/controller.go:872"
+2025-12-30T21:50:21.893146494Z I1230 21:50:21.892993       1 controller.go:887] "Started provisioner controller" component="driver.longhorn.io_csi-provisioner-b5c5f5cbf-5kzn4_ccf49fd9-4dd1-48b1-bb44-998fd013a093"
+2025-12-30T21:58:01.344370344Z I1230 21:58:01.344215       1 event.go:389] "Event occurred" object="default/vm-00-disk-0-xx3er" fieldPath="" kind="PersistentVolumeClaim" apiVersion="v1" type="Normal" reason="Provisioning" message="External provisioner is provisioning volume for claim \"default/vm-00-disk-0-xx3er\""
+2025-12-30T21:58:03.360268231Z I1230 21:58:03.360196       1 controller.go:959] successfully created PV pvc-a30f7311-cc82-4e85-89d6-144156fce238 for PVC vm-00-disk-0-xx3er and csi volume name pvc-a30f7311-cc82-4e85-89d6-144156fce238
+2025-12-30T21:58:03.374729383Z I1230 21:58:03.373615       1 event.go:389] "Event occurred" object="default/vm-00-disk-0-xx3er" fieldPath="" kind="PersistentVolumeClaim" apiVersion="v1" type="Normal" reason="ProvisioningSucceeded" message="Successfully provisioned volume pvc-a30f7311-cc82-4e85-89d6-144156fce238"

@@ -1,0 +1,1831 @@
+apiVersion: v1
+items:
+- apiVersion: fleet.cattle.io/v1alpha1
+  kind: BundleDeployment
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:14Z"
+    finalizers:
+    - fleet.cattle.io/bundle-deployment-finalizer
+    generation: 1
+    labels:
+      fleet.cattle.io/bundle-name: fleet-agent-local
+      fleet.cattle.io/bundle-namespace: fleet-local
+      fleet.cattle.io/cluster: local
+      fleet.cattle.io/cluster-namespace: fleet-local
+      fleet.cattle.io/managed: "true"
+    managedFields:
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"fleet.cattle.io/bundle-deployment-finalizer"null: {}
+          f:labels:
+            .: {}
+            f:fleet.cattle.io/bundle-name: {}
+            f:fleet.cattle.io/bundle-namespace: {}
+            f:fleet.cattle.io/cluster: {}
+            f:fleet.cattle.io/cluster-namespace: {}
+            f:fleet.cattle.io/managed: {}
+        f:spec:
+          .: {}
+          f:deploymentID: {}
+          f:options:
+            .: {}
+            f:defaultNamespace: {}
+            f:helm:
+              .: {}
+              f:takeOwnership: {}
+          f:stagedDeploymentID: {}
+          f:stagedOptions:
+            .: {}
+            f:defaultNamespace: {}
+            f:helm:
+              .: {}
+              f:takeOwnership: {}
+      manager: fleetcontroller
+      operation: Update
+      time: "2025-12-30T21:48:14Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:appliedDeploymentID: {}
+          f:conditions: {}
+          f:nonModified: {}
+          f:ready: {}
+          f:release: {}
+          f:resourceCounts:
+            .: {}
+            f:desiredReady: {}
+            f:ready: {}
+          f:resources: {}
+          f:syncGeneration: {}
+      manager: fleetagent
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:20Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:display:
+            .: {}
+            f:deployed: {}
+            f:monitored: {}
+            f:state: {}
+      manager: fleetcontroller
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:48:20Z"
+    name: fleet-agent-local
+    namespace: cluster-fleet-local-local-1a3d67d0a899
+    resourceVersion: "2303"
+    uid: ad7c5f1e-7847-478e-9412-9bedeef987cf
+  spec:
+    deploymentID: s-0655d23745e99f1f769686ef38bdc8bcd3a320a8b5585dad5fbbab3a08a18:8a42b4463e55a59ce2ccdf3c53c32455ce5fd0f601587bf57b5624b3cf8bb623
+    options:
+      defaultNamespace: cattle-fleet-local-system
+      helm:
+        takeOwnership: true
+    stagedDeploymentID: s-0655d23745e99f1f769686ef38bdc8bcd3a320a8b5585dad5fbbab3a08a18:8a42b4463e55a59ce2ccdf3c53c32455ce5fd0f601587bf57b5624b3cf8bb623
+    stagedOptions:
+      defaultNamespace: cattle-fleet-local-system
+      helm:
+        takeOwnership: true
+  status:
+    appliedDeploymentID: s-0655d23745e99f1f769686ef38bdc8bcd3a320a8b5585dad5fbbab3a08a18:8a42b4463e55a59ce2ccdf3c53c32455ce5fd0f601587bf57b5624b3cf8bb623
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:48:20Z"
+      status: "True"
+      type: Installed
+    - lastUpdateTime: "2025-12-30T21:48:20Z"
+      status: "True"
+      type: Deployed
+    - lastUpdateTime: "2025-12-30T21:48:20Z"
+      status: "True"
+      type: Ready
+    - lastUpdateTime: "2025-12-30T21:48:20Z"
+      status: "True"
+      type: Monitored
+    display:
+      deployed: "True"
+      monitored: "True"
+      state: Ready
+    nonModified: true
+    ready: true
+    release: cattle-fleet-local-system/fleet-agent-local:1
+    resourceCounts:
+      desiredReady: 6
+      ready: 6
+    resources:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:48:14Z"
+      kind: ClusterRole
+      name: cattle-fleet-local-system-fleet-agent-role
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:48:14Z"
+      kind: ClusterRoleBinding
+      name: cattle-fleet-local-system-fleet-agent-role-binding
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:48:14Z"
+      kind: ServiceAccount
+      name: default
+      namespace: cattle-fleet-local-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:48:14Z"
+      kind: ServiceAccount
+      name: fleet-agent
+      namespace: cattle-fleet-local-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:48:14Z"
+      kind: Deployment
+      name: fleet-agent
+      namespace: cattle-fleet-local-system
+    - apiVersion: networking.k8s.io/v1
+      createdAt: "2025-12-30T21:48:14Z"
+      kind: NetworkPolicy
+      name: default-allow-all
+      namespace: cattle-fleet-local-system
+    syncGeneration: 0
+- apiVersion: fleet.cattle.io/v1alpha1
+  kind: BundleDeployment
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:16Z"
+    finalizers:
+    - fleet.cattle.io/bundle-deployment-finalizer
+    generation: 1
+    labels:
+      fleet.cattle.io/bundle-name: mcc-harvester
+      fleet.cattle.io/bundle-namespace: fleet-local
+      fleet.cattle.io/cluster: local
+      fleet.cattle.io/cluster-namespace: fleet-local
+      fleet.cattle.io/managed: "true"
+    managedFields:
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"fleet.cattle.io/bundle-deployment-finalizer"null: {}
+          f:labels:
+            .: {}
+            f:fleet.cattle.io/bundle-name: {}
+            f:fleet.cattle.io/bundle-namespace: {}
+            f:fleet.cattle.io/cluster: {}
+            f:fleet.cattle.io/cluster-namespace: {}
+            f:fleet.cattle.io/managed: {}
+        f:spec:
+          .: {}
+          f:deploymentID: {}
+          f:options:
+            .: {}
+            f:defaultNamespace: {}
+            f:diff:
+              .: {}
+              f:comparePatches: {}
+            f:helm:
+              .: {}
+              f:releaseName: {}
+              f:timeoutSeconds: {}
+              f:version: {}
+          f:stagedDeploymentID: {}
+          f:stagedOptions:
+            .: {}
+            f:defaultNamespace: {}
+            f:diff:
+              .: {}
+              f:comparePatches: {}
+            f:helm:
+              .: {}
+              f:releaseName: {}
+              f:timeoutSeconds: {}
+              f:version: {}
+          f:valuesHash: {}
+      manager: fleetcontroller
+      operation: Update
+      time: "2025-12-30T21:49:16Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:appliedDeploymentID: {}
+          f:conditions: {}
+          f:nonModified: {}
+          f:ready: {}
+          f:release: {}
+          f:resourceCounts:
+            .: {}
+            f:desiredReady: {}
+            f:notReady: {}
+            f:ready: {}
+          f:resources: {}
+          f:syncGeneration: {}
+      manager: fleetagent
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:51:30Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:display:
+            .: {}
+            f:deployed: {}
+            f:monitored: {}
+            f:state: {}
+      manager: fleetcontroller
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:51:30Z"
+    name: mcc-harvester
+    namespace: cluster-fleet-local-local-1a3d67d0a899
+    resourceVersion: "7500"
+    uid: de808d22-6a8c-45e2-8800-1324aa2a1a4a
+  spec:
+    deploymentID: s-46083697aa39619df0cb7899c23d22d5eaf962f52b8880bcb2aa80809210e:b54c981e87eddd4949ef2fb08828c8967a40f99ec3e98a58a3ed6c17f9a7d2ae
+    options:
+      defaultNamespace: harvester-system
+      diff:
+        comparePatches:
+        - apiVersion: storage.k8s.io/v1
+          jsonPointers:
+          - /metadata/annotations
+          kind: StorageClass
+          name: harvester-longhorn
+        - apiVersion: apiextensions.k8s.io/v1
+          jsonPointers:
+          - /status/acceptedNames
+          - /status/conditions
+          - /status/storedVersions
+          kind: CustomResourceDefinition
+          name: engineimages.longhorn.io
+        - apiVersion: apiextensions.k8s.io/v1
+          jsonPointers:
+          - /status/acceptedNames
+          - /status/conditions
+          - /status/storedVersions
+          kind: CustomResourceDefinition
+          name: nodes.longhorn.io
+        - apiVersion: apiextensions.k8s.io/v1
+          jsonPointers:
+          - /status/acceptedNames
+          - /status/conditions
+          - /status/storedVersions
+          kind: CustomResourceDefinition
+          name: volumes.longhorn.io
+        - apiVersion: apiextensions.k8s.io/v1
+          jsonPointers:
+          - /status/acceptedNames
+          - /status/conditions
+          - /status/storedVersions
+          kind: CustomResourceDefinition
+          name: settings.longhorn.io
+        - apiVersion: apiextensions.k8s.io/v1
+          jsonPointers:
+          - /status/acceptedNames
+          - /status/conditions
+          - /status/storedVersions
+          kind: CustomResourceDefinition
+          name: replicas.longhorn.io
+        - apiVersion: apiextensions.k8s.io/v1
+          jsonPointers:
+          - /status/acceptedNames
+          - /status/conditions
+          - /status/storedVersions
+          kind: CustomResourceDefinition
+          name: instancemanagers.longhorn.io
+        - apiVersion: apiextensions.k8s.io/v1
+          jsonPointers:
+          - /status/acceptedNames
+          - /status/conditions
+          - /status/storedVersions
+          kind: CustomResourceDefinition
+          name: engines.longhorn.io
+      helm:
+        releaseName: harvester
+        timeoutSeconds: 600
+        version: 1.7.0
+    stagedDeploymentID: s-46083697aa39619df0cb7899c23d22d5eaf962f52b8880bcb2aa80809210e:b54c981e87eddd4949ef2fb08828c8967a40f99ec3e98a58a3ed6c17f9a7d2ae
+    stagedOptions:
+      defaultNamespace: harvester-system
+      diff:
+        comparePatches:
+        - apiVersion: storage.k8s.io/v1
+          jsonPointers:
+          - /metadata/annotations
+          kind: StorageClass
+          name: harvester-longhorn
+        - apiVersion: apiextensions.k8s.io/v1
+          jsonPointers:
+          - /status/acceptedNames
+          - /status/conditions
+          - /status/storedVersions
+          kind: CustomResourceDefinition
+          name: engineimages.longhorn.io
+        - apiVersion: apiextensions.k8s.io/v1
+          jsonPointers:
+          - /status/acceptedNames
+          - /status/conditions
+          - /status/storedVersions
+          kind: CustomResourceDefinition
+          name: nodes.longhorn.io
+        - apiVersion: apiextensions.k8s.io/v1
+          jsonPointers:
+          - /status/acceptedNames
+          - /status/conditions
+          - /status/storedVersions
+          kind: CustomResourceDefinition
+          name: volumes.longhorn.io
+        - apiVersion: apiextensions.k8s.io/v1
+          jsonPointers:
+          - /status/acceptedNames
+          - /status/conditions
+          - /status/storedVersions
+          kind: CustomResourceDefinition
+          name: settings.longhorn.io
+        - apiVersion: apiextensions.k8s.io/v1
+          jsonPointers:
+          - /status/acceptedNames
+          - /status/conditions
+          - /status/storedVersions
+          kind: CustomResourceDefinition
+          name: replicas.longhorn.io
+        - apiVersion: apiextensions.k8s.io/v1
+          jsonPointers:
+          - /status/acceptedNames
+          - /status/conditions
+          - /status/storedVersions
+          kind: CustomResourceDefinition
+          name: instancemanagers.longhorn.io
+        - apiVersion: apiextensions.k8s.io/v1
+          jsonPointers:
+          - /status/acceptedNames
+          - /status/conditions
+          - /status/storedVersions
+          kind: CustomResourceDefinition
+          name: engines.longhorn.io
+      helm:
+        releaseName: harvester
+        timeoutSeconds: 600
+        version: 1.7.0
+    valuesHash: c2b27fbdd14b8c9fbef47dc2ef59d6c112039d0d1424ea2ed4566cc66d369347
+  status:
+    appliedDeploymentID: s-46083697aa39619df0cb7899c23d22d5eaf962f52b8880bcb2aa80809210e:b54c981e87eddd4949ef2fb08828c8967a40f99ec3e98a58a3ed6c17f9a7d2ae
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:49:51Z"
+      status: "True"
+      type: Deployed
+    - lastUpdateTime: "2025-12-30T21:49:51Z"
+      status: "True"
+      type: Installed
+    - lastUpdateTime: "2025-12-30T21:51:30Z"
+      status: "True"
+      type: Ready
+    - lastUpdateTime: "2025-12-30T21:49:51Z"
+      status: "True"
+      type: Monitored
+    display:
+      deployed: "True"
+      monitored: "True"
+      state: Ready
+    nonModified: true
+    ready: true
+    release: harvester-system/harvester:1
+    resourceCounts:
+      desiredReady: 161
+      notReady: 0
+      ready: 161
+    resources:
+    - apiVersion: scheduling.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: PriorityClass
+      name: kubevirt-cluster-critical
+    - apiVersion: scheduling.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: PriorityClass
+      name: longhorn-critical
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Namespace
+      name: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: NetworkPolicy
+      name: backing-image-data-source
+      namespace: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: NetworkPolicy
+      name: backing-image-manager
+      namespace: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: NetworkPolicy
+      name: cattle-monitoring-prometheus
+      namespace: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: NetworkPolicy
+      name: harvester
+      namespace: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: NetworkPolicy
+      name: instance-manager
+      namespace: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: NetworkPolicy
+      name: longhorn-admission-webhook
+      namespace: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: NetworkPolicy
+      name: longhorn-conversion-webhook
+      namespace: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: NetworkPolicy
+      name: longhorn-manager
+      namespace: longhorn-system
+    - apiVersion: networking.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: NetworkPolicy
+      name: longhorn-recovery-backend
+      namespace: longhorn-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: cdi-operator
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: harvester
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: harvester-load-balancer
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: harvester-load-balancer-webhook
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: harvester-network-controller
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: harvester-network-helper
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: harvester-network-webhook
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: harvester-networkfs-manager
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: harvester-node-disk-manager
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: harvester-node-disk-manager-webhook
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: harvester-node-manager
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: harvester-node-manager-webhook
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: kube-vip
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: kubevirt-operator
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: harvester-whereabouts
+      namespace: kube-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: snapshot-controller
+      namespace: kube-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: longhorn-service-account
+      namespace: longhorn-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: longhorn-support-bundle
+      namespace: longhorn-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceAccount
+      name: longhorn-ui-service-account
+      namespace: longhorn-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ConfigMap
+      name: harvester-helpers
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ConfigMap
+      name: vip
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ConfigMap
+      name: whereabouts-config
+      namespace: kube-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ConfigMap
+      name: longhorn-default-resource
+      namespace: longhorn-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ConfigMap
+      name: longhorn-default-setting
+      namespace: longhorn-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ConfigMap
+      name: longhorn-storageclass
+      namespace: longhorn-system
+    - apiVersion: storage.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: StorageClass
+      name: harvester-longhorn
+    - apiVersion: storage.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: StorageClass
+      name: vmstate-persistence
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: backingimagedatasources.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: backingimagemanagers.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: backingimages.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: backupbackingimages.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: backups.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: backuptargets.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: backupvolumes.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: blockdevices.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: cloudinits.node.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: clusternetworks.network.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: engineimages.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: engines.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: hugepages.node.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: instancemanagers.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: ippools.loadbalancer.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: ksmtuneds.node.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: linkmonitors.network.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: loadbalancers.loadbalancer.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: lvmvolumegroups.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: networkfilesystems.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: nodeconfigs.node.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: nodes.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: orphans.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: recurringjobs.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: replicas.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: settings.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: sharemanagers.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: snapshots.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: supportbundles.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: systembackups.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: systemrestores.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: vlanconfigs.network.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: vlanstatuses.network.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: volumeattachments.longhorn.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CustomResourceDefinition
+      name: volumes.longhorn.io
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: cdi-operator-cluster
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: harvester-load-balancer
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: harvester-load-balancer-webhook
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: harvester-network-controller
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: harvester-network-helper
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: harvester-network-webhook
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: harvester-networkfs-manager
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: harvester-node-disk-manager
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: harvester-node-disk-manager-webhook
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: harvester-node-manager
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: harvester-node-manager-webhook
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: harvester-whereabouts
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: harvesterhci.io:cloudprovider
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: harvesterhci.io:csi-driver
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: harvesterhci.io:edit
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: harvesterhci.io:view
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: kube-vip
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: kubevirt-operator
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: kubevirt.io:operator
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: longhorn-role
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRole
+      name: snapshot-controller-runner
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: cdi-operator
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: harvester
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: harvester-load-balancer
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: harvester-load-balancer-webhook
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: harvester-network-controller
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: harvester-network-helper
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: harvester-network-webhook
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: harvester-networkfs-manager
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: harvester-node-disk-manager
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: harvester-node-disk-manager-webhook
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: harvester-node-manager
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: harvester-node-manager-webhook
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: harvester-whereabouts
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: kube-vip
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: kubevirt-operator
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: longhorn-bind
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: longhorn-support-bundle
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ClusterRoleBinding
+      name: snapshot-controller-role
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Role
+      name: cdi-operator
+      namespace: harvester-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Role
+      name: kubevirt-operator
+      namespace: harvester-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Role
+      name: snapshot-controller-leaderelection
+      namespace: kube-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Role
+      name: longhorn
+      namespace: longhorn-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: RoleBinding
+      name: cdi-operator
+      namespace: harvester-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: RoleBinding
+      name: kubevirt-operator-rolebinding
+      namespace: harvester-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: RoleBinding
+      name: snapshot-controller-leaderelection
+      namespace: kube-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: RoleBinding
+      name: longhorn
+      namespace: longhorn-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Service
+      name: harvester
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Service
+      name: harvester-load-balancer-webhook
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Service
+      name: harvester-network-webhook
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Service
+      name: harvester-node-disk-manager-webhook
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Service
+      name: harvester-node-manager-webhook
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Service
+      name: harvester-webhook
+      namespace: harvester-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Service
+      name: longhorn-admission-webhook
+      namespace: longhorn-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Service
+      name: longhorn-backend
+      namespace: longhorn-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Service
+      name: longhorn-frontend
+      namespace: longhorn-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Service
+      name: longhorn-recovery-backend
+      namespace: longhorn-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: DaemonSet
+      name: harvester-network-controller
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: DaemonSet
+      name: harvester-networkfs-manager
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: DaemonSet
+      name: harvester-node-disk-manager
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: DaemonSet
+      name: harvester-node-manager
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: DaemonSet
+      name: kube-vip
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: DaemonSet
+      name: harvester-whereabouts
+      namespace: kube-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: DaemonSet
+      name: longhorn-manager
+      namespace: longhorn-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Deployment
+      name: cdi-operator
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Deployment
+      name: harvester
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Deployment
+      name: harvester-load-balancer
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Deployment
+      name: harvester-load-balancer-webhook
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Deployment
+      name: harvester-network-controller-manager
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Deployment
+      name: harvester-network-webhook
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Deployment
+      name: harvester-node-disk-manager-webhook
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Deployment
+      name: harvester-node-manager-webhook
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Deployment
+      name: harvester-webhook
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Deployment
+      name: virt-operator
+      namespace: harvester-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Deployment
+      name: snapshot-controller
+      namespace: kube-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Deployment
+      name: whereabouts-controller
+      namespace: kube-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Deployment
+      name: longhorn-driver-deployer
+      namespace: longhorn-system
+    - apiVersion: apps/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Deployment
+      name: longhorn-ui
+      namespace: longhorn-system
+    - apiVersion: cdi.kubevirt.io/v1beta1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: CDI
+      name: cdi
+    - apiVersion: kubevirt.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: KubeVirt
+      name: kubevirt
+      namespace: harvester-system
+    - apiVersion: upgrade.cattle.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: Plan
+      name: sync-additional-ca
+      namespace: cattle-system
+    - apiVersion: monitoring.coreos.com/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: PrometheusRule
+      name: prometheus-longhorn-rules
+      namespace: longhorn-system
+    - apiVersion: monitoring.coreos.com/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ServiceMonitor
+      name: longhorn-prometheus-servicemonitor
+      namespace: longhorn-system
+    - apiVersion: admissionregistration.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ValidatingAdmissionPolicy
+      name: harvester-immutable-promote-cidr
+    - apiVersion: admissionregistration.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: ValidatingAdmissionPolicyBinding
+      name: harvester-immutable-promote-cidr
+    - apiVersion: snapshot.storage.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: VolumeSnapshotClass
+      name: longhorn
+    - apiVersion: snapshot.storage.k8s.io/v1
+      createdAt: "2025-12-30T21:49:31Z"
+      kind: VolumeSnapshotClass
+      name: longhorn-snapshot
+    syncGeneration: 0
+- apiVersion: fleet.cattle.io/v1alpha1
+  kind: BundleDeployment
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:16Z"
+    finalizers:
+    - fleet.cattle.io/bundle-deployment-finalizer
+    generation: 1
+    labels:
+      fleet.cattle.io/bundle-name: mcc-harvester-crd
+      fleet.cattle.io/bundle-namespace: fleet-local
+      fleet.cattle.io/cluster: local
+      fleet.cattle.io/cluster-namespace: fleet-local
+      fleet.cattle.io/managed: "true"
+    managedFields:
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"fleet.cattle.io/bundle-deployment-finalizer"null: {}
+          f:labels:
+            .: {}
+            f:fleet.cattle.io/bundle-name: {}
+            f:fleet.cattle.io/bundle-namespace: {}
+            f:fleet.cattle.io/cluster: {}
+            f:fleet.cattle.io/cluster-namespace: {}
+            f:fleet.cattle.io/managed: {}
+        f:spec:
+          .: {}
+          f:deploymentID: {}
+          f:options:
+            .: {}
+            f:defaultNamespace: {}
+            f:helm:
+              .: {}
+              f:releaseName: {}
+              f:takeOwnership: {}
+              f:timeoutSeconds: {}
+              f:version: {}
+          f:stagedDeploymentID: {}
+          f:stagedOptions:
+            .: {}
+            f:defaultNamespace: {}
+            f:helm:
+              .: {}
+              f:releaseName: {}
+              f:takeOwnership: {}
+              f:timeoutSeconds: {}
+              f:version: {}
+      manager: fleetcontroller
+      operation: Update
+      time: "2025-12-30T21:49:16Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:appliedDeploymentID: {}
+          f:conditions: {}
+          f:nonModified: {}
+          f:ready: {}
+          f:release: {}
+          f:resourceCounts:
+            .: {}
+            f:desiredReady: {}
+            f:ready: {}
+          f:resources: {}
+          f:syncGeneration: {}
+      manager: fleetagent
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:49:21Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:display:
+            .: {}
+            f:deployed: {}
+            f:monitored: {}
+            f:state: {}
+      manager: fleetcontroller
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:49:21Z"
+    name: mcc-harvester-crd
+    namespace: cluster-fleet-local-local-1a3d67d0a899
+    resourceVersion: "3456"
+    uid: cbe8d7d1-7af1-42b5-af8e-14ba83069cc5
+  spec:
+    deploymentID: s-7e9d742c54a33870d0fbe1b796b741ec78013f8b44f3e30522e40966a7720:fe651317ba515159029adf9acf01b37a66a8a75603ebda1ddd3cdbe81617869b
+    options:
+      defaultNamespace: harvester-system
+      helm:
+        releaseName: harvester-crd
+        takeOwnership: true
+        timeoutSeconds: 600
+        version: 1.7.0
+    stagedDeploymentID: s-7e9d742c54a33870d0fbe1b796b741ec78013f8b44f3e30522e40966a7720:fe651317ba515159029adf9acf01b37a66a8a75603ebda1ddd3cdbe81617869b
+    stagedOptions:
+      defaultNamespace: harvester-system
+      helm:
+        releaseName: harvester-crd
+        takeOwnership: true
+        timeoutSeconds: 600
+        version: 1.7.0
+  status:
+    appliedDeploymentID: s-7e9d742c54a33870d0fbe1b796b741ec78013f8b44f3e30522e40966a7720:fe651317ba515159029adf9acf01b37a66a8a75603ebda1ddd3cdbe81617869b
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:49:21Z"
+      status: "True"
+      type: Installed
+    - lastUpdateTime: "2025-12-30T21:49:21Z"
+      status: "True"
+      type: Deployed
+    - lastUpdateTime: "2025-12-30T21:49:21Z"
+      status: "True"
+      type: Ready
+    - lastUpdateTime: "2025-12-30T21:49:21Z"
+      status: "True"
+      type: Monitored
+    display:
+      deployed: "True"
+      monitored: "True"
+      state: Ready
+    nonModified: true
+    ready: true
+    release: harvester-system/harvester-crd:1
+    resourceCounts:
+      desiredReady: 23
+      ready: 23
+    resources:
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: addons.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: ippools.whereabouts.cni.cncf.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: keypairs.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: kubevirts.kubevirt.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: nodeslicepools.whereabouts.cni.cncf.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: overlappingrangeipreservations.whereabouts.cni.cncf.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: preferences.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: resourcequotas.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: schedulevmbackups.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: settings.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: supportbundles.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: upgradelogs.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: upgrades.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: versions.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: virtualmachinebackups.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: virtualmachineimagedownloaders.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: virtualmachineimages.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: virtualmachinerestores.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: virtualmachinetemplates.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: virtualmachinetemplateversions.harvesterhci.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: volumesnapshotclasses.snapshot.storage.k8s.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: volumesnapshotcontents.snapshot.storage.k8s.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:18Z"
+      kind: CustomResourceDefinition
+      name: volumesnapshots.snapshot.storage.k8s.io
+    syncGeneration: 0
+- apiVersion: fleet.cattle.io/v1alpha1
+  kind: BundleDeployment
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:16Z"
+    finalizers:
+    - fleet.cattle.io/bundle-deployment-finalizer
+    generation: 1
+    labels:
+      fleet.cattle.io/bundle-name: mcc-kubeovn-operator-crd
+      fleet.cattle.io/bundle-namespace: fleet-local
+      fleet.cattle.io/cluster: local
+      fleet.cattle.io/cluster-namespace: fleet-local
+      fleet.cattle.io/managed: "true"
+    managedFields:
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"fleet.cattle.io/bundle-deployment-finalizer"null: {}
+          f:labels:
+            .: {}
+            f:fleet.cattle.io/bundle-name: {}
+            f:fleet.cattle.io/bundle-namespace: {}
+            f:fleet.cattle.io/cluster: {}
+            f:fleet.cattle.io/cluster-namespace: {}
+            f:fleet.cattle.io/managed: {}
+        f:spec:
+          .: {}
+          f:deploymentID: {}
+          f:options:
+            .: {}
+            f:defaultNamespace: {}
+            f:helm:
+              .: {}
+              f:releaseName: {}
+              f:timeoutSeconds: {}
+              f:version: {}
+          f:stagedDeploymentID: {}
+          f:stagedOptions:
+            .: {}
+            f:defaultNamespace: {}
+            f:helm:
+              .: {}
+              f:releaseName: {}
+              f:timeoutSeconds: {}
+              f:version: {}
+      manager: fleetcontroller
+      operation: Update
+      time: "2025-12-30T21:49:16Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:appliedDeploymentID: {}
+          f:conditions: {}
+          f:nonModified: {}
+          f:ready: {}
+          f:release: {}
+          f:resourceCounts:
+            .: {}
+            f:desiredReady: {}
+            f:ready: {}
+          f:resources: {}
+          f:syncGeneration: {}
+      manager: fleetagent
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:49:17Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:display:
+            .: {}
+            f:deployed: {}
+            f:monitored: {}
+            f:state: {}
+      manager: fleetcontroller
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:49:17Z"
+    name: mcc-kubeovn-operator-crd
+    namespace: cluster-fleet-local-local-1a3d67d0a899
+    resourceVersion: "3266"
+    uid: fb8c2f61-9f32-449d-b446-9b084d276c98
+  spec:
+    deploymentID: s-bdef11785d4b19caa0f899427a89d621f25b10b56039deeedd4f8b84ce4e8:124f3dad51341a9164cdad92c71552800d94ae1d9703ffc46a74dcbf9362a18d
+    options:
+      defaultNamespace: kube-system
+      helm:
+        releaseName: kubeovn-operator-crd
+        timeoutSeconds: 600
+        version: 1.14.10-dev.1
+    stagedDeploymentID: s-bdef11785d4b19caa0f899427a89d621f25b10b56039deeedd4f8b84ce4e8:124f3dad51341a9164cdad92c71552800d94ae1d9703ffc46a74dcbf9362a18d
+    stagedOptions:
+      defaultNamespace: kube-system
+      helm:
+        releaseName: kubeovn-operator-crd
+        timeoutSeconds: 600
+        version: 1.14.10-dev.1
+  status:
+    appliedDeploymentID: s-bdef11785d4b19caa0f899427a89d621f25b10b56039deeedd4f8b84ce4e8:124f3dad51341a9164cdad92c71552800d94ae1d9703ffc46a74dcbf9362a18d
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:49:16Z"
+      status: "True"
+      type: Installed
+    - lastUpdateTime: "2025-12-30T21:49:16Z"
+      status: "True"
+      type: Deployed
+    - lastUpdateTime: "2025-12-30T21:49:16Z"
+      status: "True"
+      type: Ready
+    - lastUpdateTime: "2025-12-30T21:49:16Z"
+      status: "True"
+      type: Monitored
+    display:
+      deployed: "True"
+      monitored: "True"
+      state: Ready
+    nonModified: true
+    ready: true
+    release: kube-system/kubeovn-operator-crd:1
+    resourceCounts:
+      desiredReady: 1
+      ready: 1
+    resources:
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:16Z"
+      kind: CustomResourceDefinition
+      name: configurations.kubeovn.io
+    syncGeneration: 0
+- apiVersion: fleet.cattle.io/v1alpha1
+  kind: BundleDeployment
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:16Z"
+    finalizers:
+    - fleet.cattle.io/bundle-deployment-finalizer
+    generation: 1
+    labels:
+      fleet.cattle.io/bundle-name: mcc-rancher-logging-crd
+      fleet.cattle.io/bundle-namespace: fleet-local
+      fleet.cattle.io/cluster: local
+      fleet.cattle.io/cluster-namespace: fleet-local
+      fleet.cattle.io/managed: "true"
+    managedFields:
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"fleet.cattle.io/bundle-deployment-finalizer"null: {}
+          f:labels:
+            .: {}
+            f:fleet.cattle.io/bundle-name: {}
+            f:fleet.cattle.io/bundle-namespace: {}
+            f:fleet.cattle.io/cluster: {}
+            f:fleet.cattle.io/cluster-namespace: {}
+            f:fleet.cattle.io/managed: {}
+        f:spec:
+          .: {}
+          f:deploymentID: {}
+          f:options:
+            .: {}
+            f:defaultNamespace: {}
+            f:helm:
+              .: {}
+              f:releaseName: {}
+              f:timeoutSeconds: {}
+              f:version: {}
+          f:stagedDeploymentID: {}
+          f:stagedOptions:
+            .: {}
+            f:defaultNamespace: {}
+            f:helm:
+              .: {}
+              f:releaseName: {}
+              f:timeoutSeconds: {}
+              f:version: {}
+      manager: fleetcontroller
+      operation: Update
+      time: "2025-12-30T21:49:16Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:appliedDeploymentID: {}
+          f:conditions: {}
+          f:nonModified: {}
+          f:ready: {}
+          f:release: {}
+          f:resourceCounts:
+            .: {}
+            f:desiredReady: {}
+            f:ready: {}
+          f:resources: {}
+          f:syncGeneration: {}
+      manager: fleetagent
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:49:26Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:display:
+            .: {}
+            f:deployed: {}
+            f:monitored: {}
+            f:state: {}
+      manager: fleetcontroller
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:49:26Z"
+    name: mcc-rancher-logging-crd
+    namespace: cluster-fleet-local-local-1a3d67d0a899
+    resourceVersion: "3537"
+    uid: a618836a-8503-48a3-874c-753fb10cb82c
+  spec:
+    deploymentID: s-b936844cc6d2d97e1ac5960d1494531e7ed38fbfac6383c7564987f2b3796:f7836a6c77d806cef01ecc7e3210d78733b2de41b21d6882425427d5ff9f42ac
+    options:
+      defaultNamespace: cattle-logging-system
+      helm:
+        releaseName: rancher-logging-crd
+        timeoutSeconds: 600
+        version: 107.0.1+up4.10.0-rancher.10
+    stagedDeploymentID: s-b936844cc6d2d97e1ac5960d1494531e7ed38fbfac6383c7564987f2b3796:f7836a6c77d806cef01ecc7e3210d78733b2de41b21d6882425427d5ff9f42ac
+    stagedOptions:
+      defaultNamespace: cattle-logging-system
+      helm:
+        releaseName: rancher-logging-crd
+        timeoutSeconds: 600
+        version: 107.0.1+up4.10.0-rancher.10
+  status:
+    appliedDeploymentID: s-b936844cc6d2d97e1ac5960d1494531e7ed38fbfac6383c7564987f2b3796:f7836a6c77d806cef01ecc7e3210d78733b2de41b21d6882425427d5ff9f42ac
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:49:24Z"
+      status: "True"
+      type: Installed
+    - lastUpdateTime: "2025-12-30T21:49:24Z"
+      status: "True"
+      type: Deployed
+    - lastUpdateTime: "2025-12-30T21:49:25Z"
+      status: "True"
+      type: Ready
+    - lastUpdateTime: "2025-12-30T21:49:25Z"
+      status: "True"
+      type: Monitored
+    display:
+      deployed: "True"
+      monitored: "True"
+      state: Ready
+    nonModified: true
+    ready: true
+    release: cattle-logging-system/rancher-logging-crd:1
+    resourceCounts:
+      desiredReady: 16
+      ready: 16
+    resources:
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:20Z"
+      kind: CustomResourceDefinition
+      name: clusterflows.logging.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:20Z"
+      kind: CustomResourceDefinition
+      name: clusteroutputs.logging.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:20Z"
+      kind: CustomResourceDefinition
+      name: eventtailers.logging-extensions.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:20Z"
+      kind: CustomResourceDefinition
+      name: flows.logging.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:20Z"
+      kind: CustomResourceDefinition
+      name: fluentbitagents.logging.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:20Z"
+      kind: CustomResourceDefinition
+      name: fluentdconfigs.logging.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:20Z"
+      kind: CustomResourceDefinition
+      name: hosttailers.logging-extensions.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:19Z"
+      kind: CustomResourceDefinition
+      name: loggingroutes.logging.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:20Z"
+      kind: CustomResourceDefinition
+      name: loggings.logging.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:20Z"
+      kind: CustomResourceDefinition
+      name: nodeagents.logging.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:20Z"
+      kind: CustomResourceDefinition
+      name: outputs.logging.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:19Z"
+      kind: CustomResourceDefinition
+      name: syslogngclusterflows.logging.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:20Z"
+      kind: CustomResourceDefinition
+      name: syslogngclusteroutputs.logging.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:20Z"
+      kind: CustomResourceDefinition
+      name: syslogngconfigs.logging.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:20Z"
+      kind: CustomResourceDefinition
+      name: syslogngflows.logging.banzaicloud.io
+    - apiVersion: apiextensions.k8s.io/v1
+      createdAt: "2025-12-30T21:49:20Z"
+      kind: CustomResourceDefinition
+      name: syslogngoutputs.logging.banzaicloud.io
+    syncGeneration: 0
+- apiVersion: fleet.cattle.io/v1alpha1
+  kind: BundleDeployment
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:16Z"
+    finalizers:
+    - fleet.cattle.io/bundle-deployment-finalizer
+    generation: 1
+    labels:
+      fleet.cattle.io/bundle-name: mcc-rancher-monitoring-crd
+      fleet.cattle.io/bundle-namespace: fleet-local
+      fleet.cattle.io/cluster: local
+      fleet.cattle.io/cluster-namespace: fleet-local
+      fleet.cattle.io/managed: "true"
+    managedFields:
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"fleet.cattle.io/bundle-deployment-finalizer"null: {}
+          f:labels:
+            .: {}
+            f:fleet.cattle.io/bundle-name: {}
+            f:fleet.cattle.io/bundle-namespace: {}
+            f:fleet.cattle.io/cluster: {}
+            f:fleet.cattle.io/cluster-namespace: {}
+            f:fleet.cattle.io/managed: {}
+        f:spec:
+          .: {}
+          f:deploymentID: {}
+          f:options:
+            .: {}
+            f:defaultNamespace: {}
+            f:helm:
+              .: {}
+              f:releaseName: {}
+              f:timeoutSeconds: {}
+              f:version: {}
+          f:stagedDeploymentID: {}
+          f:stagedOptions:
+            .: {}
+            f:defaultNamespace: {}
+            f:helm:
+              .: {}
+              f:releaseName: {}
+              f:timeoutSeconds: {}
+              f:version: {}
+      manager: fleetcontroller
+      operation: Update
+      time: "2025-12-30T21:49:16Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:appliedDeploymentID: {}
+          f:conditions: {}
+          f:nonModified: {}
+          f:ready: {}
+          f:release: {}
+          f:resourceCounts:
+            .: {}
+            f:desiredReady: {}
+            f:ready: {}
+          f:resources: {}
+          f:syncGeneration: {}
+      manager: fleetagent
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:49:27Z"
+    - apiVersion: fleet.cattle.io/v1alpha1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          .: {}
+          f:display:
+            .: {}
+            f:deployed: {}
+            f:monitored: {}
+            f:state: {}
+      manager: fleetcontroller
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:49:27Z"
+    name: mcc-rancher-monitoring-crd
+    namespace: cluster-fleet-local-local-1a3d67d0a899
+    resourceVersion: "3573"
+    uid: c788d0c2-19a6-4750-b741-fc395c2e2a2d
+  spec:
+    deploymentID: s-ce9116b6bd130f51130f8b644dc9831619c56e588b7d142f024cd3485eca3:ef1c764a3c6d705b421e914d192966fa1c04d78bc6b5c1eeb9d01a758fed781d
+    options:
+      defaultNamespace: cattle-monitoring-system
+      helm:
+        releaseName: rancher-monitoring-crd
+        timeoutSeconds: 600
+        version: 107.1.0+up69.8.2-rancher.15
+    stagedDeploymentID: s-ce9116b6bd130f51130f8b644dc9831619c56e588b7d142f024cd3485eca3:ef1c764a3c6d705b421e914d192966fa1c04d78bc6b5c1eeb9d01a758fed781d
+    stagedOptions:
+      defaultNamespace: cattle-monitoring-system
+      helm:
+        releaseName: rancher-monitoring-crd
+        timeoutSeconds: 600
+        version: 107.1.0+up69.8.2-rancher.15
+  status:
+    appliedDeploymentID: s-ce9116b6bd130f51130f8b644dc9831619c56e588b7d142f024cd3485eca3:ef1c764a3c6d705b421e914d192966fa1c04d78bc6b5c1eeb9d01a758fed781d
+    conditions:
+    - lastUpdateTime: "2025-12-30T21:49:27Z"
+      status: "True"
+      type: Installed
+    - lastUpdateTime: "2025-12-30T21:49:27Z"
+      status: "True"
+      type: Deployed
+    - lastUpdateTime: "2025-12-30T21:49:27Z"
+      status: "True"
+      type: Ready
+    - lastUpdateTime: "2025-12-30T21:49:27Z"
+      status: "True"
+      type: Monitored
+    display:
+      deployed: "True"
+      monitored: "True"
+      state: Ready
+    nonModified: true
+    ready: true
+    release: cattle-monitoring-system/rancher-monitoring-crd:1
+    resourceCounts:
+      desiredReady: 4
+      ready: 4
+    resources:
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:17Z"
+      kind: ServiceAccount
+      name: rancher-monitoring-crd-manager
+      namespace: cattle-monitoring-system
+    - apiVersion: v1
+      createdAt: "2025-12-30T21:49:17Z"
+      kind: ConfigMap
+      name: rancher-monitoring-crd-manifest
+      namespace: cattle-monitoring-system
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:17Z"
+      kind: ClusterRole
+      name: rancher-monitoring-crd-manager
+    - apiVersion: rbac.authorization.k8s.io/v1
+      createdAt: "2025-12-30T21:49:17Z"
+      kind: ClusterRoleBinding
+      name: rancher-monitoring-crd-manager
+    syncGeneration: 0
+kind: List
+metadata:
+  continue: "null"
+  resourceVersion: "14509"

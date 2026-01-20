@@ -1,0 +1,66 @@
+apiVersion: v1
+items:
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.52.0.77
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: isim-dev
+    targetRef:
+      kind: Pod
+      name: capi-controller-manager-847bfd47b4-8kxrd
+      namespace: cattle-provisioning-capi-system
+      uid: c13a303e-b98d-4d45-9eb4-7db0fed7a229
+  kind: EndpointSlice
+  metadata:
+    creationTimestamp: "2025-12-30T21:48:36Z"
+    generateName: capi-webhook-service-
+    generation: 9
+    labels:
+      app.kubernetes.io/managed-by: Helm
+      cluster.x-k8s.io/provider: cluster-api
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      kubernetes.io/service-name: capi-webhook-service
+    managedFields:
+    - apiVersion: discovery.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:addressType: {}
+        f:endpoints: {}
+        f:metadata:
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+            f:cluster.x-k8s.io/provider: {}
+            f:endpointslice.kubernetes.io/managed-by: {}
+            f:kubernetes.io/service-name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"0df6f22a-d0b5-47ba-bfa4-5edbb76166bf"}: {}
+        f:ports: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:52:03Z"
+    name: capi-webhook-service-tqwkf
+    namespace: cattle-provisioning-capi-system
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: capi-webhook-service
+      uid: 0df6f22a-d0b5-47ba-bfa4-5edbb76166bf
+    resourceVersion: "8249"
+    uid: 44fbf68f-b663-434e-b55a-7098c4fdd8d0
+  ports:
+  - name: "null"
+    port: 9443
+    protocol: TCP
+kind: List
+metadata:
+  resourceVersion: "14499"

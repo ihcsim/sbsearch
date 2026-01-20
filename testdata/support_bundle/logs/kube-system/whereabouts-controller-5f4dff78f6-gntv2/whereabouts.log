@@ -1,0 +1,7 @@
+2025-12-30T21:49:36.645102817Z W1230 21:49:36.634612       1 client_config.go:659] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+2025-12-30T21:49:36.645129059Z I1230 21:49:36.635509       1 controller.go:131] "Setting up event handlers"
+2025-12-30T21:49:36.645131204Z I1230 21:49:36.635558       1 controller.go:210] "Starting node-slice controller"
+2025-12-30T21:49:36.645132537Z I1230 21:49:36.635562       1 controller.go:213] "Waiting for informer caches to sync"
+2025-12-30T21:49:36.736276979Z I1230 21:49:36.731174       1 controller.go:184] handling requeueNADs
+2025-12-30T21:49:36.736400117Z I1230 21:49:36.735998       1 controller.go:225] "Starting workers" count=1
+2025-12-30T21:49:36.736403304Z I1230 21:49:36.736028       1 controller.go:231] "Started workers"

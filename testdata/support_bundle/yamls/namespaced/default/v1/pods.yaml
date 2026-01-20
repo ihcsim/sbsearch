@@ -1,0 +1,780 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      cni.projectcalico.org/containerID: 41c85156546ac63f9402d1356a4d2dc00c4b807eed439c51678d1b94fac16f7c
+      cni.projectcalico.org/podIP: 10.52.0.87/32
+      cni.projectcalico.org/podIPs: 10.52.0.87/32
+      descheduler.alpha.kubernetes.io/request-evict-only: "null"
+      harvesterhci.io/sshNames: '["default/isim.pub"]'
+      istio.io/reroute-virtual-interfaces: k6t-eth0
+      k8s.v1.cni.cncf.io/network-status: |-
+        [{
+            "name": "k8s-pod-network",
+            "ips": [
+                "10.52.0.87"
+            ],
+            "default": true,
+            "dns": {}
+        }]
+      kubectl.kubernetes.io/default-container: compute
+      kubevirt.io/domain: vm-00
+      kubevirt.io/migrationTransportUnix: "true"
+      kubevirt.io/vm-generation: "1"
+      post.hook.backup.velero.io/command: '["/usr/bin/virt-freezer", "--unfreeze",
+        "--name", "vm-00", "--namespace", "default"]'
+      post.hook.backup.velero.io/container: compute
+      pre.hook.backup.velero.io/command: '["/usr/bin/virt-freezer", "--freeze", "--name",
+        "vm-00", "--namespace", "default"]'
+      pre.hook.backup.velero.io/container: compute
+      traffic.sidecar.istio.io/kubevirtInterfaces: k6t-eth0
+    creationTimestamp: "2025-12-30T21:57:51Z"
+    generateName: virt-launcher-vm-00-
+    generation: 1
+    labels:
+      harvesterhci.io/vmName: vm-00
+      kubevirt.io: virt-launcher
+      kubevirt.io/created-by: 86079a85-5289-4e46-88ce-871a9eb2c0ae
+      kubevirt.io/nodeName: isim-dev
+      vm.kubevirt.io/name: vm-00
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            .: {}
+            k:{"type":"PodScheduled"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:57:51Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"kubevirt.io/virtual-machine-unpaused"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+      manager: virt-controller
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:57:51Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:cni.projectcalico.org/containerID: {}
+            f:cni.projectcalico.org/podIP: {}
+            f:cni.projectcalico.org/podIPs: {}
+      manager: calico
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:58:14Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:k8s.v1.cni.cncf.io/network-status: {}
+      manager: multus
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:58:14Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:conditions:
+            k:{"type":"ContainersReady"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Initialized"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"PodReadyToStartContainers"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Ready"}:
+              .: {}
+              f:lastProbeTime: {}
+              f:lastTransitionTime: {}
+              f:status: {}
+              f:type: {}
+          f:containerStatuses: {}
+          f:hostIP: {}
+          f:hostIPs: {}
+          f:initContainerStatuses: {}
+          f:phase: {}
+          f:podIP: {}
+          f:podIPs:
+            .: {}
+            k:{"ip":"10.52.0.87"}:
+              .: {}
+              f:ip: {}
+          f:startTime: {}
+      manager: kubelet
+      operation: Update
+      subresource: status
+      time: "2025-12-30T21:58:15Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:descheduler.alpha.kubernetes.io/request-evict-only: {}
+            f:harvesterhci.io/sshNames: {}
+            f:istio.io/reroute-virtual-interfaces: {}
+            f:kubectl.kubernetes.io/default-container: {}
+            f:kubevirt.io/domain: {}
+            f:kubevirt.io/migrationTransportUnix: {}
+            f:kubevirt.io/vm-generation: {}
+            f:post.hook.backup.velero.io/command: {}
+            f:post.hook.backup.velero.io/container: {}
+            f:pre.hook.backup.velero.io/command: {}
+            f:pre.hook.backup.velero.io/container: {}
+            f:traffic.sidecar.istio.io/kubevirtInterfaces: {}
+          f:generateName: {}
+          f:labels:
+            .: {}
+            f:harvesterhci.io/vmName: {}
+            f:kubevirt.io: {}
+            f:kubevirt.io/created-by: {}
+            f:kubevirt.io/nodeName: {}
+            f:vm.kubevirt.io/name: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"86079a85-5289-4e46-88ce-871a9eb2c0ae"}: {}
+        f:spec:
+          f:affinity:
+            .: {}
+            f:nodeAffinity:
+              .: {}
+              f:requiredDuringSchedulingIgnoredDuringExecution: {}
+          f:automountServiceAccountToken: {}
+          f:containers:
+            k:{"name":"compute"}:
+              .: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"POD_NAME"}:
+                  .: {}
+                  f:name: {}
+                  f:valueFrom:
+                    .: {}
+                    f:fieldRef: {}
+                k:{"name":"XDG_CACHE_HOME"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"XDG_CONFIG_HOME"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+                k:{"name":"XDG_RUNTIME_DIR"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources:
+                .: {}
+                f:limits:
+                  .: {}
+                  f:cpu: {}
+                  f:devices.kubevirt.io/kvm: {}
+                  f:devices.kubevirt.io/tun: {}
+                  f:devices.kubevirt.io/vhost-net: {}
+                  f:memory: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:devices.kubevirt.io/kvm: {}
+                  f:devices.kubevirt.io/tun: {}
+                  f:devices.kubevirt.io/vhost-net: {}
+                  f:ephemeral-storage: {}
+                  f:memory: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:add: {}
+                  f:drop: {}
+                f:privileged: {}
+                f:runAsGroup: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeDevices:
+                .: {}
+                k:{"devicePath":"/dev/disk-0"}:
+                  .: {}
+                  f:devicePath: {}
+                  f:name: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/var/run/kubevirt"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/var/run/kubevirt-ephemeral-disks"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/var/run/kubevirt-private"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/var/run/kubevirt-private/secret/cloudinitdisk/networkData"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                  f:subPath: {}
+                k:{"mountPath":"/var/run/kubevirt-private/secret/cloudinitdisk/networkdata"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                  f:subPath: {}
+                k:{"mountPath":"/var/run/kubevirt-private/secret/cloudinitdisk/userData"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                  f:subPath: {}
+                k:{"mountPath":"/var/run/kubevirt-private/secret/cloudinitdisk/userdata"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+                  f:subPath: {}
+                k:{"mountPath":"/var/run/kubevirt/container-disks"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:mountPropagation: {}
+                  f:name: {}
+                k:{"mountPath":"/var/run/kubevirt/hotplug-disks"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:mountPropagation: {}
+                  f:name: {}
+                k:{"mountPath":"/var/run/kubevirt/sockets"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                k:{"mountPath":"/var/run/libvirt"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+          f:dnsPolicy: {}
+          f:enableServiceLinks: {}
+          f:hostname: {}
+          f:initContainers:
+            .: {}
+            k:{"name":"guest-console-log"}:
+              .: {}
+              f:args: {}
+              f:command: {}
+              f:env:
+                .: {}
+                k:{"name":"VIRT_LAUNCHER_LOG_VERBOSITY"}:
+                  .: {}
+                  f:name: {}
+                  f:value: {}
+              f:image: {}
+              f:imagePullPolicy: {}
+              f:name: {}
+              f:resources:
+                .: {}
+                f:limits:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+                f:requests:
+                  .: {}
+                  f:cpu: {}
+                  f:memory: {}
+              f:restartPolicy: {}
+              f:securityContext:
+                .: {}
+                f:allowPrivilegeEscalation: {}
+                f:capabilities:
+                  .: {}
+                  f:drop: {}
+                f:runAsNonRoot: {}
+                f:runAsUser: {}
+              f:terminationMessagePath: {}
+              f:terminationMessagePolicy: {}
+              f:volumeMounts:
+                .: {}
+                k:{"mountPath":"/var/run/kubevirt-private"}:
+                  .: {}
+                  f:mountPath: {}
+                  f:name: {}
+                  f:readOnly: {}
+          f:nodeSelector: {}
+          f:readinessGates: {}
+          f:restartPolicy: {}
+          f:schedulerName: {}
+          f:securityContext:
+            .: {}
+            f:fsGroup: {}
+            f:runAsGroup: {}
+            f:runAsNonRoot: {}
+            f:runAsUser: {}
+          f:terminationGracePeriodSeconds: {}
+          f:volumes:
+            .: {}
+            k:{"name":"cloudinitdisk-ndata"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:secretName: {}
+            k:{"name":"cloudinitdisk-udata"}:
+              .: {}
+              f:name: {}
+              f:secret:
+                .: {}
+                f:defaultMode: {}
+                f:secretName: {}
+            k:{"name":"container-disks"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+            k:{"name":"disk-0"}:
+              .: {}
+              f:name: {}
+              f:persistentVolumeClaim:
+                .: {}
+                f:claimName: {}
+            k:{"name":"ephemeral-disks"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+            k:{"name":"hotplug-disks"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+            k:{"name":"libvirt-runtime"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+            k:{"name":"private"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+            k:{"name":"public"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+            k:{"name":"sockets"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+            k:{"name":"virt-bin-share-dir"}:
+              .: {}
+              f:emptyDir: {}
+              f:name: {}
+      manager: virt-controller
+      operation: Update
+      time: "2025-12-30T21:58:15Z"
+    name: virt-launcher-vm-00-pb825
+    namespace: default
+    ownerReferences:
+    - apiVersion: kubevirt.io/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: VirtualMachineInstance
+      name: vm-00
+      uid: 86079a85-5289-4e46-88ce-871a9eb2c0ae
+    resourceVersion: "12861"
+    uid: e0762618-5577-4082-9f9e-eaa13b7521fa
+  spec:
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: node-labeller.kubevirt.io/obsolete-host-model
+              operator: DoesNotExist
+    automountServiceAccountToken: false
+    containers:
+    - command:
+      - /usr/bin/virt-launcher-monitor
+      - --qemu-timeout
+      - 308s
+      - --name
+      - vm-00
+      - --uid
+      - 86079a85-5289-4e46-88ce-871a9eb2c0ae
+      - --namespace
+      - default
+      - --kubevirt-share-dir
+      - /var/run/kubevirt
+      - --ephemeral-disk-dir
+      - /var/run/kubevirt-ephemeral-disks
+      - --container-disk-dir
+      - /var/run/kubevirt/container-disks
+      - --grace-period-seconds
+      - "135"
+      - --hook-sidecars
+      - "0"
+      - --ovmf-path
+      - /usr/share/OVMF
+      - --disk-memory-limit
+      - "2097152000"
+      - --run-as-nonroot
+      env:
+      - name: XDG_CACHE_HOME
+        value: /var/run/kubevirt-private
+      - name: XDG_CONFIG_HOME
+        value: /var/run/kubevirt-private
+      - name: XDG_RUNTIME_DIR
+        value: /var/run
+      - name: POD_NAME
+        valueFrom:
+          fieldRef:
+            apiVersion: v1
+            fieldPath: metadata.name
+      image: registry.suse.com/suse/sles/15.7/virt-launcher:1.6.3-150700.3.13.1
+      imagePullPolicy: IfNotPresent
+      name: compute
+      resources:
+        limits:
+          cpu: "2"
+          devices.kubevirt.io/kvm: "1"
+          devices.kubevirt.io/tun: "1"
+          devices.kubevirt.io/vhost-net: "1"
+          memory: "4737464313"
+        requests:
+          cpu: 125m
+          devices.kubevirt.io/kvm: "1"
+          devices.kubevirt.io/tun: "1"
+          devices.kubevirt.io/vhost-net: "1"
+          ephemeral-storage: 50M
+          memory: "3305109497"
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          add:
+          - NET_BIND_SERVICE
+          drop:
+          - ALL
+        privileged: false
+        runAsGroup: 107
+        runAsNonRoot: true
+        runAsUser: 107
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: FallbackToLogsOnError
+      volumeDevices:
+      - devicePath: /dev/disk-0
+        name: disk-0
+      volumeMounts:
+      - mountPath: /var/run/kubevirt-private
+        name: private
+      - mountPath: /var/run/kubevirt
+        name: public
+      - mountPath: /var/run/kubevirt-ephemeral-disks
+        name: ephemeral-disks
+      - mountPath: /var/run/libvirt
+        name: libvirt-runtime
+      - mountPath: /var/run/kubevirt/sockets
+        name: sockets
+      - mountPath: /var/run/kubevirt/container-disks
+        mountPropagation: HostToContainer
+        name: container-disks
+      - mountPath: /var/run/kubevirt-private/secret/cloudinitdisk/userdata
+        name: cloudinitdisk-udata
+        readOnly: true
+        subPath: userdata
+      - mountPath: /var/run/kubevirt-private/secret/cloudinitdisk/userData
+        name: cloudinitdisk-udata
+        readOnly: true
+        subPath: userData
+      - mountPath: /var/run/kubevirt-private/secret/cloudinitdisk/networkdata
+        name: cloudinitdisk-ndata
+        readOnly: true
+        subPath: networkdata
+      - mountPath: /var/run/kubevirt-private/secret/cloudinitdisk/networkData
+        name: cloudinitdisk-ndata
+        readOnly: true
+        subPath: networkData
+      - mountPath: /var/run/kubevirt/hotplug-disks
+        mountPropagation: HostToContainer
+        name: hotplug-disks
+    dnsPolicy: ClusterFirst
+    enableServiceLinks: false
+    hostname: vm-00
+    initContainers:
+    - args:
+      - --logfile
+      - /var/run/kubevirt-private/86079a85-5289-4e46-88ce-871a9eb2c0ae/virt-serial0-log
+      command:
+      - /usr/bin/virt-tail
+      env:
+      - name: VIRT_LAUNCHER_LOG_VERBOSITY
+        value: "2"
+      image: registry.suse.com/suse/sles/15.7/virt-launcher:1.6.3-150700.3.13.1
+      imagePullPolicy: IfNotPresent
+      name: guest-console-log
+      resources:
+        limits:
+          cpu: 15m
+          memory: 60M
+        requests:
+          cpu: 5m
+          memory: 35M
+      restartPolicy: Always
+      securityContext:
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop:
+          - ALL
+        runAsNonRoot: true
+        runAsUser: 107
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/kubevirt-private
+        name: private
+        readOnly: true
+    nodeName: isim-dev
+    nodeSelector:
+      kubernetes.io/arch: amd64
+      kubevirt.io/schedulable: "true"
+      machine-type.node.kubevirt.io/q35: "true"
+    preemptionPolicy: PreemptLowerPriority
+    priority: 0
+    readinessGates:
+    - conditionType: kubevirt.io/virtual-machine-unpaused
+    restartPolicy: Never
+    schedulerName: default-scheduler
+    securityContext:
+      fsGroup: 107
+      runAsGroup: 107
+      runAsNonRoot: true
+      runAsUser: 107
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 150
+    tolerations:
+    - effect: NoExecute
+      key: node.kubernetes.io/not-ready
+      operator: Exists
+      tolerationSeconds: 300
+    - effect: NoExecute
+      key: node.kubernetes.io/unreachable
+      operator: Exists
+      tolerationSeconds: 300
+    volumes:
+    - emptyDir: {}
+      name: private
+    - emptyDir: {}
+      name: public
+    - emptyDir: {}
+      name: sockets
+    - emptyDir: {}
+      name: virt-bin-share-dir
+    - emptyDir: {}
+      name: libvirt-runtime
+    - emptyDir: {}
+      name: ephemeral-disks
+    - emptyDir: {}
+      name: container-disks
+    - name: disk-0
+      persistentVolumeClaim:
+        claimName: vm-00-disk-0-xx3er
+    - name: cloudinitdisk-udata
+      secret:
+        defaultMode: 420
+        secretName: vm-00-5clhi
+    - name: cloudinitdisk-ndata
+      secret:
+        defaultMode: 420
+        secretName: vm-00-5clhi
+    - emptyDir: {}
+      name: hotplug-disks
+  status:
+    conditions:
+    - lastProbeTime: "2025-12-30T21:57:51Z"
+      lastTransitionTime: "2025-12-30T21:57:51Z"
+      message: the virtual machine is not paused
+      reason: NotPaused
+      status: "True"
+      type: kubevirt.io/virtual-machine-unpaused
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:58:14Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodReadyToStartContainers
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:58:14Z"
+      observedGeneration: 1
+      status: "True"
+      type: Initialized
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:58:15Z"
+      observedGeneration: 1
+      status: "True"
+      type: Ready
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:58:15Z"
+      observedGeneration: 1
+      status: "True"
+      type: ContainersReady
+    - lastProbeTime: "null"
+      lastTransitionTime: "2025-12-30T21:58:03Z"
+      observedGeneration: 1
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - allocatedResources:
+        cpu: 125m
+        devices.kubevirt.io/kvm: "1"
+        devices.kubevirt.io/tun: "1"
+        devices.kubevirt.io/vhost-net: "1"
+        ephemeral-storage: 50M
+        memory: "3305109497"
+      containerID: containerd://3e9ec4e208e6f7305b6660ec3f10c673fff12321f248c485e14d3a2116e6abc6
+      image: registry.suse.com/suse/sles/15.7/virt-launcher:1.6.3-150700.3.13.1
+      imageID: sha256:dec02c8c260985af60346d1cc42115a9466705b1c38673f036f450b8a7671964
+      lastState: {}
+      name: compute
+      ready: true
+      resources:
+        limits:
+          cpu: "2"
+          devices.kubevirt.io/kvm: "1"
+          devices.kubevirt.io/tun: "1"
+          devices.kubevirt.io/vhost-net: "1"
+          memory: "4737464313"
+        requests:
+          cpu: 125m
+          devices.kubevirt.io/kvm: "1"
+          devices.kubevirt.io/tun: "1"
+          devices.kubevirt.io/vhost-net: "1"
+          ephemeral-storage: 50M
+          memory: "3305109497"
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-12-30T21:58:14Z"
+      user:
+        linux:
+          gid: 107
+          supplementalGroups:
+          - 36
+          - 107
+          uid: 107
+      volumeMounts:
+      - mountPath: /var/run/kubevirt-private
+        name: private
+      - mountPath: /var/run/kubevirt
+        name: public
+      - mountPath: /var/run/kubevirt-ephemeral-disks
+        name: ephemeral-disks
+      - mountPath: /var/run/libvirt
+        name: libvirt-runtime
+      - mountPath: /var/run/kubevirt/sockets
+        name: sockets
+      - mountPath: /var/run/kubevirt/container-disks
+        name: container-disks
+      - mountPath: /var/run/kubevirt-private/secret/cloudinitdisk/userdata
+        name: cloudinitdisk-udata
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /var/run/kubevirt-private/secret/cloudinitdisk/userData
+        name: cloudinitdisk-udata
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /var/run/kubevirt-private/secret/cloudinitdisk/networkdata
+        name: cloudinitdisk-ndata
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /var/run/kubevirt-private/secret/cloudinitdisk/networkData
+        name: cloudinitdisk-ndata
+        readOnly: true
+        recursiveReadOnly: Disabled
+      - mountPath: /var/run/kubevirt/hotplug-disks
+        name: hotplug-disks
+    hostIP: 192.168.122.168
+    hostIPs:
+    - ip: 192.168.122.168
+    initContainerStatuses:
+    - allocatedResources:
+        cpu: 5m
+        memory: 35M
+      containerID: containerd://acb780aac131118978a93d15f50a32c918935400f302480a40b81e38ec1021f1
+      image: registry.suse.com/suse/sles/15.7/virt-launcher:1.6.3-150700.3.13.1
+      imageID: sha256:dec02c8c260985af60346d1cc42115a9466705b1c38673f036f450b8a7671964
+      lastState: {}
+      name: guest-console-log
+      ready: true
+      resources:
+        limits:
+          cpu: 15m
+          memory: 60M
+        requests:
+          cpu: 5m
+          memory: 35M
+      restartCount: 0
+      started: true
+      state:
+        running:
+          startedAt: "2025-12-30T21:58:14Z"
+      user:
+        linux:
+          gid: 107
+          supplementalGroups:
+          - 36
+          - 107
+          uid: 107
+      volumeMounts:
+      - mountPath: /var/run/kubevirt-private
+        name: private
+        readOnly: true
+        recursiveReadOnly: Disabled
+    observedGeneration: 1
+    phase: Running
+    podIP: 10.52.0.87
+    podIPs:
+    - ip: 10.52.0.87
+    qosClass: Burstable
+    startTime: "2025-12-30T21:58:03Z"
+kind: List
+metadata:
+  resourceVersion: "14471"

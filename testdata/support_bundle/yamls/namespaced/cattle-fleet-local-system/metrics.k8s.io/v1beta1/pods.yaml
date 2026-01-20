@@ -1,0 +1,20 @@
+apiVersion: v1
+items:
+- apiVersion: metrics.k8s.io/v1beta1
+  containers:
+  - name: fleet-agent
+    usage:
+      cpu: 750u
+      memory: 109780Ki
+  kind: PodMetrics
+  metadata:
+    creationTimestamp: "2025-12-30T22:00:35Z"
+    labels:
+      app: fleet-agent
+      pod-template-hash: f78f57f66
+    name: fleet-agent-f78f57f66-5ps4k
+    namespace: cattle-fleet-local-system
+  timestamp: "2025-12-30T22:00:26Z"
+  window: 14.148s
+kind: List
+metadata: {}

@@ -1,0 +1,56 @@
+2025-12-30T21:51:42.254875623Z + CATTLE_AGENT_VAR_DIR=/var/lib/rancher/agent
+2025-12-30T21:51:42.254901453Z + TMPDIRBASE=/var/lib/rancher/agent/tmp
+2025-12-30T21:51:42.254903306Z + mkdir -p /host/var/lib/rancher/agent/tmp
+2025-12-30T21:51:42.257515425Z ++ chroot /host /bin/sh -c 'mktemp -d -p /var/lib/rancher/agent/tmp'
+2025-12-30T21:51:42.261351171Z + TMPDIR=/var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN
+2025-12-30T21:51:42.261362302Z + trap cleanup EXIT
+2025-12-30T21:51:42.261363574Z + trap exit INT HUP TERM
+2025-12-30T21:51:42.261365167Z + cp /opt/rancher-system-agent-suc/install.sh /host/var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN
+2025-12-30T21:51:42.264132406Z + cp /opt/rancher-system-agent-suc/rancher-system-agent /host/var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN
+2025-12-30T21:51:42.300064250Z + cp /opt/rancher-system-agent-suc/system-agent-uninstall.sh /host/var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN/rancher-system-agent-uninstall.sh
+2025-12-30T21:51:42.301521455Z + chmod +x /host/var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN/install.sh
+2025-12-30T21:51:42.302210671Z + chmod +x /host/var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN/rancher-system-agent-uninstall.sh
+2025-12-30T21:51:42.303025540Z + '[' -n isim-dev ']'
+2025-12-30T21:51:42.303030831Z + NODE_FILE=/host/var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN/node.yaml
+2025-12-30T21:51:42.303032184Z + kubectl get node isim-dev -o yaml
+2025-12-30T21:51:42.368816666Z + '[' -z '' ']'
+2025-12-30T21:51:42.368838678Z + grep -q 'node-role.kubernetes.io/etcd: "true"' /host/var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN/node.yaml
+2025-12-30T21:51:42.370532230Z + export CATTLE_ROLE_ETCD=true
+2025-12-30T21:51:42.370539293Z + CATTLE_ROLE_ETCD=true
+2025-12-30T21:51:42.370540996Z + '[' -z '' ']'
+2025-12-30T21:51:42.370543070Z + grep -q 'node-role.kubernetes.io/controlplane: "true"' /host/var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN/node.yaml
+2025-12-30T21:51:42.375740827Z + '[' -z '' ']'
+2025-12-30T21:51:42.375774231Z + grep -q 'node-role.kubernetes.io/control-plane: "true"' /host/var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN/node.yaml
+2025-12-30T21:51:42.380917445Z + export CATTLE_ROLE_CONTROLPLANE=true
+2025-12-30T21:51:42.380937513Z + CATTLE_ROLE_CONTROLPLANE=true
+2025-12-30T21:51:42.380940148Z + '[' -z true ']'
+2025-12-30T21:51:42.380941841Z + export CATTLE_AGENT_BINARY_LOCAL=true
+2025-12-30T21:51:42.380943476Z + CATTLE_AGENT_BINARY_LOCAL=true
+2025-12-30T21:51:42.380944978Z + export CATTLE_AGENT_UNINSTALL_LOCAL=true
+2025-12-30T21:51:42.380946622Z + CATTLE_AGENT_UNINSTALL_LOCAL=true
+2025-12-30T21:51:42.380949026Z + export CATTLE_AGENT_BINARY_LOCAL_LOCATION=/var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN/rancher-system-agent
+2025-12-30T21:51:42.380950699Z + CATTLE_AGENT_BINARY_LOCAL_LOCATION=/var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN/rancher-system-agent
+2025-12-30T21:51:42.380953014Z + export CATTLE_AGENT_UNINSTALL_LOCAL_LOCATION=/var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN/rancher-system-agent-uninstall.sh
+2025-12-30T21:51:42.380954446Z + CATTLE_AGENT_UNINSTALL_LOCAL_LOCATION=/var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN/rancher-system-agent-uninstall.sh
+2025-12-30T21:51:42.380956220Z + '[' -s /host/etc/systemd/system/rancher-system-agent.env ']'
+2025-12-30T21:51:42.381490719Z + wait 33008
+2025-12-30T21:51:42.381528471Z + chroot /host /var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN/install.sh
+2025-12-30T21:51:42.392399272Z [INFO]  CA strict verification is set to false
+2025-12-30T21:51:42.392420132Z [INFO]  Using default agent configuration directory /etc/rancher/agent
+2025-12-30T21:51:42.397882509Z [WARN]  /usr/local is read-only or a mount point; installing to /opt/rancher-system-agent
+2025-12-30T21:51:42.468238643Z [INFO]  Determined CA is necessary to connect to Rancher
+2025-12-30T21:51:42.479611662Z [INFO]  Successfully downloaded CA certificate
+2025-12-30T21:51:42.496024263Z [INFO]  Value from https://10.53.120.170/cacerts is an x509 certificate
+2025-12-30T21:51:42.509140988Z [INFO]  Successfully tested Rancher connection
+2025-12-30T21:51:42.516117350Z [INFO]  Using local rancher-system-agent binary from /var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN/rancher-system-agent
+2025-12-30T21:51:42.551406375Z [INFO]  Using local rancher-system-agent-uninstall.sh script from /var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN/rancher-system-agent-uninstall.sh
+2025-12-30T21:51:42.555117702Z [INFO]  Generating Cattle ID
+2025-12-30T21:51:42.788914927Z [INFO]  Successfully downloaded Rancher connection information
+2025-12-30T21:51:42.788934926Z [INFO]  systemd: Creating service file
+2025-12-30T21:51:42.790707047Z [INFO]  Creating environment file /etc/systemd/system/rancher-system-agent.env
+2025-12-30T21:51:42.824272284Z [INFO]  /usr/local is unsuitable for installation: adding fallback path to systemd unit env file.
+2025-12-30T21:51:43.554680368Z [INFO]  Enabling rancher-system-agent.service
+2025-12-30T21:51:43.572894224Z Created symlink /etc/systemd/system/multi-user.target.wants/rancher-system-agent.service → /etc/systemd/system/rancher-system-agent.service.
+2025-12-30T21:51:44.282643422Z [INFO]  Starting/restarting rancher-system-agent.service
+2025-12-30T21:51:44.333713089Z + cleanup
+2025-12-30T21:51:44.333726777Z + rm -rf /host/var/lib/rancher/agent/tmp/tmp.LIdTUOCqcN

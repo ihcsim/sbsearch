@@ -1,0 +1,313 @@
+apiVersion: v1
+items:
+- action: Binding
+  apiVersion: events.k8s.io/v1
+  deprecatedFirstTimestamp: "null"
+  deprecatedLastTimestamp: null
+  deprecatedSource: {}
+  eventTime: "2025-12-30T21:49:17.909306Z"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:17Z"
+    managedFields:
+    - apiVersion: events.k8s.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:action: {}
+        f:eventTime: {}
+        f:note: {}
+        f:reason: {}
+        f:regarding: {}
+        f:reportingController: {}
+        f:reportingInstance: {}
+        f:type: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2025-12-30T21:49:17Z"
+    name: rancher-monitoring-crd-create-bgrjs.18861c9b7ba35a7b
+    namespace: cattle-monitoring-system
+    resourceVersion: "3297"
+    uid: 0b7a3908-b0b9-4711-bbfb-dc81729565fb
+  note: Successfully assigned cattle-monitoring-system/rancher-monitoring-crd-create-bgrjs
+    to isim-dev
+  reason: Scheduled
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: rancher-monitoring-crd-create-bgrjs
+    namespace: cattle-monitoring-system
+    resourceVersion: "3293"
+    uid: ff770fa7-8b94-4cd7-8964-bbbedec51f2b
+  reportingController: default-scheduler
+  reportingInstance: default-scheduler-isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:18Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:18Z"
+  deprecatedSource:
+    component: multus
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:18Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: multus
+      operation: Update
+      time: "2025-12-30T21:49:18Z"
+    name: rancher-monitoring-crd-create-bgrjs.18861c9b9c551c9f
+    namespace: cattle-monitoring-system
+    resourceVersion: "3378"
+    uid: 124de8bd-20cc-409f-9b71-0e44b0b78de6
+  note: Add eth0 [10.52.0.33/32] from k8s-pod-network
+  reason: AddedInterface
+  regarding:
+    apiVersion: v1
+    kind: Pod
+    name: rancher-monitoring-crd-create-bgrjs
+    namespace: cattle-monitoring-system
+    resourceVersion: "3298"
+    uid: ff770fa7-8b94-4cd7-8964-bbbedec51f2b
+  reportingController: multus
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:18Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:18Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:18Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:49:18Z"
+    name: rancher-monitoring-crd-create-bgrjs.18861c9baa0c5ba1
+    namespace: cattle-monitoring-system
+    resourceVersion: "3386"
+    uid: 19d239da-2cc4-4ab6-96f5-2d04de81c31c
+  note: Container image "rancher/shell:v0.5.0" already present on machine
+  reason: Pulled
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{create-crds}
+    kind: Pod
+    name: rancher-monitoring-crd-create-bgrjs
+    namespace: cattle-monitoring-system
+    resourceVersion: "3294"
+    uid: ff770fa7-8b94-4cd7-8964-bbbedec51f2b
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:19Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:19Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:19Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:49:19Z"
+    name: rancher-monitoring-crd-create-bgrjs.18861c9bf782bbc3
+    namespace: cattle-monitoring-system
+    resourceVersion: "3396"
+    uid: 8b998b1e-d34f-45f4-be02-f1b8411244ca
+  note: 'Created container: create-crds'
+  reason: Created
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{create-crds}
+    kind: Pod
+    name: rancher-monitoring-crd-create-bgrjs
+    namespace: cattle-monitoring-system
+    resourceVersion: "3294"
+    uid: ff770fa7-8b94-4cd7-8964-bbbedec51f2b
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:20Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:20Z"
+  deprecatedSource:
+    component: kubelet
+    host: isim-dev
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:20Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:reportingInstance: {}
+        f:source:
+          f:component: {}
+          f:host: {}
+        f:type: {}
+      manager: kubelet
+      operation: Update
+      time: "2025-12-30T21:49:20Z"
+    name: rancher-monitoring-crd-create-bgrjs.18861c9c0509ae07
+    namespace: cattle-monitoring-system
+    resourceVersion: "3418"
+    uid: b23cd8db-7ef5-4c18-810f-519370cb874b
+  note: Started container create-crds
+  reason: Started
+  regarding:
+    apiVersion: v1
+    fieldPath: spec.containers{create-crds}
+    kind: Pod
+    name: rancher-monitoring-crd-create-bgrjs
+    namespace: cattle-monitoring-system
+    resourceVersion: "3294"
+    uid: ff770fa7-8b94-4cd7-8964-bbbedec51f2b
+  reportingController: kubelet
+  reportingInstance: isim-dev
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:17Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:17Z"
+  deprecatedSource:
+    component: job-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:17Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:49:17Z"
+    name: rancher-monitoring-crd-create.18861c9b7b447041
+    namespace: cattle-monitoring-system
+    resourceVersion: "3296"
+    uid: e0815a66-c4ed-4e26-995d-3207fcca5115
+  note: 'Created pod: rancher-monitoring-crd-create-bgrjs'
+  reason: SuccessfulCreate
+  regarding:
+    apiVersion: batch/v1
+    kind: Job
+    name: rancher-monitoring-crd-create
+    namespace: cattle-monitoring-system
+    resourceVersion: "3292"
+    uid: fdb686d0-af5b-44cf-887f-9d5278bb03b5
+  reportingController: job-controller
+  type: Normal
+- apiVersion: events.k8s.io/v1
+  deprecatedCount: 1
+  deprecatedFirstTimestamp: "2025-12-30T21:49:26Z"
+  deprecatedLastTimestamp: "2025-12-30T21:49:26Z"
+  deprecatedSource:
+    component: job-controller
+  eventTime: "null"
+  kind: Event
+  metadata:
+    creationTimestamp: "2025-12-30T21:49:26Z"
+    managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:count: {}
+        f:firstTimestamp: {}
+        f:involvedObject: {}
+        f:lastTimestamp: {}
+        f:message: {}
+        f:reason: {}
+        f:reportingComponent: {}
+        f:source:
+          f:component: {}
+        f:type: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2025-12-30T21:49:26Z"
+    name: rancher-monitoring-crd-create.18861c9d95d3ac6e
+    namespace: cattle-monitoring-system
+    resourceVersion: "3554"
+    uid: b27c705d-4e1d-48be-a687-8f05830e3030
+  note: Job completed
+  reason: Completed
+  regarding:
+    apiVersion: batch/v1
+    kind: Job
+    name: rancher-monitoring-crd-create
+    namespace: cattle-monitoring-system
+    resourceVersion: "3551"
+    uid: fdb686d0-af5b-44cf-887f-9d5278bb03b5
+  reportingController: job-controller
+  type: Normal
+kind: List
+metadata:
+  resourceVersion: "14484"
