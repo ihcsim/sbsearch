@@ -165,6 +165,194 @@ impl SBSearch {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::tui;
+
+    #[test]
+    // this test asserts the search result of the first page
+    fn test_search_with_offset0() {
+        let path = Path::new("testdata/support_bundle/logs");
+        let keyword = "vm-00";
+        let offset = 0;
+        let limit = tui::DEFAULT_MAX_ENTRIES_PER_PAGE;
+        let cache: &mut Vec<Entry> = &mut Vec::new();
+
+        let result = search(path, keyword, offset, limit, cache).unwrap();
+        let entries_offset = &result.entries_offset;
+        assert!(!entries_offset.is_empty());
+        assert_eq!(entries_offset.len(), tui::DEFAULT_MAX_ENTRIES_PER_PAGE);
+        assert_eq!(cache.len(), 218);
+
+        // validate the first entry in the search result
+        assert_eq!(entries_offset[0].level, "info");
+        assert_eq!(
+            entries_offset[0].path,
+            "testdata/support_bundle/logs/harvester-system/harvester-webhook-6cb965f6d9-z24qs/harvester-webhook.log",
+        );
+        assert_eq!(
+            entries_offset[0].content.trim_end(),
+            r#"2025-12-30T21:57:51.388772685Z time="2025-12-30T21:57:51Z" level=info msg="PVC default/vm-00-disk-0-xx3er is not related to the VM image, skip patch""#
+        );
+        assert_eq!(
+            entries_offset[0].timestamp,
+            "2025-12-30T21:57:51.388772685Z"
+                .parse::<DateTime<Utc>>()
+                .unwrap()
+        );
+
+        // validate the last entry in the search result
+        let last_index = entries_offset.len() - 1;
+        assert_eq!(entries_offset[last_index].level, "UNKNOWN");
+        assert_eq!(
+            entries_offset[last_index].path,
+            "testdata/support_bundle/logs/kube-system/rke2-canal-jnjvb/calico-node.log",
+        );
+        assert_eq!(
+            entries_offset[last_index].content.trim_end(),
+            r#"2025-12-30T21:58:14.290485251Z 2025-12-30 21:58:14.290 [INFO][52] felix/status_combiner.go 114: Reporting combined status. id=types.WorkloadEndpointID{OrchestratorId:"k8s", WorkloadId:"default/virt-launcher-vm-00-pb825", EndpointId:"eth0"} status="down""#,
+        );
+        assert_eq!(
+            entries_offset[last_index].timestamp,
+            "2025-12-30T21:58:14.290485251Z"
+                .parse::<DateTime<Utc>>()
+                .unwrap()
+        );
+    }
+
+    #[test]
+    // this test asserts the search result of the second page
+    fn test_search_with_offset1() {
+        let path = Path::new("testdata/support_bundle/logs");
+        let keyword = "vm-00";
+        let offset = tui::DEFAULT_MAX_ENTRIES_PER_PAGE;
+        let limit = tui::DEFAULT_MAX_ENTRIES_PER_PAGE;
+        let cache: &mut Vec<Entry> = &mut Vec::new();
+
+        let result = search(path, keyword, offset, limit, cache).unwrap();
+        let entries_offset = &result.entries_offset;
+        assert!(!entries_offset.is_empty());
+        assert_eq!(entries_offset.len(), tui::DEFAULT_MAX_ENTRIES_PER_PAGE);
+        assert_eq!(cache.len(), 218);
+
+        // validate the first entry in the search result
+        assert_eq!(entries_offset[0].level, "UNKNOWN");
+        assert_eq!(
+            entries_offset[0].path,
+            "testdata/support_bundle/logs/kube-system/rke2-canal-jnjvb/calico-node.log",
+        );
+        assert_eq!(
+            entries_offset[0].content.trim_end(),
+            r#"2025-12-30T21:58:14.309448446Z 2025-12-30 21:58:14.308 [INFO][52] felix/calc_graph.go 568: Local endpoint updated id=WorkloadEndpoint(node=isim-dev, orchestrator=k8s, workload=default/virt-launcher-vm-00-pb825, name=eth0)"#
+        );
+        assert_eq!(
+            entries_offset[0].timestamp,
+            "2025-12-30T21:58:14.309448446Z"
+                .parse::<DateTime<Utc>>()
+                .unwrap()
+        );
+        //
+        // validate line 178
+        assert_eq!(entries_offset[77].level, "error");
+        assert_eq!(
+            entries_offset[77].path,
+            "testdata/support_bundle/logs/harvester-system/virt-handler-wsl8k/virt-handler.log",
+        );
+        assert_eq!(
+            entries_offset[77].content.trim_end(),
+            r#"2025-12-30T21:58:17.349095250Z {"component":"virt-handler","kind":"","level":"error","msg":"Updating the VirtualMachineInstance status failed.","name":"vm-00","namespace":"default","pos":"vm.go:1486","reason":"Operation cannot be fulfilled on virtualmachineinstances.kubevirt.io \"vm-00\": the object has been modified; please apply your changes to the latest version and try again","timestamp":"2025-12-30T21:58:17.348949Z","uid":"86079a85-5289-4e46-88ce-871a9eb2c0ae"}"#,
+        );
+        assert_eq!(
+            entries_offset[77].timestamp,
+            "2025-12-30T21:58:17.349095250Z"
+                .parse::<DateTime<Utc>>()
+                .unwrap()
+        );
+
+        // validate line 193
+        assert_eq!(entries_offset[92].level, "warning");
+        assert_eq!(
+            entries_offset[92].path,
+            "testdata/support_bundle/logs/default/virt-launcher-vm-00-pb825/compute.log",
+        );
+        assert_eq!(
+            entries_offset[92].content.trim_end(),
+            r#"2025-12-30T21:58:53.711973149Z {"component":"virt-launcher","level":"warning","msg":"Domain id=1 name='default_vm-00' uuid=37683db8-bc20-4b1c-b101-8a466baa66f5 is tainted: custom-ga-command","pos":"qemuDomainObjTaintMsg:5444","subcomponent":"libvirt","thread":"30","timestamp":"2025-12-30T21:58:53.711000Z"}"#
+        );
+        assert_eq!(
+            entries_offset[92].timestamp,
+            "2025-12-30T21:58:53.711973149Z"
+                .parse::<DateTime<Utc>>()
+                .unwrap()
+        );
+
+        // validate the last entry in the search result
+        let last_index = entries_offset.len() - 1;
+        assert_eq!(entries_offset[last_index].level, "info");
+        assert_eq!(
+            entries_offset[last_index].path,
+            "testdata/support_bundle/logs/default/virt-launcher-vm-00-pb825/compute.log",
+        );
+        assert_eq!(
+            entries_offset[last_index].content.trim_end(),
+            r#"2025-12-30T21:58:53.868816822Z {"component":"virt-launcher","level":"info","msg":"No DRA GPU devices found for vmi default/vm-00","pos":"gpu_hostdev.go:42","timestamp":"2025-12-30T21:58:53.868717Z"}"#,
+        );
+        assert_eq!(
+            entries_offset[last_index].timestamp,
+            "2025-12-30T21:58:53.868816822Z"
+                .parse::<DateTime<Utc>>()
+                .unwrap()
+        );
+    }
+
+    #[test]
+    // this test asserts the search result of the final page
+    fn test_search_with_offset3() {
+        let path = Path::new("testdata/support_bundle/logs");
+        let keyword = "vm-00";
+        let offset = tui::DEFAULT_MAX_ENTRIES_PER_PAGE * 2;
+        let limit = tui::DEFAULT_MAX_ENTRIES_PER_PAGE;
+        let cache: &mut Vec<Entry> = &mut Vec::new();
+
+        let result = search(path, keyword, offset, limit, cache).unwrap();
+        let entries_offset = &result.entries_offset;
+        assert!(!entries_offset.is_empty());
+        assert_eq!(entries_offset.len(), 18);
+        assert_eq!(cache.len(), 218);
+
+        // validate the first entry in the search result
+        assert_eq!(entries_offset[0].level, "info");
+        assert_eq!(
+            entries_offset[0].path,
+            "testdata/support_bundle/logs/default/virt-launcher-vm-00-pb825/compute.log",
+        );
+        assert_eq!(
+            entries_offset[0].content.trim_end(),
+            r#"2025-12-30T21:58:53.879289922Z {"component":"virt-launcher","kind":"","level":"info","msg":"Synced vmi","name":"vm-00","namespace":"default","pos":"server.go:208","timestamp":"2025-12-30T21:58:53.879113Z","uid":"86079a85-5289-4e46-88ce-871a9eb2c0ae"}"#
+        );
+        assert_eq!(
+            entries_offset[0].timestamp,
+            "2025-12-30T21:58:53.879289922Z"
+                .parse::<DateTime<Utc>>()
+                .unwrap()
+        );
+
+        // validate the last entry in the search result
+        let last_index = entries_offset.len() - 1;
+        assert_eq!(entries_offset[last_index].level, "info");
+        assert_eq!(
+            entries_offset[last_index].path,
+            "testdata/support_bundle/logs/default/virt-launcher-vm-00-pb825/compute.log",
+        );
+        assert_eq!(
+            entries_offset[last_index].content.trim_end(),
+            r#"2025-12-30T22:00:42.449112443Z {"component":"virt-launcher","kind":"","level":"info","msg":"Synced vmi","name":"vm-00","namespace":"default","pos":"server.go:208","timestamp":"2025-12-30T22:00:42.448989Z","uid":"86079a85-5289-4e46-88ce-871a9eb2c0ae"}"#,
+        );
+        assert_eq!(
+            entries_offset[last_index].timestamp,
+            "2025-12-30T22:00:42.449112443Z"
+                .parse::<DateTime<Utc>>()
+                .unwrap()
+        );
+    }
 
     #[test]
     fn test_find_log_level_pattern1() {

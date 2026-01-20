@@ -12,7 +12,7 @@ use super::sbsearch;
 mod event;
 mod render;
 
-const DEFAULT_MAX_ENTRIES_PER_PAGE: usize = 100;
+pub const DEFAULT_MAX_ENTRIES_PER_PAGE: usize = 100;
 
 #[derive(Debug, Default)]
 pub struct Tui {
