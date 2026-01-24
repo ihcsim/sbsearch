@@ -256,10 +256,12 @@ impl Tui {
 
     fn nav_first_page(&mut self) {
         self.page_goto = 1;
+        self.page_reload = true;
     }
 
     fn nav_last_page(&mut self) {
         self.page_goto = self.page_final;
+        self.page_reload = true;
     }
 }
 
