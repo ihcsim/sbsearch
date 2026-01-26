@@ -196,6 +196,10 @@ impl Tui {
     }
 
     fn nav_next_line(&mut self) {
+        if self.entries_offset.is_empty() {
+            return;
+        }
+
         self.vertical_scroll = self.vertical_scroll.saturating_add(1);
         self.vertical_scroll_state = self.vertical_scroll_state.position(self.vertical_scroll);
         let i = match self.nav_state.selected() {
@@ -260,8 +264,10 @@ impl Tui {
     }
 
     fn nav_last_page(&mut self) {
-        self.page_goto = self.page_final;
-        self.page_reload = true;
+        if self.page_final > 0 {
+            self.page_goto = self.page_final;
+            self.page_reload = true;
+        }
     }
 }
 
