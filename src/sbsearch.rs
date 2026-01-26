@@ -41,6 +41,7 @@ pub fn search(
         let mut sbsearch = SBSearch::new(root_dir, keyword)?;
         sbsearch.search_tree(dir, cache)?;
         cache.sort_by(|a, b| {
+            // entries with incomplete timestamp are placed at the end
             if a.timestamp.is_none() && b.timestamp.is_some() {
                 std::cmp::Ordering::Greater
             } else if b.timestamp.is_none() && a.timestamp.is_some() {
@@ -109,7 +110,8 @@ impl SBSearch {
     }
 
     fn search_tree(&mut self, dir: &Path, entries: &mut Vec<Entry>) -> Result<(), Box<dyn Error>> {
-        if !self.included_path(dir) {
+        // only search '/logs' and '/nodes/*/logs' directories
+        if !self.is_log_dir(dir) {
             return Ok(());
         }
 
@@ -127,6 +129,8 @@ impl SBSearch {
                 if is_zip(path.as_path())? {
                     let zipfile = File::open(&path)?;
                     let mut archive = ZipArchive::new(zipfile)?;
+
+                    // examine each file in the zip archive in memory
                     for index in 0..archive.len() {
                         let reader = archive.by_index(index)?;
                         let path = path.join(Path::new(reader.name()));
@@ -211,7 +215,7 @@ impl SBSearch {
         Ok(())
     }
 
-    fn included_path(&self, dir: &Path) -> bool {
+    fn is_log_dir(&self, dir: &Path) -> bool {
         if let Some(s) = dir.to_str() {
             if s == self.root_dir
                 || s == format!("{}/logs", self.root_dir)
@@ -526,37 +530,37 @@ mod tests {
     fn test_included_path() {
         let sb_search = SBSearch::new("testdata/support_bundle", "").unwrap();
         let path = Path::new("testdata/support_bundle");
-        assert!(sb_search.included_path(path));
+        assert!(sb_search.is_log_dir(path));
 
         let path =
             Path::new("testdata/support_bundle/logs/kube-system/rke2-canal-jnjvb/calico-node.log");
-        assert!(sb_search.included_path(path));
+        assert!(sb_search.is_log_dir(path));
 
         let path = Path::new(
             "testdata/support_bundle/logs/harvester-system/harvester-webhook-6cb965f6d9-z24qs/harvester-webhook.log",
         );
-        assert!(sb_search.included_path(path));
+        assert!(sb_search.is_log_dir(path));
 
         let path = Path::new("testdata/support_bundle/nodes");
-        assert!(sb_search.included_path(path));
+        assert!(sb_search.is_log_dir(path));
 
         let path = Path::new("testdata/support_bundle/nodes/node1/logs/kubelet.log");
-        assert!(sb_search.included_path(path));
+        assert!(sb_search.is_log_dir(path));
 
         let path = Path::new("testdata/support_bundle/nodes/node1.zip");
-        assert!(!sb_search.included_path(path));
+        assert!(!sb_search.is_log_dir(path));
 
         let path = Path::new("testdata/support_bundle/nodes/node1/kubelet.log");
-        assert!(!sb_search.included_path(path));
+        assert!(!sb_search.is_log_dir(path));
 
         let path = Path::new("testdata/support_bundle/nodes/node2/somefile.txt");
-        assert!(!sb_search.included_path(path));
+        assert!(!sb_search.is_log_dir(path));
 
         let path = Path::new("testdata/support_bundle/yamls");
-        assert!(!sb_search.included_path(path));
+        assert!(!sb_search.is_log_dir(path));
 
         let path = Path::new("testdata/support_bundle/yamls/namespaced/default/pods.yaml");
-        assert!(!sb_search.included_path(path));
+        assert!(!sb_search.is_log_dir(path));
     }
 
     #[test]
