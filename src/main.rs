@@ -7,8 +7,7 @@ mod tui;
 fn main() -> Result<(), Box<dyn Error>> {
     let args = Args::parse();
     let keyword = args.keyword.as_str();
-    let root_dir = format!("{}/{}", args.support_bundle_path, "logs");
-    let root_dir = root_dir.as_str();
+    let root_dir = args.support_bundle_path.as_str();
     let mut terminal = ratatui::init();
     tui::Tui::new(root_dir, keyword).run(&mut terminal)?;
     ratatui::restore();

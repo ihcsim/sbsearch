@@ -87,19 +87,19 @@ mod tests {
                 level: String::from("level=info"),
                 path: String::from("/path/to/log1"),
                 content: String::from("This is an info log entry."),
-                timestamp: chrono::Utc::now(),
+                timestamp: Some(chrono::Utc::now()),
             },
             sbsearch::Entry {
                 level: String::from("level=warning"),
                 path: String::from("/path/to/log2"),
                 content: String::from("This is an warning log entry."),
-                timestamp: chrono::Utc::now(),
+                timestamp: Some(chrono::Utc::now()),
             },
             sbsearch::Entry {
                 level: String::from("level=error"),
                 path: String::from("/path/to/log3"),
                 content: String::from("This is an error log entry."),
-                timestamp: chrono::Utc::now(),
+                timestamp: Some(chrono::Utc::now()),
             },
         ];
 

@@ -16,3 +16,4 @@ textwrap = "0.16.2"
 tui-input = { version = "*", features = [
   "crossterm",
 ], default-features = false }
+zip = "7.2.0"

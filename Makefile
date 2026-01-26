@@ -17,10 +17,10 @@ release:
 	cargo build --release
 
 test:
-	cargo test
+	cargo test -- --nocapture
 
 fmt:
 	cargo fmt -- --check
 
 deps:
-	cargo machete --fix || 0
+	cargo machete --fix || true

@@ -275,7 +275,7 @@ mod tests {
 
     #[test]
     fn test_read_entries_from_sb() {
-        let path = "./testdata/support_bundle/logs";
+        let path = "./testdata/support_bundle";
         let keyword = "vm-00";
         let mut tui = Tui::new(path, keyword);
         tui.read_entries_from_sb();
@@ -283,7 +283,7 @@ mod tests {
         // there are 218 entries containing "vm-00" in the testdata support bundle.
         // after paging, only 100 entries are loaded into entries_offset with a total
         // of 3 pages.
-        assert_eq!(tui.entries_cache.len(), 218);
+        assert_eq!(tui.entries_cache.len(), 244);
         assert_eq!(tui.entries_offset.len(), DEFAULT_MAX_ENTRIES_PER_PAGE);
         assert_eq!(tui.page_final, 3);
         assert_eq!(tui.nav_state, ListState::default().with_selected(Some(0)));
