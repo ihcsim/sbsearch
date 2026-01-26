@@ -18,6 +18,27 @@ pub struct Entry {
     pub timestamp: Option<DateTime<Utc>>,
 }
 
+impl Entry {
+    fn from_str(s: &str, path: &str, sbsearch: &SBSearch) -> Entry {
+        let mut timestamp: Option<DateTime<Utc>> = None;
+        if let Ok(t) = sbsearch.find_timestamp(s) {
+            timestamp = t;
+        }
+
+        let mut level = "UNKNOWN";
+        if let Ok(r) = sbsearch.find_log_level(s) {
+            level = r;
+        }
+
+        Entry {
+            content: String::from(s),
+            level: String::from(level),
+            path: String::from(path),
+            timestamp,
+        }
+    }
+}
+
 pub struct SearchResult {
     pub entries_offset: Vec<Entry>,
 }
@@ -155,22 +176,8 @@ impl SBSearch {
             &self.matcher_keyword,
             path,
             UTF8(|_lnum, line| {
-                let mut timestamp: Option<DateTime<Utc>> = None;
-                if let Ok(t) = self.find_timestamp(line) {
-                    timestamp = t;
-                }
-
-                let mut level = "UNKNOWN";
-                if let Ok(r) = self.find_log_level(line) {
-                    level = r;
-                }
-
-                let entry = Entry {
-                    content: String::from(line),
-                    level: String::from(level),
-                    path: String::from(path.to_str().unwrap()),
-                    timestamp,
-                };
+                let path = path.to_str().unwrap_or("");
+                let entry = Entry::from_str(line, path, self);
                 entries.push(entry);
                 Ok(true)
             }),
@@ -192,22 +199,8 @@ impl SBSearch {
             &self.matcher_keyword,
             read_from,
             UTF8(|_lnum, line| {
-                let mut timestamp: Option<DateTime<Utc>> = None;
-                if let Ok(t) = self.find_timestamp(line) {
-                    timestamp = t;
-                }
-
-                let mut level = "UNKNOWN";
-                if let Ok(r) = self.find_log_level(line) {
-                    level = r;
-                }
-
-                let entry = Entry {
-                    content: String::from(line),
-                    level: String::from(level),
-                    path: String::from(path.to_str().unwrap()),
-                    timestamp,
-                };
+                let path = path.to_str().unwrap_or("");
+                let entry = Entry::from_str(line, path, self);
                 entries.push(entry);
                 Ok(true)
             }),
