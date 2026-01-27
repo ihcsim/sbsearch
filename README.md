@@ -12,6 +12,9 @@ resource logs and displayed them in chronological order. It uses the
 
 ![screenshot of the sbsearch tui displaying resource logs output](./img/tui.png)
 
+`sbsearch` searches the `logs/` and `nodes/**/logs` folders in the support bundle
+for the keyword.
+
 ## Usage
 
 To see general usage:
