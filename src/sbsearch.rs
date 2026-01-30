@@ -2,6 +2,7 @@ use chrono::{self, DateTime, Utc};
 use grep_matcher::Matcher;
 use grep_regex::RegexMatcher;
 use grep_searcher::{Searcher, SearcherBuilder, sinks::UTF8};
+use log::*;
 use std::error::Error;
 use std::fmt;
 use std::fs::File;
@@ -71,10 +72,20 @@ pub fn search(
                 a.timestamp.cmp(&b.timestamp)
             }
         });
+    } else {
+        debug!(
+            "using cached search results, total entries: {}",
+            cache.len()
+        );
     }
 
     let limit = limit.min(cache.len().saturating_sub(offset));
-    let entries_offset = cache.iter().skip(offset).take(limit).cloned().collect();
+    let entries_offset: Vec<Entry> = cache.iter().skip(offset).take(limit).cloned().collect();
+    info!(
+        "showing {} entries on page {}",
+        entries_offset.len(),
+        offset / limit + 1
+    );
 
     Ok(SearchResult { entries_offset })
 }
@@ -133,14 +144,17 @@ impl SBSearch {
     fn search_tree(&mut self, dir: &Path, entries: &mut Vec<Entry>) -> Result<(), Box<dyn Error>> {
         // only search '/logs' and '/nodes/*/logs' directories
         if !self.is_log_dir(dir) {
+            debug!("skipping directory: {}", dir.display());
             return Ok(());
         }
+        info!("search directory: {}", dir.display());
 
         for entry in fs::read_dir(dir)? {
             let entry = entry?;
             let path = entry.path();
 
             if path.is_dir() {
+                debug!("entering directory: {}", path.display());
                 self.search_tree(&path, entries)?;
                 continue;
             }
@@ -148,6 +162,7 @@ impl SBSearch {
             if path.is_file() {
                 let searcher = &mut self.searcher.clone();
                 if is_zip(path.as_path())? {
+                    debug!("examining zip archive: {}", path.display());
                     let zipfile = File::open(&path)?;
                     let mut archive = ZipArchive::new(zipfile)?;
 
@@ -155,10 +170,14 @@ impl SBSearch {
                     for index in 0..archive.len() {
                         let reader = archive.by_index(index)?;
                         let path = path.join(Path::new(reader.name()));
+
+                        debug!("examining archive file: {}", path.display());
                         self.search_reader(reader, path.as_path(), entries, searcher)?;
                     }
                     continue;
                 }
+
+                debug!("examining file: {}", path.display());
                 self.search_file(&path, entries, searcher)?;
                 continue;
             }
@@ -177,7 +196,11 @@ impl SBSearch {
             path,
             UTF8(|_lnum, line| {
                 let path = path.to_str().unwrap_or("");
+                debug!("found matching entry in file {}", path);
+
                 let entry = Entry::from_str(line, path, self);
+                debug!("entry: {:?}", entry);
+
                 entries.push(entry);
                 Ok(true)
             }),
@@ -200,7 +223,11 @@ impl SBSearch {
             read_from,
             UTF8(|_lnum, line| {
                 let path = path.to_str().unwrap_or("");
+                debug!("found matching entry in file {}", path);
+
                 let entry = Entry::from_str(line, path, self);
+                debug!("entry: {:?}", entry);
+
                 entries.push(entry);
                 Ok(true)
             }),

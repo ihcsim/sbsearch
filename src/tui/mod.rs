@@ -1,3 +1,4 @@
+use log::*;
 use ratatui::{
     DefaultTerminal, Frame,
     widgets::{ListState, ScrollbarState},
@@ -78,6 +79,11 @@ impl Tui {
     }
 
     pub fn run(&mut self, terminal: &mut DefaultTerminal) -> Result<(), Box<dyn Error>> {
+        info!("starting sbsearch TUI");
+        info!(
+            "searching for '{}' in support bundle at '{}'",
+            self.keyword, self.sbpath
+        );
         while !self.exit {
             if self.page_reload {
                 self.read_entries_from_sb();
@@ -118,8 +124,14 @@ impl Tui {
         let cache = &mut self.entries_cache;
 
         self.entries_offset = match sbsearch::search(root_path, keyword, offset, limit, cache) {
-            Ok(result) => result.entries_offset,
-            Err(_) => Vec::new(),
+            Ok(result) => {
+                info!("found {} entries matching '{}'", cache.len(), keyword);
+                result.entries_offset
+            }
+            Err(e) => {
+                error!("error reading entries from support bundle: {}", e);
+                Vec::new()
+            }
         };
         self.page_final = self.entries_cache.len().div_ceil(self.page_max_entries);
         self.page_reload = false;
@@ -128,6 +140,7 @@ impl Tui {
 
     fn save_to_file(&mut self) -> io::Result<()> {
         if let Ok(file) = std::fs::File::create(&self.last_saved_filename) {
+            info!("saving to file '{}'", &self.last_saved_filename);
             let mut writer = BufWriter::new(&file);
             for entry in &self.entries_cache {
                 write!(writer, "{}", entry)?;
@@ -138,6 +151,7 @@ impl Tui {
     }
 
     fn exit(&mut self) {
+        info!("exiting sbsearch TUI");
         self.exit = true
     }
 
