@@ -93,8 +93,10 @@ pub fn search(
 fn is_zip(path: &Path) -> io::Result<bool> {
     let mut file = File::open(path)?;
     let mut signature = [0u8; 4];
-    file.read_exact(&mut signature)?;
-    Ok(signature == [0x50, 0x4B, 0x03, 0x04])
+    match file.read_exact(&mut signature) {
+        Ok(_) => Ok(signature == [0x50, 0x4B, 0x03, 0x04]),
+        Err(_) => Ok(false),
+    }
 }
 
 struct SBSearch {
