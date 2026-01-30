@@ -79,7 +79,6 @@ impl Tui {
     }
 
     pub fn run(&mut self, terminal: &mut DefaultTerminal) -> Result<(), Box<dyn Error>> {
-        info!("starting sbsearch TUI");
         info!(
             "searching for '{}' in support bundle at '{}'",
             self.keyword, self.sbpath

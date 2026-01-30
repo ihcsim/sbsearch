@@ -14,7 +14,9 @@ fn main() -> Result<(), Box<dyn Error>> {
     let keyword = args.keyword.as_str();
     let root_dir = args.support_bundle_path.as_str();
 
+    let mut log_level = String::new();
     if let Some(l) = args.log_level {
+        log_level = l.clone();
         let log_level = LevelFilter::from_str(l.as_str())?;
         let target = Box::new(File::create(".sbsearch.log")?);
         env_logger::Builder::new()
@@ -33,6 +35,12 @@ fn main() -> Result<(), Box<dyn Error>> {
             })
             .init();
     }
+
+    info!("starting sbsearch TUI");
+    info!(
+        "args: root_dir: {}, keyword: {}, log_level: {}",
+        root_dir, keyword, log_level
+    );
 
     let mut terminal = ratatui::init();
     tui::Tui::new(root_dir, keyword).run(&mut terminal)?;
