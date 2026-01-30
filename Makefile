@@ -11,7 +11,10 @@ run:
 		echo "missing required argument: KEYWORD"; \
 		exit 1; \
 	fi
-	cargo run -- -s "$(SUPPORT_BUNDLE_PATH)" -k "$(KEYWORD)" -l "$(LOG_LEVEL)"
+	if [ ! -z "$(LOG_LEVEL)" ]; then \
+		LOG_LEVEL_ARG="-l $(LOG_LEVEL)"; \
+	fi
+	cargo run -- -s "$(SUPPORT_BUNDLE_PATH)" -k "$(KEYWORD)" $(LOG_LEVEL_ARG)
 
 debug:
 	$(MAKE) run LOG_LEVEL=debug
