@@ -238,19 +238,15 @@ impl SBSearch {
     }
 
     fn is_log_dir(&self, dir: &Path) -> bool {
-        if let Some(s) = dir.to_str() {
-            if s == self.root_dir
-                || s == format!("{}/logs", self.root_dir)
-                || s == format!("{}/nodes", self.root_dir)
-            {
-                return true;
-            } else {
-                for ancestor in dir.ancestors() {
-                    if let Some(path) = ancestor.to_str()
-                        && path.contains("/logs")
-                    {
-                        return true;
-                    }
+        let root_dir = Path::new(self.root_dir.as_str());
+        if dir == root_dir || dir == root_dir.join("logs") || dir == root_dir.join("nodes") {
+            return true;
+        } else {
+            for ancestor in dir.ancestors() {
+                if let Some(path) = ancestor.to_str()
+                    && path.contains("/logs")
+                {
+                    return true;
                 }
             }
         }
